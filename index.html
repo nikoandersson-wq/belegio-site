@@ -73,41 +73,6 @@
       margin: 2.5rem 0;
     }
 
-    .join {
-      display: inline-block;
-      margin-top: 2.5rem;
-      padding: 0.8rem 2rem;
-      border: 2px solid #000;
-      font-family: "Courier New", Courier, monospace;
-      font-size: 1rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      text-decoration: none;
-      color: #000;
-      background: #fff;
-      cursor: pointer;
-    }
-
-    .join:hover {
-      background: #000;
-      color: #fff;
-    }
-
-    .contact {
-      margin-top: 2rem;
-      padding: 1.2rem;
-      border: 2px solid #000;
-      display: inline-block;
-    }
-
-    .contact span {
-      font-size: 0.75rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      display: block;
-      margin-bottom: 0.3rem;
-    }
-
     a { color: #000; text-decoration: underline; }
 
     .footer {
@@ -126,8 +91,9 @@
 
   <h2>Was ist Belegio?</h2>
   <ul>
-    <li>Belege per Handy einschicken</li>
+    <li>Beleg fotografieren, per E-Mail einschicken — fertig</li>
     <li>Automatische Erkennung — jede Sprache, jedes Format</li>
+    <li>PDFs? Einfach abfotografieren und senden</li>
     <li>Export für Steuerberater auf Knopfdruck</li>
     <li>Kein App-Download. Kein Login. Keine Software.</li>
   </ul>
@@ -153,14 +119,43 @@
 
   <p style="margin-top:2rem; letter-spacing:0.1em;">— Demnächst verfügbar —</p>
 
+  <form id="waitlist-de" style="margin-top:1.5rem;">
+    <p style="margin-bottom:0.5rem; font-size:0.9rem;">Benachrichtigung wenn's losgeht →</p>
+    <input type="email" name="email" placeholder="ihre@email.at" required
+      style="font-family:'Courier New',Courier,monospace; font-size:0.95rem; padding:0.5rem 0.8rem;
+             border:2px solid #000; background:#fff; color:#000; width:220px;">
+    <button type="submit"
+      style="font-family:'Courier New',Courier,monospace; font-size:0.95rem; padding:0.5rem 1rem;
+             border:2px solid #000; background:#000; color:#fff; cursor:pointer; margin-left:0.3rem;">
+      OK
+    </button>
+    <p id="waitlist-de-msg" style="font-size:0.85rem; margin-top:0.5rem; display:none;">Danke — wir melden uns.</p>
+  </form>
+
+  <script>
+    document.getElementById('waitlist-de').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = this.querySelector('input[name=email]').value;
+      fetch('https://formspree.io/f/mqenlvdd', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({ email: email, lang: 'de' })
+      }).then(function(r) {
+        document.getElementById('waitlist-de-msg').style.display = 'block';
+        document.getElementById('waitlist-de').querySelector('input').value = '';
+      });
+    });
+  </script>
+
   <hr>
 
   <!-- ENGLISH -->
 
   <h2>What is Belegio?</h2>
   <ul>
-    <li>Send receipts from your phone</li>
+    <li>Photo your receipt, send by email — done</li>
     <li>Automatic recognition — any language, any format</li>
+    <li>PDFs? Just photograph them and send</li>
     <li>One-command export for your accountant</li>
     <li>No app. No login. No software.</li>
   </ul>
@@ -185,6 +180,34 @@
   </ul>
 
   <p style="margin-top:2rem; letter-spacing:0.1em;">— Coming soon —</p>
+
+  <form id="waitlist-en" style="margin-top:1.5rem;">
+    <p style="margin-bottom:0.5rem; font-size:0.9rem;">Get notified when we launch →</p>
+    <input type="email" name="email" placeholder="your@email.com" required
+      style="font-family:'Courier New',Courier,monospace; font-size:0.95rem; padding:0.5rem 0.8rem;
+             border:2px solid #000; background:#fff; color:#000; width:220px;">
+    <button type="submit"
+      style="font-family:'Courier New',Courier,monospace; font-size:0.95rem; padding:0.5rem 1rem;
+             border:2px solid #000; background:#000; color:#fff; cursor:pointer; margin-left:0.3rem;">
+      OK
+    </button>
+    <p id="waitlist-en-msg" style="font-size:0.85rem; margin-top:0.5rem; display:none;">Thanks — we'll be in touch.</p>
+  </form>
+
+  <script>
+    document.getElementById('waitlist-en').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = this.querySelector('input[name=email]').value;
+      fetch('https://formspree.io/f/mqenlvdd', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({ email: email, lang: 'en' })
+      }).then(function(r) {
+        document.getElementById('waitlist-en-msg').style.display = 'block';
+        document.getElementById('waitlist-en').querySelector('input').value = '';
+      });
+    });
+  </script>
 
   <div class="footer">
     <p>© 2026 Belegio · Wien, Österreich</p>
