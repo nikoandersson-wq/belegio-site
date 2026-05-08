@@ -43,18 +43,9 @@
       margin-top: 2rem;
     }
 
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    ul li::before {
-      content: "→  ";
-    }
-
-    ul li {
-      margin-bottom: 0.3rem;
-    }
+    ul { list-style: none; padding: 0; }
+    ul li::before { content: "→  "; }
+    ul li { margin-bottom: 0.3rem; }
 
     .price {
       font-size: 1.6rem;
@@ -80,34 +71,92 @@
       font-size: 0.75rem;
       color: #999;
     }
+
+    .lang-switch {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      background: #fff;
+      z-index: 100;
+    }
+    .lang-switch button {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      padding: 0.3rem 0.6rem;
+      border: 2px solid #000;
+      background: #fff;
+      color: #000;
+      cursor: pointer;
+      margin-left: 0.2rem;
+    }
+    .lang-switch button.active {
+      background: #000;
+      color: #fff;
+    }
+    .lang-en { display: none; }
+    body.lang-en-active .lang-de { display: none; }
+    body.lang-en-active .lang-en { display: block; }
+    body.lang-en-active .lang-divider { display: none; }
   </style>
 </head>
 <body>
+
+  <div class="lang-switch">
+    <button id="btn-de" class="active" onclick="setLang('de')">DE</button>
+    <button id="btn-en" onclick="setLang('en')">EN</button>
+  </div>
 
   <h1>Belegio</h1>
   <p class="tagline">Belegverwaltung per E-Mail · Receipt management by email</p>
 
   <!-- GERMAN -->
+  <div class="lang-de">
 
-  <h2>Was ist Belegio?</h2>
+  <h2>Schluss mit dem Schuhkarton</h2>
+  <p>Belege fotografieren, sicher speichern, jederzeit finden.</p>
+
+  <h2>Warum?</h2>
   <ul>
-    <li>Beleg fotografieren, per E-Mail einschicken — fertig</li>
-    <li>Automatische Erkennung — jede Sprache, jedes Format</li>
-    <li>PDFs? Einfach abfotografieren und senden</li>
-    <li>Export für Steuerberater auf Knopfdruck</li>
-    <li>Kein App-Download. Kein Login. Keine Software.</li>
+    <li>Im März suchen Sie, was Sie im Januar weggeschmissen haben</li>
+    <li>Garantieanspruch weg, weil der Beleg weg ist</li>
+    <li>Ihr Steuerberater verrechnet Stunden fürs Sortieren</li>
+    <li>Steuer zurückholen — wenn Sie den Beleg noch hätten</li>
+  </ul>
+
+  <h2>So funktioniert es</h2>
+  <ul>
+    <li>Sie bekommen Ihre persönliche Belegio-Adresse per E-Mail</li>
+    <li>Beleg fotografieren, an diese Adresse senden — auch krumm und in jeder Sprache</li>
+    <li>PDFs? Einfach vom Bildschirm abfotografieren und senden</li>
+    <li>Wir erkennen Datum, Händler, Betrag und MwSt — automatisch</li>
+    <li>Bestätigung mit allen Daten kommt zurück</li>
+    <li>EXPORT senden → ZIP mit Belegen und Steuerberater-CSV im Posteingang</li>
   </ul>
 
   <h2>Für wen?</h2>
   <ul>
-    <li>Selbständige und Freiberufler</li>
-    <li>Kleine Unternehmen</li>
+    <li>Privatpersonen — für Garantien, Steuerausgleich, Spesen</li>
+    <li>Selbständige, die keine Buchhaltungssoftware wollen</li>
+    <li>Kleine Unternehmen, die's einfach wollen</li>
     <li>Alle, die Ordnung mögen</li>
   </ul>
 
+  <h2>Was Sie nicht brauchen</h2>
+  <ul>
+    <li>Keine App. Kein Download.</li>
+    <li>Kein Login. Kein Passwort.</li>
+    <li>Keine Software. Keine Schulung.</li>
+    <li>Nur Ihr E-Mail-Programm — das Sie sowieso schon haben.</li>
+  </ul>
+
   <h2>Preis</h2>
-  <p class="price">€ 29,99 / Jahr</p>
-  <p class="price-note">Eine Adresse · Keine versteckten Kosten</p>
+  <p class="price">€ 39,99 / Jahr</p>
+  <p class="price-note">Eine Adresse · Bis 200 Belege im Jahr · Keine versteckten Kosten</p>
+  <p style="margin-top:1.2rem; font-weight:bold;">Ein vergessener Beleg: oft mehr.</p>
 
   <h2>Sicherheit & Datenschutz</h2>
   <ul>
@@ -147,29 +196,54 @@
     });
   </script>
 
-  <hr>
+  </div><!-- /lang-de -->
+
+  <hr class="lang-divider">
 
   <!-- ENGLISH -->
+  <div class="lang-en">
 
-  <h2>What is Belegio?</h2>
+  <h2>Every receipt, kept</h2>
+  <p>Photograph receipts. Stored safely. Findable anytime.</p>
+
+  <h2>Why?</h2>
   <ul>
-    <li>Photo your receipt, send by email — done</li>
-    <li>Automatic recognition — any language, any format</li>
-    <li>PDFs? Just photograph them and send</li>
-    <li>One-command export for your accountant</li>
-    <li>No app. No login. No software.</li>
+    <li>In March, you're hunting for what you tossed in January</li>
+    <li>Warranty lost because the receipt is lost</li>
+    <li>Your accountant bills you for hours of paper-sorting</li>
+    <li>Claim back your tax — if only you still had the receipt</li>
+  </ul>
+
+  <h2>How it works</h2>
+  <ul>
+    <li>You get your personal Belegio email address</li>
+    <li>Photo your receipt, send it to that address — any angle, any language</li>
+    <li>PDFs? Just photograph them off the screen and send</li>
+    <li>We extract date, vendor, amount and VAT — automatically</li>
+    <li>Confirmation with all the details comes back</li>
+    <li>Send EXPORT → ZIP with receipts and accountant-ready CSV in your inbox</li>
   </ul>
 
   <h2>Who is it for?</h2>
   <ul>
-    <li>Freelancers and self-employed professionals</li>
-    <li>Small businesses</li>
+    <li>Private people — for warranties, tax returns, expenses</li>
+    <li>Freelancers who don't want accounting software</li>
+    <li>Small businesses that want it simple</li>
     <li>The organised ones</li>
   </ul>
 
+  <h2>What you don't need</h2>
+  <ul>
+    <li>No app. No download.</li>
+    <li>No login. No password.</li>
+    <li>No software. No training.</li>
+    <li>Just the email you already have.</li>
+  </ul>
+
   <h2>Price</h2>
-  <p class="price">€ 29.99 / year</p>
-  <p class="price-note">One address · No hidden costs</p>
+  <p class="price">€ 39.99 / year</p>
+  <p class="price-note">One address · Up to 200 receipts per year · No hidden costs</p>
+  <p style="margin-top:1.2rem; font-weight:bold;">One forgotten receipt: often more.</p>
 
   <h2>Security & Privacy</h2>
   <ul>
@@ -209,9 +283,27 @@
     });
   </script>
 
+  </div><!-- /lang-en -->
+
   <div class="footer">
     <p>© 2026 Belegio · Wien, Österreich</p>
   </div>
+
+  <script>
+    function setLang(lang) {
+      document.body.classList.toggle('lang-en-active', lang === 'en');
+      document.getElementById('btn-de').classList.toggle('active', lang === 'de');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      try { localStorage.setItem('belegio-lang', lang); } catch(e) {}
+      window.scrollTo(0, 0);
+    }
+    (function() {
+      var saved = null;
+      try { saved = localStorage.getItem('belegio-lang'); } catch(e) {}
+      var lang = saved || (navigator.language && navigator.language.toLowerCase().startsWith('de') ? 'de' : 'en');
+      setLang(lang);
+    })();
+  </script>
 
 </body>
 </html>
