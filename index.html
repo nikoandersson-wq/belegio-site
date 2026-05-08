@@ -97,9 +97,11 @@
       background: #000;
       color: #fff;
     }
-    .lang-en { display: none; }
+    .lang-en, .lang-en-inline { display: none; }
     body.lang-en-active .lang-de { display: none; }
+    body.lang-en-active .lang-de-inline { display: none; }
     body.lang-en-active .lang-en { display: block; }
+    body.lang-en-active .lang-en-inline { display: block; }
     body.lang-en-active .lang-divider { display: none; }
   </style>
 </head>
@@ -111,7 +113,8 @@
   </div>
 
   <h1>Belegio</h1>
-  <p class="tagline">Belegverwaltung per E-Mail · Receipt management by email</p>
+  <p class="tagline lang-de-inline">Belegverwaltung per E-Mail</p>
+  <p class="tagline lang-en-inline">Receipt management by email</p>
 
   <!-- GERMAN -->
   <div class="lang-de">
@@ -130,7 +133,7 @@
   <h2>So funktioniert es</h2>
   <ul>
     <li>Sie bekommen Ihre persönliche Belegio-Adresse per E-Mail</li>
-    <li>Beleg fotografieren, an diese Adresse senden — auch krumm und in jeder Sprache</li>
+    <li>Beleg fotografieren, an diese Adresse senden — in jeder Sprache</li>
     <li>PDFs? Einfach vom Bildschirm abfotografieren und senden</li>
     <li>Wir erkennen Datum, Händler, Betrag und MwSt — automatisch</li>
     <li>Bestätigung mit allen Daten kommt zurück</li>
@@ -140,15 +143,13 @@
   <h2>Für wen?</h2>
   <ul>
     <li>Privatpersonen — für Garantien, Steuerausgleich, Spesen</li>
-    <li>Selbständige, die keine Buchhaltungssoftware wollen</li>
-    <li>Kleine Unternehmen, die's einfach wollen</li>
+    <li>Selbständige und Kleine Unternehmen, die keine Buchhaltungssoftware wollen</li>
     <li>Alle, die Ordnung mögen</li>
   </ul>
 
   <h2>Was Sie nicht brauchen</h2>
   <ul>
-    <li>Keine App. Kein Download.</li>
-    <li>Kein Login. Kein Passwort.</li>
+    <li>Keine App. Kein Login. Kein Passwort.</li>
     <li>Keine Software. Keine Schulung.</li>
     <li>Nur Ihr E-Mail-Programm — das Sie sowieso schon haben.</li>
   </ul>
@@ -156,7 +157,6 @@
   <h2>Preis</h2>
   <p class="price">€ 39,99 / Jahr</p>
   <p class="price-note">Eine Adresse · Bis 200 Belege im Jahr · Keine versteckten Kosten</p>
-  <p style="margin-top:1.2rem; font-weight:bold;">Ein vergessener Beleg: oft mehr.</p>
 
   <h2>Sicherheit & Datenschutz</h2>
   <ul>
@@ -217,7 +217,7 @@
   <h2>How it works</h2>
   <ul>
     <li>You get your personal Belegio email address</li>
-    <li>Photo your receipt, send it to that address — any angle, any language</li>
+    <li>Photo your receipt, send it to that address — any language</li>
     <li>PDFs? Just photograph them off the screen and send</li>
     <li>We extract date, vendor, amount and VAT — automatically</li>
     <li>Confirmation with all the details comes back</li>
@@ -227,15 +227,13 @@
   <h2>Who is it for?</h2>
   <ul>
     <li>Private people — for warranties, tax returns, expenses</li>
-    <li>Freelancers who don't want accounting software</li>
-    <li>Small businesses that want it simple</li>
+    <li>Freelancers and small businesses who don't want accounting software</li>
     <li>The organised ones</li>
   </ul>
 
   <h2>What you don't need</h2>
   <ul>
-    <li>No app. No download.</li>
-    <li>No login. No password.</li>
+    <li>No app. No login. No password.</li>
     <li>No software. No training.</li>
     <li>Just the email you already have.</li>
   </ul>
@@ -243,7 +241,6 @@
   <h2>Price</h2>
   <p class="price">€ 39.99 / year</p>
   <p class="price-note">One address · Up to 200 receipts per year · No hidden costs</p>
-  <p style="margin-top:1.2rem; font-weight:bold;">One forgotten receipt: often more.</p>
 
   <h2>Security & Privacy</h2>
   <ul>
