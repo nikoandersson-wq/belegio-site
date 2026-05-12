@@ -3,23 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Belegio ‚Äì Belegverwaltung per E-Mail</title>
-  <meta name="description" content="Belegio ‚Äî Belegverwaltung per E-Mail. Foto machen, sicher speichern, jederzeit finden. F√ºr Privatpersonen, Selbst√§ndige und kleine Unternehmen. ‚Ç¨39,99 pro Jahr.">
-  <meta name="keywords" content="Belegverwaltung, Belege, Quittungen, Steuer, Steuerberater, Steuerausgleich, Buchhaltung, √ñsterreich, DSGVO, Receipt, OCR, Wien, Frankfurt">
+  <title>Belegio &ndash; Belegverwaltung per E-Mail</title>
+  <meta name="description" content="Belegio &mdash; Belegverwaltung per E-Mail. Foto machen, sicher speichern, jederzeit finden. F&uuml;r Privatpersonen, Selbst&auml;ndige und kleine Unternehmen. &euro;39,99 pro Jahr.">
+  <meta name="keywords" content="Belegverwaltung, Belege, Quittungen, Steuer, Steuerberater, Steuerausgleich, Buchhaltung, &Ouml;sterreich, DSGVO, Receipt, OCR, Wien, Frankfurt">
   <meta name="author" content="Belegio">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#F4EFE2">
   <link rel="canonical" href="https://belegio.eu/">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23B4451F'/%3E%3Ctext x='16' y='23' font-family='Helvetica Neue,Helvetica,Arial,sans-serif' font-size='22' font-weight='700' fill='%23F4EFE2' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Belegio ‚Äî Belegverwaltung per E-Mail">
+  <meta property="og:title" content="Belegio &mdash; Belegverwaltung per E-Mail">
   <meta property="og:description" content="Schluss mit dem Schuhkarton. Belege fotografieren, sicher speichern, jederzeit finden.">
   <meta property="og:url" content="https://belegio.eu/">
   <meta property="og:locale" content="de_AT">
   <meta property="og:locale:alternate" content="en_US">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Belegio ‚Äî Belegverwaltung per E-Mail">
-  <meta name="twitter:description" content="Schluss mit dem Schuhkarton. ‚Ç¨39,99/Jahr.">
+  <meta name="twitter:title" content="Belegio &mdash; Belegverwaltung per E-Mail">
+  <meta name="twitter:description" content="Schluss mit dem Schuhkarton. &euro;39,99/Jahr.">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -43,7 +43,7 @@
       --muted-2: rgba(26,26,26,0.72);
       --hair: rgba(26,26,26,0.08);
       --hair-2: rgba(26,26,26,0.12);
-      --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      --sans: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Inter", "Segoe UI", Helvetica, Arial, sans-serif;
       --mono: "Courier New", ui-monospace, monospace;
     }
     * { box-sizing: border-box; }
@@ -70,8 +70,14 @@
     /* NAV */
     nav {
       display: flex; align-items: center; justify-content: space-between;
-      padding: 28px 56px;
+      padding: 20px 56px;
       gap: 24px;
+      position: sticky; top: 0;
+      background: rgba(244,239,226,0.92);
+      backdrop-filter: saturate(140%) blur(12px);
+      -webkit-backdrop-filter: saturate(140%) blur(12px);
+      border-bottom: 1px solid var(--hair);
+      z-index: 80;
     }
     .logo {
       display: inline-flex; align-items: center; gap: 10px;
@@ -367,12 +373,20 @@
     .lang-en section:first-child { margin-top: 0; }
     .section-eyebrow {
       font-family: var(--mono);
-      font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--ink); font-weight: 600; opacity: 0.75;
-      display: flex; align-items: center; gap: 12px;
-      margin-bottom: 28px;
+      font-size: 16px; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--ink); font-weight: 700; opacity: 1;
+      display: flex; align-items: center; gap: 14px;
+      margin-bottom: 32px;
     }
-    .section-eyebrow .num { color: var(--rust); font-weight: 700; opacity: 1; }
+    .section-eyebrow .num {
+      display: inline-grid; place-items: center;
+      min-width: 34px; height: 26px;
+      padding: 0 8px;
+      background: var(--rust); color: var(--cream);
+      border-radius: 4px;
+      font-weight: 700; letter-spacing: 0.08em;
+    }
+    .section-eyebrow::before { display: none; }
     .section-eyebrow::after {
       content: ""; flex: 1; height: 1px; background: var(--hair-2);
       max-width: 320px;
@@ -397,21 +411,26 @@
       border-top: 1px solid var(--hair-2);
     }
     .warum-list li {
-      padding: 32px 32px 32px 0;
+      padding: 36px 32px 36px 0;
       border-bottom: 1px solid var(--hair-2);
-      display: grid; grid-template-columns: 56px 1fr; gap: 20px;
+      display: grid; grid-template-columns: 68px 1fr; gap: 24px;
       align-items: start;
     }
     .warum-list li:nth-child(odd) { padding-right: 48px; border-right: 1px solid var(--hair-2); }
     .warum-list li:nth-child(even) { padding-left: 48px; }
     .warum-num {
-      font-family: var(--mono); font-size: 22px; font-weight: 700;
-      letter-spacing: 0.08em; color: var(--rust);
-      padding-top: 4px;
+      width: 56px; height: 56px;
+      display: grid; place-items: center;
+      background: var(--ink); color: var(--rust);
+      border-radius: 50%;
+      font-family: var(--mono); font-size: 24px; font-weight: 700;
+      box-shadow: 0 0 0 4px var(--cream), 0 0 0 5px rgba(180,69,31,0.25);
+      position: relative;
     }
     .warum-text {
-      font-size: 24px; line-height: 1.35; letter-spacing: -0.015em;
+      font-size: 26px; line-height: 1.3; letter-spacing: -0.02em;
       font-weight: 500; color: var(--ink); text-wrap: pretty;
+      padding-top: 8px;
     }
 
     /* INK BREAK */
@@ -458,7 +477,7 @@
       font-family: var(--mono); font-size: 13px; line-height: 1.75;
       color: rgba(244,239,226,0.8);
     }
-    .step-details li::before { content: "‚Üí  "; color: var(--rust); }
+    .step-details li::before { content: "&rarr;  "; color: var(--rust); }
 
     /* AUDIENCE */
     .audience {
@@ -553,7 +572,7 @@
       display: flex; align-items: center; gap: 12px;
     }
     .price-includes li::before {
-      content: "‚úì"; color: var(--rust); font-weight: 700;
+      content: "&#10003;"; color: var(--rust); font-weight: 700;
     }
 
     /* SICHERHEIT */
@@ -721,11 +740,11 @@
       <div class="nav-links">
         <a href="#funktioniert" class="lang-de-inline">So funktioniert's</a>
         <a href="#how" class="lang-en-inline">How it works</a>
-        <a href="#wer" class="lang-de-inline">F√ºr wen</a>
+        <a href="#wer" class="lang-de-inline">F&uuml;r wen</a>
         <a href="#who" class="lang-en-inline">Who it's for</a>
         <a href="#preis" class="lang-de-inline">Preis</a>
         <a href="#price" class="lang-en-inline">Price</a>
-        <span class="nav-badge lang-de-inline">Bald verf√ºgbar</span>
+        <span class="nav-badge lang-de-inline">Bald verf&uuml;gbar</span>
         <span class="nav-badge lang-en-inline">Coming soon</span>
         <span class="lang-switch">
           <button id="btn-de" class="active" onclick="setLang('de')">DE</button>
@@ -743,31 +762,31 @@
 
         <section class="hero">
           <div>
-            <div class="kicker">Belegio ¬∑ Belegverwaltung per E-Mail</div>
+            <div class="kicker">Belegio &middot; Belegverwaltung per E-Mail</div>
             <h1>
               Foto machen.<br>
               E-Mail senden.<br>
               <span class="accent">Fertig.</span>
             </h1>
             <p class="lede">
-              Schluss mit dem Schuhkarton. Beleg fotografieren, an uns mailen ‚Äî
-              wir speichern, sortieren und finden ihn f√ºr dich wieder, wann immer
+              Schluss mit dem Schuhkarton. Beleg fotografieren, an uns mailen &mdash;
+              wir speichern, sortieren und finden ihn f&uuml;r dich wieder, wann immer
               du ihn brauchst.
             </p>
-            <div class="eyebrow">F√ºr Privatpersonen, Selbst√§ndige &amp; kleine Unternehmen</div>
+            <div class="eyebrow">F&uuml;r Privatpersonen, Selbst&auml;ndige &amp; kleine Unternehmen</div>
 
             <div class="waitlist" data-lang="de">
               <form class="waitlist-form" novalidate>
                 <input type="email" name="email" placeholder="deine@email.at" required aria-label="E-Mail-Adresse">
-                <button type="submit">Auf die Warteliste ‚Üí</button>
+                <button type="submit">Auf die Warteliste &rarr;</button>
               </form>
               <div class="waitlist-success" role="status">
-                <span class="check" aria-hidden="true">‚úì</span>
+                <span class="check" aria-hidden="true">&#10003;</span>
                 <span>Eingetragen. Wir melden uns, sobald Belegio startet.</span>
               </div>
               <div class="waitlist-note">
                 Wir schreiben dir nur zum Launch. Kein Newsletter, keine Werbung.<br>
-                Sp√§ter: <b>‚Ç¨39,99 / Jahr</b> ¬∑ Jederzeit k√ºndbar
+                Sp&auml;ter: <b>&euro;39,99 / Jahr</b> &middot; Jederzeit k&uuml;ndbar
               </div>
             </div>
 
@@ -787,33 +806,33 @@
             <div class="receipt receipt-a">
               <div class="perf-top"></div>
               <div class="head">SUPERMARKT</div>
-              <div class="date">12.05.2026 ¬∑ 14:32</div>
+              <div class="date">12.05.2026 &middot; 14:32</div>
               <div class="rule"></div>
-              <div class="row"><span>‚ñî‚ñî‚ñî‚ñî‚ñî‚ñî‚ñî</span><span>‚Ç¨ ‚Äî,‚Äî</span></div>
-              <div class="row"><span>‚ñî‚ñî‚ñî‚ñî‚ñî‚ñî‚ñî</span><span>‚Ç¨ ‚Äî,‚Äî</span></div>
-              <div class="row"><span>‚ñî‚ñî‚ñî‚ñî‚ñî‚ñî‚ñî</span><span>‚Ç¨ ‚Äî,‚Äî</span></div>
-              <div class="row"><span>‚ñî‚ñî‚ñî‚ñî‚ñî‚ñî‚ñî</span><span>‚Ç¨ ‚Äî,‚Äî</span></div>
-              <div class="row"><span>‚ñî‚ñî‚ñî‚ñî‚ñî‚ñî‚ñî</span><span>‚Ç¨ ‚Äî,‚Äî</span></div>
-              <div class="row"><span>‚ñî‚ñî‚ñî‚ñî‚ñî‚ñî‚ñî</span><span>‚Ç¨ ‚Äî,‚Äî</span></div>
-              <div class="total"><span>SUMME</span><span>‚Ç¨ 42,80</span></div>
+              <div class="row"><span>&#9620;&#9620;&#9620;&#9620;&#9620;&#9620;&#9620;</span><span>&euro; &mdash;,&mdash;</span></div>
+              <div class="row"><span>&#9620;&#9620;&#9620;&#9620;&#9620;&#9620;&#9620;</span><span>&euro; &mdash;,&mdash;</span></div>
+              <div class="row"><span>&#9620;&#9620;&#9620;&#9620;&#9620;&#9620;&#9620;</span><span>&euro; &mdash;,&mdash;</span></div>
+              <div class="row"><span>&#9620;&#9620;&#9620;&#9620;&#9620;&#9620;&#9620;</span><span>&euro; &mdash;,&mdash;</span></div>
+              <div class="row"><span>&#9620;&#9620;&#9620;&#9620;&#9620;&#9620;&#9620;</span><span>&euro; &mdash;,&mdash;</span></div>
+              <div class="row"><span>&#9620;&#9620;&#9620;&#9620;&#9620;&#9620;&#9620;</span><span>&euro; &mdash;,&mdash;</span></div>
+              <div class="total"><span>SUMME</span><span>&euro; 42,80</span></div>
               <div class="perf-bot"></div>
             </div>
             <div class="receipt receipt-b">
               <div class="perf-top"></div>
               <div class="head">TANKSTELLE</div>
-              <div class="date">28.04.2026 ¬∑ 09:12</div>
+              <div class="date">28.04.2026 &middot; 09:12</div>
               <div class="rule"></div>
-              <div class="row"><span>‚ñî‚ñî‚ñî‚ñî‚ñî</span><span>‚Ç¨ ‚Äî,‚Äî</span></div>
-              <div class="row"><span>‚ñî‚ñî‚ñî‚ñî‚ñî</span><span>‚Ç¨ ‚Äî,‚Äî</span></div>
-              <div class="row"><span>‚ñî‚ñî‚ñî‚ñî‚ñî</span><span>‚Ç¨ ‚Äî,‚Äî</span></div>
-              <div class="total"><span>SUMME</span><span>‚Ç¨ 65,40</span></div>
+              <div class="row"><span>&#9620;&#9620;&#9620;&#9620;&#9620;</span><span>&euro; &mdash;,&mdash;</span></div>
+              <div class="row"><span>&#9620;&#9620;&#9620;&#9620;&#9620;</span><span>&euro; &mdash;,&mdash;</span></div>
+              <div class="row"><span>&#9620;&#9620;&#9620;&#9620;&#9620;</span><span>&euro; &mdash;,&mdash;</span></div>
+              <div class="total"><span>SUMME</span><span>&euro; 65,40</span></div>
               <div class="perf-bot"></div>
             </div>
             <div class="phone">
               <div class="phone-screen">
                 <div class="status">
                   <span>14:32</span>
-                  <span style="opacity:.6">‚óè‚óè‚óè‚óè  5G  ‚ñÆ</span>
+                  <span style="opacity:.6">&#9679;&#9679;&#9679;&#9679;  5G  &#9646;</span>
                 </div>
                 <div class="mail-header">
                   <span class="cancel">Abbrechen</span>
@@ -829,12 +848,12 @@
                   <div class="icon">JPG</div>
                   <div class="meta">
                     <div class="name">beleg_12_05.jpg</div>
-                    <div class="size">1,4 MB ¬∑ Eben aufgenommen</div>
+                    <div class="size">1,4 MB &middot; Eben aufgenommen</div>
                   </div>
                 </div>
                 <div class="toast">
-                  <span class="check" aria-hidden="true">‚úì</span>
-                  <span>Gespeichert in <b style="font-weight:600">Belegio</b> ¬∑ Mai 2026</span>
+                  <span class="check" aria-hidden="true">&#10003;</span>
+                  <span>Gespeichert in <b style="font-weight:600">Belegio</b> &middot; Mai 2026</span>
                 </div>
               </div>
             </div>
@@ -847,7 +866,7 @@
           <ol class="warum-list">
             <li>
               <div class="warum-num">A</div>
-              <div class="warum-text">Im M√§rz suchst du, was du im Januar weggeschmissen hast.</div>
+              <div class="warum-text">Im M&auml;rz suchst du, was du im Januar weggeschmissen hast.</div>
             </li>
             <li>
               <div class="warum-num">B</div>
@@ -855,11 +874,11 @@
             </li>
             <li>
               <div class="warum-num">C</div>
-              <div class="warum-text">Dein Steuerberater verrechnet Stunden f√ºrs Sortieren.</div>
+              <div class="warum-text">Dein Steuerberater verrechnet Stunden f&uuml;rs Sortieren.</div>
             </li>
             <li>
               <div class="warum-num">D</div>
-              <div class="warum-text">Steuer zur√ºckholen ‚Äî wenn du den Beleg noch h√§ttest.</div>
+              <div class="warum-text">Steuer zur&uuml;ckholen &mdash; wenn du den Beleg noch h&auml;ttest.</div>
             </li>
           </ol>
         </section>
@@ -868,78 +887,78 @@
           <div class="section-eyebrow"><span class="num">02</span> &mdash; So funktioniert es</div>
           <h2 class="section-title">In drei Schritten von der Quittung zum sortierten Archiv.</h2>
           <p class="section-intro">
-            Du brauchst kein neues Programm. Belegio l√§uft in dem E-Mail-Postfach,
+            Du brauchst kein neues Programm. Belegio l&auml;uft in dem E-Mail-Postfach,
             das du sowieso schon nutzt.
           </p>
 
           <div class="steps">
             <div class="step">
-              <div class="step-num">Schritt 01 ¬∑ Einrichten</div>
+              <div class="step-num">Schritt 01 &middot; Einrichten</div>
               <h3 class="step-title">Deine eigene Belegio-Adresse</h3>
               <p class="step-body">
-                Du bekommst deine pers√∂nliche E-Mail-Adresse bei Belegio ‚Äî sowas wie
-                belegio4823@belegio.eu. Speicher sie im Adressbuch ‚Äî fertig. Kein
+                Du bekommst deine pers&ouml;nliche E-Mail-Adresse bei Belegio &mdash; sowas wie
+                belegio4823@belegio.eu. Speicher sie im Adressbuch &mdash; fertig. Kein
                 Login, kein Passwort.
               </p>
             </div>
 
             <div class="step">
-              <div class="step-num">Schritt 02 ¬∑ Senden</div>
+              <div class="step-num">Schritt 02 &middot; Senden</div>
               <h3 class="step-title">Foto. E-Mail. Gespeichert.</h3>
               <p class="step-body">
-                Beleg fotografieren, an deine Adresse senden ‚Äî in jeder Sprache. PDFs?
-                Einfach vom Bildschirm abfotografieren. Wir erkennen Datum, H√§ndler,
+                Beleg fotografieren, an deine Adresse senden &mdash; in jeder Sprache. PDFs?
+                Einfach vom Bildschirm abfotografieren. Wir erkennen Datum, H&auml;ndler,
                 Betrag und MwSt automatisch.
               </p>
               <ul class="step-details">
                 <li>Hashtag im Betreff: #brille, #steuer, #auto</li>
-                <li>Best√§tigung mit allen Daten kommt zur√ºck</li>
+                <li>Best&auml;tigung mit allen Daten kommt zur&uuml;ck</li>
               </ul>
             </div>
 
             <div class="step">
-              <div class="step-num">Schritt 03 ¬∑ Abrufen</div>
+              <div class="step-num">Schritt 03 &middot; Abrufen</div>
               <h3 class="step-title">EXPORT senden, ZIP bekommen.</h3>
               <p class="step-body">
-                Schreib ‚ÄûEXPORT" an deine Belegio-Adresse ‚Äî du bekommst alle Belege
+                Schreib &bdquo;EXPORT" an deine Belegio-Adresse &mdash; du bekommst alle Belege
                 als ZIP plus eine Steuerberater-CSV im Posteingang.
               </p>
               <ul class="step-details">
-                <li>EXPORT Q1 / 2025 ‚Äî nach Zeitraum</li>
-                <li>EXPORT BRILLE ‚Äî nach Kategorie</li>
-                <li>EXPORT [H√§ndler] ‚Äî nach H√§ndler</li>
+                <li>EXPORT Q1 / 2025 &mdash; nach Zeitraum</li>
+                <li>EXPORT BRILLE &mdash; nach Kategorie</li>
+                <li>EXPORT [H&auml;ndler] &mdash; nach H&auml;ndler</li>
               </ul>
             </div>
           </div>
         </section>
 
         <section id="wer">
-          <div class="section-eyebrow"><span class="num">03</span> &mdash; F√ºr wen</div>
-          <h2 class="section-title">Drei Arten Menschen m√∂gen Belegio besonders.</h2>
+          <div class="section-eyebrow"><span class="num">03</span> &mdash; F&uuml;r wen</div>
+          <h2 class="section-title">Drei Arten Menschen m&ouml;gen Belegio besonders.</h2>
 
           <div class="audience">
             <div class="audience-card">
               <span class="audience-tag">Privat</span>
               <h3 class="audience-title">Privatpersonen</h3>
               <p class="audience-body">
-                F√ºr Garantieanspr√ºche, den Steuerausgleich am Jahresende und f√ºr
-                Werbungskosten, die du zur√ºckholen willst.
+                F&uuml;r Garantieanspr&uuml;che, den Steuerausgleich am Jahresende und f&uuml;r
+                Werbungskosten, die du zur&uuml;ckholen willst.
               </p>
             </div>
             <div class="audience-card">
-              <span class="audience-tag">Selbst√§ndig</span>
-              <h3 class="audience-title">Selbst√§ndige &amp; Kleinunternehmen</h3>
+              <span class="audience-tag">Selbst&auml;ndig</span>
+              <h3 class="audience-title">Selbst&auml;ndige &amp; Kleinunternehmen</h3>
               <p class="audience-body">
-                Wenn du keine Buchhaltungssoftware willst, aber trotzdem Ordnung ‚Äî
+                Wenn du keine Buchhaltungssoftware willst, aber trotzdem Ordnung &mdash;
                 und dein Steuerberater am Jahresende eine saubere CSV bekommen soll.
               </p>
             </div>
             <div class="audience-card">
               <span class="audience-tag">Ordentlich</span>
-              <h3 class="audience-title">Alle, die Ordnung m√∂gen</h3>
+              <h3 class="audience-title">Alle, die Ordnung m&ouml;gen</h3>
               <p class="audience-body">
                 Wenn der Schuhkarton irgendwann nicht mehr reicht und du trotzdem
-                keine App auf dem Handy haben willst ‚Äî willkommen.
+                keine App auf dem Handy haben willst &mdash; willkommen.
               </p>
             </div>
           </div>
@@ -953,10 +972,10 @@
               <div class="waitlist" data-lang="de">
                 <form class="waitlist-form" novalidate>
                   <input type="email" name="email" placeholder="deine@email.at" required aria-label="E-Mail-Adresse">
-                  <button type="submit">Auf die Warteliste ‚Üí</button>
+                  <button type="submit">Auf die Warteliste &rarr;</button>
                 </form>
                 <div class="waitlist-success" role="status">
-                  <span class="check" aria-hidden="true">‚úì</span>
+                  <span class="check" aria-hidden="true">&#10003;</span>
                   <span>Eingetragen. Wir melden uns, sobald Belegio startet.</span>
                 </div>
               </div>
@@ -968,42 +987,42 @@
           <div class="section-eyebrow"><span class="num">04</span> &mdash; Was du nicht brauchst</div>
           <h2 class="section-title">Keine App. Kein Login. Kein neuer Account.</h2>
           <p class="section-intro">
-            Belegio ist absichtlich klein gehalten. E-Mail reicht v√∂llig ‚Äî kein
+            Belegio ist absichtlich klein gehalten. E-Mail reicht v&ouml;llig &mdash; kein
             neues Tool, kein neuer Account, kein Mehraufwand.
           </p>
 
           <div class="nope">
-            <div class="nope-item"><span class="nope-cross">‚úï</span><span class="nope-text">Keine App</span></div>
-            <div class="nope-item"><span class="nope-cross">‚úï</span><span class="nope-text">Kein Login</span></div>
-            <div class="nope-item"><span class="nope-cross">‚úï</span><span class="nope-text">Kein Passwort</span></div>
-            <div class="nope-item"><span class="nope-cross">‚úï</span><span class="nope-text">Keine Software</span></div>
-            <div class="nope-item"><span class="nope-cross">‚úï</span><span class="nope-text">Keine Schulung</span></div>
-            <div class="nope-item"><span class="nope-cross">‚úï</span><span class="nope-text">Keine Updates</span></div>
+            <div class="nope-item"><span class="nope-cross">&times;</span><span class="nope-text">Keine App</span></div>
+            <div class="nope-item"><span class="nope-cross">&times;</span><span class="nope-text">Kein Login</span></div>
+            <div class="nope-item"><span class="nope-cross">&times;</span><span class="nope-text">Kein Passwort</span></div>
+            <div class="nope-item"><span class="nope-cross">&times;</span><span class="nope-text">Keine Software</span></div>
+            <div class="nope-item"><span class="nope-cross">&times;</span><span class="nope-text">Keine Schulung</span></div>
+            <div class="nope-item"><span class="nope-cross">&times;</span><span class="nope-text">Keine Updates</span></div>
           </div>
           <p class="nope-foot">
             <b>Was du brauchst:</b> deine E-Mail. Mehr nicht. Belegio kommt in
-            dein Postfach geflattert ‚Äî und tut dort genau das, was du erwartest.
+            dein Postfach geflattert &mdash; und tut dort genau das, was du erwartest.
           </p>
         </section>
 
         <section id="preis">
           <div class="section-eyebrow"><span class="num">05</span> &mdash; Preis</div>
-          <h2 class="section-title" style="max-width: 24ch;">Ein Preis. Keine √úberraschungen.</h2>
+          <h2 class="section-title" style="max-width: 24ch;">Ein Preis. Keine &Uuml;berraschungen.</h2>
           <p class="section-intro">
             Eine Adresse, bis zu 200 Belege im Jahr, alle Funktionen inklusive.
-            Jederzeit k√ºndbar ‚Äî keine versteckten Kosten.
+            Jederzeit k&uuml;ndbar &mdash; keine versteckten Kosten.
           </p>
 
           <div class="price-card">
             <span class="stamp">Pro Jahr</span>
-            <div class="price-amount">‚Ç¨ 39,99</div>
-            <div class="price-period">J√§hrlich ¬∑ ohne Bindung</div>
+            <div class="price-amount">&euro; 39,99</div>
+            <div class="price-period">J&auml;hrlich &middot; ohne Bindung</div>
             <ul class="price-includes">
-              <li>Pers√∂nliche Belegio-Adresse</li>
+              <li>Pers&ouml;nliche Belegio-Adresse</li>
               <li>Bis 200 Belege pro Jahr</li>
               <li>Automatische Erkennung von Datum, Betrag und MwSt</li>
-              <li>Hashtag-Kategorisierung &amp; H√§ndler-Suche</li>
-              <li>Export f√ºr den Steuerberater</li>
+              <li>Hashtag-Kategorisierung &amp; H&auml;ndler-Suche</li>
+              <li>Export f&uuml;r den Steuerberater</li>
               <li>7 Jahre Aufbewahrung inklusive</li>
             </ul>
           </div>
@@ -1011,13 +1030,13 @@
 
         <section id="sicherheit">
           <div class="section-eyebrow"><span class="num">06</span> &mdash; Sicherheit &amp; Datenschutz</div>
-          <h2 class="section-title">Deine Belege geh√∂ren dir. Punkt.</h2>
+          <h2 class="section-title">Deine Belege geh&ouml;ren dir. Punkt.</h2>
 
           <ul class="security">
             <li>
               <span class="security-num">01</span>
               <span class="security-text">
-                <b>Verschl√ºsselt gespeichert</b> in Frankfurt, Deutschland ‚Äî
+                <b>Verschl&uuml;sselt gespeichert</b> in Frankfurt, Deutschland &mdash;
                 auf EU-Servern.
               </span>
             </li>
@@ -1025,20 +1044,20 @@
               <span class="security-num">02</span>
               <span class="security-text">
                 <b>Keine Werbung. Kein Tracking. Keine Weitergabe</b> deiner Daten
-                an Dritte ‚Äî niemals.
+                an Dritte &mdash; niemals.
               </span>
             </li>
             <li>
               <span class="security-num">03</span>
               <span class="security-text">
-                <b>7 Jahre Aufbewahrung</b> gem√§√ü ¬ß132 BAO ‚Äî gesetzliche
-                Mindestfrist f√ºr Belege in √ñsterreich.
+                <b>7 Jahre Aufbewahrung</b> gem&auml;&szlig; &sect;132 BAO &mdash; gesetzliche
+                Mindestfrist f&uuml;r Belege in &Ouml;sterreich.
               </span>
             </li>
             <li>
               <span class="security-num">04</span>
               <span class="security-text">
-                <b>DSGVO-konform.</b> Datenexport oder L√∂schung deines Kontos
+                <b>DSGVO-konform.</b> Datenexport oder L&ouml;schung deines Kontos
                 jederzeit auf Anfrage.
               </span>
             </li>
@@ -1048,16 +1067,16 @@
         <section class="cta-repeat">
           <h2>Wir melden uns, wenn's losgeht.</h2>
           <p>
-            Belegio startet bald. Trag dich auf die Warteliste ein ‚Äî
+            Belegio startet bald. Trag dich auf die Warteliste ein &mdash;
             wir schreiben dir genau einmal, zum Launch.
           </p>
           <div class="waitlist" data-lang="de">
             <form class="waitlist-form" novalidate>
               <input type="email" name="email" placeholder="deine@email.at" required aria-label="E-Mail-Adresse">
-              <button type="submit">Auf die Warteliste ‚Üí</button>
+              <button type="submit">Auf die Warteliste &rarr;</button>
             </form>
             <div class="waitlist-success" role="status">
-              <span class="check" aria-hidden="true">‚úì</span>
+              <span class="check" aria-hidden="true">&#10003;</span>
               <span>Eingetragen. Wir melden uns, sobald Belegio startet.</span>
             </div>
           </div>
@@ -1073,14 +1092,14 @@
 
         <section class="hero">
           <div>
-            <div class="kicker">Belegio ¬∑ Receipt management by email</div>
+            <div class="kicker">Belegio &middot; Receipt management by email</div>
             <h1>
               Take a photo.<br>
               Send an email.<br>
               <span class="accent">Done.</span>
             </h1>
             <p class="lede">
-              Every receipt, kept. Photograph it, email it to us ‚Äî we store it
+              Every receipt, kept. Photograph it, email it to us &mdash; we store it
               safely, sort it, and find it for you whenever you need it.
             </p>
             <div class="eyebrow">For private people, freelancers &amp; small businesses</div>
@@ -1088,15 +1107,15 @@
             <div class="waitlist" data-lang="en">
               <form class="waitlist-form" novalidate>
                 <input type="email" name="email" placeholder="your@email.com" required aria-label="Email address">
-                <button type="submit">Join the waitlist ‚Üí</button>
+                <button type="submit">Join the waitlist &rarr;</button>
               </form>
               <div class="waitlist-success" role="status">
-                <span class="check" aria-hidden="true">‚úì</span>
+                <span class="check" aria-hidden="true">&#10003;</span>
                 <span>You're on the list. We'll be in touch when Belegio launches.</span>
               </div>
               <div class="waitlist-note">
                 We email you only at launch. No newsletter, no ads.<br>
-                Later: <b>‚Ç¨39.99 / year</b> ¬∑ Cancel anytime
+                Later: <b>&euro;39.99 / year</b> &middot; Cancel anytime
               </div>
             </div>
 
@@ -1116,33 +1135,33 @@
             <div class="receipt receipt-a">
               <div class="perf-top"></div>
               <div class="head">SUPERMARKET</div>
-              <div class="date">12.05.2026 ¬∑ 14:32</div>
+              <div class="date">12.05.2026 &middot; 14:32</div>
               <div class="rule"></div>
-              <div class="row"><span>‚ñî‚ñî‚ñî‚ñî‚ñî‚ñî‚ñî</span><span>‚Ç¨ ‚Äî,‚Äî</span></div>
-              <div class="row"><span>‚ñî‚ñî‚ñî‚ñî‚ñî‚ñî‚ñî</span><span>‚Ç¨ ‚Äî,‚Äî</span></div>
-              <div class="row"><span>‚ñî‚ñî‚ñî‚ñî‚ñî‚ñî‚ñî</span><span>‚Ç¨ ‚Äî,‚Äî</span></div>
-              <div class="row"><span>‚ñî‚ñî‚ñî‚ñî‚ñî‚ñî‚ñî</span><span>‚Ç¨ ‚Äî,‚Äî</span></div>
-              <div class="row"><span>‚ñî‚ñî‚ñî‚ñî‚ñî‚ñî‚ñî</span><span>‚Ç¨ ‚Äî,‚Äî</span></div>
-              <div class="row"><span>‚ñî‚ñî‚ñî‚ñî‚ñî‚ñî‚ñî</span><span>‚Ç¨ ‚Äî,‚Äî</span></div>
-              <div class="total"><span>TOTAL</span><span>‚Ç¨ 42.80</span></div>
+              <div class="row"><span>&#9620;&#9620;&#9620;&#9620;&#9620;&#9620;&#9620;</span><span>&euro; &mdash;,&mdash;</span></div>
+              <div class="row"><span>&#9620;&#9620;&#9620;&#9620;&#9620;&#9620;&#9620;</span><span>&euro; &mdash;,&mdash;</span></div>
+              <div class="row"><span>&#9620;&#9620;&#9620;&#9620;&#9620;&#9620;&#9620;</span><span>&euro; &mdash;,&mdash;</span></div>
+              <div class="row"><span>&#9620;&#9620;&#9620;&#9620;&#9620;&#9620;&#9620;</span><span>&euro; &mdash;,&mdash;</span></div>
+              <div class="row"><span>&#9620;&#9620;&#9620;&#9620;&#9620;&#9620;&#9620;</span><span>&euro; &mdash;,&mdash;</span></div>
+              <div class="row"><span>&#9620;&#9620;&#9620;&#9620;&#9620;&#9620;&#9620;</span><span>&euro; &mdash;,&mdash;</span></div>
+              <div class="total"><span>TOTAL</span><span>&euro; 42.80</span></div>
               <div class="perf-bot"></div>
             </div>
             <div class="receipt receipt-b">
               <div class="perf-top"></div>
               <div class="head">PETROL STATION</div>
-              <div class="date">28.04.2026 ¬∑ 09:12</div>
+              <div class="date">28.04.2026 &middot; 09:12</div>
               <div class="rule"></div>
-              <div class="row"><span>‚ñî‚ñî‚ñî‚ñî‚ñî</span><span>‚Ç¨ ‚Äî,‚Äî</span></div>
-              <div class="row"><span>‚ñî‚ñî‚ñî‚ñî‚ñî</span><span>‚Ç¨ ‚Äî,‚Äî</span></div>
-              <div class="row"><span>‚ñî‚ñî‚ñî‚ñî‚ñî</span><span>‚Ç¨ ‚Äî,‚Äî</span></div>
-              <div class="total"><span>TOTAL</span><span>‚Ç¨ 65.40</span></div>
+              <div class="row"><span>&#9620;&#9620;&#9620;&#9620;&#9620;</span><span>&euro; &mdash;,&mdash;</span></div>
+              <div class="row"><span>&#9620;&#9620;&#9620;&#9620;&#9620;</span><span>&euro; &mdash;,&mdash;</span></div>
+              <div class="row"><span>&#9620;&#9620;&#9620;&#9620;&#9620;</span><span>&euro; &mdash;,&mdash;</span></div>
+              <div class="total"><span>TOTAL</span><span>&euro; 65.40</span></div>
               <div class="perf-bot"></div>
             </div>
             <div class="phone">
               <div class="phone-screen">
                 <div class="status">
                   <span>14:32</span>
-                  <span style="opacity:.6">‚óè‚óè‚óè‚óè  5G  ‚ñÆ</span>
+                  <span style="opacity:.6">&#9679;&#9679;&#9679;&#9679;  5G  &#9646;</span>
                 </div>
                 <div class="mail-header">
                   <span class="cancel">Cancel</span>
@@ -1158,12 +1177,12 @@
                   <div class="icon">JPG</div>
                   <div class="meta">
                     <div class="name">receipt_12_05.jpg</div>
-                    <div class="size">1.4 MB ¬∑ Just taken</div>
+                    <div class="size">1.4 MB &middot; Just taken</div>
                   </div>
                 </div>
                 <div class="toast">
-                  <span class="check" aria-hidden="true">‚úì</span>
-                  <span>Saved in <b style="font-weight:600">Belegio</b> ¬∑ May 2026</span>
+                  <span class="check" aria-hidden="true">&#10003;</span>
+                  <span>Saved in <b style="font-weight:600">Belegio</b> &middot; May 2026</span>
                 </div>
               </div>
             </div>
@@ -1188,7 +1207,7 @@
             </li>
             <li>
               <div class="warum-num">D</div>
-              <div class="warum-text">Claim back your tax ‚Äî if only you still had the receipt.</div>
+              <div class="warum-text">Claim back your tax &mdash; if only you still had the receipt.</div>
             </li>
           </ol>
         </section>
@@ -1203,20 +1222,20 @@
 
           <div class="steps">
             <div class="step">
-              <div class="step-num">Step 01 ¬∑ Set up</div>
+              <div class="step-num">Step 01 &middot; Set up</div>
               <h3 class="step-title">Your personal Belegio address</h3>
               <p class="step-body">
-                You get your own email address at Belegio ‚Äî something like
-                belegio4823@belegio.eu. Save it to your contacts ‚Äî done. No login,
+                You get your own email address at Belegio &mdash; something like
+                belegio4823@belegio.eu. Save it to your contacts &mdash; done. No login,
                 no password.
               </p>
             </div>
 
             <div class="step">
-              <div class="step-num">Step 02 ¬∑ Send</div>
+              <div class="step-num">Step 02 &middot; Send</div>
               <h3 class="step-title">Photo. Email. Stored.</h3>
               <p class="step-body">
-                Photograph the receipt, email it to your address ‚Äî in any language.
+                Photograph the receipt, email it to your address &mdash; in any language.
                 PDFs? Just photograph them off the screen. We extract date, vendor,
                 amount and VAT automatically.
               </p>
@@ -1227,16 +1246,16 @@
             </div>
 
             <div class="step">
-              <div class="step-num">Step 03 ¬∑ Retrieve</div>
+              <div class="step-num">Step 03 &middot; Retrieve</div>
               <h3 class="step-title">Send EXPORT, get a ZIP.</h3>
               <p class="step-body">
-                Write ‚ÄûEXPORT" to your Belegio address ‚Äî you'll get all receipts as
+                Write &bdquo;EXPORT" to your Belegio address &mdash; you'll get all receipts as
                 a ZIP plus an accountant-ready CSV in your inbox.
               </p>
               <ul class="step-details">
-                <li>EXPORT Q1 / 2025 ‚Äî by period</li>
-                <li>EXPORT GLASSES ‚Äî by category</li>
-                <li>EXPORT [vendor] ‚Äî by vendor</li>
+                <li>EXPORT Q1 / 2025 &mdash; by period</li>
+                <li>EXPORT GLASSES &mdash; by category</li>
+                <li>EXPORT [vendor] &mdash; by vendor</li>
               </ul>
             </div>
           </div>
@@ -1259,7 +1278,7 @@
               <span class="audience-tag">Self-employed</span>
               <h3 class="audience-title">Freelancers &amp; small businesses</h3>
               <p class="audience-body">
-                If you don't want accounting software but you still want order ‚Äî and
+                If you don't want accounting software but you still want order &mdash; and
                 your accountant deserves a clean CSV at year-end.
               </p>
             </div>
@@ -1268,7 +1287,7 @@
               <h3 class="audience-title">Anyone who likes order</h3>
               <p class="audience-body">
                 When the shoebox doesn't cut it anymore and you still don't want
-                another app on your phone ‚Äî welcome.
+                another app on your phone &mdash; welcome.
               </p>
             </div>
           </div>
@@ -1282,10 +1301,10 @@
               <div class="waitlist" data-lang="en">
                 <form class="waitlist-form" novalidate>
                   <input type="email" name="email" placeholder="your@email.com" required aria-label="Email address">
-                  <button type="submit">Join the waitlist ‚Üí</button>
+                  <button type="submit">Join the waitlist &rarr;</button>
                 </form>
                 <div class="waitlist-success" role="status">
-                  <span class="check" aria-hidden="true">‚úì</span>
+                  <span class="check" aria-hidden="true">&#10003;</span>
                   <span>You're on the list. We'll be in touch when Belegio launches.</span>
                 </div>
               </div>
@@ -1297,21 +1316,21 @@
           <div class="section-eyebrow"><span class="num">04</span> &mdash; What you don't need</div>
           <h2 class="section-title">No app. No login. No new account.</h2>
           <p class="section-intro">
-            Belegio is deliberately small. Email is all you need ‚Äî no new tool,
+            Belegio is deliberately small. Email is all you need &mdash; no new tool,
             no new account, no extra friction.
           </p>
 
           <div class="nope">
-            <div class="nope-item"><span class="nope-cross">‚úï</span><span class="nope-text">No app</span></div>
-            <div class="nope-item"><span class="nope-cross">‚úï</span><span class="nope-text">No login</span></div>
-            <div class="nope-item"><span class="nope-cross">‚úï</span><span class="nope-text">No password</span></div>
-            <div class="nope-item"><span class="nope-cross">‚úï</span><span class="nope-text">No software</span></div>
-            <div class="nope-item"><span class="nope-cross">‚úï</span><span class="nope-text">No training</span></div>
-            <div class="nope-item"><span class="nope-cross">‚úï</span><span class="nope-text">No updates</span></div>
+            <div class="nope-item"><span class="nope-cross">&times;</span><span class="nope-text">No app</span></div>
+            <div class="nope-item"><span class="nope-cross">&times;</span><span class="nope-text">No login</span></div>
+            <div class="nope-item"><span class="nope-cross">&times;</span><span class="nope-text">No password</span></div>
+            <div class="nope-item"><span class="nope-cross">&times;</span><span class="nope-text">No software</span></div>
+            <div class="nope-item"><span class="nope-cross">&times;</span><span class="nope-text">No training</span></div>
+            <div class="nope-item"><span class="nope-cross">&times;</span><span class="nope-text">No updates</span></div>
           </div>
           <p class="nope-foot">
             <b>What you need:</b> your email. That's it. Belegio lives quietly in
-            your inbox ‚Äî and does exactly what you'd expect, no learning curve.
+            your inbox &mdash; and does exactly what you'd expect, no learning curve.
           </p>
         </section>
 
@@ -1320,13 +1339,13 @@
           <h2 class="section-title" style="max-width: 24ch;">One price. No surprises.</h2>
           <p class="section-intro">
             One address, up to 200 receipts per year, all features included.
-            Cancel any time ‚Äî no hidden costs.
+            Cancel any time &mdash; no hidden costs.
           </p>
 
           <div class="price-card">
             <span class="stamp">Per year</span>
-            <div class="price-amount">‚Ç¨ 39.99</div>
-            <div class="price-period">Yearly ¬∑ no commitment</div>
+            <div class="price-amount">&euro; 39.99</div>
+            <div class="price-period">Yearly &middot; no commitment</div>
             <ul class="price-includes">
               <li>Personal Belegio address</li>
               <li>Up to 200 receipts per year</li>
@@ -1346,7 +1365,7 @@
             <li>
               <span class="security-num">01</span>
               <span class="security-text">
-                <b>Encrypted storage</b> in Frankfurt, Germany ‚Äî
+                <b>Encrypted storage</b> in Frankfurt, Germany &mdash;
                 on EU servers.
               </span>
             </li>
@@ -1354,13 +1373,13 @@
               <span class="security-num">02</span>
               <span class="security-text">
                 <b>No advertising. No tracking. No sharing</b> of your data
-                with third parties ‚Äî ever.
+                with third parties &mdash; ever.
               </span>
             </li>
             <li>
               <span class="security-num">03</span>
               <span class="security-text">
-                <b>7-year retention</b> per ¬ß132 BAO ‚Äî the legal minimum
+                <b>7-year retention</b> per &sect;132 BAO &mdash; the legal minimum
                 for receipts in Austria.
               </span>
             </li>
@@ -1377,16 +1396,16 @@
         <section class="cta-repeat">
           <h2>We'll let you know when it's live.</h2>
           <p>
-            Belegio launches soon. Sign up for the waitlist ‚Äî
+            Belegio launches soon. Sign up for the waitlist &mdash;
             we'll email you exactly once, at launch.
           </p>
           <div class="waitlist" data-lang="en">
             <form class="waitlist-form" novalidate>
               <input type="email" name="email" placeholder="your@email.com" required aria-label="Email address">
-              <button type="submit">Join the waitlist ‚Üí</button>
+              <button type="submit">Join the waitlist &rarr;</button>
             </form>
             <div class="waitlist-success" role="status">
-              <span class="check" aria-hidden="true">‚úì</span>
+              <span class="check" aria-hidden="true">&#10003;</span>
               <span>You're on the list. We'll be in touch when Belegio launches.</span>
             </div>
           </div>
@@ -1399,7 +1418,7 @@
     <footer>
       <div class="footer-meta">
         <span class="footer-name">Belegio</span>
-        <span>¬© 2026 ¬∑ Wien, √ñsterreich</span>
+        <span>&copy; 2026 &middot; Wien, &Ouml;sterreich</span>
         <span><a href="mailto:support@belegio.eu">support@belegio.eu</a></span>
       </div>
       <div class="footer-links">
@@ -1415,7 +1434,7 @@
     </footer>
   </div>
 
-  <button class="back-to-top" id="back-to-top" aria-label="Zur√ºck nach oben">‚Üë</button>
+  <button class="back-to-top" id="back-to-top" aria-label="Zur&uuml;ck nach oben">&uarr;</button>
 
   <script>
     // Back-to-top
@@ -1446,7 +1465,7 @@
       setLang(lang);
     })();
 
-    // Waitlist ‚Äî wired to Formspree
+    // Waitlist &mdash; wired to Formspree
     (function () {
       var STORAGE_KEY = 'belegio_waitlist';
       var FORMSPREE_URL = 'https://formspree.io/f/mqenlvdd';
@@ -1467,18 +1486,18 @@
           var wrap = form.closest('.waitlist');
           var lang = (wrap && wrap.dataset.lang) || 'de';
 
-          // POST to Formspree (fire-and-display ‚Äî even if network blocked, UX confirms)
+          // POST to Formspree (fire-and-display &mdash; even if network blocked, UX confirms)
           fetch(FORMSPREE_URL, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
             body: JSON.stringify({ email: email, lang: lang })
-          }).catch(function () { /* ignore ‚Äî still show success */ });
+          }).catch(function () { /* ignore &mdash; still show success */ });
 
           markSent(email);
         });
       });
 
-      // Returning visitor ‚Äî show success immediately
+      // Returning visitor &mdash; show success immediately
       try {
         if (localStorage.getItem(STORAGE_KEY)) {
           document.querySelectorAll('.waitlist').forEach(function (w) { w.classList.add('sent'); });
@@ -1488,4 +1507,3 @@
   </script>
 </body>
 </html>
-
