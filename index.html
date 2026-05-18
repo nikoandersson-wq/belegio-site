@@ -8,7 +8,7 @@
   <meta name="keywords" content="Belegverwaltung, Belege, Quittungen, Steuer, Steuerberater, Steuerausgleich, Buchhaltung, &Ouml;sterreich, DSGVO, Receipt, OCR, Wien, Frankfurt">
   <meta name="author" content="Belegio">
   <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#F4EFE2">
+  <meta name="theme-color" content="#F4F3F0">
   <link rel="canonical" href="https://belegio.eu/">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23B4451F'/%3E%3Ctext x='16' y='23' font-family='Helvetica Neue,Helvetica,Arial,sans-serif' font-size='22' font-weight='700' fill='%23F4EFE2' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E">
   <meta property="og:type" content="website">
@@ -35,11 +35,12 @@
   </script>
   <style>
     :root {
-      --cream: #F4EFE2;
+      --cream: #F4F3F0;       /* neutral off-white */
       --ink: #1A1A1A;
-      --ink-soft: #211F1D;   /* slightly warmer near-black for big dark surfaces */
-      --rust: #B4451F;
-      --paper: #FFFCF6;
+      --ink-soft: #0F2A1F;   /* deep bottle green for big dark surfaces */
+      --accent-on-dark: #E0C896;  /* warm wheat — accent visible on deep green */
+      --rust: #1F4332;
+      --paper: #FCFBF8;
       --muted: rgba(26,26,26,0.55);
       --muted-2: rgba(26,26,26,0.72);
       --hair: rgba(26,26,26,0.08);
@@ -74,7 +75,7 @@
       padding: 20px 56px;
       gap: 24px;
       position: sticky; top: 0;
-      background: rgba(244,239,226,0.92);
+      background: rgba(244,243,240,0.92);
       backdrop-filter: saturate(140%) blur(12px);
       -webkit-backdrop-filter: saturate(140%) blur(12px);
       border-bottom: 1px solid var(--hair);
@@ -188,7 +189,7 @@
     }
     form.waitlist-form:focus-within {
       border-color: var(--rust);
-      box-shadow: 0 8px 24px rgba(180,69,31,0.18);
+      box-shadow: 0 8px 24px rgba(31,67,50,0.18);
     }
     form.waitlist-form input {
       flex: 1; border: 0; outline: none; background: transparent;
@@ -203,7 +204,7 @@
       transition: background .15s, transform .12s;
       white-space: nowrap;
     }
-    form.waitlist-form button:hover { background: #963A1A; }
+    form.waitlist-form button:hover { background: #15301F; }
     form.waitlist-form button:active { transform: scale(0.97); }
     .waitlist-success {
       display: none;
@@ -256,7 +257,7 @@
       letter-spacing: 0.02em;
       color: var(--ink);
       z-index: 3;
-      box-shadow: 0 4px 16px rgba(180,69,31,0.1);
+      box-shadow: 0 4px 16px rgba(31,67,50,0.1);
     }
     .address-bubble b { color: var(--rust); font-weight: 700; }
     .address-bubble::after {
@@ -311,7 +312,7 @@
       width: 280px; height: 560px;
       background: var(--ink);
       border-radius: 38px; padding: 8px;
-      box-shadow: 0 30px 80px rgba(26,26,26,0.22), 0 6px 16px rgba(180,69,31,0.08);
+      box-shadow: 0 30px 80px rgba(26,26,26,0.22), 0 6px 16px rgba(31,67,50,0.08);
       z-index: 1;
     }
     .phone-screen {
@@ -347,7 +348,7 @@
       background: var(--cream);
       border-radius: 10px; padding: 12px 14px;
       display: flex; align-items: center; gap: 12px;
-      border: 1px solid rgba(180,69,31,0.18);
+      border: 1px solid rgba(31,67,50,0.18);
     }
     .attach .icon {
       width: 36px; height: 36px; background: #FFF;
@@ -446,21 +447,21 @@
       padding: 96px 72px 104px;
       position: relative;
     }
-    .ink .section-eyebrow { color: rgba(244,239,226,0.85); }
-    .ink .section-eyebrow::after { background: rgba(244,239,226,0.16); }
+    .ink .section-eyebrow { color: rgba(244,243,240,0.85); }
+    .ink .section-eyebrow::after { background: rgba(244,243,240,0.16); }
     .ink .section-eyebrow .num { color: var(--cream); }
     .ink .section-title { color: var(--cream); }
-    .ink .section-intro { color: rgba(244,239,226,0.85); }
+    .ink .section-intro { color: rgba(244,243,240,0.85); }
 
     .steps {
       margin: 64px 0 0;
       display: grid; grid-template-columns: repeat(3, 1fr);
       gap: 0;
-      border-top: 1px solid rgba(244,239,226,0.16);
+      border-top: 1px solid rgba(244,243,240,0.16);
     }
     .step {
       padding: 36px 32px 40px;
-      border-right: 1px solid rgba(244,239,226,0.16);
+      border-right: 1px solid rgba(244,243,240,0.16);
     }
     .step:last-child { border-right: 0; }
     .step-num {
@@ -475,14 +476,20 @@
     }
     .step-body {
       margin: 0; font-size: 18px; line-height: 1.6;
-      color: rgba(244,239,226,0.95); text-wrap: pretty;
+      color: rgba(244,243,240,0.95); text-wrap: pretty;
     }
     .step-details {
       margin: 20px 0 0; padding: 0; list-style: none;
       font-family: var(--mono); font-size: 14px; line-height: 1.8;
-      color: rgba(244,239,226,0.85);
+      color: rgba(244,243,240,0.85);
     }
     .step-details li::before { content: "\2192   "; color: var(--rust); }
+
+    .ink .step-num { color: var(--accent-on-dark); }
+    .ink .step-details li::before { content: "\2192   "; color: var(--accent-on-dark); }
+    .cta-repeat form.waitlist-form { background: rgba(244,243,240,0.08); border-color: rgba(224,200,150,0.4); }
+    .cta-repeat form.waitlist-form button { background: var(--accent-on-dark); color: var(--ink-soft); }
+    .cta-repeat form.waitlist-form button:hover { background: #D4B97A; }
 
     /* AUDIENCE */
     .audience {
@@ -653,7 +660,7 @@
     .faq-question:focus-visible { outline: none; }
     .faq-question:focus-visible .faq-icon {
       border-color: var(--rust);
-      box-shadow: 0 0 0 3px rgba(180,69,31,0.18);
+      box-shadow: 0 0 0 3px rgba(31,67,50,0.18);
     }
     .faq-icon {
       flex: none;
@@ -712,7 +719,7 @@
     .faq-answer code {
       font-family: var(--mono);
       font-size: 14px;
-      background: rgba(180,69,31,0.08);
+      background: rgba(31,67,50,0.08);
       color: var(--rust);
       padding: 2px 7px; border-radius: 4px;
       letter-spacing: 0;
@@ -723,7 +730,7 @@
       color: var(--muted);
       max-width: 560px;
     }
-    .faq-footnote a { color: var(--rust); text-decoration: none; font-weight: 600; border-bottom: 1px solid rgba(180,69,31,0.3); }
+    .faq-footnote a { color: var(--rust); text-decoration: none; font-weight: 600; border-bottom: 1px solid rgba(31,67,50,0.3); }
     .faq-footnote a:hover { border-bottom-color: var(--rust); }
 
     /* CTA REPEAT */
@@ -743,16 +750,16 @@
     }
     .cta-repeat p {
       margin: 16px auto 32px; max-width: 480px;
-      color: rgba(244,239,226,0.78);
+      color: rgba(244,243,240,0.78);
       font-size: 17px; line-height: 1.55;
     }
     .cta-repeat form {
       max-width: 460px; margin: 0 auto;
-      background: rgba(244,239,226,0.08);
-      border: 1px solid rgba(244,239,226,0.18);
+      background: rgba(244,243,240,0.08);
+      border: 1px solid rgba(244,243,240,0.18);
     }
     .cta-repeat form input { color: var(--cream); }
-    .cta-repeat form input::placeholder { color: rgba(244,239,226,0.5); }
+    .cta-repeat form input::placeholder { color: rgba(244,243,240,0.5); }
 
     /* FOOTER */
     footer {
@@ -805,13 +812,13 @@
       border: 0; cursor: pointer;
       display: grid; place-items: center;
       font-size: 22px; line-height: 1;
-      box-shadow: 0 6px 20px rgba(180,69,31,0.35);
+      box-shadow: 0 6px 20px rgba(31,67,50,0.35);
       opacity: 0; visibility: hidden;
       transition: opacity 0.25s, visibility 0.25s, background 0.15s;
       z-index: 90;
     }
     .back-to-top.visible { opacity: 1; visibility: visible; }
-    .back-to-top:hover { background: #963A1A; }
+    .back-to-top:hover { background: #15301F; }
 
     /* MOBILE */
     @media (max-width: 900px) {
@@ -819,7 +826,7 @@
       .warum-list, .steps, .audience, .nope, .security { grid-template-columns: 1fr; }
       .warum-list li:nth-child(odd) { padding-right: 0; border-right: 0; }
       .warum-list li:nth-child(even) { padding-left: 0; }
-      .step { border-right: 0; border-bottom: 1px solid rgba(244,239,226,0.16); }
+      .step { border-right: 0; border-bottom: 1px solid rgba(244,243,240,0.16); }
       .step:last-child { border-bottom: 0; }
       .security li, .security li:nth-child(2n) { border-right: 0; }
       .security li { padding: 20px 22px; }
@@ -941,7 +948,7 @@
 
           <div class="scene" aria-hidden="true">
             <div class="address-bubble">
-              Jeder Kunde bekommt eine eigene Adresse: <b><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c4a6a1a8a1a3adabf4f5f6f784a6a1a8a1a3adabeaa1b1">[email&#160;protected]</a></b>
+              Jeder Kunde bekommt eine eigene Adresse: <b><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f290979e97959b9dc2c3c0c1b290979e97959b9ddc9787">[email&#160;protected]</a></b>
             </div>
             <div class="receipt receipt-a">
               <div class="perf-top"></div>
@@ -980,7 +987,7 @@
                   <span class="send">Senden</span>
                 </div>
                 <div class="mail-form">
-                  <div class="field"><span class="label">An:</span><span class="val"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0c6e6960696b65633c3d3e3f4c6e6960696b6563226979">[email&#160;protected]</a></span></div>
+                  <div class="field"><span class="label">An:</span><span class="val"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7d1f1811181a14124d4c4f4e3d1f1811181a1412531808">[email&#160;protected]</a></span></div>
                   <div class="field"><span class="label">Betreff:</span><span class="val dim">#mittagessen</span></div>
                 </div>
                 <div class="attach">
@@ -1036,7 +1043,7 @@
               <h3 class="step-title">Deine eigene Belegio-Adresse</h3>
               <p class="step-body">
                 Du bekommst deine pers&ouml;nliche E-Mail-Adresse bei Belegio &mdash; sowas wie
-                <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="80e2e5ece5e7e9efb0b1b2b3c0e2e5ece5e7e9efaee5f5">[email&#160;protected]</a>. Speicher sie im Adressbuch &mdash; fertig. Kein
+                <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a3c1c6cfc6c4cacc93929190e3c1c6cfc6c4cacc8dc6d6">[email&#160;protected]</a>. Speicher sie im Adressbuch &mdash; fertig. Kein
                 Login, kein Passwort.
               </p>
             </div>
@@ -1208,7 +1215,7 @@
           <div class="section-eyebrow"><span class="num">07</span> &mdash; H&auml;ufige Fragen</div>
           <h2 class="section-title">Alles, was du wissen willst.</h2>
           <p class="section-intro">
-            Eine Frage offen? Schreib uns an <a href="/cdn-cgi/l/email-protection#442c2528282b0426212821232d2b6a2131" style="color:var(--rust);text-decoration:none;font-weight:600;border-bottom:1px solid rgba(180,69,31,0.3);"><span class="__cf_email__" data-cfemail="670f060b0b082705020b02000e08490212">[email&#160;protected]</span></a> &mdash; wir antworten meist innerhalb eines Tages.
+            Eine Frage offen? Schreib uns an <a href="/cdn-cgi/l/email-protection#046c6568686b4466616861636d6b2a6171" style="color:var(--rust);text-decoration:none;font-weight:600;border-bottom:1px solid rgba(31,67,50,0.3);"><span class="__cf_email__" data-cfemail="9cf4fdf0f0f3dcfef9f0f9fbf5f3b2f9e9">[email&#160;protected]</span></a> &mdash; wir antworten meist innerhalb eines Tages.
           </p>
 
           <div class="faq">
@@ -1376,7 +1383,7 @@
 
           <div class="scene" aria-hidden="true">
             <div class="address-bubble">
-              Each customer gets their own address: <b><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bcded9d0d9dbd5d38c8d8e8ffcded9d0d9dbd5d392d9c9">[email&#160;protected]</a></b>
+              Each customer gets their own address: <b><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="84e6e1e8e1e3edebb4b5b6b7c4e6e1e8e1e3edebaae1f1">[email&#160;protected]</a></b>
             </div>
             <div class="receipt receipt-a">
               <div class="perf-top"></div>
@@ -1415,7 +1422,7 @@
                   <span class="send">Send</span>
                 </div>
                 <div class="mail-form">
-                  <div class="field"><span class="label">To:</span><span class="val"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1c7e7970797b75732c2d2e2f5c7e7970797b7573327969">[email&#160;protected]</a></span></div>
+                  <div class="field"><span class="label">To:</span><span class="val"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7012151c1517191f404142433012151c1517191f5e1505">[email&#160;protected]</a></span></div>
                   <div class="field"><span class="label">Subject:</span><span class="val dim">#lunch</span></div>
                 </div>
                 <div class="attach">
@@ -1471,7 +1478,7 @@
               <h3 class="step-title">Your personal Belegio address</h3>
               <p class="step-body">
                 You get your own email address at Belegio &mdash; something like
-                <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1476717871737d7b242526275476717871737d7b3a7161">[email&#160;protected]</a>. Save it to your contacts &mdash; done. No login,
+                <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3a585f565f5d53550a0b08097a585f565f5d5355145f4f">[email&#160;protected]</a>. Save it to your contacts &mdash; done. No login,
                 no password.
               </p>
             </div>
@@ -1643,7 +1650,7 @@
           <div class="section-eyebrow"><span class="num">07</span> &mdash; Frequently asked</div>
           <h2 class="section-title">Everything you might be wondering.</h2>
           <p class="section-intro">
-            Still curious? Write to <a href="/cdn-cgi/l/email-protection#1a727f7676755a787f767f7d7375347f6f" style="color:var(--rust);text-decoration:none;font-weight:600;border-bottom:1px solid rgba(180,69,31,0.3);"><span class="__cf_email__" data-cfemail="b3dbd6dfdfdcf3d1d6dfd6d4dadc9dd6c6">[email&#160;protected]</span></a> &mdash; we usually reply within a day.
+            Still curious? Write to <a href="/cdn-cgi/l/email-protection#7e161b1212113e1c1b121b191711501b0b" style="color:var(--rust);text-decoration:none;font-weight:600;border-bottom:1px solid rgba(31,67,50,0.3);"><span class="__cf_email__" data-cfemail="274f424b4b486745424b42404e48094252">[email&#160;protected]</span></a> &mdash; we usually reply within a day.
           </p>
 
           <div class="faq">
