@@ -620,6 +620,112 @@
     }
     .security-text b { font-weight: 600; }
 
+    /* FAQ — Apple-style accordion */
+    .faq {
+      margin: 56px 0 0;
+      border-top: 1px solid var(--hair-2);
+    }
+    .faq-item {
+      border-bottom: 1px solid var(--hair-2);
+    }
+    .faq-question {
+      width: 100%;
+      background: transparent;
+      border: 0;
+      padding: 28px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 22px;
+      font-weight: 500;
+      letter-spacing: -0.015em;
+      color: var(--ink);
+      text-align: left;
+      line-height: 1.35;
+      transition: color .25s ease;
+      text-wrap: pretty;
+    }
+    .faq-question:hover { color: var(--rust); }
+    .faq-question:hover .faq-icon { border-color: var(--rust); color: var(--rust); }
+    .faq-question:focus-visible { outline: none; }
+    .faq-question:focus-visible .faq-icon {
+      border-color: var(--rust);
+      box-shadow: 0 0 0 3px rgba(180,69,31,0.18);
+    }
+    .faq-icon {
+      flex: none;
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      border: 1px solid var(--hair-2);
+      display: grid;
+      place-items: center;
+      color: var(--ink);
+      background: transparent;
+      position: relative;
+      transition:
+        transform 0.55s cubic-bezier(0.32, 0.72, 0, 1),
+        background 0.35s cubic-bezier(0.32, 0.72, 0, 1),
+        color 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.2s ease;
+    }
+    .faq-icon::before, .faq-icon::after {
+      content: ""; position: absolute;
+      background: currentColor;
+      border-radius: 1px;
+      transition: transform 0.55s cubic-bezier(0.32, 0.72, 0, 1);
+    }
+    .faq-icon::before { width: 12px; height: 1.5px; }
+    .faq-icon::after { width: 1.5px; height: 12px; }
+    .faq-item.open .faq-icon {
+      background: var(--rust);
+      border-color: var(--rust);
+      color: var(--cream);
+      transform: rotate(135deg);
+    }
+    .faq-answer-wrap {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.55s cubic-bezier(0.32, 0.72, 0, 1);
+    }
+    .faq-item.open .faq-answer-wrap { grid-template-rows: 1fr; }
+    .faq-answer-inner { overflow: hidden; min-height: 0; }
+    .faq-answer {
+      padding: 0 80px 32px 0;
+      font-size: 17px;
+      line-height: 1.6;
+      color: var(--muted-2);
+      max-width: 680px;
+      text-wrap: pretty;
+      opacity: 0;
+      transform: translateY(-4px);
+      transition: opacity 0.4s ease 0.05s, transform 0.5s cubic-bezier(0.32, 0.72, 0, 1) 0.05s;
+    }
+    .faq-item.open .faq-answer {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .faq-answer b { color: var(--ink); font-weight: 600; }
+    .faq-answer code {
+      font-family: var(--mono);
+      font-size: 14px;
+      background: rgba(180,69,31,0.08);
+      color: var(--rust);
+      padding: 2px 7px; border-radius: 4px;
+      letter-spacing: 0;
+    }
+    .faq-footnote {
+      margin: 40px 0 0;
+      font-size: 15px;
+      color: var(--muted);
+      max-width: 560px;
+    }
+    .faq-footnote a { color: var(--rust); text-decoration: none; font-weight: 600; border-bottom: 1px solid rgba(180,69,31,0.3); }
+    .faq-footnote a:hover { border-bottom-color: var(--rust); }
+
     /* CTA REPEAT */
     .cta-repeat {
       margin: 96px 0 0;
@@ -725,7 +831,9 @@
       footer { padding: 36px 24px 40px; flex-direction: column; align-items: stretch; }
       nav { padding: 20px 24px; gap: 16px; flex-wrap: wrap; }
       .nav-links { gap: 16px; font-size: 13px; }
-      .nav-links a:nth-child(1), .nav-links a:nth-child(2), .nav-links a:nth-child(3) { display: none; }
+      /* On mobile, hide "How it works" and "Who it's for" (DE+EN) — keep Home, Price, FAQ */
+      .nav-links a:nth-child(3), .nav-links a:nth-child(4),
+      .nav-links a:nth-child(5), .nav-links a:nth-child(6) { display: none; }
       main { padding: 0 24px 64px; }
       .hero { grid-template-columns: 1fr; gap: 32px; min-height: 0; padding-top: 24px; }
       h1 { font-size: clamp(40px, 9vw, 56px); }
@@ -744,6 +852,12 @@
       .step-title, .audience-title { font-size: 22px; }
       .step-body { font-size: 16px; }
       .security-text { font-size: 16px; }
+      .faq-question { font-size: 18px; padding: 22px 0; gap: 18px; }
+      .faq-icon { width: 32px; height: 32px; }
+      .faq-icon::before { width: 11px; }
+      .faq-icon::after { height: 11px; }
+      .faq-answer { padding: 0 0 26px; font-size: 15.5px; }
+      .faq-footnote { font-size: 14px; }
       .inline-cta { flex-direction: column; align-items: stretch; padding: 28px 24px; }
       .inline-cta .inline-text { font-size: 18px; }
       .back-to-top { bottom: 20px; right: 20px; width: 46px; height: 46px; }
@@ -752,7 +866,7 @@
   </style>
 </head>
 <body>
-  <div class="wrap">
+  <div class="wrap" id="top">
 
     <nav>
       <a href="/" class="logo">
@@ -760,12 +874,16 @@
         <span>Belegio</span>
       </a>
       <div class="nav-links">
+        <a href="#top" class="lang-de-inline">Home</a>
+        <a href="#top" class="lang-en-inline">Home</a>
         <a href="#funktioniert" class="lang-de-inline">So funktioniert's</a>
         <a href="#how" class="lang-en-inline">How it works</a>
         <a href="#wer" class="lang-de-inline">F&uuml;r wen</a>
         <a href="#who" class="lang-en-inline">Who it's for</a>
         <a href="#preis" class="lang-de-inline">Preis</a>
         <a href="#price" class="lang-en-inline">Price</a>
+        <a href="#fragen" class="lang-de-inline">FAQ</a>
+        <a href="#faq" class="lang-en-inline">FAQ</a>
         <span class="nav-badge lang-de-inline">Bald verf&uuml;gbar</span>
         <span class="nav-badge lang-en-inline">Coming soon</span>
         <span class="lang-switch">
@@ -823,7 +941,7 @@
 
           <div class="scene" aria-hidden="true">
             <div class="address-bubble">
-              Jeder Kunde bekommt eine eigene Adresse: <b>belegio0123@belegio.eu</b>
+              Jeder Kunde bekommt eine eigene Adresse: <b><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c4a6a1a8a1a3adabf4f5f6f784a6a1a8a1a3adabeaa1b1">[email&#160;protected]</a></b>
             </div>
             <div class="receipt receipt-a">
               <div class="perf-top"></div>
@@ -862,7 +980,7 @@
                   <span class="send">Senden</span>
                 </div>
                 <div class="mail-form">
-                  <div class="field"><span class="label">An:</span><span class="val">belegio0123@belegio.eu</span></div>
+                  <div class="field"><span class="label">An:</span><span class="val"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0c6e6960696b65633c3d3e3f4c6e6960696b6563226979">[email&#160;protected]</a></span></div>
                   <div class="field"><span class="label">Betreff:</span><span class="val dim">#mittagessen</span></div>
                 </div>
                 <div class="attach">
@@ -918,7 +1036,7 @@
               <h3 class="step-title">Deine eigene Belegio-Adresse</h3>
               <p class="step-body">
                 Du bekommst deine pers&ouml;nliche E-Mail-Adresse bei Belegio &mdash; sowas wie
-                belegio0123@belegio.eu. Speicher sie im Adressbuch &mdash; fertig. Kein
+                <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="80e2e5ece5e7e9efb0b1b2b3c0e2e5ece5e7e9efaee5f5">[email&#160;protected]</a>. Speicher sie im Adressbuch &mdash; fertig. Kein
                 Login, kein Passwort.
               </p>
             </div>
@@ -1086,6 +1204,112 @@
           </ul>
         </section>
 
+        <section id="fragen">
+          <div class="section-eyebrow"><span class="num">07</span> &mdash; H&auml;ufige Fragen</div>
+          <h2 class="section-title">Alles, was du wissen willst.</h2>
+          <p class="section-intro">
+            Eine Frage offen? Schreib uns an <a href="/cdn-cgi/l/email-protection#442c2528282b0426212821232d2b6a2131" style="color:var(--rust);text-decoration:none;font-weight:600;border-bottom:1px solid rgba(180,69,31,0.3);"><span class="__cf_email__" data-cfemail="670f060b0b082705020b02000e08490212">[email&#160;protected]</span></a> &mdash; wir antworten meist innerhalb eines Tages.
+          </p>
+
+          <div class="faq">
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false" aria-controls="a-de-1">
+                <span>Brauche ich eine spezielle App oder Software?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer-wrap"><div class="faq-answer-inner">
+                <div class="faq-answer" id="a-de-1" role="region">
+                  Nein. Du nutzt deine ganz normale E-Mail-App &mdash; egal ob Apple Mail, Gmail, Outlook oder ein anderes Programm. Belegio ist einfach eine Adresse, an die du Fotos sendest. <b>Kein Download, kein Login, kein Update.</b>
+                </div>
+              </div></div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false" aria-controls="a-de-2">
+                <span>Wie sende ich einen Beleg?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer-wrap"><div class="faq-answer-inner">
+                <div class="faq-answer" id="a-de-2" role="region">
+                  Ganz einfach: <b>normales Foto mit deinem Handy</b>, an deine Belegio-Adresse mailen &mdash; fertig. Du musst dir &uuml;ber Dateiformate keine Gedanken machen, die Kamera-App deines Telefons reicht. Wir lesen Datum, H&auml;ndler, Betrag und MwSt automatisch aus und schicken dir eine Best&auml;tigung zur&uuml;ck.
+                </div>
+              </div></div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false" aria-controls="a-de-3">
+                <span>Wie finde ich sp&auml;ter einen bestimmten Beleg wieder?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer-wrap"><div class="faq-answer-inner">
+                <div class="faq-answer" id="a-de-3" role="region">
+                  Schreib einfach <code>EXPORT brille</code> oder <code>EXPORT Q1 2026</code> an deine Belegio-Adresse. Du bekommst einen ZIP mit allen passenden Belegen und eine saubere CSV-&Uuml;bersicht direkt ins Postfach &mdash; sortiert nach Zeitraum, Kategorie oder H&auml;ndler.
+                </div>
+              </div></div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false" aria-controls="a-de-4">
+                <span>Was passiert, wenn ich mehr als 200 Belege im Jahr habe?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer-wrap"><div class="faq-answer-inner">
+                <div class="faq-answer" id="a-de-4" role="region">
+                  Du wirst rechtzeitig informiert, sobald du dich der Grenze n&auml;herst. Du kannst dann ein zus&auml;tzliches Kontingent dazubuchen &mdash; <b>kein automatisches Upgrade, keine &Uuml;berraschung auf der Rechnung.</b>
+                </div>
+              </div></div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false" aria-controls="a-de-5">
+                <span>Wie bekommt mein Steuerberater die Belege?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer-wrap"><div class="faq-answer-inner">
+                <div class="faq-answer" id="a-de-5" role="region">
+                  Du bekommst deinen Export als ZIP plus CSV-&Uuml;bersicht ins Postfach. <b>Einfach die E-Mail an deinen Steuerberater weiterleiten</b> &mdash; alles drin, alles sortiert. <span style="color:var(--rust);font-weight:600;">Direktzugang f&uuml;r Steuerberater ist in Arbeit.</span>
+                </div>
+              </div></div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false" aria-controls="a-de-6">
+                <span>Wie sicher sind meine Daten?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer-wrap"><div class="faq-answer-inner">
+                <div class="faq-answer" id="a-de-6" role="region">
+                  Alle Belege werden <b>verschl&uuml;sselt auf EU-Servern in Frankfurt</b> gespeichert. Keine Werbung, kein Tracking, keine Weitergabe an Dritte &mdash; DSGVO-konform und gem&auml;&szlig; &sect;132 BAO sieben Jahre archiviert.
+                </div>
+              </div></div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false" aria-controls="a-de-7">
+                <span>Funktioniert das auch in anderen Sprachen?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer-wrap"><div class="faq-answer-inner">
+                <div class="faq-answer" id="a-de-7" role="region">
+                  Ja. Belegio erkennt Belege in Deutsch, Englisch und vielen weiteren Sprachen &mdash; auch CEE-Sprachen wie Polnisch, Tschechisch, Ungarisch, Slowakisch, Slowenisch, Kroatisch und Rum&auml;nisch sind kein Problem. Der Originalbeleg wird so gespeichert, wie du ihn gesendet hast.
+                </div>
+              </div></div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false" aria-controls="a-de-8">
+                <span>Kann ich Belegio jederzeit k&uuml;ndigen?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer-wrap"><div class="faq-answer-inner">
+                <div class="faq-answer" id="a-de-8" role="region">
+                  Ja. Eine kurze E-Mail gen&uuml;gt &mdash; deine Daten werden auf Wunsch exportiert oder vollst&auml;ndig gel&ouml;scht. <b>Keine Bindung, keine K&uuml;ndigungsfrist, keine Gespr&auml;che mit Hotlines.</b>
+                </div>
+              </div></div>
+            </div>
+          </div>
+        </section>
+
         <section class="cta-repeat">
           <h2>Wir melden uns, wenn's losgeht.</h2>
           <p>
@@ -1152,7 +1376,7 @@
 
           <div class="scene" aria-hidden="true">
             <div class="address-bubble">
-              Each customer gets their own address: <b>belegio0123@belegio.eu</b>
+              Each customer gets their own address: <b><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bcded9d0d9dbd5d38c8d8e8ffcded9d0d9dbd5d392d9c9">[email&#160;protected]</a></b>
             </div>
             <div class="receipt receipt-a">
               <div class="perf-top"></div>
@@ -1191,7 +1415,7 @@
                   <span class="send">Send</span>
                 </div>
                 <div class="mail-form">
-                  <div class="field"><span class="label">To:</span><span class="val">belegio0123@belegio.eu</span></div>
+                  <div class="field"><span class="label">To:</span><span class="val"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1c7e7970797b75732c2d2e2f5c7e7970797b7573327969">[email&#160;protected]</a></span></div>
                   <div class="field"><span class="label">Subject:</span><span class="val dim">#lunch</span></div>
                 </div>
                 <div class="attach">
@@ -1247,7 +1471,7 @@
               <h3 class="step-title">Your personal Belegio address</h3>
               <p class="step-body">
                 You get your own email address at Belegio &mdash; something like
-                belegio0123@belegio.eu. Save it to your contacts &mdash; done. No login,
+                <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1476717871737d7b242526275476717871737d7b3a7161">[email&#160;protected]</a>. Save it to your contacts &mdash; done. No login,
                 no password.
               </p>
             </div>
@@ -1415,6 +1639,112 @@
           </ul>
         </section>
 
+        <section id="faq">
+          <div class="section-eyebrow"><span class="num">07</span> &mdash; Frequently asked</div>
+          <h2 class="section-title">Everything you might be wondering.</h2>
+          <p class="section-intro">
+            Still curious? Write to <a href="/cdn-cgi/l/email-protection#1a727f7676755a787f767f7d7375347f6f" style="color:var(--rust);text-decoration:none;font-weight:600;border-bottom:1px solid rgba(180,69,31,0.3);"><span class="__cf_email__" data-cfemail="b3dbd6dfdfdcf3d1d6dfd6d4dadc9dd6c6">[email&#160;protected]</span></a> &mdash; we usually reply within a day.
+          </p>
+
+          <div class="faq">
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false" aria-controls="a-en-1">
+                <span>Do I need a special app or software?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer-wrap"><div class="faq-answer-inner">
+                <div class="faq-answer" id="a-en-1" role="region">
+                  No. You use the email app you already have &mdash; Apple Mail, Gmail, Outlook, anything. Belegio is just an address you send photos to. <b>Nothing to install, no login, no updates.</b>
+                </div>
+              </div></div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false" aria-controls="a-en-2">
+                <span>How do I send in a receipt?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer-wrap"><div class="faq-answer-inner">
+                <div class="faq-answer" id="a-en-2" role="region">
+                  Simple: take a <b>normal photo with your phone</b> and email it to your Belegio address &mdash; done. No file format to worry about, your phone's camera app is all you need. We extract date, vendor, total and VAT automatically and send you a confirmation back.
+                </div>
+              </div></div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false" aria-controls="a-en-3">
+                <span>How do I find a specific receipt later?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer-wrap"><div class="faq-answer-inner">
+                <div class="faq-answer" id="a-en-3" role="region">
+                  Just email <code>EXPORT glasses</code> or <code>EXPORT Q1 2026</code> to your Belegio address. You'll receive a ZIP with the matching receipts plus a clean CSV overview &mdash; sorted by period, category or vendor.
+                </div>
+              </div></div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false" aria-controls="a-en-4">
+                <span>What happens if I go over 200 receipts a year?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer-wrap"><div class="faq-answer-inner">
+                <div class="faq-answer" id="a-en-4" role="region">
+                  You'll be notified well before you hit the limit. You can top up with an extra quota if you need to &mdash; <b>no automatic upgrades, no surprises on your card.</b>
+                </div>
+              </div></div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false" aria-controls="a-en-5">
+                <span>How does my accountant get the receipts?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer-wrap"><div class="faq-answer-inner">
+                <div class="faq-answer" id="a-en-5" role="region">
+                  You get your export as a ZIP plus a CSV overview in your inbox. <b>Just forward the email to your accountant</b> &mdash; everything's in there, already sorted. <span style="color:var(--rust);font-weight:600;">Direct accountant access is in the works.</span>
+                </div>
+              </div></div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false" aria-controls="a-en-6">
+                <span>How secure is my data?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer-wrap"><div class="faq-answer-inner">
+                <div class="faq-answer" id="a-en-6" role="region">
+                  All receipts are <b>encrypted and stored on EU servers in Frankfurt.</b> No ads, no tracking, no third-party sharing &mdash; GDPR-compliant and archived for seven years per Austrian &sect;132 BAO.
+                </div>
+              </div></div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false" aria-controls="a-en-7">
+                <span>Does it work in other languages?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer-wrap"><div class="faq-answer-inner">
+                <div class="faq-answer" id="a-en-7" role="region">
+                  Yes. Belegio reads receipts in German, English and many more languages &mdash; including CEE languages like Polish, Czech, Hungarian, Slovak, Slovenian, Croatian and Romanian. The original receipt is stored exactly as you sent it.
+                </div>
+              </div></div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false" aria-controls="a-en-8">
+                <span>Can I cancel anytime?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer-wrap"><div class="faq-answer-inner">
+                <div class="faq-answer" id="a-en-8" role="region">
+                  Yes. A short email is enough &mdash; we'll export or fully delete your data on request. <b>No contracts, no cancellation period, no phone calls.</b>
+                </div>
+              </div></div>
+            </div>
+          </div>
+        </section>
+
         <section class="cta-repeat">
           <h2>We'll let you know when it's live.</h2>
           <p>
@@ -1456,7 +1786,7 @@
   </div>
 
   <button class="back-to-top" id="back-to-top" aria-label="Zur&uuml;ck nach oben">&uarr;</button>
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // Back-to-top
     (function () {
       var btn = document.getElementById('back-to-top');
@@ -1466,6 +1796,34 @@
       btn.addEventListener('click', function () {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
+    })();
+
+    // FAQ accordion — multi-open, smooth grid-row height
+    (function () {
+      document.querySelectorAll('.faq-question').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var item = btn.closest('.faq-item');
+          var open = item.classList.toggle('open');
+          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      });
+
+      // If user lands on a deep link to FAQ, open the first item for visual cue
+      function openFirstOnHash() {
+        var h = window.location.hash;
+        if (h === '#faq' || h === '#fragen') {
+          var section = document.querySelector(h);
+          if (!section) return;
+          var first = section.querySelector('.faq-item');
+          if (first && !first.classList.contains('open')) {
+            first.classList.add('open');
+            var qbtn = first.querySelector('.faq-question');
+            if (qbtn) qbtn.setAttribute('aria-expanded', 'true');
+          }
+        }
+      }
+      window.addEventListener('hashchange', openFirstOnHash);
+      openFirstOnHash();
     })();
   </script>
 
