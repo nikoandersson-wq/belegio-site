@@ -561,10 +561,20 @@
       font-size: 72px; font-weight: 700; letter-spacing: -0.045em;
       line-height: 1; color: var(--ink);
     }
+    .price-top-label {
+      font-family: var(--mono);
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink);
+      margin-bottom: 12px;
+      line-height: 1;
+    }
     .price-period {
-      margin-top: 8px;
-      font-family: var(--mono); font-size: 12px;
-      letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted);
+      margin-top: 10px;
+      font-family: var(--mono); font-size: 16px;
+      letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted);
     }
     .price-includes {
       margin: 32px 0 0; padding: 24px 0 0; list-style: none;
@@ -708,7 +718,9 @@
       .security li, .security li:nth-child(2n) { border-right: 0; }
       .security li { padding: 20px 22px; }
       .price-card { padding: 36px 28px 32px; }
+      .price-top-label { font-size: 24px; }
       .price-amount { font-size: 56px; }
+      .price-period { font-size: 14px; }
       .cta-repeat { padding: 56px 28px; border-radius: 18px; margin-left: -24px; margin-right: -24px; }
       footer { padding: 36px 24px 40px; flex-direction: column; align-items: stretch; }
       nav { padding: 20px 24px; gap: 16px; flex-wrap: wrap; }
@@ -1024,8 +1036,9 @@
 
           <div class="price-card">
             <span class="stamp">Pro Jahr</span>
+            <div class="price-top-label">J&auml;hrlich</div>
             <div class="price-amount">&euro; 39,99</div>
-            <div class="price-period">J&auml;hrlich &middot; ohne Bindung</div>
+            <div class="price-period">Ohne Bindung</div>
             <ul class="price-includes">
               <li>Pers&ouml;nliche Belegio-Adresse</li>
               <li>Bis 200 Belege pro Jahr</li>
@@ -1352,8 +1365,9 @@
 
           <div class="price-card">
             <span class="stamp">Per year</span>
+            <div class="price-top-label">Yearly</div>
             <div class="price-amount">&euro; 39.99</div>
-            <div class="price-period">Yearly &middot; no commitment</div>
+            <div class="price-period">No commitment</div>
             <ul class="price-includes">
               <li>Personal Belegio address</li>
               <li>Up to 200 receipts per year</li>
