@@ -838,9 +838,10 @@
       footer { padding: 36px 24px 40px; flex-direction: column; align-items: stretch; }
       nav { padding: 20px 24px; gap: 16px; flex-wrap: wrap; }
       .nav-links { gap: 16px; font-size: 13px; }
-      /* On mobile, hide "How it works" and "Who it's for" (DE+EN) — keep Home, Price, FAQ */
+      /* On mobile, hide "How it works", "Who it's for", and "Blog" (DE+EN) — keep Home, Price, FAQ */
       .nav-links a:nth-child(3), .nav-links a:nth-child(4),
-      .nav-links a:nth-child(5), .nav-links a:nth-child(6) { display: none; }
+      .nav-links a:nth-child(5), .nav-links a:nth-child(6),
+      .nav-links a:nth-child(7), .nav-links a:nth-child(8) { display: none; }
       main { padding: 0 24px 64px; }
       .hero { grid-template-columns: 1fr; gap: 32px; min-height: 0; padding-top: 24px; }
       h1 { font-size: clamp(40px, 9vw, 56px); }
@@ -891,6 +892,8 @@
         <a href="#price" class="lang-en-inline">Price</a>
         <a href="#fragen" class="lang-de-inline">FAQ</a>
         <a href="#faq" class="lang-en-inline">FAQ</a>
+        <a href="/blog/" class="lang-de-inline">Blog</a>
+        <a href="/blog/" class="lang-en-inline">Blog</a>
         <span class="nav-badge lang-de-inline">Bald verf&uuml;gbar</span>
         <span class="nav-badge lang-en-inline">Coming soon</span>
         <span class="lang-switch">

@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title class="lang-de-title">Blog &ndash; Belegio</title>
+  <meta name="description" content="Tipps zu Belegen, Steuern und Buchhaltung f&uuml;r &Ouml;sterreich. Belegio Blog.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#F4F3F0">
+  <link rel="canonical" href="https://belegio.eu/blog/">
+  <link rel="alternate" hreflang="de" href="https://belegio.eu/blog/">
+  <link rel="alternate" hreflang="en" href="https://belegio.eu/blog/">
+  <link rel="alternate" hreflang="x-default" href="https://belegio.eu/blog/">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231F4332'/%3E%3Ctext x='16' y='23' font-family='Helvetica Neue,Helvetica,Arial,sans-serif' font-size='22' font-weight='700' fill='%23F4EFE2' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Blog &mdash; Belegio">
+  <meta property="og:description" content="Tipps zu Belegen, Steuern und Buchhaltung f&uuml;r &Ouml;sterreich.">
+  <meta property="og:url" content="https://belegio.eu/blog/">
+  <meta property="og:locale" content="de_AT">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Blog &mdash; Belegio">
+  <meta name="twitter:description" content="Tipps zu Belegen, Steuern und Buchhaltung f&uuml;r &Ouml;sterreich.">
+  <style>
+    :root {
+      --cream: #F4F3F0;
+      --ink: #1A1A1A;
+      --ink-soft: #0F2A1F;
+      --accent-on-dark: #E0C896;
+      --rust: #1F4332;
+      --paper: #FCFBF8;
+      --muted: rgba(26,26,26,0.55);
+      --muted-2: rgba(26,26,26,0.72);
+      --hair: rgba(26,26,26,0.08);
+      --hair-2: rgba(26,26,26,0.12);
+      --sans: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Inter", "Segoe UI", Helvetica, Arial, sans-serif;
+      --mono: "Courier New", ui-monospace, monospace;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: "";
+      position: fixed; inset: 0;
+      background-image: radial-gradient(rgba(26,26,26,0.04) 1px, transparent 1px);
+      background-size: 4px 4px;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .wrap { position: relative; z-index: 1; max-width: 1440px; margin: 0 auto; }
+
+    /* NAV — identical to index.html */
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 56px;
+      gap: 24px;
+      position: sticky; top: 0;
+      background: rgba(244,243,240,0.92);
+      backdrop-filter: saturate(140%) blur(12px);
+      -webkit-backdrop-filter: saturate(140%) blur(12px);
+      border-bottom: 1px solid var(--hair);
+      z-index: 80;
+    }
+    .logo {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-weight: 700; font-size: 20px; letter-spacing: -0.03em;
+      color: var(--ink); text-decoration: none; flex: none;
+    }
+    .logo .mark {
+      width: 28px; height: 28px;
+      background: var(--rust); border-radius: 6.16px;
+      display: grid; place-items: center;
+      color: var(--cream); font-family: var(--sans);
+      font-weight: 700; font-size: 17.5px; line-height: 1;
+      padding-bottom: 1px; letter-spacing: -0.02em;
+    }
+    .nav-links { display: flex; align-items: center; gap: 28px; font-size: 16px; font-weight: 500; flex-wrap: wrap; justify-content: flex-end; }
+    .nav-links a { color: var(--ink); text-decoration: none; opacity: 0.85; transition: opacity .15s; }
+    .nav-links a:hover { opacity: 1; }
+    .nav-links a.active { opacity: 1; font-weight: 700; }
+    .nav-badge {
+      font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--rust); padding: 4px 10px; border: 1px solid var(--rust); border-radius: 999px;
+    }
+    .lang-switch {
+      display: inline-flex; align-items: center; gap: 4px;
+      font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+    }
+    .lang-switch button {
+      font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em;
+      padding: 4px 8px; border: 1px solid var(--hair-2);
+      background: transparent; color: var(--muted);
+      cursor: pointer; border-radius: 4px; transition: all .15s;
+    }
+    .lang-switch button:hover { color: var(--ink); border-color: var(--ink); }
+    .lang-switch button.active { background: var(--ink); color: var(--cream); border-color: var(--ink); }
+
+    /* LANG VISIBILITY */
+    .lang-en, .lang-en-inline { display: none; }
+    body.lang-en-active .lang-de { display: none; }
+    body.lang-en-active .lang-de-inline { display: none; }
+    body.lang-en-active .lang-en { display: block; }
+    body.lang-en-active .lang-en-inline { display: inline; }
+
+    /* PAGE */
+    main { padding: 72px 72px 120px; }
+
+    .page-eyebrow {
+      font-family: var(--mono);
+      font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 16px;
+    }
+    .page-title {
+      margin: 0 0 16px;
+      font-size: clamp(40px, 5vw, 64px);
+      line-height: 1.0; letter-spacing: -0.04em; font-weight: 700;
+    }
+    .page-intro {
+      font-size: 20px; line-height: 1.55; color: var(--muted-2);
+      max-width: 580px; margin-bottom: 64px;
+    }
+
+    /* POST GRID */
+    .post-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 2px;
+      margin-top: 0;
+    }
+    .post-card {
+      background: var(--paper);
+      border: 1px solid var(--hair-2);
+      border-radius: 2px;
+      padding: 36px 32px 32px;
+      text-decoration: none;
+      color: inherit;
+      display: flex; flex-direction: column; gap: 12px;
+      transition: border-color .15s, box-shadow .15s;
+    }
+    .post-card:hover {
+      border-color: var(--rust);
+      box-shadow: 0 8px 32px rgba(31,67,50,0.1);
+      z-index: 2; position: relative;
+    }
+    .post-meta {
+      font-family: var(--mono);
+      font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--muted); display: flex; align-items: center; gap: 10px;
+    }
+    .post-tag {
+      background: var(--rust); color: var(--cream);
+      border-radius: 3px; padding: 2px 7px;
+      font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em;
+      text-transform: uppercase; font-weight: 700;
+    }
+    .post-title {
+      font-size: 22px; font-weight: 700;
+      line-height: 1.25; letter-spacing: -0.02em;
+      color: var(--ink); margin: 0;
+    }
+    .post-excerpt {
+      font-size: 15px; line-height: 1.6;
+      color: var(--muted-2); margin: 0; flex: 1;
+    }
+    .post-read-more {
+      font-family: var(--mono);
+      font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--rust); font-weight: 700;
+      display: flex; align-items: center; gap: 6px;
+      margin-top: 8px;
+    }
+    .post-read-more::after { content: "\2192"; }
+
+    /* EMPTY STATE */
+    .empty {
+      grid-column: 1/-1;
+      padding: 80px 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 17px;
+    }
+    .empty strong { display: block; font-size: 28px; font-weight: 700; letter-spacing: -0.03em; color: var(--ink); margin-bottom: 12px; }
+
+    /* WAITLIST CTA */
+    .blog-cta {
+      margin-top: 96px;
+      background: var(--ink-soft);
+      border-radius: 4px;
+      padding: 64px 72px;
+      display: flex; flex-direction: column; gap: 24px;
+      align-items: flex-start;
+    }
+    .blog-cta-label {
+      font-family: var(--mono);
+      font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--accent-on-dark); font-weight: 700;
+    }
+    .blog-cta-title {
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 700; letter-spacing: -0.035em;
+      color: var(--cream); margin: 0; line-height: 1.1;
+    }
+    .waitlist { max-width: 460px; width: 100%; }
+    form.waitlist-form {
+      display: flex;
+      background: rgba(244,243,240,0.08);
+      border-radius: 999px; padding: 6px;
+      border: 1px solid rgba(224,200,150,0.4);
+      box-shadow: 0 8px 24px rgba(26,26,26,0.06);
+      transition: border-color .15s, box-shadow .15s;
+    }
+    form.waitlist-form:focus-within {
+      border-color: var(--accent-on-dark);
+      box-shadow: 0 8px 24px rgba(31,67,50,0.18);
+    }
+    form.waitlist-form input {
+      flex: 1; border: 0; outline: none; background: transparent;
+      padding: 10px 16px; font-size: 15px; font-family: inherit;
+      color: var(--cream); min-width: 0;
+    }
+    form.waitlist-form input::placeholder { color: rgba(244,243,240,0.45); }
+    form.waitlist-form button {
+      background: var(--accent-on-dark); color: var(--ink-soft);
+      border: 0; border-radius: 999px;
+      padding: 12px 22px; font-size: 15px; font-weight: 500;
+      cursor: pointer; font-family: inherit;
+      transition: background .15s, transform .12s; white-space: nowrap;
+    }
+    form.waitlist-form button:hover { background: #D4B97A; }
+    form.waitlist-form button:active { transform: scale(0.97); }
+    .waitlist-success {
+      display: none; align-items: center; gap: 12px;
+      border-radius: 12px; padding: 14px 18px;
+      border: 1px solid var(--accent-on-dark);
+      font-size: 15px; color: var(--cream);
+    }
+    .waitlist-success .check {
+      width: 22px; height: 22px; border-radius: 50%;
+      background: var(--accent-on-dark); color: var(--ink-soft);
+      display: grid; place-items: center;
+      font-size: 13px; font-weight: 700; flex: none;
+    }
+    .waitlist.sent form.waitlist-form { display: none; }
+    .waitlist.sent .waitlist-success { display: flex; }
+    .waitlist-note { margin-top: 12px; font-size: 13px; color: rgba(244,243,240,0.55); line-height: 1.5; }
+
+    /* FOOTER */
+    footer {
+      padding: 32px 72px;
+      border-top: 1px solid var(--hair);
+      display: flex; flex-wrap: wrap; gap: 16px;
+      justify-content: space-between; align-items: center;
+      font-size: 13px; color: var(--muted);
+    }
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--ink); }
+    footer .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+
+    /* BACK TO TOP */
+    .back-to-top {
+      position: fixed; bottom: 28px; right: 28px;
+      width: 44px; height: 44px;
+      background: var(--ink); color: var(--cream);
+      border: none; border-radius: 50%;
+      font-size: 18px; cursor: pointer;
+      display: grid; place-items: center;
+      opacity: 0; pointer-events: none;
+      transition: opacity .2s, transform .2s;
+      z-index: 90;
+    }
+    .back-to-top.visible { opacity: 1; pointer-events: auto; }
+    .back-to-top:hover { transform: translateY(-2px); }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      nav { padding: 16px 24px; }
+      main { padding: 48px 24px 80px; }
+      .blog-cta { padding: 48px 28px; }
+      footer { padding: 24px; }
+      .nav-links { gap: 16px; font-size: 13px; }
+      .nav-links a:nth-child(3),
+      .nav-links a:nth-child(4),
+      .nav-links a:nth-child(5),
+      .nav-links a:nth-child(6) { display: none; }
+    }
+    @media (max-width: 600px) {
+      .post-grid { grid-template-columns: 1fr; }
+      .blog-cta-title { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrap" id="top">
+
+  <nav>
+    <a href="/" class="logo">
+      <span class="mark">B</span>
+      <span>Belegio</span>
+    </a>
+    <div class="nav-links">
+      <a href="/" class="lang-de-inline">Home</a>
+      <a href="/" class="lang-en-inline">Home</a>
+      <a href="/#fragen" class="lang-de-inline">FAQ</a>
+      <a href="/#faq" class="lang-en-inline">FAQ</a>
+      <a href="/blog/" class="lang-de-inline active">Blog</a>
+      <a href="/blog/" class="lang-en-inline active">Blog</a>
+      <span class="nav-badge lang-de-inline">Bald verf&uuml;gbar</span>
+      <span class="nav-badge lang-en-inline">Coming soon</span>
+      <span class="lang-switch">
+        <button id="btn-de" class="active" onclick="setLang('de')">DE</button>
+        <button id="btn-en" onclick="setLang('en')">EN</button>
+      </span>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ── HEADER DE ─────────────────────────────────────── -->
+    <div class="lang-de">
+      <p class="page-eyebrow">Belegio &mdash; Blog</p>
+      <h1 class="page-title">Belege, Steuern,<br>Buchhaltung.</h1>
+      <p class="page-intro">Praxistipps f&uuml;r Selbst&auml;ndige, Privatpersonen und kleine Unternehmen in &Ouml;sterreich.</p>
+
+      <div class="post-grid" id="post-grid-de">
+        <!-- Posts go here. Copy a .post-card block per article. -->
+        <!-- EXAMPLE (remove when first real post is added):
+        <a class="post-card" href="/blog/belege-richtig-fotografieren/">
+          <div class="post-meta">
+            <span class="post-tag">Tipps</span>
+            2026-05-20
+          </div>
+          <h2 class="post-title">Belege richtig fotografieren &mdash; 5 Tipps</h2>
+          <p class="post-excerpt">Ein unscharfes Foto kostet dich deinen Vorsteuerabzug. So machst du es richtig.</p>
+          <span class="post-read-more">Weiterlesen</span>
+        </a>
+        -->
+        <div class="empty">
+          <strong>Bald verf&uuml;gbar</strong>
+          Hier erscheinen bald Tipps zu Belegen, Steuern und Buchhaltung.
+        </div>
+      </div>
+    </div>
+
+    <!-- ── HEADER EN ─────────────────────────────────────── -->
+    <div class="lang-en">
+      <p class="page-eyebrow">Belegio &mdash; Blog</p>
+      <h1 class="page-title">Receipts, Tax,<br>Accounting.</h1>
+      <p class="page-intro">Practical tips for freelancers, individuals and small businesses in Austria.</p>
+
+      <div class="post-grid" id="post-grid-en">
+        <!-- Posts go here. Copy a .post-card block per article. -->
+        <!-- EXAMPLE (remove when first real post is added):
+        <a class="post-card" href="/blog/photograph-receipts/">
+          <div class="post-meta">
+            <span class="post-tag">Tips</span>
+            2026-05-20
+          </div>
+          <h2 class="post-title">How to photograph receipts &mdash; 5 tips</h2>
+          <p class="post-excerpt">A blurry photo can cost you your VAT deduction. Here&rsquo;s how to get it right.</p>
+          <span class="post-read-more">Read more</span>
+        </a>
+        -->
+        <div class="empty">
+          <strong>Coming soon</strong>
+          Tips on receipts, taxes and accounting &mdash; coming shortly.
+        </div>
+      </div>
+    </div>
+
+    <!-- ── WAITLIST CTA ──────────────────────────────────── -->
+    <div class="blog-cta">
+      <div class="lang-de">
+        <p class="blog-cta-label">Belegio &mdash; Warteliste</p>
+        <h2 class="blog-cta-title">Belege per E-Mail &mdash;<br>kein Login, keine App.</h2>
+      </div>
+      <div class="lang-en">
+        <p class="blog-cta-label">Belegio &mdash; Waitlist</p>
+        <h2 class="blog-cta-title">Receipts by email &mdash;<br>no login, no app.</h2>
+      </div>
+
+      <div class="waitlist" data-lang="de">
+        <form class="waitlist-form" novalidate>
+          <input type="email" name="email" placeholder="deine@email.at" autocomplete="email" required>
+          <button type="submit"><span class="lang-de-inline">Auf die Warteliste &rarr;</span><span class="lang-en-inline">Join the waitlist &rarr;</span></button>
+        </form>
+        <div class="waitlist-success">
+          <span class="check">&#10003;</span>
+          <span class="lang-de-inline">Danke &mdash; wir melden uns bald.</span>
+          <span class="lang-en-inline">Thanks &mdash; we&rsquo;ll be in touch soon.</span>
+        </div>
+        <p class="waitlist-note lang-de">&euro;39,99&thinsp;/&thinsp;Jahr &middot; Kein Abo, keine Bindung &middot; Jederzeit k&uuml;ndbar</p>
+        <p class="waitlist-note lang-en">&euro;39.99&thinsp;/&thinsp;year &middot; No subscription trap &middot; Cancel any time</p>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <span>&copy; 2026 Belegio &middot; Wien, &Ouml;sterreich</span>
+    <div class="footer-links">
+      <a href="/" class="lang-de-inline">Startseite</a>
+      <a href="/" class="lang-en-inline">Home</a>
+      <a href="/#fragen" class="lang-de-inline">FAQ</a>
+      <a href="/#faq" class="lang-en-inline">FAQ</a>
+      <a href="#" class="lang-de-inline">Impressum</a>
+      <a href="#" class="lang-en-inline">Imprint</a>
+      <a href="#" class="lang-de-inline">Datenschutz</a>
+      <a href="#" class="lang-en-inline">Privacy</a>
+    </div>
+  </footer>
+</div>
+
+<button class="back-to-top" id="back-to-top" aria-label="Zur&uuml;ck nach oben">&uarr;</button>
+
+<script>
+  // Back-to-top
+  (function () {
+    var btn = document.getElementById('back-to-top');
+    window.addEventListener('scroll', function () {
+      btn.classList.toggle('visible', window.scrollY > 400);
+    });
+    btn.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  })();
+
+  // Language switcher
+  function setLang(lang) {
+    document.body.classList.toggle('lang-en-active', lang === 'en');
+    document.getElementById('btn-de').classList.toggle('active', lang === 'de');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.documentElement.lang = lang;
+    try { localStorage.setItem('belegio-lang', lang); } catch (e) {}
+  }
+  (function () {
+    var saved = null;
+    try { saved = localStorage.getItem('belegio-lang'); } catch (e) {}
+    var lang = saved || (navigator.language && navigator.language.toLowerCase().startsWith('de') ? 'de' : 'en');
+    setLang(lang);
+  })();
+
+  // Waitlist — wired to Formspree
+  (function () {
+    var STORAGE_KEY = 'belegio_waitlist';
+    var FORMSPREE_URL = 'https://formspree.io/f/mqenlvdd';
+
+    function markSent(email) {
+      document.querySelectorAll('.waitlist').forEach(function (w) {
+        w.classList.add('sent');
+      });
+      try { localStorage.setItem(STORAGE_KEY, email); } catch (e) {}
+    }
+
+    document.querySelectorAll('.waitlist-form').forEach(function (form) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var email = form.email.value.trim();
+        if (!email || email.indexOf('@') === -1) return;
+        fetch(FORMSPREE_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({ email: email, source: 'blog' })
+        }).catch(function () {});
+        markSent(email);
+      });
+    });
+
+    try {
+      if (localStorage.getItem(STORAGE_KEY)) {
+        document.querySelectorAll('.waitlist').forEach(function (w) { w.classList.add('sent'); });
+      }
+    } catch (e) {}
+  })();
+</script>
+</body>
+</html>
