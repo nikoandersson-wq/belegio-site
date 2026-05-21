@@ -1,42 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
-
-  <!-- Homepage -->
   <url>
     <loc>https://belegio.eu/</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://belegio.eu/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://belegio.eu/"/>
   </url>
-
-  <!-- Blog listing -->
   <url>
     <loc>https://belegio.eu/blog/</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://belegio.eu/blog/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://belegio.eu/blog/"/>
   </url>
-
-  <!-- ──────────────────────────────────────────────────────────────
-       ADD INDIVIDUAL BLOG POSTS BELOW as you publish them.
-       Copy one <url> block per post and fill in:
-         <loc>       full URL of the post
-         <lastmod>   ISO date of last edit
-         <priority>  0.7 for most posts, 0.9 for pillar content
-
-  <url>
-    <loc>https://belegio.eu/blog/SLUG/</loc>
-    <lastmod>YYYY-MM-DD</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="de" href="https://belegio.eu/blog/SLUG/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://belegio.eu/blog/SLUG/"/>
-  </url>
-  ────────────────────────────────────────────────────────────── -->
-
 </urlset>
