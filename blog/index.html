@@ -3,23 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title class="lang-de-title">Blog &ndash; Belegio</title>
-  <meta name="description" content="Tipps zu Belegen, Steuern und Buchhaltung f&uuml;r &Ouml;sterreich. Belegio Blog.">
+  <title class="lang-de-title">Blog &ndash; Bonvio</title>
+  <meta name="description" content="Tipps zu Belegen, Steuern und Buchhaltung f&uuml;r &Ouml;sterreich. Bonvio Blog.">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#F4F3F0">
-  <link rel="canonical" href="https://belegio.eu/blog/">
-  <link rel="alternate" hreflang="de" href="https://belegio.eu/blog/">
-  <link rel="alternate" hreflang="en" href="https://belegio.eu/blog/">
-  <link rel="alternate" hreflang="x-default" href="https://belegio.eu/blog/">
+  <link rel="canonical" href="https://bonvio.eu/blog/">
+  <link rel="alternate" hreflang="de" href="https://bonvio.eu/blog/">
+  <link rel="alternate" hreflang="en" href="https://bonvio.eu/blog/">
+  <link rel="alternate" hreflang="x-default" href="https://bonvio.eu/blog/">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231F4332'/%3E%3Ctext x='16' y='23' font-family='Helvetica Neue,Helvetica,Arial,sans-serif' font-size='22' font-weight='700' fill='%23F4EFE2' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Blog &mdash; Belegio">
+  <meta property="og:title" content="Blog &mdash; Bonvio">
   <meta property="og:description" content="Tipps zu Belegen, Steuern und Buchhaltung f&uuml;r &Ouml;sterreich.">
-  <meta property="og:url" content="https://belegio.eu/blog/">
+  <meta property="og:url" content="https://bonvio.eu/blog/">
   <meta property="og:locale" content="de_AT">
   <meta property="og:locale:alternate" content="en_US">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Blog &mdash; Belegio">
+  <meta name="twitter:title" content="Blog &mdash; Bonvio">
   <meta name="twitter:description" content="Tipps zu Belegen, Steuern und Buchhaltung f&uuml;r &Ouml;sterreich.">
   <style>
     :root {
@@ -302,7 +302,7 @@
   <nav>
     <a href="/" class="logo">
       <span class="mark">B</span>
-      <span>Belegio</span>
+      <span>Bonvio</span>
     </a>
     <div class="nav-links">
       <a href="/" class="lang-de-inline">Home</a>
@@ -324,7 +324,7 @@
 
     <!-- ── HEADER DE ─────────────────────────────────────── -->
     <div class="lang-de">
-      <p class="page-eyebrow">Belegio &mdash; Blog</p>
+      <p class="page-eyebrow">Bonvio &mdash; Blog</p>
       <h1 class="page-title">Belege, Steuern,<br>Buchhaltung.</h1>
       <p class="page-intro">Praxistipps f&uuml;r Selbst&auml;ndige, Privatpersonen und kleine Unternehmen in &Ouml;sterreich.</p>
 
@@ -350,7 +350,7 @@
 
     <!-- ── HEADER EN ─────────────────────────────────────── -->
     <div class="lang-en">
-      <p class="page-eyebrow">Belegio &mdash; Blog</p>
+      <p class="page-eyebrow">Bonvio &mdash; Blog</p>
       <h1 class="page-title">Receipts, Tax,<br>Accounting.</h1>
       <p class="page-intro">Practical tips for freelancers, individuals and small businesses in Austria.</p>
 
@@ -377,11 +377,11 @@
     <!-- ── WAITLIST CTA ──────────────────────────────────── -->
     <div class="blog-cta">
       <div class="lang-de">
-        <p class="blog-cta-label">Belegio &mdash; Warteliste</p>
+        <p class="blog-cta-label">Bonvio &mdash; Warteliste</p>
         <h2 class="blog-cta-title">Belege per E-Mail &mdash;<br>kein Login, keine App.</h2>
       </div>
       <div class="lang-en">
-        <p class="blog-cta-label">Belegio &mdash; Waitlist</p>
+        <p class="blog-cta-label">Bonvio &mdash; Waitlist</p>
         <h2 class="blog-cta-title">Receipts by email &mdash;<br>no login, no app.</h2>
       </div>
 
@@ -403,7 +403,7 @@
   </main>
 
   <footer>
-    <span>&copy; 2026 Belegio &middot; Wien, &Ouml;sterreich</span>
+    <span>&copy; 2026 Bonvio &middot; Wien, &Ouml;sterreich</span>
     <div class="footer-links">
       <a href="/" class="lang-de-inline">Startseite</a>
       <a href="/" class="lang-en-inline">Home</a>
@@ -437,18 +437,18 @@
     document.getElementById('btn-de').classList.toggle('active', lang === 'de');
     document.getElementById('btn-en').classList.toggle('active', lang === 'en');
     document.documentElement.lang = lang;
-    try { localStorage.setItem('belegio-lang', lang); } catch (e) {}
+    try { localStorage.setItem('bonvio-lang', lang); } catch (e) {}
   }
   (function () {
     var saved = null;
-    try { saved = localStorage.getItem('belegio-lang'); } catch (e) {}
+    try { saved = localStorage.getItem('bonvio-lang'); } catch (e) {}
     var lang = saved || (navigator.language && navigator.language.toLowerCase().startsWith('de') ? 'de' : 'en');
     setLang(lang);
   })();
 
   // Waitlist — wired to Formspree
   (function () {
-    var STORAGE_KEY = 'belegio_waitlist';
+    var STORAGE_KEY = 'bonvio_waitlist';
     var FORMSPREE_URL = 'https://formspree.io/f/mqenlvdd';
 
     function markSent(email) {

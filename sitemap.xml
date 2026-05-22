@@ -2,19 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://belegio.eu/</loc>
+    <loc>https://bonvio.eu/</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="de" href="https://belegio.eu/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://belegio.eu/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bonvio.eu/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bonvio.eu/"/>
   </url>
   <url>
-    <loc>https://belegio.eu/blog/</loc>
+    <loc>https://bonvio.eu/blog/</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="de" href="https://belegio.eu/blog/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://belegio.eu/blog/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bonvio.eu/blog/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bonvio.eu/blog/"/>
   </url>
 </urlset>
