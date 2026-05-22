@@ -12,9 +12,6 @@
   <link rel="canonical" href="https://bonvio.eu/">
   <meta name="google-site-verification" content="qggc9g2xtDAvcGCYdjhOCTzaiRx4M6qtNGRVvTaX0-U">
   <meta name="google-site-verification" content="RMOHt6ATkvSuqsBf82tFN-bStHdvNtvHRfQ4bWmwqiw">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23B4451F'/%3E%3Ctext x='16' y='23' font-family='Helvetica Neue,Helvetica,Arial,sans-serif' font-size='22' font-weight='700' fill='%23F4EFE2' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Bonvio &mdash; Belegverwaltung per E-Mail">
@@ -51,7 +48,6 @@
       --hair: rgba(26,26,26,0.08);
       --hair-2: rgba(26,26,26,0.12);
       --sans: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Inter", "Segoe UI", Helvetica, Arial, sans-serif;
-      --serif: "Newsreader", "Times New Roman", Georgia, serif;
       --mono: "Courier New", ui-monospace, monospace;
     }
     * { box-sizing: border-box; }
@@ -168,15 +164,12 @@
     }
     h1 {
       margin: 0;
-      font-family: var(--serif);
-      font-size: clamp(52px, 6.4vw, 86px);
-      line-height: 1.02;
-      letter-spacing: -0.025em;
-      font-weight: 500;
-      font-optical-sizing: auto;
-      font-variation-settings: "opsz" 72;
+      font-size: clamp(48px, 6vw, 78px);
+      line-height: 1.0;
+      letter-spacing: -0.04em;
+      font-weight: 700;
     }
-    h1 .accent { color: var(--rust); font-style: italic; font-weight: 400; }
+    h1 .accent { color: var(--rust); font-style: italic; font-weight: 500; }
     .lede {
       margin: 28px 0 0;
       font-size: 21px; line-height: 1.5;
@@ -408,15 +401,11 @@
     }
     .section-title {
       margin: 0;
-      font-family: var(--serif);
-      font-size: clamp(40px, 5.2vw, 64px);
-      line-height: 1.05; letter-spacing: -0.022em; font-weight: 500;
-      font-optical-sizing: auto;
-      font-variation-settings: "opsz" 60;
+      font-size: clamp(40px, 5vw, 60px);
+      line-height: 1.05; letter-spacing: -0.035em; font-weight: 700;
       max-width: 18ch;
       text-wrap: balance;
     }
-    .section-title em { font-style: italic; font-weight: 400; color: var(--rust); }
     .section-intro {
       margin: 20px 0 0;
       font-size: 20px; line-height: 1.55; color: var(--ink);
@@ -447,9 +436,8 @@
       line-height: 1; padding-bottom: 3px;
     }
     .warum-text {
-      font-family: var(--serif);
-      font-size: 28px; line-height: 1.3; letter-spacing: -0.015em;
-      font-weight: 400; color: var(--ink); text-wrap: pretty;
+      font-size: 26px; line-height: 1.3; letter-spacing: -0.02em;
+      font-weight: 500; color: var(--ink); text-wrap: pretty;
       padding-top: 8px;
     }
 
@@ -485,8 +473,7 @@
     }
     .step-title {
       margin: 0 0 14px;
-      font-family: var(--serif);
-      font-size: 30px; font-weight: 500; letter-spacing: -0.015em;
+      font-size: 28px; font-weight: 600; letter-spacing: -0.02em;
       color: var(--cream);
     }
     .step-body {
@@ -524,9 +511,7 @@
       letter-spacing: 0.16em; text-transform: uppercase; color: var(--rust);
     }
     .audience-title {
-      font-family: var(--serif);
-      font-size: 30px; font-weight: 500; letter-spacing: -0.015em; color: var(--ink);
-      line-height: 1.2;
+      font-size: 28px; font-weight: 600; letter-spacing: -0.02em; color: var(--ink);
       margin: 0;
     }
     .audience-body {
@@ -761,12 +746,10 @@
     }
     .cta-repeat h2 {
       margin: 0;
-      font-family: var(--serif);
-      font-size: clamp(36px, 4.5vw, 56px); letter-spacing: -0.022em;
-      line-height: 1.1; font-weight: 500;
+      font-size: clamp(36px, 4.5vw, 52px); letter-spacing: -0.035em;
+      line-height: 1.1; font-weight: 700;
       color: var(--cream);
     }
-    .cta-repeat h2 em { font-style: italic; font-weight: 400; color: var(--accent-on-dark); }
     .cta-repeat p {
       margin: 16px auto 32px; max-width: 480px;
       color: rgba(244,243,240,0.78);
@@ -820,150 +803,6 @@
     .inline-cta .inline-form { flex: 0 1 380px; min-width: 280px; }
     .inline-cta .waitlist { margin: 0; max-width: none; }
 
-    /* PULL-QUOTE — editorial moment between sections 03 and 04 */
-    .pullquote {
-      margin: 112px -72px 0;
-      padding: 96px 72px;
-      position: relative;
-      text-align: center;
-      border-top: 1px dashed var(--hair-2);
-      border-bottom: 1px dashed var(--hair-2);
-    }
-    .pullquote::before, .pullquote::after {
-      content: "";
-      position: absolute;
-      left: 0; right: 0;
-      height: 6px;
-      background-image: radial-gradient(circle at 6px center, var(--cream) 2.5px, transparent 3px);
-      background-repeat: repeat-x;
-      background-size: 14px 6px;
-    }
-    .pullquote::before { top: -3px; }
-    .pullquote::after { bottom: -3px; }
-    .pullquote .marginalia {
-      font-family: var(--mono);
-      font-size: 11px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 28px;
-      display: block;
-    }
-    .pullquote blockquote {
-      margin: 0 auto;
-      max-width: 22ch;
-      font-family: var(--serif);
-      font-style: italic;
-      font-weight: 400;
-      font-size: clamp(40px, 5.5vw, 64px);
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-      color: var(--ink);
-      text-wrap: balance;
-      font-optical-sizing: auto;
-      font-variation-settings: "opsz" 60;
-    }
-    .pullquote blockquote .em-mark {
-      font-style: normal;
-      color: var(--rust);
-      font-weight: 500;
-    }
-    .pullquote cite {
-      display: block;
-      margin-top: 36px;
-      font-family: var(--mono);
-      font-style: normal;
-      font-size: 11px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-    .pullquote cite::before {
-      content: "— ";
-    }
-
-    /* RUBBER-STAMP MARK — used for DSGVO / Made in Vienna */
-    .stamp {
-      display: inline-block;
-      border: 2px solid var(--rust);
-      color: var(--rust);
-      font-family: var(--mono);
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      padding: 10px 16px 9px;
-      border-radius: 4px;
-      transform: rotate(-3deg);
-      opacity: 0.72;
-      line-height: 1.1;
-      text-align: center;
-      background: transparent;
-      box-shadow: inset 0 0 0 1px var(--rust);
-      transition: opacity .2s, transform .2s;
-    }
-    .stamp:hover { opacity: 0.95; transform: rotate(-3deg) scale(1.03); }
-    .stamp .top {
-      display: block;
-      font-size: 13px;
-      letter-spacing: 0.2em;
-    }
-    .stamp .bot {
-      display: block;
-      font-size: 9.5px;
-      letter-spacing: 0.16em;
-      margin-top: 4px;
-      opacity: 0.85;
-    }
-    .stamp .rule {
-      display: block;
-      height: 1px;
-      background: var(--rust);
-      opacity: 0.45;
-      margin: 4px auto;
-      width: 75%;
-    }
-
-    /* SECURITY section can host an absolute stamp */
-    #sicherheit, #security { position: relative; }
-    .security-stamp-wrap {
-      position: absolute;
-      top: 96px;
-      right: 0;
-      pointer-events: none;
-    }
-    .security-stamp-wrap .stamp {
-      transform: rotate(8deg);
-      pointer-events: auto;
-    }
-
-    /* FOOTER additions */
-    footer { position: relative; flex-direction: column; align-items: stretch; padding: 56px 72px 64px; gap: 28px; }
-    .footer-row {
-      display: flex; justify-content: space-between; align-items: flex-start;
-      gap: 32px; flex-wrap: wrap;
-    }
-    .footer-bottom {
-      display: flex;
-      gap: 48px;
-      align-items: flex-end;
-      justify-content: space-between;
-      padding-top: 24px;
-      border-top: 1px dashed var(--hair-2);
-      flex-wrap: wrap;
-    }
-    .footer-disclaimer {
-      flex: 1 1 480px;
-      max-width: 720px;
-      font-size: 12.5px;
-      line-height: 1.65;
-      color: var(--muted);
-    }
-    .footer-disclaimer b {
-      color: var(--ink);
-      font-weight: 600;
-    }
-    .footer-stamp { flex: none; }
-
     /* BACK-TO-TOP */
     .back-to-top {
       position: fixed;
@@ -986,12 +825,6 @@
     /* MOBILE */
     @media (max-width: 900px) {
       .ink { margin-left: -24px; margin-right: -24px; padding: 56px 24px 64px; }
-      .pullquote { margin-left: -24px; margin-right: -24px; padding: 56px 24px; }
-      .pullquote blockquote { font-size: clamp(28px, 7vw, 38px); }
-      .security-stamp-wrap { position: static; margin: 24px 0 -8px; text-align: right; }
-      .security-stamp-wrap .stamp { transform: rotate(6deg); }
-      .footer-bottom { gap: 28px; }
-      footer { padding: 36px 24px 40px; }
       .warum-list, .steps, .audience, .nope, .security { grid-template-columns: 1fr; }
       .warum-list li:nth-child(odd) { padding-right: 0; border-right: 0; }
       .warum-list li:nth-child(even) { padding-left: 0; }
@@ -1004,12 +837,13 @@
       .price-amount { font-size: 56px; }
       .price-period { font-size: 14px; }
       .cta-repeat { padding: 56px 28px; border-radius: 18px; margin-left: -24px; margin-right: -24px; }
-      footer { padding: 36px 24px 40px; }
+      footer { padding: 36px 24px 40px; flex-direction: column; align-items: stretch; }
       nav { padding: 20px 24px; gap: 16px; flex-wrap: wrap; }
       .nav-links { gap: 16px; font-size: 13px; }
-      /* On mobile, hide "How it works" and "Who it's for" (DE+EN) — keep Home, Price, FAQ */
+      /* On mobile, hide "How it works", "Who it's for", and "Blog" (DE+EN) — keep Home, Price, FAQ */
       .nav-links a:nth-child(3), .nav-links a:nth-child(4),
-      .nav-links a:nth-child(5), .nav-links a:nth-child(6) { display: none; }
+      .nav-links a:nth-child(5), .nav-links a:nth-child(6),
+      .nav-links a:nth-child(7), .nav-links a:nth-child(8) { display: none; }
       main { padding: 0 24px 64px; }
       .hero { grid-template-columns: 1fr; gap: 32px; min-height: 0; padding-top: 24px; }
       h1 { font-size: clamp(40px, 9vw, 56px); }
@@ -1060,6 +894,8 @@
         <a href="#price" class="lang-en-inline">Price</a>
         <a href="#fragen" class="lang-de-inline">FAQ</a>
         <a href="#faq" class="lang-en-inline">FAQ</a>
+        <a href="/blog/" class="lang-de-inline">Blog</a>
+        <a href="/blog/" class="lang-en-inline">Blog</a>
         <span class="nav-badge lang-de-inline">Bald verf&uuml;gbar</span>
         <span class="nav-badge lang-en-inline">Coming soon</span>
         <span class="lang-switch">
@@ -1344,23 +1180,8 @@
           </div>
         </section>
 
-        <section class="pullquote" aria-label="Bonvio &middot; Manifest">
-          <span class="marginalia">Bonvio &middot; Manifest</span>
-          <blockquote>
-            Ein Beleg ist ein kleines Dokument. Wir behandeln ihn <em class="em-mark">auch so</em>.
-          </blockquote>
-          <cite>Bonvio &middot; Wien &middot; MMXXVI</cite>
-        </section>
-
         <section id="sicherheit">
           <div class="section-eyebrow"><span class="num">06</span> &mdash; Sicherheit &amp; Datenschutz</div>
-          <div class="security-stamp-wrap" aria-hidden="true">
-            <div class="stamp">
-              <span class="top">DSGVO</span>
-              <span class="rule"></span>
-              <span class="bot">Frankfurt &middot; EU</span>
-            </div>
-          </div>
           <h2 class="section-title">Deine Belege geh&ouml;ren dir. Punkt.</h2>
 
           <ul class="security">
@@ -1794,23 +1615,8 @@
           </div>
         </section>
 
-        <section class="pullquote" aria-label="Bonvio &middot; Manifesto">
-          <span class="marginalia">Bonvio &middot; Manifesto</span>
-          <blockquote>
-            A receipt is a small document. We treat it <em class="em-mark">that way</em>.
-          </blockquote>
-          <cite>Bonvio &middot; Vienna &middot; MMXXVI</cite>
-        </section>
-
         <section id="security">
           <div class="section-eyebrow"><span class="num">06</span> &mdash; Security &amp; Privacy</div>
-          <div class="security-stamp-wrap" aria-hidden="true">
-            <div class="stamp">
-              <span class="top">GDPR</span>
-              <span class="rule"></span>
-              <span class="bot">Frankfurt &middot; EU</span>
-            </div>
-          </div>
           <h2 class="section-title">Your receipts belong to you. Period.</h2>
 
           <ul class="security">
@@ -1974,47 +1780,19 @@
     </main>
 
     <footer>
-      <div class="footer-row">
-        <div class="footer-meta">
-          <span class="footer-name">Bonvio</span>
-          <span>&copy; 2026 &middot; Wien, &Ouml;sterreich</span>
-        </div>
-        <div class="footer-links">
-          <a href="#sicherheit" class="lang-de-inline">Datenschutz</a>
-          <a href="#security" class="lang-en-inline">Privacy</a>
-          <a href="#" class="lang-de-inline">Impressum</a>
-          <a href="#" class="lang-en-inline">Imprint</a>
-          <a href="#" class="lang-de-inline">AGB</a>
-          <a href="#" class="lang-en-inline">Terms</a>
-          <a href="#" class="lang-de-inline">Kontakt</a>
-          <a href="#" class="lang-en-inline">Contact</a>
-        </div>
+      <div class="footer-meta">
+        <span class="footer-name">Bonvio</span>
+        <span>&copy; 2026 &middot; Wien, &Ouml;sterreich</span>
       </div>
-
-      <div class="footer-bottom">
-        <div class="footer-disclaimer lang-de">
-          <b>Hinweis.</b> Bonvio bewahrt deine Belege sicher auf und macht den Export f&uuml;r deinen Steuerberater einfach. Bonvio ist <b>keine Buchhaltungssoftware</b> und <b>ersetzt keine steuerliche oder rechtliche Beratung</b>. Die 7-j&auml;hrige Aufbewahrung orientiert sich an &sect;132 BAO &mdash; f&uuml;r deine konkreten gesetzlichen Pflichten wende dich bitte an deinen Steuerberater.
-        </div>
-        <div class="footer-disclaimer lang-en">
-          <b>Note.</b> Bonvio safely archives your receipts and makes export for your accountant easy. Bonvio is <b>not accounting software</b> and is <b>not a substitute for professional tax or legal advice</b>. The 7-year retention follows Austrian &sect;132 BAO &mdash; for your specific legal obligations, please consult your tax advisor.
-        </div>
-
-        <div class="footer-stamp" aria-hidden="true">
-          <div class="lang-de">
-            <div class="stamp" style="transform: rotate(-6deg);">
-              <span class="top">Aus Wien</span>
-              <span class="rule"></span>
-              <span class="bot">Est. MMXXVI</span>
-            </div>
-          </div>
-          <div class="lang-en">
-            <div class="stamp" style="transform: rotate(-6deg);">
-              <span class="top">Made in Vienna</span>
-              <span class="rule"></span>
-              <span class="bot">Est. MMXXVI</span>
-            </div>
-          </div>
-        </div>
+      <div class="footer-links">
+        <a href="#sicherheit" class="lang-de-inline">Datenschutz</a>
+        <a href="#security" class="lang-en-inline">Privacy</a>
+        <a href="#" class="lang-de-inline">Impressum</a>
+        <a href="#" class="lang-en-inline">Imprint</a>
+        <a href="#" class="lang-de-inline">AGB</a>
+        <a href="#" class="lang-en-inline">Terms</a>
+        <a href="#" class="lang-de-inline">Kontakt</a>
+        <a href="#" class="lang-en-inline">Contact</a>
       </div>
     </footer>
   </div>
