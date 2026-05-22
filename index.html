@@ -494,9 +494,9 @@
       color: rgba(244,243,240,0.95); text-wrap: pretty;
     }
     .step-details {
-      margin: 20px 0 0; padding: 0; list-style: none;
-      font-family: var(--mono); font-size: 14px; line-height: 1.8;
-      color: rgba(244,243,240,0.85);
+      margin: 22px 0 0; padding: 0; list-style: none;
+      font-family: var(--mono); font-size: 16px; line-height: 1.75;
+      color: rgba(244,243,240,0.95);
     }
     .step-details li::before { content: "\2192   "; color: var(--rust); }
 
@@ -546,9 +546,12 @@
     }
     .nope-item:nth-last-child(-n+2) { border-bottom: 0; }
     .nope-cross {
-      font-family: var(--mono); font-size: 18px;
-      color: var(--rust); width: 24px; text-align: center; flex: none;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 36px; font-weight: 500;
+      color: var(--rust); width: 32px; text-align: center; flex: none;
       line-height: 1;
+      opacity: 0.85;
     }
     .nope-text {
       font-size: 24px; letter-spacing: -0.015em; font-weight: 500;
@@ -842,11 +845,11 @@
     .pullquote::after { bottom: -3px; }
     .pullquote .marginalia {
       font-family: var(--mono);
-      font-size: 11px;
-      letter-spacing: 0.22em;
+      font-size: 14px;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 28px;
+      color: var(--muted-2);
+      margin-bottom: 32px;
       display: block;
     }
     .pullquote blockquote {
@@ -870,20 +873,21 @@
     }
     .pullquote cite {
       display: block;
-      margin-top: 36px;
+      margin-top: 40px;
       font-family: var(--mono);
       font-style: normal;
-      font-size: 11px;
-      letter-spacing: 0.2em;
+      font-size: 13px;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--muted);
+      color: var(--muted-2);
     }
     .pullquote cite::before {
       content: "— ";
     }
 
     /* RUBBER-STAMP MARK — used for DSGVO / Made in Vienna */
-    .stamp {
+    .wax-stamp {
+      --r: -3deg;
       display: inline-block;
       border: 2px solid var(--rust);
       color: var(--rust);
@@ -893,7 +897,7 @@
       text-transform: uppercase;
       padding: 10px 16px 9px;
       border-radius: 4px;
-      transform: rotate(-3deg);
+      transform: rotate(var(--r));
       opacity: 0.72;
       line-height: 1.1;
       text-align: center;
@@ -901,20 +905,20 @@
       box-shadow: inset 0 0 0 1px var(--rust);
       transition: opacity .2s, transform .2s;
     }
-    .stamp:hover { opacity: 0.95; transform: rotate(-3deg) scale(1.03); }
-    .stamp .top {
+    .wax-stamp:hover { opacity: 0.95; transform: scale(1.03) rotate(var(--r)); }
+    .wax-stamp .top {
       display: block;
       font-size: 13px;
       letter-spacing: 0.2em;
     }
-    .stamp .bot {
+    .wax-stamp .bot {
       display: block;
       font-size: 9.5px;
       letter-spacing: 0.16em;
       margin-top: 4px;
       opacity: 0.85;
     }
-    .stamp .rule {
+    .wax-stamp .rule {
       display: block;
       height: 1px;
       background: var(--rust);
@@ -931,8 +935,8 @@
       right: 0;
       pointer-events: none;
     }
-    .security-stamp-wrap .stamp {
-      transform: rotate(8deg);
+    .security-stamp-wrap .wax-stamp {
+      --r: 8deg;
       pointer-events: auto;
     }
 
@@ -963,6 +967,7 @@
       font-weight: 600;
     }
     .footer-stamp { flex: none; }
+    .footer-stamp .wax-stamp { --r: -6deg; }
 
     /* BACK-TO-TOP */
     .back-to-top {
@@ -989,7 +994,7 @@
       .pullquote { margin-left: -24px; margin-right: -24px; padding: 56px 24px; }
       .pullquote blockquote { font-size: clamp(28px, 7vw, 38px); }
       .security-stamp-wrap { position: static; margin: 24px 0 -8px; text-align: right; }
-      .security-stamp-wrap .stamp { transform: rotate(6deg); }
+      .security-stamp-wrap .wax-stamp { transform: rotate(6deg); }
       .footer-bottom { gap: 28px; }
       footer { padding: 36px 24px 40px; }
       .warum-list, .steps, .audience, .nope, .security { grid-template-columns: 1fr; }
@@ -1038,6 +1043,89 @@
       .inline-cta .inline-text { font-size: 18px; }
       .back-to-top { bottom: 20px; right: 20px; width: 46px; height: 46px; }
       .trust { font-size: 12px; gap: 12px; }
+    }
+
+    /* ─── MOTION ─── surgical, opt-in via .motion-ready set by JS so no-JS users see static state */
+    .motion-ready .scene .toast {
+      opacity: 0;
+      transform: translateY(10px);
+      animation: bv-toast-in .55s cubic-bezier(.2,.8,.3,1) 1.2s forwards;
+    }
+    .motion-ready .scene .toast .check {
+      transform: scale(0);
+      animation: bv-check-pop .42s cubic-bezier(.3,1.6,.5,1) 1.4s forwards;
+    }
+    @keyframes bv-toast-in { to { opacity: 1; transform: translateY(0); } }
+    @keyframes bv-check-pop { to { transform: scale(1); } }
+
+    .motion-ready .wax-stamp {
+      opacity: 0;
+      transform: scale(1.35) rotate(var(--r));
+      transition: opacity .35s cubic-bezier(.4,1,.5,1), transform .4s cubic-bezier(.34,1.56,.64,1);
+    }
+    .motion-ready .wax-stamp.is-in {
+      opacity: 0.72;
+      transform: scale(1) rotate(var(--r));
+    }
+    .motion-ready .wax-stamp.is-in:hover {
+      opacity: 0.95;
+      transform: scale(1.03) rotate(var(--r));
+    }
+
+    .motion-ready .pullquote {
+      border-top-color: transparent;
+      border-bottom-color: transparent;
+      transition: border-color .5s ease;
+    }
+    .motion-ready .pullquote.is-in {
+      border-top-color: var(--hair-2);
+      border-bottom-color: var(--hair-2);
+      transition-delay: .15s;
+    }
+    .motion-ready .pullquote::before,
+    .motion-ready .pullquote::after {
+      clip-path: inset(0 100% 0 0);
+      transition: clip-path .7s cubic-bezier(.4,0,.2,1);
+    }
+    .motion-ready .pullquote.is-in::before,
+    .motion-ready .pullquote.is-in::after {
+      clip-path: inset(0 0 0 0);
+    }
+    .motion-ready .pullquote .marginalia,
+    .motion-ready .pullquote blockquote,
+    .motion-ready .pullquote cite {
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .motion-ready .pullquote.is-in .marginalia {
+      opacity: 1; transform: translateY(0); transition-delay: .35s;
+    }
+    .motion-ready .pullquote.is-in blockquote {
+      opacity: 1; transform: translateY(0); transition-delay: .5s;
+    }
+    .motion-ready .pullquote.is-in cite {
+      opacity: 1; transform: translateY(0); transition-delay: .85s;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .motion-ready .scene .toast,
+      .motion-ready .scene .toast .check,
+      .motion-ready .wax-stamp,
+      .motion-ready .pullquote,
+      .motion-ready .pullquote::before,
+      .motion-ready .pullquote::after,
+      .motion-ready .pullquote .marginalia,
+      .motion-ready .pullquote blockquote,
+      .motion-ready .pullquote cite {
+        animation: none !important;
+        transition: none !important;
+        opacity: 1 !important;
+        clip-path: none !important;
+      }
+      .motion-ready .wax-stamp { opacity: 0.72 !important; transform: rotate(var(--r)) !important; }
+      .motion-ready .scene .toast .check { transform: scale(1) !important; }
+      .motion-ready .pullquote { border-top-color: var(--hair-2) !important; border-bottom-color: var(--hair-2) !important; }
     }
   </style>
 </head>
@@ -1349,13 +1437,13 @@
           <blockquote>
             Ein Beleg ist ein kleines Dokument. Wir behandeln ihn <em class="em-mark">auch so</em>.
           </blockquote>
-          <cite>Bonvio &middot; Wien &middot; MMXXVI</cite>
+          <cite>Bonvio &middot; Wien &middot; 2026</cite>
         </section>
 
         <section id="sicherheit">
           <div class="section-eyebrow"><span class="num">06</span> &mdash; Sicherheit &amp; Datenschutz</div>
           <div class="security-stamp-wrap" aria-hidden="true">
-            <div class="stamp">
+            <div class="wax-stamp">
               <span class="top">DSGVO</span>
               <span class="rule"></span>
               <span class="bot">Frankfurt &middot; EU</span>
@@ -1799,13 +1887,13 @@
           <blockquote>
             A receipt is a small document. We treat it <em class="em-mark">that way</em>.
           </blockquote>
-          <cite>Bonvio &middot; Vienna &middot; MMXXVI</cite>
+          <cite>Bonvio &middot; Vienna &middot; 2026</cite>
         </section>
 
         <section id="security">
           <div class="section-eyebrow"><span class="num">06</span> &mdash; Security &amp; Privacy</div>
           <div class="security-stamp-wrap" aria-hidden="true">
-            <div class="stamp">
+            <div class="wax-stamp">
               <span class="top">GDPR</span>
               <span class="rule"></span>
               <span class="bot">Frankfurt &middot; EU</span>
@@ -2001,23 +2089,48 @@
 
         <div class="footer-stamp" aria-hidden="true">
           <div class="lang-de">
-            <div class="stamp" style="transform: rotate(-6deg);">
+            <div class="wax-stamp">
               <span class="top">Aus Wien</span>
               <span class="rule"></span>
-              <span class="bot">Est. MMXXVI</span>
+              <span class="bot">Est. 2026</span>
             </div>
           </div>
           <div class="lang-en">
-            <div class="stamp" style="transform: rotate(-6deg);">
+            <div class="wax-stamp">
               <span class="top">Made in Vienna</span>
               <span class="rule"></span>
-              <span class="bot">Est. MMXXVI</span>
+              <span class="bot">Est. 2026</span>
             </div>
           </div>
         </div>
       </div>
     </footer>
   </div>
+
+  <script>
+    // Activate motion (opt-in: if JS fails or is disabled, stamps & pullquote
+    // stay visible in their resting state — never an invisible page).
+    (function () {
+      document.documentElement.classList.add('motion-ready');
+
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var revealAll = function () {
+        document.querySelectorAll('.wax-stamp, .pullquote').forEach(function (el) { el.classList.add('is-in'); });
+      };
+      if (reduce || !('IntersectionObserver' in window)) { revealAll(); return; }
+
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            e.target.classList.add('is-in');
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.35, rootMargin: '0px 0px -40px 0px' });
+
+      document.querySelectorAll('.wax-stamp, .pullquote').forEach(function (el) { io.observe(el); });
+    })();
+  </script>
 
   <button class="back-to-top" id="back-to-top" aria-label="Zur&uuml;ck nach oben">&uarr;</button>
 <script>
