@@ -232,8 +232,9 @@
     .waitlist.sent form.waitlist-form { display: none; }
     .waitlist.sent .waitlist-success { display: flex; }
     .waitlist-note {
-      margin-top: 12px;
-      font-size: 13px; color: var(--muted); line-height: 1.5;
+      margin-top: 16px;
+      font-size: 15px; color: var(--muted-2); line-height: 1.6;
+      max-width: 440px;
     }
     .waitlist-note b { color: var(--ink); font-weight: 600; }
 
@@ -247,6 +248,7 @@
       flex-wrap: wrap;
     }
     .trust .dot { width: 5px; height: 5px; background: var(--rust); border-radius: 50%; opacity: 1; }
+    .trust b { color: var(--ink); font-weight: 700; letter-spacing: 0.1em; }
 
     /* PHONE + RECEIPT SCENE */
     .scene {
@@ -433,7 +435,7 @@
       padding: 36px 32px 36px 0;
       border-bottom: 1px solid var(--hair-2);
       display: grid; grid-template-columns: 68px 1fr; gap: 24px;
-      align-items: start;
+      align-items: center;
     }
     .warum-list li:nth-child(odd) { padding-right: 48px; border-right: 1px solid var(--hair-2); }
     .warum-list li:nth-child(even) { padding-left: 48px; }
@@ -450,7 +452,6 @@
       font-family: var(--serif);
       font-size: 28px; line-height: 1.3; letter-spacing: -0.015em;
       font-weight: 400; color: var(--ink); text-wrap: pretty;
-      padding-top: 8px;
     }
 
     /* INK BREAK — softer warm dark, not pure black */
@@ -601,20 +602,21 @@
     .price-period {
       margin-top: 10px;
       font-family: var(--mono); font-size: 16px;
-      letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted);
+      letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink); font-weight: 600;
     }
     .price-includes {
-      margin: 32px 0 0; padding: 24px 0 0; list-style: none;
+      margin: 36px 0 0; padding: 28px 0 0; list-style: none;
       border-top: 1px solid var(--hair-2);
-      display: flex; flex-direction: column; gap: 10px;
-      font-size: 15px; color: var(--ink); text-align: left;
-      max-width: 320px; margin-left: auto; margin-right: auto;
+      display: flex; flex-direction: column; gap: 16px;
+      font-size: 18px; color: var(--ink); text-align: left;
+      max-width: 380px; margin-left: auto; margin-right: auto;
     }
     .price-includes li {
-      display: flex; align-items: center; gap: 12px;
+      display: flex; align-items: center; gap: 14px;
     }
     .price-includes li::before {
       content: "\2713"; color: var(--rust); font-weight: 700;
+      font-size: 22px; line-height: 1; flex: none;
     }
 
     /* SICHERHEIT */
@@ -626,7 +628,7 @@
     .security li {
       padding: 32px 32px;
       display: grid; grid-template-columns: 56px 1fr; gap: 20px;
-      align-items: start;
+      align-items: center;
       border-right: 1px solid var(--hair-2);
       border-bottom: 1px solid var(--hair-2);
       background: rgba(255,255,255,0.4);
@@ -796,7 +798,9 @@
       display: flex; flex-direction: column; gap: 6px;
       color: var(--muted);
     }
-    .footer-meta .footer-name { color: var(--ink); font-weight: 600; font-size: 14px; }
+    .footer-meta .footer-name { color: var(--ink); font-weight: 600; font-size: 14px; font-family: var(--serif); letter-spacing: -0.01em; font-size: 18px; }
+    .footer-meta .footer-founder { color: var(--ink); font-style: italic; font-family: var(--serif); font-size: 14px; line-height: 1.4; margin-top: 4px; max-width: 28ch; }
+    .footer-meta .footer-founder b { font-style: normal; font-weight: 600; }
     .footer-meta a { color: var(--muted); text-decoration: none; }
     .footer-meta a:hover { color: var(--ink); }
     .footer-links {
@@ -854,20 +858,20 @@
     }
     .pullquote blockquote {
       margin: 0 auto;
-      max-width: 22ch;
+      max-width: 18ch;
       font-family: var(--serif);
       font-style: italic;
       font-weight: 400;
-      font-size: clamp(40px, 5.5vw, 64px);
-      line-height: 1.1;
-      letter-spacing: -0.02em;
+      font-size: clamp(48px, 6vw, 76px);
+      line-height: 1.05;
+      letter-spacing: -0.025em;
       color: var(--ink);
       text-wrap: balance;
       font-optical-sizing: auto;
       font-variation-settings: "opsz" 60;
     }
     .pullquote blockquote .em-mark {
-      font-style: normal;
+      font-style: italic;
       color: var(--rust);
       font-weight: 500;
     }
@@ -1109,23 +1113,23 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .motion-ready .scene .toast,
-      .motion-ready .scene .toast .check,
-      .motion-ready .wax-stamp,
-      .motion-ready .pullquote,
-      .motion-ready .pullquote::before,
-      .motion-ready .pullquote::after,
-      .motion-ready .pullquote .marginalia,
-      .motion-ready .pullquote blockquote,
-      .motion-ready .pullquote cite {
+      html:not(.force-motion) .motion-ready .scene .toast,
+      html:not(.force-motion) .motion-ready .scene .toast .check,
+      html:not(.force-motion) .motion-ready .wax-stamp,
+      html:not(.force-motion) .motion-ready .pullquote,
+      html:not(.force-motion) .motion-ready .pullquote::before,
+      html:not(.force-motion) .motion-ready .pullquote::after,
+      html:not(.force-motion) .motion-ready .pullquote .marginalia,
+      html:not(.force-motion) .motion-ready .pullquote blockquote,
+      html:not(.force-motion) .motion-ready .pullquote cite {
         animation: none !important;
         transition: none !important;
         opacity: 1 !important;
         clip-path: none !important;
       }
-      .motion-ready .wax-stamp { opacity: 0.72 !important; transform: rotate(var(--r)) !important; }
-      .motion-ready .scene .toast .check { transform: scale(1) !important; }
-      .motion-ready .pullquote { border-top-color: var(--hair-2) !important; border-bottom-color: var(--hair-2) !important; }
+      html:not(.force-motion) .motion-ready .wax-stamp { opacity: 0.72 !important; transform: rotate(var(--r)) !important; }
+      html:not(.force-motion) .motion-ready .scene .toast .check { transform: scale(1) !important; }
+      html:not(.force-motion) .motion-ready .pullquote { border-top-color: var(--hair-2) !important; border-bottom-color: var(--hair-2) !important; }
     }
   </style>
 </head>
@@ -1190,12 +1194,12 @@
               </div>
               <div class="waitlist-note">
                 Wir schreiben dir nur zum Launch. Kein Newsletter, keine Werbung.<br>
-                Sp&auml;ter: <b>&euro;39,99 / Jahr</b> &middot; Jederzeit k&uuml;ndbar
+                Sp&auml;ter: <b>&euro;39,99 / Jahr</b>
               </div>
             </div>
 
             <div class="trust">
-              <span>Aus Wien</span>
+              <span>Aus Wien <b>gebaut</b></span>
               <span class="dot"></span>
               <span>Server in Deutschland</span>
               <span class="dot"></span>
@@ -1410,17 +1414,17 @@
 
         <section id="preis">
           <div class="section-eyebrow"><span class="num">05</span> &mdash; Preis</div>
-          <h2 class="section-title" style="max-width: 24ch;">Ein Preis. Keine &Uuml;berraschungen.</h2>
+          <h2 class="section-title" style="max-width: 24ch;">Ein Preis. <em>Keine &Uuml;berraschungen.</em></h2>
           <p class="section-intro">
             Eine Adresse, bis zu 200 Belege im Jahr, alle Funktionen inklusive.
-            Jederzeit k&uuml;ndbar &mdash; keine versteckten Kosten.
+            Das sind <b>16+ Belege pro Monat</b> &mdash; mehr als genug f&uuml;r Privatpersonen und Selbstst&auml;ndige.
           </p>
 
           <div class="price-card">
-            <span class="stamp">Pro Jahr</span>
             <div class="price-top-label">J&auml;hrlich</div>
             <div class="price-amount">&euro; 39,99</div>
-            <div class="price-period">Ohne Bindung</div>
+            <div class="price-period">12 Monate &middot; Vorausbezahlung</div>
+            <div class="price-coffee">Weniger als ein Kaffee pro Monat &mdash; <b>&euro; 3,33 effektiv</b>.</div>
             <ul class="price-includes">
               <li>Pers&ouml;nliche Bonvio-Adresse</li>
               <li>Bis 200 Belege pro Jahr</li>
@@ -1432,12 +1436,12 @@
           </div>
         </section>
 
-        <section class="pullquote" aria-label="Bonvio &middot; Manifest">
-          <span class="marginalia">Bonvio &middot; Manifest</span>
+        <section class="pullquote" aria-label="Bonvio &middot; Versprechen">
+          <span class="marginalia">Bonvio &middot; Das Versprechen</span>
           <blockquote>
-            Ein Beleg ist ein kleines Dokument. Wir behandeln ihn <em class="em-mark">auch so</em>.
+            Knipsen. Vergessen.<br>
+            <em class="em-mark">Bonvio merkt sich alles.</em>
           </blockquote>
-          <cite>Bonvio &middot; Wien &middot; 2026</cite>
         </section>
 
         <section id="sicherheit">
@@ -1446,7 +1450,7 @@
             <div class="wax-stamp">
               <span class="top">DSGVO</span>
               <span class="rule"></span>
-              <span class="bot">Frankfurt &middot; EU</span>
+              <span class="bot">konform</span>
             </div>
           </div>
           <h2 class="section-title">Deine Belege geh&ouml;ren dir. Punkt.</h2>
@@ -1487,7 +1491,7 @@
           <div class="section-eyebrow"><span class="num">07</span> &mdash; H&auml;ufige Fragen</div>
           <h2 class="section-title">Alles, was du wissen willst.</h2>
           <p class="section-intro">
-            Eine Frage offen? Schreib uns an <a href="mailto:hallo@bonvio.eu" style="color:var(--rust);text-decoration:none;font-weight:600;border-bottom:1px solid rgba(31,67,50,0.3);">hallo@bonvio.eu</a> &mdash; wir antworten meist innerhalb eines Tages.
+            Eine Frage offen? Schreib uns an <a href="mailto:hallo@bonvio.eu" style="color:var(--rust);text-decoration:none;font-weight:600;border-bottom:1px solid rgba(31,67,50,0.3);">hallo@bonvio.eu</a> &mdash; wir melden uns.
           </p>
 
           <div class="faq">
@@ -1546,7 +1550,7 @@
               </button>
               <div class="faq-answer-wrap"><div class="faq-answer-inner">
                 <div class="faq-answer" id="a-de-5" role="region">
-                  Du bekommst deinen Export als ZIP plus CSV-&Uuml;bersicht ins Postfach. <b>Einfach die E-Mail an deinen Steuerberater weiterleiten</b> &mdash; alles drin, alles sortiert. <span style="color:var(--rust);font-weight:600;">Direktzugang f&uuml;r Steuerberater ist in Arbeit.</span>
+                  Du bekommst alle deine Belege als ein <b>fertiges Paket ins Postfach</b> &mdash; die Fotos und eine &Uuml;bersicht, sortiert und bereit f&uuml;r den Steuerberater. Einfach die E-Mail weiterleiten. <span style="color:var(--rust);font-weight:600;">Direktzugang f&uuml;r Steuerberater ist in Arbeit.</span>
                 </div>
               </div></div>
             </div>
@@ -1577,12 +1581,12 @@
 
             <div class="faq-item">
               <button class="faq-question" type="button" aria-expanded="false" aria-controls="a-de-8">
-                <span>Kann ich Bonvio jederzeit k&uuml;ndigen?</span>
+                <span>Wie funktioniert die K&uuml;ndigung?</span>
                 <span class="faq-icon" aria-hidden="true"></span>
               </button>
               <div class="faq-answer-wrap"><div class="faq-answer-inner">
                 <div class="faq-answer" id="a-de-8" role="region">
-                  Ja. Eine kurze E-Mail gen&uuml;gt &mdash; deine Daten werden auf Wunsch exportiert oder vollst&auml;ndig gel&ouml;scht. <b>Keine Bindung, keine K&uuml;ndigungsfrist, keine Gespr&auml;che mit Hotlines.</b>
+                  Bonvio ist eine Jahresmitgliedschaft &mdash; &euro;&nbsp;39,99 f&uuml;r 12&nbsp;Monate. Wenn du danach nicht weitermachen willst, k&uuml;ndigst du die automatische Verl&auml;ngerung. <b>Eine kurze E-Mail an deine Bonvio-Adresse gen&uuml;gt</b> &mdash; deine Daten werden auf Wunsch exportiert oder gel&ouml;scht.
                 </div>
               </div></div>
             </div>
@@ -1640,12 +1644,12 @@
               </div>
               <div class="waitlist-note">
                 We email you only at launch. No newsletter, no ads.<br>
-                Later: <b>&euro;39.99 / year</b> &middot; Cancel anytime
+                Later: <b>&euro;39.99 / year</b>
               </div>
             </div>
 
             <div class="trust">
-              <span>Made in Vienna</span>
+              <span><b>Built</b> in Vienna</span>
               <span class="dot"></span>
               <span>Servers in Germany</span>
               <span class="dot"></span>
@@ -1860,17 +1864,17 @@
 
         <section id="price">
           <div class="section-eyebrow"><span class="num">05</span> &mdash; Price</div>
-          <h2 class="section-title" style="max-width: 24ch;">One price. No surprises.</h2>
+          <h2 class="section-title" style="max-width: 24ch;">One price. <em>No surprises.</em></h2>
           <p class="section-intro">
             One address, up to 200 receipts per year, all features included.
-            Cancel any time &mdash; no hidden costs.
+            That's <b>16+ per month</b> &mdash; more than enough for private people and freelancers.
           </p>
 
           <div class="price-card">
-            <span class="stamp">Per year</span>
             <div class="price-top-label">Yearly</div>
             <div class="price-amount">&euro; 39.99</div>
-            <div class="price-period">No commitment</div>
+            <div class="price-period">12 months &middot; prepaid</div>
+            <div class="price-coffee">Less than a coffee a month &mdash; <b>&euro; 3.33 effective</b>.</div>
             <ul class="price-includes">
               <li>Personal Bonvio address</li>
               <li>Up to 200 receipts per year</li>
@@ -1882,12 +1886,12 @@
           </div>
         </section>
 
-        <section class="pullquote" aria-label="Bonvio &middot; Manifesto">
-          <span class="marginalia">Bonvio &middot; Manifesto</span>
+        <section class="pullquote" aria-label="Bonvio &middot; The promise">
+          <span class="marginalia">Bonvio &middot; The promise</span>
           <blockquote>
-            A receipt is a small document. We treat it <em class="em-mark">that way</em>.
+            Snap it. Forget it.<br>
+            <em class="em-mark">Bonvio remembers them all.</em>
           </blockquote>
-          <cite>Bonvio &middot; Vienna &middot; 2026</cite>
         </section>
 
         <section id="security">
@@ -1896,7 +1900,7 @@
             <div class="wax-stamp">
               <span class="top">GDPR</span>
               <span class="rule"></span>
-              <span class="bot">Frankfurt &middot; EU</span>
+              <span class="bot">compliant</span>
             </div>
           </div>
           <h2 class="section-title">Your receipts belong to you. Period.</h2>
@@ -1937,7 +1941,7 @@
           <div class="section-eyebrow"><span class="num">07</span> &mdash; Frequently asked</div>
           <h2 class="section-title">Everything you might be wondering.</h2>
           <p class="section-intro">
-            Still curious? Write to <a href="mailto:hello@bonvio.eu" style="color:var(--rust);text-decoration:none;font-weight:600;border-bottom:1px solid rgba(31,67,50,0.3);">hello@bonvio.eu</a> &mdash; we usually reply within a day.
+            Still curious? Write to <a href="mailto:hello@bonvio.eu" style="color:var(--rust);text-decoration:none;font-weight:600;border-bottom:1px solid rgba(31,67,50,0.3);">hello@bonvio.eu</a> &mdash; we'll get back to you.
           </p>
 
           <div class="faq">
@@ -1996,7 +2000,7 @@
               </button>
               <div class="faq-answer-wrap"><div class="faq-answer-inner">
                 <div class="faq-answer" id="a-en-5" role="region">
-                  You get your export as a ZIP plus a CSV overview in your inbox. <b>Just forward the email to your accountant</b> &mdash; everything's in there, already sorted. <span style="color:var(--rust);font-weight:600;">Direct accountant access is in the works.</span>
+                  All your receipts arrive in your inbox as <b>one ready-made package</b> &mdash; the photos and a clean overview, sorted and ready for your accountant. Just forward the email. <span style="color:var(--rust);font-weight:600;">Direct accountant access is in the works.</span>
                 </div>
               </div></div>
             </div>
@@ -2027,12 +2031,12 @@
 
             <div class="faq-item">
               <button class="faq-question" type="button" aria-expanded="false" aria-controls="a-en-8">
-                <span>Can I cancel anytime?</span>
+                <span>How does cancellation work?</span>
                 <span class="faq-icon" aria-hidden="true"></span>
               </button>
               <div class="faq-answer-wrap"><div class="faq-answer-inner">
                 <div class="faq-answer" id="a-en-8" role="region">
-                  Yes. A short email is enough &mdash; we'll export or fully delete your data on request. <b>No contracts, no cancellation period, no phone calls.</b>
+                  Bonvio is an annual membership &mdash; &euro;&nbsp;39.99 for 12&nbsp;months. If you don't want to continue after that, you cancel the auto-renewal. <b>A short email to your Bonvio address is enough</b> &mdash; we'll export or delete your data on request.
                 </div>
               </div></div>
             </div>
@@ -2066,6 +2070,8 @@
         <div class="footer-meta">
           <span class="footer-name">Bonvio</span>
           <span>&copy; 2026 &middot; Wien, &Ouml;sterreich</span>
+          <span class="footer-founder lang-de">Gegr&uuml;ndet 2026 in Wien von <b>Niko A.</b></span>
+          <span class="footer-founder lang-en">Founded 2026 in Vienna by <b>Niko A.</b></span>
         </div>
         <div class="footer-links">
           <a href="#sicherheit" class="lang-de-inline">Datenschutz</a>
@@ -2113,7 +2119,11 @@
     (function () {
       document.documentElement.classList.add('motion-ready');
 
-      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      // ?motion=force overrides prefers-reduced-motion for previewing
+      var forceMotion = /[?&]motion=force/.test(location.search);
+      var reduce = !forceMotion && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if (forceMotion) document.documentElement.classList.add('force-motion');
       var revealAll = function () {
         document.querySelectorAll('.wax-stamp, .pullquote').forEach(function (el) { el.classList.add('is-in'); });
       };
