@@ -238,6 +238,31 @@
     }
     .waitlist-note b { color: var(--ink); font-weight: 600; }
 
+    /* BUY BUTTON */
+    .buy-btn {
+      display: inline-block;
+      background: var(--rust); color: var(--cream);
+      border: 0; border-radius: 999px;
+      padding: 14px 32px; font-size: 16px; font-weight: 600;
+      cursor: pointer; font-family: inherit; text-decoration: none;
+      transition: background .15s, transform .12s;
+      white-space: nowrap;
+    }
+    .buy-btn:hover { background: #15301F; opacity: 1; }
+    .buy-btn:active { transform: scale(0.97); }
+    .buy-sub {
+      margin-top: 14px;
+      font-size: 14px; color: var(--muted); line-height: 1.6;
+    }
+    .price-card .buy-btn {
+      margin-top: 32px; width: 100%; display: block;
+      padding: 16px 32px; font-size: 17px;
+    }
+    .cta-repeat .buy-btn {
+      background: var(--accent-on-dark); color: var(--ink-soft);
+    }
+    .cta-repeat .buy-btn:hover { background: #D4B97A; }
+
     /* TRUST STRIP */
     .trust {
       display: flex; align-items: center; gap: 18px; margin-top: 44px;
@@ -1184,20 +1209,8 @@
             </p>
             <div class="eyebrow">F&uuml;r Privatpersonen, Selbst&auml;ndige &amp; kleine Unternehmen</div>
 
-            <div class="waitlist" data-lang="de">
-              <form class="waitlist-form" novalidate>
-                <input type="email" name="email" placeholder="deine@email.at" required aria-label="E-Mail-Adresse">
-                <button type="submit">Auf die Warteliste &rarr;</button>
-              </form>
-              <div class="waitlist-success" role="status">
-                <span class="check" aria-hidden="true">&#10003;</span>
-                <span>Eingetragen. Wir melden uns, sobald Bonvio startet.</span>
-              </div>
-              <div class="waitlist-note">
-                Wir schreiben dir nur zum Launch. Kein Newsletter, keine Werbung.<br>
-                Sp&auml;ter: <b>&euro;39,99 / Jahr</b>
-              </div>
-            </div>
+            <a class="buy-btn" href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800">Jetzt starten &mdash; &euro;&thinsp;39,99&thinsp;/&thinsp;Jahr &rarr;</a>
+            <div class="buy-sub">Kein Setup. Keine versteckten Kosten. Jederzeit k&uuml;ndbar.</div>
 
             <div class="trust">
               <span>Aus Wien <b>gebaut</b></span>
@@ -1373,20 +1386,11 @@
 
           <div class="inline-cta">
             <div class="inline-text">
-              Klingt nach dir? <b>Trag dich auf die Warteliste ein.</b><br>
-              Wir schreiben dir einmal, zum Launch.
+              Klingt nach dir? <b>Leg jetzt los.</b><br>
+              &euro;39,99&thinsp;/&thinsp;Jahr &mdash; alles inklusive, sofort aktiv.
             </div>
             <div class="inline-form">
-              <div class="waitlist" data-lang="de">
-                <form class="waitlist-form" novalidate>
-                  <input type="email" name="email" placeholder="deine@email.at" required aria-label="E-Mail-Adresse">
-                  <button type="submit">Auf die Warteliste &rarr;</button>
-                </form>
-                <div class="waitlist-success" role="status">
-                  <span class="check" aria-hidden="true">&#10003;</span>
-                  <span>Eingetragen. Wir melden uns, sobald Bonvio startet.</span>
-                </div>
-              </div>
+              <a class="buy-btn" href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800">Jetzt starten &rarr;</a>
             </div>
           </div>
         </section>
@@ -1434,6 +1438,7 @@
               <li>Export f&uuml;r den Steuerberater</li>
               <li>7 Jahre Aufbewahrung gem&auml;&szlig; &sect;132 BAO</li>
             </ul>
+            <a class="buy-btn" href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800">Jetzt starten &rarr;</a>
           </div>
         </section>
 
@@ -1595,21 +1600,12 @@
         </section>
 
         <section class="cta-repeat">
-          <h2>Wir melden uns, wenn's losgeht.</h2>
+          <h2>Kein Chaos mehr. <em>Einfach mailen.</em></h2>
           <p>
-            Bonvio startet bald. Trag dich auf die Warteliste ein &mdash;
-            wir schreiben dir genau einmal, zum Launch.
+            Bonvio ist live. &euro;39,99&thinsp;/&thinsp;Jahr &mdash; sofort aktiv,
+            keine App, kein Login.
           </p>
-          <div class="waitlist" data-lang="de">
-            <form class="waitlist-form" novalidate>
-              <input type="email" name="email" placeholder="deine@email.at" required aria-label="E-Mail-Adresse">
-              <button type="submit">Auf die Warteliste &rarr;</button>
-            </form>
-            <div class="waitlist-success" role="status">
-              <span class="check" aria-hidden="true">&#10003;</span>
-              <span>Eingetragen. Wir melden uns, sobald Bonvio startet.</span>
-            </div>
-          </div>
+          <a class="buy-btn" href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800">Jetzt starten &rarr;</a>
         </section>
 
       </div><!-- /lang-de -->
@@ -1634,20 +1630,8 @@
             </p>
             <div class="eyebrow">For private people, freelancers &amp; small businesses</div>
 
-            <div class="waitlist" data-lang="en">
-              <form class="waitlist-form" novalidate>
-                <input type="email" name="email" placeholder="your@email.com" required aria-label="Email address">
-                <button type="submit">Join the waitlist &rarr;</button>
-              </form>
-              <div class="waitlist-success" role="status">
-                <span class="check" aria-hidden="true">&#10003;</span>
-                <span>You're on the list. We'll be in touch when Bonvio launches.</span>
-              </div>
-              <div class="waitlist-note">
-                We email you only at launch. No newsletter, no ads.<br>
-                Later: <b>&euro;39.99 / year</b>
-              </div>
-            </div>
+            <a class="buy-btn" href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800">Start now &mdash; &euro;&thinsp;39.99&thinsp;/&thinsp;year &rarr;</a>
+            <div class="buy-sub">No setup fee. No hidden costs. Cancel any time.</div>
 
             <div class="trust">
               <span><b>Built</b> in Vienna</span>
@@ -1823,20 +1807,11 @@
 
           <div class="inline-cta">
             <div class="inline-text">
-              Sounds like you? <b>Join the waitlist.</b><br>
-              We email you once, at launch.
+              Sounds like you? <b>Get started today.</b><br>
+              &euro;39.99&thinsp;/&thinsp;year &mdash; everything included, active immediately.
             </div>
             <div class="inline-form">
-              <div class="waitlist" data-lang="en">
-                <form class="waitlist-form" novalidate>
-                  <input type="email" name="email" placeholder="your@email.com" required aria-label="Email address">
-                  <button type="submit">Join the waitlist &rarr;</button>
-                </form>
-                <div class="waitlist-success" role="status">
-                  <span class="check" aria-hidden="true">&#10003;</span>
-                  <span>You're on the list. We'll be in touch when Bonvio launches.</span>
-                </div>
-              </div>
+              <a class="buy-btn" href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800">Start now &rarr;</a>
             </div>
           </div>
         </section>
@@ -1884,6 +1859,7 @@
               <li>Export for your accountant</li>
               <li>7-year retention per &sect;132 BAO</li>
             </ul>
+            <a class="buy-btn" href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800">Start now &rarr;</a>
           </div>
         </section>
 
@@ -2045,21 +2021,12 @@
         </section>
 
         <section class="cta-repeat">
-          <h2>We'll let you know when it's live.</h2>
+          <h2>No more chaos. <em>Just email it.</em></h2>
           <p>
-            Bonvio launches soon. Sign up for the waitlist &mdash;
-            we'll email you exactly once, at launch.
+            Bonvio is live. &euro;39.99&thinsp;/&thinsp;year &mdash; active immediately,
+            no app, no login.
           </p>
-          <div class="waitlist" data-lang="en">
-            <form class="waitlist-form" novalidate>
-              <input type="email" name="email" placeholder="your@email.com" required aria-label="Email address">
-              <button type="submit">Join the waitlist &rarr;</button>
-            </form>
-            <div class="waitlist-success" role="status">
-              <span class="check" aria-hidden="true">&#10003;</span>
-              <span>You're on the list. We'll be in touch when Bonvio launches.</span>
-            </div>
-          </div>
+          <a class="buy-btn" href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800">Start now &rarr;</a>
         </section>
 
       </div><!-- /lang-en -->
@@ -2076,11 +2043,11 @@
         </div>
         <div class="footer-links">
           <a href="/datenschutz.html" class="lang-de-inline">Datenschutz</a>
-          <a href="/datenschutz.html" class="lang-en-inline">Privacy</a>
+          <a href="/datenschutz-en.html" class="lang-en-inline">Privacy</a>
           <a href="/impressum.html" class="lang-de-inline">Impressum</a>
-          <a href="/impressum.html" class="lang-en-inline">Imprint</a>
+          <a href="/impressum-en.html" class="lang-en-inline">Imprint</a>
           <a href="/agb.html" class="lang-de-inline">AGB</a>
-          <a href="/agb.html" class="lang-en-inline">Terms</a>
+          <a href="/agb-en.html" class="lang-en-inline">Terms</a>
           <a href="#" class="lang-de-inline">Kontakt</a>
           <a href="#" class="lang-en-inline">Contact</a>
         </div>
@@ -2201,45 +2168,6 @@
       setLang(lang);
     })();
 
-    // Waitlist — wired to Formspree
-    (function () {
-      var STORAGE_KEY = 'bonvio_waitlist';
-      var FORMSPREE_URL = 'https://formspree.io/f/mqenlvdd';
-
-      function markSent(email) {
-        document.querySelectorAll('.waitlist').forEach(function (w) {
-          w.classList.add('sent');
-        });
-        try { localStorage.setItem(STORAGE_KEY, email); } catch (e) {}
-      }
-
-      document.querySelectorAll('.waitlist-form').forEach(function (form) {
-        form.addEventListener('submit', function (e) {
-          e.preventDefault();
-          var email = form.email.value.trim();
-          if (!email || email.indexOf('@') === -1) return;
-
-          var wrap = form.closest('.waitlist');
-          var lang = (wrap && wrap.dataset.lang) || 'de';
-
-          // POST to Formspree (fire-and-display — even if network blocked, UX confirms)
-          fetch(FORMSPREE_URL, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-            body: JSON.stringify({ email: email, lang: lang })
-          }).catch(function () { /* ignore — still show success */ });
-
-          markSent(email);
-        });
-      });
-
-      // Returning visitor — show success immediately
-      try {
-        if (localStorage.getItem(STORAGE_KEY)) {
-          document.querySelectorAll('.waitlist').forEach(function (w) { w.classList.add('sent'); });
-        }
-      } catch (e) {}
-    })();
   </script>
 </body>
 </html>
