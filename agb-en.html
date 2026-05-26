@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms &amp; Conditions &ndash; Bonvio</title>
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://bonvio.eu/agb-en.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231F4332'/%3E%3Ctext x='16' y='23' font-family='Helvetica Neue,Helvetica,Arial,sans-serif' font-size='22' font-weight='700' fill='%23F4EFE2' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E">
+  <style>
+    :root {
+      --cream: #F4F3F0;
+      --ink: #1A1A1A;
+      --rust: #1F4332;
+      --muted: rgba(26,26,26,0.55);
+      --hair: rgba(26,26,26,0.08);
+      --hair-2: rgba(26,26,26,0.12);
+      --sans: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Inter", "Segoe UI", Helvetica, Arial, sans-serif;
+      --serif: "Newsreader", "Times New Roman", Georgia, serif;
+      --mono: "Courier New", ui-monospace, monospace;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: "";
+      position: fixed; inset: 0;
+      background-image: radial-gradient(rgba(26,26,26,0.04) 1px, transparent 1px);
+      background-size: 4px 4px;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .wrap { position: relative; z-index: 1; max-width: 1440px; margin: 0 auto; }
+
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 56px; gap: 24px;
+      position: sticky; top: 0;
+      background: rgba(244,243,240,0.92);
+      backdrop-filter: saturate(140%) blur(12px);
+      -webkit-backdrop-filter: saturate(140%) blur(12px);
+      border-bottom: 1px solid var(--hair);
+      z-index: 80;
+    }
+    .logo {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-weight: 700; font-size: 20px; letter-spacing: -0.03em;
+      color: var(--ink); text-decoration: none;
+    }
+    .logo .mark {
+      width: 28px; height: 28px; background: var(--rust);
+      border-radius: 6.16px; display: grid; place-items: center;
+      color: var(--cream); font-weight: 700; font-size: 17.5px;
+      line-height: 1; padding-bottom: 1px; letter-spacing: -0.02em;
+    }
+    .nav-back { font-size: 15px; color: var(--muted); text-decoration: none; transition: color .15s; }
+    .nav-back:hover { color: var(--ink); }
+
+    main { padding: 72px 72px 120px; max-width: 800px; }
+    .page-eyebrow {
+      font-family: var(--mono); font-size: 11px;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 16px;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-family: var(--serif);
+      font-size: clamp(36px, 4vw, 52px);
+      font-weight: 500; letter-spacing: -0.025em; line-height: 1.1;
+    }
+    .version {
+      font-family: var(--mono); font-size: 12px;
+      color: var(--muted); margin-bottom: 32px;
+    }
+    .disclaimer {
+      background: rgba(31,67,50,0.06);
+      border: 1px solid rgba(31,67,50,0.25);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-bottom: 40px;
+      font-size: 14px; line-height: 1.6; color: var(--ink);
+    }
+    .disclaimer a { color: var(--rust); }
+    .toc {
+      margin-bottom: 56px;
+      padding: 24px 28px;
+      border: 1px solid var(--hair-2);
+      border-radius: 12px;
+      background: rgba(255,255,255,0.5);
+    }
+    .toc-label {
+      font-family: var(--mono); font-size: 11px;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 12px;
+    }
+    .toc ol { margin: 0; padding-left: 20px; }
+    .toc ol li { margin-bottom: 4px; font-size: 14px; }
+    .toc ol li a { color: var(--rust); text-decoration: none; }
+    .toc ol li a:hover { text-decoration: underline; }
+
+    .clause {
+      margin-bottom: 48px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--hair);
+    }
+    .clause:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .clause h2 {
+      font-family: var(--sans);
+      font-size: 17px; font-weight: 700;
+      letter-spacing: -0.01em;
+      margin: 0 0 16px;
+    }
+    .clause h2 .num {
+      font-family: var(--mono); font-size: 11px;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--muted); display: block; margin-bottom: 4px;
+    }
+    .clause p {
+      margin: 0 0 10px;
+      font-size: 15.5px; line-height: 1.7; color: var(--ink);
+    }
+    .clause p:last-child { margin-bottom: 0; }
+    .clause ul, .clause ol {
+      margin: 0 0 10px; padding-left: 22px;
+      font-size: 15.5px; line-height: 1.7;
+    }
+    .clause li { margin-bottom: 5px; }
+    .clause ul:last-child, .clause ol:last-child { margin-bottom: 0; }
+    .clause .sub {
+      margin-left: 0;
+      padding: 12px 16px;
+      border-left: 2px solid var(--hair-2);
+      margin-bottom: 10px;
+      font-size: 15px; line-height: 1.65;
+    }
+    .highlight-box {
+      background: rgba(31,67,50,0.06);
+      border: 1px solid rgba(31,67,50,0.15);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-bottom: 10px;
+      font-size: 15px; line-height: 1.65;
+    }
+    a { color: var(--rust); }
+    a:hover { opacity: 0.75; }
+    .stand { font-family: var(--mono); font-size: 12px; color: var(--muted); margin-top: 48px; }
+
+    footer {
+      margin-top: 88px; padding: 32px 72px;
+      border-top: 1px solid var(--hair-2);
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 16px; flex-wrap: wrap;
+      font-size: 13px; color: var(--muted);
+    }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { color: var(--muted); text-decoration: none; transition: color .15s; }
+    .footer-links a:hover { color: var(--ink); }
+
+    @media (max-width: 768px) {
+      nav { padding: 16px 24px; }
+      main { padding: 48px 24px 80px; }
+      footer { padding: 24px; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <a href="/" class="logo"><span class="mark">B</span><span>Bonvio</span></a>
+    <a href="/" class="nav-back">&larr; Back</a>
+  </nav>
+
+  <main>
+    <div class="page-eyebrow">Legal</div>
+    <h1>Terms &amp; Conditions</h1>
+    <div class="version">Edition May 2026 &mdash; Bonvio, Niko Andersson, 1030 Vienna</div>
+
+    <div class="disclaimer">
+      <strong>Translation notice.</strong> This is an English translation of the German-language
+      Allgemeine Gesch&auml;ftsbedingungen (AGB) provided for information and accessibility purposes only.
+      In the event of any discrepancy between this translation and the German original, the
+      <a href="/agb.html">German version</a> shall prevail. The legally binding document is the German AGB.
+    </div>
+
+    <div class="toc">
+      <div class="toc-label">Contents</div>
+      <ol>
+        <li><a href="#s1">Scope and Parties</a></li>
+        <li><a href="#s2">Formation of Contract</a></li>
+        <li><a href="#s3">Service Description</a></li>
+        <li><a href="#s4">Fees and Payment</a></li>
+        <li><a href="#s5">Term and Termination</a></li>
+        <li><a href="#s6">Right of Withdrawal</a></li>
+        <li><a href="#s7">Usage Rights and Restrictions</a></li>
+        <li><a href="#s8">Availability</a></li>
+        <li><a href="#s9">Text Recognition &mdash; Accuracy and User Responsibility</a></li>
+        <li><a href="#s10">Data Backup</a></li>
+        <li><a href="#s11">Limitation of Liability</a></li>
+        <li><a href="#s12">Right to Amend</a></li>
+        <li><a href="#s13">Data Protection</a></li>
+        <li><a href="#s14">Confidentiality</a></li>
+        <li><a href="#s15">Final Provisions</a></li>
+      </ol>
+    </div>
+
+    <!-- §1 -->
+    <div class="clause" id="s1">
+      <h2><span class="num">&sect; 1</span>Scope and Parties</h2>
+      <p>1.1. These General Terms and Conditions (GTC) govern the contractual relationship between</p>
+      <p class="sub"><strong>Bonvio</strong>, operated by Niko Andersson, Schnirchgasse 11, 1030 Vienna, Austria (hereinafter &ldquo;Bonvio&rdquo;)</p>
+      <p>and the natural or legal person using the service (hereinafter &ldquo;User&rdquo;).</p>
+      <p>1.2. These GTC apply to all current and future services provided by Bonvio, even where no express reference is made to them in individual cases. Any deviating or supplementary conditions of the User are expressly rejected and shall have no effect unless Bonvio has expressly agreed to them in writing.</p>
+      <p>1.3. Bonvio is directed primarily at entrepreneurs within the meaning of &sect;&#x202F;1(1)(1) of the Austrian Consumer Protection Act (KSchG) &mdash; sole traders, freelancers and small businesses. Where consumers within the meaning of &sect;&#x202F;1(1)(2) KSchG use the service, the mandatory protective provisions of the KSchG apply in addition.</p>
+    </div>
+
+    <!-- §2 -->
+    <div class="clause" id="s2">
+      <h2><span class="num">&sect; 2</span>Formation of Contract</h2>
+      <p>2.1. The contract is formed upon completion of the order process via the payment service provider Stripe. By completing payment the User submits a binding offer to conclude a usage agreement; the contract is concluded upon Bonvio sending a confirmation email.</p>
+      <p>2.2. The provision of a user account, a personal receipt address and the dispatch of the welcome email constitute receipt of the acceptance declaration.</p>
+      <p>2.3. All agreements require written form to be effective (email suffices). No oral collateral agreements exist.</p>
+    </div>
+
+    <!-- §3 -->
+    <div class="clause" id="s3">
+      <h2><span class="num">&sect; 3</span>Service Description</h2>
+      <p>3.1. Bonvio provides a digital receipt management service comprising:</p>
+      <ul>
+        <li>Provision of a personal email address (e.g. <code>bonvio1234@bonvio.eu</code>) for submitting receipt photos</li>
+        <li>Automatic text recognition (OCR) of submitted receipt photos (vendor, date, amount, VAT)</li>
+        <li>Encrypted storage of receipts and extracted data on servers within the EU (currently AWS eu-central-1, Frankfurt, Germany)</li>
+        <li>Return of a confirmation email with recognised data to the User</li>
+        <li>Export functions via email command (<code>EXPORT</code>) as a ZIP archive containing original photos and a CSV file</li>
+        <li>Deletion function for individual receipts via email command (<code>DELETE</code>)</li>
+      </ul>
+      <p>3.2. The following are expressly excluded from the scope of services:</p>
+      <ul>
+        <li>Tax advice, bookkeeping or legal advice of any kind</li>
+        <li>Processing of PDF files (receipts must be submitted as photos)</li>
+        <li>Direct third-party access (e.g. for accountants) &mdash; subject to future extensions</li>
+        <li>Any guarantee of the tax or legal usability of exported data</li>
+      </ul>
+      <p>3.3. Bonvio is entitled to modify, restrict or extend the scope of services within reasonable bounds, provided the User is notified with reasonable notice pursuant to &sect;&#x202F;12 and the core utility of the service is preserved.</p>
+      <p>3.4. Bonvio is a storage tool, not an accounting system. All tax, legal and bookkeeping obligations of the User remain unaffected and lie exclusively within the User&rsquo;s own responsibility.</p>
+    </div>
+
+    <!-- §4 -->
+    <div class="clause" id="s4">
+      <h2><span class="num">&sect; 4</span>Fees and Payment</h2>
+      <p>4.1. Use of Bonvio is subject to a fee. The current charge is <strong>&euro;&#x202F;39.99 per year</strong> (including any applicable taxes; Bonvio qualifies as a small business under &sect;&#x202F;6(1)(27) of the Austrian VAT Act and does not charge VAT).</p>
+      <p>4.2. Payment is made annually in advance via the payment service provider Stripe. The subscription renews automatically for a further year unless the User cancels in accordance with &sect;&#x202F;5 in good time.</p>
+      <p>4.3. In the event of payment default, Bonvio is entitled to suspend access to the service without prior notice and, after 14&#x202F;days without further reminder, to delete the customer configuration. Receipt data already stored will be retained for up to seven years by default but will not be accessible during a suspension. Legal responsibility for retention obligations remains with the User.</p>
+      <p>4.4. Bonvio reserves the right to adjust prices with 6&#x202F;weeks&rsquo; notice. If the User does not accept the new prices, they may terminate extraordinarily pursuant to &sect;&#x202F;5. Continued use after expiry of the notice period constitutes acceptance of the new prices.</p>
+      <p>4.5. Bonvio is a sole proprietorship; refunds of annual fees already paid are generally not made, except where Bonvio permanently and completely discontinues the service.</p>
+    </div>
+
+    <!-- §5 -->
+    <div class="clause" id="s5">
+      <h2><span class="num">&sect; 5</span>Term and Termination</h2>
+      <p>5.1. The contract is concluded for one year and renews automatically for a further year unless terminated no later than 30&#x202F;days before the end of the respective contract year.</p>
+      <p>5.2. Cancellation is effected by cancelling the subscription via the Stripe customer portal or by email to <a href="mailto:hello@bonvio.eu">hello@bonvio.eu</a>. Bonvio will confirm cancellation by email within 5&#x202F;business days.</p>
+      <p>5.3. Bonvio is entitled to terminate the contract for cause with immediate effect, in particular where:</p>
+      <ul>
+        <li>the User breaches these GTC, in particular &sect;&#x202F;7;</li>
+        <li>the User uses the service abusively or causes harm to third parties;</li>
+        <li>the User provided false information at registration;</li>
+        <li>payment default exceeds 14&#x202F;days.</li>
+      </ul>
+      <p>5.4. Following termination of the contract, receipt data will be stored for up to seven years by default (orientated at &sect;&#x202F;132 of the Austrian Federal Fiscal Code, BAO) and then deleted. Legal responsibility for retention obligations remains with the User. On request, Bonvio will provide a final export opportunity before deletion.</p>
+      <p>5.5. Should Bonvio permanently discontinue the service, all Users will be notified with at least 60&#x202F;days&rsquo; notice and given the opportunity to export their data.</p>
+    </div>
+
+    <!-- §6 -->
+    <div class="clause" id="s6">
+      <h2><span class="num">&sect; 6</span>Right of Withdrawal</h2>
+      <div class="highlight-box">
+        <strong>Important notice on the right of withdrawal:</strong> Pursuant to &sect;&#x202F;18(1)(11) of the Austrian Distance and Off-Premises Contracts Act (FAGG), the right of withdrawal lapses for digital services where performance has begun before the withdrawal period has expired, provided the User has expressly consented to early performance and acknowledged that they thereby lose their right of withdrawal.
+      </div>
+      <p>6.1. During the checkout process the User expressly confirms the immediate provision of the digital service. Performance commences upon completion of the purchase process and dispatch of the welcome email. The right of withdrawal therefore lapses at the time the contract is concluded.</p>
+      <p>6.2. To the extent the User as a consumer (within the meaning of KSchG) has a statutory right of withdrawal that has not lapsed pursuant to clause&#x202F;1, the withdrawal period is 14&#x202F;days from conclusion of the contract. Withdrawal must be declared by email to <a href="mailto:hello@bonvio.eu">hello@bonvio.eu</a>.</p>
+    </div>
+
+    <!-- §7 -->
+    <div class="clause" id="s7">
+      <h2><span class="num">&sect; 7</span>Usage Rights and Restrictions</h2>
+      <p>7.1. Bonvio grants the User a non-exclusive, non-transferable, non-sublicensable right to use the service for personal purposes, limited to the term of the contract.</p>
+      <p>7.2. The User is prohibited from:</p>
+      <ul>
+        <li>commercially reselling the service or making it available to third parties for a fee;</li>
+        <li>sharing the personal receipt address with persons who do not belong to the User&rsquo;s household or business;</li>
+        <li>conducting automated mass submissions that do not correspond to the intended use (receipt management);</li>
+        <li>using the service to process third-party data without their consent;</li>
+        <li>circumventing security mechanisms or using the service in a manner that harms third parties or Bonvio.</li>
+      </ul>
+      <p>7.3. A reasonable fair-use limit of 3,000 receipts per year applies as an appropriate framework. In the event of material excess, Bonvio reserves the right to contact the User and agree a solution.</p>
+      <p>7.4. Bonvio retains all rights to the service, the underlying software, infrastructure and the name Bonvio. No rights beyond those expressly granted are conferred on the User.</p>
+    </div>
+
+    <!-- §8 -->
+    <div class="clause" id="s8">
+      <h2><span class="num">&sect; 8</span>Availability</h2>
+      <p>8.1. Bonvio aims for high availability of the service but provides no guarantee of uninterrupted or error-free availability. No service level agreement (SLA) forms part of this contract.</p>
+      <p>8.2. Bonvio is entitled to temporarily interrupt the service for maintenance, security updates or technical improvements. Where possible, planned interruptions will be announced in good time.</p>
+      <p>8.3. Bonvio is not liable for outages attributable to third parties, in particular Amazon Web Services, Resend, Stripe or the User&rsquo;s internet service provider.</p>
+      <p>8.4. Brief delays in the processing of incoming emails do not constitute a defect and do not entitle the User to a reduction in fees or termination.</p>
+    </div>
+
+    <!-- §9 -->
+    <div class="clause" id="s9">
+      <h2><span class="num">&sect; 9</span>Text Recognition &mdash; Accuracy and User Responsibility</h2>
+      <p>9.1. Automatic text recognition (OCR) produces approximate values based on the submitted receipt photos. Bonvio provides no warranty as to the completeness, accuracy or tax usability of the recognised data.</p>
+      <p>9.2. The <strong>original receipts</strong> are always authoritative for all tax, legal and accounting purposes. The User is obliged to verify extracted data before any further use.</p>
+      <p>9.3. Receipts that cannot be recognised due to poor photo quality, illegible print quality or insufficient lighting will be referred back to the User for resubmission. There is no entitlement to successful processing of every submitted receipt.</p>
+      <p>9.4. The User is responsible for ensuring that submitted photos contain no third-party data for the processing of which no legal basis exists.</p>
+    </div>
+
+    <!-- §10 -->
+    <div class="clause" id="s10">
+      <h2><span class="num">&sect; 10</span>Data Backup</h2>
+      <p>10.1. Bonvio stores receipt data redundantly on cloud infrastructure in Frankfurt. Notwithstanding this, responsibility for independent backup of original data and receipts lies exclusively with the User.</p>
+      <p>10.2. Bonvio recommends that Users regularly perform exports (&ldquo;EXPORT&rdquo;) and archive them locally.</p>
+      <p>10.3. Bonvio accepts no liability for data loss attributable to force majeure, technical failure of the underlying cloud infrastructure or circumstances beyond Bonvio&rsquo;s control.</p>
+    </div>
+
+    <!-- §11 -->
+    <div class="clause" id="s11">
+      <h2><span class="num">&sect; 11</span>Limitation of Liability</h2>
+      <p>11.1. Bonvio is liable to the User for demonstrably caused damage exclusively in cases of <strong>gross negligence or wilful misconduct</strong>. Liability for slight negligence is excluded to the extent permitted by law.</p>
+      <p>11.2. Liability for indirect damages is expressly excluded, in particular for:</p>
+      <ul>
+        <li>lost profit;</li>
+        <li>loss of data or business information;</li>
+        <li>tax disadvantages resulting from erroneous or missing receipt recognition;</li>
+        <li>costs arising in connection with a service outage;</li>
+        <li>third-party claims against the User.</li>
+      </ul>
+      <p>11.3. To the extent liability cannot be fully excluded, it is limited in amount to the fee actually paid by the User in the relevant contract year (&euro;&#x202F;39.99).</p>
+      <p>11.4. Bonvio&rsquo;s liability for personal injury is unlimited. These limitations do not apply to the extent that mandatory applicable consumer law prescribes greater liability.</p>
+      <p>11.5. Bonvio is not responsible for the contents of receipts submitted by the User. The User indemnifies Bonvio against third-party claims arising from unlawful use of the service by the User.</p>
+    </div>
+
+    <!-- §12 -->
+    <div class="clause" id="s12">
+      <h2><span class="num">&sect; 12</span>Right to Amend</h2>
+      <p>12.1. Bonvio reserves the right to amend these GTC with <strong>6&#x202F;weeks&rsquo;</strong> notice. Amendments will be communicated to the User by email to the registered address.</p>
+      <p>12.2. If the User does not object to the amended GTC within the 6&#x202F;week period, the amended GTC are deemed accepted. Bonvio will expressly draw the User&rsquo;s attention to this legal consequence in the amendment notice.</p>
+      <p>12.3. In the event of objection, Bonvio is entitled to terminate the contract at the end of the current contract year. No pro-rata refund entitlement arises in this case.</p>
+      <p>12.4. Amendments that are exclusively more favourable to the User (e.g. price reductions, service extensions) may be brought into effect without the User&rsquo;s right of objection.</p>
+    </div>
+
+    <!-- §13 -->
+    <div class="clause" id="s13">
+      <h2><span class="num">&sect; 13</span>Data Protection</h2>
+      <p>13.1. The processing of personal data is governed by the <a href="/datenschutz-en.html">Bonvio Privacy Policy</a>, which forms part of these GTC.</p>
+      <p>13.2. By concluding the contract the User confirms having taken note of the Privacy Policy.</p>
+    </div>
+
+    <!-- §14 -->
+    <div class="clause" id="s14">
+      <h2><span class="num">&sect; 14</span>Confidentiality</h2>
+      <p>14.1. Bonvio treats all receipt data submitted by the User as confidential and does not disclose it to third parties, except to the extent required for service provision (processors pursuant to the Privacy Policy) or legally mandated.</p>
+      <p>14.2. The User undertakes not to share their personal receipt address (<code>bonvioXXXX@bonvio.eu</code>) with unauthorised third parties. Misuse resulting from such sharing is the User&rsquo;s responsibility.</p>
+      <p>14.3. Bonvio may assume that emails received from the User&rsquo;s registered email address are authorised. The User bears responsibility for the security of their email account. Bonvio is not liable for damages arising from compromise of the User&rsquo;s email account.</p>
+    </div>
+
+    <!-- §15 -->
+    <div class="clause" id="s15">
+      <h2><span class="num">&sect; 15</span>Final Provisions</h2>
+      <p>15.1. <strong>Governing law:</strong> Austrian law applies exclusively, to the exclusion of the UN Convention on Contracts for the International Sale of Goods (CISG) and the conflict-of-law rules of private international law. Mandatory consumer protection provisions of the User&rsquo;s country of residence that are more favourable remain unaffected.</p>
+      <p>15.2. <strong>Jurisdiction:</strong> For disputes arising out of or in connection with this contract, the exclusive jurisdiction of the competent court at Bonvio&rsquo;s place of business (Vienna) is agreed to the extent permitted by law. Against consumers this applies only where no mandatory statutory venue takes precedence.</p>
+      <p>15.3. <strong>Severability:</strong> Should individual provisions of these GTC be or become wholly or partly invalid, this does not affect the validity of the remaining provisions. The invalid provision shall be replaced by a valid one that comes as close as possible to the economic purpose of the invalid provision.</p>
+      <p>15.4. <strong>Dispute resolution:</strong> Bonvio does not participate in alternative dispute resolution proceedings. The European Commission provides an online dispute resolution platform at <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a>.</p>
+      <p>15.5. <strong>Language:</strong> The language of contract is German. Translations of these GTC serve for information purposes only; the German version is always authoritative.</p>
+    </div>
+
+    <p class="stand">Edition May 2026 &mdash; Bonvio, Niko Andersson, Vienna</p>
+  </main>
+
+  <footer>
+    <span>&copy; 2026 Bonvio &middot; Vienna, Austria</span>
+    <div class="footer-links">
+      <a href="/impressum.html">Imprint</a>
+      <a href="/datenschutz-en.html">Privacy</a>
+      <a href="/agb-en.html">Terms</a>
+      <a href="/agb.html">DE</a>
+      <a href="/">Back to homepage</a>
+    </div>
+  </footer>
+</div>
+</body>
+</html>
