@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy &ndash; Bonvio</title>
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://bonvio.eu/datenschutz-en.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231F4332'/%3E%3Ctext x='16' y='23' font-family='Helvetica Neue,Helvetica,Arial,sans-serif' font-size='22' font-weight='700' fill='%23F4EFE2' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E">
+  <style>
+    :root {
+      --cream: #F4F3F0;
+      --ink: #1A1A1A;
+      --ink-soft: #0F2A1F;
+      --rust: #1F4332;
+      --muted: rgba(26,26,26,0.55);
+      --hair: rgba(26,26,26,0.08);
+      --hair-2: rgba(26,26,26,0.12);
+      --sans: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Inter", "Segoe UI", Helvetica, Arial, sans-serif;
+      --serif: "Newsreader", "Times New Roman", Georgia, serif;
+      --mono: "Courier New", ui-monospace, monospace;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: "";
+      position: fixed; inset: 0;
+      background-image: radial-gradient(rgba(26,26,26,0.04) 1px, transparent 1px);
+      background-size: 4px 4px;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .wrap { position: relative; z-index: 1; max-width: 1440px; margin: 0 auto; }
+
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 56px;
+      gap: 24px;
+      position: sticky; top: 0;
+      background: rgba(244,243,240,0.92);
+      backdrop-filter: saturate(140%) blur(12px);
+      -webkit-backdrop-filter: saturate(140%) blur(12px);
+      border-bottom: 1px solid var(--hair);
+      z-index: 80;
+    }
+    .logo {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-weight: 700; font-size: 20px; letter-spacing: -0.03em;
+      color: var(--ink); text-decoration: none;
+    }
+    .logo .mark {
+      width: 28px; height: 28px;
+      background: var(--rust);
+      border-radius: 6.16px;
+      display: grid; place-items: center;
+      color: var(--cream);
+      font-weight: 700; font-size: 17.5px;
+      line-height: 1; padding-bottom: 1px;
+      letter-spacing: -0.02em;
+    }
+    .nav-back {
+      font-size: 15px; color: var(--muted);
+      text-decoration: none;
+      transition: color .15s;
+    }
+    .nav-back:hover { color: var(--ink); }
+
+    main {
+      padding: 72px 72px 120px;
+      max-width: 760px;
+    }
+    .page-eyebrow {
+      font-family: var(--mono);
+      font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+    h1 {
+      margin: 0 0 56px;
+      font-family: var(--serif);
+      font-size: clamp(36px, 4vw, 52px);
+      font-weight: 500;
+      letter-spacing: -0.025em;
+      line-height: 1.1;
+    }
+
+    .notice {
+      background: rgba(26,26,26,0.04);
+      border: 1px solid var(--hair-2);
+      border-radius: 8px;
+      padding: 20px 24px;
+      margin-bottom: 44px;
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+    .notice strong { color: var(--ink); }
+
+    .block {
+      margin-bottom: 44px;
+      padding-bottom: 44px;
+      border-bottom: 1px solid var(--hair);
+    }
+    .block:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .block-label {
+      font-family: var(--mono);
+      font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+    .block p {
+      margin: 0 0 10px;
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--ink);
+    }
+    .block p:last-child { margin-bottom: 0; }
+    .block ul {
+      margin: 0 0 10px;
+      padding-left: 20px;
+      font-size: 16px;
+      line-height: 1.65;
+    }
+    .block ul li { margin-bottom: 4px; }
+    .block ul:last-child { margin-bottom: 0; }
+    .block h3 {
+      margin: 20px 0 8px;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+    a { color: var(--ink); }
+    a:hover { opacity: 0.7; }
+    .stand {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 48px;
+    }
+
+    footer {
+      margin-top: 88px;
+      padding: 32px 72px;
+      border-top: 1px solid var(--hair-2);
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 16px; flex-wrap: wrap;
+      font-size: 13px; color: var(--muted);
+    }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { color: var(--muted); text-decoration: none; transition: color .15s; }
+    .footer-links a:hover { color: var(--ink); }
+
+    @media (max-width: 768px) {
+      nav { padding: 16px 24px; }
+      main { padding: 48px 24px 80px; }
+      footer { padding: 24px; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <a href="/" class="logo">
+      <span class="mark">B</span>
+      <span>Bonvio</span>
+    </a>
+    <a href="/" class="nav-back">&larr; Back</a>
+  </nav>
+
+  <main>
+    <div class="page-eyebrow">Legal</div>
+    <h1>Privacy Policy</h1>
+
+    <div class="notice">
+      <strong>Translation notice.</strong> This is an English translation of the German-language
+      <a href="/datenschutz.html">Datenschutzerkl&auml;rung</a> provided for information and
+      accessibility purposes only. In the event of any discrepancy between this translation and
+      the German original, <strong>the German version shall prevail</strong>. The applicable law
+      is Austrian and EU law.
+    </div>
+
+    <div class="block">
+      <div class="block-label">Controller</div>
+      <p>Niko Andersson &middot; Schnirchgasse 11, 1030 Vienna, Austria &middot; <a href="mailto:hello@bonvio.eu">hello@bonvio.eu</a></p>
+      <p>No data protection officer required (Art.&thinsp;37 GDPR).</p>
+    </div>
+
+    <div class="block">
+      <div class="block-label">Data Processed</div>
+      <ul>
+        <li>Name and e-mail address</li>
+        <li>Receipt data</li>
+        <li>Payment references (card and bank details are not processed by Bonvio)</li>
+        <li>Usage data</li>
+      </ul>
+      <p>No advertising profiles. No disclosure for advertising purposes. Bonvio is not designed for special categories of personal data within the meaning of Art.&thinsp;9 GDPR.</p>
+    </div>
+
+    <div class="block">
+      <div class="block-label">Legal Bases</div>
+      <p><strong>Art. 6(1)(b) GDPR</strong> &mdash; Performance of contract: provision of the service.</p>
+      <p><strong>Art. 6(1)(c) GDPR</strong> &mdash; Retention periods are guided by &sect;132 of the Austrian Federal Fiscal Code (BAO). Statutory responsibility for compliance with retention obligations rests with the user.</p>
+      <p><strong>Art. 6(1)(f) GDPR</strong> &mdash; Legitimate interests: abuse detection and system security.</p>
+      <p>Advertising, newsletters and profiling do not take place.</p>
+    </div>
+
+    <div class="block">
+      <div class="block-label">Retention Periods</div>
+      <ul>
+        <li>Receipt data: up to 7 years, then automatic deletion</li>
+        <li>Incoming e-mails (technical): 90 days</li>
+        <li>Customer configuration: until termination, then 30 days</li>
+        <li>System logs: 7 days</li>
+      </ul>
+    </div>
+
+    <div class="block">
+      <div class="block-label">Processors</div>
+      <ul>
+        <li><strong>EU cloud provider:</strong> Data storage and processing. Data processing agreement in place.</li>
+        <li><strong>E-mail service provider (USA):</strong> Transactional communications. Standard contractual clauses (Art.&thinsp;46(2)(c) GDPR).</li>
+        <li><strong>Payment service provider (USA):</strong> Payment processing. Card and bank details not processed by Bonvio. Standard contractual clauses.</li>
+        <li><strong>Form service provider (USA):</strong> Website contact forms. Standard contractual clauses.</li>
+      </ul>
+    </div>
+
+    <div class="block">
+      <div class="block-label">Automated Decisions</div>
+      <p>No automated decision-making with legal effect (Art.&thinsp;22 GDPR).</p>
+    </div>
+
+    <div class="block">
+      <div class="block-label">Your Rights</div>
+      <p>Access (Art.&thinsp;15) &middot; Rectification (Art.&thinsp;16) &middot; Erasure (Art.&thinsp;17, subject to statutory retention obligations) &middot; Restriction (Art.&thinsp;18) &middot; Data portability (Art.&thinsp;20) &middot; Objection (Art.&thinsp;21)</p>
+      <p>Requests: <a href="mailto:hello@bonvio.eu">hello@bonvio.eu</a></p>
+    </div>
+
+    <div class="block">
+      <div class="block-label">Security</div>
+      <p>Technical and organisational measures are in place. No system can guarantee absolute security. Access to Bonvio is tied to the security of the e-mail account used; users are responsible for protecting their own account.</p>
+    </div>
+
+    <div class="block">
+      <div class="block-label">Right to Lodge a Complaint</div>
+      <p>Austrian Data Protection Authority &middot; Barichgasse 40&ndash;42, 1030 Vienna &middot; <a href="mailto:dsb@dsb.gv.at">dsb@dsb.gv.at</a> &middot; <a href="https://www.dsb.gv.at" target="_blank" rel="noopener">www.dsb.gv.at</a></p>
+    </div>
+
+    <p class="stand">As of: May 2026</p>
+  </main>
+
+  <footer>
+    <span>&copy; 2026 Bonvio &middot; Vienna, Austria</span>
+    <div class="footer-links">
+      <a href="/impressum.html">Imprint</a>
+      <a href="/datenschutz.html">Datenschutz (DE)</a>
+      <a href="/datenschutz-en.html">Privacy</a>
+      <a href="/agb-en.html">Terms</a>
+      <a href="/">Back to homepage</a>
+    </div>
+  </footer>
+</div>
+</body>
+</html>

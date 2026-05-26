@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AGB &ndash; Bonvio</title>
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://bonvio.eu/agb.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231F4332'/%3E%3Ctext x='16' y='23' font-family='Helvetica Neue,Helvetica,Arial,sans-serif' font-size='22' font-weight='700' fill='%23F4EFE2' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E">
+  <style>
+    :root {
+      --cream: #F4F3F0;
+      --ink: #1A1A1A;
+      --rust: #1F4332;
+      --muted: rgba(26,26,26,0.55);
+      --hair: rgba(26,26,26,0.08);
+      --hair-2: rgba(26,26,26,0.12);
+      --sans: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Inter", "Segoe UI", Helvetica, Arial, sans-serif;
+      --serif: "Newsreader", "Times New Roman", Georgia, serif;
+      --mono: "Courier New", ui-monospace, monospace;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: "";
+      position: fixed; inset: 0;
+      background-image: radial-gradient(rgba(26,26,26,0.04) 1px, transparent 1px);
+      background-size: 4px 4px;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .wrap { position: relative; z-index: 1; max-width: 1440px; margin: 0 auto; }
+
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 56px; gap: 24px;
+      position: sticky; top: 0;
+      background: rgba(244,243,240,0.92);
+      backdrop-filter: saturate(140%) blur(12px);
+      -webkit-backdrop-filter: saturate(140%) blur(12px);
+      border-bottom: 1px solid var(--hair);
+      z-index: 80;
+    }
+    .logo {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-weight: 700; font-size: 20px; letter-spacing: -0.03em;
+      color: var(--ink); text-decoration: none;
+    }
+    .logo .mark {
+      width: 28px; height: 28px; background: var(--rust);
+      border-radius: 6.16px; display: grid; place-items: center;
+      color: var(--cream); font-weight: 700; font-size: 17.5px;
+      line-height: 1; padding-bottom: 1px; letter-spacing: -0.02em;
+    }
+    .nav-back { font-size: 15px; color: var(--muted); text-decoration: none; transition: color .15s; }
+    .nav-back:hover { color: var(--ink); }
+
+    main { padding: 72px 72px 120px; max-width: 800px; }
+    .page-eyebrow {
+      font-family: var(--mono); font-size: 11px;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 16px;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-family: var(--serif);
+      font-size: clamp(36px, 4vw, 52px);
+      font-weight: 500; letter-spacing: -0.025em; line-height: 1.1;
+    }
+    .version {
+      font-family: var(--mono); font-size: 12px;
+      color: var(--muted); margin-bottom: 56px;
+    }
+    .toc {
+      margin-bottom: 56px;
+      padding: 24px 28px;
+      border: 1px solid var(--hair-2);
+      border-radius: 12px;
+      background: rgba(255,255,255,0.5);
+    }
+    .toc-label {
+      font-family: var(--mono); font-size: 11px;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 12px;
+    }
+    .toc ol { margin: 0; padding-left: 20px; }
+    .toc ol li { margin-bottom: 4px; font-size: 14px; }
+    .toc ol li a { color: var(--rust); text-decoration: none; }
+    .toc ol li a:hover { text-decoration: underline; }
+
+    .clause {
+      margin-bottom: 48px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--hair);
+    }
+    .clause:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .clause h2 {
+      font-family: var(--sans);
+      font-size: 17px; font-weight: 700;
+      letter-spacing: -0.01em;
+      margin: 0 0 16px;
+    }
+    .clause h2 .num {
+      font-family: var(--mono); font-size: 11px;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--muted); display: block; margin-bottom: 4px;
+    }
+    .clause p {
+      margin: 0 0 10px;
+      font-size: 15.5px; line-height: 1.7; color: var(--ink);
+    }
+    .clause p:last-child { margin-bottom: 0; }
+    .clause ul, .clause ol {
+      margin: 0 0 10px; padding-left: 22px;
+      font-size: 15.5px; line-height: 1.7;
+    }
+    .clause li { margin-bottom: 5px; }
+    .clause ul:last-child, .clause ol:last-child { margin-bottom: 0; }
+    .clause .sub {
+      margin-left: 0;
+      padding: 12px 16px;
+      border-left: 2px solid var(--hair-2);
+      margin-bottom: 10px;
+      font-size: 15px; line-height: 1.65;
+    }
+    .highlight-box {
+      background: rgba(31,67,50,0.06);
+      border: 1px solid rgba(31,67,50,0.15);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-bottom: 10px;
+      font-size: 15px; line-height: 1.65;
+    }
+    a { color: var(--rust); }
+    a:hover { opacity: 0.75; }
+    .stand { font-family: var(--mono); font-size: 12px; color: var(--muted); margin-top: 48px; }
+
+    footer {
+      margin-top: 88px; padding: 32px 72px;
+      border-top: 1px solid var(--hair-2);
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 16px; flex-wrap: wrap;
+      font-size: 13px; color: var(--muted);
+    }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { color: var(--muted); text-decoration: none; transition: color .15s; }
+    .footer-links a:hover { color: var(--ink); }
+
+    @media (max-width: 768px) {
+      nav { padding: 16px 24px; }
+      main { padding: 48px 24px 80px; }
+      footer { padding: 24px; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <a href="/" class="logo"><span class="mark">B</span><span>Bonvio</span></a>
+    <a href="/" class="nav-back">&larr; Zur&uuml;ck</a>
+  </nav>
+
+  <main>
+    <div class="page-eyebrow">Rechtliches</div>
+    <h1>Allgemeine Gesch&auml;ftsbedingungen</h1>
+    <div class="version">Ausgabe Mai 2026 &mdash; Bonvio, Niko Andersson, 1030 Wien</div>
+
+    <div class="toc">
+      <div class="toc-label">Inhalt</div>
+      <ol>
+        <li><a href="#s1">Geltungsbereich und Vertragsparteien</a></li>
+        <li><a href="#s2">Vertragsschluss</a></li>
+        <li><a href="#s3">Leistungsbeschreibung</a></li>
+        <li><a href="#s4">Vergütung und Zahlung</a></li>
+        <li><a href="#s5">Laufzeit und Kündigung</a></li>
+        <li><a href="#s6">Widerrufsrecht</a></li>
+        <li><a href="#s7">Nutzungsrechte und -beschränkungen</a></li>
+        <li><a href="#s8">Verfügbarkeit</a></li>
+        <li><a href="#s9">Texterkennung &mdash; Genauigkeit und Haftung des Nutzers</a></li>
+        <li><a href="#s10">Datensicherung</a></li>
+        <li><a href="#s11">Haftungsbeschränkung</a></li>
+        <li><a href="#s12">Änderungsvorbehalt</a></li>
+        <li><a href="#s13">Datenschutz</a></li>
+        <li><a href="#s14">Geheimhaltung</a></li>
+        <li><a href="#s15">Schlussbestimmungen</a></li>
+      </ol>
+    </div>
+
+    <!-- §1 -->
+    <div class="clause" id="s1">
+      <h2><span class="num">&sect; 1</span>Geltungsbereich und Vertragsparteien</h2>
+      <p>1.1. Diese Allgemeinen Gesch&auml;ftsbedingungen (AGB) regeln das Vertragsverh&auml;ltnis zwischen</p>
+      <p class="sub"><strong>Bonvio</strong>, betrieben von Niko Andersson, Schnirchgasse 11, 1030 Wien, &Ouml;sterreich (nachfolgend &bdquo;Bonvio&ldquo; oder &bdquo;AN&ldquo;)</p>
+      <p>und der nat&uuml;rlichen oder juristischen Person, die den Dienst nutzt (nachfolgend &bdquo;Nutzer&ldquo; oder &bdquo;AG&ldquo;).</p>
+      <p>1.2. Diese AGB gelten f&uuml;r alle gegenw&auml;rtigen und zuk&uuml;nftigen Leistungen von Bonvio, auch wenn im Einzelfall nicht ausdr&uuml;cklich auf sie Bezug genommen wird. Abweichende oder erg&auml;nzende Bedingungen des Nutzers werden ausdr&uuml;cklich abgelehnt und entfalten keine Wirkung, sofern Bonvio ihnen nicht ausdr&uuml;cklich schriftlich zugestimmt hat.</p>
+      <p>1.3. Bonvio richtet sich prim&auml;r an Unternehmer im Sinne des &sect;1 Abs. 1 Z 1 KSchG (Einzelunternehmer, Freiberufler, Kleinunternehmen). Soweit Verbraucher im Sinne des &sect;1 Abs. 1 Z 2 KSchG den Dienst nutzen, gelten die zwingenden Schutzbestimmungen des KSchG zus&auml;tzlich.</p>
+    </div>
+
+    <!-- §2 -->
+    <div class="clause" id="s2">
+      <h2><span class="num">&sect; 2</span>Vertragsschluss</h2>
+      <p>2.1. Der Vertrag kommt durch Abschluss des Bestellvorgangs &uuml;ber den Zahlungsdienstleister Stripe zustande. Mit Abschluss der Zahlung gibt der Nutzer ein verbindliches Angebot zum Abschluss eines Nutzungsvertrags ab; der Vertrag ist mit Zusendung der Best&auml;tigungs-E-Mail durch Bonvio geschlossen.</p>
+      <p>2.2. Die Zurverfügungstellung eines Nutzerkontos, einer pers&ouml;nlichen Belegadresse sowie die Zusendung der Willkommens-E-Mail gelten als Zugang der Annahmeerklärung.</p>
+      <p>2.3. S&auml;mtliche Vereinbarungen bed&uuml;rfen zu ihrer Wirksamkeit der Schriftform (E-Mail gen&uuml;gt). M&uuml;ndliche Nebenabreden bestehen nicht.</p>
+    </div>
+
+    <!-- §3 -->
+    <div class="clause" id="s3">
+      <h2><span class="num">&sect; 3</span>Leistungsbeschreibung</h2>
+      <p>3.1. Bonvio erbringt einen digitalen Belegverwaltungsdienst mit folgendem Leistungsumfang:</p>
+      <ul>
+        <li>Bereitstellung einer pers&ouml;nlichen E-Mail-Adresse (z.&thinsp;B. <code>bonvio1234@bonvio.eu</code>) zur Entgegennahme von Belegfotos</li>
+        <li>Automatische Texterkennung (OCR) der eingereichten Belegfotos (H&auml;ndler, Datum, Betrag, MwSt)</li>
+        <li>Verschl&uuml;sselte Speicherung der Belege und extrahierten Daten auf Servern innerhalb der EU (derzeit AWS eu-central-1, Frankfurt, Deutschland)</li>
+        <li>R&uuml;cksendung einer Bestätigungs-E-Mail mit erkannten Daten an den Nutzer</li>
+        <li>Bereitstellung von Exportfunktionen per E-Mail-Befehl (<code>EXPORT</code>) als ZIP-Archiv mit Originalfotos und CSV-Datei</li>
+        <li>L&ouml;schfunktion einzelner Belege per E-Mail-Befehl (<code>DELETE</code>)</li>
+      </ul>
+      <p>3.2. Nicht im Leistungsumfang enthalten sind insbesondere:</p>
+      <ul>
+        <li>Steuerberatung, Buchf&uuml;hrung oder Rechtsberatung jeglicher Art</li>
+        <li>Verarbeitung von PDF-Dateien (Belege sind als Foto einzureichen)</li>
+        <li>Direktzugang f&uuml;r Dritte (z.&thinsp;B. Steuerberater) &mdash; vorbehaltlich k&uuml;nftiger Erweiterungen</li>
+        <li>Garantie f&uuml;r die steuerliche oder rechtliche Verwertbarkeit exportierter Daten</li>
+      </ul>
+      <p>3.3. Bonvio ist berechtigt, den Leistungsumfang im Rahmen des Zumutbaren zu &auml;ndern, einzuschr&auml;nken oder zu erweitern, sofern dies dem Nutzer mit angemessener Frist gem&auml;&szlig; &sect;&#x202F;12 mitgeteilt wird und der Kernnutzen des Dienstes erhalten bleibt.</p>
+      <p>3.4. Bonvio ist ein Aufbewahrungswerkzeug, kein Buchhaltungssystem. S&auml;mtliche steuerlichen, rechtlichen und buchhalterischen Pflichten des Nutzers bleiben unber&uuml;hrt und liegen ausschlie&szlig;lich in dessen Verantwortung.</p>
+    </div>
+
+    <!-- §4 -->
+    <div class="clause" id="s4">
+      <h2><span class="num">&sect; 4</span>Verg&uuml;tung und Zahlung</h2>
+      <p>4.1. Die Nutzung von Bonvio ist kostenpflichtig. Das Entgelt betr&auml;gt derzeit <strong>&euro;&#x202F;39,99 pro Jahr</strong> (inkl. allfälliger Steuern; Bonvio ist Kleinunternehmer gem&auml;&szlig; &sect;&#x202F;6 Abs.&#x202F;1 Z&#x202F;27 UStG und erhebt keine Umsatzsteuer).</p>
+      <p>4.2. Die Zahlung erfolgt j&auml;hrlich im Voraus &uuml;ber den Zahlungsdienstleister Stripe. Das Abonnement verl&auml;ngert sich automatisch um jeweils ein weiteres Jahr, sofern der Nutzer nicht gem&auml;&szlig; &sect;&#x202F;5 rechtzeitig k&uuml;ndigt.</p>
+      <p>4.3. Im Falle eines Zahlungsverzugs ist Bonvio berechtigt, den Zugang zum Dienst ohne Vorwarnung zu sperren und nach Ablauf von 14&#x202F;Tagen ohne weitere Mahnung die Kundenkonfiguration zu l&ouml;schen. Bereits gespeicherte Belege werden standardm&auml;&szlig;ig bis zu sieben Jahre aufbewahrt, sind jedoch w&auml;hrend einer Sperre nicht abrufbar. Die gesetzliche Verantwortung f&uuml;r Aufbewahrungspflichten verbleibt beim Nutzer.</p>
+      <p>4.4. Bonvio beh&auml;lt sich vor, Preise mit einer Vorankündigungsfrist von 6 Wochen anzupassen. Akzeptiert der Nutzer die neuen Preise nicht, kann er gem&auml;&szlig; &sect;&#x202F;5 au&szlig;erordentlich k&uuml;ndigen. Eine weitere Nutzung nach Ablauf der Frist gilt als Annahme der neuen Preise.</p>
+      <p>4.5. Bonvio ist ein Einzelunternehmen; eine R&uuml;ckerstattung bereits gezahlter Jahresentgelte erfolgt grunds&auml;tzlich nicht, au&szlig;er in F&auml;llen, in denen Bonvio die Leistung dauerhaft und vollst&auml;ndig einstellt.</p>
+    </div>
+
+    <!-- §5 -->
+    <div class="clause" id="s5">
+      <h2><span class="num">&sect; 5</span>Laufzeit und K&uuml;ndigung</h2>
+      <p>5.1. Der Vertrag wird f&uuml;r ein Jahr abgeschlossen und verl&auml;ngert sich automatisch um jeweils ein weiteres Jahr, sofern er nicht sp&auml;testens 30 Tage vor Ablauf des jeweiligen Vertragsjahres gek&uuml;ndigt wird.</p>
+      <p>5.2. Die K&uuml;ndigung erfolgt durch Abbestellung des Abonnements &uuml;ber das Stripe-Kundenportal oder per E-Mail an <a href="mailto:hello@bonvio.eu">hello@bonvio.eu</a>. Eine Best&auml;tigung der K&uuml;ndigung durch Bonvio erfolgt per E-Mail innerhalb von 5 Werktagen.</p>
+      <p>5.3. Bonvio ist berechtigt, den Vertrag aus wichtigem Grund mit sofortiger Wirkung zu k&uuml;ndigen, insbesondere wenn:</p>
+      <ul>
+        <li>der Nutzer gegen diese AGB, insbesondere gegen &sect;&#x202F;7, verst&ouml;&szlig;t;</li>
+        <li>der Nutzer den Dienst missbr&auml;uchlich nutzt oder Dritte sch&auml;digt;</li>
+        <li>der Nutzer falsche Angaben bei der Registrierung gemacht hat;</li>
+        <li>ein Zahlungsverzug von mehr als 14 Tagen vorliegt.</li>
+      </ul>
+      <p>5.4. Nach Beendigung des Vertrags werden Belegdaten standardm&auml;&szlig;ig bis zu sieben Jahre gespeichert (orientiert an &sect;&#x202F;132 BAO) und anschlie&szlig;end gel&ouml;scht. Die gesetzliche Verantwortung f&uuml;r Aufbewahrungspflichten verbleibt beim Nutzer. Auf Anfrage stellt Bonvio dem Nutzer vor L&ouml;schung eine letzte Exportm&ouml;glichkeit bereit.</p>
+      <p>5.5. Stellt Bonvio den Dienst dauerhaft ein, werden alle Nutzer mit einer Frist von mindestens 60&#x202F;Tagen informiert und erhalten die M&ouml;glichkeit, ihre Daten zu exportieren.</p>
+    </div>
+
+    <!-- §6 -->
+    <div class="clause" id="s6">
+      <h2><span class="num">&sect; 6</span>Widerrufsrecht</h2>
+      <div class="highlight-box">
+        <strong>Wichtiger Hinweis zum Widerrufsrecht:</strong> Gem&auml;&szlig; &sect;&#x202F;18 Abs.&#x202F;1 Z&#x202F;11 FAGG erlischt das Widerrufsrecht bei digitalen Dienstleistungen, deren Erf&uuml;llung vor Ablauf der Widerrufsfrist begonnen hat, wenn der Nutzer der vorzeitigen Erf&uuml;llung ausdr&uuml;cklich zugestimmt hat und best&auml;tigt, dass er damit sein Widerrufsrecht verliert.
+      </div>
+      <p>6.1. Im Checkout-Prozess best&auml;tigt der Nutzer ausdr&uuml;cklich die sofortige Bereitstellung des digitalen Dienstes. Mit Abschluss des Kaufvorgangs und Zusendung der Willkommens-E-Mail beginnt die Leistungserbringung. Das Widerrufsrecht erlischt damit zum Zeitpunkt des Vertragsschlusses.</p>
+      <p>6.2. Soweit dem Nutzer als Verbraucher (gem&auml;&szlig; KSchG) ein gesetzliches Widerrufsrecht zusteht und dieses nicht gem&auml;&szlig; Abs.&#x202F;1 erloschen ist, betr&auml;gt die Widerrufsfrist 14 Tage ab Vertragsschluss. Der Widerruf ist per E-Mail an <a href="mailto:hello@bonvio.eu">hello@bonvio.eu</a> zu erkl&auml;ren.</p>
+    </div>
+
+    <!-- §7 -->
+    <div class="clause" id="s7">
+      <h2><span class="num">&sect; 7</span>Nutzungsrechte und -beschr&auml;nkungen</h2>
+      <p>7.1. Bonvio r&auml;umt dem Nutzer ein nicht ausschlie&szlig;liches, nicht &uuml;bertragbares, nicht unterlizenzierbares, auf die Vertragslaufzeit beschr&auml;nktes Recht zur pers&ouml;nlichen Nutzung des Dienstes ein.</p>
+      <p>7.2. Dem Nutzer ist untersagt:</p>
+      <ul>
+        <li>den Dienst gewerblich weiterzuverkaufen oder Dritten entgeltlich zur Verf&uuml;gung zu stellen;</li>
+        <li>die pers&ouml;nliche Belegadresse an Personen weiterzugeben, die nicht zum Haushalt oder Unternehmen des Nutzers geh&ouml;ren;</li>
+        <li>automatisierte Masseneinsendungen durchzuf&uuml;hren, die nicht dem bestimmungsgem&auml;&szlig;en Gebrauch (Belegverwaltung) entsprechen;</li>
+        <li>den Dienst zur Verarbeitung von Daten Dritter ohne deren Einwilligung zu nutzen;</li>
+        <li>Sicherheitsmechanismen zu umgehen oder den Dienst auf eine Weise zu nutzen, die Dritte oder Bonvio sch&auml;digt.</li>
+      </ul>
+      <p>7.3. Ein angemessenes Fair-Use-Nutzungslimit von 3.000 Belegen pro Jahr gilt als angemessener Rahmen. Bei wesentlicher &Uuml;berschreitung beh&auml;lt sich Bonvio vor, den Nutzer zu kontaktieren und eine L&ouml;sung zu vereinbaren.</p>
+      <p>7.4. Bonvio beh&auml;lt alle Rechte am Dienst, an der zugrunde liegenden Software, Infrastruktur und dem Namen Bonvio. Dem Nutzer werden keine dar&uuml;ber hinausgehenden Rechte eingeräumt.</p>
+    </div>
+
+    <!-- §8 -->
+    <div class="clause" id="s8">
+      <h2><span class="num">&sect; 8</span>Verf&uuml;gbarkeit</h2>
+      <p>8.1. Bonvio strebt eine hohe Verf&uuml;gbarkeit des Dienstes an, &uuml;bernimmt jedoch keine Garantie f&uuml;r eine ununterbrochene oder fehlerfreie Verf&uuml;gbarkeit. Ein Service Level Agreement (SLA) ist nicht Bestandteil dieses Vertrags.</p>
+      <p>8.2. Bonvio ist berechtigt, den Dienst f&uuml;r Wartungsarbeiten, Sicherheitsupdates oder technische Verbesserungen vor&uuml;bergehend zu unterbrechen. Soweit m&ouml;glich, werden geplante Unterbrechungen rechtzeitig ank&uuml;ndigt.</p>
+      <p>8.3. Bonvio haftet nicht f&uuml;r Ausf&auml;lle, die auf Dritte zur&uuml;ckzuf&uuml;hren sind, insbesondere auf Amazon Web Services, Resend, Stripe oder den Internetdienstanbieter des Nutzers.</p>
+      <p>8.4. Kurzzeitige Verz&ouml;gerungen bei der Verarbeitung eingehender E-Mails begr&uuml;nden keinen Mangel und berechtigen nicht zur Minderung oder K&uuml;ndigung.</p>
+    </div>
+
+    <!-- §9 -->
+    <div class="clause" id="s9">
+      <h2><span class="num">&sect; 9</span>Texterkennung &mdash; Genauigkeit und Verantwortung des Nutzers</h2>
+      <p>9.1. Die automatische Texterkennung (OCR) liefert N&auml;herungswerte auf Basis der eingereichten Belegfotos. Bonvio &uuml;bernimmt keine Gew&auml;hr f&uuml;r die Vollst&auml;ndigkeit, Richtigkeit oder steuerliche Verwertbarkeit der erkannten Daten.</p>
+      <p>9.2. Ma&szlig;geblich f&uuml;r alle steuerlichen, rechtlichen und buchhalterischen Zwecke sind stets die <strong>Originalbelege</strong>. Der Nutzer ist verpflichtet, extrahierte Daten vor weiterer Verwendung zu pr&uuml;fen.</p>
+      <p>9.3. Belege, die aufgrund mangelhafter Fotoqualit&auml;t, unleserlicher Druckqualit&auml;t oder unzureichender Beleuchtung nicht erkannt werden k&ouml;nnen, werden dem Nutzer zur Nachbesserung zur&uuml;ckgemeldet. Ein Anspruch auf erfolgreiche Verarbeitung jedes eingereichten Belegs besteht nicht.</p>
+      <p>9.4. Der Nutzer ist daf&uuml;r verantwortlich, dass die eingesendeten Fotos keine Daten Dritter enthalten, f&uuml;r deren Verarbeitung keine rechtliche Grundlage besteht.</p>
+    </div>
+
+    <!-- §10 -->
+    <div class="clause" id="s10">
+      <h2><span class="num">&sect; 10</span>Datensicherung</h2>
+      <p>10.1. Bonvio speichert Belegdaten redundant auf AWS-Infrastruktur in Frankfurt. Ungeachtet dessen liegt die Verantwortung f&uuml;r eine eigenst&auml;ndige Sicherung der Originaldaten und -belege ausschlie&szlig;lich beim Nutzer.</p>
+      <p>10.2. Bonvio empfiehlt dem Nutzer, regelm&auml;&szlig;ig Exporte (&bdquo;EXPORT&ldquo;) durchzuf&uuml;hren und lokal zu archivieren.</p>
+      <p>10.3. F&uuml;r Datenverluste, die auf h&ouml;here Gewalt, technisches Versagen der zugrunde liegenden AWS-Infrastruktur oder Umst&auml;nde au&szlig;erhalb des Einflussbereichs von Bonvio zur&uuml;ckzuf&uuml;hren sind, &uuml;bernimmt Bonvio keine Haftung.</p>
+    </div>
+
+    <!-- §11 -->
+    <div class="clause" id="s11">
+      <h2><span class="num">&sect; 11</span>Haftungsbeschr&auml;nkung</h2>
+      <p>11.1. Bonvio haftet dem Nutzer f&uuml;r nachweislich verschuldete Sch&auml;den ausschlie&szlig;lich im Fall von <strong>grobem Verschulden oder Vorsatz</strong>. Die Haftung f&uuml;r leichte Fahrl&auml;ssigkeit ist, soweit gesetzlich zul&auml;ssig, ausgeschlossen.</p>
+      <p>11.2. Die Haftung f&uuml;r mittelbare Sch&auml;den ist ausdr&uuml;cklich ausgeschlossen, insbesondere f&uuml;r:</p>
+      <ul>
+        <li>entgangenen Gewinn;</li>
+        <li>Verlust von Daten oder Gesch&auml;ftsinformationen;</li>
+        <li>steuerliche Nachteile infolge fehlerhafter oder fehlender Belegerkennung;</li>
+        <li>Kosten, die im Zusammenhang mit einem Ausfall des Dienstes entstehen;</li>
+        <li>Anspr&uuml;che Dritter gegen den Nutzer.</li>
+      </ul>
+      <p>11.3. Soweit die Haftung nicht vollst&auml;ndig ausgeschlossen werden kann, ist sie der H&ouml;he nach auf das vom Nutzer im betreffenden Vertragsjahr tats&auml;chlich gezahlte Entgelt (&euro;&#x202F;39,99) begrenzt.</p>
+      <p>11.4. F&uuml;r K&ouml;rperschäden haftet Bonvio unbeschr&auml;nkt. Diese Beschr&auml;nkungen gelten nicht, soweit zwingend anwendbares Verbraucherrecht eine weiter gehende Haftung vorschreibt.</p>
+      <p>11.5. Bonvio ist nicht verantwortlich f&uuml;r Inhalte der vom Nutzer eingesandten Belege. Der Nutzer stellt Bonvio von Anspr&uuml;chen Dritter frei, die aus einer rechtswidrigen Nutzung des Dienstes durch den Nutzer entstehen.</p>
+    </div>
+
+    <!-- §12 -->
+    <div class="clause" id="s12">
+      <h2><span class="num">&sect; 12</span>&Auml;nderungsvorbehalt</h2>
+      <p>12.1. Bonvio beh&auml;lt sich vor, diese AGB mit einer Vorankündigungsfrist von <strong>6 Wochen</strong> zu &auml;ndern. &Auml;nderungen werden dem Nutzer per E-Mail an die hinterlegte Adresse mitgeteilt.</p>
+      <p>12.2. Widerspricht der Nutzer den ge&auml;nderten AGB nicht innerhalb der Frist von 6 Wochen, gelten die ge&auml;nderten AGB als angenommen. Bonvio wird den Nutzer in der &Auml;nderungsmitteilung ausdr&uuml;cklich auf diese Rechtsfolge hinweisen.</p>
+      <p>12.3. Im Falle des Widerspruchs ist Bonvio berechtigt, den Vertrag zum Ende des laufenden Vertragsjahres zu beenden. Ein anteiliger Erstattungsanspruch besteht in diesem Fall nicht.</p>
+      <p>12.4. &Auml;nderungen, die ausschlie&szlig;lich f&uuml;r den Nutzer g&uuml;nstiger sind (z.&thinsp;B. Preissenkungen, Leistungserweiterungen), k&ouml;nnen ohne Widerspruchsrecht des Nutzers in Kraft gesetzt werden.</p>
+    </div>
+
+    <!-- §13 -->
+    <div class="clause" id="s13">
+      <h2><span class="num">&sect; 13</span>Datenschutz</h2>
+      <p>13.1. Die Verarbeitung personenbezogener Daten erfolgt gem&auml;&szlig; der <a href="/datenschutz.html">Datenschutzerkl&auml;rung von Bonvio</a>, die Bestandteil dieser AGB ist.</p>
+      <p>13.2. Mit Vertragsschluss best&auml;tigt der Nutzer, die Datenschutzerkl&auml;rung zur Kenntnis genommen zu haben.</p>
+    </div>
+
+    <!-- §14 -->
+    <div class="clause" id="s14">
+      <h2><span class="num">&sect; 14</span>Geheimhaltung</h2>
+      <p>14.1. Bonvio behandelt alle vom Nutzer &uuml;bermittelten Belegdaten vertraulich und gibt sie nicht an Dritte weiter, soweit dies nicht zur Leistungserbringung erforderlich ist (Auftragsverarbeiter gem&auml;&szlig; Datenschutzerkl&auml;rung) oder gesetzlich vorgeschrieben ist.</p>
+      <p>14.2. Der Nutzer verpflichtet sich, seine pers&ouml;nliche Belegadresse (<code>bonvioXXXX@bonvio.eu</code>) nicht an unbefugte Dritte weiterzugeben. Missbrauch infolge einer solchen Weitergabe f&auml;llt in die Verantwortung des Nutzers.</p>
+      <p>14.3. Bonvio darf davon ausgehen, dass E-Mails, die von der beim Vertragsschluss registrierten E-Mail-Adresse des Nutzers eingehen, autorisiert sind. Der Nutzer tr&auml;gt die Verantwortung f&uuml;r die Sicherheit seines E-Mail-Kontos. Bonvio haftet nicht f&uuml;r Sch&auml;den, die aus einer Kompromittierung des E-Mail-Kontos des Nutzers entstehen.</p>
+    </div>
+
+    <!-- §15 -->
+    <div class="clause" id="s15">
+      <h2><span class="num">&sect; 15</span>Schlussbestimmungen</h2>
+      <p>15.1. <strong>Anwendbares Recht:</strong> Es gilt ausschlie&szlig;lich &ouml;sterreichisches Recht unter Ausschluss des UN-Kaufrechts (CISG) und der Kollisionsnormen des internationalen Privatrechts. Soweit zwingende Verbraucherschutzbestimmungen des Wohnsitzstaats des Nutzers g&uuml;nstiger sind, bleiben diese unber&uuml;hrt.</p>
+      <p>15.2. <strong>Gerichtsstand:</strong> F&uuml;r Streitigkeiten aus oder im Zusammenhang mit diesem Vertrag wird, soweit gesetzlich zul&auml;ssig, die ausschlie&szlig;liche Zust&auml;ndigkeit des sachlich zust&auml;ndigen Gerichts am Gesch&auml;ftssitz des AN (Wien) vereinbart. Gegen&uuml;ber Verbrauchern gilt dies nur, sofern kein zwingender gesetzlicher Gerichtsstand entgegensteht.</p>
+      <p>15.3. <strong>Teilunwirksamkeit:</strong> Sollten einzelne Bestimmungen dieser AGB ganz oder teilweise unwirksam sein oder werden, ber&uuml;hrt dies die Wirksamkeit der &uuml;brigen Bestimmungen nicht. Die unwirksame Bestimmung ist durch eine wirksame zu ersetzen, die dem wirtschaftlichen Zweck der unwirksamen m&ouml;glichst nahekommt.</p>
+      <p>15.4. <strong>Streitbeilegung:</strong> Bonvio nimmt nicht an einem Verfahren zur alternativen Streitbeilegung gem&auml;&szlig; AStG teil. Die EU-Kommission stellt unter <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a> eine Online-Streitbeilegungsplattform bereit.</p>
+      <p>15.5. <strong>Vertragssprache:</strong> Die Vertragssprache ist Deutsch. &Uuml;bersetzungen dieser AGB dienen ausschlie&szlig;lich der Information; ma&szlig;geblich ist stets die deutsche Fassung.</p>
+    </div>
+
+    <p class="stand">Stand: Mai 2026 &mdash; Bonvio, Niko Andersson, Wien</p>
+  </main>
+
+  <footer>
+    <span>&copy; 2026 Bonvio &middot; Wien, &Ouml;sterreich</span>
+    <div class="footer-links">
+      <a href="/impressum.html">Impressum</a>
+      <a href="/datenschutz.html">Datenschutz</a>
+      <a href="/agb.html">AGB</a>
+      <a href="/agb-en.html">EN</a>
+      <a href="/">Zur&uuml;ck zur Startseite</a>
+    </div>
+  </footer>
+</div>
+</body>
+</html>
