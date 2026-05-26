@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Datenschutzerkl&auml;rung &ndash; Bonvio</title>
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://bonvio.eu/datenschutz.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231F4332'/%3E%3Ctext x='16' y='23' font-family='Helvetica Neue,Helvetica,Arial,sans-serif' font-size='22' font-weight='700' fill='%23F4EFE2' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E">
+  <style>
+    :root {
+      --cream: #F4F3F0;
+      --ink: #1A1A1A;
+      --ink-soft: #0F2A1F;
+      --rust: #1F4332;
+      --muted: rgba(26,26,26,0.55);
+      --hair: rgba(26,26,26,0.08);
+      --hair-2: rgba(26,26,26,0.12);
+      --sans: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Inter", "Segoe UI", Helvetica, Arial, sans-serif;
+      --serif: "Newsreader", "Times New Roman", Georgia, serif;
+      --mono: "Courier New", ui-monospace, monospace;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: "";
+      position: fixed; inset: 0;
+      background-image: radial-gradient(rgba(26,26,26,0.04) 1px, transparent 1px);
+      background-size: 4px 4px;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .wrap { position: relative; z-index: 1; max-width: 1440px; margin: 0 auto; }
+
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 56px;
+      gap: 24px;
+      position: sticky; top: 0;
+      background: rgba(244,243,240,0.92);
+      backdrop-filter: saturate(140%) blur(12px);
+      -webkit-backdrop-filter: saturate(140%) blur(12px);
+      border-bottom: 1px solid var(--hair);
+      z-index: 80;
+    }
+    .logo {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-weight: 700; font-size: 20px; letter-spacing: -0.03em;
+      color: var(--ink); text-decoration: none;
+    }
+    .logo .mark {
+      width: 28px; height: 28px;
+      background: var(--rust);
+      border-radius: 6.16px;
+      display: grid; place-items: center;
+      color: var(--cream);
+      font-weight: 700; font-size: 17.5px;
+      line-height: 1; padding-bottom: 1px;
+      letter-spacing: -0.02em;
+    }
+    .nav-back {
+      font-size: 15px; color: var(--muted);
+      text-decoration: none;
+      transition: color .15s;
+    }
+    .nav-back:hover { color: var(--ink); }
+
+    main {
+      padding: 72px 72px 120px;
+      max-width: 760px;
+    }
+    .page-eyebrow {
+      font-family: var(--mono);
+      font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+    h1 {
+      margin: 0 0 56px;
+      font-family: var(--serif);
+      font-size: clamp(36px, 4vw, 52px);
+      font-weight: 500;
+      letter-spacing: -0.025em;
+      line-height: 1.1;
+    }
+    .block {
+      margin-bottom: 44px;
+      padding-bottom: 44px;
+      border-bottom: 1px solid var(--hair);
+    }
+    .block:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .block-label {
+      font-family: var(--mono);
+      font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+    .block p {
+      margin: 0 0 10px;
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--ink);
+    }
+    .block p:last-child { margin-bottom: 0; }
+    .block ul {
+      margin: 0 0 10px;
+      padding-left: 20px;
+      font-size: 16px;
+      line-height: 1.65;
+    }
+    .block ul li { margin-bottom: 4px; }
+    .block ul:last-child { margin-bottom: 0; }
+    .block h3 {
+      margin: 20px 0 8px;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+    a { color: var(--ink); }
+    a:hover { opacity: 0.7; }
+    .stand {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 48px;
+    }
+
+    footer {
+      margin-top: 88px;
+      padding: 32px 72px;
+      border-top: 1px solid var(--hair-2);
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 16px; flex-wrap: wrap;
+      font-size: 13px; color: var(--muted);
+    }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { color: var(--muted); text-decoration: none; transition: color .15s; }
+    .footer-links a:hover { color: var(--ink); }
+
+    @media (max-width: 768px) {
+      nav { padding: 16px 24px; }
+      main { padding: 48px 24px 80px; }
+      footer { padding: 24px; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <a href="/" class="logo">
+      <span class="mark">B</span>
+      <span>Bonvio</span>
+    </a>
+    <a href="/" class="nav-back">&larr; Zur&uuml;ck</a>
+  </nav>
+
+  <main>
+    <div class="page-eyebrow">Rechtliches</div>
+    <h1>Datenschutzerkl&auml;rung</h1>
+
+    <div class="block">
+      <div class="block-label">Verantwortlicher</div>
+      <p>
+        Niko Andersson<br>
+        Schnirchgasse 11, 1030 Wien, &Ouml;sterreich<br>
+        <a href="mailto:hello@bonvio.eu">hello@bonvio.eu</a>
+      </p>
+      <p>Ein Datenschutzbeauftragter ist nicht bestellt (nicht erforderlich gem&auml;&szlig; Art. 37 DSGVO f&uuml;r Einzelunternehmen ohne umfangreiche systematische Verarbeitung).</p>
+    </div>
+
+    <div class="block">
+      <div class="block-label">Datenkategorien</div>
+      <p>Wir verarbeiten ausschlie&szlig;lich jene personenbezogenen Daten, die zur Erbringung des Dienstes erforderlich sind:</p>
+      <ul>
+        <li><strong>Kontaktdaten:</strong> Name und E-Mail-Adresse (erhoben bei Registrierung oder &uuml;ber Stripe-Checkout)</li>
+        <li><strong>Belegdaten:</strong> Fotos von Belegen sowie daraus extrahierte Daten (H&auml;ndler, Datum, Betrag, MwSt, Belegnummer) &mdash; enthalten m&ouml;glicherweise personenbezogene Angaben</li>
+        <li><strong>Zahlungsdaten:</strong> Stripe-Kunden-ID und Abonnement-ID (Kreditkarten- und Bankdaten werden ausschlie&szlig;lich von Stripe verarbeitet und gelangen nie zu Bonvio)</li>
+        <li><strong>Nutzungsdaten:</strong> Zeitpunkt und Anzahl verarbeiteter Belege (f&uuml;r Nutzungslimit und Sicherheitsmonitoring)</li>
+      </ul>
+      <p>Wir erheben keine Standortdaten, keine Browserdaten, keine Werbe-IDs und keine besonderen Kategorien personenbezogener Daten gem&auml;&szlig; Art. 9 DSGVO.</p>
+    </div>
+
+    <div class="block">
+      <div class="block-label">Rechtm&auml;&szlig;igkeit und Zwecke der Verarbeitung</div>
+
+      <h3>Vertragserfüllung (Art. 6 Abs. 1 lit. b DSGVO)</h3>
+      <p>Die Verarbeitung Ihrer Daten ist zur Erf&uuml;llung des Dienstleistungsvertrags erforderlich: Entgegennahme von Belegen per E-Mail, automatische Texterkennung (OCR), sichere Speicherung, Zusendung von Best&auml;tigungen und Exporten. Ohne diese Daten kann der Dienst nicht erbracht werden.</p>
+
+      <h3>Rechtliche Verpflichtung (Art. 6 Abs. 1 lit. c DSGVO)</h3>
+      <p>Gem&auml;&szlig; &sect;132 BAO (Bundesabgabenordnung) sind Belege und Gesch&auml;ftsunterlagen sieben Jahre aufzubewahren. Bonvio speichert Belegdaten entsprechend f&uuml;r sieben Jahre.</p>
+
+      <h3>Berechtigte Interessen (Art. 6 Abs. 1 lit. f DSGVO)</h3>
+      <p>Zur Absicherung des Dienstes verarbeiten wir Nutzungsdaten zum Schutz vor Missbrauch (z.&thinsp;B. Erkennung unautorisierter Zugriffsversuche) sowie zur Systemstabilit&auml;t. Das berechtigte Interesse &uuml;berwiegt, da die Datenverarbeitung minimal und technisch notwendig ist.</p>
+
+      <p><strong>Wir versenden keine Werbung, keinen Newsletter und keine Angebote.</strong> Eine Einwilligungserkl&auml;rung ist daher nicht erforderlich.</p>
+    </div>
+
+    <div class="block">
+      <div class="block-label">Speicherdauer</div>
+      <ul>
+        <li><strong>Belegfotos und extrahierte Daten:</strong> 7 Jahre ab Eingang gem&auml;&szlig; &sect;132 BAO, danach automatische L&ouml;schung</li>
+        <li><strong>Rohe E-Mails (technische Verarbeitung):</strong> 90 Tage, danach automatische L&ouml;schung</li>
+        <li><strong>Kundenkonfiguration (Name, E-Mail):</strong> bis zur K&uuml;ndigung des Abonnements; danach innerhalb von 30 Tagen gel&ouml;scht</li>
+        <li><strong>Protokolldaten (Logs):</strong> 7 Tage</li>
+      </ul>
+    </div>
+
+    <div class="block">
+      <div class="block-label">Weitergabe der Daten &amp; Auftragsverarbeiter</div>
+      <p>Wir setzen folgende Auftragsverarbeiter ein, die Daten ausschlie&szlig;lich in unserem Auftrag und nach unserer Weisung verarbeiten:</p>
+      <ul>
+        <li><strong>Amazon Web Services (AWS), Rechenzentrum Frankfurt (eu-central-1), Deutschland &mdash; EU:</strong> Speicherung von Belegen (S3), Datenbankverarbeitung (DynamoDB), Serverless-Compute (Lambda) und KI-gest&uuml;tzte Texterkennung (Bedrock / Claude Haiku). Alle Daten bleiben in der EU. AWS ist DSGVO-konform und unterliegt dem AWS-Datenverarbeitungsnachtrag.</li>
+        <li><strong>Resend Inc., USA:</strong> Versand von transaktionalen E-Mails (Best&auml;tigungen, Exporte, Willkommensnachrichten). Daten&uuml;bermittlung in die USA auf Basis von Standardvertragsklauseln (SCCs) gem&auml;&szlig; Art. 46 Abs. 2 lit. c DSGVO.</li>
+        <li><strong>Stripe Inc., USA:</strong> Zahlungsabwicklung. Kreditkarten- und Bankdaten werden ausschlie&szlig;lich von Stripe verarbeitet und gelangen nie zu Bonvio. Daten&uuml;bermittlung in die USA auf Basis von SCCs. Stripe ist PCI-DSS-zertifiziert.</li>
+        <li><strong>Formspree Inc., USA:</strong> Verarbeitung von Wartelisten-Anmeldungen auf der Website. Daten&uuml;bermittlung in die USA auf Basis von SCCs.</li>
+      </ul>
+      <p>Eine Weitergabe an sonstige Dritte oder f&uuml;r Werbezwecke erfolgt nicht.</p>
+    </div>
+
+    <div class="block">
+      <div class="block-label">Automatisierte Entscheidungsfindung &amp; Profiling</div>
+      <p>Bonvio setzt keine automatisierte Entscheidungsfindung im Sinne von Art. 22 DSGVO ein, die rechtliche Wirkung gegen&uuml;ber Nutzer:innen h&auml;tte. Die KI-gest&uuml;tzte Texterkennung dient ausschlie&szlig;lich der Extraktion von Belegdaten und hat keine rechtlichen Auswirkungen auf betroffene Personen.</p>
+    </div>
+
+    <div class="block">
+      <div class="block-label">Betroffenenrechte</div>
+      <p>Sie haben folgende Rechte in Bezug auf Ihre personenbezogenen Daten:</p>
+      <ul>
+        <li><strong>Auskunft (Art. 15 DSGVO):</strong> Sie k&ouml;nnen jederzeit Auskunft &uuml;ber Ihre gespeicherten Daten verlangen.</li>
+        <li><strong>Berichtigung (Art. 16 DSGVO):</strong> Sie k&ouml;nnen die Berichtigung unrichtiger Daten verlangen.</li>
+        <li><strong>L&ouml;schung (Art. 17 DSGVO):</strong> Einzelne Belege l&ouml;schen Sie per E-Mail-Befehl <code>DELETE</code>. Die vollst&auml;ndige Kontoaufl&ouml;sung erfolgt auf Anfrage an <a href="mailto:hello@bonvio.eu">hello@bonvio.eu</a> (vorbehaltlich der 7-j&auml;hrigen Aufbewahrungspflicht gem&auml;&szlig; &sect;132 BAO).</li>
+        <li><strong>Einschr&auml;nkung (Art. 18 DSGVO):</strong> Sie k&ouml;nnen die Einschr&auml;nkung der Verarbeitung verlangen.</li>
+        <li><strong>Daten&uuml;bertragbarkeit (Art. 20 DSGVO):</strong> Sie erhalten Ihre Daten per E-Mail-Befehl <code>EXPORT</code> als maschinenlesbares ZIP-Archiv (Originalfotos + CSV).</li>
+        <li><strong>Widerspruch (Art. 21 DSGVO):</strong> Sie k&ouml;nnen der Verarbeitung auf Basis berechtigter Interessen widersprechen.</li>
+      </ul>
+      <p>F&uuml;r alle Anfragen wenden Sie sich an: <a href="mailto:hello@bonvio.eu">hello@bonvio.eu</a></p>
+    </div>
+
+    <div class="block">
+      <div class="block-label">Beschwerderecht</div>
+      <p>Wenn Sie der Ansicht sind, dass die Verarbeitung Ihrer personenbezogenen Daten gegen das Datenschutzrecht verst&ouml;&szlig;t, k&ouml;nnen Sie sich bei der zust&auml;ndigen Aufsichtsbeh&ouml;rde beschweren:</p>
+      <p>
+        &Ouml;sterreichische Datenschutzbeh&ouml;rde<br>
+        Barichgasse 40&ndash;42, 1030 Wien<br>
+        Telefon: +43 1 52 152-0<br>
+        E-Mail: <a href="mailto:dsb@dsb.gv.at">dsb@dsb.gv.at</a><br>
+        Web: <a href="https://www.dsb.gv.at" target="_blank" rel="noopener">www.dsb.gv.at</a>
+      </p>
+    </div>
+
+    <p class="stand">Stand: Mai 2026</p>
+  </main>
+
+  <footer>
+    <span>&copy; 2026 Bonvio &middot; Wien, &Ouml;sterreich</span>
+    <div class="footer-links">
+      <a href="/impressum.html">Impressum</a>
+      <a href="/datenschutz.html">Datenschutz</a>
+      <a href="/">Zur&uuml;ck zur Startseite</a>
+    </div>
+  </footer>
+</div>
+</body>
+</html>
