@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Impressum &ndash; Bonvio</title>
+  <title>Imprint &ndash; Bonvio</title>
   <meta name="robots" content="noindex, follow">
-  <link rel="canonical" href="https://bonvio.eu/impressum.html">
+  <link rel="canonical" href="https://bonvio.eu/impressum-en.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
@@ -51,7 +51,6 @@
       z-index: 0;
     }
     .wrap { position: relative; z-index: 1; max-width: 1440px; margin: 0 auto; }
-
     nav {
       display: flex; align-items: center; justify-content: space-between;
       padding: 20px 56px;
@@ -84,7 +83,6 @@
       transition: color .15s;
     }
     .nav-back:hover { color: var(--ink); }
-
     main {
       padding: 72px 72px 120px;
       max-width: 720px;
@@ -103,6 +101,17 @@
       letter-spacing: -0.025em;
       line-height: 1.1;
     }
+    .notice {
+      background: rgba(26,26,26,0.04);
+      border: 1px solid var(--hair-2);
+      border-radius: 8px;
+      padding: 20px 24px;
+      margin-bottom: 44px;
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+    .notice strong { color: var(--ink); }
     .block {
       margin-bottom: 40px;
       padding-bottom: 40px;
@@ -124,7 +133,6 @@
     .block p:last-child { margin-bottom: 0; }
     a { color: var(--ink); }
     a:hover { opacity: 0.7; }
-
     footer {
       margin-top: 88px;
       padding: 32px 72px;
@@ -136,7 +144,6 @@
     .footer-links { display: flex; gap: 20px; }
     .footer-links a { color: var(--muted); text-decoration: none; transition: color .15s; }
     .footer-links a:hover { color: var(--ink); }
-
     @media (max-width: 768px) {
       nav { padding: 16px 24px; }
       main { padding: 48px 24px 80px; }
@@ -151,46 +158,53 @@
       <span class="mark">B</span>
       <span>Bonvio</span>
     </a>
-    <a href="/" class="nav-back">&larr; Zur&uuml;ck</a>
+    <a href="/" class="nav-back">&larr; Back</a>
   </nav>
 
   <main>
-    <div class="page-eyebrow">Rechtliches</div>
-    <h1>Impressum</h1>
+    <div class="page-eyebrow">Legal</div>
+    <h1>Imprint</h1>
+
+    <div class="notice">
+      <strong>Translation notice.</strong> This is an English translation of the German-language
+      <a href="/impressum.html" onclick="sessionStorage.setItem('bonvio_lang','de')">Impressum</a> provided for information purposes only.
+      The Impressum is a mandatory disclosure required under Austrian law (&sect;5 ECG).
+      In the event of any discrepancy, <strong>the German version shall prevail</strong>.
+    </div>
 
     <div class="block">
-      <div class="block-label">Angaben gem&auml;&szlig; &sect;5 ECG</div>
+      <div class="block-label">Mandatory disclosure pursuant to &sect;5 ECG</div>
       <p>Niko Andersson</p>
-      <p>Schnirchgasse 11<br>1030 Wien, &Ouml;sterreich</p>
+      <p>Schnirchgasse 11<br>1030 Vienna, Austria</p>
       <p><a href="mailto:hello@bonvio.eu">hello@bonvio.eu</a></p>
     </div>
 
     <div class="block">
-      <div class="block-label">Gewerbeberechtigung</div>
-      <p>Dienstleistungen in der automatischen Datenverarbeitung</p>
-      <p>Beh&ouml;rde: Magistrat der Stadt Wien</p>
+      <div class="block-label">Business licence</div>
+      <p>Services in automatic data processing</p>
+      <p>Authority: Magistrat der Stadt Wien (City of Vienna)</p>
     </div>
 
     <div class="block">
-      <div class="block-label">Rechtsform &amp; Steuer</div>
-      <p>Einzelunternehmen</p>
-      <p>Kleinunternehmer gem&auml;&szlig; &sect;6 Abs. 1 Z 27 UStG &mdash; umsatzsteuerbefreit</p>
+      <div class="block-label">Legal form &amp; tax status</div>
+      <p>Sole trader (Einzelunternehmen)</p>
+      <p>Small business pursuant to &sect;6(1)(27) UStG &mdash; exempt from VAT</p>
     </div>
 
     <div class="block">
-      <div class="block-label">Haftungshinweis</div>
-      <p>Bonvio bewahrt Belege sicher auf und unterst&uuml;tzt den Export f&uuml;r den Steuerberater. Bonvio ist keine Buchhaltungssoftware und ersetzt keine steuerliche oder rechtliche Beratung.</p>
+      <div class="block-label">Liability notice</div>
+      <p>Bonvio stores receipts securely and supports export for your accountant. Bonvio is not accounting software and does not replace tax or legal advice.</p>
     </div>
   </main>
 
   <footer>
-    <span>&copy; 2026 Bonvio &middot; Wien, &Ouml;sterreich</span>
+    <span>&copy; 2026 Bonvio &middot; Vienna, Austria</span>
     <div class="footer-links">
-      <a href="/impressum.html">Impressum</a>
-      <a href="/impressum-en.html" onclick="sessionStorage.setItem('bonvio_lang','en')">EN</a>
-      <a href="/datenschutz.html">Datenschutz</a>
-      <a href="/agb.html">AGB</a>
-      <a href="/">Zur&uuml;ck zur Startseite</a>
+      <a href="/impressum-en.html">Imprint</a>
+      <a href="/impressum.html" onclick="sessionStorage.setItem('bonvio_lang','de')">DE</a>
+      <a href="/datenschutz-en.html">Privacy</a>
+      <a href="/agb-en.html">Terms</a>
+      <a href="/">Back to homepage</a>
     </div>
   </footer>
 </div>
