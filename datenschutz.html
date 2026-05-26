@@ -185,10 +185,10 @@
       <ul>
         <li><strong>Kontaktdaten:</strong> Name und E-Mail-Adresse (erhoben bei Registrierung oder &uuml;ber Stripe-Checkout)</li>
         <li><strong>Belegdaten:</strong> Fotos von Belegen sowie daraus extrahierte Daten (H&auml;ndler, Datum, Betrag, MwSt, Belegnummer) &mdash; enthalten m&ouml;glicherweise personenbezogene Angaben</li>
-        <li><strong>Zahlungsdaten:</strong> Stripe-Kunden-ID und Abonnement-ID (Kreditkarten- und Bankdaten werden ausschlie&szlig;lich von Stripe verarbeitet und gelangen nie zu Bonvio)</li>
+        <li><strong>Zahlungsdaten:</strong> Stripe-Kunden-ID und Abonnement-ID (Kreditkarten- und Bankdaten werden ausschlie&szlig;lich von Stripe verarbeitet und nicht durch Bonvio verarbeitet)</li>
         <li><strong>Nutzungsdaten:</strong> Zeitpunkt und Anzahl verarbeiteter Belege (f&uuml;r Nutzungslimit und Sicherheitsmonitoring)</li>
       </ul>
-      <p>Wir erheben keine Standortdaten, keine Browserdaten, keine Werbe-IDs und keine besonderen Kategorien personenbezogener Daten gem&auml;&szlig; Art. 9 DSGVO.</p>
+      <p>Wir erstellen keine Werbeprofile, keine Surf- oder Nutzungsprofile und keine Werbe-IDs. Bonvio ist nicht f&uuml;r die Verarbeitung besonderer Kategorien personenbezogener Daten gem&auml;&szlig; Art. 9 DSGVO vorgesehen; Nutzer werden gebeten, keine entsprechenden Daten einzureichen.</p>
     </div>
 
     <div class="block">
@@ -198,7 +198,7 @@
       <p>Die Verarbeitung Ihrer Daten ist zur Erf&uuml;llung des Dienstleistungsvertrags erforderlich: Entgegennahme von Belegen per E-Mail, automatische Texterkennung (OCR), sichere Speicherung, Zusendung von Best&auml;tigungen und Exporten. Ohne diese Daten kann der Dienst nicht erbracht werden.</p>
 
       <h3>Rechtliche Verpflichtung (Art. 6 Abs. 1 lit. c DSGVO)</h3>
-      <p>Gem&auml;&szlig; &sect;132 BAO (Bundesabgabenordnung) sind Belege und Gesch&auml;ftsunterlagen sieben Jahre aufzubewahren. Bonvio speichert Belegdaten entsprechend f&uuml;r sieben Jahre.</p>
+      <p>Bonvio orientiert die Speicherdauer an &sect;132 BAO (Bundesabgabenordnung), wonach Belege und Gesch&auml;ftsunterlagen typischerweise sieben Jahre aufzubewahren sind. Die gesetzliche Verantwortung f&uuml;r die Einhaltung von Aufbewahrungspflichten verbleibt beim Nutzer. Bonvio ist kein zertifizierter Archivanbieter und ersetzt keine steuerliche oder rechtliche Beratung.</p>
 
       <h3>Berechtigte Interessen (Art. 6 Abs. 1 lit. f DSGVO)</h3>
       <p>Zur Absicherung des Dienstes verarbeiten wir Nutzungsdaten zum Schutz vor Missbrauch (z.&thinsp;B. Erkennung unautorisierter Zugriffsversuche) sowie zur Systemstabilit&auml;t. Das berechtigte Interesse &uuml;berwiegt, da die Datenverarbeitung minimal und technisch notwendig ist.</p>
@@ -220,9 +220,9 @@
       <div class="block-label">Weitergabe der Daten &amp; Auftragsverarbeiter</div>
       <p>Wir setzen folgende Auftragsverarbeiter ein, die Daten ausschlie&szlig;lich in unserem Auftrag und nach unserer Weisung verarbeiten:</p>
       <ul>
-        <li><strong>Amazon Web Services (AWS), Rechenzentrum Frankfurt (eu-central-1), Deutschland &mdash; EU:</strong> Speicherung von Belegen (S3), Datenbankverarbeitung (DynamoDB), Serverless-Compute (Lambda) und KI-gest&uuml;tzte Texterkennung (Bedrock / Claude Haiku). Alle Daten bleiben in der EU. AWS ist DSGVO-konform und unterliegt dem AWS-Datenverarbeitungsnachtrag.</li>
+        <li><strong>Amazon Web Services (AWS), prim&auml;res Rechenzentrum Frankfurt (eu-central-1), Deutschland:</strong> Speicherung von Belegen (S3), Datenbankverarbeitung (DynamoDB), Serverless-Compute (Lambda) und KI-gest&uuml;tzte Texterkennung (Bedrock / Claude Haiku). Die prim&auml;re Datenspeicherung erfolgt innerhalb der EU. AWS wird auf Basis eines Auftragsverarbeitungsvertrags (AWS Data Processing Addendum) eingesetzt.</li>
         <li><strong>Resend Inc., USA:</strong> Versand von transaktionalen E-Mails (Best&auml;tigungen, Exporte, Willkommensnachrichten). Daten&uuml;bermittlung in die USA auf Basis von Standardvertragsklauseln (SCCs) gem&auml;&szlig; Art. 46 Abs. 2 lit. c DSGVO.</li>
-        <li><strong>Stripe Inc., USA:</strong> Zahlungsabwicklung. Kreditkarten- und Bankdaten werden ausschlie&szlig;lich von Stripe verarbeitet und gelangen nie zu Bonvio. Daten&uuml;bermittlung in die USA auf Basis von SCCs. Stripe ist PCI-DSS-zertifiziert.</li>
+        <li><strong>Stripe Inc., USA:</strong> Zahlungsabwicklung. Kreditkarten- und Bankdaten werden ausschlie&szlig;lich von Stripe verarbeitet und nicht durch Bonvio verarbeitet. Daten&uuml;bermittlung in die USA auf Basis von SCCs. Stripe ist PCI-DSS-zertifiziert.</li>
         <li><strong>Formspree Inc., USA:</strong> Verarbeitung von Wartelisten-Anmeldungen auf der Website. Daten&uuml;bermittlung in die USA auf Basis von SCCs.</li>
       </ul>
       <p>Eine Weitergabe an sonstige Dritte oder f&uuml;r Werbezwecke erfolgt nicht.</p>
@@ -245,6 +245,11 @@
         <li><strong>Widerspruch (Art. 21 DSGVO):</strong> Sie k&ouml;nnen der Verarbeitung auf Basis berechtigter Interessen widersprechen.</li>
       </ul>
       <p>F&uuml;r alle Anfragen wenden Sie sich an: <a href="mailto:hello@bonvio.eu">hello@bonvio.eu</a></p>
+    </div>
+
+    <div class="block">
+      <div class="block-label">Sicherheitshinweis</div>
+      <p>Bonvio trifft technische und organisatorische Ma&szlig;nahmen zum Schutz Ihrer Daten. Kein System kann jedoch absolute Sicherheit gew&auml;hrleisten. Die Sicherheit des Zugangs zu Bonvio h&auml;ngt ma&szlig;geblich von der Sicherheit des verwendeten E-Mail-Kontos ab; Nutzer sind f&uuml;r den Schutz ihres E-Mail-Kontos selbst verantwortlich.</p>
     </div>
 
     <div class="block">
