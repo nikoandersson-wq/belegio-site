@@ -632,6 +632,13 @@
       font-family: var(--mono); font-size: 16px;
       letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink); font-weight: 600;
     }
+    .price-founding {
+      margin-top: 16px;
+      font-size: 15px; line-height: 1.5;
+      color: rgba(26,26,26,0.72);
+    }
+    .price-founding b { color: var(--rust); font-weight: 700; }
+    .price-founding .was { text-decoration: line-through; opacity: 0.6; }
     .price-includes {
       margin: 36px 0 0; padding: 28px 0 0; list-style: none;
       border-top: 1px solid var(--hair-2);
@@ -1212,7 +1219,7 @@
             <div class="eyebrow">F&uuml;r Privatpersonen, Selbst&auml;ndige &amp; kleine Unternehmen</div>
 
             <a class="buy-btn" href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800">Jetzt starten &mdash; &euro;&thinsp;39,99&thinsp;/&thinsp;Jahr &rarr;</a>
-            <div class="buy-sub">Kein Setup. Keine versteckten Kosten. Jederzeit k&uuml;ndbar.</div>
+            <div class="buy-sub">Gr&uuml;ndungspreis &mdash; lebenslang gesichert, ab Januar &euro;&thinsp;49,99. Kein Setup. Jederzeit k&uuml;ndbar.</div>
 
             <div class="trust">
               <span>Aus Wien <b>gebaut</b></span>
@@ -1433,9 +1440,14 @@
           </p>
 
           <div class="price-card">
+            <div class="stamp">Gr&uuml;ndungspreis</div>
             <div class="price-top-label">J&auml;hrlich</div>
             <div class="price-amount">&euro; 39,99</div>
             <div class="price-period">12 Monate &middot; Vorausbezahlung</div>
+            <div class="price-founding">
+              <b>Gr&uuml;ndungspreis &mdash; lebenslang gesichert.</b><br>
+              Ab Januar 2027: <span class="was">&euro; 49,99</span>. Wer jetzt startet, zahlt f&uuml;r immer &euro; 39,99.
+            </div>
             <div class="price-coffee">Weniger als ein Kaffee pro Monat &mdash; <b>&euro; 3,33</b>.</div>
             <ul class="price-includes">
               <li>Pers&ouml;nliche Bonvio-Adresse</li>
@@ -1627,7 +1639,7 @@
               </button>
               <div class="faq-answer-wrap"><div class="faq-answer-inner">
                 <div class="faq-answer" id="a-de-8" role="region">
-                  Bonvio ist eine Jahresmitgliedschaft &mdash; &euro;&nbsp;39,99 f&uuml;r 12&nbsp;Monate. Wenn du danach nicht weitermachen willst, k&uuml;ndigst du die automatische Verl&auml;ngerung. <b>Eine kurze E-Mail an deine Bonvio-Adresse gen&uuml;gt</b> &mdash; deine Daten werden auf Wunsch exportiert oder gel&ouml;scht.
+                  Bonvio ist eine Jahresmitgliedschaft &mdash; &euro;&nbsp;39,99 f&uuml;r 12&nbsp;Monate. Das ist der <b>Gr&uuml;ndungspreis</b>: Ab Januar 2027 kostet Bonvio &euro;&nbsp;49,99, aber wer jetzt startet, zahlt f&uuml;r immer &euro;&nbsp;39,99 &mdash; auch in den Folgejahren. Wenn du sp&auml;ter nicht weitermachen willst, k&uuml;ndigst du die automatische Verl&auml;ngerung. <b>Eine kurze E-Mail an deine Bonvio-Adresse gen&uuml;gt</b> &mdash; deine Daten werden auf Wunsch exportiert oder gel&ouml;scht.
                 </div>
               </div></div>
             </div>
@@ -1637,8 +1649,8 @@
         <section class="cta-repeat">
           <h2>Kein Chaos mehr. <em>Einfach mailen.</em></h2>
           <p>
-            Bonvio ist live. &euro;39,99&thinsp;/&thinsp;Jahr &mdash; sofort aktiv,
-            keine App, kein Login.
+            Bonvio ist live. Gr&uuml;ndungspreis &euro;&thinsp;39,99&thinsp;/&thinsp;Jahr &mdash; lebenslang gesichert,
+            ab Januar &euro;&thinsp;49,99. Keine App, kein Login.
           </p>
           <a class="buy-btn" href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800">Jetzt starten &rarr;</a>
         </section>
@@ -1666,7 +1678,7 @@
             <div class="eyebrow">For private people, freelancers &amp; small businesses</div>
 
             <a class="buy-btn" href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800">Start now &mdash; &euro;&thinsp;39.99&thinsp;/&thinsp;year &rarr;</a>
-            <div class="buy-sub">No setup fee. No hidden costs. Cancel any time.</div>
+            <div class="buy-sub">Founding price &mdash; locked for life, &euro;&thinsp;49.99 from January. No setup. Cancel any time.</div>
 
             <div class="trust">
               <span><b>Built</b> in Vienna</span>
@@ -1887,9 +1899,14 @@
           </p>
 
           <div class="price-card">
+            <div class="stamp">Founding price</div>
             <div class="price-top-label">Yearly</div>
             <div class="price-amount">&euro; 39.99</div>
             <div class="price-period">12 months &middot; prepaid</div>
+            <div class="price-founding">
+              <b>Founding price &mdash; locked for life.</b><br>
+              From January 2027: <span class="was">&euro; 49.99</span>. Start now and you pay &euro; 39.99 forever.
+            </div>
             <div class="price-coffee">Less than a coffee a month &mdash; <b>&euro; 3.33</b>.</div>
             <ul class="price-includes">
               <li>Personal Bonvio address</li>
@@ -2081,7 +2098,7 @@
               </button>
               <div class="faq-answer-wrap"><div class="faq-answer-inner">
                 <div class="faq-answer" id="a-en-8" role="region">
-                  Bonvio is an annual membership &mdash; &euro;&nbsp;39.99 for 12&nbsp;months. If you don't want to continue after that, you cancel the auto-renewal. <b>A short email to your Bonvio address is enough</b> &mdash; we'll export or delete your data on request.
+                  Bonvio is an annual membership &mdash; &euro;&nbsp;39.99 for 12&nbsp;months. That's the <b>founding price</b>: from January 2027 Bonvio costs &euro;&nbsp;49.99, but anyone who starts now pays &euro;&nbsp;39.99 forever &mdash; in every following year too. If you later don't want to continue, you cancel the auto-renewal. <b>A short email to your Bonvio address is enough</b> &mdash; we'll export or delete your data on request.
                 </div>
               </div></div>
             </div>
@@ -2091,8 +2108,8 @@
         <section class="cta-repeat">
           <h2>No more chaos. <em>Just email it.</em></h2>
           <p>
-            Bonvio is live. &euro;39.99&thinsp;/&thinsp;year &mdash; active immediately,
-            no app, no login.
+            Bonvio is live. Founding price &euro;&thinsp;39.99&thinsp;/&thinsp;year &mdash; locked for life,
+            &euro;&thinsp;49.99 from January. No app, no login.
           </p>
           <a class="buy-btn" href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800">Start now &rarr;</a>
         </section>
