@@ -4,1168 +4,679 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bonvio &ndash; Belegverwaltung per E-Mail</title>
-  <meta name="description" content="Bonvio &mdash; Belegverwaltung per E-Mail. Foto machen, sicher speichern, jederzeit finden. F&uuml;r Privatpersonen, Selbst&auml;ndige und kleine Unternehmen. &euro;39,99 pro Jahr.">
-  <meta name="keywords" content="Belegverwaltung, Belege, Quittungen, Steuer, Steuerberater, Steuerausgleich, Buchhaltung, &Ouml;sterreich, DSGVO, Receipt, OCR, Wien, Frankfurt">
-  <meta name="author" content="Bonvio">
-  <meta name="robots" content="index, follow">
+  <meta name="description" content="Andere Software will, dass du Buchhalter wirst. Bonvio will, dass du deine Arbeit machst. Beleg fotografieren, per Mail schicken, fertig. Kein Login, keine App. &euro;39,99/Jahr.">
   <meta name="theme-color" content="#F4F3F0">
   <link rel="canonical" href="https://bonvio.eu/">
-  <meta name="google-site-verification" content="qggc9g2xtDAvcGCYdjhOCTzaiRx4M6qtNGRVvTaX0-U">
-  <meta name="google-site-verification" content="RMOHt6ATkvSuqsBf82tFN-bStHdvNtvHRfQ4bWmwqiw">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="/brand/logo.png">
-  <link rel="apple-touch-icon" href="/brand/logo.png">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Bonvio &mdash; Belegverwaltung per E-Mail">
-  <meta property="og:image" content="https://bonvio.eu/brand/logo.png">
-  <meta name="twitter:image" content="https://bonvio.eu/brand/logo.png">
-  <meta property="og:description" content="Schluss mit dem Schuhkarton. Belege fotografieren, sicher speichern, jederzeit finden.">
-  <meta property="og:url" content="https://bonvio.eu/">
-  <meta property="og:locale" content="de_AT">
-  <meta property="og:locale:alternate" content="en_US">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Bonvio &mdash; Belegverwaltung per E-Mail">
-  <meta name="twitter:description" content="Schluss mit dem Schuhkarton. &euro;39,99/Jahr.">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Bonvio",
-    "description": "Receipt management by email. Photograph receipts, store safely, find anytime.",
-    "applicationCategory": "BusinessApplication",
-    "operatingSystem": "Email (any device)",
-    "url": "https://bonvio.eu",
-    "offers": { "@type": "Offer", "price": "39.99", "priceCurrency": "EUR" },
-    "publisher": { "@type": "Organization", "name": "Bonvio", "url": "https://bonvio.eu" }
-  }
-  </script>
+  <link rel="icon" type="image/png" href="data:image/png;base64,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">
+  <link rel="apple-touch-icon" href="data:image/png;base64,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">
   <style>
     :root {
-      --cream: #F4F3F0;       /* neutral off-white */
-      --ink: #1A1A1A;
-      --ink-soft: #0F2A1F;   /* deep bottle green for big dark surfaces */
-      --accent-on-dark: #E0C896;  /* warm wheat — accent visible on deep green */
-      --rust: #1F4332;
+      --cream: #F4F3F0;
       --paper: #FCFBF8;
-      --muted: rgba(26,26,26,0.55);
+      --ink: #1A1A1A;
+      --green: #1F4332;          /* primary accent */
+      --green-deep: #0F2A1F;     /* large dark surfaces */
+      --green-hover: #15301F;
+      --wheat: #E0C896;          /* accent on dark */
+      --muted: rgba(26,26,26,0.56);
       --muted-2: rgba(26,26,26,0.72);
-      --hair: rgba(26,26,26,0.08);
-      --hair-2: rgba(26,26,26,0.12);
-      --sans: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Inter", "Segoe UI", Helvetica, Arial, sans-serif;
+      --hair: rgba(26,26,26,0.09);
+      --hair-2: rgba(26,26,26,0.13);
+      --sans: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
       --serif: "Newsreader", "Times New Roman", Georgia, serif;
       --mono: "Courier New", ui-monospace, monospace;
     }
     * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     html, body { margin: 0; padding: 0; }
     body {
       background: var(--cream);
       color: var(--ink);
       font-family: var(--sans);
       -webkit-font-smoothing: antialiased;
-      min-height: 100vh;
-      position: relative;
+      text-rendering: optimizeLegibility;
       overflow-x: hidden;
     }
+    /* paper grain — faint, warm, physical */
     body::before {
       content: "";
       position: fixed; inset: 0;
-      background-image: radial-gradient(rgba(26,26,26,0.04) 1px, transparent 1px);
+      background-image: radial-gradient(rgba(26,26,26,0.045) 1px, transparent 1px);
       background-size: 4px 4px;
       pointer-events: none;
       z-index: 0;
     }
-    .wrap { position: relative; z-index: 1; max-width: 1440px; margin: 0 auto; }
+    .wrap { position: relative; z-index: 1; max-width: 1320px; margin: 0 auto; }
+    ::selection { background: var(--green); color: var(--cream); }
 
-    /* NAV */
-    nav {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 20px 56px;
-      gap: 24px;
-      position: sticky; top: 0;
-      background: rgba(244,243,240,0.92);
-      backdrop-filter: saturate(140%) blur(12px);
-      -webkit-backdrop-filter: saturate(140%) blur(12px);
-      border-bottom: 1px solid var(--hair);
-      z-index: 80;
-    }
-    .logo {
-      display: inline-flex; align-items: center; gap: 10px;
-      font-weight: 700; font-size: 20px; letter-spacing: -0.03em;
-      color: var(--ink); text-decoration: none;
-      flex: none;
-    }
-    .logo .mark {
-      width: 28px; height: 28px;
-      background: var(--rust);
-      border-radius: 6.16px;
-      display: grid; place-items: center;
-      color: var(--cream);
-      font-family: var(--sans);
-      font-weight: 700;
-      font-size: 17.5px;
-      line-height: 1;
-      padding-bottom: 1px;
-      letter-spacing: -0.02em;
-    }
-    .nav-links { display: flex; align-items: center; gap: 28px; font-size: 16px; font-weight: 500; flex-wrap: wrap; justify-content: flex-end; }
-    .nav-links a { color: var(--ink); text-decoration: none; opacity: 0.85; transition: opacity .15s; }
-    .nav-links a:hover { opacity: 1; }
-    .nav-badge {
-      font-family: var(--mono);
-      font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--rust);
-      padding: 4px 10px; border: 1px solid var(--rust); border-radius: 999px;
-    }
-
-    /* LANG SWITCHER */
-    .lang-switch {
-      display: inline-flex; align-items: center; gap: 4px;
-      font-family: var(--mono);
-      font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
-    }
-    .lang-switch button {
-      font-family: var(--mono);
-      font-size: 11px; letter-spacing: 0.18em;
-      padding: 4px 8px;
-      border: 1px solid var(--hair-2);
-      background: transparent;
-      color: var(--muted);
-      cursor: pointer;
-      border-radius: 4px;
-      transition: all .15s;
-    }
-    .lang-switch button:hover { color: var(--ink); border-color: var(--ink); }
-    .lang-switch button.active { background: var(--ink); color: var(--cream); border-color: var(--ink); }
-
-    .lang-en, .lang-en-inline { display: none; }
-    body.lang-en-active .lang-de { display: none; }
-    body.lang-en-active .lang-de-inline { display: none; }
-    body.lang-en-active .lang-en { display: block; }
-    body.lang-en-active .lang-en-inline { display: inline; }
-
-    /* HERO */
-    main { padding: 0 72px 96px; }
-    .hero {
-      display: grid;
-      grid-template-columns: 1.05fr 1fr;
-      gap: 64px;
-      align-items: center;
-      min-height: 680px;
-    }
-    .kicker {
-      font-family: var(--sans);
-      font-size: 20px; font-weight: 700;
-      color: var(--rust);
-      letter-spacing: -0.01em;
-      margin-bottom: 20px;
-    }
+    /* ─────────── TYPE PRIMITIVES ─────────── */
     .eyebrow {
       font-family: var(--mono);
-      font-size: 15px; letter-spacing: 0.14em; text-transform: uppercase;
-      color: var(--ink); font-weight: 700;
-      margin-top: 24px; margin-bottom: 0;
-      opacity: 0.85;
-      display: flex; align-items: center; gap: 10px;
+      font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--green); font-weight: 700;
+      display: inline-flex; align-items: center; gap: 12px;
     }
+    .eyebrow::before {
+      content: ""; width: 24px; height: 1px; background: var(--green); opacity: 0.5;
+    }
+    .serif { font-family: var(--serif); font-weight: 500; font-optical-sizing: auto; letter-spacing: -0.022em; }
+    em.accent { font-style: italic; font-weight: 400; color: var(--green); }
+
+    /* ─────────── NAV ─────────── */
+    nav {
+      position: sticky; top: 0; z-index: 80;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 24px;
+      padding: 18px 48px;
+      background: rgba(244,243,240,0.86);
+      backdrop-filter: saturate(140%) blur(14px);
+      -webkit-backdrop-filter: saturate(140%) blur(14px);
+      border-bottom: 1px solid var(--hair);
+    }
+    .logo {
+      display: inline-flex; align-items: center; gap: 11px;
+      font-weight: 700; font-size: 20px; letter-spacing: -0.03em;
+      color: var(--ink); text-decoration: none;
+    }
+    .logo img { width: 28px; height: 28px; border-radius: 7px; display: block; }
+    .nav-links { display: flex; align-items: center; gap: 30px; }
+    .nav-links a {
+      font-size: 15px; font-weight: 500; color: var(--ink);
+      text-decoration: none; opacity: 0.72; transition: opacity .15s;
+    }
+    .nav-links a:hover { opacity: 1; }
+    .nav-cta {
+      font-size: 14px; font-weight: 600; color: var(--cream) !important;
+      background: var(--green); padding: 9px 18px; border-radius: 999px;
+      opacity: 1 !important; transition: background .15s;
+    }
+    .nav-cta:hover { background: var(--green-hover); }
+
+    main { padding: 0 48px; }
+
+    /* ─────────── BUTTONS ─────────── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--green); color: var(--cream);
+      border: 0; border-radius: 999px;
+      padding: 17px 34px; font-size: 17px; font-weight: 600;
+      font-family: var(--sans); text-decoration: none; cursor: pointer;
+      transition: background .15s, transform .12s;
+      white-space: nowrap;
+    }
+    .btn:hover { background: var(--green-hover); }
+    .btn:active { transform: scale(0.975); }
+    .btn .arr { transition: transform .2s; }
+    .btn:hover .arr { transform: translateX(3px); }
+    .btn-light { background: var(--wheat); color: var(--green-deep); }
+    .btn-light:hover { background: #D4B97A; }
+    .trust-line {
+      margin-top: 20px;
+      font-family: var(--mono); font-size: 12.5px; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--muted-2);
+      display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+    }
+    .trust-line .sep { width: 4px; height: 4px; border-radius: 50%; background: var(--green); opacity: 0.7; }
+
+    /* ─────────── HERO ─────────── */
+    .hero {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 72px; align-items: center;
+      padding: 76px 0 88px;
+      min-height: 78vh;
+    }
+    .hero-copy .eyebrow { margin-bottom: 30px; }
     h1 {
       margin: 0;
-      font-family: var(--serif);
-      font-size: clamp(52px, 6.4vw, 86px);
-      line-height: 1.02;
-      letter-spacing: -0.025em;
-      font-weight: 500;
-      font-optical-sizing: auto;
-      font-variation-settings: "opsz" 72;
-    }
-    h1 .accent { color: var(--rust); font-style: italic; font-weight: 400; }
-    .lede {
-      margin: 28px 0 0;
-      font-size: 21px; line-height: 1.5;
-      color: var(--ink);
-      max-width: 520px;
-      text-wrap: pretty;
-    }
-
-    /* WAITLIST */
-    .waitlist { margin-top: 36px; max-width: 460px; }
-    form.waitlist-form {
-      display: flex;
-      background: #FFF;
-      border-radius: 999px;
-      padding: 6px;
-      border: 1px solid var(--hair-2);
-      box-shadow: 0 8px 24px rgba(26,26,26,0.06);
-      transition: border-color .15s, box-shadow .15s;
-    }
-    form.waitlist-form:focus-within {
-      border-color: var(--rust);
-      box-shadow: 0 8px 24px rgba(31,67,50,0.18);
-    }
-    form.waitlist-form input {
-      flex: 1; border: 0; outline: none; background: transparent;
-      padding: 10px 16px; font-size: 15px; font-family: inherit; color: var(--ink);
-      min-width: 0;
-    }
-    form.waitlist-form button {
-      background: var(--rust); color: var(--cream);
-      border: 0; border-radius: 999px;
-      padding: 12px 22px; font-size: 15px; font-weight: 500;
-      cursor: pointer; font-family: inherit;
-      transition: background .15s, transform .12s;
-      white-space: nowrap;
-    }
-    form.waitlist-form button:hover { background: #15301F; }
-    form.waitlist-form button:active { transform: scale(0.97); }
-    .waitlist-success {
-      display: none;
-      align-items: center; gap: 12px;
-      background: #FFF; border-radius: 12px;
-      padding: 14px 18px; border: 1px solid var(--rust);
-      font-size: 15px;
-    }
-    .waitlist-success .check {
-      width: 22px; height: 22px; border-radius: 50%;
-      background: var(--rust); color: var(--cream);
-      display: grid; place-items: center;
-      font-size: 13px; font-weight: 700;
-      flex: none;
-    }
-    .waitlist.sent form.waitlist-form { display: none; }
-    .waitlist.sent .waitlist-success { display: flex; }
-    .waitlist-note {
-      margin-top: 16px;
-      font-size: 15px; color: var(--muted-2); line-height: 1.6;
-      max-width: 440px;
-    }
-    .waitlist-note b { color: var(--ink); font-weight: 600; }
-
-    /* BUY BUTTON */
-    .buy-btn {
-      display: inline-block;
-      background: var(--rust); color: var(--cream);
-      border: 0; border-radius: 999px;
-      padding: 14px 32px; font-size: 16px; font-weight: 600;
-      cursor: pointer; font-family: inherit; text-decoration: none;
-      transition: background .15s, transform .12s;
-      white-space: nowrap;
-    }
-    .buy-btn:hover { background: #15301F; opacity: 1; }
-    .buy-btn:active { transform: scale(0.97); }
-    .buy-sub {
-      margin-top: 14px;
-      font-size: 14px; color: var(--muted); line-height: 1.6;
-    }
-    .price-card .buy-btn {
-      margin-top: 32px; width: 100%; display: block;
-      padding: 16px 32px; font-size: 17px;
-    }
-    .cta-repeat .buy-btn {
-      background: var(--accent-on-dark); color: var(--ink-soft);
-    }
-    .cta-repeat .buy-btn:hover { background: #D4B97A; }
-
-    /* TRUST STRIP */
-    .trust {
-      display: flex; align-items: center; gap: 18px; margin-top: 44px;
-      font-family: var(--mono);
-      font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--ink); font-weight: 700;
-      opacity: 0.92;
-      flex-wrap: wrap;
-    }
-    .trust .dot { width: 5px; height: 5px; background: var(--rust); border-radius: 50%; opacity: 1; }
-    .trust b { color: var(--ink); font-weight: 700; letter-spacing: 0.1em; }
-
-    /* PHONE + RECEIPT SCENE */
-    .scene {
-      position: relative; height: 560px;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .address-bubble {
-      position: absolute;
-      top: 0; right: -8px;
-      max-width: 240px;
-      background: #FFF;
-      border: 1px solid var(--rust);
-      border-radius: 12px;
-      padding: 10px 14px;
-      font-family: var(--mono);
-      font-size: 11px; line-height: 1.5;
-      letter-spacing: 0.02em;
-      color: var(--ink);
-      z-index: 3;
-      box-shadow: 0 4px 16px rgba(31,67,50,0.1);
-    }
-    .address-bubble b { color: var(--rust); font-weight: 700; }
-    .address-bubble::after {
-      content: ""; position: absolute;
-      bottom: -7px; left: 36px;
-      width: 12px; height: 12px;
-      background: #FFF;
-      border-right: 1px solid var(--rust);
-      border-bottom: 1px solid var(--rust);
-      transform: rotate(45deg);
-    }
-    .receipt {
-      background: var(--paper);
-      box-shadow: 0 18px 50px rgba(10,10,10,0.18), 0 2px 6px rgba(10,10,10,0.08);
-      position: relative; border-radius: 2px; overflow: hidden;
-      font-family: var(--mono);
-    }
-    .receipt .perf-top, .receipt .perf-bot {
-      position: absolute; left: 0; right: 0; height: 8px;
-      background: repeating-linear-gradient(90deg, var(--paper) 0 6px, transparent 6px 8px);
-    }
-    .receipt .perf-top { top: -4px; }
-    .receipt .perf-bot { bottom: -4px; }
-    .receipt .head { padding: 20px 16px 0; font-size: 9px; letter-spacing: 0.2em; color: var(--ink); opacity: 0.6; }
-    .receipt .date { padding: 6px 16px; font-size: 10px; color: var(--ink); opacity: 0.4; }
-    .receipt .rule { height: 1px; background: rgba(10,10,10,0.15); margin: 10px 16px; }
-    .receipt .row {
-      display: flex; justify-content: space-between;
-      margin: 0 16px; padding: 4px 0;
-      font-size: 9px; color: var(--ink); opacity: 0.55;
-      border-bottom: 1px dashed rgba(10,10,10,0.08);
-    }
-    .receipt .total {
-      position: absolute; left: 16px; right: 16px; bottom: 16px;
-      display: flex; justify-content: space-between;
-      font-size: 11px; font-weight: 700; color: var(--ink);
-    }
-    .receipt-a {
-      width: 200px; height: 300px;
-      position: absolute; left: 20px; top: 80px;
-      transform: rotate(-9deg);
-    }
-    .receipt-b {
-      width: 150px; height: 220px;
-      position: absolute; right: 30px; bottom: 50px;
-      transform: rotate(7deg);
-    }
-
-    /* PHONE */
-    .phone {
-      position: relative;
-      width: 280px; height: 560px;
-      background: var(--ink);
-      border-radius: 38px; padding: 8px;
-      box-shadow: 0 30px 80px rgba(26,26,26,0.22), 0 6px 16px rgba(31,67,50,0.08);
-      z-index: 1;
-    }
-    .phone-screen {
-      width: 100%; height: 100%;
-      background: var(--paper);
-      border-radius: 30px; overflow: hidden;
-      display: flex; flex-direction: column;
-    }
-    .status {
-      padding: 14px 20px 8px;
-      display: flex; justify-content: space-between;
-      font-size: 11px; font-weight: 600;
-    }
-    .mail-header {
-      padding: 8px 20px 12px;
-      border-bottom: 1px solid var(--hair);
-      display: flex; justify-content: space-between; align-items: center;
-      font-size: 13px;
-    }
-    .mail-header .cancel { color: var(--muted); }
-    .mail-header .title { font-weight: 600; }
-    .mail-header .send { font-weight: 600; color: var(--rust); }
-    .mail-form { padding: 14px 20px; font-size: 13px; }
-    .mail-form .field {
-      display: flex; gap: 8px; padding: 8px 0;
-      border-bottom: 1px solid rgba(26,26,26,0.06);
-    }
-    .mail-form .label { color: rgba(26,26,26,0.5); width: 64px; flex: none; }
-    .mail-form .val { font-weight: 500; }
-    .mail-form .val.dim { color: rgba(26,26,26,0.7); font-weight: 400; }
-    .attach {
-      margin: 0 20px;
-      background: var(--cream);
-      border-radius: 10px; padding: 12px 14px;
-      display: flex; align-items: center; gap: 12px;
-      border: 1px solid rgba(31,67,50,0.18);
-    }
-    .attach .icon {
-      width: 36px; height: 36px; background: #FFF;
-      border-radius: 6px; display: grid; place-items: center;
-      font-family: var(--mono); font-size: 10px; color: var(--rust); font-weight: 700;
-      flex: none;
-    }
-    .attach .meta { flex: 1; line-height: 1.3; }
-    .attach .name { font-size: 12px; font-weight: 600; }
-    .attach .size { font-size: 11px; color: var(--muted); }
-    .toast {
-      margin: auto 16px 20px;
-      background: var(--ink); color: var(--cream);
-      border-radius: 12px; padding: 12px 14px;
-      display: flex; align-items: center; gap: 10px; font-size: 12px;
-    }
-    .toast .check {
-      width: 18px; height: 18px; border-radius: 50%;
-      background: var(--rust); color: var(--cream);
-      display: grid; place-items: center;
-      font-size: 11px; font-weight: 700; flex: none;
-    }
-
-    /* SECTIONS */
-    section + section { margin-top: 96px; }
-    .lang-en section:first-child { margin-top: 0; }
-    section { scroll-margin-top: 96px; }
-    html { scroll-behavior: smooth; }
-    .section-eyebrow {
-      font-family: var(--mono);
-      font-size: 16px; letter-spacing: 0.16em; text-transform: uppercase;
-      color: var(--ink); font-weight: 700; opacity: 1;
-      display: flex; align-items: center; gap: 14px;
-      margin-bottom: 32px;
-    }
-    .section-eyebrow .num {
-      display: inline-grid; place-items: center;
-      min-width: 34px; height: 26px;
-      padding: 0 8px;
-      background: var(--rust); color: var(--cream);
-      border-radius: 4px;
-      font-weight: 700; letter-spacing: 0.08em;
-    }
-    .section-eyebrow::before { display: none; }
-    .section-eyebrow::after {
-      content: ""; flex: 1; height: 1px; background: var(--hair-2);
-      max-width: 320px;
-    }
-    .section-title {
-      margin: 0;
-      font-family: var(--serif);
-      font-size: clamp(40px, 5.2vw, 64px);
-      line-height: 1.05; letter-spacing: -0.022em; font-weight: 500;
-      font-optical-sizing: auto;
-      font-variation-settings: "opsz" 60;
-      max-width: 18ch;
+      font-family: var(--serif); font-weight: 500;
+      font-optical-sizing: auto; font-variation-settings: "opsz" 72;
+      font-size: clamp(44px, 5.0vw, 76px);
+      line-height: 1.04; letter-spacing: -0.028em;
       text-wrap: balance;
     }
-    .section-title em { font-style: italic; font-weight: 400; color: var(--rust); }
-    .section-intro {
-      margin: 20px 0 0;
-      font-size: 20px; line-height: 1.55; color: var(--ink);
-      max-width: 600px; text-wrap: pretty;
+    h1 .lead-clause { color: var(--muted-2); }
+    h1 em { font-style: italic; font-weight: 400; color: var(--green); }
+    .hero-sub {
+      margin: 30px 0 0;
+      font-size: 21px; line-height: 1.5; color: var(--muted-2);
+      max-width: 30ch; text-wrap: pretty;
     }
+    .hero-sub b { color: var(--ink); font-weight: 600; }
+    .hero-cta { margin-top: 38px; }
+    .hero-cta .btn { font-size: 18px; padding: 18px 36px; }
 
-    /* WARUM */
-    .warum-list {
-      margin: 56px 0 0; padding: 0; list-style: none;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 0;
-      border-top: 1px solid var(--hair-2);
-    }
-    .warum-list li {
-      padding: 36px 32px 36px 0;
-      border-bottom: 1px solid var(--hair-2);
-      display: grid; grid-template-columns: 68px 1fr; gap: 24px;
-      align-items: center;
-    }
-    .warum-list li:nth-child(odd) { padding-right: 48px; border-right: 1px solid var(--hair-2); }
-    .warum-list li:nth-child(even) { padding-left: 48px; }
-    .warum-num {
-      width: 64px; height: 64px;
-      display: grid; place-items: center;
-      background: var(--rust); color: var(--cream);
-      border-radius: 8px;
-      font-family: var(--sans); font-size: 42px; font-weight: 800;
-      letter-spacing: -0.04em;
-      line-height: 1; padding-bottom: 3px;
-    }
-    .warum-text {
-      font-family: var(--serif);
-      font-size: 28px; line-height: 1.3; letter-spacing: -0.015em;
-      font-weight: 400; color: var(--ink); text-wrap: pretty;
-    }
-
-    /* INK BREAK — softer warm dark, not pure black */
-    .ink {
-      background: var(--ink-soft);
-      color: var(--cream);
-      margin: 96px -72px 0;
-      padding: 96px 72px 104px;
+    /* ─────────── DEMO PHONE ─────────── */
+    .demo-stage {
       position: relative;
+      display: flex; align-items: center; justify-content: center;
+      min-height: 600px;
     }
-    .ink .section-eyebrow { color: rgba(244,243,240,0.85); }
-    .ink .section-eyebrow::after { background: rgba(244,243,240,0.16); }
-    .ink .section-eyebrow .num { color: var(--cream); }
-    .ink .section-title { color: var(--cream); }
-    .ink .section-intro { color: rgba(244,243,240,0.85); }
+    .demo-glow {
+      position: absolute; width: 420px; height: 420px;
+      background: radial-gradient(circle, rgba(31,67,50,0.10), transparent 68%);
+      border-radius: 50%; pointer-events: none;
+    }
+    .phone {
+      position: relative; z-index: 2;
+      width: 300px; height: 612px;
+      background: #111; border-radius: 44px; padding: 9px;
+      box-shadow: 0 40px 90px -20px rgba(15,42,31,0.42), 0 8px 24px rgba(26,26,26,0.12);
+    }
+    .phone-screen {
+      position: relative; width: 100%; height: 100%;
+      background: var(--paper); border-radius: 36px; overflow: hidden;
+    }
+    .notch {
+      position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+      width: 116px; height: 26px; background: #111;
+      border-bottom-left-radius: 14px; border-bottom-right-radius: 14px; z-index: 10;
+    }
+    .ios-status {
+      position: absolute; top: 0; left: 0; right: 0; height: 44px; z-index: 9;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 24px; font-size: 13px; font-weight: 600; color: var(--ink);
+    }
+    .ios-status .dots { font-size: 10px; letter-spacing: 1px; opacity: 0.7; }
 
+    .screen {
+      position: absolute; inset: 0; padding-top: 44px;
+      display: flex; flex-direction: column;
+      transition: opacity .5s ease, transform .6s cubic-bezier(.4,0,.2,1);
+    }
+    /* compose */
+    .screen-compose { opacity: 1; }
+    .mailbar {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 12px 18px; border-bottom: 1px solid var(--hair);
+      font-size: 13px;
+    }
+    .mailbar .cancel { color: var(--muted); }
+    .mailbar .title { font-weight: 600; }
+    .mailbar .send {
+      font-weight: 700; color: var(--cream); background: var(--green);
+      padding: 5px 13px; border-radius: 999px; font-size: 12px;
+      transition: transform .18s, box-shadow .18s;
+    }
+    .mailfields { padding: 4px 18px; font-size: 13px; }
+    .mailfields .field {
+      display: flex; gap: 10px; padding: 10px 0;
+      border-bottom: 1px solid rgba(26,26,26,0.05);
+    }
+    .mailfields .k { color: var(--muted); width: 58px; flex: none; }
+    .mailfields .v { font-weight: 500; }
+    .mailfields .v.tag { color: var(--green); font-family: var(--mono); font-size: 12px; }
+    .attach {
+      margin: 16px 18px 0; background: var(--cream);
+      border: 1px solid rgba(31,67,50,0.16); border-radius: 12px;
+      padding: 12px; display: flex; gap: 12px; align-items: center;
+    }
+    .attach .thumb {
+      width: 58px; height: 76px; flex: none; border-radius: 6px; overflow: hidden;
+      background: #fff; box-shadow: 0 3px 10px rgba(26,26,26,0.12);
+      font-family: var(--mono); padding: 7px 6px 0; transform: rotate(-2deg);
+    }
+    .attach .thumb .t-h { font-size: 6px; letter-spacing: 0.12em; color: var(--ink); opacity: 0.65; }
+    .attach .thumb .t-r { height: 1.5px; background: rgba(26,26,26,0.14); margin: 4px 0; }
+    .attach .thumb .t-row { display: flex; justify-content: space-between; font-size: 5.5px; color: var(--muted); margin-bottom: 2px; }
+    .attach .thumb .t-tot { display: flex; justify-content: space-between; font-size: 6.5px; font-weight: 700; color: var(--ink); margin-top: 3px; }
+    .attach .a-meta { line-height: 1.35; }
+    .attach .a-name { font-size: 12.5px; font-weight: 600; }
+    .attach .a-size { font-size: 11px; color: var(--muted); }
+    .compose-hint {
+      margin-top: auto; padding: 16px 18px;
+      font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--muted); text-align: center;
+    }
+
+    /* paper-plane that flies on send */
+    .plane {
+      position: absolute; z-index: 12; left: 50%; bottom: 90px;
+      width: 30px; height: 30px; color: var(--green);
+      opacity: 0; transform: translate(-50%, 0) scale(0.8);
+    }
+    .phone[data-phase="send"] .plane {
+      animation: fly .9s cubic-bezier(.5,0,.3,1) forwards;
+    }
+    @keyframes fly {
+      0%   { opacity: 0; transform: translate(-50%, 10px) scale(0.7) rotate(8deg); }
+      25%  { opacity: 1; }
+      100% { opacity: 0; transform: translate(-50%, -380px) scale(1.05) rotate(8deg); }
+    }
+    .phone[data-phase="send"] .mailbar .send { transform: scale(0.9); box-shadow: 0 0 0 4px rgba(31,67,50,0.18); }
+
+    /* confirmation */
+    .screen-confirm {
+      opacity: 0; transform: translateY(14px);
+      padding: 44px 0 0; background: var(--paper);
+      pointer-events: none;
+    }
+    .phone[data-phase="confirm"] .screen-compose { opacity: 0; transform: translateY(-10px) scale(0.985); }
+    .phone[data-phase="confirm"] .screen-confirm { opacity: 1; transform: translateY(0); }
+    .confirm-inner { padding: 22px 18px; display: flex; flex-direction: column; height: 100%; }
+    .confirm-brand {
+      display: flex; align-items: center; gap: 8px;
+      font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--green); font-weight: 700;
+    }
+    .confirm-brand img { width: 18px; height: 18px; border-radius: 4px; }
+    .confirm-check {
+      margin: 26px auto 14px; width: 60px; height: 60px; border-radius: 50%;
+      background: var(--green); color: var(--cream);
+      display: grid; place-items: center; font-size: 30px;
+      box-shadow: 0 10px 26px rgba(31,67,50,0.32);
+      transform: scale(0);
+    }
+    .phone[data-phase="confirm"] .confirm-check { animation: pop .5s cubic-bezier(.3,1.5,.5,1) .25s forwards; }
+    @keyframes pop { to { transform: scale(1); } }
+    .confirm-head {
+      text-align: center; font-family: var(--serif); font-weight: 500;
+      font-size: 21px; letter-spacing: -0.01em; color: var(--ink); margin-bottom: 4px;
+    }
+    .confirm-sub {
+      text-align: center; font-size: 12.5px; color: var(--muted); margin-bottom: 20px;
+    }
+    .extract {
+      background: var(--cream); border: 1px solid var(--hair-2); border-radius: 14px;
+      padding: 6px 16px;
+    }
+    .extract .x {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 11px 0; border-bottom: 1px dashed rgba(26,26,26,0.12);
+      font-size: 13px;
+      opacity: 0; transform: translateY(6px);
+    }
+    .extract .x:last-child { border-bottom: 0; }
+    .extract .x .xk { color: var(--muted); font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; }
+    .extract .x .xv { font-weight: 600; color: var(--ink); }
+    .extract .x.total .xv { color: var(--green); font-size: 15px; }
+    .phone[data-phase="confirm"] .extract .x { animation: xin .5s ease forwards; }
+    .phone[data-phase="confirm"] .extract .x:nth-child(1) { animation-delay: .45s; }
+    .phone[data-phase="confirm"] .extract .x:nth-child(2) { animation-delay: .57s; }
+    .phone[data-phase="confirm"] .extract .x:nth-child(3) { animation-delay: .69s; }
+    .phone[data-phase="confirm"] .extract .x:nth-child(4) { animation-delay: .81s; }
+    @keyframes xin { to { opacity: 1; transform: translateY(0); } }
+    .confirm-foot {
+      margin-top: auto; text-align: center;
+      font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--muted); padding-bottom: 6px;
+    }
+
+    .demo-caption {
+      position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%);
+      text-align: center; width: max-content;
+    }
+    .demo-caption .c-main { font-family: var(--serif); font-style: italic; font-size: 19px; color: var(--ink); }
+    .demo-caption .c-sub { font-size: 13px; color: var(--muted); margin-top: 2px; }
+
+    /* address tag bubble */
+    .addr-tag {
+      position: absolute; z-index: 4; top: 46px; right: -6px;
+      background: #fff; border: 1px solid var(--green); border-radius: 12px;
+      padding: 9px 13px; max-width: 200px;
+      font-family: var(--mono); font-size: 10.5px; line-height: 1.5; color: var(--ink);
+      box-shadow: 0 6px 20px rgba(31,67,50,0.12);
+    }
+    .addr-tag b { color: var(--green); }
+    .addr-tag::after {
+      content: ""; position: absolute; bottom: -6px; left: 28px;
+      width: 11px; height: 11px; background: #fff;
+      border-right: 1px solid var(--green); border-bottom: 1px solid var(--green);
+      transform: rotate(45deg);
+    }
+
+    /* ─────────── SECTION SCAFFOLD ─────────── */
+    section { scroll-margin-top: 88px; }
+    .sec { padding: 92px 0; }
+    .sec-head { max-width: 760px; }
+    .sec-head .eyebrow { margin-bottom: 26px; }
+    .sec-title {
+      margin: 0;
+      font-family: var(--serif); font-weight: 500;
+      font-optical-sizing: auto; font-variation-settings: "opsz" 60;
+      font-size: clamp(34px, 4.0vw, 54px);
+      line-height: 1.07; letter-spacing: -0.024em;
+      text-wrap: balance;
+    }
+    .sec-title em { font-style: italic; font-weight: 400; color: var(--green); }
+    .sec-intro {
+      margin: 22px 0 0; font-size: 19px; line-height: 1.55;
+      color: var(--muted-2); max-width: 58ch; text-wrap: pretty;
+    }
+
+    /* ─────────── PAIN BEAT (pullquote) ─────────── */
+    .pain {
+      padding: 84px 0;
+      border-top: 1px dashed var(--hair-2);
+      border-bottom: 1px dashed var(--hair-2);
+      text-align: center;
+    }
+    .pain .marg {
+      font-family: var(--mono); font-size: 12px; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 26px;
+    }
+    .pain blockquote {
+      margin: 0 auto; max-width: 20ch;
+      font-family: var(--serif); font-style: italic; font-weight: 400;
+      font-size: clamp(30px, 4.4vw, 54px); line-height: 1.1; letter-spacing: -0.022em;
+      color: var(--ink); text-wrap: balance;
+    }
+    .pain blockquote .em-mark { color: var(--green); }
+
+    /* ─────────── VILLAIN CONTRAST ─────────── */
+    .contrast-grid {
+      margin-top: 56px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+      border: 1px solid var(--hair-2); border-radius: 20px; overflow: hidden;
+    }
+    .col {
+      padding: 44px 44px 48px;
+      display: flex; flex-direction: column;
+    }
+    .col-them {
+      background: var(--green-deep); color: rgba(244,243,240,0.92);
+    }
+    .col-them .col-tag { color: var(--wheat); }
+    .col-them .col-h { color: var(--cream); }
+    .col-us { background: var(--paper); }
+    .col-us .col-tag { color: var(--green); }
+    .col-tag {
+      font-family: var(--mono); font-size: 12px; letter-spacing: 0.18em;
+      text-transform: uppercase; font-weight: 700; margin-bottom: 18px;
+    }
+    .col-h {
+      font-family: var(--serif); font-weight: 500; font-size: 27px;
+      letter-spacing: -0.018em; line-height: 1.18; margin: 0 0 26px;
+    }
+    .them-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+    .them-list li {
+      padding: 13px 0; font-size: 15px; line-height: 1.45;
+      border-bottom: 1px solid rgba(244,243,240,0.12);
+      display: flex; gap: 12px; align-items: flex-start;
+      color: rgba(244,243,240,0.82);
+    }
+    .them-list li:last-child { border-bottom: 0; }
+    .them-list .b {
+      font-family: var(--mono); font-size: 11px; color: rgba(224,200,150,0.7);
+      flex: none; margin-top: 3px; letter-spacing: 0.04em;
+    }
+    .them-foot {
+      margin-top: 26px; font-family: var(--mono); font-size: 11.5px;
+      letter-spacing: 0.1em; text-transform: uppercase; color: rgba(244,243,240,0.5);
+    }
+    .us-line {
+      font-family: var(--serif); font-style: italic; font-weight: 400;
+      font-size: clamp(30px, 3.4vw, 42px); line-height: 1.12; letter-spacing: -0.02em;
+      color: var(--ink); margin: 8px 0 0;
+    }
+    .us-mail {
+      margin: 22px 0 0; align-self: flex-start;
+      font-family: var(--mono); font-size: 14px; color: var(--green);
+      background: rgba(31,67,50,0.07); border: 1px solid rgba(31,67,50,0.2);
+      padding: 9px 15px; border-radius: 999px; font-weight: 700;
+    }
+    .us-foot {
+      margin-top: auto; padding-top: 30px;
+      font-size: 16px; line-height: 1.5; color: var(--muted-2);
+    }
+    .us-foot b { color: var(--ink); font-weight: 600; }
+
+    /* ─────────── HOW (3 steps) ─────────── */
+    .how { background: var(--green-deep); color: var(--cream); border-radius: 28px; padding: 76px 56px; margin-top: 0; }
+    .how .eyebrow { color: var(--wheat); }
+    .how .eyebrow::before { background: var(--wheat); }
+    .how .sec-title { color: var(--cream); }
+    .how .sec-intro { color: rgba(244,243,240,0.82); }
     .steps {
-      margin: 64px 0 0;
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 0;
+      margin-top: 56px;
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
       border-top: 1px solid rgba(244,243,240,0.16);
     }
     .step {
-      padding: 36px 32px 40px;
-      border-right: 1px solid rgba(244,243,240,0.16);
+      padding: 36px 32px 8px; border-right: 1px solid rgba(244,243,240,0.16);
     }
     .step:last-child { border-right: 0; }
-    .step-num {
-      font-family: var(--mono); font-size: 14px; font-weight: 700;
-      letter-spacing: 0.16em; text-transform: uppercase;
-      color: var(--rust); margin-bottom: 18px;
+    .step-label {
+      font-family: var(--mono); font-size: 13px; font-weight: 700;
+      letter-spacing: 0.16em; text-transform: uppercase; color: var(--wheat);
+      margin-bottom: 20px;
     }
-    .step-title {
-      margin: 0 0 14px;
-      font-family: var(--serif);
-      font-size: 30px; font-weight: 500; letter-spacing: -0.015em;
-      color: var(--cream);
+    .step-word {
+      font-family: var(--serif); font-weight: 500; font-size: 34px;
+      letter-spacing: -0.02em; color: var(--cream); margin: 0 0 14px;
     }
-    .step-body {
-      margin: 0; font-size: 18px; line-height: 1.6;
-      color: rgba(244,243,240,0.95); text-wrap: pretty;
+    .step-body { margin: 0; font-size: 16px; line-height: 1.6; color: rgba(244,243,240,0.86); text-wrap: pretty; }
+    .travel {
+      margin-top: 44px; padding: 24px 28px;
+      background: rgba(244,243,240,0.06); border: 1px solid rgba(244,243,240,0.14);
+      border-radius: 16px;
+      display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
     }
-    .step-details {
-      margin: 22px 0 0; padding: 0; list-style: none;
-      font-family: var(--mono); font-size: 16px; line-height: 1.75;
-      color: rgba(244,243,240,0.95);
+    .travel .t-mono {
+      font-family: var(--mono); font-size: 14px; color: var(--wheat); font-weight: 700;
+      letter-spacing: 0.04em;
+      background: rgba(224,200,150,0.12); border: 1px solid rgba(224,200,150,0.3);
+      padding: 7px 13px; border-radius: 8px; white-space: nowrap;
     }
-    .step-details li::before { content: "\2192   "; color: var(--rust); }
+    .travel .t-text { font-size: 16px; line-height: 1.5; color: rgba(244,243,240,0.9); }
+    .travel .t-text b { color: var(--cream); font-weight: 600; }
 
-    .ink .step-num { color: var(--accent-on-dark); }
-    .ink .step-details li::before { content: "\2192   "; color: var(--accent-on-dark); }
-    .cta-repeat form.waitlist-form { background: rgba(244,243,240,0.08); border-color: rgba(224,200,150,0.4); }
-    .cta-repeat form.waitlist-form button { background: var(--accent-on-dark); color: var(--ink-soft); }
-    .cta-repeat form.waitlist-form button:hover { background: #D4B97A; }
-
-    /* AUDIENCE */
-    .audience {
-      margin: 56px 0 0;
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
-      background: var(--hair-2);
-      border: 1px solid var(--hair-2);
+    /* ─────────── EXPORT / GIVE BACK ─────────── */
+    .export-grid {
+      margin-top: 56px;
+      display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: center;
     }
-    .audience-card {
-      background: var(--cream);
-      padding: 36px 32px;
-      display: flex; flex-direction: column; gap: 14px;
-      min-height: 220px;
+    .export-when { list-style: none; margin: 0 0 0; padding: 0; }
+    .export-when li {
+      display: flex; gap: 18px; align-items: baseline;
+      padding: 22px 0; border-bottom: 1px solid var(--hair-2);
     }
-    .audience-tag {
-      font-family: var(--mono); font-size: 14px; font-weight: 700;
-      letter-spacing: 0.16em; text-transform: uppercase; color: var(--rust);
+    .export-when li:first-child { border-top: 1px solid var(--hair-2); }
+    .export-when .ew-k {
+      font-family: var(--mono); font-size: 12px; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--green); font-weight: 700;
+      width: 130px; flex: none;
     }
-    .audience-title {
-      font-family: var(--serif);
-      font-size: 30px; font-weight: 500; letter-spacing: -0.015em; color: var(--ink);
-      line-height: 1.2;
-      margin: 0;
+    .export-when .ew-v { font-size: 18px; line-height: 1.4; color: var(--ink); }
+    .export-foot { margin-top: 30px; font-size: 17px; line-height: 1.55; color: var(--muted-2); max-width: 46ch; }
+    .export-foot b { color: var(--ink); font-weight: 600; }
+    /* the file artifact */
+    .file-card {
+      background: var(--paper); border: 1px solid var(--hair-2); border-radius: 18px;
+      box-shadow: 0 24px 60px -24px rgba(26,26,26,0.2);
+      overflow: hidden;
     }
-    .audience-body {
-      font-size: 17px; line-height: 1.55; color: var(--ink); margin: 0;
+    .file-top {
+      display: flex; align-items: center; gap: 10px;
+      padding: 16px 20px; border-bottom: 1px solid var(--hair);
+      font-family: var(--mono); font-size: 12px; color: var(--muted);
     }
-
-    /* NOPE */
-    .nope {
-      margin: 56px 0 0;
-      display: grid; grid-template-columns: repeat(2, 1fr);
-      gap: 14px 56px;
+    .file-top .dot { width: 10px; height: 10px; border-radius: 50%; }
+    .file-top .name { margin-left: 8px; color: var(--ink); font-weight: 700; letter-spacing: 0.02em; }
+    .file-rows { padding: 8px 0; }
+    .file-row {
+      display: grid; grid-template-columns: 1.4fr 0.8fr 0.7fr; gap: 8px;
+      padding: 11px 20px; font-family: var(--mono); font-size: 12.5px; color: var(--ink);
+      border-bottom: 1px solid rgba(26,26,26,0.05);
     }
-    .nope-item {
-      display: flex; align-items: center; gap: 18px;
-      padding: 18px 0;
-      border-bottom: 1px solid var(--hair-2);
-    }
-    .nope-item:nth-last-child(-n+2) { border-bottom: 0; }
-    .nope-cross {
-      font-family: var(--serif);
-      font-style: italic;
-      font-size: 36px; font-weight: 500;
-      color: var(--rust); width: 32px; text-align: center; flex: none;
-      line-height: 1;
-      opacity: 0.85;
-    }
-    .nope-text {
-      font-size: 24px; letter-spacing: -0.015em; font-weight: 500;
-      color: var(--ink);
-    }
-    .nope-foot {
-      margin: 40px 0 0; padding: 18px 22px;
-      font-size: 17px; color: var(--ink);
-      background: var(--cream); border-left: 3px solid var(--rust);
-      max-width: 560px;
+    .file-row.head { color: var(--muted); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 10.5px; }
+    .file-row:last-child { border-bottom: 0; }
+    .file-row .amt { text-align: right; font-weight: 700; }
+    .file-foot {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 20px; background: rgba(31,67,50,0.05);
+      font-family: var(--mono); font-size: 12px; color: var(--green); font-weight: 700;
+      letter-spacing: 0.04em;
     }
 
-    /* PREIS */
-    .price-card {
-      margin: 48px auto 0;
-      max-width: 560px;
-      background: #FFF;
-      border: 1px solid var(--hair-2);
-      border-radius: 18px;
-      padding: 48px 48px 40px;
+    /* ─────────── TRUST STRIP ─────────── */
+    .trust-strip {
+      margin: 0; padding: 40px 48px;
+      display: flex; align-items: center; justify-content: center; gap: 0;
+      flex-wrap: wrap;
+      border-top: 1px solid var(--hair-2); border-bottom: 1px solid var(--hair-2);
+    }
+    .trust-item {
+      padding: 8px 32px; display: flex; flex-direction: column; gap: 4px;
       text-align: center;
-      box-shadow: 0 24px 60px rgba(26,26,26,0.07);
-      position: relative;
+      border-right: 1px solid var(--hair-2);
+    }
+    .trust-item:last-child { border-right: 0; }
+    .trust-item .ti-k { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+    .trust-item .ti-v { font-size: 16px; font-weight: 600; color: var(--ink); letter-spacing: -0.01em; }
+
+    /* ─────────── FOUNDER ─────────── */
+    .founder {
+      display: grid; grid-template-columns: 160px 1fr; gap: 40px; align-items: center;
+      max-width: 880px;
+    }
+    .founder-photo {
+      width: 160px; height: 160px; flex: 0 0 160px; border-radius: 50%;
+      background: var(--green); color: var(--cream);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--serif); font-size: 54px; font-weight: 500;
+    }
+    .founder-quote {
+      font-family: var(--serif); font-weight: 400; font-size: clamp(22px, 2.5vw, 30px);
+      line-height: 1.34; letter-spacing: -0.015em; color: var(--ink); margin: 0;
+      text-wrap: pretty;
+    }
+    .founder-quote em { font-style: italic; color: var(--green); }
+    .founder-name {
+      margin-top: 22px; font-family: var(--mono); font-size: 13px;
+      letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted-2);
+    }
+    .founder-name b { color: var(--ink); font-weight: 700; }
+
+    /* ─────────── PRICING ─────────── */
+    .price-wrap { display: flex; justify-content: center; margin-top: 56px; }
+    .price-card {
+      width: 100%; max-width: 540px; background: var(--paper);
+      border: 1px solid var(--hair-2); border-radius: 22px;
+      padding: 50px 48px 42px; text-align: center; position: relative;
+      box-shadow: 0 30px 70px -30px rgba(26,26,26,0.22);
     }
     .price-card .stamp {
-      position: absolute; top: -14px; left: 50%;
-      transform: translateX(-50%);
-      background: var(--rust); color: var(--cream);
-      font-family: var(--mono); font-size: 11px;
-      letter-spacing: 0.2em; text-transform: uppercase;
-      padding: 6px 14px; border-radius: 999px;
+      position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+      background: var(--green); color: var(--cream);
+      font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em;
+      text-transform: uppercase; padding: 7px 16px; border-radius: 999px;
+      white-space: nowrap;
     }
-    .price-amount {
-      font-size: 72px; font-weight: 700; letter-spacing: -0.045em;
-      line-height: 1; color: var(--ink);
-    }
-    .price-top-label {
-      font-family: var(--mono);
-      font-size: 32px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--ink);
-      margin-bottom: 12px;
-      line-height: 1;
-    }
-    .price-period {
-      margin-top: 10px;
-      font-family: var(--mono); font-size: 16px;
-      letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink); font-weight: 600;
-    }
-    .price-founding {
-      margin-top: 16px;
-      font-size: 15px; line-height: 1.5;
-      color: rgba(26,26,26,0.72);
-    }
-    .price-founding b { color: var(--rust); font-weight: 700; }
-    .price-founding .was { text-decoration: line-through; opacity: 0.6; }
+    .price-period-top { font-family: var(--mono); font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+    .price-amount { font-size: 76px; font-weight: 700; letter-spacing: -0.045em; line-height: 1; color: var(--ink); margin: 12px 0 8px; }
+    .price-amount .yr { font-size: 22px; font-weight: 600; color: var(--muted); letter-spacing: 0; }
+    .price-note { font-size: 15px; line-height: 1.55; color: var(--muted-2); max-width: 38ch; margin: 0 auto; }
+    .price-note b { color: var(--green); font-weight: 700; }
+    .price-note .was { text-decoration: line-through; opacity: 0.6; }
     .price-includes {
-      margin: 36px 0 0; padding: 28px 0 0; list-style: none;
+      list-style: none; margin: 32px auto 0; padding: 30px 0 0; max-width: 360px;
       border-top: 1px solid var(--hair-2);
-      display: flex; flex-direction: column; gap: 16px;
-      font-size: 18px; color: var(--ink); text-align: left;
-      max-width: 380px; margin-left: auto; margin-right: auto;
+      display: flex; flex-direction: column; gap: 15px; text-align: left;
     }
-    .price-includes li {
-      display: flex; align-items: center; gap: 14px;
-    }
-    .price-includes li::before {
-      content: "\2713"; color: var(--rust); font-weight: 700;
-      font-size: 22px; line-height: 1; flex: none;
-    }
+    .price-includes li { display: flex; gap: 13px; align-items: flex-start; font-size: 16px; line-height: 1.4; color: var(--ink); }
+    .price-includes li::before { content: "\2713"; color: var(--green); font-weight: 700; font-size: 18px; line-height: 1.3; flex: none; }
+    .price-card .btn { margin-top: 34px; width: 100%; justify-content: center; }
+    .price-sub { margin-top: 16px; font-size: 13px; color: var(--muted); }
 
-    /* SICHERHEIT */
-    .security {
-      margin: 56px 0 0; padding: 0; list-style: none;
-      display: grid; grid-template-columns: repeat(2, 1fr); gap: 0;
-      border: 1px solid var(--hair-2);
+    /* ─────────── FAQ ─────────── */
+    .faq { margin-top: 48px; border-top: 1px solid var(--hair-2); }
+    .faq-item { border-bottom: 1px solid var(--hair-2); }
+    .faq-q {
+      width: 100%; background: transparent; border: 0; cursor: pointer;
+      padding: 26px 0; display: flex; align-items: center; justify-content: space-between; gap: 26px;
+      font-family: inherit; font-size: 20px; font-weight: 500; letter-spacing: -0.015em;
+      color: var(--ink); text-align: left; line-height: 1.35; transition: color .2s; text-wrap: pretty;
     }
-    .security li {
-      padding: 32px 32px;
-      display: grid; grid-template-columns: 56px 1fr; gap: 20px;
-      align-items: center;
-      border-right: 1px solid var(--hair-2);
-      border-bottom: 1px solid var(--hair-2);
-      background: rgba(255,255,255,0.4);
-    }
-    .security li:nth-child(2n) { border-right: 0; }
-    .security li:nth-last-child(-n+2) { border-bottom: 0; }
-    .security-num {
-      width: 48px; height: 48px;
-      display: grid; place-items: center;
-      background: var(--rust); color: var(--cream);
-      border-radius: 8px;
-      font-family: var(--sans); font-size: 20px; font-weight: 800;
-      letter-spacing: -0.02em;
-      line-height: 1; padding-bottom: 1px;
-    }
-    .security-text {
-      font-size: 18px; line-height: 1.55; color: var(--ink); text-wrap: pretty;
-    }
-    .security-text b { font-weight: 600; }
-
-    /* FAQ — Apple-style accordion */
-    .faq {
-      margin: 56px 0 0;
-      border-top: 1px solid var(--hair-2);
-    }
-    .faq-item {
-      border-bottom: 1px solid var(--hair-2);
-    }
-    .faq-question {
-      width: 100%;
-      background: transparent;
-      border: 0;
-      padding: 28px 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 28px;
-      cursor: pointer;
-      font-family: inherit;
-      font-size: 22px;
-      font-weight: 500;
-      letter-spacing: -0.015em;
-      color: var(--ink);
-      text-align: left;
-      line-height: 1.35;
-      transition: color .25s ease;
-      text-wrap: pretty;
-    }
-    .faq-question:hover { color: var(--rust); }
-    .faq-question:hover .faq-icon { border-color: var(--rust); color: var(--rust); }
-    .faq-question:focus-visible { outline: none; }
-    .faq-question:focus-visible .faq-icon {
-      border-color: var(--rust);
-      box-shadow: 0 0 0 3px rgba(31,67,50,0.18);
-    }
-    .faq-icon {
-      flex: none;
-      width: 36px; height: 36px;
-      border-radius: 50%;
-      border: 1px solid var(--hair-2);
-      display: grid;
-      place-items: center;
-      color: var(--ink);
-      background: transparent;
-      position: relative;
-      transition:
-        transform 0.55s cubic-bezier(0.32, 0.72, 0, 1),
-        background 0.35s cubic-bezier(0.32, 0.72, 0, 1),
-        color 0.35s ease,
-        border-color 0.35s ease,
-        box-shadow 0.2s ease;
-    }
-    .faq-icon::before, .faq-icon::after {
-      content: ""; position: absolute;
-      background: currentColor;
-      border-radius: 1px;
-      transition: transform 0.55s cubic-bezier(0.32, 0.72, 0, 1);
-    }
+    .faq-q:hover { color: var(--green); }
+    .faq-icon { flex: none; width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--hair-2); display: grid; place-items: center; position: relative; color: var(--ink); transition: transform .55s cubic-bezier(.32,.72,0,1), background .35s, color .35s, border-color .35s; }
+    .faq-icon::before, .faq-icon::after { content: ""; position: absolute; background: currentColor; border-radius: 1px; transition: transform .55s cubic-bezier(.32,.72,0,1); }
     .faq-icon::before { width: 12px; height: 1.5px; }
     .faq-icon::after { width: 1.5px; height: 12px; }
-    .faq-item.open .faq-icon {
-      background: var(--rust);
-      border-color: var(--rust);
-      color: var(--cream);
-      transform: rotate(135deg);
-    }
-    .faq-answer-wrap {
-      display: grid;
-      grid-template-rows: 0fr;
-      transition: grid-template-rows 0.55s cubic-bezier(0.32, 0.72, 0, 1);
-    }
-    .faq-item.open .faq-answer-wrap { grid-template-rows: 1fr; }
-    .faq-answer-inner { overflow: hidden; min-height: 0; }
-    .faq-answer {
-      padding: 0 80px 32px 0;
-      font-size: 17px;
-      line-height: 1.6;
-      color: var(--muted-2);
-      max-width: 680px;
-      text-wrap: pretty;
-      opacity: 0;
-      transform: translateY(-4px);
-      transition: opacity 0.4s ease 0.05s, transform 0.5s cubic-bezier(0.32, 0.72, 0, 1) 0.05s;
-    }
-    .faq-item.open .faq-answer {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .faq-answer b { color: var(--ink); font-weight: 600; }
-    .faq-answer code {
-      font-family: var(--mono);
-      font-size: 14px;
-      background: rgba(31,67,50,0.08);
-      color: var(--rust);
-      padding: 2px 7px; border-radius: 4px;
-      letter-spacing: 0;
-    }
-    .faq-footnote {
-      margin: 40px 0 0;
-      font-size: 15px;
-      color: var(--muted);
-      max-width: 560px;
-    }
-    .faq-footnote a { color: var(--rust); text-decoration: none; font-weight: 600; border-bottom: 1px solid rgba(31,67,50,0.3); }
-    .faq-footnote a:hover { border-bottom-color: var(--rust); }
+    .faq-item.open .faq-icon { background: var(--green); border-color: var(--green); color: var(--cream); transform: rotate(135deg); }
+    .faq-wrap { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .5s cubic-bezier(.32,.72,0,1); }
+    .faq-item.open .faq-wrap { grid-template-rows: 1fr; }
+    .faq-inner { overflow: hidden; min-height: 0; }
+    .faq-a { padding: 0 70px 30px 0; font-size: 16px; line-height: 1.65; color: var(--muted-2); max-width: 680px; text-wrap: pretty; }
+    .faq-a b { color: var(--ink); font-weight: 600; }
+    .faq-a code { font-family: var(--mono); font-size: 13.5px; background: rgba(31,67,50,0.08); color: var(--green); padding: 2px 7px; border-radius: 4px; }
+    .faq-a a { color: var(--green); text-decoration: none; border-bottom: 1px solid rgba(31,67,50,0.3); font-weight: 600; }
 
-    /* CTA REPEAT */
-    .cta-repeat {
-      margin: 96px 0 0;
-      padding: 80px 56px;
-      background: var(--ink-soft);
-      color: var(--cream);
-      border-radius: 24px;
-      text-align: center;
+    /* ─────────── FINAL CTA ─────────── */
+    .final-cta {
+      margin-top: 0; padding: 84px 56px; text-align: center;
+      background: var(--green-deep); color: var(--cream); border-radius: 28px;
     }
-    .cta-repeat h2 {
-      margin: 0;
-      font-family: var(--serif);
-      font-size: clamp(36px, 4.5vw, 56px); letter-spacing: -0.022em;
-      line-height: 1.1; font-weight: 500;
-      color: var(--cream);
+    .final-cta h2 {
+      margin: 0; font-family: var(--serif); font-weight: 500;
+      font-size: clamp(32px, 4vw, 52px); line-height: 1.1; letter-spacing: -0.022em; color: var(--cream);
     }
-    .cta-repeat h2 em { font-style: italic; font-weight: 400; color: var(--accent-on-dark); }
-    .cta-repeat p {
-      margin: 16px auto 32px; max-width: 480px;
-      color: rgba(244,243,240,0.78);
-      font-size: 17px; line-height: 1.55;
-    }
-    .cta-repeat form {
-      max-width: 460px; margin: 0 auto;
-      background: rgba(244,243,240,0.08);
-      border: 1px solid rgba(244,243,240,0.18);
-    }
-    .cta-repeat form input { color: var(--cream); }
-    .cta-repeat form input::placeholder { color: rgba(244,243,240,0.5); }
+    .final-cta h2 em { font-style: italic; font-weight: 400; color: var(--wheat); }
+    .final-cta p { margin: 18px auto 34px; max-width: 44ch; font-size: 17px; line-height: 1.55; color: rgba(244,243,240,0.78); }
 
-    /* FOOTER */
-    footer {
-      margin-top: 88px;
-      padding: 48px 72px 56px;
-      border-top: 1px solid var(--hair-2);
-      display: flex; justify-content: space-between; align-items: flex-start;
-      gap: 32px; flex-wrap: wrap;
-      font-size: 13px;
-    }
-    .footer-meta {
-      display: flex; flex-direction: column; gap: 6px;
-      color: var(--muted);
-    }
-    .footer-meta .footer-name { color: var(--ink); font-weight: 600; font-size: 14px; font-family: var(--serif); letter-spacing: -0.01em; font-size: 18px; }
-    .footer-meta .footer-founder { color: var(--ink); font-style: italic; font-family: var(--serif); font-size: 14px; line-height: 1.4; margin-top: 4px; max-width: 28ch; }
-    .footer-meta .footer-founder b { font-style: normal; font-weight: 600; }
-    .footer-meta a { color: var(--muted); text-decoration: none; }
-    .footer-meta a:hover { color: var(--ink); }
-    .footer-links {
-      display: flex; gap: 24px; align-items: center;
-    }
-    .footer-links a { color: var(--muted); text-decoration: none; transition: color .15s; }
+    /* ─────────── FOOTER ─────────── */
+    footer { padding: 56px 48px 64px; border-top: 1px solid var(--hair-2); margin-top: 92px; }
+    .footer-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 32px; flex-wrap: wrap; }
+    .footer-name { font-family: var(--serif); font-size: 19px; font-weight: 600; letter-spacing: -0.01em; color: var(--ink); }
+    .footer-meta { display: flex; flex-direction: column; gap: 6px; font-size: 13px; color: var(--muted); }
+    .footer-meta a { color: var(--green); text-decoration: none; }
+    .footer-links { display: flex; gap: 22px; align-items: center; flex-wrap: wrap; }
+    .footer-links a { font-size: 13px; color: var(--muted); text-decoration: none; transition: color .15s; }
     .footer-links a:hover { color: var(--ink); }
+    .footer-bottom { margin-top: 40px; padding-top: 24px; border-top: 1px dashed var(--hair-2); display: flex; justify-content: space-between; gap: 32px; flex-wrap: wrap; align-items: flex-end; }
+    .footer-disclaimer { flex: 1 1 520px; max-width: 760px; font-size: 12.5px; line-height: 1.65; color: var(--muted); }
+    .footer-disclaimer b { color: var(--ink); font-weight: 600; }
+    .wax-stamp { display: inline-block; border: 2px solid var(--green); box-shadow: inset 0 0 0 1px var(--green); color: var(--green); font-family: var(--mono); font-weight: 700; text-transform: uppercase; padding: 9px 15px; border-radius: 4px; transform: rotate(-5deg); opacity: 0.72; text-align: center; line-height: 1.1; }
+    .wax-stamp .t { display: block; font-size: 12px; letter-spacing: 0.2em; }
+    .wax-stamp .r { display: block; height: 1px; background: var(--green); opacity: 0.45; margin: 4px auto; width: 75%; }
+    .wax-stamp .b { display: block; font-size: 9px; letter-spacing: 0.16em; margin-top: 3px; opacity: 0.85; }
 
-    /* INLINE CTA between sections */
-    .inline-cta {
-      margin: 64px 0 0;
-      padding: 36px 40px;
-      background: var(--cream);
-      border: 1px solid var(--rust);
-      border-radius: 16px;
-      display: flex; align-items: center; justify-content: space-between;
-      gap: 32px; flex-wrap: wrap;
-    }
-    .inline-cta .inline-text {
-      font-size: 19px; font-weight: 500; color: var(--ink);
-      max-width: 480px;
-    }
-    .inline-cta .inline-text b { color: var(--rust); font-weight: 700; }
-    .inline-cta .inline-form { flex: 0 1 380px; min-width: 280px; }
-    .inline-cta .waitlist { margin: 0; max-width: none; }
+    /* ─────────── REVEAL MOTION ─────────── */
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1); }
+    .reveal.in { opacity: 1; transform: none; }
 
-    /* PULL-QUOTE — editorial moment between sections 03 and 04 */
-    .pullquote {
-      margin: 112px -72px 0;
-      padding: 96px 72px;
-      position: relative;
-      text-align: center;
-      border-top: 1px dashed var(--hair-2);
-      border-bottom: 1px dashed var(--hair-2);
-    }
-    .pullquote::before, .pullquote::after {
-      content: "";
-      position: absolute;
-      left: 0; right: 0;
-      height: 6px;
-      background-image: radial-gradient(circle at 6px center, var(--cream) 2.5px, transparent 3px);
-      background-repeat: repeat-x;
-      background-size: 14px 6px;
-    }
-    .pullquote::before { top: -3px; }
-    .pullquote::after { bottom: -3px; }
-    .pullquote .marginalia {
-      font-family: var(--mono);
-      font-size: 15px;
-      font-weight: 700;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--ink);
-      margin-bottom: 36px;
-      display: block;
-    }
-    .pullquote blockquote {
-      margin: 0 auto;
-      max-width: 18ch;
-      font-family: var(--serif);
-      font-style: italic;
-      font-weight: 400;
-      font-size: clamp(48px, 6vw, 76px);
-      line-height: 1.05;
-      letter-spacing: -0.025em;
-      color: var(--ink);
-      text-wrap: balance;
-      font-optical-sizing: auto;
-      font-variation-settings: "opsz" 60;
-    }
-    .pullquote blockquote .em-mark {
-      font-style: italic;
-      color: var(--rust);
-      font-weight: 500;
-    }
-    .pullquote cite {
-      display: block;
-      margin-top: 40px;
-      font-family: var(--mono);
-      font-style: normal;
-      font-size: 13px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--muted-2);
-    }
-    .pullquote cite::before {
-      content: "— ";
-    }
-
-    /* RUBBER-STAMP MARK — used for DSGVO / Made in Vienna */
-    .wax-stamp {
-      --r: -3deg;
-      display: inline-block;
-      border: 2px solid var(--rust);
-      color: var(--rust);
-      font-family: var(--mono);
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      padding: 10px 16px 9px;
-      border-radius: 4px;
-      transform: rotate(var(--r));
-      opacity: 0.72;
-      line-height: 1.1;
-      text-align: center;
-      background: transparent;
-      box-shadow: inset 0 0 0 1px var(--rust);
-      transition: opacity .2s, transform .2s;
-    }
-    .wax-stamp:hover { opacity: 0.95; transform: scale(1.03) rotate(var(--r)); }
-    .wax-stamp .top {
-      display: block;
-      font-size: 13px;
-      letter-spacing: 0.2em;
-    }
-    .wax-stamp .bot {
-      display: block;
-      font-size: 9.5px;
-      letter-spacing: 0.16em;
-      margin-top: 4px;
-      opacity: 0.85;
-    }
-    .wax-stamp .rule {
-      display: block;
-      height: 1px;
-      background: var(--rust);
-      opacity: 0.45;
-      margin: 4px auto;
-      width: 75%;
-    }
-
-    /* SECURITY section can host an absolute stamp */
-    #sicherheit, #security { position: relative; }
-    .security-stamp-wrap {
-      position: absolute;
-      top: 96px;
-      right: 0;
-      pointer-events: none;
-    }
-    .security-stamp-wrap .wax-stamp {
-      --r: 8deg;
-      pointer-events: auto;
-    }
-
-    /* FOOTER additions */
-    footer { position: relative; flex-direction: column; align-items: stretch; padding: 56px 72px 64px; gap: 28px; }
-    .footer-row {
-      display: flex; justify-content: space-between; align-items: flex-start;
-      gap: 32px; flex-wrap: wrap;
-    }
-    .footer-bottom {
-      display: flex;
-      gap: 48px;
-      align-items: flex-end;
-      justify-content: space-between;
-      padding-top: 24px;
-      border-top: 1px dashed var(--hair-2);
-      flex-wrap: wrap;
-    }
-    .footer-disclaimer {
-      flex: 1 1 480px;
-      max-width: 720px;
-      font-size: 12.5px;
-      line-height: 1.65;
-      color: var(--muted);
-    }
-    .footer-disclaimer b {
-      color: var(--ink);
-      font-weight: 600;
-    }
-    .footer-stamp { flex: none; }
-    .footer-stamp .wax-stamp { --r: -6deg; }
-
-    /* BACK-TO-TOP */
-    .back-to-top {
-      position: fixed;
-      bottom: 28px; right: 28px;
-      width: 52px; height: 52px;
-      border-radius: 50%;
-      background: var(--rust);
-      color: var(--cream);
-      border: 0; cursor: pointer;
-      display: grid; place-items: center;
-      font-size: 22px; line-height: 1;
-      box-shadow: 0 6px 20px rgba(31,67,50,0.35);
-      opacity: 0; visibility: hidden;
-      transition: opacity 0.25s, visibility 0.25s, background 0.15s;
-      z-index: 90;
-    }
+    /* back to top */
+    .back-to-top { position: fixed; bottom: 26px; right: 26px; width: 50px; height: 50px; border-radius: 50%; background: var(--green); color: var(--cream); border: 0; cursor: pointer; display: grid; place-items: center; font-size: 20px; box-shadow: 0 6px 20px rgba(31,67,50,0.35); opacity: 0; visibility: hidden; transition: opacity .25s, visibility .25s, background .15s; z-index: 90; }
     .back-to-top.visible { opacity: 1; visibility: visible; }
-    .back-to-top:hover { background: #15301F; }
-
-    /* MOBILE */
-    @media (max-width: 900px) {
-      .ink { margin-left: -24px; margin-right: -24px; padding: 56px 24px 64px; }
-      .pullquote { margin-left: -24px; margin-right: -24px; padding: 56px 24px; }
-      .pullquote blockquote { font-size: clamp(28px, 7vw, 38px); }
-      .security-stamp-wrap { position: static; margin: 24px 0 -8px; text-align: right; }
-      .security-stamp-wrap .wax-stamp { transform: rotate(6deg); }
-      .footer-bottom { gap: 28px; }
-      footer { padding: 36px 24px 40px; }
-      .warum-list, .steps, .audience, .nope, .security { grid-template-columns: 1fr; }
-      .warum-list li:nth-child(odd) { padding-right: 0; border-right: 0; }
-      .warum-list li:nth-child(even) { padding-left: 0; }
-      .step { border-right: 0; border-bottom: 1px solid rgba(244,243,240,0.16); }
-      .step:last-child { border-bottom: 0; }
-      .security li, .security li:nth-child(2n) { border-right: 0; }
-      .security li { padding: 20px 22px; }
-      .price-card { padding: 36px 28px 32px; }
-      .price-top-label { font-size: 24px; }
-      .price-amount { font-size: 56px; }
-      .price-period { font-size: 14px; }
-      .cta-repeat { padding: 56px 28px; border-radius: 18px; margin-left: -24px; margin-right: -24px; }
-      footer { padding: 36px 24px 40px; }
-      nav { padding: 20px 24px; gap: 16px; flex-wrap: wrap; }
-      .nav-links { gap: 16px; font-size: 13px; }
-      /* On mobile, hide "How it works" and "Who it's for" (DE+EN) — keep Home, Price, FAQ */
-      .nav-links a:nth-child(3), .nav-links a:nth-child(4),
-      .nav-links a:nth-child(5), .nav-links a:nth-child(6) { display: none; }
-      main { padding: 0 24px 64px; }
-      .hero { grid-template-columns: 1fr; gap: 32px; min-height: 0; padding-top: 24px; }
-      h1 { font-size: clamp(40px, 9vw, 56px); }
-      .scene { order: -1; height: 460px; transform: scale(0.88); transform-origin: center; }
-      .receipt-a { left: 0; top: 60px; }
-      .receipt-b { right: 0; bottom: 30px; }
-      .address-bubble { top: -8px; right: 0; font-size: 10px; max-width: 200px; padding: 8px 10px; }
-      .address-bubble::after { left: 24px; }
-      .trust { gap: 14px; }
-      .lede { font-size: 18px; }
-      .kicker { font-size: 15px; }
-      .section-title { font-size: clamp(28px, 7vw, 40px); }
-      .section-intro { font-size: 17px; }
-      .warum-text, .nope-text { font-size: 20px; }
-      .warum-num { font-size: 18px; }
-      .step-title, .audience-title { font-size: 22px; }
-      .step-body { font-size: 16px; }
-      .security-text { font-size: 16px; }
-      .faq-question { font-size: 18px; padding: 22px 0; gap: 18px; }
-      .faq-icon { width: 32px; height: 32px; }
-      .faq-icon::before { width: 11px; }
-      .faq-icon::after { height: 11px; }
-      .faq-answer { padding: 0 0 26px; font-size: 15.5px; }
-      .faq-footnote { font-size: 14px; }
-      .inline-cta { flex-direction: column; align-items: stretch; padding: 28px 24px; }
-      .inline-cta .inline-text { font-size: 18px; }
-      .back-to-top { bottom: 20px; right: 20px; width: 46px; height: 46px; }
-      .trust { font-size: 12px; gap: 12px; }
-    }
-
-    /* ─── MOTION ─── surgical, opt-in via .motion-ready set by JS so no-JS users see static state */
-    .motion-ready .scene .toast {
-      opacity: 0;
-      transform: translateY(10px);
-      animation: bv-toast-in .55s cubic-bezier(.2,.8,.3,1) 1.2s forwards;
-    }
-    .motion-ready .scene .toast .check {
-      transform: scale(0);
-      animation: bv-check-pop .42s cubic-bezier(.3,1.6,.5,1) 1.4s forwards;
-    }
-    @keyframes bv-toast-in { to { opacity: 1; transform: translateY(0); } }
-    @keyframes bv-check-pop { to { transform: scale(1); } }
-
-    .motion-ready .wax-stamp {
-      opacity: 0;
-      transform: scale(1.35) rotate(var(--r));
-      transition: opacity .35s cubic-bezier(.4,1,.5,1), transform .4s cubic-bezier(.34,1.56,.64,1);
-    }
-    .motion-ready .wax-stamp.is-in {
-      opacity: 0.72;
-      transform: scale(1) rotate(var(--r));
-    }
-    .motion-ready .wax-stamp.is-in:hover {
-      opacity: 0.95;
-      transform: scale(1.03) rotate(var(--r));
-    }
-
-    .motion-ready .pullquote {
-      border-top-color: transparent;
-      border-bottom-color: transparent;
-      transition: border-color .5s ease;
-    }
-    .motion-ready .pullquote.is-in {
-      border-top-color: var(--hair-2);
-      border-bottom-color: var(--hair-2);
-      transition-delay: .15s;
-    }
-    .motion-ready .pullquote::before,
-    .motion-ready .pullquote::after {
-      clip-path: inset(0 100% 0 0);
-      transition: clip-path .7s cubic-bezier(.4,0,.2,1);
-    }
-    .motion-ready .pullquote.is-in::before,
-    .motion-ready .pullquote.is-in::after {
-      clip-path: inset(0 0 0 0);
-    }
-    .motion-ready .pullquote .marginalia,
-    .motion-ready .pullquote blockquote,
-    .motion-ready .pullquote cite {
-      opacity: 0;
-      transform: translateY(12px);
-      transition: opacity .6s ease, transform .6s ease;
-    }
-    .motion-ready .pullquote.is-in .marginalia {
-      opacity: 1; transform: translateY(0); transition-delay: .35s;
-    }
-    .motion-ready .pullquote.is-in blockquote {
-      opacity: 1; transform: translateY(0); transition-delay: .5s;
-    }
-    .motion-ready .pullquote.is-in cite {
-      opacity: 1; transform: translateY(0); transition-delay: .85s;
-    }
+    .back-to-top:hover { background: var(--green-hover); }
 
     @media (prefers-reduced-motion: reduce) {
-      html:not(.force-motion) .motion-ready .scene .toast,
-      html:not(.force-motion) .motion-ready .scene .toast .check,
-      html:not(.force-motion) .motion-ready .wax-stamp,
-      html:not(.force-motion) .motion-ready .pullquote,
-      html:not(.force-motion) .motion-ready .pullquote::before,
-      html:not(.force-motion) .motion-ready .pullquote::after,
-      html:not(.force-motion) .motion-ready .pullquote .marginalia,
-      html:not(.force-motion) .motion-ready .pullquote blockquote,
-      html:not(.force-motion) .motion-ready .pullquote cite {
-        animation: none !important;
-        transition: none !important;
-        opacity: 1 !important;
-        clip-path: none !important;
-      }
-      html:not(.force-motion) .motion-ready .wax-stamp { opacity: 0.72 !important; transform: rotate(var(--r)) !important; }
-      html:not(.force-motion) .motion-ready .scene .toast .check { transform: scale(1) !important; }
-      html:not(.force-motion) .motion-ready .pullquote { border-top-color: var(--hair-2) !important; border-bottom-color: var(--hair-2) !important; }
+      html { scroll-behavior: auto; }
+      .reveal { opacity: 1 !important; transform: none !important; }
+      .plane, .confirm-check, .extract .x { animation: none !important; }
+      .confirm-check { transform: scale(1) !important; }
+      .extract .x { opacity: 1 !important; transform: none !important; }
+    }
+
+    /* ─────────── RESPONSIVE ─────────── */
+    @media (max-width: 940px) {
+      nav { padding: 16px 22px; }
+      .nav-links { gap: 18px; }
+      .nav-links a:not(.nav-cta) { display: none; }
+      main { padding: 0 22px; }
+      .hero { grid-template-columns: 1fr; gap: 16px; padding: 40px 0 56px; min-height: 0; }
+      .demo-stage { order: 2; min-height: 560px; }
+      h1 { font-size: clamp(36px, 9vw, 52px); }
+      .hero-sub { font-size: 19px; max-width: none; }
+      .sec { padding: 64px 0; }
+      .contrast-grid { grid-template-columns: 1fr; }
+      .col { padding: 34px 28px 38px; }
+      .how { padding: 52px 26px; border-radius: 22px; }
+      .steps { grid-template-columns: 1fr; }
+      .step { border-right: 0; border-bottom: 1px solid rgba(244,243,240,0.16); padding-bottom: 30px; }
+      .step:last-child { border-bottom: 0; }
+      .export-grid { grid-template-columns: 1fr; gap: 36px; }
+      .trust-strip { padding: 24px 16px; }
+      .trust-item { padding: 12px 18px; border-right: 0; flex: 1 0 44%; }
+      .founder { grid-template-columns: 1fr; gap: 26px; text-align: left; }
+      .price-card { padding: 40px 26px 34px; }
+      .price-amount { font-size: 60px; }
+      .final-cta { padding: 56px 26px; border-radius: 22px; }
+      footer { padding: 40px 22px 48px; }
+      .addr-tag { display: none; }
     }
   </style>
 </head>
@@ -1173,948 +684,323 @@
   <div class="wrap" id="top">
 
     <nav>
-      <a href="/" class="logo">
-        <img src="/brand/logo.png" alt="Bonvio" width="28" height="28" style="border-radius:6px;display:block;">
+      <a href="#top" class="logo">
+        <img src="data:image/png;base64,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" alt="Bonvio">
         <span>Bonvio</span>
       </a>
       <div class="nav-links">
-        <a href="#top" class="lang-de-inline">Home</a>
-        <a href="#top" class="lang-en-inline">Home</a>
-        <a href="#funktioniert" class="lang-de-inline">So funktioniert's</a>
-        <a href="#how" class="lang-en-inline">How it works</a>
-        <a href="#wer" class="lang-de-inline">F&uuml;r wen</a>
-        <a href="#who" class="lang-en-inline">Who it's for</a>
-        <a href="#preis" class="lang-de-inline">Preis</a>
-        <a href="#price" class="lang-en-inline">Price</a>
-        <a href="#fragen" class="lang-de-inline">FAQ</a>
-        <a href="#faq" class="lang-en-inline">FAQ</a>
-
-        <span class="lang-switch">
-          <button id="btn-de" class="active" onclick="setLang('de')">DE</button>
-          <button id="btn-en" onclick="setLang('en')">EN</button>
-        </span>
+        <a href="#funktioniert">So funktioniert's</a>
+        <a href="#preis">Preis</a>
+        <a href="#fragen">FAQ</a>
+        <a href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800" class="nav-cta">Jetzt starten</a>
       </div>
     </nav>
 
     <main>
 
-      <!-- ============================================================
-           GERMAN VERSION
-           ============================================================ -->
-      <div class="lang-de">
-
-        <section class="hero">
-          <div>
-            <div class="kicker">Bonvio &middot; Belegverwaltung per E-Mail</div>
-            <h1>
-              Foto machen.<br>
-              E-Mail senden.<br>
-              <span class="accent">Fertig.</span>
-            </h1>
-            <p class="lede">
-              Schluss mit dem Schuhkarton. Beleg fotografieren, an uns mailen &mdash;
-              wir speichern, sortieren und finden ihn f&uuml;r dich wieder, wann immer
-              du ihn brauchst.
-            </p>
-            <div class="eyebrow">F&uuml;r Privatpersonen, Selbst&auml;ndige &amp; kleine Unternehmen</div>
-
-            <a class="buy-btn" href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800">Jetzt starten &mdash; &euro;&thinsp;39,99&thinsp;/&thinsp;Jahr &rarr;</a>
-            <div class="buy-sub">Gr&uuml;ndungspreis &mdash; lebenslang gesichert, ab Januar &euro;&thinsp;49,99. Kein Setup. Jederzeit k&uuml;ndbar.</div>
-
-            <div class="trust">
-              <span>Aus Wien <b>gebaut</b></span>
-              <span class="dot"></span>
-              <span>Server in Deutschland</span>
-              <span class="dot"></span>
-              <span>DSGVO &amp; &sect;132 BAO / &sect;147 AO konform</span>
-              <span class="dot"></span>
-              <span><b>10 Jahre</b> Aufbewahrung</span>
+      <!-- ═══════════ HERO ═══════════ -->
+      <section class="hero">
+        <div class="hero-copy">
+          <div class="eyebrow">Belegverwaltung per E-Mail</div>
+          <h1>
+            Foto machen. E-Mail senden. <em>Fertig.</em>
+          </h1>
+          <p class="hero-sub">
+            Belege verschwinden &mdash; meistens dann, wenn man sie braucht. Bonvio hält sie fest.
+            <b>Kein Login. Keine App.</b>
+          </p>
+          <div class="hero-cta">
+            <a class="btn" href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800">
+              Jetzt starten &mdash; &euro;&thinsp;39,99&thinsp;/&thinsp;Jahr <span class="arr">&rarr;</span>
+            </a>
+            <div class="trust-line">
+              <span>Server in der EU</span><span class="sep"></span><span>DSGVO-konform</span>
             </div>
           </div>
+        </div>
 
-          <div class="scene" aria-hidden="true">
-            <div class="address-bubble">
-              Jeder Kunde bekommt eine eigene Adresse: <b>bonvio0123@bonvio.eu</b>
-            </div>
-            <div class="receipt receipt-a">
-              <div class="perf-top"></div>
-              <div class="head">SUPERMARKT</div>
-              <div class="date">12.05.2026 &middot; 14:32</div>
-              <div class="rule"></div>
-              <div class="row"><span>&#9620;&#9620;&#9620;&#9620;&#9620;&#9620;&#9620;</span><span>&euro; &mdash;,&mdash;</span></div>
-              <div class="row"><span>&#9620;&#9620;&#9620;&#9620;&#9620;&#9620;&#9620;</span><span>&euro; &mdash;,&mdash;</span></div>
-              <div class="row"><span>&#9620;&#9620;&#9620;&#9620;&#9620;&#9620;&#9620;</span><span>&euro; &mdash;,&mdash;</span></div>
-              <div class="row"><span>&#9620;&#9620;&#9620;&#9620;&#9620;&#9620;&#9620;</span><span>&euro; &mdash;,&mdash;</span></div>
-              <div class="row"><span>&#9620;&#9620;&#9620;&#9620;&#9620;&#9620;&#9620;</span><span>&euro; &mdash;,&mdash;</span></div>
-              <div class="row"><span>&#9620;&#9620;&#9620;&#9620;&#9620;&#9620;&#9620;</span><span>&euro; &mdash;,&mdash;</span></div>
-              <div class="total"><span>SUMME</span><span>&euro; 42,80</span></div>
-              <div class="perf-bot"></div>
-            </div>
-            <div class="receipt receipt-b">
-              <div class="perf-top"></div>
-              <div class="head">TANKSTELLE</div>
-              <div class="date">28.04.2026 &middot; 09:12</div>
-              <div class="rule"></div>
-              <div class="row"><span>&#9620;&#9620;&#9620;&#9620;&#9620;</span><span>&euro; &mdash;,&mdash;</span></div>
-              <div class="row"><span>&#9620;&#9620;&#9620;&#9620;&#9620;</span><span>&euro; &mdash;,&mdash;</span></div>
-              <div class="row"><span>&#9620;&#9620;&#9620;&#9620;&#9620;</span><span>&euro; &mdash;,&mdash;</span></div>
-              <div class="total"><span>SUMME</span><span>&euro; 65,40</span></div>
-              <div class="perf-bot"></div>
-            </div>
-            <div class="phone">
-              <div class="phone-screen">
-                <div class="status">
-                  <span>14:32</span>
-                  <span style="opacity:.6">&#9679;&#9679;&#9679;&#9679;  5G  &#9646;</span>
-                </div>
-                <div class="mail-header">
+        <div class="demo-stage" aria-label="Demo: E-Mail mit Beleg senden, Bestätigung erhalten">
+          <div class="demo-glow"></div>
+          <div class="addr-tag">Deine eigene Adresse:<br><b>bonvio0123@bonvio.eu</b></div>
+          <div class="phone" id="demo-phone" data-phase="compose">
+            <div class="notch"></div>
+            <div class="phone-screen">
+              <div class="ios-status">
+                <span>14:32</span>
+                <span class="dots">&#9679;&#9679;&#9679; &nbsp;5G&nbsp; &#9646;</span>
+              </div>
+
+              <!-- COMPOSE -->
+              <div class="screen screen-compose">
+                <div class="mailbar">
                   <span class="cancel">Abbrechen</span>
                   <span class="title">Neue E-Mail</span>
                   <span class="send">Senden</span>
                 </div>
-                <div class="mail-form">
-                  <div class="field"><span class="label">An:</span><span class="val">bonvio0123@bonvio.eu</span></div>
-                  <div class="field"><span class="label">Betreff:</span><span class="val dim">#mittagessen</span></div>
+                <div class="mailfields">
+                  <div class="field"><span class="k">An</span><span class="v">bonvio0123@bonvio.eu</span></div>
+                  <div class="field"><span class="k">Betreff</span><span class="v tag">#mittagessen</span></div>
                 </div>
                 <div class="attach">
-                  <div class="icon">JPG</div>
-                  <div class="meta">
-                    <div class="name">beleg_12_05.jpg</div>
-                    <div class="size">1,4 MB &middot; Eben aufgenommen</div>
+                  <div class="thumb">
+                    <div class="t-h">GASTHAUS ZUR POST</div>
+                    <div class="t-r"></div>
+                    <div class="t-row"><span>Tagesteller</span><span>13,90</span></div>
+                    <div class="t-row"><span>Apfelsaft</span><span>3,80</span></div>
+                    <div class="t-row"><span>Espresso</span><span>2,60</span></div>
+                    <div class="t-tot"><span>SUMME</span><span>&euro; 42,80</span></div>
+                  </div>
+                  <div class="a-meta">
+                    <div class="a-name">beleg_12_05.jpg</div>
+                    <div class="a-size">1,4 MB &middot; Eben aufgenommen</div>
                   </div>
                 </div>
-                <div class="toast">
-                  <span class="check" aria-hidden="true">&#10003;</span>
-                  <span>Gespeichert in <b style="font-weight:600">Bonvio</b> &middot; Mai 2026</span>
+                <div class="compose-hint">Tippe auf Senden &mdash; mehr nicht</div>
+              </div>
+
+              <!-- paper plane -->
+              <svg class="plane" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/>
+              </svg>
+
+              <!-- CONFIRMATION -->
+              <div class="screen screen-confirm">
+                <div class="confirm-inner">
+                  <div class="confirm-brand"><img src="data:image/png;base64,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" alt="">Bonvio &middot; Bestätigung</div>
+                  <div class="confirm-check" aria-hidden="true">&#10003;</div>
+                  <div class="confirm-head">Gespeichert.</div>
+                  <div class="confirm-sub">Erkannt und abgelegt &middot; Mai 2026</div>
+                  <div class="extract">
+                    <div class="x"><span class="xk">Händler</span><span class="xv">Gasthaus zur Post</span></div>
+                    <div class="x"><span class="xk">Datum</span><span class="xv">12.05.2026</span></div>
+                    <div class="x"><span class="xk">MwSt</span><span class="xv">&euro; 7,13</span></div>
+                    <div class="x total"><span class="xk">Betrag</span><span class="xv">&euro; 42,80</span></div>
+                  </div>
+                  <div class="confirm-foot">Antwort kam automatisch zurück</div>
                 </div>
               </div>
             </div>
           </div>
-        </section>
+          <div class="demo-caption">
+            <div class="c-main">In Sekunden.</div>
+            <div class="c-sub">Ohne dass du etwas tust.</div>
+          </div>
+        </div>
+      </section>
 
-        <section id="warum">
-          <div class="section-eyebrow"><span class="num">01</span> &mdash; Das Problem</div>
-          <h2 class="section-title">Belege verschwinden. Immer dann, wenn man sie braucht.</h2>
-          <ol class="warum-list">
-            <li>
-              <div class="warum-num">A</div>
-              <div class="warum-text">Im M&auml;rz suchst du, was du im Januar weggeschmissen hast.</div>
-            </li>
-            <li>
-              <div class="warum-num">B</div>
-              <div class="warum-text">Garantieanspruch weg, weil der Beleg weg ist.</div>
-            </li>
-            <li>
-              <div class="warum-num">C</div>
-              <div class="warum-text">Dein Steuerberater verrechnet Stunden f&uuml;rs Sortieren.</div>
-            </li>
-            <li>
-              <div class="warum-num">D</div>
-              <div class="warum-text">Steuer zur&uuml;ckholen &mdash; wenn du den Beleg noch h&auml;ttest.</div>
-            </li>
-          </ol>
-        </section>
+      <!-- ═══════════ PAIN BEAT ═══════════ -->
+      <section class="pain reveal" aria-label="Bonvio · Das Problem">
+        <div class="marg">Das Problem</div>
+        <blockquote>
+          Im März suchst du, was du im Januar <span class="em-mark">weggeschmissen hast.</span>
+        </blockquote>
+      </section>
 
-        <section id="funktioniert" class="ink">
-          <div class="section-eyebrow"><span class="num">02</span> &mdash; So funktioniert es</div>
-          <h2 class="section-title">In drei Schritten von der Quittung zum sortierten Archiv.</h2>
-          <p class="section-intro">
-            Du brauchst kein neues Programm. Bonvio l&auml;uft in dem E-Mail-Postfach,
-            das du sowieso schon nutzt.
-          </p>
+      <!-- ═══════════ VILLAIN CONTRAST ═══════════ -->
+      <section class="sec" id="warum">
+        <div class="sec-head reveal">
+          <div class="eyebrow">Der Unterschied</div>
+          <h2 class="sec-title">Die anderen geben dir ein System. <em>Bonvio gibt dir eine Adresse.</em></h2>
+        </div>
+        <div class="contrast-grid reveal">
+          <div class="col col-them">
+            <div class="col-tag">Die anderen</div>
+            <h3 class="col-h">Ein Portal, in das du dich einloggst.</h3>
+            <ul class="them-list">
+              <li><span class="b">01</span><span>Ein Konto anlegen, ein Passwort merken, eine App installieren.</span></li>
+              <li><span class="b">02</span><span>Ein Dashboard, das du erst lernen musst, bevor es dir hilft.</span></li>
+              <li><span class="b">03</span><span>Deine Daten liegen in deren System &mdash; in deren Format.</span></li>
+              <li><span class="b">04</span><span>Einrichtung über deinen Steuerberater. Schulung. Updates.</span></li>
+              <li><span class="b">05</span><span>Monatliche Gebühr für Funktionen, die du nie öffnest.</span></li>
+            </ul>
+            <div class="them-foot">Mächtig. Und genau deshalb schwer.</div>
+          </div>
+          <div class="col col-us">
+            <div class="col-tag">Bonvio</div>
+            <p class="us-line">Eine E-Mail-Adresse.</p>
+            <div class="us-mail">bonvio0123@bonvio.eu</div>
+            <p class="us-foot">
+              Kein Portal, kein Dashboard, nichts zu lernen.
+              Du nutzt das Postfach, das du sowieso hast &mdash;
+              <b>deine Belege gehören dir, exportierbar in Sekunden.</b>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════ HOW IT WORKS ═══════════ -->
+      <section class="sec" id="funktioniert">
+        <div class="how reveal">
+          <div class="eyebrow">So funktioniert's</div>
+          <h2 class="sec-title">Drei Schritte. Mehr ist es nicht.</h2>
+          <p class="sec-intro">Du brauchst kein neues Programm. Bonvio läuft in dem E-Mail-Postfach, das du sowieso schon nutzt.</p>
 
           <div class="steps">
             <div class="step">
-              <div class="step-num">Schritt 01 &middot; Einrichten</div>
-              <h3 class="step-title">Deine eigene Bonvio-Adresse</h3>
-              <p class="step-body">
-                Du bekommst deine pers&ouml;nliche E-Mail-Adresse bei Bonvio &mdash; sowas wie
-                bonvio0123@bonvio.eu. Speicher sie im Adressbuch &mdash; fertig. Kein
-                Login, kein Passwort.
-              </p>
+              <div class="step-label">01 &middot; Foto</div>
+              <h3 class="step-word">Foto.</h3>
+              <p class="step-body">Beleg mit dem Handy abfotografieren &mdash; ganz normal, in jeder Sprache. PDFs? Einfach vom Bildschirm abfotografieren.</p>
             </div>
-
             <div class="step">
-              <div class="step-num">Schritt 02 &middot; Senden</div>
-              <h3 class="step-title">Foto. E-Mail. Gespeichert.</h3>
-              <p class="step-body">
-                Beleg fotografieren, an deine Adresse senden &mdash; in jeder Sprache. PDFs?
-                Einfach vom Bildschirm abfotografieren. Wir erkennen Datum, H&auml;ndler,
-                Betrag und MwSt automatisch.
-              </p>
-              <ul class="step-details">
-                <li>Hashtag im Betreff: #brille, #steuer, #auto</li>
-                <li>Zahlungsart als Tag: #bar, #kreditkarte, #firmenkarte</li>
-                <li>Kilometergeld &amp; Di&auml;ten per E-Mail: #km 47, #di&auml;t 8</li>
-                <li>Best&auml;tigung mit allen Daten kommt zur&uuml;ck</li>
-              </ul>
+              <div class="step-label">02 &middot; E-Mail</div>
+              <h3 class="step-word">E-Mail.</h3>
+              <p class="step-body">An deine Bonvio-Adresse schicken. Wir erkennen Datum, Händler, Betrag und MwSt automatisch und bestätigen zurück.</p>
             </div>
-
             <div class="step">
-              <div class="step-num">Schritt 03 &middot; Abrufen</div>
-              <h3 class="step-title">EXPORT senden, ZIP bekommen.</h3>
-              <p class="step-body">
-                Schreib &bdquo;EXPORT" an deine Bonvio-Adresse &mdash; du bekommst alle Belege
-                als ZIP plus eine Steuerberater-CSV im Posteingang.
-              </p>
-              <ul class="step-details">
-                <li>EXPORT Q1 / 2025 &mdash; nach Zeitraum</li>
-                <li>EXPORT BRILLE &mdash; nach Kategorie</li>
-                <li>EXPORT [H&auml;ndler] &mdash; nach H&auml;ndler</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        <section id="wer">
-          <div class="section-eyebrow"><span class="num">03</span> &mdash; F&uuml;r wen</div>
-          <h2 class="section-title">F&uuml;r Selbst&auml;ndige gebaut. Von allen geliebt, die genug vom Chaos haben.</h2>
-
-          <div class="audience">
-            <div class="audience-card">
-              <span class="audience-tag">Selbst&auml;ndig</span>
-              <h3 class="audience-title">Freelancer &amp; Einzelunternehmer</h3>
-              <p class="audience-body">
-                Kein Buchhaltungsprogramm. Keine neue App. Dein Steuerberater bekommt
-                am Jahresende eine fertige CSV &mdash; du machst nichts weiter als ein Foto.
-                Kilometergeld und Di&auml;ten erfasst du genauso per E-Mail: #km 47, #di&auml;t 8 &mdash; Bonvio rechnet den Betrag nach &ouml;sterreichischen S&auml;tzen automatisch aus.
-              </p>
-            </div>
-            <div class="audience-card">
-              <span class="audience-tag">Verein</span>
-              <h3 class="audience-title">Vereine &amp; kleine Unternehmen</h3>
-              <p class="audience-body">
-                Du denkst in Veranstaltungen und Projekten, nicht in Kassabons. Bonvio
-                archiviert still im Hintergrund, w&auml;hrend du dich ums Wesentliche k&uuml;mmerst.
-              </p>
-            </div>
-            <div class="audience-card">
-              <span class="audience-tag">Ordentlich</span>
-              <h3 class="audience-title">Alle, die Ordnung lieben</h3>
-              <p class="audience-body">
-                Wenn der Schuhkarton nicht mehr reicht &mdash; und eine neue App zu viel ist.
-                Einfach mailen, wir erledigen den Rest.
-              </p>
+              <div class="step-label">03 &middot; Erledigt</div>
+              <h3 class="step-word">Erledigt.</h3>
+              <p class="step-body">Sortiert und sicher abgelegt. Wann du willst, schreibst du EXPORT &mdash; und bekommst alles als saubere Datei zurück.</p>
             </div>
           </div>
 
-          <div class="inline-cta">
-            <div class="inline-text">
-              Klingt nach dir? <b>Leg jetzt los.</b><br>
-              &euro;39,99&thinsp;/&thinsp;Jahr &mdash; alles inklusive, sofort aktiv.
-            </div>
-            <div class="inline-form">
-              <a class="buy-btn" href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800">Jetzt starten &rarr;</a>
-            </div>
+          <div class="travel">
+            <span class="t-mono">#km 47</span>
+            <span class="t-mono">#diät 09:00-17:30</span>
+            <span class="t-text"><b>Kilometergeld und Diäten</b> erfasst du genauso &mdash; per E-Mail, ganz ohne Anhang. Bonvio rechnet den Betrag nach österreichischen Sätzen automatisch aus.</span>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section id="kein">
-          <div class="section-eyebrow"><span class="num">04</span> &mdash; Was du nicht brauchst</div>
-          <h2 class="section-title">Keine App. Kein Login. Kein neuer Account.</h2>
-          <p class="section-intro">
-            Bonvio ist absichtlich klein gehalten. E-Mail reicht v&ouml;llig &mdash; kein
-            neues Tool, kein neuer Account, kein Mehraufwand.
-          </p>
+      <!-- ═══════════ WHAT IT GIVES BACK ═══════════ -->
+      <section class="sec" id="export">
+        <div class="sec-head reveal">
+          <div class="eyebrow">Was du zurückbekommst</div>
+          <h2 class="sec-title">Monatsende, Steuer, oder jetzt &mdash; <em>alles als saubere Datei.</em></h2>
+          <p class="sec-intro">Schreib EXPORT an deine Adresse und bekomm ein ZIP mit allen Belegen plus eine fertige CSV. Für jeden Steuerberater, egal welche Software.</p>
+        </div>
 
-          <div class="nope">
-            <div class="nope-item"><span class="nope-cross">&times;</span><span class="nope-text">Keine App</span></div>
-            <div class="nope-item"><span class="nope-cross">&times;</span><span class="nope-text">Kein Login</span></div>
-            <div class="nope-item"><span class="nope-cross">&times;</span><span class="nope-text">Kein Passwort</span></div>
-            <div class="nope-item"><span class="nope-cross">&times;</span><span class="nope-text">Keine Software</span></div>
-            <div class="nope-item"><span class="nope-cross">&times;</span><span class="nope-text">Keine Schulung</span></div>
-            <div class="nope-item"><span class="nope-cross">&times;</span><span class="nope-text">Keine Updates</span></div>
+        <div class="export-grid">
+          <div class="reveal">
+            <ul class="export-when">
+              <li><span class="ew-k">EXPORT Q1 2026</span><span class="ew-v">Alles aus einem Zeitraum.</span></li>
+              <li><span class="ew-k">EXPORT brille</span><span class="ew-v">Alles aus einer Kategorie.</span></li>
+              <li><span class="ew-k">EXPORT [Händler]</span><span class="ew-v">Alles von einem Händler.</span></li>
+            </ul>
+            <p class="export-foot">Originalfotos in Standardformaten, die jede Behörde und jeder Steuerberater akzeptiert. <b>Du bist nie von Bonvio abhängig</b>, um deine Belege vorzeigen zu können.</p>
           </div>
-          <p class="nope-foot">
-            <b>Was du brauchst:</b> deine E-Mail. Mehr nicht. Bonvio kommt in
-            dein Postfach geflattert &mdash; und tut dort genau das, was du erwartest.
-          </p>
-        </section>
 
-        <section id="preis">
-          <div class="section-eyebrow"><span class="num">05</span> &mdash; Preis</div>
-          <h2 class="section-title" style="max-width: 24ch;">Ein Preis. <em>Keine &Uuml;berraschungen.</em></h2>
-          <p class="section-intro">
-            Eine Adresse, alle deine Belege, alle Funktionen inklusive.
-            Keine Werbung, kein Tracking, keine Weitergabe deiner Daten.
-          </p>
+          <div class="file-card reveal" aria-hidden="true">
+            <div class="file-top">
+              <span class="dot" style="background:#E5645A"></span>
+              <span class="dot" style="background:#E7B14C"></span>
+              <span class="dot" style="background:#5BAD6A"></span>
+              <span class="name">bonvio_export_Q1-2026.csv</span>
+            </div>
+            <div class="file-rows">
+              <div class="file-row head"><span>Händler</span><span>Datum</span><span class="amt">Betrag</span></div>
+              <div class="file-row"><span>Gasthaus zur Post</span><span>12.05.</span><span class="amt">42,80</span></div>
+              <div class="file-row"><span>OMV Tankstelle</span><span>28.04.</span><span class="amt">65,40</span></div>
+              <div class="file-row"><span>Pearle Optik</span><span>19.04.</span><span class="amt">189,00</span></div>
+              <div class="file-row"><span>Kilometergeld 47&thinsp;km</span><span>11.04.</span><span class="amt">19,74</span></div>
+              <div class="file-row"><span>BIPA Drogerie</span><span>03.04.</span><span class="amt">24,15</span></div>
+            </div>
+            <div class="file-foot"><span>5 Belege &middot; 1 ZIP</span><span>SUMME &euro; 341,09</span></div>
+          </div>
+        </div>
+      </section>
 
+    </main>
+
+    <!-- ═══════════ TRUST STRIP ═══════════ -->
+    <section class="trust-strip reveal">
+      <div class="trust-item"><span class="ti-k">Speicherort</span><span class="ti-v">Server in der EU</span></div>
+      <div class="trust-item"><span class="ti-k">Datenschutz</span><span class="ti-v">DSGVO-konform</span></div>
+      <div class="trust-item"><span class="ti-k">Archiv</span><span class="ti-v">10 Jahre</span></div>
+      <div class="trust-item"><span class="ti-k">Werbung</span><span class="ti-v">Kein Tracking</span></div>
+    </section>
+
+    <main>
+
+      <!-- ═══════════ FOUNDER ═══════════ -->
+      <section class="sec" id="gruender">
+        <div class="founder reveal">
+          <div class="founder-photo" aria-hidden="true">NA</div>
+          <div>
+            <p class="founder-quote">
+              &bdquo;Ich bin Niko. Ich baue Bonvio allein &mdash; für Leute, die lieber <em>ihre Arbeit machen</em> als Buchhaltungssoftware lernen.&ldquo;
+            </p>
+            <div class="founder-name">Niko A. &middot; <b>Gründer</b> &middot; Wien, 2026</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════ PRICING ═══════════ -->
+      <section class="sec" id="preis">
+        <div class="sec-head reveal" style="text-align:center; max-width:none;">
+          <div class="eyebrow" style="justify-content:center;">Preis</div>
+          <h2 class="sec-title">Ein Preis. <em>Keine Überraschungen.</em></h2>
+        </div>
+        <div class="price-wrap reveal">
           <div class="price-card">
-            <div class="stamp">Gr&uuml;ndungspreis</div>
-            <div class="price-top-label">J&auml;hrlich</div>
-            <div class="price-amount">&euro; 39,99</div>
-            <div class="price-period">12 Monate &middot; Vorausbezahlung</div>
-            <div class="price-founding">
-              <b>Gr&uuml;ndungspreis &mdash; lebenslang gesichert.</b><br>
-              Ab Januar 2027: <span class="was">&euro; 49,99</span>. Wer jetzt startet, zahlt f&uuml;r immer &euro; 39,99.
-            </div>
-            <div class="price-coffee">Weniger als ein Kaffee pro Monat &mdash; <b>&euro; 3,33</b>.</div>
+            <div class="stamp">Gründerpreis</div>
+            <div class="price-period-top">Jährlich &middot; Vorausbezahlung</div>
+            <div class="price-amount">&euro;&thinsp;39,99<span class="yr"> / Jahr</span></div>
+            <p class="price-note">
+              <b>Gründerpreis &mdash; lebenslang gehalten.</b><br>
+              Ab Januar 2027: <span class="was">&euro;&thinsp;49,99</span>. Wer jetzt startet, zahlt für immer &euro;&thinsp;39,99.
+            </p>
             <ul class="price-includes">
-              <li>Pers&ouml;nliche Bonvio-Adresse</li>
-              <li>Alle deine Belege</li>
-              <li>Automatische Erkennung von Datum, Betrag und MwSt</li>
-              <li>Hashtag-Kategorisierung &amp; H&auml;ndler-Suche</li>
-              <li>Export f&uuml;r den Steuerberater</li>
+              <li>Persönliche Bonvio-Adresse</li>
+              <li>Alle deine Belege, automatisch erkannt</li>
+              <li>Hashtag-Kategorisierung &amp; Händler-Suche</li>
+              <li>Kilometergeld &amp; Diäten per E-Mail</li>
+              <li>Export für den Steuerberater &mdash; jederzeit</li>
               <li>10 Jahre Aufbewahrung (&sect;132 BAO / &sect;147 AO)</li>
             </ul>
-            <a class="buy-btn" href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800">Jetzt starten &rarr;</a>
+            <a class="btn" href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800">Jetzt starten <span class="arr">&rarr;</span></a>
+            <div class="price-sub">Kein Setup &middot; jederzeit kündbar</div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section class="pullquote" aria-label="Bonvio &middot; Versprechen">
-          <span class="marginalia">Bonvio &middot; Das Versprechen</span>
-          <blockquote>
-            Knipsen. Vergessen.<br>
-            <em class="em-mark">Bonvio merkt sich alles.</em>
-          </blockquote>
-        </section>
+      <!-- ═══════════ FAQ ═══════════ -->
+      <section class="sec" id="fragen">
+        <div class="sec-head reveal">
+          <div class="eyebrow">Häufige Fragen</div>
+          <h2 class="sec-title">Alles, was du wissen willst.</h2>
+          <p class="sec-intro">Eine Frage offen? Schreib uns an <a href="mailto:hallo@bonvio.eu" style="color:var(--green);text-decoration:none;border-bottom:1px solid rgba(31,67,50,0.3);">hallo@bonvio.eu</a> &mdash; wir melden uns.</p>
+        </div>
 
-        <section id="sicherheit">
-          <div class="section-eyebrow"><span class="num">06</span> &mdash; Sicherheit &amp; Datenschutz</div>
-          <div class="security-stamp-wrap" aria-hidden="true">
-            <div class="wax-stamp">
-              <span class="top">DSGVO</span>
-              <span class="rule"></span>
-              <span class="bot">konform</span>
-            </div>
+        <div class="faq reveal">
+          <div class="faq-item">
+            <button class="faq-q" type="button" aria-expanded="false"><span>Brauche ich eine spezielle App oder Software?</span><span class="faq-icon" aria-hidden="true"></span></button>
+            <div class="faq-wrap"><div class="faq-inner"><div class="faq-a">Nein. Du nutzt deine ganz normale E-Mail-App &mdash; egal ob Apple Mail, Gmail, Outlook oder ein anderes Programm. Bonvio ist einfach eine Adresse, an die du Fotos sendest. <b>Kein Download, kein Login, kein Update.</b></div></div></div>
           </div>
-          <h2 class="section-title">Deine Belege geh&ouml;ren dir. Punkt.</h2>
-
-          <ul class="security">
-            <li>
-              <span class="security-num">01</span>
-              <span class="security-text">
-                <b>Verschl&uuml;sselt gespeichert</b> in Frankfurt, Deutschland &mdash;
-                auf EU-Servern.
-              </span>
-            </li>
-            <li>
-              <span class="security-num">02</span>
-              <span class="security-text">
-                <b>Keine Werbung. Kein Tracking. Keine Weitergabe</b> deiner Daten
-                an Dritte &mdash; niemals.
-              </span>
-            </li>
-            <li>
-              <span class="security-num">03</span>
-              <span class="security-text">
-                <b>10 Jahre Aufbewahrung</b> (&sect;132 BAO / &sect;147 AO) &mdash; gesetzliche
-                Mindestfrist f&uuml;r Belege in &Ouml;sterreich.
-              </span>
-            </li>
-            <li>
-              <span class="security-num">04</span>
-              <span class="security-text">
-                <b>DSGVO-konform.</b> Datenexport oder L&ouml;schung deines Kontos
-                jederzeit auf Anfrage, soweit keine gesetzlichen Aufbewahrungspflichten entgegenstehen.
-              </span>
-            </li>
-          </ul>
-        </section>
-
-        <section id="fragen">
-          <div class="section-eyebrow"><span class="num">07</span> &mdash; H&auml;ufige Fragen</div>
-          <h2 class="section-title">Alles, was du wissen willst.</h2>
-          <p class="section-intro">
-            Eine Frage offen? Schreib uns an <a href="mailto:hallo@bonvio.eu" style="color:var(--rust);text-decoration:none;font-weight:600;border-bottom:1px solid rgba(31,67,50,0.3);">hallo@bonvio.eu</a> &mdash; wir melden uns.
-          </p>
-
-          <div class="faq">
-            <div class="faq-item">
-              <button class="faq-question" type="button" aria-expanded="false" aria-controls="a-de-1">
-                <span>Brauche ich eine spezielle App oder Software?</span>
-                <span class="faq-icon" aria-hidden="true"></span>
-              </button>
-              <div class="faq-answer-wrap"><div class="faq-answer-inner">
-                <div class="faq-answer" id="a-de-1" role="region">
-                  Nein. Du nutzt deine ganz normale E-Mail-App &mdash; egal ob Apple Mail, Gmail, Outlook oder ein anderes Programm. Bonvio ist einfach eine Adresse, an die du Fotos sendest. <b>Kein Download, kein Login, kein Update.</b>
-                </div>
-              </div></div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question" type="button" aria-expanded="false" aria-controls="a-de-2">
-                <span>Wie sende ich einen Beleg?</span>
-                <span class="faq-icon" aria-hidden="true"></span>
-              </button>
-              <div class="faq-answer-wrap"><div class="faq-answer-inner">
-                <div class="faq-answer" id="a-de-2" role="region">
-                  Ganz einfach: <b>normales Foto mit deinem Handy</b>, an deine Bonvio-Adresse mailen &mdash; fertig. Du musst dir &uuml;ber Dateiformate keine Gedanken machen, die Kamera-App deines Telefons reicht. Wir lesen Datum, H&auml;ndler, Betrag und MwSt automatisch aus und schicken dir eine Best&auml;tigung zur&uuml;ck. Optional: Hashtag im Betreff f&uuml;r alles, was dir wichtig ist &mdash; Kategorie (<span style="font-family:monospace">#brille</span>), Projekt (<span style="font-family:monospace">#renovierung</span>) oder Zahlungsart (<span style="font-family:monospace">#bar</span>, <span style="font-family:monospace">#firmenkarte</span>).
-                </div>
-              </div></div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question" type="button" aria-expanded="false" aria-controls="a-de-3">
-                <span>Wie finde ich sp&auml;ter einen bestimmten Beleg wieder?</span>
-                <span class="faq-icon" aria-hidden="true"></span>
-              </button>
-              <div class="faq-answer-wrap"><div class="faq-answer-inner">
-                <div class="faq-answer" id="a-de-3" role="region">
-                  Schreib einfach <code>EXPORT brille</code> oder <code>EXPORT Q1 2026</code> an deine Bonvio-Adresse. Du bekommst einen ZIP mit allen passenden Belegen und eine saubere CSV-&Uuml;bersicht direkt ins Postfach &mdash; sortiert nach Zeitraum, Kategorie oder H&auml;ndler.
-                </div>
-              </div></div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question" type="button" aria-expanded="false" aria-controls="a-de-4">
-                <span>Gibt es eine Obergrenze bei den Belegen?</span>
-                <span class="faq-icon" aria-hidden="true"></span>
-              </button>
-              <div class="faq-answer-wrap"><div class="faq-answer-inner">
-                <div class="faq-answer" id="a-de-4" role="region">
-                  F&uuml;r den Alltag: <b>nein, kein Limit</b>. Im Hintergrund liegt eine sanfte Grenze bei rund 3.000 Belegen im Jahr &mdash; mehr als Privatpersonen, Selbstst&auml;ndige oder kleine Unternehmen normalerweise haben. Sollte es bei dir doch mehr werden, melden wir uns pers&ouml;nlich. Keine automatischen Upgrades, keine &Uuml;berraschung auf der Rechnung.
-                </div>
-              </div></div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question" type="button" aria-expanded="false" aria-controls="a-de-5">
-                <span>Wie bekommt mein Steuerberater die Belege?</span>
-                <span class="faq-icon" aria-hidden="true"></span>
-              </button>
-              <div class="faq-answer-wrap"><div class="faq-answer-inner">
-                <div class="faq-answer" id="a-de-5" role="region">
-                  Du bekommst alle deine Belege als ein <b>fertiges Paket ins Postfach</b> &mdash; die Fotos und eine &Uuml;bersicht, sortiert und bereit f&uuml;r den Steuerberater. Einfach die E-Mail weiterleiten.
-                </div>
-              </div></div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question" type="button" aria-expanded="false" aria-controls="a-de-6">
-                <span>Wie sicher sind meine Daten?</span>
-                <span class="faq-icon" aria-hidden="true"></span>
-              </button>
-              <div class="faq-answer-wrap"><div class="faq-answer-inner">
-                <div class="faq-answer" id="a-de-6" role="region">
-                  Alle Belege werden <b>verschl&uuml;sselt auf EU-Servern in Frankfurt</b> gespeichert. Keine Werbung, kein Tracking, keine Weitergabe an Dritte &mdash; DSGVO-konform und gem&auml;&szlig; &sect;132 BAO / &sect;147 AO 10 Jahre archiviert.
-                </div>
-              </div></div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question" type="button" aria-expanded="false" aria-controls="a-de-7">
-                <span>Funktioniert das auch in anderen Sprachen?</span>
-                <span class="faq-icon" aria-hidden="true"></span>
-              </button>
-              <div class="faq-answer-wrap"><div class="faq-answer-inner">
-                <div class="faq-answer" id="a-de-7" role="region">
-                  Ja. Bonvio erkennt Belege in Deutsch, Englisch und vielen weiteren Sprachen &mdash; auch CEE-Sprachen wie Polnisch, Tschechisch, Ungarisch, Slowakisch, Slowenisch, Kroatisch und Rum&auml;nisch sind kein Problem. Der Originalbeleg wird so gespeichert, wie du ihn gesendet hast.
-                </div>
-              </div></div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question" type="button" aria-expanded="false" aria-controls="a-de-km">
-                <span>Kann ich auch Kilometergeld und Di&auml;ten erfassen?</span>
-                <span class="faq-icon" aria-hidden="true"></span>
-              </button>
-              <div class="faq-answer-wrap"><div class="faq-answer-inner">
-                <div class="faq-answer" id="a-de-km" role="region">
-                  Ja &mdash; beides funktioniert heute, direkt per E-Mail. Schick einfach eine E-Mail <em>ohne Anhang</em> an deine Bonvio-Adresse:<br><br>
-                  <b>Kilometergeld:</b> Betreff <span style="font-family:monospace">#km 47</span> &mdash; Bonvio berechnet 47&thinsp;&times;&thinsp;&euro;&thinsp;0,42&thinsp;=&thinsp;&euro;&thinsp;19,74 &ouml;sterreichischer Kilometersatz &sect;10 EStG AT und speichert den Eintrag automatisch.<br><br>
-                  <b>Tagespauschale:</b> Betreff <span style="font-family:monospace">#di&auml;t 8</span> oder <span style="font-family:monospace">#di&auml;t 09:00-17:30</span> &mdash; Bonvio ermittelt die Pauschale nach &sect;26 Z&thinsp;4 EStG (&lt;&thinsp;3h&thinsp;=&thinsp;&euro;&thinsp;0 | 3&ndash;12h&thinsp;=&thinsp;&euro;&thinsp;13,20 | &gt;&thinsp;12h&thinsp;=&thinsp;&euro;&thinsp;26,40) und best&auml;tigt per E-Mail.<br><br>
-                  Beide Eintr&auml;ge erscheinen automatisch im EXPORT f&uuml;r deinen Steuerberater.
-                </div>
-              </div></div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question" type="button" aria-expanded="false" aria-controls="a-de-9">
-                <span>Wie kann ich sicher sein, dass meine Belege wirklich 10&nbsp;Jahre lang erreichbar sind?</span>
-                <span class="faq-icon" aria-hidden="true"></span>
-              </button>
-              <div class="faq-answer-wrap"><div class="faq-answer-inner">
-                <div class="faq-answer" id="a-de-9" role="region">
-                  Du bist jederzeit der Herr &uuml;ber deine Daten. &Uuml;ber deinen pers&ouml;nlichen Export-Link kannst du jederzeit ein vollst&auml;ndiges ZIP herunterladen &mdash; Originalfotos in Standardformaten, die jede Beh&ouml;rde und jeder Steuerberater akzeptiert. Du bist nie von Bonvio abh&auml;ngig, um deine Belege vorzeigen zu k&ouml;nnen.<br><br>
-                  Zus&auml;tzlich verpflichten wir uns in unseren <a href="/agb.html">AGB</a> zu einer <b>Vorankündigungsfrist von mindestens 90&nbsp;Tagen</b> bei jeder wesentlichen &Auml;nderung des Dienstes &mdash; mit garantiertem Export-Fenster und anteiliger R&uuml;ckerstattung. Kein b&ouml;ses Erwachen.
-                </div>
-              </div></div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question" type="button" aria-expanded="false" aria-controls="a-de-8">
-                <span>Wie funktioniert die K&uuml;ndigung?</span>
-                <span class="faq-icon" aria-hidden="true"></span>
-              </button>
-              <div class="faq-answer-wrap"><div class="faq-answer-inner">
-                <div class="faq-answer" id="a-de-8" role="region">
-                  Bonvio ist eine Jahresmitgliedschaft &mdash; &euro;&nbsp;39,99 f&uuml;r 12&nbsp;Monate. Das ist der <b>Gr&uuml;ndungspreis</b>: Ab Januar 2027 kostet Bonvio &euro;&nbsp;49,99, aber wer jetzt startet, zahlt f&uuml;r immer &euro;&nbsp;39,99 &mdash; auch in den Folgejahren. Wenn du sp&auml;ter nicht weitermachen willst, k&uuml;ndigst du die automatische Verl&auml;ngerung. <b>Eine kurze E-Mail an deine Bonvio-Adresse gen&uuml;gt</b> &mdash; deine Daten werden auf Wunsch exportiert oder gel&ouml;scht.
-                </div>
-              </div></div>
-            </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button" aria-expanded="false"><span>Wie sende ich einen Beleg?</span><span class="faq-icon" aria-hidden="true"></span></button>
+            <div class="faq-wrap"><div class="faq-inner"><div class="faq-a">Ganz einfach: <b>normales Foto mit deinem Handy</b>, an deine Bonvio-Adresse mailen &mdash; fertig. Wir lesen Datum, Händler, Betrag und MwSt automatisch aus und schicken dir eine Bestätigung zurück. Optional: Hashtag im Betreff für alles, was dir wichtig ist &mdash; Kategorie (<code>#brille</code>), Projekt (<code>#renovierung</code>) oder Zahlungsart (<code>#bar</code>, <code>#firmenkarte</code>).</div></div></div>
           </div>
-        </section>
-
-        <section class="cta-repeat">
-          <h2>Kein Chaos mehr. <em>Einfach mailen.</em></h2>
-          <p>
-            Bonvio ist live. Gr&uuml;ndungspreis &euro;&thinsp;39,99&thinsp;/&thinsp;Jahr &mdash; lebenslang gesichert,
-            ab Januar &euro;&thinsp;49,99. Keine App, kein Login.
-          </p>
-          <a class="buy-btn" href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800">Jetzt starten &rarr;</a>
-        </section>
-
-      </div><!-- /lang-de -->
-
-
-      <!-- ============================================================
-           ENGLISH VERSION
-           ============================================================ -->
-      <div class="lang-en">
-
-        <section class="hero">
-          <div>
-            <div class="kicker">Bonvio &middot; Receipt management by email</div>
-            <h1>
-              Take a photo.<br>
-              Send an email.<br>
-              <span class="accent">Done.</span>
-            </h1>
-            <p class="lede">
-              Every receipt, kept. Photograph it, email it to us &mdash; we store it
-              safely, sort it, and find it for you whenever you need it.
-            </p>
-            <div class="eyebrow">For private people, freelancers &amp; small businesses</div>
-
-            <a class="buy-btn" href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800">Start now &mdash; &euro;&thinsp;39.99&thinsp;/&thinsp;year &rarr;</a>
-            <div class="buy-sub">Founding price &mdash; locked for life, &euro;&thinsp;49.99 from January. No setup. Cancel any time.</div>
-
-            <div class="trust">
-              <span><b>Built</b> in Vienna</span>
-              <span class="dot"></span>
-              <span>Servers in Germany</span>
-              <span class="dot"></span>
-              <span>GDPR &amp; &sect;132 BAO / &sect;147 AO compliant</span>
-              <span class="dot"></span>
-              <span><b>10-year</b> retention</span>
-            </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button" aria-expanded="false"><span>Wie finde ich später einen bestimmten Beleg wieder?</span><span class="faq-icon" aria-hidden="true"></span></button>
+            <div class="faq-wrap"><div class="faq-inner"><div class="faq-a">Schreib einfach <code>EXPORT brille</code> oder <code>EXPORT Q1 2026</code> an deine Bonvio-Adresse. Du bekommst ein ZIP mit allen passenden Belegen und eine saubere CSV-Übersicht direkt ins Postfach &mdash; sortiert nach Zeitraum, Kategorie oder Händler.</div></div></div>
           </div>
-
-          <div class="scene" aria-hidden="true">
-            <div class="address-bubble">
-              Each customer gets their own address: <b>bonvio0123@bonvio.eu</b>
-            </div>
-            <div class="receipt receipt-a">
-              <div class="perf-top"></div>
-              <div class="head">SUPERMARKET</div>
-              <div class="date">12.05.2026 &middot; 14:32</div>
-              <div class="rule"></div>
-              <div class="row"><span>&#9620;&#9620;&#9620;&#9620;&#9620;&#9620;&#9620;</span><span>&euro; &mdash;,&mdash;</span></div>
-              <div class="row"><span>&#9620;&#9620;&#9620;&#9620;&#9620;&#9620;&#9620;</span><span>&euro; &mdash;,&mdash;</span></div>
-              <div class="row"><span>&#9620;&#9620;&#9620;&#9620;&#9620;&#9620;&#9620;</span><span>&euro; &mdash;,&mdash;</span></div>
-              <div class="row"><span>&#9620;&#9620;&#9620;&#9620;&#9620;&#9620;&#9620;</span><span>&euro; &mdash;,&mdash;</span></div>
-              <div class="row"><span>&#9620;&#9620;&#9620;&#9620;&#9620;&#9620;&#9620;</span><span>&euro; &mdash;,&mdash;</span></div>
-              <div class="row"><span>&#9620;&#9620;&#9620;&#9620;&#9620;&#9620;&#9620;</span><span>&euro; &mdash;,&mdash;</span></div>
-              <div class="total"><span>TOTAL</span><span>&euro; 42.80</span></div>
-              <div class="perf-bot"></div>
-            </div>
-            <div class="receipt receipt-b">
-              <div class="perf-top"></div>
-              <div class="head">PETROL STATION</div>
-              <div class="date">28.04.2026 &middot; 09:12</div>
-              <div class="rule"></div>
-              <div class="row"><span>&#9620;&#9620;&#9620;&#9620;&#9620;</span><span>&euro; &mdash;,&mdash;</span></div>
-              <div class="row"><span>&#9620;&#9620;&#9620;&#9620;&#9620;</span><span>&euro; &mdash;,&mdash;</span></div>
-              <div class="row"><span>&#9620;&#9620;&#9620;&#9620;&#9620;</span><span>&euro; &mdash;,&mdash;</span></div>
-              <div class="total"><span>TOTAL</span><span>&euro; 65.40</span></div>
-              <div class="perf-bot"></div>
-            </div>
-            <div class="phone">
-              <div class="phone-screen">
-                <div class="status">
-                  <span>14:32</span>
-                  <span style="opacity:.6">&#9679;&#9679;&#9679;&#9679;  5G  &#9646;</span>
-                </div>
-                <div class="mail-header">
-                  <span class="cancel">Cancel</span>
-                  <span class="title">New Email</span>
-                  <span class="send">Send</span>
-                </div>
-                <div class="mail-form">
-                  <div class="field"><span class="label">To:</span><span class="val">bonvio0123@bonvio.eu</span></div>
-                  <div class="field"><span class="label">Subject:</span><span class="val dim">#lunch</span></div>
-                </div>
-                <div class="attach">
-                  <div class="icon">JPG</div>
-                  <div class="meta">
-                    <div class="name">receipt_12_05.jpg</div>
-                    <div class="size">1.4 MB &middot; Just taken</div>
-                  </div>
-                </div>
-                <div class="toast">
-                  <span class="check" aria-hidden="true">&#10003;</span>
-                  <span>Saved in <b style="font-weight:600">Bonvio</b> &middot; May 2026</span>
-                </div>
-              </div>
-            </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button" aria-expanded="false"><span>Kann ich auch Kilometergeld und Diäten erfassen?</span><span class="faq-icon" aria-hidden="true"></span></button>
+            <div class="faq-wrap"><div class="faq-inner"><div class="faq-a">Ja &mdash; beides funktioniert direkt per E-Mail, ohne Anhang. <b>Kilometergeld:</b> Betreff <code>#km 47</code> &mdash; Bonvio berechnet 47&thinsp;&times;&thinsp;&euro;&thinsp;0,42&thinsp;=&thinsp;&euro;&thinsp;19,74 (österreichischer Kilometersatz, &sect;10 EStG) und speichert den Eintrag automatisch. <b>Tagespauschale:</b> Betreff <code>#diät 8</code> oder <code>#diät 09:00-17:30</code> &mdash; Bonvio ermittelt die Pauschale nach &sect;26 Z&thinsp;4 EStG und bestätigt per E-Mail. Beide Einträge erscheinen automatisch im EXPORT für deinen Steuerberater.</div></div></div>
           </div>
-        </section>
-
-        <section id="problem">
-          <div class="section-eyebrow"><span class="num">01</span> &mdash; The Problem</div>
-          <h2 class="section-title">Receipts disappear. Exactly when you need them.</h2>
-          <ol class="warum-list">
-            <li>
-              <div class="warum-num">A</div>
-              <div class="warum-text">In March you're hunting for what you tossed in January.</div>
-            </li>
-            <li>
-              <div class="warum-num">B</div>
-              <div class="warum-text">Warranty lost because the receipt is lost.</div>
-            </li>
-            <li>
-              <div class="warum-num">C</div>
-              <div class="warum-text">Your accountant bills you for hours of paper-sorting.</div>
-            </li>
-            <li>
-              <div class="warum-num">D</div>
-              <div class="warum-text">Claim back your tax &mdash; if only you still had the receipt.</div>
-            </li>
-          </ol>
-        </section>
-
-        <section id="how" class="ink">
-          <div class="section-eyebrow"><span class="num">02</span> &mdash; How it works</div>
-          <h2 class="section-title">Three steps from receipt to organised archive.</h2>
-          <p class="section-intro">
-            You don't need new software. Bonvio runs in the email inbox you
-            already use.
-          </p>
-
-          <div class="steps">
-            <div class="step">
-              <div class="step-num">Step 01 &middot; Set up</div>
-              <h3 class="step-title">Your personal Bonvio address</h3>
-              <p class="step-body">
-                You get your own email address at Bonvio &mdash; something like
-                bonvio0123@bonvio.eu. Save it to your contacts &mdash; done. No login,
-                no password.
-              </p>
-            </div>
-
-            <div class="step">
-              <div class="step-num">Step 02 &middot; Send</div>
-              <h3 class="step-title">Photo. Email. Stored.</h3>
-              <p class="step-body">
-                Photograph the receipt, email it to your address &mdash; in any language.
-                PDFs? Just photograph them off the screen. We extract date, vendor,
-                amount and VAT automatically.
-              </p>
-              <ul class="step-details">
-                <li>Hashtag in subject: #glasses, #tax, #car</li>
-                <li>Payment method as a tag: #cash, #card, #company</li>
-                <li>Mileage &amp; per diems by email: #km 47, #di&auml;t 8</li>
-                <li>Confirmation with all the details comes back</li>
-              </ul>
-            </div>
-
-            <div class="step">
-              <div class="step-num">Step 03 &middot; Retrieve</div>
-              <h3 class="step-title">Send EXPORT, get a ZIP.</h3>
-              <p class="step-body">
-                Write &bdquo;EXPORT" to your Bonvio address &mdash; you'll get all receipts as
-                a ZIP plus an accountant-ready CSV in your inbox.
-              </p>
-              <ul class="step-details">
-                <li>EXPORT Q1 / 2025 &mdash; by period</li>
-                <li>EXPORT GLASSES &mdash; by category</li>
-                <li>EXPORT [vendor] &mdash; by vendor</li>
-              </ul>
-            </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button" aria-expanded="false"><span>Wie sicher sind meine Daten?</span><span class="faq-icon" aria-hidden="true"></span></button>
+            <div class="faq-wrap"><div class="faq-inner"><div class="faq-a">Alle Belege werden <b>verschlüsselt auf EU-Servern in Frankfurt</b> gespeichert. Keine Werbung, kein Tracking, keine Weitergabe an Dritte &mdash; DSGVO-konform und gemäß &sect;132 BAO / &sect;147 AO 10 Jahre archiviert.</div></div></div>
           </div>
-        </section>
-
-        <section id="who">
-          <div class="section-eyebrow"><span class="num">03</span> &mdash; Who it's for</div>
-          <h2 class="section-title">Built for the self-employed. Loved by anyone who's done with the mess.</h2>
-
-          <div class="audience">
-            <div class="audience-card">
-              <span class="audience-tag">Self-employed</span>
-              <h3 class="audience-title">Freelancers &amp; Einzelunternehmer</h3>
-              <p class="audience-body">
-                No accounting software. No new app. Your accountant gets a clean CSV
-                at year-end &mdash; all you do is take a photo.
-                Log mileage and per diems the same way: #km 47, #di&auml;t 8 &mdash; Bonvio calculates the amount automatically using Austrian rates.
-              </p>
-            </div>
-            <div class="audience-card">
-              <span class="audience-tag">Club</span>
-              <h3 class="audience-title">Clubs &amp; small businesses</h3>
-              <p class="audience-body">
-                You think in events and projects, not receipts. Bonvio archives quietly
-                in the background while you focus on what matters.
-              </p>
-            </div>
-            <div class="audience-card">
-              <span class="audience-tag">Organised</span>
-              <h3 class="audience-title">People who just like things tidy</h3>
-              <p class="audience-body">
-                When the shoebox isn't cutting it anymore &mdash; and a new app is too much.
-                Just email it. We handle the rest.
-              </p>
-            </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button" aria-expanded="false"><span>Wie kann ich sicher sein, dass meine Belege wirklich 10&nbsp;Jahre erreichbar sind?</span><span class="faq-icon" aria-hidden="true"></span></button>
+            <div class="faq-wrap"><div class="faq-inner"><div class="faq-a">Du bist jederzeit Herr über deine Daten. Über deinen persönlichen Export-Link kannst du jederzeit ein vollständiges ZIP herunterladen &mdash; Originalfotos in Standardformaten, die jede Behörde akzeptiert. Zusätzlich verpflichten wir uns in unseren <a href="/agb.html">AGB</a> zu einer <b>Vorankündigungsfrist von mindestens 90&nbsp;Tagen</b> bei jeder wesentlichen Änderung &mdash; mit garantiertem Export-Fenster und anteiliger Rückerstattung.</div></div></div>
           </div>
-
-          <div class="inline-cta">
-            <div class="inline-text">
-              Sounds like you? <b>Get started today.</b><br>
-              &euro;39.99&thinsp;/&thinsp;year &mdash; everything included, active immediately.
-            </div>
-            <div class="inline-form">
-              <a class="buy-btn" href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800">Start now &rarr;</a>
-            </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button" aria-expanded="false"><span>Wie funktioniert die Kündigung?</span><span class="faq-icon" aria-hidden="true"></span></button>
+            <div class="faq-wrap"><div class="faq-inner"><div class="faq-a">Bonvio ist eine Jahresmitgliedschaft &mdash; &euro;&nbsp;39,99 für 12&nbsp;Monate. Das ist der <b>Gründerpreis</b>: Ab Januar 2027 kostet Bonvio &euro;&nbsp;49,99, aber wer jetzt startet, zahlt für immer &euro;&nbsp;39,99. Willst du später nicht weitermachen, kündigst du die automatische Verlängerung. <b>Eine kurze E-Mail an deine Bonvio-Adresse genügt</b> &mdash; deine Daten werden auf Wunsch exportiert oder gelöscht.</div></div></div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section id="nope">
-          <div class="section-eyebrow"><span class="num">04</span> &mdash; What you don't need</div>
-          <h2 class="section-title">No app. No login. No new account.</h2>
-          <p class="section-intro">
-            Bonvio is deliberately small. Email is all you need &mdash; no new tool,
-            no new account, no extra friction.
-          </p>
-
-          <div class="nope">
-            <div class="nope-item"><span class="nope-cross">&times;</span><span class="nope-text">No app</span></div>
-            <div class="nope-item"><span class="nope-cross">&times;</span><span class="nope-text">No login</span></div>
-            <div class="nope-item"><span class="nope-cross">&times;</span><span class="nope-text">No password</span></div>
-            <div class="nope-item"><span class="nope-cross">&times;</span><span class="nope-text">No software</span></div>
-            <div class="nope-item"><span class="nope-cross">&times;</span><span class="nope-text">No training</span></div>
-            <div class="nope-item"><span class="nope-cross">&times;</span><span class="nope-text">No updates</span></div>
-          </div>
-          <p class="nope-foot">
-            <b>What you need:</b> your email. That's it. Bonvio lives quietly in
-            your inbox &mdash; and does exactly what you'd expect, no learning curve.
-          </p>
-        </section>
-
-        <section id="price">
-          <div class="section-eyebrow"><span class="num">05</span> &mdash; Price</div>
-          <h2 class="section-title" style="max-width: 24ch;">One price. <em>No surprises.</em></h2>
-          <p class="section-intro">
-            One address, all your receipts, all features included.
-            No ads, no tracking, no sharing of your data.
-          </p>
-
-          <div class="price-card">
-            <div class="stamp">Founding price</div>
-            <div class="price-top-label">Yearly</div>
-            <div class="price-amount">&euro; 39.99</div>
-            <div class="price-period">12 months &middot; prepaid</div>
-            <div class="price-founding">
-              <b>Founding price &mdash; locked for life.</b><br>
-              From January 2027: <span class="was">&euro; 49.99</span>. Start now and you pay &euro; 39.99 forever.
-            </div>
-            <div class="price-coffee">Less than a coffee a month &mdash; <b>&euro; 3.33</b>.</div>
-            <ul class="price-includes">
-              <li>Personal Bonvio address</li>
-              <li>All your receipts</li>
-              <li>Automatic extraction of date, amount and VAT</li>
-              <li>Hashtag categorisation &amp; vendor search</li>
-              <li>Export for your accountant</li>
-              <li>10-year retention (&sect;132 BAO / &sect;147 AO)</li>
-            </ul>
-            <a class="buy-btn" href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800">Start now &rarr;</a>
-          </div>
-        </section>
-
-        <section class="pullquote" aria-label="Bonvio &middot; The promise">
-          <span class="marginalia">Bonvio &middot; The promise</span>
-          <blockquote>
-            Snap it. Forget it.<br>
-            <em class="em-mark">Bonvio remembers them all.</em>
-          </blockquote>
-        </section>
-
-        <section id="security">
-          <div class="section-eyebrow"><span class="num">06</span> &mdash; Security &amp; Privacy</div>
-          <div class="security-stamp-wrap" aria-hidden="true">
-            <div class="wax-stamp">
-              <span class="top">GDPR</span>
-              <span class="rule"></span>
-              <span class="bot">compliant</span>
-            </div>
-          </div>
-          <h2 class="section-title">Your receipts belong to you. Period.</h2>
-
-          <ul class="security">
-            <li>
-              <span class="security-num">01</span>
-              <span class="security-text">
-                <b>Encrypted storage</b> in Frankfurt, Germany &mdash;
-                on EU servers.
-              </span>
-            </li>
-            <li>
-              <span class="security-num">02</span>
-              <span class="security-text">
-                <b>No advertising. No tracking. No sharing</b> of your data
-                with third parties &mdash; ever.
-              </span>
-            </li>
-            <li>
-              <span class="security-num">03</span>
-              <span class="security-text">
-                <b>10-year retention</b> (&sect;132 BAO / &sect;147 AO) &mdash; the legal minimum
-                for receipts in Austria.
-              </span>
-            </li>
-            <li>
-              <span class="security-num">04</span>
-              <span class="security-text">
-                <b>GDPR compliant.</b> Data export or account deletion
-                any time on request, subject to any statutory retention obligations.
-              </span>
-            </li>
-          </ul>
-        </section>
-
-        <section id="faq">
-          <div class="section-eyebrow"><span class="num">07</span> &mdash; Frequently asked</div>
-          <h2 class="section-title">Everything you might be wondering.</h2>
-          <p class="section-intro">
-            Still curious? Write to <a href="mailto:hello@bonvio.eu" style="color:var(--rust);text-decoration:none;font-weight:600;border-bottom:1px solid rgba(31,67,50,0.3);">hello@bonvio.eu</a> &mdash; we'll get back to you.
-          </p>
-
-          <div class="faq">
-            <div class="faq-item">
-              <button class="faq-question" type="button" aria-expanded="false" aria-controls="a-en-1">
-                <span>Do I need a special app or software?</span>
-                <span class="faq-icon" aria-hidden="true"></span>
-              </button>
-              <div class="faq-answer-wrap"><div class="faq-answer-inner">
-                <div class="faq-answer" id="a-en-1" role="region">
-                  No. You use the email app you already have &mdash; Apple Mail, Gmail, Outlook, anything. Bonvio is just an address you send photos to. <b>Nothing to install, no login, no updates.</b>
-                </div>
-              </div></div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question" type="button" aria-expanded="false" aria-controls="a-en-2">
-                <span>How do I send in a receipt?</span>
-                <span class="faq-icon" aria-hidden="true"></span>
-              </button>
-              <div class="faq-answer-wrap"><div class="faq-answer-inner">
-                <div class="faq-answer" id="a-en-2" role="region">
-                  Simple: take a <b>normal photo with your phone</b> and email it to your Bonvio address &mdash; done. No file format to worry about, your phone's camera app is all you need. We extract date, vendor, total and VAT automatically and send you a confirmation back. Optional: add a hashtag in the subject for anything that matters to you &mdash; category (<span style="font-family:monospace">#glasses</span>), project (<span style="font-family:monospace">#renovation</span>) or payment method (<span style="font-family:monospace">#cash</span>, <span style="font-family:monospace">#company</span>).
-                </div>
-              </div></div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question" type="button" aria-expanded="false" aria-controls="a-en-3">
-                <span>How do I find a specific receipt later?</span>
-                <span class="faq-icon" aria-hidden="true"></span>
-              </button>
-              <div class="faq-answer-wrap"><div class="faq-answer-inner">
-                <div class="faq-answer" id="a-en-3" role="region">
-                  Just email <code>EXPORT glasses</code> or <code>EXPORT Q1 2026</code> to your Bonvio address. You'll receive a ZIP with the matching receipts plus a clean CSV overview &mdash; sorted by period, category or vendor.
-                </div>
-              </div></div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question" type="button" aria-expanded="false" aria-controls="a-en-4">
-                <span>Is there a limit on receipts?</span>
-                <span class="faq-icon" aria-hidden="true"></span>
-              </button>
-              <div class="faq-answer-wrap"><div class="faq-answer-inner">
-                <div class="faq-answer" id="a-en-4" role="region">
-                  For everyday use: <b>no, no limit</b>. In the background there's a soft cap at around 3,000 receipts a year &mdash; more than private people, freelancers or small businesses normally have. If you do go beyond, we'll reach out personally. No automatic upgrades, no surprises on your bill.
-                </div>
-              </div></div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question" type="button" aria-expanded="false" aria-controls="a-en-5">
-                <span>How does my accountant get the receipts?</span>
-                <span class="faq-icon" aria-hidden="true"></span>
-              </button>
-              <div class="faq-answer-wrap"><div class="faq-answer-inner">
-                <div class="faq-answer" id="a-en-5" role="region">
-                  All your receipts arrive in your inbox as <b>one ready-made package</b> &mdash; the photos and a clean overview, sorted and ready for your accountant. Just forward the email.
-                </div>
-              </div></div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question" type="button" aria-expanded="false" aria-controls="a-en-6">
-                <span>How secure is my data?</span>
-                <span class="faq-icon" aria-hidden="true"></span>
-              </button>
-              <div class="faq-answer-wrap"><div class="faq-answer-inner">
-                <div class="faq-answer" id="a-en-6" role="region">
-                  All receipts are <b>encrypted and stored on EU servers in Frankfurt.</b> No ads, no tracking, no third-party sharing &mdash; GDPR-compliant and archived for 10 years (&sect;132 BAO / &sect;147 AO).
-                </div>
-              </div></div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question" type="button" aria-expanded="false" aria-controls="a-en-7">
-                <span>Does it work in other languages?</span>
-                <span class="faq-icon" aria-hidden="true"></span>
-              </button>
-              <div class="faq-answer-wrap"><div class="faq-answer-inner">
-                <div class="faq-answer" id="a-en-7" role="region">
-                  Yes. Bonvio reads receipts in German, English and many more languages &mdash; including CEE languages like Polish, Czech, Hungarian, Slovak, Slovenian, Croatian and Romanian. The original receipt is stored exactly as you sent it.
-                </div>
-              </div></div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question" type="button" aria-expanded="false" aria-controls="a-en-km">
-                <span>Can I track mileage or per diems?</span>
-                <span class="faq-icon" aria-hidden="true"></span>
-              </button>
-              <div class="faq-answer-wrap"><div class="faq-answer-inner">
-                <div class="faq-answer" id="a-en-km" role="region">
-                  Yes &mdash; both work today, directly by email. Send an email <em>without an attachment</em> to your Bonvio address:<br><br>
-                  <b>Mileage (Kilometergeld):</b> subject <span style="font-family:monospace">#km 47</span> &mdash; Bonvio calculates 47&thinsp;&times;&thinsp;&euro;&thinsp;0.42&thinsp;=&thinsp;&euro;&thinsp;19.74 Austrian rate &sect;10 EStG AT and stores it automatically.<br><br>
-                  <b>Per diem (Tagespauschale):</b> subject <span style="font-family:monospace">#di&auml;t 8</span> or <span style="font-family:monospace">#di&auml;t 09:00-17:30</span> &mdash; Bonvio applies the flat rate under &sect;26(4) EStG (&lt;&thinsp;3h&thinsp;=&thinsp;&euro;&thinsp;0 | 3&ndash;12h&thinsp;=&thinsp;&euro;&thinsp;13.20 | &gt;&thinsp;12h&thinsp;=&thinsp;&euro;&thinsp;26.40) and confirms by email.<br><br>
-                  Both entries appear automatically in your EXPORT for the accountant.
-                </div>
-              </div></div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question" type="button" aria-expanded="false" aria-controls="a-en-9">
-                <span>How can I be sure my receipts stay accessible for the full 10&nbsp;years?</span>
-                <span class="faq-icon" aria-hidden="true"></span>
-              </button>
-              <div class="faq-answer-wrap"><div class="faq-answer-inner">
-                <div class="faq-answer" id="a-en-9" role="region">
-                  You are always in control of your data. Via your personal export link you can download a complete ZIP at any time &mdash; original files in standard formats that any tax authority or accountant will accept. You never need Bonvio to be running in order to show your receipts.<br><br>
-                  On top of that, our <a href="/agb-en.html">Terms of Service</a> commit us to a <b>minimum 90-day notice period</b> before any material change to the service &mdash; with a guaranteed export window and a pro-rata refund. No nasty surprises.
-                </div>
-              </div></div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question" type="button" aria-expanded="false" aria-controls="a-en-8">
-                <span>How does cancellation work?</span>
-                <span class="faq-icon" aria-hidden="true"></span>
-              </button>
-              <div class="faq-answer-wrap"><div class="faq-answer-inner">
-                <div class="faq-answer" id="a-en-8" role="region">
-                  Bonvio is an annual membership &mdash; &euro;&nbsp;39.99 for 12&nbsp;months. That's the <b>founding price</b>: from January 2027 Bonvio costs &euro;&nbsp;49.99, but anyone who starts now pays &euro;&nbsp;39.99 forever &mdash; in every following year too. If you later don't want to continue, you cancel the auto-renewal. <b>A short email to your Bonvio address is enough</b> &mdash; we'll export or delete your data on request.
-                </div>
-              </div></div>
-            </div>
-          </div>
-        </section>
-
-        <section class="cta-repeat">
-          <h2>No more chaos. <em>Just email it.</em></h2>
-          <p>
-            Bonvio is live. Founding price &euro;&thinsp;39.99&thinsp;/&thinsp;year &mdash; locked for life,
-            &euro;&thinsp;49.99 from January. No app, no login.
-          </p>
-          <a class="buy-btn" href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800">Start now &rarr;</a>
-        </section>
-
-      </div><!-- /lang-en -->
+      <!-- ═══════════ FINAL CTA ═══════════ -->
+      <section class="sec" style="padding-bottom: 0;">
+        <div class="final-cta reveal">
+          <h2>Andere Software will, dass du Buchhalter wirst.<br>Bonvio will, dass du <em>deine Arbeit machst.</em></h2>
+          <p>Bonvio ist live. Gründerpreis &euro;&thinsp;39,99&thinsp;/&thinsp;Jahr &mdash; lebenslang gehalten, ab Januar &euro;&thinsp;49,99. Keine App, kein Login.</p>
+          <a class="btn btn-light" href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800">Jetzt starten <span class="arr">&rarr;</span></a>
+        </div>
+      </section>
 
     </main>
 
@@ -2122,137 +1008,84 @@
       <div class="footer-row">
         <div class="footer-meta">
           <span class="footer-name">Bonvio</span>
-          <span>&copy; 2026 &middot; Wien, &Ouml;sterreich</span>
-          <span class="footer-founder lang-de">Gegr&uuml;ndet 2026 in Wien von <b>Niko A.</b></span>
-          <span class="footer-founder lang-en">Founded 2026 in Vienna by <b>Niko A.</b></span>
+          <span>&copy; 2026 &middot; Wien, Österreich</span>
+          <span>Gegründet 2026 in Wien von <b style="color:var(--ink);font-weight:600;">Niko A.</b></span>
+          <span><a href="mailto:hallo@bonvio.eu" style="color:var(--green);text-decoration:none;border-bottom:1px solid rgba(31,67,50,0.3);">hallo@bonvio.eu</a></span>
         </div>
         <div class="footer-links">
-          <a href="/datenschutz.html" class="lang-de-inline">Datenschutz</a>
-          <a href="/datenschutz-en.html" class="lang-en-inline">Privacy</a>
-          <a href="/impressum.html" class="lang-de-inline">Impressum</a>
-          <a href="/impressum-en.html" class="lang-en-inline">Imprint</a>
-          <a href="/agb.html" class="lang-de-inline">AGB</a>
-          <a href="/agb-en.html" class="lang-en-inline">Terms</a>
-          <a href="#" class="lang-de-inline">Kontakt</a>
-          <a href="#" class="lang-en-inline">Contact</a>
+          <a href="/datenschutz.html">Datenschutz</a>
+          <a href="/impressum.html">Impressum</a>
+          <a href="/agb.html">AGB</a>
+          <a href="mailto:hallo@bonvio.eu">Kontakt</a>
         </div>
       </div>
-
       <div class="footer-bottom">
-        <div class="footer-disclaimer lang-de">
-          <b>Hinweis.</b> Bonvio bewahrt deine Belege sicher auf und macht den Export f&uuml;r deinen Steuerberater einfach. Bonvio ist <b>keine Buchhaltungssoftware</b> und <b>ersetzt keine steuerliche oder rechtliche Beratung</b>. Die 10-j&auml;hrige Aufbewahrung orientiert sich an &sect;132 BAO (AT) und &sect;147 AO (DE) &mdash; f&uuml;r deine konkreten gesetzlichen Pflichten wende dich bitte an deinen Steuerberater.
+        <div class="footer-disclaimer">
+          <b>Hinweis.</b> Bonvio bewahrt deine Belege sicher auf und macht den Export für deinen Steuerberater einfach. Bonvio ist <b>keine Buchhaltungssoftware</b> und <b>ersetzt keine steuerliche oder rechtliche Beratung</b>. Die 10-jährige Aufbewahrung orientiert sich an &sect;132 BAO (AT) und &sect;147 AO (DE) &mdash; für deine konkreten gesetzlichen Pflichten wende dich bitte an deinen Steuerberater.
         </div>
-        <div class="footer-disclaimer lang-en">
-          <b>Note.</b> Bonvio safely archives your receipts and makes export for your accountant easy. Bonvio is <b>not accounting software</b> and is <b>not a substitute for professional tax or legal advice</b>. The 10-year retention follows &sect;132 BAO (AT) and &sect;147 AO (DE) &mdash; for your specific legal obligations, please consult your tax advisor.
-        </div>
-
-        <div class="footer-stamp" aria-hidden="true">
-          <div class="lang-de">
-            <div class="wax-stamp">
-              <span class="top">Aus Wien</span>
-              <span class="rule"></span>
-              <span class="bot">Est. 2026</span>
-            </div>
-          </div>
-          <div class="lang-en">
-            <div class="wax-stamp">
-              <span class="top">Made in Vienna</span>
-              <span class="rule"></span>
-              <span class="bot">Est. 2026</span>
-            </div>
-          </div>
+        <div class="wax-stamp" aria-hidden="true">
+          <span class="t">Aus Wien</span>
+          <span class="r"></span>
+          <span class="b">Est. 2026</span>
         </div>
       </div>
     </footer>
   </div>
 
+  <button class="back-to-top" id="back-to-top" aria-label="Zurück nach oben">&uarr;</button>
+
   <script>
-    // Activate motion (opt-in: if JS fails or is disabled, stamps & pullquote
-    // stay visible in their resting state — never an invisible page).
+    // ── Demo loop: compose → send → confirm → (reset) ──
     (function () {
-      document.documentElement.classList.add('motion-ready');
+      var phone = document.getElementById('demo-phone');
+      if (!phone) return;
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduce) { phone.setAttribute('data-phase', 'confirm'); return; }
 
-      // ?motion=force overrides prefers-reduced-motion for previewing
-      var forceMotion = /[?&]motion=force/.test(location.search);
-      var reduce = !forceMotion && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var seq = [
+        { phase: 'compose', t: 2800 },
+        { phase: 'send',    t: 950  },
+        { phase: 'confirm', t: 3400 }
+      ];
+      var i = 0;
+      function tick() {
+        phone.setAttribute('data-phase', seq[i].phase);
+        var dur = seq[i].t;
+        i = (i + 1) % seq.length;
+        setTimeout(tick, dur);
+      }
+      tick();
+    })();
 
-      if (forceMotion) document.documentElement.classList.add('force-motion');
-      var revealAll = function () {
-        document.querySelectorAll('.wax-stamp, .pullquote').forEach(function (el) { el.classList.add('is-in'); });
-      };
-      if (reduce || !('IntersectionObserver' in window)) { revealAll(); return; }
-
+    // ── Scroll reveal ──
+    (function () {
+      var els = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
       var io = new IntersectionObserver(function (entries) {
         entries.forEach(function (e) {
-          if (e.isIntersecting) {
-            e.target.classList.add('is-in');
-            io.unobserve(e.target);
-          }
+          if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
         });
-      }, { threshold: 0.35, rootMargin: '0px 0px -40px 0px' });
-
-      document.querySelectorAll('.wax-stamp, .pullquote').forEach(function (el) { io.observe(el); });
+      }, { threshold: 0.16, rootMargin: '0px 0px -8% 0px' });
+      els.forEach(function (e) { io.observe(e); });
     })();
-  </script>
 
-  <button class="back-to-top" id="back-to-top" aria-label="Zur&uuml;ck nach oben">&uarr;</button>
-<script>
-    // Back-to-top
+    // ── FAQ accordion ──
+    document.querySelectorAll('.faq-q').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var item = btn.closest('.faq-item');
+        var open = item.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    });
+
+    // ── Back to top ──
     (function () {
       var btn = document.getElementById('back-to-top');
       window.addEventListener('scroll', function () {
-        btn.classList.toggle('visible', window.scrollY > 400);
+        btn.classList.toggle('visible', window.scrollY > 500);
       });
-      btn.addEventListener('click', function () {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
+      btn.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
     })();
-
-    // FAQ accordion — multi-open, smooth grid-row height
-    (function () {
-      document.querySelectorAll('.faq-question').forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          var item = btn.closest('.faq-item');
-          var open = item.classList.toggle('open');
-          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-        });
-      });
-
-      // If user lands on a deep link to FAQ, open the first item for visual cue
-      function openFirstOnHash() {
-        var h = window.location.hash;
-        if (h === '#faq' || h === '#fragen') {
-          var section = document.querySelector(h);
-          if (!section) return;
-          var first = section.querySelector('.faq-item');
-          if (first && !first.classList.contains('open')) {
-            first.classList.add('open');
-            var qbtn = first.querySelector('.faq-question');
-            if (qbtn) qbtn.setAttribute('aria-expanded', 'true');
-          }
-        }
-      }
-      window.addEventListener('hashchange', openFirstOnHash);
-      openFirstOnHash();
-    })();
-  </script>
-
-  <script>
-    // Language switcher
-    function setLang(lang) {
-      document.body.classList.toggle('lang-en-active', lang === 'en');
-      document.getElementById('btn-de').classList.toggle('active', lang === 'de');
-      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-      document.documentElement.lang = lang;
-      try { localStorage.setItem('bonvio-lang', lang); } catch (e) {}
-    }
-    (function () {
-      var saved = null;
-      try { saved = localStorage.getItem('bonvio-lang'); } catch (e) {}
-      var lang = saved || (navigator.language && navigator.language.toLowerCase().startsWith('de') ? 'de' : 'en');
-      setLang(lang);
-    })();
-
   </script>
 </body>
 </html>
