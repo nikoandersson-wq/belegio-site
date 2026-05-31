@@ -681,6 +681,59 @@
       footer { padding: 40px 22px 48px; }
       .addr-tag { display: none; }
     }
+  
+    /* FÜR WEN */
+    .audience { margin: 52px 0 0; display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--hair-2); border: 1px solid var(--hair-2); }
+    .audience-card { background: var(--cream); padding: 34px 30px; display: flex; flex-direction: column; gap: 12px; min-height: 200px; }
+    .audience-tag { font-family: var(--mono); font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--green); }
+    .audience-title { font-family: var(--serif); font-size: 26px; font-weight: 500; letter-spacing: -0.015em; color: var(--ink); line-height: 1.2; margin: 0; }
+    .audience-body { font-size: 16px; line-height: 1.55; color: var(--ink); margin: 0; }
+
+    /* WAS DU NICHT BRAUCHST */
+    .nope { margin: 52px 0 0; display: grid; grid-template-columns: repeat(2,1fr); gap: 12px 52px; }
+    .nope-item { display: flex; align-items: center; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--hair-2); }
+    .nope-item:nth-last-child(-n+2) { border-bottom: 0; }
+    .nope-cross { font-family: var(--serif); font-style: italic; font-size: 34px; font-weight: 500; color: var(--green); width: 30px; text-align: center; flex: none; line-height: 1; opacity: 0.75; }
+    .nope-text { font-size: 22px; letter-spacing: -0.015em; font-weight: 500; color: var(--ink); }
+    .nope-foot { margin: 36px 0 0; padding: 16px 20px; font-size: 16px; color: var(--ink); background: var(--cream); border-left: 3px solid var(--green); max-width: 560px; }
+
+    /* SICHERHEIT */
+    .security-section { margin: 52px 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(2,1fr); gap: 0; border: 1px solid var(--hair-2); }
+    .security-section li { padding: 28px; display: grid; grid-template-columns: 48px 1fr; gap: 18px; align-items: center; border-right: 1px solid var(--hair-2); border-bottom: 1px solid var(--hair-2); background: rgba(255,255,255,0.4); }
+    .security-section li:nth-child(2n) { border-right: 0; }
+    .security-section li:nth-last-child(-n+2) { border-bottom: 0; }
+    .security-num { width: 44px; height: 44px; display: grid; place-items: center; background: var(--green); color: var(--cream); border-radius: 8px; font-size: 18px; font-weight: 800; letter-spacing: -0.02em; line-height: 1; }
+    .security-text { font-size: 17px; line-height: 1.5; color: var(--ink); }
+    .security-text b { font-weight: 600; }
+    .wax-stamp { --r: -2deg; display: inline-block; border: 2px solid var(--green); color: var(--green); font-family: var(--mono); font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; padding: 10px 16px 9px; border-radius: 4px; transform: rotate(var(--r)); opacity: 0.65; line-height: 1.1; text-align: center; box-shadow: inset 0 0 0 1px var(--green); margin-bottom: 32px; }
+    .wax-stamp .top { display: block; font-size: 13px; letter-spacing: 0.2em; }
+    .wax-stamp .bot { display: block; font-size: 9px; letter-spacing: 0.15em; margin-top: 4px; opacity: 0.85; }
+    .security-stamp-wrap { text-align: left; }
+
+    /* PULL-QUOTE */
+    .pullquote { margin: 80px -72px 0; padding: 80px 72px; position: relative; text-align: center; border-top: 1px dashed var(--hair-2); border-bottom: 1px dashed var(--hair-2); }
+    .pullquote blockquote { margin: 0 auto; max-width: 18ch; font-family: var(--serif); font-style: italic; font-weight: 400; font-size: clamp(44px,5.5vw,72px); line-height: 1.06; letter-spacing: -0.025em; color: var(--ink); text-wrap: balance; }
+    .pullquote blockquote em { font-style: italic; color: var(--green); font-weight: 500; }
+    .pullquote-label { font-family: var(--mono); font-size: 13px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 32px; display: block; }
+
+    /* INLINE CTA (inside Für wen) */
+    .inline-cta { margin-top: 40px; display: flex; align-items: center; gap: 32px; flex-wrap: wrap; padding: 28px 32px; background: var(--cream); border: 1px solid var(--hair-2); }
+    .inline-cta-text { font-size: 18px; line-height: 1.45; color: var(--ink); }
+    .inline-cta-text b { color: var(--green); }
+
+    /* MOBILE for new sections */
+    @media (max-width: 700px) {
+      .audience { grid-template-columns: 1fr; }
+      .nope { grid-template-columns: 1fr; gap: 0; }
+      .nope-item:nth-last-child(-n+2) { border-bottom: 1px solid var(--hair-2); }
+      .nope-item:last-child { border-bottom: 0; }
+      .security-section { grid-template-columns: 1fr; }
+      .security-section li:nth-child(2n) { border-right: 0; }
+      .security-section li:nth-last-child(-n+2) { border-bottom: 1px solid var(--hair-2); }
+      .security-section li:last-child { border-bottom: 0; }
+      .pullquote { margin: 56px -24px 0; padding: 56px 24px; }
+      .inline-cta { flex-direction: column; align-items: flex-start; gap: 18px; }
+    }
   </style>
 </head>
 <body>
@@ -693,6 +746,8 @@
       </a>
       <div class="nav-links">
         <a href="#funktioniert">So funktioniert's</a>
+        <a href="#wer">Für wen</a>
+        <a href="#sicherheit">Datenschutz</a>
         <a href="#preis">Preis</a>
         <a href="#fragen">FAQ</a>
         <a href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800" class="nav-cta">Jetzt starten</a>
@@ -717,7 +772,7 @@
               Jetzt starten &mdash; &euro;&thinsp;39,99&thinsp;/&thinsp;Jahr <span class="arr">&rarr;</span>
             </a>
             <div class="trust-line">
-              <span>Server in der EU</span><span class="sep"></span><span>DSGVO-konform</span><span class="sep"></span><span>&sect;132 BAO konform</span>
+              <span>Aus Wien gebaut</span><span class="sep"></span><span>Server in der EU</span><span class="sep"></span><span>DSGVO-konform</span><span class="sep"></span><span><b>10 Jahre</b> Aufbewahrung</span>
             </div>
             <div class="founder-price-hint">Gründerpreis &mdash; lebenslang &euro;&thinsp;39,99. Ab Januar 2027: <span class="was">&euro;&thinsp;49,99</span>.</div>
           </div>
@@ -906,6 +961,54 @@
     </main>
 
     <!-- ═══════════ TRUST STRIP ═══════════ -->
+
+      <!-- ═══════════ FÜR WEN ═══════════ -->
+      <section class="sec" id="wer">
+        <div class="sec-head reveal">
+          <div class="eyebrow">Für wen</div>
+          <h2 class="sec-title">Für Selbständige gebaut. Von allen geliebt, die genug vom Chaos haben.</h2>
+        </div>
+        <div class="audience reveal">
+          <div class="audience-card">
+            <span class="audience-tag">Selbständig</span>
+            <h3 class="audience-title">Freelancer &amp; Einzelunternehmer</h3>
+            <p class="audience-body">Kein Buchhaltungsprogramm. Keine neue App. Dein Steuerberater bekommt am Jahresende eine fertige CSV &mdash; du machst nichts weiter als ein Foto. Kilometergeld und Diäten erfasst du genauso per E-Mail: <code>#km 47</code>, <code>#diät 8</code> &mdash; Bonvio rechnet den Betrag nach österreichischen Sätzen automatisch aus.</p>
+          </div>
+          <div class="audience-card">
+            <span class="audience-tag">Verein</span>
+            <h3 class="audience-title">Vereine &amp; kleine Unternehmen</h3>
+            <p class="audience-body">Du denkst in Veranstaltungen und Projekten, nicht in Kassabons. Bonvio archiviert still im Hintergrund, während du dich ums Wesentliche kümmerst.</p>
+          </div>
+          <div class="audience-card">
+            <span class="audience-tag">Ordentlich</span>
+            <h3 class="audience-title">Alle, die Ordnung lieben</h3>
+            <p class="audience-body">Wenn der Schuhkarton nicht mehr reicht &mdash; und eine neue App zu viel ist. Einfach mailen, wir erledigen den Rest.</p>
+          </div>
+        </div>
+        <div class="inline-cta reveal">
+          <div class="inline-cta-text">Klingt nach dir? <b>Leg jetzt los.</b><br>&euro;&thinsp;39,99&thinsp;/&thinsp;Jahr &mdash; alles inklusive, sofort aktiv.</div>
+          <a class="btn" href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800">Jetzt starten &rarr;</a>
+        </div>
+      </section>
+
+      <!-- ═══════════ KEIN ═══════════ -->
+      <section class="sec" id="kein">
+        <div class="sec-head reveal">
+          <div class="eyebrow">Was du nicht brauchst</div>
+          <h2 class="sec-title">Keine App. Kein Login. <em>Kein neuer Account.</em></h2>
+          <p class="sec-intro">Bonvio ist absichtlich klein gehalten. E-Mail reicht völlig &mdash; kein neues Tool, kein neuer Account, kein Mehraufwand.</p>
+        </div>
+        <div class="nope reveal">
+          <div class="nope-item"><span class="nope-cross">&times;</span><span class="nope-text">Keine App</span></div>
+          <div class="nope-item"><span class="nope-cross">&times;</span><span class="nope-text">Kein Login</span></div>
+          <div class="nope-item"><span class="nope-cross">&times;</span><span class="nope-text">Kein Passwort</span></div>
+          <div class="nope-item"><span class="nope-cross">&times;</span><span class="nope-text">Keine Software</span></div>
+          <div class="nope-item"><span class="nope-cross">&times;</span><span class="nope-text">Keine Schulung</span></div>
+          <div class="nope-item"><span class="nope-cross">&times;</span><span class="nope-text">Keine Updates</span></div>
+        </div>
+        <p class="nope-foot reveal"><b>Was du brauchst:</b> deine E-Mail. Mehr nicht. Bonvio kommt in dein Postfach geflattert &mdash; und tut dort genau das, was du erwartest.</p>
+      </section>
+
     <section class="trust-strip reveal">
       <div class="trust-item"><span class="ti-k">Speicherort</span><span class="ti-v">Server in der EU</span></div>
       <div class="trust-item"><span class="ti-k">Datenschutz</span><span class="ti-v">DSGVO-konform</span></div>
@@ -955,6 +1058,30 @@
             <div class="price-sub">Kein Setup &middot; jederzeit kündbar</div>
           </div>
         </div>
+      </section>
+
+
+      <!-- ═══════════ PULL-QUOTE ═══════════ -->
+      <section class="pullquote reveal">
+        <span class="pullquote-label">Bonvio &middot; Das Versprechen</span>
+        <blockquote>Knipsen. Vergessen.<br><em>Bonvio merkt sich alles.</em></blockquote>
+      </section>
+
+      <!-- ═══════════ SICHERHEIT ═══════════ -->
+      <section class="sec" id="sicherheit">
+        <div class="sec-head reveal">
+          <div class="eyebrow">Sicherheit &amp; Datenschutz</div>
+          <div class="security-stamp-wrap reveal" aria-hidden="true">
+            <div class="wax-stamp"><span class="top">DSGVO</span><span class="bot">konform</span></div>
+          </div>
+          <h2 class="sec-title">Deine Belege gehören dir. <em>Punkt.</em></h2>
+        </div>
+        <ul class="security-section reveal">
+          <li><span class="security-num">01</span><span class="security-text"><b>Verschlüsselt gespeichert</b> in der EU &mdash; Server in Frankfurt, Deutschland.</span></li>
+          <li><span class="security-num">02</span><span class="security-text"><b>Keine Werbung. Kein Tracking. Keine Weitergabe</b> deiner Daten an Dritte &mdash; niemals.</span></li>
+          <li><span class="security-num">03</span><span class="security-text"><b>10 Jahre Aufbewahrung</b> (&sect;132 BAO&thinsp;/&thinsp;&sect;147 AO) &mdash; gesetzliche Mindestfrist für Belege in Österreich.</span></li>
+          <li><span class="security-num">04</span><span class="security-text"><b>DSGVO-konform.</b> Datenexport oder Löschung deines Kontos jederzeit auf Anfrage, soweit keine gesetzlichen Aufbewahrungspflichten entgegenstehen.</span></li>
+        </ul>
       </section>
 
       <!-- ═══════════ FAQ ═══════════ -->
