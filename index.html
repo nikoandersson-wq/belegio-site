@@ -755,6 +755,8 @@
         <span>Bonvio</span>
       </a>
       <div class="nav-links">
+        <a href="#top" class="lang-de-inline">Home</a>
+        <a href="#top" class="lang-en-inline">Home</a>
         <a href="#funktioniert" class="lang-de-inline">So funktioniert's</a>
         <a href="#how" class="lang-en-inline">How it works</a>
         <a href="#wer" class="lang-de-inline">Für wen</a>
@@ -1646,5 +1648,20 @@
 
 
 
+  <script>
+    function setLang(lang) {
+      document.body.classList.toggle('lang-en-active', lang === 'en');
+      document.getElementById('btn-de').classList.toggle('active', lang === 'de');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.documentElement.lang = lang;
+      try { localStorage.setItem('bonvio-lang', lang); } catch (e) {}
+    }
+    (function () {
+      var saved = null;
+      try { saved = localStorage.getItem('bonvio-lang'); } catch (e) {}
+      var lang = saved || (navigator.language && navigator.language.toLowerCase().startsWith('de') ? 'de' : 'en');
+      setLang(lang);
+    })();
+  </script>
 </body>
 </html>
