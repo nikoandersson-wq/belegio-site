@@ -1163,458 +1163,364 @@
            ============================================================ -->
       <div class="lang-en">
 
-        <section class="hero">
-          <div>
-            <div class="kicker">Bonvio &middot; Receipt management by email</div>
-            <h1>
-              Take a photo.<br>
-              Send an email.<br>
-              <span class="accent">Done.</span>
-            </h1>
-            <p class="lede">
-              Every receipt, kept. Photograph it, email it to us &mdash; we store it
-              safely, sort it, and find it for you whenever you need it.
-            </p>
-            <div class="eyebrow">For private people, freelancers &amp; small businesses</div>
-
-            <a class="buy-btn" href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800">Start now &mdash; &euro;&thinsp;39.99&thinsp;/&thinsp;year &rarr;</a>
-            <div class="buy-sub">Founding price &mdash; locked for life, &euro;&thinsp;49.99 from January. No setup. Cancel any time.</div>
-
-            <div class="trust">
-              <span><b>Built</b> in Vienna</span>
-              <span class="dot"></span>
-              <span>Servers in Germany</span>
-              <span class="dot"></span>
-              <span>GDPR &amp; &sect;132 BAO / &sect;147 AO compliant</span>
-              <span class="dot"></span>
-              <span><b>10-year</b> retention</span>
+      <!-- ═══════════ HERO ═══════════ -->
+      <section class="hero">
+        <div class="hero-copy">
+          <div class="eyebrow">Receipt management by email</div>
+          <h1>
+            Take a photo. Send an email. <em>Done.</em>
+          </h1>
+          <p class="hero-sub">
+            Receipts vanish &mdash; usually when you need them most. Bonvio keeps them safe.
+            <b>No login. No app.</b>
+          </p>
+          <div class="hero-cta">
+            <a class="btn" href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800">
+              Start now &mdash; &euro;&thinsp;39.99&thinsp;/&thinsp;year <span class="arr">&rarr;</span>
+            </a>
+            <div class="trust-line">
+              <span>Built in Vienna</span><span class="sep"></span><span>Servers in the EU</span><span class="sep"></span><span>GDPR-compliant</span><span class="sep"></span><span><b>10-year</b> retention</span>
             </div>
+            <div class="founder-price-hint">Founding price &mdash; locked for life at &euro;&thinsp;39.99. From January 2027: <span class="was">&euro;&thinsp;49.99</span>.</div>
           </div>
+        </div>
 
-          <div class="scene" aria-hidden="true">
-            <div class="address-bubble">
-              Each customer gets their own address: <b>bonvio0123@bonvio.eu</b>
-            </div>
-            <div class="receipt receipt-a">
-              <div class="perf-top"></div>
-              <div class="head">SUPERMARKET</div>
-              <div class="date">12.05.2026 &middot; 14:32</div>
-              <div class="rule"></div>
-              <div class="row"><span>&#9620;&#9620;&#9620;&#9620;&#9620;&#9620;&#9620;</span><span>&euro; &mdash;,&mdash;</span></div>
-              <div class="row"><span>&#9620;&#9620;&#9620;&#9620;&#9620;&#9620;&#9620;</span><span>&euro; &mdash;,&mdash;</span></div>
-              <div class="row"><span>&#9620;&#9620;&#9620;&#9620;&#9620;&#9620;&#9620;</span><span>&euro; &mdash;,&mdash;</span></div>
-              <div class="row"><span>&#9620;&#9620;&#9620;&#9620;&#9620;&#9620;&#9620;</span><span>&euro; &mdash;,&mdash;</span></div>
-              <div class="row"><span>&#9620;&#9620;&#9620;&#9620;&#9620;&#9620;&#9620;</span><span>&euro; &mdash;,&mdash;</span></div>
-              <div class="row"><span>&#9620;&#9620;&#9620;&#9620;&#9620;&#9620;&#9620;</span><span>&euro; &mdash;,&mdash;</span></div>
-              <div class="total"><span>TOTAL</span><span>&euro; 42.80</span></div>
-              <div class="perf-bot"></div>
-            </div>
-            <div class="receipt receipt-b">
-              <div class="perf-top"></div>
-              <div class="head">PETROL STATION</div>
-              <div class="date">28.04.2026 &middot; 09:12</div>
-              <div class="rule"></div>
-              <div class="row"><span>&#9620;&#9620;&#9620;&#9620;&#9620;</span><span>&euro; &mdash;,&mdash;</span></div>
-              <div class="row"><span>&#9620;&#9620;&#9620;&#9620;&#9620;</span><span>&euro; &mdash;,&mdash;</span></div>
-              <div class="row"><span>&#9620;&#9620;&#9620;&#9620;&#9620;</span><span>&euro; &mdash;,&mdash;</span></div>
-              <div class="total"><span>TOTAL</span><span>&euro; 65.40</span></div>
-              <div class="perf-bot"></div>
-            </div>
-            <div class="phone">
-              <div class="phone-screen">
-                <div class="status">
-                  <span>14:32</span>
-                  <span style="opacity:.6">&#9679;&#9679;&#9679;&#9679;  5G  &#9646;</span>
-                </div>
-                <div class="mail-header">
+        <div class="demo-stage" aria-label="Demo: send receipt by email, get confirmation back">
+          <div class="demo-glow"></div>
+          <div class="addr-tag">Your own address:<br><b>bonvio0123@bonvio.eu</b></div>
+          <div class="phone" id="demo-phone-en" data-phase="compose">
+            <div class="notch"></div>
+            <div class="phone-screen">
+              <div class="ios-status">
+                <span>14:32</span>
+                <span class="dots">&#9679;&#9679;&#9679; &nbsp;5G&nbsp; &#9646;</span>
+              </div>
+              <div class="screen screen-compose">
+                <div class="mailbar">
                   <span class="cancel">Cancel</span>
                   <span class="title">New Email</span>
                   <span class="send">Send</span>
                 </div>
-                <div class="mail-form">
-                  <div class="field"><span class="label">To:</span><span class="val">bonvio0123@bonvio.eu</span></div>
-                  <div class="field"><span class="label">Subject:</span><span class="val dim">#lunch</span></div>
+                <div class="mailfields">
+                  <div class="field"><span class="k">To</span><span class="v">bonvio0123@bonvio.eu</span></div>
+                  <div class="field"><span class="k">Subject</span><span class="v tag">#lunch</span></div>
                 </div>
                 <div class="attach">
-                  <div class="icon">JPG</div>
-                  <div class="meta">
-                    <div class="name">receipt_12_05.jpg</div>
-                    <div class="size">1.4 MB &middot; Just taken</div>
+                  <div class="thumb">
+                    <div class="t-h">GASTHAUS ZUR POST</div>
+                    <div class="t-r"></div>
+                    <div class="t-row"><span>Daily special</span><span>13.90</span></div>
+                    <div class="t-row"><span>Apple juice</span><span>3.80</span></div>
+                    <div class="t-row"><span>Espresso</span><span>2.60</span></div>
+                    <div class="t-tot"><span>TOTAL</span><span>&euro; 42.80</span></div>
+                  </div>
+                  <div class="a-meta">
+                    <div class="a-name">receipt_12_05.jpg</div>
+                    <div class="a-size">1.4 MB &middot; Just taken</div>
                   </div>
                 </div>
-                <div class="toast">
-                  <span class="check" aria-hidden="true">&#10003;</span>
-                  <span>Saved in <b style="font-weight:600">Bonvio</b> &middot; May 2026</span>
+                <div class="compose-hint">Tap Send &mdash; that's it</div>
+              </div>
+              <svg class="plane" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/>
+              </svg>
+              <div class="screen screen-confirm">
+                <div class="confirm-inner">
+                  <div class="confirm-brand"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAYAAABV7bNHAAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAASKADAAQAAAABAAAASAAAAACQMUbvAAAUgklEQVR4AZVbC6xmVXXe9zl3ZnSG11BgGJhhwNYGO4Ki+KQ0mKZpEyktTUNqa5qaNqYaE0wabHzFiImkiRJNTNTYYm18kyIMFIpt0qYtIm+C1rYwL9QBhmFgZu687r2ub669zl/RQ57Za++1vu9be5/zl/pvgxVqPnRrJJG+GxUogZ9XRVKQ4bRdJyHWKqQXqxvCi5yBhm80JjE2APjBcpW5oFU3M40gWF6jAQSUEFJBkDAfBpL/U0DJCi+5U4k+l4ACkl1kFQGTISaS1MVRiKTsT+CdCvVNq7KgJgBr8MAiAAAA=" alt="">Bonvio &middot; Confirmed</div>
+                  <div class="confirm-check" aria-hidden="true">&#10003;</div>
+                  <div class="confirm-head">Saved.</div>
+                  <div class="confirm-sub">Recognised and filed &middot; May 2026</div>
+                  <div class="extract">
+                    <div class="x"><span class="xk">Merchant</span><span class="xv">Gasthaus zur Post</span></div>
+                    <div class="x"><span class="xk">Date</span><span class="xv">12.05.2026</span></div>
+                    <div class="x"><span class="xk">VAT</span><span class="xv">&euro; 7.13</span></div>
+                    <div class="x total"><span class="xk">Amount</span><span class="xv">&euro; 42.80</span></div>
+                  </div>
+                  <div class="confirm-foot">Reply came back automatically</div>
                 </div>
               </div>
             </div>
           </div>
-        </section>
+          <div class="demo-caption">
+            <div class="c-main">In seconds.</div>
+            <div class="c-sub">Without doing anything else.</div>
+          </div>
+        </div>
+      </section>
 
-        <section id="problem">
-          <div class="section-eyebrow"><span class="num">01</span> &mdash; The Problem</div>
-          <h2 class="section-title">Receipts disappear. Exactly when you need them.</h2>
-          <ol class="warum-list">
-            <li>
-              <div class="warum-num">A</div>
-              <div class="warum-text">In March you're hunting for what you tossed in January.</div>
-            </li>
-            <li>
-              <div class="warum-num">B</div>
-              <div class="warum-text">Warranty lost because the receipt is lost.</div>
-            </li>
-            <li>
-              <div class="warum-num">C</div>
-              <div class="warum-text">Your accountant bills you for hours of paper-sorting.</div>
-            </li>
-            <li>
-              <div class="warum-num">D</div>
-              <div class="warum-text">Claim back your tax &mdash; if only you still had the receipt.</div>
-            </li>
-          </ol>
-        </section>
+      <!-- ═══════════ PAIN BEAT ═══════════ -->
+      <section class="pain reveal" aria-label="Bonvio · The Problem">
+        <div class="marg">The Problem</div>
+        <blockquote>
+          In March you search for what you <span class="em-mark">threw away in January.</span>
+        </blockquote>
+      </section>
 
-        <section id="how" class="ink">
-          <div class="section-eyebrow"><span class="num">02</span> &mdash; How it works</div>
-          <h2 class="section-title">Three steps from receipt to organised archive.</h2>
-          <p class="section-intro">
-            You don't need new software. Bonvio runs in the email inbox you
-            already use.
-          </p>
+      <!-- ═══════════ VILLAIN CONTRAST ═══════════ -->
+      <section class="sec" id="why">
+        <div class="sec-head reveal">
+          <div class="eyebrow">The Difference</div>
+          <h2 class="sec-title">Others give you a system. <em>Bonvio gives you an address.</em></h2>
+        </div>
+        <div class="contrast-grid reveal">
+          <div class="col col-them">
+            <div class="col-tag">The others</div>
+            <h3 class="col-h">A portal you have to log into.</h3>
+            <ul class="them-list">
+              <li><span class="b">01</span><span>Create an account, remember a password, install an app.</span></li>
+              <li><span class="b">02</span><span>A dashboard you need to learn before it helps you.</span></li>
+              <li><span class="b">03</span><span>Your data sits in their system &mdash; in their format.</span></li>
+              <li><span class="b">04</span><span>Setup through your accountant. Training. Updates.</span></li>
+              <li><span class="b">05</span><span>Monthly fee for features you never open.</span></li>
+            </ul>
+            <div class="them-foot">Powerful. And that's exactly why it's hard.</div>
+          </div>
+          <div class="col col-us">
+            <div class="col-tag">Bonvio</div>
+            <p class="us-line">One email address.</p>
+            <div class="us-mail">bonvio0123@bonvio.eu</div>
+            <p class="us-foot">
+              No portal, no dashboard, nothing to learn.
+              You use the inbox you already have &mdash;
+              <b>your receipts belong to you, exportable in seconds.</b>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════ HOW IT WORKS ═══════════ -->
+      <section class="sec" id="how">
+        <div class="how reveal">
+          <div class="eyebrow">How it works</div>
+          <h2 class="sec-title">Three steps. That's all.</h2>
+          <p class="sec-intro">No new software. Bonvio runs in the email inbox you already use.</p>
 
           <div class="steps">
             <div class="step">
-              <div class="step-num">Step 01 &middot; Set up</div>
-              <h3 class="step-title">Your personal Bonvio address</h3>
-              <p class="step-body">
-                You get your own email address at Bonvio &mdash; something like
-                bonvio0123@bonvio.eu. Save it to your contacts &mdash; done. No login,
-                no password.
-              </p>
+              <div class="step-label">01 &middot; Photo</div>
+              <h3 class="step-word">Photo.</h3>
+              <p class="step-body">Snap the receipt with your phone &mdash; any language, any format. PDFs? Just photograph the screen.</p>
             </div>
-
             <div class="step">
-              <div class="step-num">Step 02 &middot; Send</div>
-              <h3 class="step-title">Photo. Email. Stored.</h3>
-              <p class="step-body">
-                Photograph the receipt, email it to your address &mdash; in any language.
-                PDFs? Just photograph them off the screen. We extract date, vendor,
-                amount and VAT automatically.
-              </p>
-              <ul class="step-details">
-                <li>Hashtag in subject: #glasses, #tax, #car</li>
-                <li>Payment method as a tag: #cash, #card, #company</li>
-                <li>Mileage &amp; per diems by email: #km 47, #di&auml;t 8</li>
-                <li>Confirmation with all the details comes back</li>
-              </ul>
+              <div class="step-label">02 &middot; Email</div>
+              <h3 class="step-word">Email.</h3>
+              <p class="step-body">Send it to your Bonvio address. We read date, merchant, amount and VAT automatically and confirm by return email.</p>
             </div>
-
             <div class="step">
-              <div class="step-num">Step 03 &middot; Retrieve</div>
-              <h3 class="step-title">Send EXPORT, get a ZIP.</h3>
-              <p class="step-body">
-                Write &bdquo;EXPORT" to your Bonvio address &mdash; you'll get all receipts as
-                a ZIP plus an accountant-ready CSV in your inbox.
-              </p>
-              <ul class="step-details">
-                <li>EXPORT Q1 / 2025 &mdash; by period</li>
-                <li>EXPORT GLASSES &mdash; by category</li>
-                <li>EXPORT [vendor] &mdash; by vendor</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        <section id="who">
-          <div class="section-eyebrow"><span class="num">03</span> &mdash; Who it's for</div>
-          <h2 class="section-title">Built for the self-employed. Loved by anyone who's done with the mess.</h2>
-
-          <div class="audience">
-            <div class="audience-card">
-              <span class="audience-tag">Self-employed</span>
-              <h3 class="audience-title">Freelancers &amp; Einzelunternehmer</h3>
-              <p class="audience-body">
-                No accounting software. No new app. Your accountant gets a clean CSV
-                at year-end &mdash; all you do is take a photo.
-                Log mileage and per diems the same way: #km 47, #di&auml;t 8 &mdash; Bonvio calculates the amount automatically using Austrian rates.
-              </p>
-            </div>
-            <div class="audience-card">
-              <span class="audience-tag">Club</span>
-              <h3 class="audience-title">Clubs &amp; small businesses</h3>
-              <p class="audience-body">
-                You think in events and projects, not receipts. Bonvio archives quietly
-                in the background while you focus on what matters.
-              </p>
-            </div>
-            <div class="audience-card">
-              <span class="audience-tag">Organised</span>
-              <h3 class="audience-title">People who just like things tidy</h3>
-              <p class="audience-body">
-                When the shoebox isn't cutting it anymore &mdash; and a new app is too much.
-                Just email it. We handle the rest.
-              </p>
+              <div class="step-label">03 &middot; Done</div>
+              <h3 class="step-word">Done.</h3>
+              <p class="step-body">Sorted and stored. Whenever you need it, write EXPORT &mdash; and get everything back as a clean file.</p>
             </div>
           </div>
 
-          <div class="inline-cta">
-            <div class="inline-text">
-              Sounds like you? <b>Get started today.</b><br>
-              &euro;39.99&thinsp;/&thinsp;year &mdash; everything included, active immediately.
-            </div>
-            <div class="inline-form">
-              <a class="buy-btn" href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800">Start now &rarr;</a>
-            </div>
+          <div class="travel">
+            <span class="t-mono">#km 47</span>
+            <span class="t-mono">#mileage 09:00-17:30</span>
+            <span class="t-text"><b>Mileage and daily allowances</b> work the same way &mdash; by email, no attachment needed. Bonvio calculates the amount automatically based on Austrian rates.</span>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section id="nope">
-          <div class="section-eyebrow"><span class="num">04</span> &mdash; What you don't need</div>
-          <h2 class="section-title">No app. No login. No new account.</h2>
-          <p class="section-intro">
-            Bonvio is deliberately small. Email is all you need &mdash; no new tool,
-            no new account, no extra friction.
-          </p>
+      <!-- ═══════════ WHAT IT GIVES BACK ═══════════ -->
+      <section class="sec" id="export-en">
+        <div class="sec-head reveal">
+          <div class="eyebrow">What you get back</div>
+          <h2 class="sec-title">Month-end, tax time, or right now &mdash; <em>everything as a clean file.</em></h2>
+          <p class="sec-intro">Write EXPORT to your address and get a ZIP with all receipts plus a ready-to-use CSV. Works with any accountant, any software.</p>
+        </div>
 
-          <div class="nope">
-            <div class="nope-item"><span class="nope-cross">&times;</span><span class="nope-text">No app</span></div>
-            <div class="nope-item"><span class="nope-cross">&times;</span><span class="nope-text">No login</span></div>
-            <div class="nope-item"><span class="nope-cross">&times;</span><span class="nope-text">No password</span></div>
-            <div class="nope-item"><span class="nope-cross">&times;</span><span class="nope-text">No software</span></div>
-            <div class="nope-item"><span class="nope-cross">&times;</span><span class="nope-text">No training</span></div>
-            <div class="nope-item"><span class="nope-cross">&times;</span><span class="nope-text">No updates</span></div>
+        <div class="export-grid">
+          <div class="reveal">
+            <ul class="export-when">
+              <li><span class="ew-k">EXPORT Q1 2026</span><span class="ew-v">Everything from a time period.</span></li>
+              <li><span class="ew-k">EXPORT glasses</span><span class="ew-v">Everything from a category.</span></li>
+              <li><span class="ew-k">EXPORT [merchant]</span><span class="ew-v">Everything from one merchant.</span></li>
+            </ul>
+            <p class="export-foot">Original photos in standard formats accepted by any tax authority or accountant. <b>You are never locked in to Bonvio</b> to access your receipts.</p>
           </div>
-          <p class="nope-foot">
-            <b>What you need:</b> your email. That's it. Bonvio lives quietly in
-            your inbox &mdash; and does exactly what you'd expect, no learning curve.
-          </p>
-        </section>
 
-        <section id="price">
-          <div class="section-eyebrow"><span class="num">05</span> &mdash; Price</div>
-          <h2 class="section-title" style="max-width: 24ch;">One price. <em>No surprises.</em></h2>
-          <p class="section-intro">
-            One address, all your receipts, all features included.
-            No ads, no tracking, no sharing of your data.
-          </p>
+          <div class="file-card reveal" aria-hidden="true">
+            <div class="file-top">
+              <span class="dot" style="background:#E5645A"></span>
+              <span class="dot" style="background:#E7B14C"></span>
+              <span class="dot" style="background:#5BAD6A"></span>
+              <span class="name">bonvio_export_Q1-2026.csv</span>
+            </div>
+            <div class="file-rows">
+              <div class="file-row head"><span>Merchant</span><span>Date</span><span class="amt">Amount</span></div>
+              <div class="file-row"><span>Gasthaus zur Post</span><span>12.05.</span><span class="amt">42.80</span></div>
+              <div class="file-row"><span>OMV Petrol</span><span>28.04.</span><span class="amt">65.40</span></div>
+              <div class="file-row"><span>Pearle Optician</span><span>19.04.</span><span class="amt">189.00</span></div>
+              <div class="file-row"><span>Mileage 47&thinsp;km</span><span>11.04.</span><span class="amt">19.74</span></div>
+              <div class="file-row"><span>BIPA Drugstore</span><span>03.04.</span><span class="amt">24.15</span></div>
+            </div>
+            <div class="file-foot"><span>5 receipts &middot; 1 ZIP</span><span>TOTAL &euro; 341.09</span></div>
+          </div>
+        </div>
+      </section>
 
+      <!-- ═══════════ WHO IT'S FOR ═══════════ -->
+      <section class="sec" id="who">
+        <div class="sec-head reveal">
+          <div class="eyebrow">Who it's for</div>
+          <h2 class="sec-title">Built for freelancers. Loved by anyone tired of the chaos.</h2>
+        </div>
+        <div class="audience reveal">
+          <div class="audience-card">
+            <span class="audience-tag">Self-employed</span>
+            <h3 class="audience-title">Freelancers &amp; sole traders</h3>
+            <p class="audience-body">No accounting software. No new app. Your accountant gets a ready CSV at year end &mdash; all you do is take a photo. Mileage and daily allowances work the same way: <code>#km 47</code>, <code>#mileage 8h</code> &mdash; Bonvio calculates the amount automatically.</p>
+          </div>
+          <div class="audience-card">
+            <span class="audience-tag">Organisation</span>
+            <h3 class="audience-title">Clubs &amp; small businesses</h3>
+            <p class="audience-body">You think in events and projects, not receipts. Bonvio archives quietly in the background while you focus on what matters.</p>
+          </div>
+          <div class="audience-card">
+            <span class="audience-tag">Tidy</span>
+            <h3 class="audience-title">Anyone who loves order</h3>
+            <p class="audience-body">When the shoebox isn't enough &mdash; and a new app is too much. Just email, we handle the rest.</p>
+          </div>
+        </div>
+        <div class="inline-cta reveal">
+          <div class="inline-cta-text">Sound like you? <b>Get started.</b><br>&euro;&thinsp;39.99&thinsp;/&thinsp;year &mdash; everything included, active immediately.</div>
+          <a class="btn" href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800">Start now &rarr;</a>
+        </div>
+      </section>
+
+      <!-- ═══════════ NO APP ═══════════ -->
+      <section class="sec" id="noapp">
+        <div class="sec-head reveal">
+          <div class="eyebrow">What you don't need</div>
+          <h2 class="sec-title">No app. No login. <em>No new account.</em></h2>
+          <p class="sec-intro">Bonvio is intentionally minimal. Email is enough &mdash; no new tool, no new account, no extra effort.</p>
+        </div>
+        <div class="nope reveal">
+          <div class="nope-item"><span class="nope-cross">&times;</span><span class="nope-text">No app</span></div>
+          <div class="nope-item"><span class="nope-cross">&times;</span><span class="nope-text">No login</span></div>
+          <div class="nope-item"><span class="nope-cross">&times;</span><span class="nope-text">No password</span></div>
+          <div class="nope-item"><span class="nope-cross">&times;</span><span class="nope-text">No software</span></div>
+          <div class="nope-item"><span class="nope-cross">&times;</span><span class="nope-text">No training</span></div>
+          <div class="nope-item"><span class="nope-cross">&times;</span><span class="nope-text">No updates</span></div>
+        </div>
+        <p class="nope-foot reveal"><b>What you need:</b> your email. That's it. Bonvio lands in your inbox &mdash; and does exactly what you'd expect.</p>
+      </section>
+
+      <!-- ═══════════ FOUNDER ═══════════ -->
+      <section class="sec" id="founder">
+        <div class="founder reveal">
+          <div class="founder-photo" aria-hidden="true">NA</div>
+          <div>
+            <p class="founder-quote">
+              &ldquo;I&rsquo;m Niko. I build Bonvio alone &mdash; for people who&rsquo;d rather <em>do their work</em> than learn accounting software.&rdquo;
+            </p>
+            <div class="founder-name">Niko A. &middot; <b>Founder</b> &middot; Vienna, 2026</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════ PRICING ═══════════ -->
+      <section class="sec" id="price">
+        <div class="sec-head reveal" style="text-align:center; max-width:none;">
+          <div class="eyebrow" style="justify-content:center;">Price</div>
+          <h2 class="sec-title">One price. <em>No surprises.</em></h2>
+        </div>
+        <div class="price-wrap reveal">
           <div class="price-card">
             <div class="stamp">Founding price</div>
-            <div class="price-top-label">Yearly</div>
-            <div class="price-amount">&euro; 39.99</div>
-            <div class="price-period">12 months &middot; prepaid</div>
-            <div class="price-founding">
+            <div class="price-period-top">Annual &middot; Paid upfront</div>
+            <div class="price-amount">&euro;&thinsp;39.99<span class="yr"> / year</span></div>
+            <p class="price-note">
               <b>Founding price &mdash; locked for life.</b><br>
-              From January 2027: <span class="was">&euro; 49.99</span>. Start now and you pay &euro; 39.99 forever.
-            </div>
-            <div class="price-coffee">Less than a coffee a month &mdash; <b>&euro; 3.33</b>.</div>
+              From January 2027: <span class="was">&euro;&thinsp;49.99</span>. Start now and pay &euro;&thinsp;39.99 forever.
+            </p>
             <ul class="price-includes">
-              <li>Personal Bonvio address</li>
-              <li>All your receipts</li>
-              <li>Automatic extraction of date, amount and VAT</li>
-              <li>Hashtag categorisation &amp; vendor search</li>
-              <li>Export for your accountant</li>
+              <li>Your personal Bonvio address</li>
+              <li>All your receipts, automatically recognised</li>
+              <li>Hashtag categories &amp; merchant search</li>
+              <li>Mileage &amp; daily allowances by email</li>
+              <li>Export for your accountant &mdash; any time</li>
               <li>10-year retention (&sect;132 BAO / &sect;147 AO)</li>
             </ul>
-            <a class="buy-btn" href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800">Start now &rarr;</a>
+            <a class="btn" href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800">Start now <span class="arr">&rarr;</span></a>
+            <div class="price-sub">No setup &middot; cancel any time</div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section class="pullquote" aria-label="Bonvio &middot; The promise">
-          <span class="marginalia">Bonvio &middot; The promise</span>
-          <blockquote>
-            Snap it. Forget it.<br>
-            <em class="em-mark">Bonvio remembers them all.</em>
-          </blockquote>
-        </section>
+      <!-- ═══════════ PULL-QUOTE ═══════════ -->
+      <section class="pullquote reveal">
+        <span class="pullquote-label">Bonvio &middot; The promise</span>
+        <blockquote>Snap. Forget.<br><em>Bonvio remembers everything.</em></blockquote>
+      </section>
 
-        <section id="security">
-          <div class="section-eyebrow"><span class="num">06</span> &mdash; Security &amp; Privacy</div>
-          <div class="security-stamp-wrap" aria-hidden="true">
-            <div class="wax-stamp">
-              <span class="top">GDPR</span>
-              <span class="rule"></span>
-              <span class="bot">compliant</span>
-            </div>
+      <!-- ═══════════ SECURITY ═══════════ -->
+      <section class="sec" id="security">
+        <div class="sec-head reveal">
+          <div class="eyebrow">Security &amp; Privacy</div>
+          <div class="security-stamp-wrap reveal" aria-hidden="true">
+            <div class="wax-stamp"><span class="top">GDPR</span><span class="bot">compliant</span></div>
           </div>
-          <h2 class="section-title">Your receipts belong to you. Period.</h2>
+          <h2 class="sec-title">Your receipts belong to you. <em>Full stop.</em></h2>
+        </div>
+        <ul class="security-section reveal">
+          <li><span class="security-num">01</span><span class="security-text"><b>Encrypted storage</b> in the EU &mdash; servers in Frankfurt, Germany.</span></li>
+          <li><span class="security-num">02</span><span class="security-text"><b>No ads. No tracking. No sharing</b> of your data with third parties &mdash; ever.</span></li>
+          <li><span class="security-num">03</span><span class="security-text"><b>10-year retention</b> (&sect;132 BAO&thinsp;/&thinsp;&sect;147 AO) &mdash; the legal minimum for business records in Austria.</span></li>
+          <li><span class="security-num">04</span><span class="security-text"><b>GDPR-compliant.</b> Data export or account deletion available on request, subject to statutory retention obligations.</span></li>
+        </ul>
+      </section>
 
-          <ul class="security">
-            <li>
-              <span class="security-num">01</span>
-              <span class="security-text">
-                <b>Encrypted storage</b> in Frankfurt, Germany &mdash;
-                on EU servers.
-              </span>
-            </li>
-            <li>
-              <span class="security-num">02</span>
-              <span class="security-text">
-                <b>No advertising. No tracking. No sharing</b> of your data
-                with third parties &mdash; ever.
-              </span>
-            </li>
-            <li>
-              <span class="security-num">03</span>
-              <span class="security-text">
-                <b>10-year retention</b> (&sect;132 BAO / &sect;147 AO) &mdash; the legal minimum
-                for receipts in Austria.
-              </span>
-            </li>
-            <li>
-              <span class="security-num">04</span>
-              <span class="security-text">
-                <b>GDPR compliant.</b> Data export or account deletion
-                any time on request, subject to any statutory retention obligations.
-              </span>
-            </li>
-          </ul>
-        </section>
-
-        <section id="faq">
-          <div class="section-eyebrow"><span class="num">07</span> &mdash; Frequently asked</div>
-          <h2 class="section-title">Everything you might be wondering.</h2>
-          <p class="section-intro">
-            Still curious? Write to <a href="mailto:hello@bonvio.eu" style="color:var(--rust);text-decoration:none;font-weight:600;border-bottom:1px solid rgba(31,67,50,0.3);">hello@bonvio.eu</a> &mdash; we'll get back to you.
-          </p>
-
-          <div class="faq">
-            <div class="faq-item">
-              <button class="faq-question" type="button" aria-expanded="false" aria-controls="a-en-1">
-                <span>Do I need a special app or software?</span>
-                <span class="faq-icon" aria-hidden="true"></span>
-              </button>
-              <div class="faq-answer-wrap"><div class="faq-answer-inner">
-                <div class="faq-answer" id="a-en-1" role="region">
-                  No. You use the email app you already have &mdash; Apple Mail, Gmail, Outlook, anything. Bonvio is just an address you send photos to. <b>Nothing to install, no login, no updates.</b>
-                </div>
-              </div></div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question" type="button" aria-expanded="false" aria-controls="a-en-2">
-                <span>How do I send in a receipt?</span>
-                <span class="faq-icon" aria-hidden="true"></span>
-              </button>
-              <div class="faq-answer-wrap"><div class="faq-answer-inner">
-                <div class="faq-answer" id="a-en-2" role="region">
-                  Simple: take a <b>normal photo with your phone</b> and email it to your Bonvio address &mdash; done. No file format to worry about, your phone's camera app is all you need. We extract date, vendor, total and VAT automatically and send you a confirmation back. Optional: add a hashtag in the subject for anything that matters to you &mdash; category (<span style="font-family:monospace">#glasses</span>), project (<span style="font-family:monospace">#renovation</span>) or payment method (<span style="font-family:monospace">#cash</span>, <span style="font-family:monospace">#company</span>).
-                </div>
-              </div></div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question" type="button" aria-expanded="false" aria-controls="a-en-3">
-                <span>How do I find a specific receipt later?</span>
-                <span class="faq-icon" aria-hidden="true"></span>
-              </button>
-              <div class="faq-answer-wrap"><div class="faq-answer-inner">
-                <div class="faq-answer" id="a-en-3" role="region">
-                  Just email <code>EXPORT glasses</code> or <code>EXPORT Q1 2026</code> to your Bonvio address. You'll receive a ZIP with the matching receipts plus a clean CSV overview &mdash; sorted by period, category or vendor.
-                </div>
-              </div></div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question" type="button" aria-expanded="false" aria-controls="a-en-4">
-                <span>Is there a limit on receipts?</span>
-                <span class="faq-icon" aria-hidden="true"></span>
-              </button>
-              <div class="faq-answer-wrap"><div class="faq-answer-inner">
-                <div class="faq-answer" id="a-en-4" role="region">
-                  For everyday use: <b>no, no limit</b>. In the background there's a soft cap at around 3,000 receipts a year &mdash; more than private people, freelancers or small businesses normally have. If you do go beyond, we'll reach out personally. No automatic upgrades, no surprises on your bill.
-                </div>
-              </div></div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question" type="button" aria-expanded="false" aria-controls="a-en-5">
-                <span>How does my accountant get the receipts?</span>
-                <span class="faq-icon" aria-hidden="true"></span>
-              </button>
-              <div class="faq-answer-wrap"><div class="faq-answer-inner">
-                <div class="faq-answer" id="a-en-5" role="region">
-                  All your receipts arrive in your inbox as <b>one ready-made package</b> &mdash; the photos and a clean overview, sorted and ready for your accountant. Just forward the email.
-                </div>
-              </div></div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question" type="button" aria-expanded="false" aria-controls="a-en-6">
-                <span>How secure is my data?</span>
-                <span class="faq-icon" aria-hidden="true"></span>
-              </button>
-              <div class="faq-answer-wrap"><div class="faq-answer-inner">
-                <div class="faq-answer" id="a-en-6" role="region">
-                  All receipts are <b>encrypted and stored on EU servers in Frankfurt.</b> No ads, no tracking, no third-party sharing &mdash; GDPR-compliant and archived for 10 years (&sect;132 BAO / &sect;147 AO).
-                </div>
-              </div></div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question" type="button" aria-expanded="false" aria-controls="a-en-7">
-                <span>Does it work in other languages?</span>
-                <span class="faq-icon" aria-hidden="true"></span>
-              </button>
-              <div class="faq-answer-wrap"><div class="faq-answer-inner">
-                <div class="faq-answer" id="a-en-7" role="region">
-                  Yes. Bonvio reads receipts in German, English and many more languages &mdash; including CEE languages like Polish, Czech, Hungarian, Slovak, Slovenian, Croatian and Romanian. The original receipt is stored exactly as you sent it.
-                </div>
-              </div></div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question" type="button" aria-expanded="false" aria-controls="a-en-km">
-                <span>Can I track mileage or per diems?</span>
-                <span class="faq-icon" aria-hidden="true"></span>
-              </button>
-              <div class="faq-answer-wrap"><div class="faq-answer-inner">
-                <div class="faq-answer" id="a-en-km" role="region">
-                  Yes &mdash; both work today, directly by email. Send an email <em>without an attachment</em> to your Bonvio address:<br><br>
-                  <b>Mileage (Kilometergeld):</b> subject <span style="font-family:monospace">#km 47</span> &mdash; Bonvio calculates 47&thinsp;&times;&thinsp;&euro;&thinsp;0.42&thinsp;=&thinsp;&euro;&thinsp;19.74 Austrian rate &sect;10 EStG AT and stores it automatically.<br><br>
-                  <b>Per diem (Tagespauschale):</b> subject <span style="font-family:monospace">#di&auml;t 8</span> or <span style="font-family:monospace">#di&auml;t 09:00-17:30</span> &mdash; Bonvio applies the flat rate under &sect;26(4) EStG (&lt;&thinsp;3h&thinsp;=&thinsp;&euro;&thinsp;0 | 3&ndash;12h&thinsp;=&thinsp;&euro;&thinsp;13.20 | &gt;&thinsp;12h&thinsp;=&thinsp;&euro;&thinsp;26.40) and confirms by email.<br><br>
-                  Both entries appear automatically in your EXPORT for the accountant.
-                </div>
-              </div></div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question" type="button" aria-expanded="false" aria-controls="a-en-9">
-                <span>How can I be sure my receipts stay accessible for the full 10&nbsp;years?</span>
-                <span class="faq-icon" aria-hidden="true"></span>
-              </button>
-              <div class="faq-answer-wrap"><div class="faq-answer-inner">
-                <div class="faq-answer" id="a-en-9" role="region">
-                  You are always in control of your data. Via your personal export link you can download a complete ZIP at any time &mdash; original files in standard formats that any tax authority or accountant will accept. You never need Bonvio to be running in order to show your receipts.<br><br>
-                  On top of that, our <a href="/agb-en.html">Terms of Service</a> commit us to a <b>minimum 90-day notice period</b> before any material change to the service &mdash; with a guaranteed export window and a pro-rata refund. No nasty surprises.
-                </div>
-              </div></div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question" type="button" aria-expanded="false" aria-controls="a-en-8">
-                <span>How does cancellation work?</span>
-                <span class="faq-icon" aria-hidden="true"></span>
-              </button>
-              <div class="faq-answer-wrap"><div class="faq-answer-inner">
-                <div class="faq-answer" id="a-en-8" role="region">
-                  Bonvio is an annual membership &mdash; &euro;&nbsp;39.99 for 12&nbsp;months. That's the <b>founding price</b>: from January 2027 Bonvio costs &euro;&nbsp;49.99, but anyone who starts now pays &euro;&nbsp;39.99 forever &mdash; in every following year too. If you later don't want to continue, you cancel the auto-renewal. <b>A short email to your Bonvio address is enough</b> &mdash; we'll export or delete your data on request.
-                </div>
-              </div></div>
-            </div>
+      <!-- ═══════════ FAQ ═══════════ -->
+      <section class="sec" id="faq">
+        <div class="sec-head reveal">
+          <div class="eyebrow">Frequently asked questions</div>
+          <h2 class="sec-title">Everything you want to know.</h2>
+          <p class="sec-intro">Still a question? Write to <a href="mailto:hello@bonvio.eu" style="color:var(--green);text-decoration:none;border-bottom:1px solid rgba(31,67,50,0.3);">hello@bonvio.eu</a> &mdash; we'll get back to you.</p>
+        </div>
+        <div class="faq reveal">
+          <div class="faq-item">
+            <button class="faq-q" type="button" aria-expanded="false"><span>Do I need a special app or software?</span><span class="faq-icon" aria-hidden="true"></span></button>
+            <div class="faq-wrap"><div class="faq-inner"><div class="faq-a">No. You use your normal email app &mdash; Apple Mail, Gmail, Outlook, anything. Bonvio is just an address you send photos to. <b>No download, no login, no update.</b></div></div></div>
           </div>
-        </section>
+          <div class="faq-item">
+            <button class="faq-q" type="button" aria-expanded="false"><span>How do I send a receipt?</span><span class="faq-icon" aria-hidden="true"></span></button>
+            <div class="faq-wrap"><div class="faq-inner"><div class="faq-a">Simple: <b>take a normal photo with your phone</b>, email it to your Bonvio address &mdash; done. We extract date, merchant, amount and VAT automatically and send a confirmation back. Optional: add a hashtag in the subject for anything important &mdash; category (<code>#glasses</code>), project (<code>#renovation</code>) or payment method (<code>#cash</code>, <code>#company-card</code>).</div></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button" aria-expanded="false"><span>How do I find a specific receipt later?</span><span class="faq-icon" aria-hidden="true"></span></button>
+            <div class="faq-wrap"><div class="faq-inner"><div class="faq-a">Just write <code>EXPORT glasses</code> or <code>EXPORT Q1 2026</code> to your Bonvio address. You get a ZIP with all matching receipts and a clean CSV &mdash; sorted by period, category or merchant.</div></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button" aria-expanded="false"><span>Can I track mileage and daily allowances too?</span><span class="faq-icon" aria-hidden="true"></span></button>
+            <div class="faq-wrap"><div class="faq-inner"><div class="faq-a">Yes &mdash; both work by email with no attachment. <b>Mileage:</b> subject <code>#km 47</code> &mdash; Bonvio calculates 47&thinsp;&times;&thinsp;&euro;&thinsp;0.42&thinsp;=&thinsp;&euro;&thinsp;19.74 (Austrian rate, &sect;10 EStG) and stores it automatically. <b>Daily allowance:</b> subject <code>#mileage 8h</code> or <code>#mileage 09:00-17:30</code> &mdash; Bonvio works out the allowance under &sect;26 Z&thinsp;4 EStG and confirms by email. Both appear automatically in your EXPORT.</div></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button" aria-expanded="false"><span>How secure is my data?</span><span class="faq-icon" aria-hidden="true"></span></button>
+            <div class="faq-wrap"><div class="faq-inner"><div class="faq-a">All receipts are <b>encrypted on EU servers in Frankfurt</b>. No ads, no tracking, no sharing with third parties &mdash; GDPR-compliant and retained for 10 years under &sect;132 BAO / &sect;147 AO.</div></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button" aria-expanded="false"><span>How do I know my receipts will be accessible for 10&nbsp;years?</span><span class="faq-icon" aria-hidden="true"></span></button>
+            <div class="faq-wrap"><div class="faq-inner"><div class="faq-a">You are always in control. Via your personal export link you can download a complete ZIP at any time &mdash; original photos in standard formats accepted by any authority. We also commit in our <a href="/agb.html">Terms</a> to a <b>minimum 90-day notice period</b> before any material change &mdash; with a guaranteed export window and pro-rata refund.</div></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button" aria-expanded="false"><span>How do I cancel?</span><span class="faq-icon" aria-hidden="true"></span></button>
+            <div class="faq-wrap"><div class="faq-inner"><div class="faq-a">Bonvio is an annual membership &mdash; &euro;&nbsp;39.99 for 12&nbsp;months. That's the <b>founding price</b>: from January 2027 it's &euro;&nbsp;49.99, but if you start now you'll pay &euro;&nbsp;39.99 forever. If you don't want to continue, cancel the auto-renewal. <b>A short email to your Bonvio address is enough</b> &mdash; your data will be exported or deleted on request.</div></div></div>
+          </div>
+        </div>
+      </section>
 
-        <section class="cta-repeat">
-          <h2>No more chaos. <em>Just email it.</em></h2>
-          <p>
-            Bonvio is live. Founding price &euro;&thinsp;39.99&thinsp;/&thinsp;year &mdash; locked for life,
-            &euro;&thinsp;49.99 from January. No app, no login.
-          </p>
-          <a class="buy-btn" href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800">Start now &rarr;</a>
-        </section>
+      <!-- ═══════════ FINAL CTA ═══════════ -->
+      <section class="sec" style="padding-bottom: 0;">
+        <div class="final-cta reveal">
+          <h2>Other software wants you to become an accountant.<br>Bonvio wants you to <em>do your work.</em></h2>
+          <p>Bonvio is live. Founding price &euro;&thinsp;39.99&thinsp;/&thinsp;year &mdash; locked for life, &euro;&thinsp;49.99 from January. No app, no login.</p>
+          <a class="btn btn-light" href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800">Start now <span class="arr">&rarr;</span></a>
+        </div>
+      </section>
 
       </div><!-- /lang-en -->
+
 
     </main>
 
