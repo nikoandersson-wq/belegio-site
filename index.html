@@ -538,9 +538,8 @@
     }
     .founder-photo {
       width: 160px; height: 160px; flex: 0 0 160px; border-radius: 50%;
-      background: var(--green); color: var(--cream);
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--serif); font-size: 54px; font-weight: 500;
+      overflow: hidden; object-fit: cover;
+      display: block;
     }
     .founder-quote {
       font-family: var(--serif); font-weight: 400; font-size: clamp(22px, 2.5vw, 30px);
@@ -1042,7 +1041,7 @@
       <!-- ═══════════ FOUNDER ═══════════ -->
       <section class="sec" id="gruender">
         <div class="founder reveal">
-          <div class="founder-photo" aria-hidden="true">NA</div>
+          <img class="founder-photo" src="founder.jpg" alt="Niko Andersson, Gründer von Bonvio" width="160" height="160">
           <div>
             <p class="founder-quote">
               &bdquo;Ich bin Niko. Ich baue Bonvio allein &mdash; für Leute, die lieber <em>ihre Arbeit machen</em> als Buchhaltungssoftware lernen.&ldquo;
@@ -1415,7 +1414,7 @@
       <!-- ═══════════ FOUNDER ═══════════ -->
       <section class="sec" id="founder">
         <div class="founder reveal">
-          <div class="founder-photo" aria-hidden="true">NA</div>
+          <img class="founder-photo" src="founder.jpg" alt="Niko Andersson, Gründer von Bonvio" width="160" height="160">
           <div>
             <p class="founder-quote">
               &ldquo;I&rsquo;m Niko. I build Bonvio alone &mdash; for people who&rsquo;d rather <em>do their work</em> than learn accounting software.&rdquo;
