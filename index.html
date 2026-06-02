@@ -1628,7 +1628,7 @@
 
     // FAQ accordion — multi-open, smooth grid-row height
     (function () {
-      document.querySelectorAll('.faq-question').forEach(function (btn) {
+      document.querySelectorAll('.faq-q').forEach(function (btn) {
         btn.addEventListener('click', function () {
           var item = btn.closest('.faq-item');
           var open = item.classList.toggle('open');
@@ -1645,7 +1645,7 @@
           var first = section.querySelector('.faq-item');
           if (first && !first.classList.contains('open')) {
             first.classList.add('open');
-            var qbtn = first.querySelector('.faq-question');
+            var qbtn = first.querySelector('.faq-q');
             if (qbtn) qbtn.setAttribute('aria-expanded', 'true');
           }
         }
