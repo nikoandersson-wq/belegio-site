@@ -1579,31 +1579,29 @@
   </div>
 
   <script>
-    // Activate motion (opt-in: if JS fails or is disabled, stamps & pullquote
-    // stay visible in their resting state — never an invisible page).
     (function () {
-      document.documentElement.classList.add('motion-ready');
+      // Reveal all .reveal elements as they scroll into view
+      var revealEls = document.querySelectorAll('.reveal');
 
-      // ?motion=force overrides prefers-reduced-motion for previewing
-      var forceMotion = /[?&]motion=force/.test(location.search);
-      var reduce = !forceMotion && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      function showAll() {
+        revealEls.forEach(function (el) { el.classList.add('in'); });
+      }
 
-      if (forceMotion) document.documentElement.classList.add('force-motion');
-      var revealAll = function () {
-        document.querySelectorAll('.wax-stamp, .pullquote').forEach(function (el) { el.classList.add('is-in'); });
-      };
-      if (reduce || !('IntersectionObserver' in window)) { revealAll(); return; }
+      if (!('IntersectionObserver' in window)) { showAll(); return; }
+
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduce) { showAll(); return; }
 
       var io = new IntersectionObserver(function (entries) {
         entries.forEach(function (e) {
           if (e.isIntersecting) {
-            e.target.classList.add('is-in');
+            e.target.classList.add('in');
             io.unobserve(e.target);
           }
         });
-      }, { threshold: 0.35, rootMargin: '0px 0px -40px 0px' });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-      document.querySelectorAll('.wax-stamp, .pullquote').forEach(function (el) { io.observe(el); });
+      revealEls.forEach(function (el) { io.observe(el); });
     })();
   </script>
 
