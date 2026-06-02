@@ -501,10 +501,13 @@
     .file-top .name { margin-left: 8px; color: var(--ink); font-weight: 700; letter-spacing: 0.02em; }
     .file-rows { padding: 8px 0; }
     .file-row {
-      display: grid; grid-template-columns: 1.4fr 0.8fr 0.7fr; gap: 8px;
-      padding: 11px 20px; font-family: var(--mono); font-size: 12.5px; color: var(--ink);
+      display: grid; grid-template-columns: 1.4fr 0.6fr 0.6fr 0.6fr; gap: 6px;
+      padding: 11px 20px; font-family: var(--mono); font-size: 12px; color: var(--ink);
       border-bottom: 1px solid rgba(26,26,26,0.05);
     }
+    .file-row .vat { text-align: right; color: var(--muted); }
+    .file-row.km-row span:first-child { color: var(--green); }
+    .file-row.diat-row span:first-child { color: var(--green); }
     .file-row.head { color: var(--muted); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 10.5px; }
     .file-row:last-child { border-bottom: 0; }
     .file-row .amt { text-align: right; font-weight: 700; }
@@ -972,14 +975,15 @@
               <span class="name">bonvio_export_Q1-2026.csv</span>
             </div>
             <div class="file-rows">
-              <div class="file-row head"><span>Händler</span><span>Datum</span><span class="amt">Betrag</span></div>
-              <div class="file-row"><span>Gasthaus zur Post</span><span>12.05.</span><span class="amt">42,80</span></div>
-              <div class="file-row"><span>OMV Tankstelle</span><span>28.04.</span><span class="amt">65,40</span></div>
-              <div class="file-row"><span>Pearle Optik</span><span>19.04.</span><span class="amt">189,00</span></div>
-              <div class="file-row"><span>Kilometergeld 47&thinsp;km</span><span>11.04.</span><span class="amt">19,74</span></div>
-              <div class="file-row"><span>BIPA Drogerie</span><span>03.04.</span><span class="amt">24,15</span></div>
+              <div class="file-row head"><span>Händler / Typ</span><span>Datum</span><span class="amt">Betrag</span><span class="vat">MwSt</span></div>
+              <div class="file-row"><span>Gasthaus zur Post</span><span>12.05.</span><span class="amt">42,80</span><span class="vat">7,13</span></div>
+              <div class="file-row"><span>OMV Tankstelle</span><span>28.04.</span><span class="amt">65,40</span><span class="vat">10,90</span></div>
+              <div class="file-row"><span>Pearle Optik</span><span>19.04.</span><span class="amt">189,00</span><span class="vat">31,50</span></div>
+              <div class="file-row km-row"><span>#km 47</span><span>11.04.</span><span class="amt">19,74</span><span class="vat">—</span></div>
+              <div class="file-row diat-row"><span>#diät 09:00–17:30</span><span>08.04.</span><span class="amt">26,40</span><span class="vat">—</span></div>
+              <div class="file-row"><span>BIPA Drogerie</span><span>03.04.</span><span class="amt">24,15</span><span class="vat">4,03</span></div>
             </div>
-            <div class="file-foot"><span>5 Belege &middot; 1 ZIP</span><span>SUMME &euro; 341,09</span></div>
+            <div class="file-foot"><span>6 Einträge &middot; 1 ZIP</span><span>SUMME &euro; 367,49</span></div>
           </div>
         </div>
       </section>
@@ -1345,14 +1349,15 @@
               <span class="name">bonvio_export_Q1-2026.csv</span>
             </div>
             <div class="file-rows">
-              <div class="file-row head"><span>Merchant</span><span>Date</span><span class="amt">Amount</span></div>
-              <div class="file-row"><span>Gasthaus zur Post</span><span>12.05.</span><span class="amt">42.80</span></div>
-              <div class="file-row"><span>OMV Petrol</span><span>28.04.</span><span class="amt">65.40</span></div>
-              <div class="file-row"><span>Pearle Optician</span><span>19.04.</span><span class="amt">189.00</span></div>
-              <div class="file-row"><span>Mileage 47&thinsp;km</span><span>11.04.</span><span class="amt">19.74</span></div>
-              <div class="file-row"><span>BIPA Drugstore</span><span>03.04.</span><span class="amt">24.15</span></div>
+              <div class="file-row head"><span>Merchant / Type</span><span>Date</span><span class="amt">Amount</span><span class="vat">VAT</span></div>
+              <div class="file-row"><span>Gasthaus zur Post</span><span>12.05.</span><span class="amt">42.80</span><span class="vat">7.13</span></div>
+              <div class="file-row"><span>OMV Petrol</span><span>28.04.</span><span class="amt">65.40</span><span class="vat">10.90</span></div>
+              <div class="file-row"><span>Pearle Optician</span><span>19.04.</span><span class="amt">189.00</span><span class="vat">31.50</span></div>
+              <div class="file-row km-row"><span>#km 47</span><span>11.04.</span><span class="amt">19.74</span><span class="vat">—</span></div>
+              <div class="file-row diat-row"><span>#diät 09:00–17:30</span><span>08.04.</span><span class="amt">26.40</span><span class="vat">—</span></div>
+              <div class="file-row"><span>BIPA Drugstore</span><span>03.04.</span><span class="amt">24.15</span><span class="vat">4.03</span></div>
             </div>
-            <div class="file-foot"><span>5 receipts &middot; 1 ZIP</span><span>TOTAL &euro; 341.09</span></div>
+            <div class="file-foot"><span>6 entries &middot; 1 ZIP</span><span>TOTAL &euro; 367.49</span></div>
           </div>
         </div>
       </section>
