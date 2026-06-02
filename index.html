@@ -31,14 +31,17 @@
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    html, body { margin: 0; padding: 0; }
+    html { margin: 0; padding: 0; overflow-x: clip; }
     body {
+      margin: 0; padding: 0;
       background: var(--cream);
       color: var(--ink);
       font-family: var(--sans);
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
       overflow-x: hidden;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
     }
     /* paper grain — faint, warm, physical */
     body::before {
@@ -661,7 +664,7 @@
       .nav-links a:not(.nav-cta) { font-size: 13px; }
       main { padding: 0 22px; }
       .hero { grid-template-columns: 1fr; gap: 16px; padding: 40px 0 56px; min-height: 0; }
-      .demo-stage { order: 2; min-height: 560px; }
+      .demo-stage { order: 2; min-height: 400px; }
       h1 { font-size: clamp(36px, 9vw, 52px); }
       .hero-sub { font-size: 19px; max-width: none; }
       .sec { padding: 64px 0; }
