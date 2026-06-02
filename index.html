@@ -333,7 +333,7 @@
 
     /* ─────────── SECTION SCAFFOLD ─────────── */
     section { scroll-margin-top: 64px; }
-    .sec { padding: 92px 0; }
+    .sec { padding: 72px 0; }
     .sec-head { max-width: 760px; }
     .sec-head .eyebrow { margin-bottom: 36px; }
     .sec-title {
@@ -346,7 +346,7 @@
     }
     .sec-title em { font-style: italic; font-weight: 400; color: var(--green); }
     .sec-intro {
-      margin: 22px 0 0; font-size: 19px; line-height: 1.55;
+      margin: 22px 0 0; font-size: 19px; line-height: 1.55; color: var(--ink);
       color: var(--muted-2); max-width: 58ch; text-wrap: pretty;
     }
 
@@ -574,6 +574,7 @@
     .price-period-top { font-family: var(--mono); font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
     .price-amount { font-size: 76px; font-weight: 700; letter-spacing: -0.045em; line-height: 1; color: var(--ink); margin: 12px 0 8px; }
     .price-amount .yr { font-size: 22px; font-weight: 600; color: var(--muted); letter-spacing: 0; }
+    .price-monthly { font-family: var(--mono); font-size: 13px; letter-spacing: 0.04em; color: #2E7D4F; font-weight: 700; margin: 6px 0 18px; }
     .price-note { font-size: 15px; line-height: 1.55; color: var(--muted-2); max-width: 38ch; margin: 0 auto; }
     .price-note b { color: var(--green); font-weight: 700; }
     .price-note .was { text-decoration: line-through; opacity: 0.6; }
@@ -661,15 +662,16 @@
     /* ─────────── RESPONSIVE ─────────── */
     @media (max-width: 940px) {
       nav { padding: 16px 22px; }
-      .nav-links { gap: 14px; }
+      .nav-links { gap: 10px; }
       .logo span { display: none; }
       .nav-links a:not(.nav-cta) { font-size: 13px; }
+      .nav-hide-mobile { display: none; }
       main { padding: 0 22px; }
       .hero { grid-template-columns: 1fr; gap: 16px; padding: 40px 0 56px; min-height: 0; }
       .demo-stage { order: 2; min-height: 400px; }
       h1 { font-size: clamp(36px, 9vw, 52px); }
       .hero-sub { font-size: 19px; max-width: none; }
-      .sec { padding: 64px 0; }
+      .sec { padding: 48px 0; }
       .contrast-grid { grid-template-columns: 1fr; }
       .col { padding: 34px 28px 38px; }
       .how { padding: 52px 26px; border-radius: 22px; }
@@ -762,12 +764,12 @@
       <div class="nav-links">
         <a href="#top" class="lang-de-inline">Home</a>
         <a href="#top" class="lang-en-inline">Home</a>
-        <a href="#funktioniert" class="lang-de-inline">So funktioniert's</a>
-        <a href="#how" class="lang-en-inline">How it works</a>
-        <a href="#wer" class="lang-de-inline">Für wen</a>
-        <a href="#who" class="lang-en-inline">Who it's for</a>
-        <a href="#sicherheit" class="lang-de-inline">Datenschutz</a>
-        <a href="#security" class="lang-en-inline">Privacy</a>
+        <a href="#funktioniert" class="lang-de-inline nav-hide-mobile">So funktioniert's</a>
+        <a href="#how" class="lang-en-inline nav-hide-mobile">How it works</a>
+        <a href="#wer" class="lang-de-inline nav-hide-mobile">Für wen</a>
+        <a href="#who" class="lang-en-inline nav-hide-mobile">Who it's for</a>
+        <a href="#sicherheit" class="lang-de-inline nav-hide-mobile">Datenschutz</a>
+        <a href="#security" class="lang-en-inline nav-hide-mobile">Privacy</a>
         <a href="#preis" class="lang-de-inline">Preis</a>
         <a href="#price" class="lang-en-inline">Price</a>
         <a href="#fragen" class="lang-de-inline">FAQ</a>
@@ -1066,6 +1068,7 @@
             <div class="stamp">Gründerpreis</div>
             <div class="price-period-top">Jährlich &middot; Vorausbezahlung</div>
             <div class="price-amount">&euro;&thinsp;39,99<span class="yr"> / Jahr</span></div>
+            <div class="price-monthly">= &euro;&thinsp;3,33&thinsp;/&thinsp;Monat &mdash; Preis eines Kaffees</div>
             <p class="price-note">
               <b>Gründerpreis &mdash; lebenslang gehalten.</b><br>
               Ab Januar 2027: <span class="was">&euro;&thinsp;49,99</span>. Wer jetzt startet, zahlt für immer &euro;&thinsp;39,99.
@@ -1440,6 +1443,7 @@
             <div class="stamp">Founding price</div>
             <div class="price-period-top">Annual &middot; Paid upfront</div>
             <div class="price-amount">&euro;&thinsp;39.99<span class="yr"> / year</span></div>
+            <div class="price-monthly">= &euro;&thinsp;3.33&thinsp;/&thinsp;month &mdash; price of a coffee</div>
             <p class="price-note">
               <b>Founding price &mdash; locked for life.</b><br>
               From January 2027: <span class="was">&euro;&thinsp;49.99</span>. Start now and pay &euro;&thinsp;39.99 forever.
