@@ -21,6 +21,9 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Blog &mdash; Bonvio">
   <meta name="twitter:description" content="Tipps zu Belegen, Steuern und Buchhaltung f&uuml;r &Ouml;sterreich.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --cream: #F4F3F0;
@@ -28,6 +31,9 @@
       --ink-soft: #0F2A1F;
       --accent-on-dark: #E0C896;
       --rust: #1F4332;
+      --gold: #B8860B;           /* data accent */
+      --gold-deep: #7A5D1F;      /* gold at small sizes (eyebrows) */
+      --serif: "Cormorant", "Times New Roman", Georgia, serif;
       --paper: #FCFBF8;
       --muted: rgba(26,26,26,0.55);
       --muted-2: rgba(26,26,26,0.72);
@@ -115,12 +121,12 @@
     .page-eyebrow {
       font-family: var(--mono);
       font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--muted); margin-bottom: 16px;
+      color: var(--gold-deep); margin-bottom: 16px;
     }
     .page-title {
       margin: 0 0 16px;
-      font-size: clamp(40px, 5vw, 64px);
-      line-height: 1.0; letter-spacing: -0.04em; font-weight: 700;
+      font-family: var(--serif); font-size: clamp(40px, 5vw, 64px);
+      line-height: 1.0; letter-spacing: -0.04em; font-weight: 600;
     }
     .page-intro {
       font-size: 20px; line-height: 1.55; color: var(--muted-2);
@@ -161,7 +167,7 @@
       text-transform: uppercase; font-weight: 700;
     }
     .post-title {
-      font-size: 22px; font-weight: 700;
+      font-family: var(--serif); font-size: 22px; font-weight: 600;
       line-height: 1.25; letter-spacing: -0.02em;
       color: var(--ink); margin: 0;
     }
@@ -203,8 +209,8 @@
       color: var(--accent-on-dark); font-weight: 700;
     }
     .blog-cta-title {
-      font-size: clamp(28px, 4vw, 44px);
-      font-weight: 700; letter-spacing: -0.035em;
+      font-family: var(--serif); font-size: clamp(28px, 4vw, 44px);
+      font-weight: 600; letter-spacing: -0.035em;
       color: var(--cream); margin: 0; line-height: 1.1;
     }
     .waitlist { max-width: 460px; width: 100%; }
