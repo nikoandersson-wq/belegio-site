@@ -8,7 +8,7 @@
   <link rel="canonical" href="https://bonvio.eu/datenschutz-en.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231F4332'/%3E%3Ctext x='16' y='23' font-family='Helvetica Neue,Helvetica,Arial,sans-serif' font-size='22' font-weight='700' fill='%23F4EFE2' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E">
   <script>
   (function(){
@@ -25,11 +25,13 @@
       --ink: #1A1A1A;
       --ink-soft: #0F2A1F;
       --rust: #1F4332;
+      --gold: #B8860B;           /* data accent */
+      --gold-deep: #7A5D1F;      /* gold at small sizes (eyebrows) */
       --muted: rgba(26,26,26,0.55);
       --hair: rgba(26,26,26,0.08);
       --hair-2: rgba(26,26,26,0.12);
       --sans: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Inter", "Segoe UI", Helvetica, Arial, sans-serif;
-      --serif: "Newsreader", "Times New Roman", Georgia, serif;
+      --serif: "Cormorant", "Times New Roman", Georgia, serif;
       --mono: "Courier New", ui-monospace, monospace;
     }
     * { box-sizing: border-box; }
@@ -92,14 +94,14 @@
     .page-eyebrow {
       font-family: var(--mono);
       font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--muted);
+      color: var(--gold-deep);
       margin-bottom: 16px;
     }
     h1 {
       margin: 0 0 56px;
       font-family: var(--serif);
       font-size: clamp(36px, 4vw, 52px);
-      font-weight: 500;
+      font-weight: 600;
       letter-spacing: -0.025em;
       line-height: 1.1;
     }

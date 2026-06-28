@@ -67,11 +67,23 @@ says so — that restraint *is* the brand.
 | Role | Hex | Use |
 |---|---|---|
 | Cream (background) | `#F4F3F0` | default light background |
-| Paper | `#FCFBF8` | cards, receipt surfaces |
+| Paper | `#FBFAF7` | cards, receipt surfaces |
 | Ink (text) | `#1A1A1A` | body + headlines on light |
+| Warm near-black | `#1A1814` | alt dark text, warm headlines |
 | Deep bottle green (**primary accent**) | `#1F4332` | buttons, badges, links, accent words, dark surfaces |
 | Bottle green (darker) | `#0F2A1F` | large dark backgrounds, hover |
+| **Gold (data accent)** | `#B8860B` | stat numbers, eyebrows, section numbers — **never fills or body text** |
+| Bronze (gold on light) | `#7A5D1F` | gold at small sizes where `#B8860B` is too light to read |
 | Warm wheat (accent on dark) | `#E0C896` | accent + CTA text on green surfaces |
+| Pale green tint | `#CDE0D3` | subtle fills, badges on light |
+| Sage (muted text) | `#6B6F6A` | secondary text, muted labels (warmer than neutral grey) |
+| Warm hairline | `#E2E0DB` | card borders, dividers on light |
+
+**The modernization (added 2026-06-27, from the Raiffeisen deck):** a disciplined **gold
+data-accent** `#B8860B` and a warmer neutral-grey system (`#6B6F6A` text, `#E2E0DB` borders).
+Green stays the soul of the brand — gold is *only* for numbers, eyebrows, and section
+counters, never a second decorative colour and never a fill. Dark sections remain bottle
+green `#1F4332` with wheat `#E0C896` on top.
 
 **⚠ One inconsistency to resolve.** The CSS variable named `--rust` is actually the deep
 green `#1F4332`, and it's the de-facto primary accent across the live site. But the
@@ -85,13 +97,22 @@ favicon, or (b) keep rust orange `#B4451F` as a logo-only signature colour. Unti
 
 ## 5. Typography
 
-- **Display / headings:** system sans stack — `-apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif`.
-  Weight **700**, tight tracking (**-0.03 to -0.045em**). Accent word: *italic, weight 500, in green*.
-- **Labels / eyebrows / meta:** **monospace** (`"Courier New", ui-monospace, monospace`),
-  UPPERCASE, wide tracking (**0.14–0.2em**).
-- **Body:** same sans, line-height 1.5–1.6.
+Three roles, three faces — from the Raiffeisen deck (2026-06-27):
 
-(System fonts are intentional — they render identically when an agent screenshots the image template, no web-font loading needed.)
+- **Display / headings:** **Cormorant** serif (Google Fonts). Weight **600–700**, tight
+  tracking (**-0.022 to -0.025em**), line-height **0.98–1.05**. Accent word: *Cormorant
+  italic, weight 400–500, in green*. Also carries large **Kennzahlen** (× €50/h, = €2,0 Mio.) —
+  with the number itself in **gold `#B8860B`**.
+- **Body & functional labels:** sans — `"Helvetica Neue", "Inter", -apple-system, Helvetica, Arial, sans-serif`.
+  400/500, 14–19px, line-height 1.5–1.6.
+- **Eyebrows / meta / dates / hashtags:** **monospace** (`"Courier New", ui-monospace, monospace`),
+  UPPERCASE, wide tracking (**0.14–0.2em**), often in **gold**.
+
+**Forbidden:** Roboto, Arial-as-display, Open Sans, Fraunces, Aptos. Don't bring back
+Newsreader — Cormorant is the display serif now.
+
+(For headless social-image rendering the template may keep a system-sans fallback so it
+screenshots without loading web fonts — but the brand display face is Cormorant.)
 
 ---
 
