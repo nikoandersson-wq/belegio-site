@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bonvio &mdash; Brand Book v1</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #F4F3F0;          /* neutral off-white */
+      --paper: #FBFAF7;       /* cards, receipt surfaces */
+      --ink: #1A1A1A;
+      --ink-warm: #1A1814;    /* warm near-black, dark text alt */
+      --ink-soft: #0F2A1F;    /* deep bottle green */
+      --rust: #1F4332;        /* bottle green primary accent (legacy var name) */
+      --accent: #1F4332;
+      --gold: #B8860B;        /* data accent — stat numbers, eyebrows, section nums */
+      --gold-deep: #7A5D1F;   /* gold on light surfaces, for legibility */
+      --wheat: #E0C896;       /* accent on dark / green surfaces */
+      --tint: #CDE0D3;        /* pale green tint — subtle fills, badges */
+      --sage: #6B6F6A;        /* muted secondary text */
+      --line: #E2E0DB;        /* warm hairlines, card borders */
+      --muted: rgba(26,26,26,0.55);
+      --muted-2: rgba(26,26,26,0.72);
+      --hair: rgba(26,26,26,0.08);
+      --hair-2: rgba(26,26,26,0.12);
+      --sans: "Helvetica Neue", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      --serif: "Cormorant", "Times New Roman", Georgia, serif;
+      --mono: "Courier New", ui-monospace, monospace;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+      position: relative;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: "";
+      position: fixed; inset: 0;
+      background-image: radial-gradient(rgba(26,26,26,0.04) 1px, transparent 1px);
+      background-size: 4px 4px;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .wrap { position: relative; z-index: 1; max-width: 1180px; margin: 0 auto; padding: 0 72px; }
+
+    /* MARGINALIA */
+    .marg {
+      font-family: var(--mono);
+      font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--muted-2);
+    }
+    .marg .num { color: var(--ink); font-weight: 700; margin-right: 8px; }
+
+    section { padding: 80px 0; border-top: 1px dashed var(--hair-2); position: relative; }
+    section:first-child { border-top: 0; padding-top: 96px; }
+    section h2 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(40px, 5.2vw, 64px);
+      line-height: 1.05; letter-spacing: -0.022em; font-weight: 600;
+      max-width: 18ch;
+      text-wrap: balance;
+      margin-top: 18px;
+    }
+    section h2 em { font-style: italic; font-weight: 400; color: var(--accent); }
+    section p.lede {
+      margin: 22px 0 0;
+      font-size: 19px; line-height: 1.55;
+      color: var(--muted-2);
+      max-width: 64ch;
+      text-wrap: pretty;
+    }
+    section p { text-wrap: pretty; }
+
+    /* COVER */
+    .cover { text-align: left; padding-top: 120px; padding-bottom: 120px; }
+    .cover h1 {
+      margin: 24px 0 0;
+      font-family: var(--serif);
+      font-size: clamp(64px, 8vw, 112px);
+      line-height: 0.98; letter-spacing: -0.025em; font-weight: 600;
+    }
+    .cover h1 em { font-style: italic; font-weight: 400; color: var(--accent); }
+    .cover .cover-lede {
+      margin: 36px 0 0; max-width: 56ch;
+      font-size: 21px; line-height: 1.55; color: var(--muted-2);
+    }
+
+    /* TOC */
+    .toc ol {
+      margin: 32px 0 0; padding: 0; list-style: none;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px 48px;
+      max-width: 720px;
+    }
+    .toc li {
+      display: flex; align-items: baseline; gap: 16px;
+      font-family: var(--serif); font-size: 20px;
+      padding: 14px 0;
+      border-bottom: 1px dashed var(--hair-2);
+    }
+    .toc li .n { font-family: var(--mono); font-size: 12px; letter-spacing: 0.16em; color: var(--muted-2); width: 24px; }
+    .toc li a { color: var(--ink); text-decoration: none; }
+    .toc li a:hover { color: var(--accent); }
+
+    /* CHAPTER LAYOUT */
+    .chapter-grid {
+      margin-top: 56px;
+      display: grid; grid-template-columns: 1.2fr 1fr; gap: 56px;
+      align-items: start;
+    }
+    @media (max-width: 900px) { .chapter-grid { grid-template-columns: 1fr; gap: 32px; } }
+
+    /* SWATCH */
+    .swatches {
+      margin: 0; padding: 0; list-style: none;
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px;
+    }
+    .sw {
+      background: var(--paper);
+      border: 1px solid var(--hair-2);
+      border-radius: 8px;
+      overflow: hidden;
+      font-family: var(--mono); font-size: 12px;
+    }
+    .sw .chip { height: 80px; display: block; }
+    .sw .meta { padding: 12px 14px; }
+    .sw .name { color: var(--ink); font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+    .sw .hex { color: var(--muted-2); margin-top: 4px; }
+    .sw .use { color: var(--muted); margin-top: 6px; font-family: var(--sans); font-size: 12px; line-height: 1.5; text-transform: none; letter-spacing: 0; }
+
+    /* TYPE SPECIMEN */
+    .specimen {
+      background: var(--paper);
+      border: 1px solid var(--hair-2);
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-top: 16px;
+    }
+    .specimen + .specimen { margin-top: 16px; }
+    .specimen .label {
+      font-family: var(--mono); font-size: 11px;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 14px;
+    }
+    .specimen .label b { color: var(--ink); font-weight: 700; }
+    .specimen .display-serif { font-family: var(--serif); font-size: 56px; line-height: 0.98; letter-spacing: -0.022em; font-weight: 600; }
+    .specimen .display-serif em { font-style: italic; font-weight: 400; color: var(--accent); }
+    .specimen .body-sans { font-family: var(--sans); font-size: 17px; line-height: 1.55; color: var(--ink); }
+    .specimen .label-mono { font-family: var(--mono); font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink); }
+
+    /* DO / DONT */
+    .dodont {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+      margin-top: 56px;
+    }
+    .dd-card {
+      background: var(--paper);
+      border: 1px solid var(--hair-2);
+      border-radius: 14px;
+      padding: 28px 30px;
+    }
+    .dd-card.do { border-top: 4px solid var(--accent); }
+    .dd-card.dont { border-top: 4px solid #B33A2C; }
+    .dd-card .badge {
+      font-family: var(--mono); font-size: 11px;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .dd-card.do .badge { color: var(--accent); }
+    .dd-card.dont .badge { color: #B33A2C; }
+    .dd-card ul {
+      margin: 0; padding: 0; list-style: none;
+      display: grid; gap: 12px;
+      font-family: var(--serif);
+      font-size: 17px; line-height: 1.35;
+    }
+    .dd-card li { display: flex; gap: 12px; }
+    .dd-card li::before {
+      flex: none;
+      font-family: var(--mono); font-style: normal; font-weight: 700;
+      width: 18px;
+    }
+    .dd-card.do li::before { content: "✓"; color: var(--accent); }
+    .dd-card.dont li::before { content: "✕"; color: #B33A2C; }
+
+    /* VOICE EXAMPLE */
+    .voice-block {
+      margin-top: 56px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+    }
+    @media (max-width: 900px) { .voice-block { grid-template-columns: 1fr; } .dodont { grid-template-columns: 1fr; } }
+    .voice-card {
+      background: var(--paper);
+      border: 1px solid var(--hair-2);
+      border-radius: 14px;
+      padding: 28px 32px;
+    }
+    .voice-card .badge {
+      font-family: var(--mono); font-size: 11px;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--muted-2); margin-bottom: 14px;
+    }
+    .voice-card .badge b { font-weight: 700; }
+    .voice-card .yes b { color: var(--accent); }
+    .voice-card .no b { color: #B33A2C; }
+    .voice-card .quote {
+      font-family: var(--serif);
+      font-size: 22px; line-height: 1.3;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      text-wrap: pretty;
+    }
+    .voice-card .quote.strike { color: var(--muted); text-decoration: line-through; text-decoration-color: rgba(179,58,44,0.55); }
+    .voice-card .note {
+      margin-top: 14px;
+      font-size: 13px; color: var(--muted-2); line-height: 1.5;
+    }
+
+    /* SOCIAL MOCKS */
+    .social-grid {
+      margin-top: 56px;
+      display: grid; gap: 36px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media (max-width: 900px) { .social-grid { grid-template-columns: 1fr; } }
+    .social-mock {
+      display: flex; flex-direction: column; gap: 14px;
+    }
+    .social-mock .platform {
+      font-family: var(--mono); font-size: 11px;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--muted);
+    }
+    .social-mock .canvas {
+      background: var(--paper);
+      border: 1px solid var(--hair-2);
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* IG square 1:1 */
+    .ig-square { aspect-ratio: 1 / 1; padding: 36px 32px; display: flex; flex-direction: column; justify-content: space-between; }
+    .ig-square .logo { font-family: var(--serif); font-style: italic; font-size: 16px; color: var(--accent); font-weight: 500; }
+    .ig-square .big {
+      font-family: var(--serif); font-style: italic; font-weight: 400;
+      font-size: clamp(28px, 4vw, 44px); line-height: 1.05; letter-spacing: -0.02em;
+      color: var(--ink);
+    }
+    .ig-square .big em { color: var(--accent); font-style: italic; }
+    .ig-square .foot {
+      font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--muted);
+      display: flex; justify-content: space-between;
+    }
+
+    /* IG story 9:16 */
+    .ig-story { aspect-ratio: 9 / 16; padding: 28px 24px; display: flex; flex-direction: column; justify-content: space-between;
+      background: var(--ink-soft); color: var(--bg); }
+    .ig-story .logo { font-family: var(--serif); font-style: italic; font-size: 14px; color: var(--wheat); font-weight: 500; }
+    .ig-story .big {
+      font-family: var(--serif); font-weight: 400; font-style: italic;
+      font-size: clamp(22px, 3.6vw, 36px); line-height: 1.1; letter-spacing: -0.015em;
+      color: var(--bg);
+    }
+    .ig-story .big em { color: var(--wheat); }
+    .ig-story .foot {
+      font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.18em;
+      text-transform: uppercase; color: rgba(244,243,240,0.6);
+    }
+
+    /* Twitter / X card */
+    .twit-card { aspect-ratio: 16/9; padding: 32px; display: flex; flex-direction: column; justify-content: space-between; background: var(--bg); }
+    .twit-card .head {
+      display: flex; align-items: center; gap: 10px;
+      font-family: var(--serif); font-style: italic; font-size: 16px; color: var(--accent);
+    }
+    .twit-card .head::before {
+      content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); display: inline-block;
+    }
+    .twit-card .big {
+      font-family: var(--serif); font-style: italic; font-weight: 400;
+      font-size: clamp(24px, 3vw, 36px); line-height: 1.1; letter-spacing: -0.015em;
+    }
+    .twit-card .big em { color: var(--accent); font-style: italic; }
+    .twit-card .foot { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+
+    /* DEFINITION LIST */
+    .deflist {
+      margin: 28px 0 0; padding: 0; list-style: none;
+      display: grid; gap: 18px;
+    }
+    .deflist li {
+      display: grid; grid-template-columns: 180px 1fr; gap: 24px;
+      padding: 14px 0; border-bottom: 1px dashed var(--hair-2);
+      align-items: baseline;
+    }
+    .deflist .k { font-family: var(--mono); font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink); font-weight: 700; }
+    .deflist .v { font-family: var(--serif); font-size: 19px; line-height: 1.4; color: var(--ink); }
+
+    /* CLOSING MANIFESTO */
+    .closing {
+      padding: 140px 0;
+      text-align: center;
+      border-top: 1px dashed var(--hair-2);
+      border-bottom: 1px dashed var(--hair-2);
+      margin-top: 80px;
+      position: relative;
+    }
+    .closing::before, .closing::after {
+      content: ""; position: absolute; left: 0; right: 0; height: 6px;
+      background-image: radial-gradient(circle at 6px center, var(--bg) 2.5px, transparent 3px);
+      background-repeat: repeat-x; background-size: 14px 6px;
+    }
+    .closing::before { top: -3px; } .closing::after { bottom: -3px; }
+    .closing blockquote {
+      margin: 0 auto; max-width: 16ch;
+      font-family: var(--serif); font-style: italic; font-weight: 400;
+      font-size: clamp(48px, 6.5vw, 80px); line-height: 1.05; letter-spacing: -0.025em;
+      color: var(--ink); text-wrap: balance;
+    }
+    .closing blockquote em { font-style: italic; color: var(--accent); font-weight: 500; }
+
+    /* MISC */
+    .pill {
+      display: inline-block;
+      font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--accent);
+      padding: 4px 10px; border: 1px solid var(--accent); border-radius: 999px;
+    }
+    footer { padding: 64px 72px 56px; color: var(--muted); font-family: var(--mono); font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; display: flex; justify-content: space-between; max-width: 1180px; margin: 0 auto; border-top: 1px dashed var(--hair-2); }
+
+    @media (max-width: 900px) {
+      .wrap { padding: 0 24px; }
+      section { padding: 56px 0; }
+      footer { padding: 36px 24px 40px; flex-direction: column; gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <section class="cover">
+      <div class="marg"><span class="num">·</span>Bonvio &middot; Brand Book &middot; v1 &middot; Wien &middot; 2026</div>
+      <h1>Knipsen.<br>Vergessen.<br><em>Bonvio merkt sich alles.</em></h1>
+      <p class="cover-lede">
+        Ein kleines Buch f&uuml;r eine kleine Marke. Wie Bonvio aussieht, klingt und sich anf&uuml;hlt &mdash;
+        f&uuml;r Social, Newsletter, Anzeigen, Decks und alles, was nach uns aussehen soll.
+      </p>
+    </section>
+
+    <section>
+      <div class="marg"><span class="num">01</span>&mdash; Inhalt</div>
+      <div class="toc">
+        <ol>
+          <li><span class="n">01</span><a href="#essence">Die Essenz</a></li>
+          <li><span class="n">02</span><a href="#voice">Stimme &amp; Ton</a></li>
+          <li><span class="n">03</span><a href="#color">Farben</a></li>
+          <li><span class="n">04</span><a href="#type">Typografie</a></li>
+          <li><span class="n">05</span><a href="#elements">Visuelle Elemente</a></li>
+          <li><span class="n">06</span><a href="#layout">Layout &amp; Rhythmus</a></li>
+          <li><span class="n">07</span><a href="#social">Social Anwendungen</a></li>
+          <li><span class="n">08</span><a href="#rules">Do &amp; Don't</a></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 01 ESSENCE -->
+    <section id="essence">
+      <div class="marg"><span class="num">02</span>&mdash; Die Essenz</div>
+      <h2>Ein <em>kleines</em> Werkzeug, ehrlich gebaut.</h2>
+      <p class="lede">
+        Bonvio bewahrt deine Belege auf &mdash; per E-Mail, ohne App, ohne Login.
+        Wir sind absichtlich klein, absichtlich klar, absichtlich aus Wien. Wir
+        konkurrieren nicht mit Buchhaltungssoftware. Wir machen die eine Sache,
+        die niemand machen will: <i>Belege zuverl&auml;ssig aufheben</i>.
+      </p>
+      <ul class="deflist">
+        <li><span class="k">Zielgruppe</span><span class="v">Privatpersonen, Selbstst&auml;ndige, kleine Unternehmen &mdash; in &Ouml;sterreich und Deutschland.</span></li>
+        <li><span class="k">Versprechen</span><span class="v">Foto. E-Mail. Aufbewahrt. F&uuml;r 7 Jahre, gem&auml;&szlig; &sect;132 BAO.</span></li>
+        <li><span class="k">Tonalit&auml;t</span><span class="v">Direkt, ruhig, leicht trocken. Erwachsen, aber nicht steif.</span></li>
+        <li><span class="k">Was wir nicht sind</span><span class="v">Keine Buchhaltung. Kein KI-Assistent. Keine Plattform. Kein &Ouml;kosystem.</span></li>
+        <li><span class="k">Pricing</span><span class="v">&euro;&nbsp;39,99 pro Jahr. Ein Preis, eine Adresse, alle Belege.</span></li>
+      </ul>
+    </section>
+
+    <!-- 02 VOICE -->
+    <section id="voice">
+      <div class="marg"><span class="num">03</span>&mdash; Stimme &amp; Ton</div>
+      <h2>Sprich wie ein <em>vern&uuml;nftiger Mensch</em> &mdash; nicht wie Software.</h2>
+      <p class="lede">
+        Kurze S&auml;tze. Wiener Direktheit. <i>Du</i>, nicht <i>Sie</i>. Keine
+        Marketingfloskeln. Witz ist erlaubt &mdash; aber nie auf Kosten von Vertrauen.
+        Wenn wir etwas nicht k&ouml;nnen oder nicht erstatten, sagen wir es.
+      </p>
+
+      <div class="voice-block">
+        <div class="voice-card">
+          <div class="badge yes"><b>So</b> &middot; Bonvio-Voice</div>
+          <div class="quote">Schluss mit dem Schuhkarton.</div>
+          <div class="note">Konkret, k&ouml;rperlich, vertraut. Jede Person weiss, wovon wir sprechen.</div>
+        </div>
+        <div class="voice-card">
+          <div class="badge no"><b>Nicht</b> &middot; nie so</div>
+          <div class="quote strike">Revolutioniere deine Belegverwaltung mit KI-gest&uuml;tzter Automatisierung.</div>
+          <div class="note">Buzzwords, &Uuml;berversprechen, abstrakt. Liest sich wie 1.000 andere SaaS-Seiten.</div>
+        </div>
+
+        <div class="voice-card">
+          <div class="badge yes"><b>So</b></div>
+          <div class="quote">Foto machen. E-Mail senden. Fertig.</div>
+          <div class="note">Drei Beats. Punkte statt Kommas. Rhythmus = Marke.</div>
+        </div>
+        <div class="voice-card">
+          <div class="badge no"><b>Nicht</b></div>
+          <div class="quote strike">Eine intuitive End-to-End-L&ouml;sung f&uuml;r effizientes Belegmanagement.</div>
+          <div class="note">Adjektivketten. Kein Bild im Kopf. Tot.</div>
+        </div>
+
+        <div class="voice-card">
+          <div class="badge yes"><b>So</b></div>
+          <div class="quote">Wenn mal etwas nicht passt &mdash; eine kurze Antwort gen&uuml;gt zur Korrektur.</div>
+          <div class="note">Ehrlich &uuml;ber Fehler. Macht uns vertrauensw&uuml;rdiger, nicht schw&auml;cher.</div>
+        </div>
+        <div class="voice-card">
+          <div class="badge no"><b>Nicht</b></div>
+          <div class="quote strike">100% akkurate OCR durch modernste KI-Modelle.</div>
+          <div class="note">L&uuml;ge mit Anspruch. Erster Fehler &mdash; und der Screenshot landet auf Twitter.</div>
+        </div>
+      </div>
+
+      <ul class="deflist" style="margin-top: 64px;">
+        <li><span class="k">Anrede</span><span class="v">Du. Immer. (Englisch: <i>you</i>.)</span></li>
+        <li><span class="k">Satzl&auml;nge</span><span class="v">Kurz. Drei bis acht W&ouml;rter ist die Hausgr&ouml;sse. L&auml;ngere S&auml;tze sind erlaubt, aber bewusst.</span></li>
+        <li><span class="k">Listen</span><span class="v">Dreierlisten gewinnen. &bdquo;Foto. E-Mail. Fertig.&ldquo;</span></li>
+        <li><span class="k">Gedankenstrich</span><span class="v">Em-Dash &mdash; nicht Bindestrich, nicht Slash. F&uuml;r Beiwerk und Pointen.</span></li>
+        <li><span class="k">Italics</span><span class="v">F&uuml;r das Wort, das die ganze Aussage tr&auml;gt. <i>Sparsam.</i></span></li>
+        <li><span class="k">Emojis</span><span class="v">Nein. Auch nicht in Social. Wir sind keine Caf&eacute;-Kette.</span></li>
+        <li><span class="k">Zahlen</span><span class="v">Deutsche Konvention im DE-Markt: &euro;&nbsp;39,99. Englische im EN-Markt: &euro;&nbsp;39.99.</span></li>
+        <li><span class="k">Anf&uuml;hrungszeichen</span><span class="v">DE: &bdquo;unten / oben&ldquo;. EN: &ldquo;left / right&rdquo;. Nie gerade Quotes (&quot;).</span></li>
+      </ul>
+    </section>
+
+    <!-- 03 COLOR -->
+    <section id="color">
+      <div class="marg"><span class="num">04</span>&mdash; Farben</div>
+      <h2>Off-white + <em>Bottle&nbsp;Green</em> &mdash; Gold nur f&uuml;r Zahlen.</h2>
+      <p class="lede">
+        Off-white als Basis &mdash; ruhig, w&auml;rmer als wei&szlig;, k&uuml;hler als Cream.
+        Bottle&nbsp;Green bleibt die Seele der Marke: aus dem &ouml;sterreichischen Notariats- und
+        Apothekenvokabular, nie der frische SaaS-Blau-Akzent. Neu dazu &mdash; ein
+        disziplinierter Gold-Akzent, reserviert f&uuml;r Kennzahlen, Eyebrows und
+        Sektionsnummern. Dunkle Sektionen leben in tiefem Flaschengr&uuml;n mit Weizen-Akzent.
+      </p>
+
+      <ul class="swatches" style="grid-template-columns: repeat(3, 1fr); margin-top: 56px;">
+        <li class="sw"><span class="chip" style="background:#F4F3F0"></span><div class="meta"><div class="name">Off-white</div><div class="hex">#F4F3F0</div><div class="use">Prim&auml;rer Hintergrund. Mit dotted-grid darunter.</div></div></li>
+        <li class="sw"><span class="chip" style="background:#1F4332"></span><div class="meta"><div class="name">Bottle green</div><div class="hex">#1F4332</div><div class="use">Prim&auml;rer Akzent. Buttons, Stempel, Italic-Highlights.</div></div></li>
+        <li class="sw"><span class="chip" style="background:#0F2A1F"></span><div class="meta"><div class="name">Deep green</div><div class="hex">#0F2A1F</div><div class="use">Dunkle Sektionen, CTA-Repeat, Phone-Bezel.</div></div></li>
+        <li class="sw"><span class="chip" style="background:#B8860B"></span><div class="meta"><div class="name">Gold</div><div class="hex">#B8860B</div><div class="use">Daten-Akzent. Kennzahlen, Eyebrows, Sektionsnummern.</div></div></li>
+        <li class="sw"><span class="chip" style="background:#7A5D1F"></span><div class="meta"><div class="name">Bronze</div><div class="hex">#7A5D1F</div><div class="use">Gold auf hellem Grund &mdash; lesbarer bei kleinem Text.</div></div></li>
+        <li class="sw"><span class="chip" style="background:#E0C896"></span><div class="meta"><div class="name">Wheat</div><div class="hex">#E0C896</div><div class="use">Akzent auf dunklem Gr&uuml;n. Step-Numbers, Pfeile.</div></div></li>
+        <li class="sw"><span class="chip" style="background:#CDE0D3"></span><div class="meta"><div class="name">Tint</div><div class="hex">#CDE0D3</div><div class="use">Blasser Gr&uuml;nton. Dezente F&uuml;llungen, Badges.</div></div></li>
+        <li class="sw"><span class="chip" style="background:#6B6F6A"></span><div class="meta"><div class="name">Sage</div><div class="hex">#6B6F6A</div><div class="use">Sekund&auml;rtext, ged&auml;mpfte Labels. W&auml;rmer als Neutralgrau.</div></div></li>
+        <li class="sw"><span class="chip" style="background:#FBFAF7;border-right:1px solid var(--line)"></span><div class="meta"><div class="name">Paper</div><div class="hex">#FBFAF7</div><div class="use">Karten, Belege, Stempel-Hintergrund.</div></div></li>
+        <li class="sw"><span class="chip" style="background:#1A1A1A"></span><div class="meta"><div class="name">Ink</div><div class="hex">#1A1A1A</div><div class="use">K&ouml;rpertext. Ist die Hauptfarbe f&uuml;r Worte.</div></div></li>
+      </ul>
+
+      <ul class="deflist" style="margin-top: 64px;">
+        <li><span class="k">Akzent-Regel</span><span class="v">Gr&uuml;n ist der Marken-Akzent. Gold ist kein zweiter Schmuck &mdash; nur f&uuml;r Zahlen, Eyebrows und Sektionsnummern. Nie als Fl&auml;che, nie f&uuml;r Flie&szlig;text.</span></li>
+        <li><span class="k">Gradienten</span><span class="v">Nein. Niemals. Wir sind keine Wetter-App.</span></li>
+        <li><span class="k">Sekund&auml;rfarben</span><span class="v">Keine bunten. Bottle green tr&auml;gt, Gold akzentuiert Daten, Wheat lebt auf Gr&uuml;n. Mehr nicht.</span></li>
+      </ul>
+    </section>
+
+    <!-- 04 TYPE -->
+    <section id="type">
+      <div class="marg"><span class="num">05</span>&mdash; Typografie</div>
+      <h2>Eine Serif f&uuml;r <em>Charakter</em>. Eine Sans f&uuml;r Arbeit.</h2>
+      <p class="lede">
+        Cormorant (Google Fonts) tr&auml;gt das Editorial &mdash; H1, Section-Titles,
+        Pull-Quotes, gro&szlig;e Kennzahlen und Pointen in Italic. Helvetica&nbsp;Neue / Inter
+        machen den Body-Text und alle funktionalen Labels. Courier New ist das Mono
+        &mdash; f&uuml;r Eyebrows, Datumsangaben, Hashtags. Drei Rollen, klare Aufgaben.
+      </p>
+
+      <div class="specimen" style="margin-top: 56px;">
+        <div class="label"><b>Cormorant</b> &middot; Serif &middot; Display / Italic accent</div>
+        <div class="display-serif">Foto machen.<br>E-Mail senden.<br><em>Fertig.</em></div>
+      </div>
+      <div class="specimen">
+        <div class="label"><b>Sans</b> &middot; Helvetica Neue / Inter &middot; Body &amp; Labels</div>
+        <div class="body-sans">Bonvio ist die Belegverwaltung, die in deinem E-Mail-Postfach lebt. Foto machen, an deine pers&ouml;nliche Bonvio-Adresse mailen &mdash; wir speichern, sortieren und finden den Beleg wieder.</div>
+      </div>
+      <div class="specimen">
+        <div class="label"><b>Courier New</b> &middot; Mono &middot; Eyebrows / Labels / Datums</div>
+        <div class="label-mono">01 &mdash; Das Problem &middot; 12.05.2026 &middot; #mittagessen</div>
+      </div>
+
+      <ul class="deflist" style="margin-top: 56px;">
+        <li><span class="k">Display</span><span class="v">Cormorant 600/700, letter-spacing -0.022 bis -0.025em, line-height 0.98&ndash;1.05.</span></li>
+        <li><span class="k">Italic-Akzent</span><span class="v">Cormorant italic 400/500, in Bottle green. F&uuml;r das eine Wort, das z&auml;hlt.</span></li>
+        <li><span class="k">Kennzahlen</span><span class="v">Cormorant f&uuml;r gro&szlig;e Zahlen (&times;&euro;50/h, = &euro;2,0&nbsp;Mio.). Wert selbst in Gold.</span></li>
+        <li><span class="k">Body</span><span class="v">Helvetica Neue / Inter 400/500, 14&ndash;19px, line-height 1.5&ndash;1.6, text-wrap pretty.</span></li>
+        <li><span class="k">Eyebrows</span><span class="v">Courier 700, 11&ndash;14px, letter-spacing 0.16&ndash;0.18em, UPPERCASE, oft in Gold.</span></li>
+        <li><span class="k">Verboten</span><span class="v">Roboto, Arial, Open Sans, Fraunces, Aptos. Keine geschriebenen Schriften, kein Display-Sans-Trash.</span></li>
+      </ul>
+    </section>
+
+    <!-- 05 ELEMENTS -->
+    <section id="elements">
+      <div class="marg"><span class="num">06</span>&mdash; Visuelle Elemente</div>
+      <h2>Perforation, Marginalien, <em>Punktraster</em>.</h2>
+      <p class="lede">
+        Die Bonvio-Welt borgt aus Notariat, Apotheke, Bibliothek. Nicht
+        nostalgisch &mdash; funktional. Diese Elemente tragen die Marke visuell
+        &uuml;ber alle Touchpoints: perforierte Trennlinien aus gepunkteten
+        Halbkreisen, Marginalien-Nummerierung und ein feines Punktraster.
+      </p>
+
+      <div class="chapter-grid">
+        <div>
+          <div class="label-mono" style="font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; color: var(--muted-2); text-transform: uppercase; margin-bottom: 18px;">Perforation</div>
+          <div style="position: relative; padding: 28px 0; max-width: 280px;">
+            <div style="height: 6px; background-image: radial-gradient(circle at 6px center, var(--bg) 2.5px, transparent 3px); background-repeat: repeat-x; background-size: 14px 6px; background-color: var(--paper); border-top: 1px solid var(--hair-2); border-bottom: 1px solid var(--hair-2);"></div>
+            <div style="text-align: center; padding: 12px 0; font-family: var(--serif); font-style: italic; font-size: 18px; color: var(--ink);">&mdash; hier abreissen &mdash;</div>
+            <div style="height: 6px; background-image: radial-gradient(circle at 6px center, var(--bg) 2.5px, transparent 3px); background-repeat: repeat-x; background-size: 14px 6px; background-color: var(--paper); border-top: 1px solid var(--hair-2); border-bottom: 1px solid var(--hair-2);"></div>
+          </div>
+          <p style="margin-top: 24px; max-width: 38ch; font-size: 15px; line-height: 1.55; color: var(--muted-2);">
+            Halbkreise gegen den Hintergrund stanzen die Sektion frei. Trennlinie f&uuml;r
+            den Manifest-Moment. Beleg-R&auml;nder. Nicht &uuml;berstrapazieren &mdash; ein bis zweimal pro Seite.
+          </p>
+        </div>
+
+        <div>
+          <div class="label-mono" style="font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; color: var(--muted-2); text-transform: uppercase; margin-bottom: 18px;">Marginalien</div>
+          <div style="background: var(--paper); border: 1px solid var(--hair-2); padding: 24px 26px; max-width: 380px;">
+            <div class="marg"><span class="num">03</span>&mdash; Wie es funktioniert</div>
+            <div style="margin-top: 14px; font-family: var(--serif); font-size: 26px; line-height: 1.1; letter-spacing: -0.015em;">Foto. E-Mail. <i>Aufbewahrt.</i></div>
+          </div>
+          <p style="margin-top: 24px; max-width: 38ch; font-size: 15px; line-height: 1.55; color: var(--muted-2);">
+            Jede Sektion bekommt eine Nummer in Courier, Em-Dash, dann Label.
+            Wie ein Inhaltsverzeichnis, das mitl&auml;uft. Lese-Anker f&uuml;rs Auge.
+          </p>
+        </div>
+
+        <div>
+          <div class="label-mono" style="font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; color: var(--muted-2); text-transform: uppercase; margin-bottom: 18px;">Dotted Grid</div>
+          <div style="height: 140px; background-color: var(--paper); border: 1px solid var(--hair-2); background-image: radial-gradient(rgba(26,26,26,0.08) 1px, transparent 1px); background-size: 6px 6px; position: relative;">
+            <div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); font-family: var(--serif); font-style: italic; font-size: 24px; color: var(--ink);">der ruhige Grund</div>
+          </div>
+          <p style="margin-top: 24px; max-width: 38ch; font-size: 15px; line-height: 1.55; color: var(--muted-2);">
+            Feines Punktraster &uuml;ber dem Off-white. Liegt wie Papierstruktur unter
+            allem. 4&ndash;6px Abstand, 1px Punkte, 4% Opacity. Fast unsichtbar &mdash; aber sp&uuml;rbar.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 LAYOUT -->
+    <section id="layout">
+      <div class="marg"><span class="num">07</span>&mdash; Layout &amp; Rhythmus</div>
+      <h2>Editoriales Tempo, <em>nicht</em> SaaS-Grid.</h2>
+      <p class="lede">
+        Wir layouten wie eine kleine Wiener Zeitschrift, nicht wie ein Produkt-Marketing-Template.
+        Linke Spalte breit, rechte Spalte schmal. H1 atmet. Margin gross. Sections lang.
+        Variation in Rhythmus, nicht in Komponenten.
+      </p>
+      <ul class="deflist" style="margin-top: 40px;">
+        <li><span class="k">Max-width</span><span class="v">1180&ndash;1440px. Niemals breiter. Lesbarkeit vor Bildschirmf&uuml;llung.</span></li>
+        <li><span class="k">Gutter</span><span class="v">72px Desktop, 24px Mobile. Atmen lassen.</span></li>
+        <li><span class="k">Section-Beat</span><span class="v">Eyebrow &mdash; H2 (Italic-Akzent) &mdash; Lede (1&ndash;3 Zeilen) &mdash; Inhalt. Immer in dieser Reihenfolge.</span></li>
+        <li><span class="k">Wechsel</span><span class="v">Alle 2&ndash;3 Sektionen ein dunkler Block (Deep green) zur Punktuation. Nicht mehr als 2 dunkle Sektionen pro Seite.</span></li>
+        <li><span class="k">Pullquote</span><span class="v">Einmal pro Seite. Italic Serif, perforierte Linien oben/unten, zentriert. Editorial Moment.</span></li>
+      </ul>
+    </section>
+
+    <!-- 07 SOCIAL -->
+    <section id="social">
+      <div class="marg"><span class="num">08</span>&mdash; Social Anwendungen</div>
+      <h2>Wie Bonvio auf <em>Instagram</em>, X und LinkedIn aussieht.</h2>
+      <p class="lede">
+        Die Social-Posts sollen wie Seiten aus diesem Brand Book aussehen &mdash; nicht
+        wie Marketing-Kacheln. Italic Serif als Trager. Off-white oder Deep green
+        Hintergrund. Eine Idee pro Post. Keine Sprechblasen, keine Mockups,
+        kein &bdquo;Swipe right&ldquo;.
+      </p>
+
+      <div class="social-grid">
+        <div class="social-mock">
+          <div class="platform">Instagram &middot; 1080&times;1080</div>
+          <div class="canvas ig-square">
+            <div class="logo">bonvio.eu</div>
+            <div class="big">Knipsen. Vergessen.<br><em>Bonvio merkt sich alles.</em></div>
+            <div class="foot"><span>Belegverwaltung per E-Mail</span><span>&euro;&nbsp;39,99 / Jahr</span></div>
+          </div>
+        </div>
+
+        <div class="social-mock">
+          <div class="platform">Instagram Story &middot; 1080&times;1920</div>
+          <div class="canvas ig-story">
+            <div class="logo">bonvio.eu</div>
+            <div class="big">Schluss<br>mit dem<br><em>Schuhkarton.</em></div>
+            <div class="foot">Aus Wien gebaut &middot; Est. 2026</div>
+          </div>
+        </div>
+
+        <div class="social-mock">
+          <div class="platform">X / LinkedIn Card &middot; 1600&times;900</div>
+          <div class="canvas twit-card">
+            <div class="head">Bonvio</div>
+            <div class="big">Eine E-Mail. Eine Adresse. <em>Alle Belege.</em></div>
+            <div class="foot">bonvio.eu &middot; Belegverwaltung per E-Mail</div>
+          </div>
+        </div>
+      </div>
+
+      <ul class="deflist" style="margin-top: 64px;">
+        <li><span class="k">Eine Idee</span><span class="v">Pro Post: eine Aussage, ein Satz, ein Moment. Keine Listen, keine Vorteile, keine Bullet Points.</span></li>
+        <li><span class="k">Format</span><span class="v">Italic Serif gross. Sans-Mono klein als Anker oben (logo) und unten (foot).</span></li>
+        <li><span class="k">Background</span><span class="v">Off-white f&uuml;r ruhige Aussagen. Deep green f&uuml;r Pointen und Manifeste.</span></li>
+        <li><span class="k">Hashtags</span><span class="v">Maximal drei. <i>#bonvio #wien #steuer</i>. Lower-case, keine Caps.</span></li>
+        <li><span class="k">Frequenz</span><span class="v">Lieber wenig und gut. Drei Posts/Woche, drei Stories &mdash; nicht t&auml;glich.</span></li>
+      </ul>
+    </section>
+
+    <!-- 08 RULES -->
+    <section id="rules">
+      <div class="marg"><span class="num">09</span>&mdash; Do &amp; Don't</div>
+      <h2>Die <em>Hausordnung</em>. Wenn unsicher: das hier.</h2>
+
+      <div class="dodont">
+        <div class="dd-card do">
+          <div class="badge">Do &middot; Bonvio</div>
+          <ul>
+            <li>Serif italic f&uuml;r das eine Wort, das z&auml;hlt</li>
+            <li>Em-Dash &mdash; nicht Bindestrich, nicht Schr&auml;gstrich</li>
+            <li>Drei-Beat-Rhythmus: &bdquo;A. B. C.&ldquo;</li>
+            <li>Du, nicht Sie. Englisch: you, nicht we-the-user</li>
+            <li>Wenn etwas nicht stimmt &mdash; sagen, nicht verstecken</li>
+            <li>Off-white Grund mit dotted-grid darunter</li>
+            <li>Eine Akzentfarbe pro Bildschirm</li>
+            <li>Cormorant Italic f&uuml;r das eine Wort, das z&auml;hlt</li>
+            <li>Marginalien-Nummerierung an jeder Sektion</li>
+          </ul>
+        </div>
+        <div class="dd-card dont">
+          <div class="badge">Don't &middot; nie</div>
+          <ul>
+            <li>Gradienten, Glasmorphism, Glow-Effects</li>
+            <li>Emoji in Marken-Kommunikation</li>
+            <li>Mascots, Illustration-Charaktere, Cartoonfiguren</li>
+            <li>&bdquo;Unlimited&ldquo; &mdash; oder andere &Uuml;berversprechen</li>
+            <li>Schriften neben Cormorant / Sans / Mono</li>
+            <li>SaaS-Buzzwords (revolution&auml;r, KI-gest&uuml;tzt, end-to-end)</li>
+            <li>Layered Cards mit Rounded-Corner-Borders</li>
+            <li>Rainbow-Icons, Multi-Color-Illustrationen</li>
+            <li>Stock-Photos mit l&auml;chelnden Models</li>
+            <li>&bdquo;Click here&ldquo;, &bdquo;Learn more&ldquo;, &bdquo;Get started&ldquo;</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLOSING -->
+    <section class="closing">
+      <div class="marg" style="margin-bottom: 24px;"><span class="num">·</span>Das Versprechen</div>
+      <blockquote>Knipsen. Vergessen.<br><em>Bonvio merkt sich alles.</em></blockquote>
+    </section>
+
+  </div>
+
+  <footer>
+    <span>Bonvio &middot; Brand Book v1 &middot; Wien 2026</span>
+    <span>Gegr&uuml;ndet von Niko A.</span>
+  </footer>
+</body>
+</html>
