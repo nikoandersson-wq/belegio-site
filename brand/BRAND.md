@@ -66,24 +66,28 @@ says so — that restraint *is* the brand.
 
 | Role | Hex | Use |
 |---|---|---|
-| Cream (background) | `#F4F3F0` | default light background |
-| Paper | `#FBFAF7` | cards, receipt surfaces |
-| Ink (text) | `#1A1A1A` | body + headlines on light |
-| Warm near-black | `#1A1814` | alt dark text, warm headlines |
-| Deep bottle green (**primary accent**) | `#1F4332` | buttons, badges, links, accent words, dark surfaces |
+| Page (background) | `#F4F5F4` | default light background (cool, not cream) |
+| Surface | `#FFFFFF` | cards, receipt surfaces |
+| Ink (text) | `#14171A` | body + headlines on light |
+| Deep bottle green (**the** accent) | `#1F4332` | buttons, totals, accent words, dark surfaces |
 | Bottle green (darker) | `#0F2A1F` | large dark backgrounds, hover |
-| **Gold (data accent)** | `#B8860B` | stat numbers, eyebrows, section numbers — **never fills or body text** |
-| Bronze (gold on light) | `#7A5D1F` | gold at small sizes where `#B8860B` is too light to read |
-| Warm wheat (accent on dark) | `#E0C896` | accent + CTA text on green surfaces |
-| Pale green tint | `#CDE0D3` | subtle fills, badges on light |
-| Sage (muted text) | `#6B6F6A` | secondary text, muted labels (warmer than neutral grey) |
-| Warm hairline | `#E2E0DB` | card borders, dividers on light |
+| Green tint | `rgba(31,67,50,0.08)` | pills, quiet emphasis, the total row |
+| **Alert red (semantic only)** | `#B3261E` | needs-review, payment mismatch — **never decorative** |
+| Muted text | `rgba(20,23,26,0.52)` | secondary text, labels |
+| Hairline | `rgba(20,23,26,0.11)` | card borders, dividers |
+| White on dark | `#FFFFFF` | text + CTA on green surfaces |
 
-**The modernization (added 2026-06-27, from the Raiffeisen deck):** a disciplined **gold
-data-accent** `#B8860B` and a warmer neutral-grey system (`#6B6F6A` text, `#E2E0DB` borders).
-Green stays the soul of the brand — gold is *only* for numbers, eyebrows, and section
-counters, never a second decorative colour and never a fill. Dark sections remain bottle
-green `#1F4332` with wheat `#E0C896` on top.
+**The 2026-07-21 rebrand — why gold went.** The product read "luxury hotel / heritage bank"
+rather than software. Three things caused it: **gold as a type colour** (`#E0C896` on green is a
+heraldic pairing), **Courier New everywhere**, and decorative **wax seals + perforated borders**.
+All three are retired.
+
+**The rule is proportion, not hue.** Bottle green + gold + red is literally a coat of arms. The
+escape: roughly **90 % white and near-black**, green as the single *structural* colour (it marks
+what matters — the total, the action, the status), and red measured in pixels per screen.
+
+**Retired — do not reintroduce:** gold `#B8860B`, bronze `#7A5D1F`, wheat `#E0C896`,
+cream `#F4F3F0`, warm hairline `#E2E0DB`, warm ink `#1A1814`.
 
 **⚠ One inconsistency to resolve.** The CSS variable named `--rust` is actually the deep
 green `#1F4332`, and it's the de-facto primary accent across the live site. But the
@@ -97,32 +101,51 @@ favicon, or (b) keep rust orange `#B4451F` as a logo-only signature colour. Unti
 
 ## 5. Typography
 
-Three roles, three faces — from the Raiffeisen deck (2026-06-27):
+**Two roles, two stacks — and both ship with Microsoft 365** (2026-07-21):
 
-- **Display / headings:** **Cormorant** serif (Google Fonts). Weight **600–700**, tight
-  tracking (**-0.022 to -0.025em**), line-height **0.98–1.05**. Accent word: *Cormorant
-  italic, weight 400–500, in green*. Also carries large **Kennzahlen** (× €50/h, = €2,0 Mio.) —
-  with the number itself in **gold `#B8860B`**.
-- **Body & functional labels:** sans — `"Helvetica Neue", "Inter", -apple-system, Helvetica, Arial, sans-serif`.
-  400/500, 14–19px, line-height 1.5–1.6.
-- **Eyebrows / meta / dates / hashtags:** **monospace** (`"Courier New", ui-monospace, monospace`),
-  UPPERCASE, wide tracking (**0.14–0.2em**), often in **gold**.
+```css
+--sans: Aptos, "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+--mono: Consolas, "Aptos Mono", ui-monospace, "SF Mono", Menlo, monospace;
+```
 
-**Forbidden:** Roboto, Arial-as-display, Open Sans, Fraunces, Aptos. Don't bring back
-Newsreader — Cormorant is the display serif now.
+- **Sans — everything.** Display: weight **600**, tracking **-0.021 to -0.025em**, line-height
+  1.12–1.2. Body: 400/500, 15–18px, line-height 1.5–1.6. Labels/eyebrows: **sentence case,
+  weight 600, no letterspacing** — the old UPPERCASE + wide-tracking treatment is what read as
+  editorial/typewriter.
+- **Mono — data only.** Email addresses, amounts, receipt IDs, and literal commands the user
+  types. Amounts in mono also buy **tabular alignment** — the decimals line up in a column.
+  Never body text; never section headings in product email. (A mono *eyebrow* is fine on the
+  marketing site — with Consolas it reads technical, which Courier never did.)
 
-(For headless social-image rendering the template may keep a system-sans fallback so it
-screenshots without loading web fonts — but the brand display face is Cormorant.)
+**Why these two, specifically:** **Aptos** has been the Microsoft 365 default since 2024 and
+**Consolas** ships with Office on Windows *and* Mac. So a PowerPoint or Gamma deck matches the
+product with **no embedding, no subsetting, and no font remapping** — which is exactly the
+breakage documented in the Gamma→PPTX export fix. Pick Aptos in PowerPoint and you're done.
+
+**No webfonts anywhere.** Site and email load **zero** font files. Email clients strip
+`@font-face` regardless, and the fallbacks (Segoe UI on Windows, SF on Mac) are the same
+neutral grotesque, so it degrades invisibly. On perpetual Office (2019/2021) there's no Aptos —
+it lands on Segoe UI, which is the point of the stack.
+
+**Forbidden:** Cormorant, Newsreader, **Inter** (not in Office — this is what forced the font
+surgery), **Courier New**, Roboto, Arial-as-display, Open Sans, Fraunces.
 
 ---
 
 ## 6. Visual motifs (reuse these, don't invent new ones)
 
 - **Dot grid** background texture (faint 4px radial dots).
-- **Receipt paper:** monospace, perforated top/bottom edges, dashed rows, `SUMME / TOTAL`.
-- **Numbered sections** `01`–`07` in a green mono badge.
-- **Pill buttons**, fully rounded.
-- **Trust strip:** *Aus Wien · Server in Deutschland · DSGVO & §132 BAO konform*.
+- **Receipt paper** — *only* where an actual receipt is being depicted (a product screenshot, the
+  phone mock). It is a picture of the thing, never the chrome around it.
+- **Numbered sections** `01`–`07` in a small green mono badge, with a **sentence-case** label.
+- **Pill buttons**, fully rounded. Cards at radius 9–14px, hairline border, no shadow.
+- **Trust strip:** *Aus Wien · Server in Deutschland · DSGVO & §132 BAO konform* — as a plain
+  inline line.
+
+**Retired 2026-07-21 — do not reintroduce:**
+- **Wax seals / rotated stamps** (`DSGVO ✦ KONFORM`). Replaced by the plain trust line above.
+- **Perforated / dashed borders** as page chrome. Use 1px solid hairlines and whitespace.
+- **UPPERCASE + wide-tracked mono labels** as section headings.
 
 ---
 
