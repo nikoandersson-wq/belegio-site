@@ -4,31 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bonvio &mdash; Brand Book v1</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #F4F3F0;          /* neutral off-white */
-      --paper: #FBFAF7;       /* cards, receipt surfaces */
-      --ink: #1A1A1A;
-      --ink-warm: #1A1814;    /* warm near-black, dark text alt */
+      --bg: #F4F5F4;          /* neutral off-white */
+      --surface: #FFFFFF;       /* cards, receipt surfaces */
+      --ink: #14171A;
       --ink-soft: #0F2A1F;    /* deep bottle green */
-      --rust: #1F4332;        /* bottle green primary accent (legacy var name) */
+      --green: #1F4332;        /* bottle green primary accent (legacy var name) */
       --accent: #1F4332;
-      --gold: #B8860B;        /* data accent — stat numbers, eyebrows, section nums */
-      --gold-deep: #7A5D1F;   /* gold on light surfaces, for legibility */
-      --wheat: #E0C896;       /* accent on dark / green surfaces */
+      --on-dark: #FFFFFF;        /* text + CTA on green surfaces */
       --tint: #CDE0D3;        /* pale green tint — subtle fills, badges */
       --sage: #6B6F6A;        /* muted secondary text */
-      --line: #E2E0DB;        /* warm hairlines, card borders */
-      --muted: rgba(26,26,26,0.55);
-      --muted-2: rgba(26,26,26,0.72);
-      --hair: rgba(26,26,26,0.08);
-      --hair-2: rgba(26,26,26,0.12);
-      --sans: "Helvetica Neue", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-      --serif: "Cormorant", "Times New Roman", Georgia, serif;
-      --mono: "Courier New", ui-monospace, monospace;
+      --line: #E4E6E4;        /* warm hairlines, card borders */
+      --muted: rgba(20,23,26,0.55);
+      --muted-2: rgba(20,23,26,0.72);
+      --hair: rgba(20,23,26,0.08);
+      --hair-2: rgba(20,23,26,0.12);
+      --sans: Aptos, "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+      --serif: Aptos, "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;  /* display = same sans; no serif face */
+      --mono: Consolas, "Aptos Mono", ui-monospace, "SF Mono", Menlo, monospace;
     }
     * { box-sizing: border-box; }
     html, body { margin: 0; padding: 0; }
@@ -43,7 +37,7 @@
     body::before {
       content: "";
       position: fixed; inset: 0;
-      background-image: radial-gradient(rgba(26,26,26,0.04) 1px, transparent 1px);
+      background-image: radial-gradient(rgba(20,23,26,0.04) 1px, transparent 1px);
       background-size: 4px 4px;
       pointer-events: none;
       z-index: 0;
@@ -123,7 +117,7 @@
       display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px;
     }
     .sw {
-      background: var(--paper);
+      background: var(--surface);
       border: 1px solid var(--hair-2);
       border-radius: 8px;
       overflow: hidden;
@@ -137,7 +131,7 @@
 
     /* TYPE SPECIMEN */
     .specimen {
-      background: var(--paper);
+      background: var(--surface);
       border: 1px solid var(--hair-2);
       border-radius: 12px;
       padding: 28px 32px;
@@ -161,7 +155,7 @@
       margin-top: 56px;
     }
     .dd-card {
-      background: var(--paper);
+      background: var(--surface);
       border: 1px solid var(--hair-2);
       border-radius: 14px;
       padding: 28px 30px;
@@ -197,7 +191,7 @@
     }
     @media (max-width: 900px) { .voice-block { grid-template-columns: 1fr; } .dodont { grid-template-columns: 1fr; } }
     .voice-card {
-      background: var(--paper);
+      background: var(--surface);
       border: 1px solid var(--hair-2);
       border-radius: 14px;
       padding: 28px 32px;
@@ -239,7 +233,7 @@
       color: var(--muted);
     }
     .social-mock .canvas {
-      background: var(--paper);
+      background: var(--surface);
       border: 1px solid var(--hair-2);
       overflow: hidden;
       position: relative;
@@ -263,13 +257,13 @@
     /* IG story 9:16 */
     .ig-story { aspect-ratio: 9 / 16; padding: 28px 24px; display: flex; flex-direction: column; justify-content: space-between;
       background: var(--ink-soft); color: var(--bg); }
-    .ig-story .logo { font-family: var(--serif); font-style: italic; font-size: 14px; color: var(--wheat); font-weight: 500; }
+    .ig-story .logo { font-family: var(--serif); font-style: italic; font-size: 14px; color: var(--on-dark); font-weight: 500; }
     .ig-story .big {
       font-family: var(--serif); font-weight: 400; font-style: italic;
       font-size: clamp(22px, 3.6vw, 36px); line-height: 1.1; letter-spacing: -0.015em;
       color: var(--bg);
     }
-    .ig-story .big em { color: var(--wheat); }
+    .ig-story .big em { color: var(--on-dark); }
     .ig-story .foot {
       font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.18em;
       text-transform: uppercase; color: rgba(244,243,240,0.6);
@@ -460,16 +454,16 @@
       </p>
 
       <ul class="swatches" style="grid-template-columns: repeat(3, 1fr); margin-top: 56px;">
-        <li class="sw"><span class="chip" style="background:#F4F3F0"></span><div class="meta"><div class="name">Off-white</div><div class="hex">#F4F3F0</div><div class="use">Prim&auml;rer Hintergrund. Mit dotted-grid darunter.</div></div></li>
+        <li class="sw"><span class="chip" style="background:#F4F5F4"></span><div class="meta"><div class="name">Off-white</div><div class="hex">#F4F5F4</div><div class="use">Prim&auml;rer Hintergrund. Mit dotted-grid darunter.</div></div></li>
         <li class="sw"><span class="chip" style="background:#1F4332"></span><div class="meta"><div class="name">Bottle green</div><div class="hex">#1F4332</div><div class="use">Prim&auml;rer Akzent. Buttons, Stempel, Italic-Highlights.</div></div></li>
         <li class="sw"><span class="chip" style="background:#0F2A1F"></span><div class="meta"><div class="name">Deep green</div><div class="hex">#0F2A1F</div><div class="use">Dunkle Sektionen, CTA-Repeat, Phone-Bezel.</div></div></li>
-        <li class="sw"><span class="chip" style="background:#B8860B"></span><div class="meta"><div class="name">Gold</div><div class="hex">#B8860B</div><div class="use">Daten-Akzent. Kennzahlen, Eyebrows, Sektionsnummern.</div></div></li>
-        <li class="sw"><span class="chip" style="background:#7A5D1F"></span><div class="meta"><div class="name">Bronze</div><div class="hex">#7A5D1F</div><div class="use">Gold auf hellem Grund &mdash; lesbarer bei kleinem Text.</div></div></li>
-        <li class="sw"><span class="chip" style="background:#E0C896"></span><div class="meta"><div class="name">Wheat</div><div class="hex">#E0C896</div><div class="use">Akzent auf dunklem Gr&uuml;n. Step-Numbers, Pfeile.</div></div></li>
+        <li class="sw"><span class="chip" style="background:#1F4332"></span><div class="meta"><div class="name">Gold</div><div class="hex">#1F4332</div><div class="use">Daten-Akzent. Kennzahlen, Eyebrows, Sektionsnummern.</div></div></li>
+        <li class="sw"><span class="chip" style="background:#1F4332"></span><div class="meta"><div class="name">Bronze</div><div class="hex">#1F4332</div><div class="use">Gold auf hellem Grund &mdash; lesbarer bei kleinem Text.</div></div></li>
+        <li class="sw"><span class="chip" style="background:#FFFFFF"></span><div class="meta"><div class="name">Wheat</div><div class="hex">#FFFFFF</div><div class="use">Akzent auf dunklem Gr&uuml;n. Step-Numbers, Pfeile.</div></div></li>
         <li class="sw"><span class="chip" style="background:#CDE0D3"></span><div class="meta"><div class="name">Tint</div><div class="hex">#CDE0D3</div><div class="use">Blasser Gr&uuml;nton. Dezente F&uuml;llungen, Badges.</div></div></li>
         <li class="sw"><span class="chip" style="background:#6B6F6A"></span><div class="meta"><div class="name">Sage</div><div class="hex">#6B6F6A</div><div class="use">Sekund&auml;rtext, ged&auml;mpfte Labels. W&auml;rmer als Neutralgrau.</div></div></li>
-        <li class="sw"><span class="chip" style="background:#FBFAF7;border-right:1px solid var(--line)"></span><div class="meta"><div class="name">Paper</div><div class="hex">#FBFAF7</div><div class="use">Karten, Belege, Stempel-Hintergrund.</div></div></li>
-        <li class="sw"><span class="chip" style="background:#1A1A1A"></span><div class="meta"><div class="name">Ink</div><div class="hex">#1A1A1A</div><div class="use">K&ouml;rpertext. Ist die Hauptfarbe f&uuml;r Worte.</div></div></li>
+        <li class="sw"><span class="chip" style="background:#FFFFFF;border-right:1px solid var(--line)"></span><div class="meta"><div class="name">Paper</div><div class="hex">#FFFFFF</div><div class="use">Karten, Belege, Stempel-Hintergrund.</div></div></li>
+        <li class="sw"><span class="chip" style="background:#14171A"></span><div class="meta"><div class="name">Ink</div><div class="hex">#14171A</div><div class="use">K&ouml;rpertext. Ist die Hauptfarbe f&uuml;r Worte.</div></div></li>
       </ul>
 
       <ul class="deflist" style="margin-top: 64px;">
@@ -482,34 +476,37 @@
     <!-- 04 TYPE -->
     <section id="type">
       <div class="marg"><span class="num">05</span>&mdash; Typografie</div>
-      <h2>Eine Serif f&uuml;r <em>Charakter</em>. Eine Sans f&uuml;r Arbeit.</h2>
+      <h2>Eine Sans f&uuml;r alles. Mono nur f&uuml;r <em>Daten</em>.</h2>
       <p class="lede">
-        Cormorant (Google Fonts) tr&auml;gt das Editorial &mdash; H1, Section-Titles,
-        Pull-Quotes, gro&szlig;e Kennzahlen und Pointen in Italic. Helvetica&nbsp;Neue / Inter
-        machen den Body-Text und alle funktionalen Labels. Courier New ist das Mono
-        &mdash; f&uuml;r Eyebrows, Datumsangaben, Hashtags. Drei Rollen, klare Aufgaben.
+        Zwei Rollen, zwei Stacks &mdash; und beide sind in Microsoft&nbsp;365 vorhanden.
+        <b>Aptos</b> ist seit 2024 die Office-Standardschrift und tr&auml;gt alles: H1,
+        Section-Titles, Body, Labels. <b>Consolas</b> (liegt Office auf Windows <i>und</i> Mac bei)
+        ist das Mono &mdash; ausschlie&szlig;lich f&uuml;r Daten: Adressen, Betr&auml;ge, Beleg-Nummern,
+        Befehle. Damit passt ein PowerPoint- oder Gamma-Deck zum Produkt: <b>kein Einbetten,
+        kein Subsetting, kein Font-Remapping.</b>
       </p>
 
       <div class="specimen" style="margin-top: 56px;">
-        <div class="label"><b>Cormorant</b> &middot; Serif &middot; Display / Italic accent</div>
+        <div class="label"><b>Aptos</b> &middot; Sans &middot; Display</div>
         <div class="display-serif">Foto machen.<br>E-Mail senden.<br><em>Fertig.</em></div>
       </div>
       <div class="specimen">
-        <div class="label"><b>Sans</b> &middot; Helvetica Neue / Inter &middot; Body &amp; Labels</div>
+        <div class="label"><b>Aptos</b> &middot; Sans &middot; Body &amp; Labels</div>
         <div class="body-sans">Bonvio ist die Belegverwaltung, die in deinem E-Mail-Postfach lebt. Foto machen, an deine pers&ouml;nliche Bonvio-Adresse mailen &mdash; wir speichern, sortieren und finden den Beleg wieder.</div>
       </div>
       <div class="specimen">
-        <div class="label"><b>Courier New</b> &middot; Mono &middot; Eyebrows / Labels / Datums</div>
-        <div class="label-mono">01 &mdash; Das Problem &middot; 12.05.2026 &middot; #mittagessen</div>
+        <div class="label"><b>Consolas</b> &middot; Mono &middot; nur Daten</div>
+        <div class="label-mono">muster1@bonvio.eu &middot; 63,30 &euro; &middot; R7A3F19C</div>
       </div>
 
       <ul class="deflist" style="margin-top: 56px;">
-        <li><span class="k">Display</span><span class="v">Cormorant 600/700, letter-spacing -0.022 bis -0.025em, line-height 0.98&ndash;1.05.</span></li>
-        <li><span class="k">Italic-Akzent</span><span class="v">Cormorant italic 400/500, in Bottle green. F&uuml;r das eine Wort, das z&auml;hlt.</span></li>
-        <li><span class="k">Kennzahlen</span><span class="v">Cormorant f&uuml;r gro&szlig;e Zahlen (&times;&euro;50/h, = &euro;2,0&nbsp;Mio.). Wert selbst in Gold.</span></li>
-        <li><span class="k">Body</span><span class="v">Helvetica Neue / Inter 400/500, 14&ndash;19px, line-height 1.5&ndash;1.6, text-wrap pretty.</span></li>
-        <li><span class="k">Eyebrows</span><span class="v">Courier 700, 11&ndash;14px, letter-spacing 0.16&ndash;0.18em, UPPERCASE, oft in Gold.</span></li>
-        <li><span class="k">Verboten</span><span class="v">Roboto, Arial, Open Sans, Fraunces, Aptos. Keine geschriebenen Schriften, kein Display-Sans-Trash.</span></li>
+        <li><span class="k">Display</span><span class="v">Aptos 600, letter-spacing -0.021 bis -0.025em, line-height 1.12&ndash;1.2.</span></li>
+        <li><span class="k">Akzent-Wort</span><span class="v">Aptos 600 in Bottle green. F&uuml;r das eine Wort, das z&auml;hlt.</span></li>
+        <li><span class="k">Body</span><span class="v">Aptos 400/500, 15&ndash;18px, line-height 1.5&ndash;1.6, text-wrap pretty.</span></li>
+        <li><span class="k">Labels</span><span class="v">Aptos 600, 12,5&ndash;15px, <b>Satzschreibung, kein Letterspacing</b>. Kein UPPERCASE-Mono mehr.</span></li>
+        <li><span class="k">Mono</span><span class="v">Consolas &mdash; nur Adressen, Betr&auml;ge, IDs, Befehle. Betr&auml;ge zus&auml;tzlich tabellarisch (Kommas untereinander).</span></li>
+        <li><span class="k">Fallback</span><span class="v">Ohne M365: Segoe&nbsp;UI (Windows) / SF (Mac). Gleiche Formensprache &mdash; f&auml;llt nicht auf. Keine Webfonts, null Font-Dateien.</span></li>
+        <li><span class="k">Verboten</span><span class="v">Cormorant, Newsreader, <b>Inter</b> (nicht in Office &mdash; daher der Font-Bruch), <b>Courier New</b>, Roboto, Open Sans, Fraunces.</span></li>
       </ul>
     </section>
 
@@ -528,9 +525,9 @@
         <div>
           <div class="label-mono" style="font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; color: var(--muted-2); text-transform: uppercase; margin-bottom: 18px;">Perforation</div>
           <div style="position: relative; padding: 28px 0; max-width: 280px;">
-            <div style="height: 6px; background-image: radial-gradient(circle at 6px center, var(--bg) 2.5px, transparent 3px); background-repeat: repeat-x; background-size: 14px 6px; background-color: var(--paper); border-top: 1px solid var(--hair-2); border-bottom: 1px solid var(--hair-2);"></div>
+            <div style="height: 6px; background-image: radial-gradient(circle at 6px center, var(--bg) 2.5px, transparent 3px); background-repeat: repeat-x; background-size: 14px 6px; background-color: var(--surface); border-top: 1px solid var(--hair-2); border-bottom: 1px solid var(--hair-2);"></div>
             <div style="text-align: center; padding: 12px 0; font-family: var(--serif); font-style: italic; font-size: 18px; color: var(--ink);">&mdash; hier abreissen &mdash;</div>
-            <div style="height: 6px; background-image: radial-gradient(circle at 6px center, var(--bg) 2.5px, transparent 3px); background-repeat: repeat-x; background-size: 14px 6px; background-color: var(--paper); border-top: 1px solid var(--hair-2); border-bottom: 1px solid var(--hair-2);"></div>
+            <div style="height: 6px; background-image: radial-gradient(circle at 6px center, var(--bg) 2.5px, transparent 3px); background-repeat: repeat-x; background-size: 14px 6px; background-color: var(--surface); border-top: 1px solid var(--hair-2); border-bottom: 1px solid var(--hair-2);"></div>
           </div>
           <p style="margin-top: 24px; max-width: 38ch; font-size: 15px; line-height: 1.55; color: var(--muted-2);">
             Halbkreise gegen den Hintergrund stanzen die Sektion frei. Trennlinie f&uuml;r
@@ -540,7 +537,7 @@
 
         <div>
           <div class="label-mono" style="font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; color: var(--muted-2); text-transform: uppercase; margin-bottom: 18px;">Marginalien</div>
-          <div style="background: var(--paper); border: 1px solid var(--hair-2); padding: 24px 26px; max-width: 380px;">
+          <div style="background: var(--surface); border: 1px solid var(--hair-2); padding: 24px 26px; max-width: 380px;">
             <div class="marg"><span class="num">03</span>&mdash; Wie es funktioniert</div>
             <div style="margin-top: 14px; font-family: var(--serif); font-size: 26px; line-height: 1.1; letter-spacing: -0.015em;">Foto. E-Mail. <i>Aufbewahrt.</i></div>
           </div>
@@ -552,7 +549,7 @@
 
         <div>
           <div class="label-mono" style="font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; color: var(--muted-2); text-transform: uppercase; margin-bottom: 18px;">Dotted Grid</div>
-          <div style="height: 140px; background-color: var(--paper); border: 1px solid var(--hair-2); background-image: radial-gradient(rgba(26,26,26,0.08) 1px, transparent 1px); background-size: 6px 6px; position: relative;">
+          <div style="height: 140px; background-color: var(--surface); border: 1px solid var(--hair-2); background-image: radial-gradient(rgba(20,23,26,0.08) 1px, transparent 1px); background-size: 6px 6px; position: relative;">
             <div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); font-family: var(--serif); font-style: italic; font-size: 24px; color: var(--ink);">der ruhige Grund</div>
           </div>
           <p style="margin-top: 24px; max-width: 38ch; font-size: 15px; line-height: 1.55; color: var(--muted-2);">
@@ -639,14 +636,14 @@
         <div class="dd-card do">
           <div class="badge">Do &middot; Bonvio</div>
           <ul>
-            <li>Serif italic f&uuml;r das eine Wort, das z&auml;hlt</li>
+            <li>Gr&uuml;n f&uuml;r das eine Wort, das z&auml;hlt</li>
             <li>Em-Dash &mdash; nicht Bindestrich, nicht Schr&auml;gstrich</li>
             <li>Drei-Beat-Rhythmus: &bdquo;A. B. C.&ldquo;</li>
             <li>Du, nicht Sie. Englisch: you, nicht we-the-user</li>
             <li>Wenn etwas nicht stimmt &mdash; sagen, nicht verstecken</li>
-            <li>Off-white Grund mit dotted-grid darunter</li>
+            <li>K&uuml;hles Off-white, viel Wei&szlig;raum, Haarlinien</li>
             <li>Eine Akzentfarbe pro Bildschirm</li>
-            <li>Cormorant Italic f&uuml;r das eine Wort, das z&auml;hlt</li>
+            <li>Rot nur wenn ein Mensch hinschauen muss &mdash; nie dekorativ</li>
             <li>Marginalien-Nummerierung an jeder Sektion</li>
           </ul>
         </div>
@@ -657,7 +654,8 @@
             <li>Emoji in Marken-Kommunikation</li>
             <li>Mascots, Illustration-Charaktere, Cartoonfiguren</li>
             <li>&bdquo;Unlimited&ldquo; &mdash; oder andere &Uuml;berversprechen</li>
-            <li>Schriften neben Cormorant / Sans / Mono</li>
+            <li>Schriften neben Aptos / Consolas &mdash; nie Courier New, nie Inter</li>
+            <li>Gold, Wachssiegel, perforierte R&auml;nder (2026-07 abgeschafft)</li>
             <li>SaaS-Buzzwords (revolution&auml;r, KI-gest&uuml;tzt, end-to-end)</li>
             <li>Layered Cards mit Rounded-Corner-Borders</li>
             <li>Rainbow-Icons, Multi-Color-Illustrationen</li>

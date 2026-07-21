@@ -6,9 +6,6 @@
   <title>Privacy Policy &ndash; Bonvio</title>
   <meta name="robots" content="noindex, follow">
   <link rel="canonical" href="https://bonvio.eu/datenschutz-en.html">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231F4332'/%3E%3Ctext x='16' y='23' font-family='Helvetica Neue,Helvetica,Arial,sans-serif' font-size='22' font-weight='700' fill='%23F4EFE2' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E">
   <script>
   (function(){
@@ -21,23 +18,21 @@
   </script>
   <style>
     :root {
-      --cream: #F4F3F0;
-      --ink: #1A1A1A;
+      --page: #F4F5F4;          /* cool near-white page ground */
+      --ink: #14171A;
       --ink-soft: #0F2A1F;
-      --rust: #1F4332;
-      --gold: #B8860B;           /* data accent */
-      --gold-deep: #7A5D1F;      /* gold at small sizes (eyebrows) */
-      --muted: rgba(26,26,26,0.55);
-      --hair: rgba(26,26,26,0.08);
-      --hair-2: rgba(26,26,26,0.12);
-      --sans: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Inter", "Segoe UI", Helvetica, Arial, sans-serif;
-      --serif: "Cormorant", "Times New Roman", Georgia, serif;
-      --mono: "Courier New", ui-monospace, monospace;
+      --green: #1F4332;
+      --muted: rgba(20,23,26,0.55);
+      --hair: rgba(20,23,26,0.08);
+      --hair-2: rgba(20,23,26,0.12);
+      --sans: Aptos, "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+      --serif: Aptos, "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;  /* display = same sans; no serif face */
+      --mono: Consolas, "Aptos Mono", ui-monospace, "SF Mono", Menlo, monospace;
     }
     * { box-sizing: border-box; }
     html, body { margin: 0; padding: 0; }
     body {
-      background: var(--cream);
+      background: var(--page);
       color: var(--ink);
       font-family: var(--sans);
       -webkit-font-smoothing: antialiased;
@@ -47,7 +42,7 @@
     body::before {
       content: "";
       position: fixed; inset: 0;
-      background-image: radial-gradient(rgba(26,26,26,0.04) 1px, transparent 1px);
+      background-image: radial-gradient(rgba(20,23,26,0.04) 1px, transparent 1px);
       background-size: 4px 4px;
       pointer-events: none;
       z-index: 0;
@@ -72,10 +67,10 @@
     }
     .logo .mark {
       width: 28px; height: 28px;
-      background: var(--rust);
+      background: var(--green);
       border-radius: 6.16px;
       display: grid; place-items: center;
-      color: var(--cream);
+      color: var(--page);
       font-weight: 700; font-size: 17.5px;
       line-height: 1; padding-bottom: 1px;
       letter-spacing: -0.02em;
@@ -94,7 +89,7 @@
     .page-eyebrow {
       font-family: var(--mono);
       font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--gold-deep);
+      color: var(--green);
       margin-bottom: 16px;
     }
     h1 {
@@ -107,7 +102,7 @@
     }
 
     .notice {
-      background: rgba(26,26,26,0.04);
+      background: rgba(20,23,26,0.04);
       border: 1px solid var(--hair-2);
       border-radius: 8px;
       padding: 20px 24px;
