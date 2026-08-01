@@ -1,28 +1,27 @@
-# Belegio — Brandbook
+# Bonvio — Brandbook
 
 > Reference file for AI/agent content generation. Read this **before** writing any post,
 > caption, or image. If a draft conflicts with anything here, the brandbook wins.
-> Derived from the live site (belegio.eu / index.html).
+> Derived from the live site (bonvio.eu / index.html).
 
 ---
 
-## 1. What Belegio is (use for factual accuracy)
+## 1. What Bonvio is (use for factual accuracy)
 
-Receipt management by email. Photograph a receipt, email it to your personal Belegio
+Receipt management by email. Photograph a receipt, email it to your personal Bonvio
 address, and it is stored, sorted, and searchable forever.
 
 | Fact | Value |
 |---|---|
-| Price | €39,99 / year |
-| Quota | up to 200 receipts / year |
+| Price | €39.99 / year founding price · 30 days free first. Rises to €49.99 from Jan 2027 — anyone who starts before then keeps €39.99 for life. |
 | How it works | Photo → email → auto-extract (date, vendor, amount, VAT) → confirmation |
-| Retrieval | email `EXPORT …` → get a ZIP + accountant-ready CSV |
+| Retrieval | email `EXPORT …` → get a secure download link with a ZIP + accountant-ready CSV |
 | Categorisation | hashtags in the subject line (e.g. `#steuer`, `#auto`) |
 | Storage | encrypted, EU servers in Frankfurt, GDPR-compliant |
-| Retention | 7 years per §132 BAO (Austrian legal minimum) |
+| Retention | 10 years — §132 BAO (Austria) / §147 AO (Germany) |
 | Audience | private individuals · freelancers (Selbständige) · small businesses |
 | Origin | Made in Vienna |
-| **Status** | **Pre-launch.** Every CTA points to the **waitlist**, never "buy now". |
+| **Status** | **Live and selling.** CTA is "Try free for 30 days" → real Stripe checkout. There is no quota and no waitlist. |
 
 **Never claim:** an app, a login, a password, or any software to install — the whole point
 is that there is none. Do not invent features (no mobile app, no dashboard, no integrations).
@@ -44,8 +43,9 @@ says so — that restraint *is* the brand.
 **Don't**
 - No exclamation spam, no hype words ("revolutionary", "game-changer", "effortless magic").
 - No emoji clutter. At most one, rarely. The site uses none.
-- No jargon, no growth-hacker tone, no fake urgency ("act now", countdowns).
-- No overpromising on launch date — it's "soon" / "bald".
+- No jargon, no growth-hacker tone, no fake urgency ("act now", countdowns). The founding
+  price *does* rise in January 2027 — that's real, so state it plainly (a fact, a date) rather
+  than dramatizing it (no countdown timers, no "hurry").
 
 **Sample on-brand lines**
 - DE: *"Im März suchst du, was du im Januar weggeschmissen hast."*
@@ -188,7 +188,7 @@ One blog post → 3 posts per platform per week. DE primary, EN variant.
 |---|---|---|---|
 | Mon | Announce post | hook (1–2 lines) + link | yes, blog URL |
 | Wed | Standalone tip | one concrete tip from the post, value-first | no |
-| Fri | Pain / question | a pain-point or question + soft waitlist CTA | waitlist |
+| Fri | Pain / question | a pain-point or question + soft trial CTA | trial |
 
 **Length targets**
 - **X:** ≤ 280 characters. 1 idea. 0–2 hashtags. Link on its own line.
@@ -208,7 +208,8 @@ Pick a relevant subset (IG 5–10, X 0–2). Never dump the whole list.
 
 ## 9. Hard don'ts
 
-- No "download / sign up / buy" — pre-launch CTA is **join the waitlist** only.
+- CTA is always **"Try free for 30 days"** (real Stripe checkout) — never "buy now" as a hard
+  sell, and never a waitlist (there isn't one; the trial is real and immediate).
 - No invented features, prices, or launch dates.
 - No medical/legal/tax *advice* framed as guaranteed — tips are general; final word is the user's Steuerberater.
 - No competitor names. No claims about other tools.
@@ -221,7 +222,7 @@ Pick a relevant subset (IG 5–10, X 0–2). Never dump the whole list.
 Use `social-template.html` in this folder. Either:
 
 1. **URL params** (best for headless rendering): open
-   `social-template.html?format=square&theme=cream&eyebrow=BELEGIO%20·%20TIPP&headline=Your%20headline&sub=Optional%20sub&footer=belegio.eu`
+   `social-template.html?format=square&theme=cream&eyebrow=BONVIO%20·%20TIPP&headline=Your%20headline&sub=Optional%20sub&footer=bonvio.eu`
    then screenshot the `#canvas` element.
 2. **Edit the `POST` object** at the top of the file, open in a browser, screenshot.
 

@@ -86,10 +86,6 @@
     .nav-links a { color: var(--ink); text-decoration: none; opacity: 0.85; transition: opacity .15s; }
     .nav-links a:hover { opacity: 1; }
     .nav-links a.active { opacity: 1; font-weight: 700; }
-    .nav-badge {
-      font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--green); padding: 4px 10px; border: 1px solid var(--green); border-radius: 999px;
-    }
     .lang-switch {
       display: inline-flex; align-items: center; gap: 4px;
       font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
@@ -189,11 +185,12 @@
     }
     .empty strong { display: block; font-size: 28px; font-weight: 700; letter-spacing: -0.03em; color: var(--ink); margin-bottom: 12px; }
 
-    /* WAITLIST CTA */
+    /* TRIAL CTA */
     .blog-cta {
       margin-top: 96px;
-      background: var(--ink-soft);
-      border-radius: 4px;
+      background: var(--surface);
+      border: 1px solid var(--hair-2);
+      border-radius: 16px;
       padding: 64px 72px;
       display: flex; flex-direction: column; gap: 24px;
       align-items: flex-start;
@@ -201,56 +198,24 @@
     .blog-cta-label {
       font-family: var(--mono);
       font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--accent-on-dark); font-weight: 700;
+      color: var(--green); font-weight: 700;
     }
     .blog-cta-title {
       font-family: var(--serif); font-size: clamp(28px, 4vw, 44px);
       font-weight: 600; letter-spacing: -0.035em;
-      color: var(--page); margin: 0; line-height: 1.1;
+      color: var(--ink); margin: 0; line-height: 1.1;
     }
-    .waitlist { max-width: 460px; width: 100%; }
-    form.waitlist-form {
-      display: flex;
-      background: rgba(244,243,240,0.08);
-      border-radius: 999px; padding: 6px;
-      border: 1px solid rgba(224,200,150,0.4);
-      box-shadow: 0 8px 24px rgba(20,23,26,0.06);
-      transition: border-color .15s, box-shadow .15s;
-    }
-    form.waitlist-form:focus-within {
-      border-color: var(--accent-on-dark);
-      box-shadow: 0 8px 24px rgba(31,67,50,0.18);
-    }
-    form.waitlist-form input {
-      flex: 1; border: 0; outline: none; background: transparent;
-      padding: 10px 16px; font-size: 15px; font-family: inherit;
-      color: var(--page); min-width: 0;
-    }
-    form.waitlist-form input::placeholder { color: rgba(244,243,240,0.45); }
-    form.waitlist-form button {
-      background: var(--accent-on-dark); color: var(--ink-soft);
+    .blog-cta-btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--green); color: #fff;
       border: 0; border-radius: 999px;
-      padding: 12px 22px; font-size: 15px; font-weight: 500;
-      cursor: pointer; font-family: inherit;
-      transition: background .15s, transform .12s; white-space: nowrap;
+      padding: 16px 28px; font-size: 16px; font-weight: 600;
+      font-family: inherit; text-decoration: none; cursor: pointer;
+      transition: background .15s, transform .12s;
     }
-    form.waitlist-form button:hover { background: #D4B97A; }
-    form.waitlist-form button:active { transform: scale(0.97); }
-    .waitlist-success {
-      display: none; align-items: center; gap: 12px;
-      border-radius: 12px; padding: 14px 18px;
-      border: 1px solid var(--accent-on-dark);
-      font-size: 15px; color: var(--page);
-    }
-    .waitlist-success .check {
-      width: 22px; height: 22px; border-radius: 50%;
-      background: var(--accent-on-dark); color: var(--ink-soft);
-      display: grid; place-items: center;
-      font-size: 13px; font-weight: 700; flex: none;
-    }
-    .waitlist.sent form.waitlist-form { display: none; }
-    .waitlist.sent .waitlist-success { display: flex; }
-    .waitlist-note { margin-top: 12px; font-size: 13px; color: rgba(244,243,240,0.55); line-height: 1.5; }
+    .blog-cta-btn:hover { background: #15301F; }
+    .blog-cta-btn:active { transform: scale(0.975); }
+    .blog-cta-note { font-size: 13px; color: var(--muted); line-height: 1.5; }
 
     /* FOOTER */
     footer {
@@ -312,8 +277,6 @@
       <a href="/#faq" class="lang-en-inline">FAQ</a>
       <a href="/blog/" class="lang-de-inline active">Blog</a>
       <a href="/blog/" class="lang-en-inline active">Blog</a>
-      <span class="nav-badge lang-de-inline">Bald verf&uuml;gbar</span>
-      <span class="nav-badge lang-en-inline">Coming soon</span>
       <span class="lang-switch">
         <button id="btn-de" class="active" onclick="setLang('de')">DE</button>
         <button id="btn-en" onclick="setLang('en')">EN</button>
@@ -375,30 +338,23 @@
       </div>
     </div>
 
-    <!-- ── WAITLIST CTA ──────────────────────────────────── -->
+    <!-- ── TRIAL CTA ──────────────────────────────────── -->
     <div class="blog-cta">
       <div class="lang-de">
-        <p class="blog-cta-label">Bonvio &mdash; Warteliste</p>
+        <p class="blog-cta-label">Bonvio</p>
         <h2 class="blog-cta-title">Belege per E-Mail &mdash;<br>kein Login, keine App.</h2>
       </div>
       <div class="lang-en">
-        <p class="blog-cta-label">Bonvio &mdash; Waitlist</p>
+        <p class="blog-cta-label">Bonvio</p>
         <h2 class="blog-cta-title">Receipts by email &mdash;<br>no login, no app.</h2>
       </div>
 
-      <div class="waitlist" data-lang="de">
-        <form class="waitlist-form" novalidate>
-          <input type="email" name="email" placeholder="deine@email.at" autocomplete="email" required>
-          <button type="submit"><span class="lang-de-inline">Auf die Warteliste &rarr;</span><span class="lang-en-inline">Join the waitlist &rarr;</span></button>
-        </form>
-        <div class="waitlist-success">
-          <span class="check">&#10003;</span>
-          <span class="lang-de-inline">Danke &mdash; wir melden uns bald.</span>
-          <span class="lang-en-inline">Thanks &mdash; we&rsquo;ll be in touch soon.</span>
-        </div>
-        <p class="waitlist-note lang-de">&euro;39,99&thinsp;/&thinsp;Jahr &middot; Kein Abo, keine Bindung &middot; Jederzeit k&uuml;ndbar</p>
-        <p class="waitlist-note lang-en">&euro;39.99&thinsp;/&thinsp;year &middot; No subscription trap &middot; Cancel any time</p>
-      </div>
+      <a class="blog-cta-btn" href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800">
+        <span class="lang-de-inline">30 Tage gratis testen &rarr;</span>
+        <span class="lang-en-inline">Try free for 30 days &rarr;</span>
+      </a>
+      <p class="blog-cta-note lang-de">&euro;39,99&thinsp;/&thinsp;Jahr Gr&uuml;nderpreis &middot; ab Januar 2027 &euro;49,99 &middot; jederzeit k&uuml;ndbar</p>
+      <p class="blog-cta-note lang-en">&euro;39.99&thinsp;/&thinsp;year founding price &middot; &euro;49.99 from January 2027 &middot; cancel any time</p>
     </div>
 
   </main>
@@ -447,38 +403,6 @@
     setLang(lang);
   })();
 
-  // Waitlist — wired to Formspree
-  (function () {
-    var STORAGE_KEY = 'bonvio_waitlist';
-    var FORMSPREE_URL = 'https://formspree.io/f/mqenlvdd';
-
-    function markSent(email) {
-      document.querySelectorAll('.waitlist').forEach(function (w) {
-        w.classList.add('sent');
-      });
-      try { localStorage.setItem(STORAGE_KEY, email); } catch (e) {}
-    }
-
-    document.querySelectorAll('.waitlist-form').forEach(function (form) {
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        var email = form.email.value.trim();
-        if (!email || email.indexOf('@') === -1) return;
-        fetch(FORMSPREE_URL, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify({ email: email, source: 'blog' })
-        }).catch(function () {});
-        markSent(email);
-      });
-    });
-
-    try {
-      if (localStorage.getItem(STORAGE_KEY)) {
-        document.querySelectorAll('.waitlist').forEach(function (w) { w.classList.add('sent'); });
-      }
-    } catch (e) {}
-  })();
 </script>
 </body>
 </html>
