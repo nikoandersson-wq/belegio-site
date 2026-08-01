@@ -91,7 +91,7 @@ cream `#F4F3F0`, warm hairline `#E2E0DB`, warm ink `#1A1814`.
 
 **Resolved 2026-08-01 — favicon/logo mismatch.** The rust-orange favicon (`#B4451F`) noted
 below as an open inconsistency is gone. Nav mark and favicon are now the same asset (see
-§6, "The confirmed-mark") in the one accent colour, `#1F4332`.
+§6, "The send-mark") in the one accent colour, `#1F4332`.
 
 **The colour-off-by-default rule (2026-08-01).** Green had crept into places that aren't
 structural: the hero headline's accent word, and two full-bleed `--green-deep` section
@@ -139,12 +139,14 @@ surgery), **Courier New**, Roboto, Arial-as-display, Open Sans, Fraunces.
 
 ## 6. Visual motifs (reuse these, don't invent new ones)
 
-- **The confirmed-mark (2026-08-01).** The brand mark: a rounded-square squircle in `#1F4332`
-  with a checkmark cut out as negative space (an SVG `<mask>`, not an icon font). It's the nav
-  logo and the favicon — the same asset, not two. It was chosen over three other concepts
-  (a receipt-corner clip, the hero's send-plane glyph, a ledger-line stack) because it's the
-  only one that encodes the product's actual payoff — *you send it, it comes back confirmed* —
-  rather than just its subject matter. Reuse this shape; don't design a new mark per campaign.
+- **The send-mark (2026-08-01, revised same day).** The brand mark: a rounded-square squircle
+  in `#1F4332` with the paper-plane glyph (`M2 21l21-9L2 3v7l15 2-15 2v7z`) in `#F4F5F4`, solid
+  fill. It's the nav logo and the favicon — the same asset, not two. **Supersedes the
+  checkmark-cut version from earlier the same day** — a checkmark read as a generic tickbox
+  icon rather than a considered mark, so it's retired; don't reintroduce it. The plane glyph was
+  already hand-drawn for the hero's send animation, so this reuses a proven asset rather than
+  inventing a new one, and ties to "you just send an email" without borrowing a checkmark shape
+  that reads as generic UI chrome. Reuse this shape; don't design a new mark per campaign.
 - **Dot grid** background texture. Two densities: a near-invisible 4px paper-grain sitewide,
   and a visible, load-bearing 22px grid specifically behind the hero — the hero's grid is
   allowed to be seen; the sitewide one isn't.
