@@ -154,27 +154,25 @@ surgery), **Courier New**, Roboto, Arial-as-display, Open Sans, Fraunces.
   Don't design a new mark per campaign; don't relitigate this one without new user feedback,
   it's had three rounds in one day already.
 - **The green full stop (2026-08-01).** The wordmark is "Bonvio**.**" — with a green period.
-  The same green period ends the hero's last word ("Fertig**.**" / "Done**.**", where it stamps
-  in after the headline settles) and the closing CTA's final word. Nowhere else: it marks
-  *completion*, so it only ends sentences that mean "done." Max three instances per page
-  (wordmark, hero, closing). This is the ownable signature — a full stop as brand mark for a
-  product whose entire promise is "…and then you're done."
+  The same green period ends the hero's last word ("Fertig**.**" / "Done**.**") and the closing
+  CTA's final word. Static, no animation. Nowhere else: it marks *completion*, so it only ends
+  sentences that mean "done." Max three instances per page (wordmark, hero, closing). This is
+  the ownable signature — a full stop as brand mark for a product whose entire promise is
+  "…and then you're done."
 - **Dot grid** background texture. Two densities: a near-invisible 4px paper-grain sitewide,
   and a visible, load-bearing 22px grid specifically behind the hero — the hero's grid is
   allowed to be seen; the sitewide one isn't.
-- **Phone mockup (un-retired 2026-08-01; animated same evening)** — the hero visual. A
-  stylized phone frame (`var(--ink)` bezel, no literal iOS status bar/clock) that **plays the
-  product on loop**: compose screen (To/Subject, itemized receipt thumbnail, "Tippe auf
-  Senden" hint) → Send pill pulses and the paper-plane glyph flies up → confirmation screen
-  slides in (B-badge header, check pop, "Gespeichert.", extracted Händler/Datum/MwSt/Betrag
-  rows cascading in) → back to compose. ~7-second cycle, CSS-only animation driven by a
-  `data-phase` attribute, JS only flips the phase; runs only while on screen
-  (IntersectionObserver) and is fully disabled under `prefers-reduced-motion` (static compose
-  is the fallback). The paper-plane glyph lives HERE, in the send animation — not in the logo
-  (that experiment lasted an afternoon). History: this replaced a flat "floating proof cards"
-  collage from earlier the same day — abstract floating fragments had no product to anchor to
-  — which had itself replaced a static phone. If revisiting: start from the phone, and keep it
-  *doing* something; a static mockup reads as a screenshot, the loop reads as the product.
+- **Phone mockup (un-retired 2026-08-01)** — the hero visual. A stylized phone frame
+  (`var(--ink)` bezel, no literal iOS status bar/clock) showing the compose screen, static:
+  mail bar (Abbrechen / Neue E-Mail / Senden), To/Subject fields, an itemized receipt
+  thumbnail, a "Tippe auf Senden" hint pinned to the screen bottom, plus a speech-bubble
+  callout for the hashtag-as-category mechanic and the caption "In Sekunden. Ohne dass du
+  etwas tust." History: this replaced a flat "floating proof cards" collage from earlier the
+  same day — abstract floating fragments had no product to anchor to — which had itself
+  replaced a static phone. An animated compose→send→confirm demo loop was built and shipped
+  the same evening, then **retired within the hour on founder feedback ("cool, just no
+  motion")** — see the retired list below. If revisiting the hero: start from the static
+  phone.
 - **Receipt paper** — *only* where an actual receipt is being depicted (a product screenshot,
   a proof card). It is a picture of the thing, never the chrome around it.
 - **Numbered sections** `01`–`07` in a small green mono badge, with a **sentence-case** label —
@@ -190,6 +188,14 @@ surgery), **Courier New**, Roboto, Arial-as-display, Open Sans, Fraunces.
 - **UPPERCASE + wide-tracked mono labels** as section headings.
 
 **Retired 2026-08-01 — do not reintroduce:**
+- **Autonomous page motion.** A full motion pass shipped on the evening of 2026-08-01 —
+  self-playing phone demo loop (compose→send→confirm with a flying paper plane), staggered
+  hero entrance, green period stamp-in, scroll-triggered step staggers, and an ink-sweep on
+  the pain quote — and was retired the same evening on direct founder feedback: *"cool, just
+  no motion."* The page is deliberately still. The only motion that stays: the pre-existing
+  quiet `.reveal` scroll fade-ins and standard hover/active feedback on buttons and links.
+  Don't re-add entrance choreography, looping demos, or scroll-triggered animation without
+  new, explicit direction from Niko.
 - **Full-bleed `--green-deep` panels as section backgrounds.** A solid colour fill over an
   entire section reads as a heavy, airless block regardless of which colour it is. Sections get
   a light `--surface` card with a hairline border; green stays on labels, marks, and buttons.
