@@ -91,7 +91,7 @@ cream `#F4F3F0`, warm hairline `#E2E0DB`, warm ink `#1A1814`.
 
 **Resolved 2026-08-01 — favicon/logo mismatch.** The rust-orange favicon (`#B4451F`) noted
 below as an open inconsistency is gone. Nav mark and favicon are now the same asset (see
-§6, "The send-mark") in the one accent colour, `#1F4332`.
+§6, "The B mark") in the one accent colour, `#1F4332`.
 
 **The colour-off-by-default rule (2026-08-01).** Green had crept into places that aren't
 structural: the hero headline's accent word, and two full-bleed `--green-deep` section
@@ -139,22 +139,31 @@ surgery), **Courier New**, Roboto, Arial-as-display, Open Sans, Fraunces.
 
 ## 6. Visual motifs (reuse these, don't invent new ones)
 
-- **The send-mark (2026-08-01, revised same day).** The brand mark: a rounded-square squircle
-  in `#1F4332` with the paper-plane glyph (`M2 21l21-9L2 3v7l15 2-15 2v7z`) in `#F4F5F4`, solid
-  fill. It's the nav logo and the favicon — the same asset, not two. **Supersedes the
-  checkmark-cut version from earlier the same day** — a checkmark read as a generic tickbox
-  icon rather than a considered mark, so it's retired; don't reintroduce it. The plane glyph was
-  already hand-drawn for the hero's send animation, so this reuses a proven asset rather than
-  inventing a new one, and ties to "you just send an email" without borrowing a checkmark shape
-  that reads as generic UI chrome. Reuse this shape; don't design a new mark per campaign.
+- **The B mark (2026-08-01, third revision same day).** The brand mark: a rounded-square
+  squircle in `#1F4332` with a bold letterform "B" (sans stack, weight 800) centered in
+  `#F4F5F4`. It's the nav logo and the favicon — the same asset, not two. **Supersedes both
+  the checkmark-cut squircle and the same-day paper-plane glyph.** The checkmark read as a
+  generic tickbox icon; the plane was a considered attempt (it reused the hero's own send-glyph)
+  but still read as "an icon," not a mark you'd recognize as Bonvio's. A plain, confident
+  letterform is the more durable choice — it's what most SaaS marks that age well actually are.
+  Don't design a new mark per campaign; don't relitigate this one without new user feedback,
+  it's had three rounds in one day already.
 - **Dot grid** background texture. Two densities: a near-invisible 4px paper-grain sitewide,
   and a visible, load-bearing 22px grid specifically behind the hero — the hero's grid is
   allowed to be seen; the sitewide one isn't.
-- **Floating proof cards (2026-08-01)** — the hero visual. Small white cards (a confirmation,
-  an export line, a hashtag tag) scattered with a slight rotation directly on the dot grid,
-  each showing *real* product data. No app-chrome, no phone bezel, no invented scale metrics
-  (a fabricated "1.3M receipts processed" ticker would read as a lie at Bonvio's size — that
-  move is earned, not borrowed). This replaced the animated phone-mockup hero.
+- **Phone mockup (un-retired 2026-08-01, same day)** — the hero visual. A stylized phone frame
+  (`var(--ink)` bezel, no literal iOS status bar/clock) showing the actual compose screen: To/
+  Subject fields, an itemized receipt thumbnail attached, a "Tippe auf Senden" hint pinned to
+  the bottom of the screen, and a speech-bubble callout explaining the hashtag-as-category
+  mechanic. A caption below reads "In Sekunden. Ohne dass du etwas tust." This replaced a
+  flat "floating proof cards" collage (three scattered cards: confirmation, export line, hashtag
+  tag) that shipped earlier the same day — the founder's read was that abstract floating
+  fragments had no product to anchor to and looked worse than the phone they replaced. The
+  phone had itself replaced an even earlier flat single-card version for the same reason (an
+  "empty middle" with the product nowhere to be seen). Net result: the phone mockup this
+  section used to warn against is back, restyled to the current palette — the "no app-chrome"
+  reasoning below turned out to matter less to the founder than having something concrete and
+  recognizable as *the product* in the hero. If revisiting this again, start from the phone.
 - **Receipt paper** — *only* where an actual receipt is being depicted (a product screenshot,
   a proof card). It is a picture of the thing, never the chrome around it.
 - **Numbered sections** `01`–`07` in a small green mono badge, with a **sentence-case** label —
@@ -170,9 +179,6 @@ surgery), **Courier New**, Roboto, Arial-as-display, Open Sans, Fraunces.
 - **UPPERCASE + wide-tracked mono labels** as section headings.
 
 **Retired 2026-08-01 — do not reintroduce:**
-- **Phone / app-chrome hero mockup.** Skeuomorphic iPhone bezels are a landing-page cliché,
-  and Bonvio's whole pitch is "no app" — showing one in the hero undercut the message even
-  when it was well-animated. Use the proof-card collage instead.
 - **Full-bleed `--green-deep` panels as section backgrounds.** A solid colour fill over an
   entire section reads as a heavy, airless block regardless of which colour it is. Sections get
   a light `--surface` card with a hairline border; green stays on labels, marks, and buttons.
