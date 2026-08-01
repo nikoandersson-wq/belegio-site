@@ -144,18 +144,27 @@ surgery), **Courier New**, Roboto, Arial-as-display, Open Sans, Fraunces.
 
 ## 6. Visual motifs (reuse these, don't invent new ones)
 
-- **The B mark (2026-08-01, final form: drawn monoline).** The brand mark: a rounded-square
-  squircle in `#1F4332` with a **hand-drawn monoline "B"** stroked in `#F4F5F4` — stroke 5/64,
-  round caps and joins, geometry:
-  `M22 16v32M22 16h10a8 8 0 0 1 0 16h-10M22 32h12a8 8 0 0 1 0 16h-12`
-  (stem + two unequal bowls, the lower slightly wider, like a grotesque). It's the nav logo and
-  the favicon — the same asset, not two. This replaced a font-rendered `<text>` "B" the same
-  day: SVG text depends on the viewer's installed fonts (Aptos → Segoe → Arial), so the mark
-  rendered differently per device; a drawn path is identical everywhere and reads designed,
-  not typed. The round terminals echo the pill buttons. Earlier same-day rejects: checkmark-cut
-  squircle (generic tickbox), paper-plane glyph (still "an icon", and the plane belongs in the
-  hero's send animation). Don't design a new mark per campaign; don't relitigate without new
-  user feedback — it's had four rounds in one day already.
+- **The B mark (2026-08-01, final form: drawn solid letterform).** The brand mark: a
+  rounded-square squircle in `#1F4332` with a **hand-drawn solid "B"** filled in `#F4F5F4`,
+  `fill-rule="evenodd"` (outer contour + two counters), geometry:
+  `M21 17H34A5.5 5.5 0 0 1 39.5 22.5V25.5A5.5 5.5 0 0 1 34 31H36A7 7 0 0 1 43 38V40A7 7 0 0 1 36 47H21ZM27 22H32.5A2.25 2.25 0 0 1 32.5 26.5H27ZM27 31.5H32A5 5 0 0 1 37 36.5V37A5 5 0 0 1 32 42H27Z`
+  A grotesque cap B on a 30/64 cap height: 6-unit stem, ~5-unit bars, **flat-sided bowls**
+  (straight vertical runs between the arcs, not pure semicircles), lower bowl wider than upper,
+  optically centred in the square. It's the nav logo and the favicon — the same asset, not two.
+
+  Two constraints produced it, and both must hold for any future revision:
+  1. **Drawn, never `<text>`.** SVG text renders in whatever font the device has (Aptos →
+     Segoe → Helvetica → Arial). Aptos ships with MS 365, so most visitors — and every Mac —
+     get a fallback, and the mark changes shape per visitor. A path is identical everywhere.
+  2. **Solid, never monoline.** A stroked skeleton B looks thin and clever at 200 px and turns
+     to mush at the 16 px favicon size. Weight is what survives scaling down.
+
+  Same-day rejects, in order: checkmark-cut squircle (read as a generic tickbox), paper-plane
+  glyph (still "an icon"; the plane belongs in the hero's send animation), font-rendered
+  `<text>` B (constraint 1), monoline drawn B (constraint 2 — Niko: *"logo looks like shit tho
+  old was btr"*). The final form is deliberately the **shape of the font B people liked, drawn
+  properly** — the win was correctness, not novelty. Don't design a new mark per campaign, and
+  don't relitigate without new user feedback: five rounds in one day is enough.
 - **The green full stop (2026-08-01).** The wordmark is "Bonvio**.**" — with a green period.
   The same green period ends the hero's last word ("Fertig**.**" / "Done**.**", where it stamps
   in after the headline settles) and the closing CTA's final word. Nowhere else: it marks
