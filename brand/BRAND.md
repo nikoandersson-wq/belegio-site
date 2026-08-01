@@ -89,13 +89,18 @@ what matters — the total, the action, the status), and red measured in pixels 
 **Retired — do not reintroduce:** gold `#B8860B`, bronze `#7A5D1F`, wheat `#E0C896`,
 cream `#F4F3F0`, warm hairline `#E2E0DB`, warm ink `#1A1814`.
 
-**⚠ One inconsistency to resolve.** The CSS variable named `--rust` is actually the deep
-green `#1F4332`, and it's the de-facto primary accent across the live site. But the
-favicon/logo mark uses true **rust orange `#B4451F`** with cream text `#F4EFE2`. So your
-browser-tab icon is orange while the on-page logo mark is green.
-**Recommendation:** pick one. Either (a) commit to green `#1F4332` everywhere and update the
-favicon, or (b) keep rust orange `#B4451F` as a logo-only signature colour. Until you decide,
-**social images use green `#1F4332` as primary** (matches the live site).
+**Resolved 2026-08-01 — favicon/logo mismatch.** The rust-orange favicon (`#B4451F`) noted
+below as an open inconsistency is gone. Nav mark and favicon are now the same asset (see
+§6, "The confirmed-mark") in the one accent colour, `#1F4332`.
+
+**The colour-off-by-default rule (2026-08-01).** Green had crept into places that aren't
+structural: the hero headline's accent word, and two full-bleed `--green-deep` section
+panels ("How it works," the closing CTA). Both read as "heavy," not premium. Fixed by
+extending the proportion rule literally: **headline accent words are ink, not green** (weight
+and italics carry the emphasis, not colour); and **no section background is a solid colour
+fill any more** — those two panels are now `--surface` + hairline border, with green pulled
+back to only the mono step-labels, the mark, and the button. A colour that touches
+everything stops reading as an accent.
 
 ---
 
@@ -134,10 +139,25 @@ surgery), **Courier New**, Roboto, Arial-as-display, Open Sans, Fraunces.
 
 ## 6. Visual motifs (reuse these, don't invent new ones)
 
-- **Dot grid** background texture (faint 4px radial dots).
-- **Receipt paper** — *only* where an actual receipt is being depicted (a product screenshot, the
-  phone mock). It is a picture of the thing, never the chrome around it.
-- **Numbered sections** `01`–`07` in a small green mono badge, with a **sentence-case** label.
+- **The confirmed-mark (2026-08-01).** The brand mark: a rounded-square squircle in `#1F4332`
+  with a checkmark cut out as negative space (an SVG `<mask>`, not an icon font). It's the nav
+  logo and the favicon — the same asset, not two. It was chosen over three other concepts
+  (a receipt-corner clip, the hero's send-plane glyph, a ledger-line stack) because it's the
+  only one that encodes the product's actual payoff — *you send it, it comes back confirmed* —
+  rather than just its subject matter. Reuse this shape; don't design a new mark per campaign.
+- **Dot grid** background texture. Two densities: a near-invisible 4px paper-grain sitewide,
+  and a visible, load-bearing 22px grid specifically behind the hero — the hero's grid is
+  allowed to be seen; the sitewide one isn't.
+- **Floating proof cards (2026-08-01)** — the hero visual. Small white cards (a confirmation,
+  an export line, a hashtag tag) scattered with a slight rotation directly on the dot grid,
+  each showing *real* product data. No app-chrome, no phone bezel, no invented scale metrics
+  (a fabricated "1.3M receipts processed" ticker would read as a lie at Bonvio's size — that
+  move is earned, not borrowed). This replaced the animated phone-mockup hero.
+- **Receipt paper** — *only* where an actual receipt is being depicted (a product screenshot,
+  a proof card). It is a picture of the thing, never the chrome around it.
+- **Numbered sections** `01`–`07` in a small green mono badge, with a **sentence-case** label —
+  only where the content is genuinely sequential (a real 3-step process). Don't add numbering
+  to a list just for the badge look.
 - **Pill buttons**, fully rounded. Cards at radius 9–14px, hairline border, no shadow.
 - **Trust strip:** *Aus Wien · Server in Deutschland · DSGVO & §132 BAO konform* — as a plain
   inline line.
@@ -146,6 +166,17 @@ surgery), **Courier New**, Roboto, Arial-as-display, Open Sans, Fraunces.
 - **Wax seals / rotated stamps** (`DSGVO ✦ KONFORM`). Replaced by the plain trust line above.
 - **Perforated / dashed borders** as page chrome. Use 1px solid hairlines and whitespace.
 - **UPPERCASE + wide-tracked mono labels** as section headings.
+
+**Retired 2026-08-01 — do not reintroduce:**
+- **Phone / app-chrome hero mockup.** Skeuomorphic iPhone bezels are a landing-page cliché,
+  and Bonvio's whole pitch is "no app" — showing one in the hero undercut the message even
+  when it was well-animated. Use the proof-card collage instead.
+- **Full-bleed `--green-deep` panels as section backgrounds.** A solid colour fill over an
+  entire section reads as a heavy, airless block regardless of which colour it is. Sections get
+  a light `--surface` card with a hairline border; green stays on labels, marks, and buttons.
+  (Exception: `.col-them` in the "old way vs. Bonvio" contrast block — that one dark panel is a
+  deliberate rhetorical device, not decoration, and is more effective now that it's the only
+  dark surface left on the page.)
 
 ---
 
