@@ -52,7 +52,7 @@
     }
     .marg .num { color: var(--ink); font-weight: 700; margin-right: 8px; }
 
-    section { padding: 80px 0; border-top: 1px dashed var(--hair-2); position: relative; }
+    section { padding: 80px 0; border-top: 1px solid var(--hair-2); position: relative; }
     section:first-child { border-top: 0; padding-top: 96px; }
     section h2 {
       margin: 0;
@@ -97,7 +97,7 @@
       display: flex; align-items: baseline; gap: 16px;
       font-family: var(--serif); font-size: 20px;
       padding: 14px 0;
-      border-bottom: 1px dashed var(--hair-2);
+      border-bottom: 1px solid var(--hair-2);
     }
     .toc li .n { font-family: var(--mono); font-size: 12px; letter-spacing: 0.16em; color: var(--muted-2); width: 24px; }
     .toc li a { color: var(--ink); text-decoration: none; }
@@ -292,7 +292,7 @@
     }
     .deflist li {
       display: grid; grid-template-columns: 180px 1fr; gap: 24px;
-      padding: 14px 0; border-bottom: 1px dashed var(--hair-2);
+      padding: 14px 0; border-bottom: 1px solid var(--hair-2);
       align-items: baseline;
     }
     .deflist .k { font-family: var(--mono); font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink); font-weight: 700; }
@@ -302,17 +302,11 @@
     .closing {
       padding: 140px 0;
       text-align: center;
-      border-top: 1px dashed var(--hair-2);
-      border-bottom: 1px dashed var(--hair-2);
+      border-top: 1px solid var(--hair-2);
+      border-bottom: 1px solid var(--hair-2);
       margin-top: 80px;
       position: relative;
     }
-    .closing::before, .closing::after {
-      content: ""; position: absolute; left: 0; right: 0; height: 6px;
-      background-image: radial-gradient(circle at 6px center, var(--bg) 2.5px, transparent 3px);
-      background-repeat: repeat-x; background-size: 14px 6px;
-    }
-    .closing::before { top: -3px; } .closing::after { bottom: -3px; }
     .closing blockquote {
       margin: 0 auto; max-width: 16ch;
       font-family: var(--serif); font-style: italic; font-weight: 400;
@@ -328,7 +322,7 @@
       text-transform: uppercase; color: var(--accent);
       padding: 4px 10px; border: 1px solid var(--accent); border-radius: 999px;
     }
-    footer { padding: 64px 72px 56px; color: var(--muted); font-family: var(--mono); font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; display: flex; justify-content: space-between; max-width: 1180px; margin: 0 auto; border-top: 1px dashed var(--hair-2); }
+    footer { padding: 64px 72px 56px; color: var(--muted); font-family: var(--mono); font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; display: flex; justify-content: space-between; max-width: 1180px; margin: 0 auto; border-top: 1px solid var(--hair-2); }
 
     @media (max-width: 900px) {
       .wrap { padding: 0 24px; }
@@ -444,32 +438,33 @@
     <!-- 03 COLOR -->
     <section id="color">
       <div class="marg"><span class="num">04</span>&mdash; Farben</div>
-      <h2>Off-white + <em>Bottle&nbsp;Green</em> &mdash; Gold nur f&uuml;r Zahlen.</h2>
+      <h2>Off-white + <em>Bottle&nbsp;Green</em>. Sonst nichts.</h2>
       <p class="lede">
         Off-white als Basis &mdash; ruhig, w&auml;rmer als wei&szlig;, k&uuml;hler als Cream.
-        Bottle&nbsp;Green bleibt die Seele der Marke: aus dem &ouml;sterreichischen Notariats- und
-        Apothekenvokabular, nie der frische SaaS-Blau-Akzent. Neu dazu &mdash; ein
-        disziplinierter Gold-Akzent, reserviert f&uuml;r Kennzahlen, Eyebrows und
-        Sektionsnummern. Dunkle Sektionen leben in tiefem Flaschengr&uuml;n mit Weizen-Akzent.
+        Bottle&nbsp;Green ist die einzige Akzentfarbe der Marke: aus dem &ouml;sterreichischen
+        Notariats- und Apothekenvokabular, nie der frische SaaS-Blau-Akzent. Kein Gold, kein
+        Weizen &mdash; die Farbe wird nicht durch einen zweiten Ton diszipliniert, sondern durch
+        <b>Proportion</b>: Grün lebt auf Buttons, der Marke und Best&auml;tigungen &mdash;
+        nie als Fl&auml;che, nie im Flie&szlig;text.
       </p>
 
       <ul class="swatches" style="grid-template-columns: repeat(3, 1fr); margin-top: 56px;">
         <li class="sw"><span class="chip" style="background:#F4F5F4"></span><div class="meta"><div class="name">Off-white</div><div class="hex">#F4F5F4</div><div class="use">Prim&auml;rer Hintergrund. Mit dotted-grid darunter.</div></div></li>
-        <li class="sw"><span class="chip" style="background:#1F4332"></span><div class="meta"><div class="name">Bottle green</div><div class="hex">#1F4332</div><div class="use">Prim&auml;rer Akzent. Buttons, Stempel, Italic-Highlights.</div></div></li>
-        <li class="sw"><span class="chip" style="background:#0F2A1F"></span><div class="meta"><div class="name">Deep green</div><div class="hex">#0F2A1F</div><div class="use">Dunkle Sektionen, CTA-Repeat, Phone-Bezel.</div></div></li>
-        <li class="sw"><span class="chip" style="background:#1F4332"></span><div class="meta"><div class="name">Gold</div><div class="hex">#1F4332</div><div class="use">Daten-Akzent. Kennzahlen, Eyebrows, Sektionsnummern.</div></div></li>
-        <li class="sw"><span class="chip" style="background:#1F4332"></span><div class="meta"><div class="name">Bronze</div><div class="hex">#1F4332</div><div class="use">Gold auf hellem Grund &mdash; lesbarer bei kleinem Text.</div></div></li>
-        <li class="sw"><span class="chip" style="background:#FFFFFF"></span><div class="meta"><div class="name">Wheat</div><div class="hex">#FFFFFF</div><div class="use">Akzent auf dunklem Gr&uuml;n. Step-Numbers, Pfeile.</div></div></li>
+        <li class="sw"><span class="chip" style="background:#FFFFFF;border-right:1px solid var(--line)"></span><div class="meta"><div class="name">Surface</div><div class="hex">#FFFFFF</div><div class="use">Karten, Belege &mdash; inklusive der Sektionen, die fr&uuml;her flächig gr&uuml;n waren.</div></div></li>
+        <li class="sw"><span class="chip" style="background:#14171A"></span><div class="meta"><div class="name">Ink</div><div class="hex">#14171A</div><div class="use">K&ouml;rpertext <i>und</i> Headline-Akzentw&ouml;rter. Kein Grün mehr im Flie&szlig;text.</div></div></li>
+        <li class="sw"><span class="chip" style="background:#1F4332"></span><div class="meta"><div class="name">Bottle green</div><div class="hex">#1F4332</div><div class="use">Die eine Akzentfarbe. Buttons, Marke, Bestätigungs-Icons, Mono-Labels.</div></div></li>
+        <li class="sw"><span class="chip" style="background:#0F2A1F"></span><div class="meta"><div class="name">Deep green</div><div class="hex">#0F2A1F</div><div class="use">Nur noch f&uuml;r den einen bewussten dunklen Kontrast-Block &mdash; keine Section-Hintergr&uuml;nde mehr.</div></div></li>
         <li class="sw"><span class="chip" style="background:#CDE0D3"></span><div class="meta"><div class="name">Tint</div><div class="hex">#CDE0D3</div><div class="use">Blasser Gr&uuml;nton. Dezente F&uuml;llungen, Badges.</div></div></li>
+        <li class="sw"><span class="chip" style="background:#B3261E"></span><div class="meta"><div class="name">Alert red</div><div class="hex">#B3261E</div><div class="use">Nur semantisch: needs-review, Zahlungs-Mismatch. Nie dekorativ.</div></div></li>
         <li class="sw"><span class="chip" style="background:#6B6F6A"></span><div class="meta"><div class="name">Sage</div><div class="hex">#6B6F6A</div><div class="use">Sekund&auml;rtext, ged&auml;mpfte Labels. W&auml;rmer als Neutralgrau.</div></div></li>
-        <li class="sw"><span class="chip" style="background:#FFFFFF;border-right:1px solid var(--line)"></span><div class="meta"><div class="name">Paper</div><div class="hex">#FFFFFF</div><div class="use">Karten, Belege, Stempel-Hintergrund.</div></div></li>
-        <li class="sw"><span class="chip" style="background:#14171A"></span><div class="meta"><div class="name">Ink</div><div class="hex">#14171A</div><div class="use">K&ouml;rpertext. Ist die Hauptfarbe f&uuml;r Worte.</div></div></li>
+        <li class="sw"><span class="chip" style="background:#E4E6E4"></span><div class="meta"><div class="name">Hairline</div><div class="hex">#E4E6E4</div><div class="use">Kartenr&auml;nder, Trennlinien &mdash; immer solid, nie dashed/perforiert.</div></div></li>
       </ul>
 
       <ul class="deflist" style="margin-top: 64px;">
-        <li><span class="k">Akzent-Regel</span><span class="v">Gr&uuml;n ist der Marken-Akzent. Gold ist kein zweiter Schmuck &mdash; nur f&uuml;r Zahlen, Eyebrows und Sektionsnummern. Nie als Fl&auml;che, nie f&uuml;r Flie&szlig;text.</span></li>
+        <li><span class="k">Akzent-Regel</span><span class="v">Gr&uuml;n ist die einzige Akzentfarbe &mdash; und sie ist aus, bis etwas klickbar ist oder "best&auml;tigt" bedeutet. Kein zweiter Schmuckton (2026-08: Gold/Weizen endg&uuml;ltig raus, nicht nur pausiert).</span></li>
+        <li><span class="k">Keine Fl&auml;chen (2026-08)</span><span class="v">Kein Section-Hintergrund ist mehr eine volle Farbfl&auml;che. Ein Grün-Panel &uuml;ber eine ganze Section liest schwer, egal welcher Farbton. Ausnahme: der eine bewusste "them vs. us"-Kontrastblock &mdash; Rhetorik, keine Dekoration.</span></li>
         <li><span class="k">Gradienten</span><span class="v">Nein. Niemals. Wir sind keine Wetter-App.</span></li>
-        <li><span class="k">Sekund&auml;rfarben</span><span class="v">Keine bunten. Bottle green tr&auml;gt, Gold akzentuiert Daten, Wheat lebt auf Gr&uuml;n. Mehr nicht.</span></li>
+        <li><span class="k">Sekund&auml;rfarben</span><span class="v">Keine bunten. Bottle green tr&auml;gt allein. Rot ist semantisch, nie Deko.</span></li>
       </ul>
     </section>
 
@@ -488,7 +483,7 @@
 
       <div class="specimen" style="margin-top: 56px;">
         <div class="label"><b>Aptos</b> &middot; Sans &middot; Display</div>
-        <div class="display-serif">Foto machen.<br>E-Mail senden.<br><em>Fertig.</em></div>
+        <div class="display-serif">Foto machen.<br>E-Mail senden.<br><em style="color:var(--ink);">Fertig.</em></div>
       </div>
       <div class="specimen">
         <div class="label"><b>Aptos</b> &middot; Sans &middot; Body &amp; Labels</div>
@@ -501,7 +496,7 @@
 
       <ul class="deflist" style="margin-top: 56px;">
         <li><span class="k">Display</span><span class="v">Aptos 600, letter-spacing -0.021 bis -0.025em, line-height 1.12&ndash;1.2.</span></li>
-        <li><span class="k">Akzent-Wort</span><span class="v">Aptos 600 in Bottle green. F&uuml;r das eine Wort, das z&auml;hlt.</span></li>
+        <li><span class="k">Akzent-Wort</span><span class="v">Aptos 400 italic. In Section-Titles noch in Bottle green &mdash; im Hero und der Schluss-CTA (2026-08) bewusst in Ink, damit Farbe nur bei Buttons/Marke/Best&auml;tigung auftaucht, nicht in jeder &Uuml;berschrift.</span></li>
         <li><span class="k">Body</span><span class="v">Aptos 400/500, 15&ndash;18px, line-height 1.5&ndash;1.6, text-wrap pretty.</span></li>
         <li><span class="k">Labels</span><span class="v">Aptos 600, 12,5&ndash;15px, <b>Satzschreibung, kein Letterspacing</b>. Kein UPPERCASE-Mono mehr.</span></li>
         <li><span class="k">Mono</span><span class="v">Consolas &mdash; nur Adressen, Betr&auml;ge, IDs, Befehle. Betr&auml;ge zus&auml;tzlich tabellarisch (Kommas untereinander).</span></li>
@@ -513,25 +508,32 @@
     <!-- 05 ELEMENTS -->
     <section id="elements">
       <div class="marg"><span class="num">06</span>&mdash; Visuelle Elemente</div>
-      <h2>Perforation, Marginalien, <em>Punktraster</em>.</h2>
+      <h2>Der Mark, Marginalien, <em>Punktraster</em>.</h2>
       <p class="lede">
-        Die Bonvio-Welt borgt aus Notariat, Apotheke, Bibliothek. Nicht
-        nostalgisch &mdash; funktional. Diese Elemente tragen die Marke visuell
-        &uuml;ber alle Touchpoints: perforierte Trennlinien aus gepunkteten
-        Halbkreisen, Marginalien-Nummerierung und ein feines Punktraster.
+        Vier Elemente tragen die Marke visuell &uuml;ber alle Touchpoints: der Confirmed-Mark,
+        Marginalien-Nummerierung, ein feines Punktraster &mdash; und, im Hero, echte
+        Beweis-Karten statt eines App-Mockups. Funktional, nicht nostalgisch.
       </p>
 
       <div class="chapter-grid">
         <div>
-          <div class="label-mono" style="font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; color: var(--muted-2); text-transform: uppercase; margin-bottom: 18px;">Perforation</div>
-          <div style="position: relative; padding: 28px 0; max-width: 280px;">
-            <div style="height: 6px; background-image: radial-gradient(circle at 6px center, var(--bg) 2.5px, transparent 3px); background-repeat: repeat-x; background-size: 14px 6px; background-color: var(--surface); border-top: 1px solid var(--hair-2); border-bottom: 1px solid var(--hair-2);"></div>
-            <div style="text-align: center; padding: 12px 0; font-family: var(--serif); font-style: italic; font-size: 18px; color: var(--ink);">&mdash; hier abreissen &mdash;</div>
-            <div style="height: 6px; background-image: radial-gradient(circle at 6px center, var(--bg) 2.5px, transparent 3px); background-repeat: repeat-x; background-size: 14px 6px; background-color: var(--surface); border-top: 1px solid var(--hair-2); border-bottom: 1px solid var(--hair-2);"></div>
+          <div class="label-mono" style="font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; color: var(--muted-2); text-transform: uppercase; margin-bottom: 18px;">Der Confirmed-Mark</div>
+          <div style="display: flex; align-items: center; gap: 20px;">
+            <svg width="72" height="72" viewBox="0 0 64 64" aria-hidden="true">
+              <mask id="bb-mark"><rect width="64" height="64" rx="16" fill="#fff"/><path d="M18 33 L28 43 L47 21" stroke="#000" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></mask>
+              <rect width="64" height="64" rx="16" fill="#1F4332" mask="url(#bb-mark)"/>
+            </svg>
+            <div style="background: var(--ink-soft); border-radius: 16px; padding: 12px;">
+              <svg width="40" height="40" viewBox="0 0 64 64" aria-hidden="true">
+                <mask id="bb-mark-dark"><rect width="64" height="64" rx="16" fill="#fff"/><path d="M18 33 L28 43 L47 21" stroke="#000" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></mask>
+                <rect width="64" height="64" rx="16" fill="var(--bg)" mask="url(#bb-mark-dark)"/>
+              </svg>
+            </div>
           </div>
           <p style="margin-top: 24px; max-width: 38ch; font-size: 15px; line-height: 1.55; color: var(--muted-2);">
-            Halbkreise gegen den Hintergrund stanzen die Sektion frei. Trennlinie f&uuml;r
-            den Manifest-Moment. Beleg-R&auml;nder. Nicht &uuml;berstrapazieren &mdash; ein bis zweimal pro Seite.
+            Ein Squircle mit einem Haken als Negativraum &mdash; per SVG-Maske, kein Icon-Font.
+            Nav-Logo und Favicon sind dasselbe Asset. Kodiert das eigentliche Versprechen
+            (du schickst es, es kommt best&auml;tigt zur&uuml;ck), nicht nur das Thema.
           </p>
         </div>
 
@@ -542,8 +544,9 @@
             <div style="margin-top: 14px; font-family: var(--serif); font-size: 26px; line-height: 1.1; letter-spacing: -0.015em;">Foto. E-Mail. <i>Aufbewahrt.</i></div>
           </div>
           <p style="margin-top: 24px; max-width: 38ch; font-size: 15px; line-height: 1.55; color: var(--muted-2);">
-            Jede Sektion bekommt eine Nummer in Courier, Em-Dash, dann Label.
-            Wie ein Inhaltsverzeichnis, das mitl&auml;uft. Lese-Anker f&uuml;rs Auge.
+            Jede Sektion bekommt eine Nummer in Mono, Em-Dash, dann Label &mdash; nur wo die
+            Reihenfolge wirklich etwas bedeutet (ein echter 3-Schritt-Prozess). Kein
+            Nummerierungs-Badge nur f&uuml;rs Aussehen.
           </p>
         </div>
 
@@ -553,8 +556,21 @@
             <div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); font-family: var(--serif); font-style: italic; font-size: 24px; color: var(--ink);">der ruhige Grund</div>
           </div>
           <p style="margin-top: 24px; max-width: 38ch; font-size: 15px; line-height: 1.55; color: var(--muted-2);">
-            Feines Punktraster &uuml;ber dem Off-white. Liegt wie Papierstruktur unter
-            allem. 4&ndash;6px Abstand, 1px Punkte, 4% Opacity. Fast unsichtbar &mdash; aber sp&uuml;rbar.
+            Zwei Dichten: ein fast unsichtbares 4px-Papierkorn &uuml;berall, und ein sichtbares,
+            tragendes 22px-Raster hinter dem Hero &mdash; dort darf man das Raster sehen.
+          </p>
+        </div>
+
+        <div>
+          <div class="label-mono" style="font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; color: var(--muted-2); text-transform: uppercase; margin-bottom: 18px;">Beweis-Karten (Hero)</div>
+          <div style="background: var(--surface); border: 1px solid var(--hair-2); border-radius: 12px; padding: 16px 18px; max-width: 260px; transform: rotate(1deg); box-shadow: 0 18px 34px -18px rgba(20,23,26,0.22);">
+            <div style="font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); font-weight: 700; margin-bottom: 10px;">&#10003; Best&auml;tigt</div>
+            <div style="display:flex; justify-content: space-between; font-size: 13px; padding: 6px 0; border-bottom: 1px dashed var(--hair-2);"><span style="color:var(--muted);font-family:var(--mono);font-size:10.5px;text-transform:uppercase;">H&auml;ndler</span><span>Gasthaus zur Post</span></div>
+            <div style="display:flex; justify-content: space-between; font-size: 13px; padding: 6px 0;"><span style="color:var(--muted);font-family:var(--mono);font-size:10.5px;text-transform:uppercase;">Betrag</span><span style="font-weight:700;color:var(--accent);">&euro; 42,80</span></div>
+          </div>
+          <p style="margin-top: 24px; max-width: 38ch; font-size: 15px; line-height: 1.55; color: var(--muted-2);">
+            Der Hero zeigt echte Produktdaten auf dem Punktraster &mdash; kein App-Mockup, keine
+            erfundenen Kennzahlen. Ersetzt das fr&uuml;here Phone-Mockup (2026-08).
           </p>
         </div>
       </div>
@@ -573,8 +589,8 @@
         <li><span class="k">Max-width</span><span class="v">1180&ndash;1440px. Niemals breiter. Lesbarkeit vor Bildschirmf&uuml;llung.</span></li>
         <li><span class="k">Gutter</span><span class="v">72px Desktop, 24px Mobile. Atmen lassen.</span></li>
         <li><span class="k">Section-Beat</span><span class="v">Eyebrow &mdash; H2 (Italic-Akzent) &mdash; Lede (1&ndash;3 Zeilen) &mdash; Inhalt. Immer in dieser Reihenfolge.</span></li>
-        <li><span class="k">Wechsel</span><span class="v">Alle 2&ndash;3 Sektionen ein dunkler Block (Deep green) zur Punktuation. Nicht mehr als 2 dunkle Sektionen pro Seite.</span></li>
-        <li><span class="k">Pullquote</span><span class="v">Einmal pro Seite. Italic Serif, perforierte Linien oben/unten, zentriert. Editorial Moment.</span></li>
+        <li><span class="k">Dunkle Fl&auml;chen (2026-08)</span><span class="v">Kein wiederkehrendes Rhythmus-Element mehr. Genau ein bewusster dunkler Block pro Seite ist erlaubt, wenn er etwas <i>bedeutet</i> (der "them vs. us"-Kontrast) &mdash; nicht als Deko-Punktuation zwischen Sektionen.</span></li>
+        <li><span class="k">Pullquote</span><span class="v">Einmal pro Seite. Italic Serif, solide Haarlinien oben/unten, zentriert. Editorial Moment.</span></li>
       </ul>
     </section>
 
@@ -636,15 +652,15 @@
         <div class="dd-card do">
           <div class="badge">Do &middot; Bonvio</div>
           <ul>
-            <li>Gr&uuml;n f&uuml;r das eine Wort, das z&auml;hlt</li>
+            <li>Gr&uuml;n nur f&uuml;r Buttons, Marke, Best&auml;tigungen &mdash; nie f&uuml;r Akzentw&ouml;rter im Flie&szlig;text (die tr&auml;gt Kursivierung/Gewicht, nicht Farbe)</li>
             <li>Em-Dash &mdash; nicht Bindestrich, nicht Schr&auml;gstrich</li>
             <li>Drei-Beat-Rhythmus: &bdquo;A. B. C.&ldquo;</li>
             <li>Du, nicht Sie. Englisch: you, nicht we-the-user</li>
             <li>Wenn etwas nicht stimmt &mdash; sagen, nicht verstecken</li>
-            <li>K&uuml;hles Off-white, viel Wei&szlig;raum, Haarlinien</li>
-            <li>Eine Akzentfarbe pro Bildschirm</li>
+            <li>K&uuml;hles Off-white, viel Wei&szlig;raum, solide Haarlinien</li>
+            <li>Eine Akzentfarbe pro Bildschirm &mdash; und die ist standardm&auml;&szlig;ig aus</li>
             <li>Rot nur wenn ein Mensch hinschauen muss &mdash; nie dekorativ</li>
-            <li>Marginalien-Nummerierung an jeder Sektion</li>
+            <li>Marginalien-Nummerierung nur bei echten Sequenzen</li>
           </ul>
         </div>
         <div class="dd-card dont">
@@ -656,6 +672,8 @@
             <li>&bdquo;Unlimited&ldquo; &mdash; oder andere &Uuml;berversprechen</li>
             <li>Schriften neben Aptos / Consolas &mdash; nie Courier New, nie Inter</li>
             <li>Gold, Wachssiegel, perforierte R&auml;nder (2026-07 abgeschafft)</li>
+            <li>Fl&auml;chige Gr&uuml;n-Panels als Section-Hintergrund (2026-08 abgeschafft)</li>
+            <li>Phone-/App-Chrome-Mockup als Hero-Visual (2026-08 abgeschafft)</li>
             <li>SaaS-Buzzwords (revolution&auml;r, KI-gest&uuml;tzt, end-to-end)</li>
             <li>Layered Cards mit Rounded-Corner-Borders</li>
             <li>Rainbow-Icons, Multi-Color-Illustrationen</li>
