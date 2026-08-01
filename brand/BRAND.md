@@ -102,6 +102,11 @@ fill any more** — those two panels are now `--surface` + hairline border, with
 back to only the mono step-labels, the mark, and the button. A colour that touches
 everything stops reading as an accent.
 
+**One sanctioned exception (2026-08-01, evening): the green full stop.** Green may appear
+in a headline on exactly one glyph — the full stop, and only where the sentence is a
+*completion* ("Fertig." / "Done." / the closing CTA's last word). The full stop is the product
+promise, so it's structural, not decorative. Words stay ink. See §6.
+
 ---
 
 ## 5. Typography
@@ -148,22 +153,28 @@ surgery), **Courier New**, Roboto, Arial-as-display, Open Sans, Fraunces.
   letterform is the more durable choice — it's what most SaaS marks that age well actually are.
   Don't design a new mark per campaign; don't relitigate this one without new user feedback,
   it's had three rounds in one day already.
+- **The green full stop (2026-08-01).** The wordmark is "Bonvio**.**" — with a green period.
+  The same green period ends the hero's last word ("Fertig**.**" / "Done**.**", where it stamps
+  in after the headline settles) and the closing CTA's final word. Nowhere else: it marks
+  *completion*, so it only ends sentences that mean "done." Max three instances per page
+  (wordmark, hero, closing). This is the ownable signature — a full stop as brand mark for a
+  product whose entire promise is "…and then you're done."
 - **Dot grid** background texture. Two densities: a near-invisible 4px paper-grain sitewide,
   and a visible, load-bearing 22px grid specifically behind the hero — the hero's grid is
   allowed to be seen; the sitewide one isn't.
-- **Phone mockup (un-retired 2026-08-01, same day)** — the hero visual. A stylized phone frame
-  (`var(--ink)` bezel, no literal iOS status bar/clock) showing the actual compose screen: To/
-  Subject fields, an itemized receipt thumbnail attached, a "Tippe auf Senden" hint pinned to
-  the bottom of the screen, and a speech-bubble callout explaining the hashtag-as-category
-  mechanic. A caption below reads "In Sekunden. Ohne dass du etwas tust." This replaced a
-  flat "floating proof cards" collage (three scattered cards: confirmation, export line, hashtag
-  tag) that shipped earlier the same day — the founder's read was that abstract floating
-  fragments had no product to anchor to and looked worse than the phone they replaced. The
-  phone had itself replaced an even earlier flat single-card version for the same reason (an
-  "empty middle" with the product nowhere to be seen). Net result: the phone mockup this
-  section used to warn against is back, restyled to the current palette — the "no app-chrome"
-  reasoning below turned out to matter less to the founder than having something concrete and
-  recognizable as *the product* in the hero. If revisiting this again, start from the phone.
+- **Phone mockup (un-retired 2026-08-01; animated same evening)** — the hero visual. A
+  stylized phone frame (`var(--ink)` bezel, no literal iOS status bar/clock) that **plays the
+  product on loop**: compose screen (To/Subject, itemized receipt thumbnail, "Tippe auf
+  Senden" hint) → Send pill pulses and the paper-plane glyph flies up → confirmation screen
+  slides in (B-badge header, check pop, "Gespeichert.", extracted Händler/Datum/MwSt/Betrag
+  rows cascading in) → back to compose. ~7-second cycle, CSS-only animation driven by a
+  `data-phase` attribute, JS only flips the phase; runs only while on screen
+  (IntersectionObserver) and is fully disabled under `prefers-reduced-motion` (static compose
+  is the fallback). The paper-plane glyph lives HERE, in the send animation — not in the logo
+  (that experiment lasted an afternoon). History: this replaced a flat "floating proof cards"
+  collage from earlier the same day — abstract floating fragments had no product to anchor to
+  — which had itself replaced a static phone. If revisiting: start from the phone, and keep it
+  *doing* something; a static mockup reads as a screenshot, the loop reads as the product.
 - **Receipt paper** — *only* where an actual receipt is being depicted (a product screenshot,
   a proof card). It is a picture of the thing, never the chrome around it.
 - **Numbered sections** `01`–`07` in a small green mono badge, with a **sentence-case** label —

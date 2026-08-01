@@ -125,11 +125,11 @@
       border: 0; border-radius: 999px;
       padding: 17px 34px; font-size: 17px; font-weight: 600;
       font-family: var(--sans); text-decoration: none; cursor: pointer;
-      transition: background .15s, transform .12s;
+      transition: background .15s, transform .18s cubic-bezier(.2,.7,.2,1), box-shadow .18s;
       white-space: nowrap;
     }
-    .btn:hover { background: var(--green-hover); }
-    .btn:active { transform: scale(0.975); }
+    .btn:hover { background: var(--green-hover); transform: translateY(-1px); box-shadow: 0 12px 26px -10px rgba(31,67,50,0.5); }
+    .btn:active { transform: translateY(0) scale(0.985); box-shadow: 0 4px 12px -6px rgba(31,67,50,0.4); }
     .btn .arr { transition: transform .2s; }
     .btn:hover .arr { transform: translateX(3px); }
     .btn-light { background: var(--on-dark); color: var(--green-deep); }
@@ -259,6 +259,96 @@
       transform: rotate(45deg);
     }
 
+    /* ─────────── PHONE DEMO LOOP (compose → send → confirm) ─────────── */
+    .scr {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column;
+      transition: opacity .5s ease, transform .6s cubic-bezier(.4,0,.2,1);
+    }
+    .scr-compose { opacity: 1; }
+    .scr-confirm { opacity: 0; transform: translateY(14px); pointer-events: none; padding: 20px 18px 16px; background: var(--surface); }
+    .fc-phone[data-phase="confirm"] .scr-compose { opacity: 0; transform: translateY(-10px) scale(0.985); }
+    .fc-phone[data-phase="confirm"] .scr-confirm { opacity: 1; transform: none; }
+    .fc-phone[data-phase="confirm"] .addr-tag { opacity: 0; }
+    .addr-tag { transition: opacity .4s ease; }
+
+    .fc-mailbar .send { transition: transform .18s, box-shadow .18s; }
+    .fc-phone[data-phase="send"] .fc-mailbar .send {
+      transform: scale(0.9); box-shadow: 0 0 0 4px rgba(31,67,50,0.18);
+    }
+    .plane {
+      position: absolute; z-index: 6; left: 50%; bottom: 84px;
+      width: 30px; height: 30px; color: var(--green);
+      opacity: 0; transform: translate(-50%, 0); pointer-events: none;
+    }
+    .fc-phone[data-phase="send"] .plane { animation: fly .95s cubic-bezier(.5,0,.3,1) forwards; }
+    @keyframes fly {
+      0%   { opacity: 0; transform: translate(-50%, 10px) scale(0.7) rotate(8deg); }
+      25%  { opacity: 1; }
+      100% { opacity: 0; transform: translate(-50%, -300px) scale(1.05) rotate(8deg); }
+    }
+
+    .cf-brand {
+      display: flex; align-items: center; gap: 8px;
+      font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--green); font-weight: 700;
+    }
+    .cf-brand .bm {
+      width: 18px; height: 18px; border-radius: 5px; background: var(--green);
+      color: var(--page); display: grid; place-items: center;
+      font-size: 11px; font-weight: 800; font-family: var(--sans); letter-spacing: 0;
+    }
+    .cf-check {
+      margin: 20px auto 12px; width: 54px; height: 54px; border-radius: 50%;
+      background: var(--green); color: var(--page);
+      display: grid; place-items: center; font-size: 26px;
+      box-shadow: 0 10px 26px rgba(31,67,50,0.32);
+      transform: scale(0);
+    }
+    .fc-phone[data-phase="confirm"] .cf-check { animation: pop .5s cubic-bezier(.3,1.5,.5,1) .25s forwards; }
+    @keyframes pop { to { transform: scale(1); } }
+    .cf-head { text-align: center; font-weight: 700; font-size: 20px; letter-spacing: -0.015em; color: var(--ink); }
+    .cf-sub { text-align: center; font-size: 12px; color: var(--muted); margin: 3px 0 16px; }
+    .cf-rows { background: var(--page); border: 1px solid var(--hair-2); border-radius: 12px; padding: 2px 14px; }
+    .cf-row {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 9px 0; border-bottom: 1px solid var(--hair); font-size: 12.5px;
+      opacity: 0; transform: translateY(6px);
+    }
+    .cf-row:last-child { border-bottom: 0; }
+    .cf-row .ck { color: var(--muted); font-family: var(--mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; }
+    .cf-row .cv { font-weight: 600; color: var(--ink); }
+    .cf-row.total .cv { color: var(--green); font-size: 14.5px; font-weight: 700; font-family: var(--mono); }
+    .fc-phone[data-phase="confirm"] .cf-row { animation: xin .5s ease forwards; }
+    .fc-phone[data-phase="confirm"] .cf-row:nth-child(1) { animation-delay: .45s; }
+    .fc-phone[data-phase="confirm"] .cf-row:nth-child(2) { animation-delay: .57s; }
+    .fc-phone[data-phase="confirm"] .cf-row:nth-child(3) { animation-delay: .69s; }
+    .fc-phone[data-phase="confirm"] .cf-row:nth-child(4) { animation-delay: .81s; }
+    @keyframes xin { to { opacity: 1; transform: none; } }
+    .cf-foot {
+      margin-top: auto; text-align: center;
+      font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--muted);
+    }
+
+    /* ─────────── THE GREEN FULL STOP ─────────── */
+    .fs { color: var(--green); }
+    .wm-dot { color: var(--green); font-style: normal; }
+
+    /* ─────────── HERO ENTRANCE ─────────── */
+    @media (prefers-reduced-motion: no-preference) {
+      @keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+      .hero .eyebrow   { animation: rise .6s cubic-bezier(.2,.7,.2,1) both; }
+      .hero h1         { animation: rise .7s cubic-bezier(.2,.7,.2,1) .1s both; }
+      .hero .hero-sub  { animation: rise .7s cubic-bezier(.2,.7,.2,1) .2s both; }
+      .hero .hero-cta  { animation: rise .7s cubic-bezier(.2,.7,.2,1) .3s both; }
+      .hero .collage   { animation: rise .9s cubic-bezier(.2,.7,.2,1) .25s both; }
+      .hero h1 .fs     { display: inline-block; animation: stamp .55s cubic-bezier(.34,1.56,.44,1) 1.0s both; }
+      @keyframes stamp { from { opacity: 0; transform: scale(2.2); } 60% { opacity: 1; } to { opacity: 1; transform: scale(1); } }
+      .fc-attach .thumb { transition: transform .35s cubic-bezier(.3,1.3,.5,1); }
+      .fc-attach:hover .thumb { transform: rotate(0deg) translateY(-2px); }
+    }
+
 /* ─────────── SECTION SCAFFOLD ─────────── */
     section { scroll-margin-top: 64px; }
     .sec { padding: 72px 0; }
@@ -296,6 +386,20 @@
       color: var(--ink); text-wrap: balance;
     }
     .pain blockquote .em-mark { color: var(--green); }
+    @media (prefers-reduced-motion: no-preference) {
+      /* the key phrase inks in green, left to right, when the quote scrolls in */
+      .pain blockquote .em-mark {
+        background-image: linear-gradient(to right, var(--green) 50%, var(--ink) 50%);
+        background-size: 205% 100%;
+        background-position: 100% 0;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: var(--ink);
+        transition: background-position 1.1s cubic-bezier(.4,0,.2,1) .35s;
+      }
+      .pain.reveal.in blockquote .em-mark { background-position: 0% 0; }
+    }
 
     /* ─────────── VILLAIN CONTRAST ─────────── */
     .contrast-grid {
@@ -569,6 +673,23 @@
     .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1); }
     .reveal.in { opacity: 1; transform: none; }
 
+    @media (prefers-reduced-motion: no-preference) {
+      /* the three steps land in sequence — the stagger IS the 1-2-3 */
+      .how.reveal .step { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s cubic-bezier(.2,.7,.2,1); }
+      .how.reveal.in .step { opacity: 1; transform: none; }
+      .how.reveal.in .step:nth-child(1) { transition-delay: .15s; }
+      .how.reveal.in .step:nth-child(2) { transition-delay: .3s; }
+      .how.reveal.in .step:nth-child(3) { transition-delay: .45s; }
+      /* the "others" burdens pile up one by one */
+      .contrast-grid.reveal .them-list li { opacity: 0; transform: translateY(10px); transition: opacity .5s ease, transform .5s cubic-bezier(.2,.7,.2,1); }
+      .contrast-grid.reveal.in .them-list li { opacity: 1; transform: none; }
+      .contrast-grid.reveal.in .them-list li:nth-child(1) { transition-delay: .1s; }
+      .contrast-grid.reveal.in .them-list li:nth-child(2) { transition-delay: .2s; }
+      .contrast-grid.reveal.in .them-list li:nth-child(3) { transition-delay: .3s; }
+      .contrast-grid.reveal.in .them-list li:nth-child(4) { transition-delay: .4s; }
+      .contrast-grid.reveal.in .them-list li:nth-child(5) { transition-delay: .5s; }
+    }
+
     /* back to top */
     .back-to-top { position: fixed; bottom: 26px; right: 26px; width: 50px; height: 50px; border-radius: 50%; background: var(--green); color: var(--page); border: 0; cursor: pointer; display: grid; place-items: center; font-size: 20px; box-shadow: 0 6px 20px rgba(31,67,50,0.35); opacity: 0; visibility: hidden; transition: opacity .25s, visibility .25s, background .15s; z-index: 90; }
     .back-to-top.visible { opacity: 1; visibility: visible; }
@@ -577,6 +698,10 @@
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       .reveal { opacity: 1 !important; transform: none !important; }
+      .hero .eyebrow, .hero h1, .hero .hero-sub, .hero .hero-cta, .hero .collage,
+      .hero h1 .fs, .plane, .cf-check, .cf-row { animation: none !important; }
+      .cf-check { transform: scale(1); }
+      .cf-row { opacity: 1; transform: none; }
     }
 
     /* ─────────── RESPONSIVE ─────────── */
@@ -676,7 +801,7 @@
   <div class="wrap" id="top">
 
     <nav>
-      <a href="#top" class="logo"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#1F4332"/><text x="33" y="35" text-anchor="middle" dominant-baseline="central" font-family="Aptos, 'Segoe UI', Arial, sans-serif" font-weight="800" font-size="34" fill="#F4F5F4">B</text></svg><span>Bonvio</span></a>
+      <a href="#top" class="logo"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#1F4332"/><text x="33" y="35" text-anchor="middle" dominant-baseline="central" font-family="Aptos, 'Segoe UI', Arial, sans-serif" font-weight="800" font-size="34" fill="#F4F5F4">B</text></svg><span>Bonvio<span class="wm-dot">.</span></span></a>
       <div class="nav-links">
         <a href="#top" class="lang-de-inline nav-hide-mobile">Home</a>
         <a href="#top" class="lang-en-inline nav-hide-mobile">Home</a>
@@ -730,7 +855,7 @@
         <div class="hero-copy">
           <div class="eyebrow">Belegverwaltung per E-Mail</div>
           <h1>
-            Foto machen.<br>E&#8209;Mail senden. <em>Fertig.</em>
+            Foto machen.<br>E&#8209;Mail senden. <em>Fertig<span class="fs">.</span></em>
           </h1>
           <p class="hero-sub">
             Belege verschwinden &mdash; meistens dann, wenn man sie braucht. Bonvio hält sie fest.
@@ -749,33 +874,51 @@
 
         <div class="collage" aria-label="Beleg wird per E-Mail gesendet und automatisch bestätigt">
           <div class="demo-glow"></div>
-          <div class="fc-phone">
+          <div class="fc-phone" data-phase="compose">
             <div class="fc-cam"></div>
             <div class="fc-screen">
-              <div class="fc-mailbar">
-                <span class="cancel">Abbrechen</span>
-                <span class="title">Neue E-Mail</span>
-                <span class="send">Senden</span>
-              </div>
-              <div class="fc-fields">
-                <div class="field"><span class="k">An</span><span class="v">bonvio0123@bonvio.eu</span></div>
-                <div class="field"><span class="k">Betreff</span><span class="v tag">#mittagessen</span></div>
-              </div>
-              <div class="fc-attach">
-                <div class="thumb">
-                  <div class="t-h">GASTHAUS ZUR POST</div>
-                  <div class="t-r"></div>
-                  <div class="t-row"><span>Tagesteller</span><span>13,90</span></div>
-                  <div class="t-row"><span>Apfelsaft</span><span>3,80</span></div>
-                  <div class="t-row"><span>Espresso</span><span>2,60</span></div>
-                  <div class="t-tot"><span>SUMME</span><span>&euro; 42,80</span></div>
+              <div class="scr scr-compose">
+                <div class="fc-mailbar">
+                  <span class="cancel">Abbrechen</span>
+                  <span class="title">Neue E-Mail</span>
+                  <span class="send">Senden</span>
                 </div>
-                <div class="a-meta">
-                  <div class="a-name">beleg_12_05.jpg</div>
-                  <div class="a-size">1,4 MB</div>
+                <div class="fc-fields">
+                  <div class="field"><span class="k">An</span><span class="v">bonvio0123@bonvio.eu</span></div>
+                  <div class="field"><span class="k">Betreff</span><span class="v tag">#mittagessen</span></div>
                 </div>
+                <div class="fc-attach">
+                  <div class="thumb">
+                    <div class="t-h">GASTHAUS ZUR POST</div>
+                    <div class="t-r"></div>
+                    <div class="t-row"><span>Tagesteller</span><span>13,90</span></div>
+                    <div class="t-row"><span>Apfelsaft</span><span>3,80</span></div>
+                    <div class="t-row"><span>Espresso</span><span>2,60</span></div>
+                    <div class="t-tot"><span>SUMME</span><span>&euro; 42,80</span></div>
+                  </div>
+                  <div class="a-meta">
+                    <div class="a-name">beleg_12_05.jpg</div>
+                    <div class="a-size">1,4 MB</div>
+                  </div>
+                </div>
+                <div class="fc-hint">Tippe auf Senden &mdash; mehr nicht</div>
               </div>
-              <div class="fc-hint">Tippe auf Senden &mdash; mehr nicht</div>
+              <svg class="plane" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/>
+              </svg>
+              <div class="scr scr-confirm" aria-hidden="true">
+                <div class="cf-brand"><span class="bm">B</span>Bonvio &middot; Bestätigung</div>
+                <div class="cf-check">&#10003;</div>
+                <div class="cf-head">Gespeichert.</div>
+                <div class="cf-sub">Erkannt und abgelegt &middot; Mai 2026</div>
+                <div class="cf-rows">
+                  <div class="cf-row"><span class="ck">Händler</span><span class="cv">Gasthaus zur Post</span></div>
+                  <div class="cf-row"><span class="ck">Datum</span><span class="cv">12.05.2026</span></div>
+                  <div class="cf-row"><span class="ck">MwSt</span><span class="cv">&euro; 7,13</span></div>
+                  <div class="cf-row total"><span class="ck">Betrag</span><span class="cv">&euro; 42,80</span></div>
+                </div>
+                <div class="cf-foot">Antwort kam automatisch zur&uuml;ck</div>
+              </div>
             </div>
             <div class="addr-tag">Automatische Kategorie:<br><b>#mittagessen</b> im Betreff</div>
           </div>
@@ -1067,7 +1210,7 @@
       <!-- ═══════════ FINAL CTA ═══════════ -->
       <section class="sec" style="padding-bottom: 0;">
         <div class="final-cta reveal">
-          <h2>Andere Software will, dass du Buchhalter wirst.<br>Bonvio will, dass du <em>deine Arbeit machst.</em></h2>
+          <h2>Andere Software will, dass du Buchhalter wirst.<br>Bonvio will, dass du <em>deine Arbeit machst<span class="fs">.</span></em></h2>
           <p>30 Tage gratis testen. Danach Gründerpreis &euro;&thinsp;39,99&thinsp;/&thinsp;Jahr &mdash; lebenslang gehalten, ab Januar &euro;&thinsp;49,99. Keine App, kein Login.</p>
           <a class="btn btn-light" href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800">Gratis testen <span class="arr">&rarr;</span></a>
         </div>
@@ -1086,7 +1229,7 @@
         <div class="hero-copy">
           <div class="eyebrow">Receipt management by email</div>
           <h1>
-            Take a photo. Send an email. <em>Done.</em>
+            Take a photo. Send an email. <em>Done<span class="fs">.</span></em>
           </h1>
           <p class="hero-sub">
             Receipts vanish &mdash; usually when you need them most. Bonvio keeps them safe.
@@ -1105,33 +1248,51 @@
 
         <div class="collage" aria-label="Email with receipt being sent and confirmed automatically">
           <div class="demo-glow"></div>
-          <div class="fc-phone">
+          <div class="fc-phone" data-phase="compose">
             <div class="fc-cam"></div>
             <div class="fc-screen">
-              <div class="fc-mailbar">
-                <span class="cancel">Cancel</span>
-                <span class="title">New Message</span>
-                <span class="send">Send</span>
-              </div>
-              <div class="fc-fields">
-                <div class="field"><span class="k">To</span><span class="v">bonvio0123@bonvio.eu</span></div>
-                <div class="field"><span class="k">Subject</span><span class="v tag">#lunch</span></div>
-              </div>
-              <div class="fc-attach">
-                <div class="thumb">
-                  <div class="t-h">GASTHAUS ZUR POST</div>
-                  <div class="t-r"></div>
-                  <div class="t-row"><span>Lunch special</span><span>13.90</span></div>
-                  <div class="t-row"><span>Apple juice</span><span>3.80</span></div>
-                  <div class="t-row"><span>Espresso</span><span>2.60</span></div>
-                  <div class="t-tot"><span>TOTAL</span><span>&euro; 42.80</span></div>
+              <div class="scr scr-compose">
+                <div class="fc-mailbar">
+                  <span class="cancel">Cancel</span>
+                  <span class="title">New Message</span>
+                  <span class="send">Send</span>
                 </div>
-                <div class="a-meta">
-                  <div class="a-name">receipt_12_05.jpg</div>
-                  <div class="a-size">1.4 MB</div>
+                <div class="fc-fields">
+                  <div class="field"><span class="k">To</span><span class="v">bonvio0123@bonvio.eu</span></div>
+                  <div class="field"><span class="k">Subject</span><span class="v tag">#lunch</span></div>
                 </div>
+                <div class="fc-attach">
+                  <div class="thumb">
+                    <div class="t-h">GASTHAUS ZUR POST</div>
+                    <div class="t-r"></div>
+                    <div class="t-row"><span>Lunch special</span><span>13.90</span></div>
+                    <div class="t-row"><span>Apple juice</span><span>3.80</span></div>
+                    <div class="t-row"><span>Espresso</span><span>2.60</span></div>
+                    <div class="t-tot"><span>TOTAL</span><span>&euro; 42.80</span></div>
+                  </div>
+                  <div class="a-meta">
+                    <div class="a-name">receipt_12_05.jpg</div>
+                    <div class="a-size">1.4 MB</div>
+                  </div>
+                </div>
+                <div class="fc-hint">Tap Send &mdash; that's it</div>
               </div>
-              <div class="fc-hint">Tap Send &mdash; that's it</div>
+              <svg class="plane" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/>
+              </svg>
+              <div class="scr scr-confirm" aria-hidden="true">
+                <div class="cf-brand"><span class="bm">B</span>Bonvio &middot; Confirmation</div>
+                <div class="cf-check">&#10003;</div>
+                <div class="cf-head">Saved.</div>
+                <div class="cf-sub">Recognised and filed &middot; May 2026</div>
+                <div class="cf-rows">
+                  <div class="cf-row"><span class="ck">Merchant</span><span class="cv">Gasthaus zur Post</span></div>
+                  <div class="cf-row"><span class="ck">Date</span><span class="cv">12 May 2026</span></div>
+                  <div class="cf-row"><span class="ck">VAT</span><span class="cv">&euro; 7.13</span></div>
+                  <div class="cf-row total"><span class="ck">Amount</span><span class="cv">&euro; 42.80</span></div>
+                </div>
+                <div class="cf-foot">The reply came back automatically</div>
+              </div>
             </div>
             <div class="addr-tag">Automatic category:<br><b>#lunch</b> in the subject</div>
           </div>
@@ -1421,7 +1582,7 @@
       <!-- ═══════════ FINAL CTA ═══════════ -->
       <section class="sec" style="padding-bottom: 0;">
         <div class="final-cta reveal">
-          <h2>Other software wants you to become an accountant.<br>Bonvio wants you to <em>do your work.</em></h2>
+          <h2>Other software wants you to become an accountant.<br>Bonvio wants you to <em>do your work<span class="fs">.</span></em></h2>
           <p>30 days free. Then founding price &euro;&thinsp;39.99&thinsp;/&thinsp;year &mdash; locked for life, &euro;&thinsp;49.99 from January. No app, no login.</p>
           <a class="btn btn-light" href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800">Try free for 30 days <span class="arr">&rarr;</span></a>
         </div>
@@ -1435,7 +1596,7 @@
     <footer>
       <div class="footer-row">
         <div class="footer-meta">
-          <span class="footer-name">Bonvio</span>
+          <span class="footer-name">Bonvio<span class="wm-dot">.</span></span>
           <span>&copy; 2026 &middot; Wien, &Ouml;sterreich</span>
           <span class="footer-founder lang-de">Gegr&uuml;ndet 2026 in Wien von <b>Niko A.</b></span>
           <span class="footer-founder lang-en">Founded 2026 in Vienna by <b>Niko A.</b></span>
@@ -1564,6 +1725,37 @@
       try { saved = localStorage.getItem('bonvio-lang'); } catch (e) {}
       var lang = saved || (navigator.language && navigator.language.toLowerCase().startsWith('de') ? 'de' : 'en');
       setLang(lang);
+    })();
+  </script>
+
+  <script>
+    // Phone demo loop: compose → send (plane flies) → confirmation → repeat.
+    // Runs only while the phone is on screen; disabled for reduced motion.
+    (function () {
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      var phones = document.querySelectorAll('.fc-phone[data-phase]');
+      Array.prototype.forEach.call(phones, function (ph) {
+        var timer = null;
+        function go(phase, next, ms) {
+          ph.setAttribute('data-phase', phase);
+          timer = setTimeout(next, ms);
+        }
+        function compose() { go('compose', send, 2600); }
+        function send() { go('send', confirmScr, 950); }
+        function confirmScr() { go('confirm', compose, 3600); }
+        function start() { if (timer === null) compose(); }
+        function stop() {
+          if (timer !== null) { clearTimeout(timer); timer = null; }
+          ph.setAttribute('data-phase', 'compose');
+        }
+        if ('IntersectionObserver' in window) {
+          new IntersectionObserver(function (entries) {
+            entries.forEach(function (e) { if (e.isIntersecting) { start(); } else { stop(); } });
+          }, { threshold: 0.3 }).observe(ph);
+        } else {
+          start();
+        }
+      });
     })();
   </script>
 </body>
