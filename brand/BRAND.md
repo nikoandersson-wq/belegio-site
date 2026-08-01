@@ -144,35 +144,45 @@ surgery), **Courier New**, Roboto, Arial-as-display, Open Sans, Fraunces.
 
 ## 6. Visual motifs (reuse these, don't invent new ones)
 
-- **The B mark (2026-08-01, third revision same day).** The brand mark: a rounded-square
-  squircle in `#1F4332` with a bold letterform "B" (sans stack, weight 800) centered in
-  `#F4F5F4`. It's the nav logo and the favicon — the same asset, not two. **Supersedes both
-  the checkmark-cut squircle and the same-day paper-plane glyph.** The checkmark read as a
-  generic tickbox icon; the plane was a considered attempt (it reused the hero's own send-glyph)
-  but still read as "an icon," not a mark you'd recognize as Bonvio's. A plain, confident
-  letterform is the more durable choice — it's what most SaaS marks that age well actually are.
-  Don't design a new mark per campaign; don't relitigate this one without new user feedback,
-  it's had three rounds in one day already.
+- **The B mark (2026-08-01, final form: drawn monoline).** The brand mark: a rounded-square
+  squircle in `#1F4332` with a **hand-drawn monoline "B"** stroked in `#F4F5F4` — stroke 5/64,
+  round caps and joins, geometry:
+  `M22 16v32M22 16h10a8 8 0 0 1 0 16h-10M22 32h12a8 8 0 0 1 0 16h-12`
+  (stem + two unequal bowls, the lower slightly wider, like a grotesque). It's the nav logo and
+  the favicon — the same asset, not two. This replaced a font-rendered `<text>` "B" the same
+  day: SVG text depends on the viewer's installed fonts (Aptos → Segoe → Arial), so the mark
+  rendered differently per device; a drawn path is identical everywhere and reads designed,
+  not typed. The round terminals echo the pill buttons. Earlier same-day rejects: checkmark-cut
+  squircle (generic tickbox), paper-plane glyph (still "an icon", and the plane belongs in the
+  hero's send animation). Don't design a new mark per campaign; don't relitigate without new
+  user feedback — it's had four rounds in one day already.
 - **The green full stop (2026-08-01).** The wordmark is "Bonvio**.**" — with a green period.
-  The same green period ends the hero's last word ("Fertig**.**" / "Done**.**") and the closing
-  CTA's final word. Static, no animation. Nowhere else: it marks *completion*, so it only ends
-  sentences that mean "done." Max three instances per page (wordmark, hero, closing). This is
-  the ownable signature — a full stop as brand mark for a product whose entire promise is
-  "…and then you're done."
+  The same green period ends the hero's last word ("Fertig**.**" / "Done**.**", where it stamps
+  in after the headline settles) and the closing CTA's final word. Nowhere else: it marks
+  *completion*, so it only ends sentences that mean "done." Max three instances per page
+  (wordmark, hero, closing). This is the ownable signature — a full stop as brand mark for a
+  product whose entire promise is "…and then you're done."
 - **Dot grid** background texture. Two densities: a near-invisible 4px paper-grain sitewide,
   and a visible, load-bearing 22px grid specifically behind the hero — the hero's grid is
   allowed to be seen; the sitewide one isn't.
-- **Phone mockup (un-retired 2026-08-01)** — the hero visual. A stylized phone frame
-  (`var(--ink)` bezel, no literal iOS status bar/clock) showing the compose screen, static:
-  mail bar (Abbrechen / Neue E-Mail / Senden), To/Subject fields, an itemized receipt
-  thumbnail, a "Tippe auf Senden" hint pinned to the screen bottom, plus a speech-bubble
-  callout for the hashtag-as-category mechanic and the caption "In Sekunden. Ohne dass du
-  etwas tust." History: this replaced a flat "floating proof cards" collage from earlier the
-  same day — abstract floating fragments had no product to anchor to — which had itself
-  replaced a static phone. An animated compose→send→confirm demo loop was built and shipped
-  the same evening, then **retired within the hour on founder feedback ("cool, just no
-  motion")** — see the retired list below. If revisiting the hero: start from the static
-  phone.
+- **Phone mockup (un-retired 2026-08-01; animated same evening)** — the hero visual. A
+  stylized phone frame (`var(--ink)` bezel, no literal iOS status bar/clock) that **plays the
+  product on loop**: compose screen (To/Subject, itemized receipt thumbnail, "Tippe auf
+  Senden" hint) → Send pill pulses and the paper-plane glyph flies up → confirmation screen
+  slides in (B-badge header, check pop, "Gespeichert.", extracted Händler/Datum/MwSt/Betrag
+  rows cascading in) → back to compose. ~7-second cycle, CSS-only animation driven by a
+  `data-phase` attribute, JS only flips the phase; runs only while on screen
+  (IntersectionObserver). **The loop plays even under `prefers-reduced-motion`** — it's the
+  product demo, not decoration — but softened: no flying plane, rows appear instantly, only
+  the gentle screen crossfades remain. (The entrance choreography, period stamp, scroll
+  staggers, and ink sweep DO stay off under reduced motion. Lesson from 2026-08-01: Niko's
+  own device had the loop gated off and reported "there was no movement" — the demo must
+  never be invisible to the founder or a prospect because of an OS accessibility setting.)
+  The paper-plane glyph lives HERE, in the send animation — not in the logo
+  (that experiment lasted an afternoon). History: this replaced a flat "floating proof cards"
+  collage from earlier the same day — abstract floating fragments had no product to anchor to
+  — which had itself replaced a static phone. If revisiting: start from the phone, and keep it
+  *doing* something; a static mockup reads as a screenshot, the loop reads as the product.
 - **Receipt paper** — *only* where an actual receipt is being depicted (a product screenshot,
   a proof card). It is a picture of the thing, never the chrome around it.
 - **Numbered sections** `01`–`07` in a small green mono badge, with a **sentence-case** label —
@@ -188,14 +198,6 @@ surgery), **Courier New**, Roboto, Arial-as-display, Open Sans, Fraunces.
 - **UPPERCASE + wide-tracked mono labels** as section headings.
 
 **Retired 2026-08-01 — do not reintroduce:**
-- **Autonomous page motion.** A full motion pass shipped on the evening of 2026-08-01 —
-  self-playing phone demo loop (compose→send→confirm with a flying paper plane), staggered
-  hero entrance, green period stamp-in, scroll-triggered step staggers, and an ink-sweep on
-  the pain quote — and was retired the same evening on direct founder feedback: *"cool, just
-  no motion."* The page is deliberately still. The only motion that stays: the pre-existing
-  quiet `.reveal` scroll fade-ins and standard hover/active feedback on buttons and links.
-  Don't re-add entrance choreography, looping demos, or scroll-triggered animation without
-  new, explicit direction from Niko.
 - **Full-bleed `--green-deep` panels as section backgrounds.** A solid colour fill over an
   entire section reads as a heavy, airless block regardless of which colour it is. Sections get
   a light `--surface` card with a hairline border; green stays on labels, marks, and buttons.
