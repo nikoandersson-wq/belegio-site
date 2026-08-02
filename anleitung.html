@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anleitung &ndash; Bonvio</title>
+  <meta name="description" content="Alles, was Bonvio kann &ndash; immer aktuell. Belege senden, korrigieren, exportieren, Team verwalten.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#F4F5F4">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTYiIGZpbGw9IiMxRjQzMzIiLz48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGZpbGw9IiNGNEY1RjQiIGQ9Ik0yMSAxN0gzNEE1LjUgNS41IDAgMCAxIDM5LjUgMjIuNVYyNS41QTUuNSA1LjUgMCAwIDEgMzQgMzFIMzZBNyA3IDAgMCAxIDQzIDM4VjQwQTcgNyAwIDAgMSAzNiA0N0gyMVpNMjcgMjJIMzIuNUEyLjI1IDIuMjUgMCAwIDEgMzIuNSAyNi41SDI3Wk0yNyAzMS41SDMyQTUgNSAwIDAgMSAzNyAzNi41VjM3QTUgNSAwIDAgMSAzMiA0MkgyN1oiLz48L3N2Zz4=">
+  <style>
+    :root {
+      --page: #F4F5F4;
+      --surface: #FFFFFF;
+      --ink: #14171A;
+      --green: #1F4332;
+      --green-deep: #0F2A1F;
+      --on-dark: #FFFFFF;
+      --tint: #CDE0D3;
+      --red: #B3261E;
+      --muted: rgba(20,23,26,0.56);
+      --muted-2: rgba(20,23,26,0.72);
+      --hair: rgba(20,23,26,0.09);
+      --hair-2: rgba(20,23,26,0.13);
+      --sans: Aptos, "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+      --mono: Consolas, "Aptos Mono", ui-monospace, "SF Mono", Menlo, monospace;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    html, body { margin: 0; padding: 0; overflow-x: clip; }
+    body {
+      background: var(--page);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 17px;
+      line-height: 1.62;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+    body::before {
+      content: "";
+      position: fixed; inset: 0;
+      background-image: radial-gradient(rgba(20,23,26,0.04) 1px, transparent 1px);
+      background-size: 4px 4px;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .wrap { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; }
+
+    /* ── nav ─────────────────────────────────────────────── */
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 20px; padding: 16px 40px;
+      position: sticky; top: 0; z-index: 80;
+      background: rgba(244,245,244,0.93);
+      backdrop-filter: saturate(140%) blur(12px);
+      -webkit-backdrop-filter: saturate(140%) blur(12px);
+      border-bottom: 1px solid var(--hair);
+    }
+    .logo {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-weight: 700; font-size: 19px; letter-spacing: -0.03em;
+      color: var(--ink); text-decoration: none;
+    }
+    .logo svg { width: 27px; height: 27px; border-radius: 6px; display: block; }
+    .nav-right { display: flex; align-items: center; gap: 18px; }
+    .nav-back { font-size: 14px; color: var(--muted); text-decoration: none; }
+    .nav-back:hover { color: var(--ink); }
+    .lang-switch { display: flex; gap: 4px; }
+    .lang-switch button {
+      background: transparent; border: 1px solid var(--hair-2); color: var(--muted);
+      font-family: var(--mono); font-size: 12px; font-weight: 700; letter-spacing: 0.12em;
+      padding: 4px 8px; cursor: pointer; border-radius: 3px; transition: all .15s;
+    }
+    .lang-switch button.active { background: var(--green); color: var(--page); border-color: var(--green); }
+
+    /* ── layout ──────────────────────────────────────────── */
+    .shell { display: grid; grid-template-columns: 216px minmax(0,1fr); gap: 56px; padding: 56px 40px 120px; align-items: start; }
+    .toc { position: sticky; top: 88px; font-size: 14px; }
+    .toc-label {
+      font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 14px;
+    }
+    .toc a {
+      display: block; padding: 5px 0; color: var(--muted-2); text-decoration: none;
+      border-left: 2px solid transparent; padding-left: 12px; margin-left: -14px;
+      transition: color .15s, border-color .15s;
+    }
+    .toc a:hover { color: var(--ink); border-left-color: var(--tint); }
+    .doc { max-width: 700px; }
+
+    /* ── masthead ────────────────────────────────────────── */
+    .eyebrow {
+      font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--green); margin-bottom: 14px;
+    }
+    h1 {
+      margin: 0 0 18px; font-size: clamp(34px, 4.4vw, 50px); font-weight: 600;
+      letter-spacing: -0.028em; line-height: 1.08; text-wrap: balance;
+    }
+    .lede { margin: 0 0 10px; font-size: 19px; color: var(--muted-2); max-width: 60ch; }
+    .stamp { font-family: var(--mono); font-size: 12px; color: var(--muted); letter-spacing: 0.04em; }
+
+    /* ── tier switcher ───────────────────────────────────── */
+    .tiers { display: flex; flex-wrap: wrap; gap: 8px; margin: 34px 0 8px; }
+    .tiers button {
+      font-family: var(--sans); font-size: 14px; font-weight: 600;
+      background: var(--surface); color: var(--muted-2);
+      border: 1px solid var(--hair-2); border-radius: 999px;
+      padding: 8px 16px; cursor: pointer; transition: all .15s;
+    }
+    .tiers button:hover { color: var(--ink); border-color: var(--muted); }
+    .tiers button.active { background: var(--green); border-color: var(--green); color: var(--on-dark); }
+    .tier-note { font-size: 14px; color: var(--muted); margin: 0 0 40px; }
+
+    /* ── the "?" callout ─────────────────────────────────── */
+    .callout {
+      background: var(--green-deep); color: var(--on-dark);
+      border-radius: 4px; padding: 30px 32px; margin: 0 0 56px;
+    }
+    .callout .k {
+      font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--tint); margin-bottom: 12px;
+    }
+    .callout p { margin: 0 0 12px; color: rgba(255,255,255,0.92); }
+    .callout p:last-child { margin-bottom: 0; }
+    .callout b { color: #fff; }
+    .callout .cmd { background: rgba(255,255,255,0.11); border-color: rgba(255,255,255,0.22); color: #fff; }
+
+    /* ── sections ────────────────────────────────────────── */
+    .sec { padding-top: 8px; margin-bottom: 52px; scroll-margin-top: 84px; }
+    .sec-head { display: flex; gap: 14px; align-items: baseline; margin-bottom: 14px; }
+    .sec-num {
+      font-family: var(--mono); font-size: 12px; font-weight: 700; color: var(--green);
+      letter-spacing: 0.08em; flex: none;
+    }
+    .sec-num::before { counter-increment: sec; content: counter(sec, decimal-leading-zero); }
+    .sec h2 { margin: 0; font-size: 25px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.2; }
+    .sec p { margin: 0 0 12px; }
+    .sec p:last-child { margin-bottom: 0; }
+    .sec .hint { font-size: 15px; color: var(--muted-2); }
+    hr.rule { border: 0; border-top: 1px solid var(--hair); margin: 0 0 52px; }
+
+    /* ── command chips + rows ────────────────────────────── */
+    .cmd {
+      display: inline-block; font-family: var(--mono); font-size: 14px;
+      background: var(--surface); border: 1px solid var(--hair-2); border-radius: 3px;
+      padding: 2px 8px; white-space: nowrap; color: var(--ink); text-decoration: none;
+    }
+    .cmdlist { border-top: 1px solid var(--hair); margin: 16px 0 0; }
+    .cmdrow {
+      display: grid; grid-template-columns: minmax(150px, 230px) 1fr; gap: 18px;
+      padding: 11px 0; border-bottom: 1px solid var(--hair); align-items: baseline;
+    }
+    .cmdrow .desc { font-size: 15px; color: var(--muted-2); }
+    ul.plain { margin: 12px 0; padding-left: 20px; }
+    ul.plain li { margin-bottom: 7px; }
+    .sec a:not(.cmd) { color: var(--ink); text-underline-offset: 3px; }
+
+    /* ── footer ──────────────────────────────────────────── */
+    footer {
+      padding: 30px 40px; border-top: 1px solid var(--hair-2);
+      display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+      font-size: 13px; color: var(--muted);
+    }
+    .footer-links { display: flex; gap: 18px; flex-wrap: wrap; }
+    .footer-links a { color: var(--muted); text-decoration: none; }
+    .footer-links a:hover { color: var(--ink); }
+
+    /* ── language mirroring (same mechanism as index.html) ─ */
+    .lang-en { display: none; }
+    .lang-en-active .lang-de { display: none; }
+    .lang-en-active .lang-en { display: block; }
+    .lang-de, .lang-en { counter-reset: sec; }
+
+    /* ── tier filtering ──────────────────────────────────── */
+    /* Keyed off <html>, which the head script stamps before first paint. Deliberately NOT set in
+       the markup: with JavaScript off nothing matches, so the reader gets the whole guide instead
+       of a page that silently hides two thirds of itself behind dead buttons. */
+    html[data-tier="solo"]  [data-tier]:not([data-tier~="solo"]),
+    html[data-tier="team"]  [data-tier]:not([data-tier~="team"]),
+    html[data-tier="admin"] [data-tier]:not([data-tier~="admin"]) { display: none; }
+
+    @media (max-width: 940px) {
+      .shell { grid-template-columns: 1fr; gap: 0; padding: 40px 24px 90px; }
+      .toc { display: none; }
+      nav { padding: 14px 24px; }
+      footer { padding: 24px; }
+      body { font-size: 16px; }
+      .cmdrow { grid-template-columns: 1fr; gap: 4px; }
+      .callout { padding: 24px; }
+    }
+  </style>
+  <script>
+    // Language and tier are applied to <html> before the first paint, so an English reader never
+    // sees a flash of German and nobody watches the page re-shuffle after load.
+    (function () {
+      var q = new URLSearchParams(window.location.search);
+      function saved(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+      var lang = q.get('lang') || saved('bonvio-lang') ||
+        ((navigator.language || '').toLowerCase().indexOf('de') === 0 ? 'de' : 'en');
+      var tier = q.get('tier') || saved('bonvio-guide-tier') || 'solo';
+      if (['solo', 'team', 'admin'].indexOf(tier) < 0) tier = 'solo';
+      var h = document.documentElement;
+      h.lang = lang === 'en' ? 'en' : 'de';
+      h.classList.toggle('lang-en-active', lang === 'en');
+      h.dataset.tier = tier;
+    })();
+  </script>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <a href="/" class="logo">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#1F4332"/><path fill-rule="evenodd" fill="#F4F5F4" d="M21 17H34A5.5 5.5 0 0 1 39.5 22.5V25.5A5.5 5.5 0 0 1 34 31H36A7 7 0 0 1 43 38V40A7 7 0 0 1 36 47H21ZM27 22H32.5A2.25 2.25 0 0 1 32.5 26.5H27ZM27 31.5H32A5 5 0 0 1 37 36.5V37A5 5 0 0 1 32 42H27Z"/></svg>
+      <span>Bonvio</span>
+    </a>
+    <div class="nav-right">
+      <a href="/" class="nav-back lang-de">&larr; Startseite</a>
+      <a href="/" class="nav-back lang-en">&larr; Home</a>
+      <div class="lang-switch">
+        <button id="btn-de" class="active" onclick="setLang('de')">DE</button>
+        <button id="btn-en" onclick="setLang('en')">EN</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="shell">
+    <!-- ══════════════════ TABLE OF CONTENTS ══════════════════ -->
+    <aside class="toc">
+      <div class="lang-de">
+        <div class="toc-label">Inhalt</div>
+        <a href="#adresse">Deine Adresse</a>
+        <a href="#senden" data-tier="solo team">Beleg senden</a>
+        <a href="#bestaetigung" data-tier="solo team">Die Best&auml;tigung</a>
+        <a href="#korrigieren" data-tier="solo team">Korrigieren</a>
+        <a href="#foto" data-tier="solo team">Ein gutes Foto</a>
+        <a href="#hashtags" data-tier="solo team">Hashtags</a>
+        <a href="#km" data-tier="solo team">Kilometergeld</a>
+        <a href="#diaeten" data-tier="solo">Di&auml;ten</a>
+        <a href="#bewirtung" data-tier="solo team">Bewirtung</a>
+        <a href="#hotel" data-tier="solo team">Hotelrechnungen</a>
+        <a href="#karte" data-tier="solo team">Kartenzahlung</a>
+        <a href="#export" data-tier="solo team">Export</a>
+        <a href="#team" data-tier="admin">Team verwalten</a>
+        <a href="#gesamtexport" data-tier="admin">Gesamt&uuml;bersicht</a>
+        <a href="#abgeben" data-tier="team">Abgeben</a>
+        <a href="#sprache">Sprache</a>
+        <a href="#daten">Deine Daten</a>
+        <a href="#hilfe">Hilfe</a>
+      </div>
+      <div class="lang-en">
+        <div class="toc-label">Contents</div>
+        <a href="#adresse-en">Your address</a>
+        <a href="#senden-en" data-tier="solo team">Sending a receipt</a>
+        <a href="#bestaetigung-en" data-tier="solo team">The confirmation</a>
+        <a href="#korrigieren-en" data-tier="solo team">Corrections</a>
+        <a href="#foto-en" data-tier="solo team">A good photo</a>
+        <a href="#hashtags-en" data-tier="solo team">Hashtags</a>
+        <a href="#km-en" data-tier="solo team">Mileage</a>
+        <a href="#diaeten-en" data-tier="solo">Per diems</a>
+        <a href="#bewirtung-en" data-tier="solo team">Business meals</a>
+        <a href="#hotel-en" data-tier="solo team">Hotel invoices</a>
+        <a href="#karte-en" data-tier="solo team">Card payments</a>
+        <a href="#export-en" data-tier="solo team">Export</a>
+        <a href="#team-en" data-tier="admin">Managing the team</a>
+        <a href="#gesamtexport-en" data-tier="admin">Full overview</a>
+        <a href="#abgeben-en" data-tier="team">Handing in</a>
+        <a href="#sprache-en">Language</a>
+        <a href="#daten-en">Your data</a>
+        <a href="#hilfe-en">Help</a>
+      </div>
+    </aside>
+
+    <main class="doc">
+
+      <!-- ══════════════════════ DEUTSCH ══════════════════════ -->
+      <div class="lang-de">
+        <div class="eyebrow">Anleitung</div>
+        <h1>Alles, was Bonvio kann.</h1>
+        <p class="lede">Diese Seite ist immer aktuell &mdash; jede neue Funktion steht hier, sobald sie da ist. Setz ein Lesezeichen, dann musst du nie wieder eine E-Mail suchen.</p>
+        <p class="stamp">Stand: 1. August 2026</p>
+
+        <div class="tiers" role="group" aria-label="Welche Anleitung?">
+          <button type="button" data-set="solo" class="active">Einzelunternehmen</button>
+          <button type="button" data-set="team">Team-Mitglied</button>
+          <button type="button" data-set="admin">Team-Admin</button>
+        </div>
+        <p class="tier-note" data-tier="solo">Du zahlst selbst, exportierst selbst, gibst selbst ab &mdash; <b>Einzelunternehmen</b>.</p>
+        <p class="tier-note" data-tier="team">Du geh&ouml;rst zu einem Firmen-Team &mdash; <b>Team-Mitglied</b>. Du siehst nur deine eigenen Belege.</p>
+        <p class="tier-note" data-tier="admin">Du verwaltest das Team und holst den Gesamtexport &mdash; <b>Team-Admin</b>.</p>
+
+        <div class="callout">
+          <div class="k">Merken musst du dir nichts</div>
+          <p>Schick <span class="cmd">?</span> an deine Bonvio-Adresse. Du bekommst sofort ein Men&uuml;, in dem <b>jede Aktion ein Tap ist</b> &mdash; antippen, Wert anpassen, senden.</p>
+          <p>Das gilt auch, wenn du dich vertippst: Kommt eine E-Mail ohne lesbares Foto an, schickt Bonvio dasselbe Men&uuml; zur&uuml;ck statt einer Fehlermeldung. Diese Seite ist zum Nachschlagen &mdash; brauchen musst du sie nicht.</p>
+        </div>
+
+        <!-- 01 Adresse -->
+        <section class="sec" id="adresse">
+          <div class="sec-head"><span class="sec-num"></span><h2>Deine Adresse</h2></div>
+          <p data-tier="solo">Du hast von Bonvio eine eigene E-Mail-Adresse bekommen &mdash; sie steht in deiner Willkommens-E-Mail. Speicher sie im Adressbuch deines Telefons. Alles, was du mit Bonvio machst, geht an diese eine Adresse.</p>
+          <p data-tier="team">Du hast von deiner Firma eine eigene Bonvio-Adresse bekommen &mdash; sie steht in deiner Willkommens-E-Mail und sieht aus wie <span class="cmd">firma3@bonvio.eu</span>. Speicher sie im Adressbuch. Alles, was du mit Bonvio machst, geht an diese eine Adresse.</p>
+          <p data-tier="admin">Als Team-Admin hast du <b>eine</b> Adresse f&uuml;r alles: <span class="cmd">firma@bonvio.eu</span>. Damit verwaltest du die Mitglieder <em>und</em> holst dir den Gesamtexport. Kein Dashboard, kein Login.</p>
+          <p class="hint">Wichtig: Bonvio erkennt dich an deiner Absenderadresse. Schick immer von der E-Mail-Adresse, die hinterlegt ist &mdash; sonst antwortet Bonvio nicht.</p>
+        </section>
+        <hr class="rule">
+
+        <!-- 02 Senden -->
+        <section class="sec" id="senden" data-tier="solo team">
+          <div class="sec-head"><span class="sec-num"></span><h2>Beleg senden</h2></div>
+          <p>Foto machen, an deine Bonvio-Adresse schicken, fertig. Kein Betreff n&ouml;tig, keine App, kein Login.</p>
+          <ul class="plain">
+            <li><b>Ein Beleg pro E-Mail.</b> Bei mehreren Belegen einfach mehrere E-Mails.</li>
+            <li><b>Keine PDFs</b> &mdash; wenn du eine Rechnung am Bildschirm hast, fotografier den Bildschirm ab.</li>
+            <li>Optional: ein Hashtag im Betreff sortiert den Beleg gleich mit &mdash; siehe unten.</li>
+          </ul>
+        </section>
+        <hr class="rule" data-tier="solo team">
+
+        <!-- 03 Bestätigung -->
+        <section class="sec" id="bestaetigung" data-tier="solo team">
+          <div class="sec-head"><span class="sec-num"></span><h2>Die Best&auml;tigung</h2></div>
+          <p>Innerhalb von Sekunden bekommst du eine E-Mail zur&uuml;ck mit allem, was Bonvio gelesen hat: <b>H&auml;ndler, Datum, Betrag, MwSt</b> &mdash; und immer auch den Betrag in Euro, selbst wenn der Beleg in Franken, Pfund oder Kronen ausgestellt ist (Kurs der Europ&auml;ischen Zentralbank vom Belegdatum).</p>
+          <p>In jeder Best&auml;tigung stehen die n&auml;chsten Schritte als Tap: <b>Korrigieren</b>, <b>L&ouml;schen</b>, <b>Bewirtung</b>. Ein Klick auf L&ouml;schen entfernt den Beleg aus deinem Archiv.</p>
+          <p class="hint">Jeder Beleg hat eine Nummer wie <span class="cmd">R4A9F2C1</span>. Solange die im Betreff steht, wei&szlig; Bonvio, welchen Beleg du meinst &mdash; du kannst also einfach auf die Best&auml;tigung antworten.</p>
+        </section>
+        <hr class="rule" data-tier="solo team">
+
+        <!-- 04 Korrigieren -->
+        <section class="sec" id="korrigieren" data-tier="solo team">
+          <div class="sec-head"><span class="sec-num"></span><h2>Korrigieren</h2></div>
+          <p>Stimmt etwas nicht, gibt es zwei Wege &mdash; beide sind eine Antwort auf die Best&auml;tigung:</p>
+          <ul class="plain">
+            <li><b>Tap auf &bdquo;Korrigieren&ldquo;.</b> Du bekommst ein vorausgef&uuml;lltes Formular mit dem, was Bonvio gelesen hat. &Uuml;berschreib nur den falschen Wert <em>nach dem Doppelpunkt</em> und schick die E-Mail zur&uuml;ck.</li>
+            <li><b>Frei antworten.</b> <span class="cmd">Betrag 12,90</span>, <span class="cmd">Datum 01.06.2026</span>, <span class="cmd">Name Lidl</span>, <span class="cmd">13% 3,80</span> &mdash; mehrere Zeilen in einer Mail sind kein Problem.</li>
+          </ul>
+          <p>War das Foto zu unscharf oder die MwSt nicht sicher lesbar, sagt Bonvio das von sich aus in der Best&auml;tigung und fragt nach, statt zu raten.</p>
+          <p class="hint">Das Originalfoto bleibt dabei unver&auml;ndert gespeichert &mdash; korrigiert werden nur die ausgelesenen Werte. Genau das macht das Archiv pr&uuml;fungsfest.</p>
+        </section>
+        <hr class="rule" data-tier="solo team">
+
+        <!-- 05 Foto -->
+        <section class="sec" id="foto" data-tier="solo team">
+          <div class="sec-head"><span class="sec-num"></span><h2>Ein gutes Foto</h2></div>
+          <p><b>In Originalgr&ouml;&szlig;e senden.</b> Manche Mail-Apps (z.&thinsp;B. Apple Mail) fragen beim Senden nach der Bildgr&ouml;&szlig;e &mdash; w&auml;hl <b>&bdquo;Tats&auml;chliche Gr&ouml;&szlig;e&ldquo;</b>, nicht &bdquo;Klein&ldquo;. Ein verkleinertes Foto wird unscharf und l&auml;sst sich nicht zuverl&auml;ssig lesen. Das ist mit Abstand die h&auml;ufigste Ursache f&uuml;r einen schlechten Treffer.</p>
+          <ul class="plain">
+            <li>Beleg flach hinlegen &mdash; keine Falten, keine Knicke.</li>
+            <li>Senkrecht von oben, ganzer Beleg im Bild.</li>
+            <li>Helles Licht, keine Schatten, kein Blitz.</li>
+            <li>Lange Belege: Handy etwas h&ouml;her halten, damit alles ins Bild passt.</li>
+          </ul>
+        </section>
+        <hr class="rule" data-tier="solo team">
+
+        <!-- 06 Hashtags -->
+        <section class="sec" id="hashtags" data-tier="solo team">
+          <div class="sec-head"><span class="sec-num"></span><h2>Hashtags</h2></div>
+          <p>Hashtags sind Etiketten f&uuml;r deine Belege. Schreib z.&thinsp;B. <span class="cmd">#brille</span> oder <span class="cmd">#auto</span> in den Betreff &mdash; am Jahresende holst du dir mit einem Befehl alle passenden Belege auf einen Schlag.</p>
+          <ul class="plain">
+            <li>Tag, was dir hilft: Kategorie <span class="cmd">#brille</span>, H&auml;ndler <span class="cmd">#mueller</span>, Projekt <span class="cmd">#renovierung</span>, Zahlungsart <span class="cmd">#bar</span> oder <span class="cmd">#firmenkarte</span>.</li>
+            <li>Bis zu 5 Tags pro Beleg.</li>
+            <li>Tags sind nicht Pflicht &mdash; am Jahresende aber Gold wert.</li>
+            <li>Vergessen? Beleg l&ouml;schen und mit Tag neu senden.</li>
+          </ul>
+        </section>
+        <hr class="rule" data-tier="solo team">
+
+        <!-- 07 Kilometergeld -->
+        <section class="sec" id="km" data-tier="solo team">
+          <div class="sec-head"><span class="sec-num"></span><h2>Kilometergeld</h2></div>
+          <p>Eine Dienstfahrt braucht keinen Beleg &mdash; nur eine E-Mail <b>ohne Anhang</b>:</p>
+          <div class="cmdlist">
+            <div class="cmdrow"><span class="cmd">#km 47</span><span class="desc">47&nbsp;km &rarr; &euro;&thinsp;23,50 (&euro;&thinsp;0,50/km, amtliches Kilometergeld &Ouml;sterreich)</span></div>
+            <div class="cmdrow"><span class="cmd">Kundentermin Wien #km 47</span><span class="desc">Kontext im Betreff landet im Export &mdash; genau so sieht es der Steuerberater</span></div>
+          </div>
+        </section>
+        <hr class="rule" data-tier="solo team">
+
+        <!-- 08 Diäten -->
+        <section class="sec" id="diaeten" data-tier="solo">
+          <div class="sec-head"><span class="sec-num"></span><h2>Di&auml;ten (Tagesgeld)</h2></div>
+          <p>Auch hier: E-Mail ohne Anhang, Betreff gen&uuml;gt. Bonvio rechnet die Pauschale nach &sect;26 Z&thinsp;4 EStG &mdash; &euro;&thinsp;30 pro Tag, &euro;&thinsp;2,50 je begonnener Stunde ab mehr als drei Stunden.</p>
+          <div class="cmdlist">
+            <div class="cmdrow"><span class="cmd">#di&auml;t 8</span><span class="desc">8&nbsp;Stunden unterwegs</span></div>
+            <div class="cmdrow"><span class="cmd">#di&auml;t 09:00-17:30</span><span class="desc">von&nbsp;&ndash;&nbsp;bis, Bonvio rechnet die Dauer</span></div>
+            <div class="cmdrow"><span class="cmd">Messe Wien #di&auml;t 8 -mittag</span><span class="desc">gestelltes Mittagessen &mdash; mindert die Pauschale um &euro;&thinsp;15</span></div>
+          </div>
+          <p style="margin-top:16px">Gestelltes Mittag- oder Abendessen mindert die Pauschale um je &euro;&thinsp;15 (<span class="cmd">-mittag</span>, <span class="cmd">-abend</span>, <span class="cmd">-voll</span> = &euro;&thinsp;0). Vergessen oder falsch? Antworte einfach auf die Best&auml;tigung mit <span class="cmd">-mittag</span> oder <span class="cmd">kein Essen</span> zum Zur&uuml;cksetzen &mdash; Bonvio rechnet neu.</p>
+        </section>
+        <hr class="rule" data-tier="solo">
+
+        <!-- 09 Bewirtung -->
+        <section class="sec" id="bewirtung" data-tier="solo team">
+          <div class="sec-head"><span class="sec-num"></span><h2>Bewirtung &amp; teilweise absetzbare Belege</h2></div>
+          <p>Nicht jeder Beleg ist zu 100&thinsp;% absetzbar. Schick das Foto und schreib in den Betreff oder in den Text der E-Mail:</p>
+          <div class="cmdlist">
+            <div class="cmdrow"><span class="cmd">Abzug: 50%</span><span class="desc">absetzbarer Anteil &mdash; immer ausdr&uuml;cklich angeben, es gibt keinen Standardwert</span></div>
+            <div class="cmdrow"><span class="cmd">Mit: Max Mustermann</span><span class="desc">Teilnehmer</span></div>
+            <div class="cmdrow"><span class="cmd">Anlass: Projektbesprechung</span><span class="desc">Zweck der Bewirtung</span></div>
+          </div>
+          <p style="margin-top:16px">Bonvio rechnet den absetzbaren Netto-Betrag, l&auml;sst die Vorsteuer unber&uuml;hrt und schreibt Teilnehmer und Anlass in den Export &mdash; genau die Angaben, die das Finanzamt f&uuml;r Gesch&auml;ftsessen verlangt (&sect;20 EStG).</p>
+          <p class="hint">Geht auch nachtr&auml;glich: einfach auf die Best&auml;tigung antworten.</p>
+        </section>
+        <hr class="rule" data-tier="solo team">
+
+        <!-- 10 Hotel -->
+        <section class="sec" id="hotel" data-tier="solo team">
+          <div class="sec-head"><span class="sec-num"></span><h2>Hotelrechnungen</h2></div>
+          <p>Die Rechnung muss auf die <b>Firma</b> lauten &mdash; Name und Adresse. Sonst gibt es weder Vorsteuer- noch Betriebsausgabenabzug (&sect;11 UStG). Am einfachsten ist es, die Firmendaten schon beim Check-in anzugeben.</p>
+          <p class="hint">Bonvio erkennt Hotelbelege und erinnert dich in der Best&auml;tigung von selbst daran.</p>
+        </section>
+        <hr class="rule" data-tier="solo team">
+
+        <!-- 11 Kartenzahlung -->
+        <section class="sec" id="karte" data-tier="solo team">
+          <div class="sec-head"><span class="sec-num"></span><h2>Kartenzahlung als Nachweis</h2></div>
+          <p>Wenn du zus&auml;tzlich belegen willst, <em>wie</em> bezahlt wurde: fotografier den Bankbeleg oder mach einen Screenshot aus der Banking-App und h&auml;ng ihn an dieselbe E-Mail wie den Beleg &mdash; <b>die Reihenfolge ist egal</b>. Oder antworte sp&auml;ter mit dem Foto auf die Best&auml;tigung.</p>
+          <p>Bonvio erkennt die Zahlung, ordnet sie dem richtigen Beleg zu &mdash; inklusive Trinkgeld und Wechselkurs, wenn der Kartenbetrag h&ouml;her ist als der Beleg &mdash; und legt sie als Nachweis in den Export.</p>
+        </section>
+        <hr class="rule" data-tier="solo team">
+
+        <!-- 12 Export -->
+        <section class="sec" id="export" data-tier="solo team">
+          <div class="sec-head"><span class="sec-num"></span><h2>Export f&uuml;r den Steuerberater</h2></div>
+          <p>Schick einen dieser Befehle als <b>Betreff</b> an deine Bonvio-Adresse:</p>
+          <div class="cmdlist">
+            <div class="cmdrow"><span class="cmd">EXPORT</span><span class="desc">aktueller Monat</span></div>
+            <div class="cmdrow"><span class="cmd">EXPORT Q1</span><span class="desc">aktuelles Quartal</span></div>
+            <div class="cmdrow"><span class="cmd">EXPORT 2026</span><span class="desc">ganzes Jahr</span></div>
+            <div class="cmdrow"><span class="cmd">EXPORT 2026-01 BIS 2026-06</span><span class="desc">eigener Zeitraum</span></div>
+            <div class="cmdrow"><span class="cmd">EXPORT BRILLE</span><span class="desc">alle Belege mit <span class="cmd">#brille</span> &mdash; funktioniert mit jedem deiner Tags</span></div>
+          </div>
+          <p style="margin-top:16px">Du bekommst sofort einen sicheren Download-Link: alle Belege als Foto plus eine fertige CSV-Liste, jede Zeile auch in Euro. Der Link l&auml;uft nach kurzer Zeit ab &mdash; einfach neu anfordern.</p>
+          <p class="hint" data-tier="team">Dein Export zeigt <b>nur deine eigenen</b> Belege. Was das Team insgesamt ausgegeben hat, sieht nur die Administration.</p>
+        </section>
+        <hr class="rule" data-tier="solo team">
+
+        <!-- 13 Team verwalten (admin) -->
+        <section class="sec" id="team" data-tier="admin">
+          <div class="sec-head"><span class="sec-num"></span><h2>Team verwalten</h2></div>
+          <p>Alle Befehle gehen als <b>Betreff</b> an deine Team-Adresse:</p>
+          <div class="cmdlist">
+            <div class="cmdrow"><span class="cmd">ADD email Vor- Nachname</span><span class="desc">Mitglied anlegen &mdash; es bekommt sofort eine eigene Adresse (<span class="cmd">firma1@</span>, <span class="cmd">firma2@</span> &hellip;) und eine Willkommens-E-Mail. Optional gleich mit Abteilung: <span class="cmd">#Vertrieb</span>, und mit Sprache: <span class="cmd">de</span> oder <span class="cmd">en</span>.</span></div>
+            <div class="cmdrow"><span class="cmd">REMOVE email</span><span class="desc">Mitglied deaktivieren &mdash; die Belege bleiben archiviert (&sect;132 BAO)</span></div>
+            <div class="cmdrow"><span class="cmd">ABTEILUNG email Abteilung</span><span class="desc">Abteilung nachtr&auml;glich setzen oder &auml;ndern</span></div>
+            <div class="cmdrow"><span class="cmd">ROLLE email rolle</span><span class="desc"><span class="cmd">master</span>, <span class="cmd">secretary</span>, <span class="cmd">finance</span> oder <span class="cmd">user</span> &mdash; mehrere Master sind m&ouml;glich</span></div>
+            <div class="cmdrow"><span class="cmd">TEAM</span><span class="desc">aktuelle &Uuml;bersicht: alle Mitglieder, Abteilungen und Rollen</span></div>
+          </div>
+          <p style="margin-top:16px">Willst du selbst Belege einreichen, leg dich einfach als Mitglied an &mdash; <span class="cmd">ADD deine@email Dein Name</span>. Dann hast du eine eigene Belegadresse und schickst Belege wie alle anderen.</p>
+        </section>
+        <hr class="rule" data-tier="admin">
+
+        <!-- 14 Gesamtexport (admin) -->
+        <section class="sec" id="gesamtexport" data-tier="admin">
+          <div class="sec-head"><span class="sec-num"></span><h2>Gesamt&uuml;bersicht</h2></div>
+          <p>Dieselbe Adresse, andere Befehle &mdash; du bekommst <b>alle</b> Belege des Teams:</p>
+          <div class="cmdlist">
+            <div class="cmdrow"><span class="cmd">&Uuml;BERBLICK</span><span class="desc">alles, was aktuell da ist</span></div>
+            <div class="cmdrow"><span class="cmd">EXPORT Q1</span><span class="desc">Quartal &mdash; auch <span class="cmd">EXPORT 2026</span> oder ein eigener Zeitraum</span></div>
+          </div>
+          <p style="margin-top:16px">Der Download enth&auml;lt alle Belege als Foto und eine fertige CSV je Abteilung, alles in Euro. <b>Jedes Mitglied sieht nur seine eigenen Belege</b> &mdash; den Gesamt&uuml;berblick bekommst nur du.</p>
+        </section>
+        <hr class="rule" data-tier="admin">
+
+        <!-- 15 Abgeben (team) -->
+        <section class="sec" id="abgeben" data-tier="team">
+          <div class="sec-head"><span class="sec-num"></span><h2>Monat abgeben</h2></div>
+          <p>Wenn die Buchhaltung deine Spesen will, musst du nichts zusammensuchen:</p>
+          <div class="cmdlist">
+            <div class="cmdrow"><span class="cmd">ABGEBEN</span><span class="desc">der laufende Monat geht als fertiges Paket an die Buchhaltung</span></div>
+          </div>
+        </section>
+        <hr class="rule" data-tier="team">
+
+        <!-- 16 Sprache -->
+        <section class="sec" id="sprache">
+          <div class="sec-head"><span class="sec-num"></span><h2>Sprache</h2></div>
+          <p>Alle Bonvio-E-Mails gibt es auf Deutsch und Englisch. Umstellen mit einer E-Mail an deine Adresse:</p>
+          <div class="cmdlist">
+            <div class="cmdrow"><span class="cmd">ENGLISH</span><span class="desc">auf Englisch umstellen</span></div>
+            <div class="cmdrow"><span class="cmd">DEUTSCH</span><span class="desc">zur&uuml;ck auf Deutsch</span></div>
+          </div>
+          <p class="hint" style="margin-top:16px" data-tier="admin">Beim Anlegen kannst du die Sprache gleich mitgeben: <span class="cmd">ADD email Vor- Nachname en</span>. Jedes Mitglied kann sie danach selbst umstellen.</p>
+        </section>
+        <hr class="rule">
+
+        <!-- 17 Daten -->
+        <section class="sec" id="daten">
+          <div class="sec-head"><span class="sec-num"></span><h2>Deine Daten</h2></div>
+          <ul class="plain">
+            <li>Nur f&uuml;r dich. Kein Tracking. Keine Weitergabe zu Werbezwecken oder an Datenh&auml;ndler.</li>
+            <li>Verschl&uuml;sselt gespeichert &mdash; Server in Deutschland.</li>
+            <li>10 Jahre Aufbewahrung (&sect;132 BAO / &sect;147 AO).</li>
+            <li>DSGVO-konform &mdash; Export jederzeit selbst per <span class="cmd">EXPORT</span>; L&ouml;schung auf Anfrage, soweit gesetzliche Aufbewahrungspflichten nicht entgegenstehen.</li>
+          </ul>
+          <p class="hint">Details: <a href="/datenschutz.html">Datenschutz</a> und <a href="/agb.html">AGB</a>.</p>
+        </section>
+        <hr class="rule">
+
+        <!-- 18 Hilfe -->
+        <section class="sec" id="hilfe">
+          <div class="sec-head"><span class="sec-num"></span><h2>Hilfe</h2></div>
+          <p>Wenn etwas nicht so l&auml;uft wie hier beschrieben, schreib einfach. Niko (Gr&uuml;nder von Bonvio) antwortet meistens innerhalb eines Tages.</p>
+          <p><a href="mailto:support@bonvio.eu">support@bonvio.eu</a> &nbsp;&middot;&nbsp; H&auml;ufige Fragen: <a href="/#fragen">bonvio.eu/#fragen</a></p>
+        </section>
+      </div>
+
+      <!-- ══════════════════════ ENGLISH ══════════════════════ -->
+      <div class="lang-en">
+        <div class="eyebrow">Guide</div>
+        <h1>Everything Bonvio can do.</h1>
+        <p class="lede">This page is always current &mdash; every new feature shows up here the moment it ships. Bookmark it and you'll never have to dig out an email again.</p>
+        <p class="stamp">Updated: 1 August 2026</p>
+
+        <div class="tiers" role="group" aria-label="Which guide?">
+          <button type="button" data-set="solo" class="active">Sole trader</button>
+          <button type="button" data-set="team">Team member</button>
+          <button type="button" data-set="admin">Team admin</button>
+        </div>
+        <p class="tier-note" data-tier="solo">You pay, export and file for yourself &mdash; <b>sole trader</b>.</p>
+        <p class="tier-note" data-tier="team">You belong to a company team &mdash; <b>team member</b>. You only ever see your own receipts.</p>
+        <p class="tier-note" data-tier="admin">You manage the members and pull the full export &mdash; <b>team admin</b>.</p>
+
+        <div class="callout">
+          <div class="k">Nothing to memorise</div>
+          <p>Send <span class="cmd">?</span> to your Bonvio address. You get a menu straight back where <b>every action is a tap</b> &mdash; tap it, adjust the value, send.</p>
+          <p>Same if you get something wrong: if an email arrives without a readable photo, Bonvio sends that menu instead of an error. This page is for looking things up &mdash; you shouldn't need it.</p>
+        </div>
+
+        <!-- 01 Address -->
+        <section class="sec" id="adresse-en">
+          <div class="sec-head"><span class="sec-num"></span><h2>Your address</h2></div>
+          <p data-tier="solo">Bonvio gave you your own email address &mdash; it's in your welcome email. Save it to your phone's contacts. Everything you do with Bonvio goes to that one address.</p>
+          <p data-tier="team">Your company gave you your own Bonvio address &mdash; it's in your welcome email and looks like <span class="cmd">company3@bonvio.eu</span>. Save it to your contacts. Everything you do with Bonvio goes to that one address.</p>
+          <p data-tier="admin">As team admin you have <b>one</b> address for everything: <span class="cmd">company@bonvio.eu</span>. It manages members <em>and</em> pulls the full export. No dashboard, no login.</p>
+          <p class="hint">Important: Bonvio recognises you by your sender address. Always send from the email address on file &mdash; otherwise Bonvio won't reply.</p>
+        </section>
+        <hr class="rule">
+
+        <!-- 02 Sending -->
+        <section class="sec" id="senden-en" data-tier="solo team">
+          <div class="sec-head"><span class="sec-num"></span><h2>Sending a receipt</h2></div>
+          <p>Take a photo, send it to your Bonvio address, done. No subject needed, no app, no login.</p>
+          <ul class="plain">
+            <li><b>One receipt per email.</b> For several receipts, send several emails.</li>
+            <li><b>No PDFs</b> &mdash; if you have an invoice on screen, photograph the screen.</li>
+            <li>Optional: a hashtag in the subject files the receipt as it arrives &mdash; see below.</li>
+          </ul>
+        </section>
+        <hr class="rule" data-tier="solo team">
+
+        <!-- 03 Confirmation -->
+        <section class="sec" id="bestaetigung-en" data-tier="solo team">
+          <div class="sec-head"><span class="sec-num"></span><h2>The confirmation</h2></div>
+          <p>Within seconds you get an email back with everything Bonvio read: <b>merchant, date, amount, VAT</b> &mdash; and always the amount in euros too, even when the receipt is in francs, pounds or krona (European Central Bank rate for the receipt date).</p>
+          <p>Every confirmation carries the next steps as taps: <b>Correct</b>, <b>Delete</b>, <b>Business meal</b>. One click on Delete removes the receipt from your archive.</p>
+          <p class="hint">Each receipt has a number like <span class="cmd">R4A9F2C1</span>. As long as that's in the subject, Bonvio knows which receipt you mean &mdash; so you can simply reply to the confirmation.</p>
+        </section>
+        <hr class="rule" data-tier="solo team">
+
+        <!-- 04 Corrections -->
+        <section class="sec" id="korrigieren-en" data-tier="solo team">
+          <div class="sec-head"><span class="sec-num"></span><h2>Corrections</h2></div>
+          <p>If something is off there are two ways &mdash; both are a reply to the confirmation:</p>
+          <ul class="plain">
+            <li><b>Tap &ldquo;Correct&rdquo;.</b> You get a pre-filled form with what Bonvio read. Overwrite just the wrong value <em>after the colon</em> and send the email back.</li>
+            <li><b>Reply in your own words.</b> <span class="cmd">Amount 12.90</span>, <span class="cmd">Date 01.06.2026</span>, <span class="cmd">Name Lidl</span>, <span class="cmd">13% 3.80</span> &mdash; several lines in one email are fine.</li>
+          </ul>
+          <p>If the photo was too blurry or the VAT couldn't be read confidently, Bonvio says so in the confirmation and asks, rather than guessing.</p>
+          <p class="hint">The original photo stays stored unchanged &mdash; only the extracted values are corrected. That's exactly what keeps the archive audit-proof.</p>
+        </section>
+        <hr class="rule" data-tier="solo team">
+
+        <!-- 05 Photo -->
+        <section class="sec" id="foto-en" data-tier="solo team">
+          <div class="sec-head"><span class="sec-num"></span><h2>A good photo</h2></div>
+          <p><b>Send at original size.</b> Some mail apps (e.g. Apple Mail) ask for an image size when sending &mdash; choose <b>&ldquo;Actual Size&rdquo;</b>, not &ldquo;Small&rdquo;. A shrunk photo turns blurry and can't be read reliably. This is by far the most common cause of a bad read.</p>
+          <ul class="plain">
+            <li>Lay the receipt flat &mdash; no folds, no wrinkles.</li>
+            <li>Straight from above, whole receipt in frame.</li>
+            <li>Bright light, no shadows, no flash.</li>
+            <li>Long receipts: hold the phone a bit higher so it all fits.</li>
+          </ul>
+        </section>
+        <hr class="rule" data-tier="solo team">
+
+        <!-- 06 Hashtags -->
+        <section class="sec" id="hashtags-en" data-tier="solo team">
+          <div class="sec-head"><span class="sec-num"></span><h2>Hashtags</h2></div>
+          <p>Hashtags are labels for your receipts. Add e.g. <span class="cmd">#glasses</span> or <span class="cmd">#car</span> to the subject &mdash; at year-end one command pulls every matching receipt in one go.</p>
+          <ul class="plain">
+            <li>Tag whatever helps: category <span class="cmd">#glasses</span>, vendor <span class="cmd">#mueller</span>, project <span class="cmd">#renovation</span>, payment method <span class="cmd">#cash</span> or <span class="cmd">#companycard</span>.</li>
+            <li>Up to 5 tags per receipt.</li>
+            <li>Tags are optional &mdash; but worth gold at year-end.</li>
+            <li>Forgot one? Delete the receipt and send it again with the tag.</li>
+          </ul>
+        </section>
+        <hr class="rule" data-tier="solo team">
+
+        <!-- 07 Mileage -->
+        <section class="sec" id="km-en" data-tier="solo team">
+          <div class="sec-head"><span class="sec-num"></span><h2>Mileage</h2></div>
+          <p>A business drive needs no receipt &mdash; just an email <b>without an attachment</b>:</p>
+          <div class="cmdlist">
+            <div class="cmdrow"><span class="cmd">#km 47</span><span class="desc">47&nbsp;km &rarr; &euro;&thinsp;23.50 (&euro;&thinsp;0.50/km, official Austrian rate)</span></div>
+            <div class="cmdrow"><span class="cmd">Client visit Vienna #km 47</span><span class="desc">context in the subject lands in the export &mdash; exactly as your accountant sees it</span></div>
+          </div>
+        </section>
+        <hr class="rule" data-tier="solo team">
+
+        <!-- 08 Per diems -->
+        <section class="sec" id="diaeten-en" data-tier="solo">
+          <div class="sec-head"><span class="sec-num"></span><h2>Per diems</h2></div>
+          <p>Same again: email without attachment, the subject is enough. Bonvio calculates the allowance per &sect;26(4) EStG &mdash; &euro;&thinsp;30 a day, &euro;&thinsp;2.50 per started hour above three hours.</p>
+          <div class="cmdlist">
+            <div class="cmdrow"><span class="cmd">#di&auml;t 8</span><span class="desc">8&nbsp;hours away</span></div>
+            <div class="cmdrow"><span class="cmd">#di&auml;t 09:00-17:30</span><span class="desc">from&nbsp;&ndash;&nbsp;to, Bonvio works out the duration</span></div>
+            <div class="cmdrow"><span class="cmd">Trade fair Vienna #di&auml;t 8 -lunch</span><span class="desc">lunch provided &mdash; cuts the allowance by &euro;&thinsp;15</span></div>
+          </div>
+          <p style="margin-top:16px">A provided lunch or dinner reduces the allowance by &euro;&thinsp;15 each (<span class="cmd">-lunch</span>, <span class="cmd">-dinner</span>, <span class="cmd">-full</span> = &euro;&thinsp;0). Forgot, or got it wrong? Just reply to the confirmation with <span class="cmd">-lunch</span>, or <span class="cmd">no meal</span> to reset &mdash; Bonvio recalculates.</p>
+        </section>
+        <hr class="rule" data-tier="solo">
+
+        <!-- 09 Business meals -->
+        <section class="sec" id="bewirtung-en" data-tier="solo team">
+          <div class="sec-head"><span class="sec-num"></span><h2>Business meals &amp; partly deductible receipts</h2></div>
+          <p>Not every receipt is 100&thinsp;% deductible. Send the photo and add, in the subject or the body of the email:</p>
+          <div class="cmdlist">
+            <div class="cmdrow"><span class="cmd">Deduction: 50%</span><span class="desc">the deductible share &mdash; always state it explicitly, there is no default</span></div>
+            <div class="cmdrow"><span class="cmd">With: Max Mustermann</span><span class="desc">participants</span></div>
+            <div class="cmdrow"><span class="cmd">Purpose: project meeting</span><span class="desc">why the meal took place</span></div>
+          </div>
+          <p style="margin-top:16px">Bonvio works out the deductible net amount, leaves the input VAT untouched and writes participants and purpose into the export &mdash; exactly what the tax office requires for business meals (&sect;20 EStG).</p>
+          <p class="hint">Works after the fact too: just reply to the confirmation.</p>
+        </section>
+        <hr class="rule" data-tier="solo team">
+
+        <!-- 10 Hotel -->
+        <section class="sec" id="hotel-en" data-tier="solo team">
+          <div class="sec-head"><span class="sec-num"></span><h2>Hotel invoices</h2></div>
+          <p>The invoice must be made out to the <b>company</b> &mdash; name and address. Otherwise there's no VAT and no expense deduction (&sect;11 UStG). Easiest is to give the company details at check-in.</p>
+          <p class="hint">Bonvio recognises hotel receipts and reminds you in the confirmation.</p>
+        </section>
+        <hr class="rule" data-tier="solo team">
+
+        <!-- 11 Card payment -->
+        <section class="sec" id="karte-en" data-tier="solo team">
+          <div class="sec-head"><span class="sec-num"></span><h2>Card payment as proof</h2></div>
+          <p>If you also want to document <em>how</em> it was paid: photograph the bank slip or screenshot your banking app and attach it to the same email as the receipt &mdash; <b>order doesn't matter</b>. Or reply to the confirmation later with the photo.</p>
+          <p>Bonvio recognises the payment, matches it to the right receipt &mdash; including tip and exchange rate when the card amount is higher than the receipt &mdash; and files it as proof in the export.</p>
+        </section>
+        <hr class="rule" data-tier="solo team">
+
+        <!-- 12 Export -->
+        <section class="sec" id="export-en" data-tier="solo team">
+          <div class="sec-head"><span class="sec-num"></span><h2>Export for your accountant</h2></div>
+          <p>Send one of these as the <b>subject</b> to your Bonvio address:</p>
+          <div class="cmdlist">
+            <div class="cmdrow"><span class="cmd">EXPORT</span><span class="desc">current month</span></div>
+            <div class="cmdrow"><span class="cmd">EXPORT Q1</span><span class="desc">current quarter</span></div>
+            <div class="cmdrow"><span class="cmd">EXPORT 2026</span><span class="desc">full year</span></div>
+            <div class="cmdrow"><span class="cmd">EXPORT 2026-01 TO 2026-06</span><span class="desc">custom range</span></div>
+            <div class="cmdrow"><span class="cmd">EXPORT GLASSES</span><span class="desc">every receipt tagged <span class="cmd">#glasses</span> &mdash; works with any of your tags</span></div>
+          </div>
+          <p style="margin-top:16px">You get a secure download link straight back: every receipt as a photo plus a ready-to-use CSV, each line in euros as well. The link expires after a while &mdash; just ask again.</p>
+          <p class="hint" data-tier="team">Your export shows <b>only your own</b> receipts. What the team spent in total is visible to administration only.</p>
+        </section>
+        <hr class="rule" data-tier="solo team">
+
+        <!-- 13 Managing the team -->
+        <section class="sec" id="team-en" data-tier="admin">
+          <div class="sec-head"><span class="sec-num"></span><h2>Managing the team</h2></div>
+          <p>Every command goes as the <b>subject</b> to your team address:</p>
+          <div class="cmdlist">
+            <div class="cmdrow"><span class="cmd">ADD email First Last</span><span class="desc">create a member &mdash; they instantly get their own address (<span class="cmd">company1@</span>, <span class="cmd">company2@</span> &hellip;) and a welcome email. Optionally with a department: <span class="cmd">#Sales</span>, and a language: <span class="cmd">de</span> or <span class="cmd">en</span>.</span></div>
+            <div class="cmdrow"><span class="cmd">REMOVE email</span><span class="desc">deactivate a member &mdash; their receipts stay archived (&sect;132 BAO)</span></div>
+            <div class="cmdrow"><span class="cmd">DEPARTMENT email name</span><span class="desc">set or change a department afterwards</span></div>
+            <div class="cmdrow"><span class="cmd">ROLE email role</span><span class="desc"><span class="cmd">master</span>, <span class="cmd">secretary</span>, <span class="cmd">finance</span> or <span class="cmd">user</span> &mdash; several masters are allowed</span></div>
+            <div class="cmdrow"><span class="cmd">TEAM</span><span class="desc">current overview: all members, departments and roles</span></div>
+          </div>
+          <p style="margin-top:16px">If you want to submit receipts yourself, just add yourself as a member &mdash; <span class="cmd">ADD your@email Your Name</span>. You'll get your own receipt address and send receipts like everyone else.</p>
+        </section>
+        <hr class="rule" data-tier="admin">
+
+        <!-- 14 Full overview -->
+        <section class="sec" id="gesamtexport-en" data-tier="admin">
+          <div class="sec-head"><span class="sec-num"></span><h2>Full overview</h2></div>
+          <p>Same address, different commands &mdash; you get <b>every</b> receipt in the team:</p>
+          <div class="cmdlist">
+            <div class="cmdrow"><span class="cmd">OVERVIEW</span><span class="desc">everything on file right now</span></div>
+            <div class="cmdrow"><span class="cmd">EXPORT Q1</span><span class="desc">a quarter &mdash; also <span class="cmd">EXPORT 2026</span> or a custom range</span></div>
+          </div>
+          <p style="margin-top:16px">The download holds every receipt as a photo and a ready CSV per department, all in euros. <b>Each member sees only their own receipts</b> &mdash; the full overview goes to you alone.</p>
+        </section>
+        <hr class="rule" data-tier="admin">
+
+        <!-- 15 Handing in -->
+        <section class="sec" id="abgeben-en" data-tier="team">
+          <div class="sec-head"><span class="sec-num"></span><h2>Handing in the month</h2></div>
+          <p>When accounting wants your expenses, there's nothing to collect:</p>
+          <div class="cmdlist">
+            <div class="cmdrow"><span class="cmd">SUBMIT</span><span class="desc">the running month goes to accounting as a finished package</span></div>
+          </div>
+        </section>
+        <hr class="rule" data-tier="team">
+
+        <!-- 16 Language -->
+        <section class="sec" id="sprache-en">
+          <div class="sec-head"><span class="sec-num"></span><h2>Language</h2></div>
+          <p>Every Bonvio email exists in German and English. Switch with one email to your address:</p>
+          <div class="cmdlist">
+            <div class="cmdrow"><span class="cmd">DEUTSCH</span><span class="desc">switch to German</span></div>
+            <div class="cmdrow"><span class="cmd">ENGLISH</span><span class="desc">back to English</span></div>
+          </div>
+          <p class="hint" style="margin-top:16px" data-tier="admin">You can set it when creating the account: <span class="cmd">ADD email First Last en</span>. Members can change it themselves afterwards.</p>
+        </section>
+        <hr class="rule">
+
+        <!-- 17 Data -->
+        <section class="sec" id="daten-en">
+          <div class="sec-head"><span class="sec-num"></span><h2>Your data</h2></div>
+          <ul class="plain">
+            <li>Yours only. No tracking. No sharing with advertisers or data brokers.</li>
+            <li>Encrypted and stored on servers in Germany.</li>
+            <li>10-year retention (&sect;132 BAO / &sect;147 AO).</li>
+            <li>GDPR compliant &mdash; export your data any time with <span class="cmd">EXPORT</span>; deletion on request, subject to statutory retention.</li>
+          </ul>
+          <p class="hint">Details: <a href="/datenschutz-en.html">Privacy</a> and <a href="/agb-en.html">Terms</a>.</p>
+        </section>
+        <hr class="rule">
+
+        <!-- 18 Help -->
+        <section class="sec" id="hilfe-en">
+          <div class="sec-head"><span class="sec-num"></span><h2>Help</h2></div>
+          <p>If something doesn't work the way it's described here, just write. Niko (founder of Bonvio) usually replies within a day.</p>
+          <p><a href="mailto:support@bonvio.eu">support@bonvio.eu</a> &nbsp;&middot;&nbsp; FAQ: <a href="/#faq">bonvio.eu/#faq</a></p>
+        </section>
+      </div>
+
+    </main>
+  </div>
+
+  <footer>
+    <span>&copy; 2026 Bonvio &middot; Wien, &Ouml;sterreich</span>
+    <div class="footer-links">
+      <a href="/">Bonvio.eu</a>
+      <a href="/impressum.html">Impressum</a>
+      <a href="/datenschutz.html">Datenschutz</a>
+      <a href="/agb.html">AGB</a>
+      <a href="mailto:support@bonvio.eu">support@bonvio.eu</a>
+    </div>
+  </footer>
+</div>
+
+<script>
+  // ── language ────────────────────────────────────────────────────────────
+  // Same mechanism as index.html, plus ?lang= so emails can link straight
+  // into the reader's own language. The class lives on <html> (see head script).
+  function setLang(lang) {
+    lang = lang === 'en' ? 'en' : 'de';
+    var h = document.documentElement;
+    h.classList.toggle('lang-en-active', lang === 'en');
+    h.lang = lang;
+    document.getElementById('btn-de').classList.toggle('active', lang === 'de');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    try { localStorage.setItem('bonvio-lang', lang); sessionStorage.setItem('bonvio_lang', lang); } catch (e) {}
+  }
+
+  // ── tier ────────────────────────────────────────────────────────────────
+  // ?tier=team / ?tier=admin lets each welcome email link to the right guide.
+  function setTier(tier) {
+    if (['solo', 'team', 'admin'].indexOf(tier) < 0) tier = 'solo';
+    document.documentElement.dataset.tier = tier;
+    document.querySelectorAll('.tiers button').forEach(function (b) {
+      var on = b.dataset.set === tier;
+      b.classList.toggle('active', on);
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+    try { localStorage.setItem('bonvio-guide-tier', tier); } catch (e) {}
+  }
+  document.querySelectorAll('.tiers button').forEach(function (b) {
+    b.addEventListener('click', function () { setTier(b.dataset.set); });
+  });
+
+  // Bring the visible controls in line with what the head script already applied.
+  setLang(document.documentElement.classList.contains('lang-en-active') ? 'en' : 'de');
+  setTier(document.documentElement.dataset.tier || 'solo');
+</script>
+</body>
+</html>
