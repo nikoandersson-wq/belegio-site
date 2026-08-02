@@ -279,7 +279,7 @@
         <div class="eyebrow">Anleitung</div>
         <h1>Alles, was Bonvio kann.</h1>
         <p class="lede">Diese Seite ist immer aktuell &mdash; jede neue Funktion steht hier, sobald sie da ist. Setz ein Lesezeichen, dann musst du nie wieder eine E-Mail suchen.</p>
-        <p class="stamp">Stand: 1. August 2026</p>
+        <p class="stamp">Stand: 2. August 2026</p>
 
         <div class="tiers" role="group" aria-label="Welche Anleitung?">
           <button type="button" data-set="solo" class="active">Einzelunternehmen</button>
@@ -441,13 +441,13 @@
           <div class="sec-head"><span class="sec-num"></span><h2>Team verwalten</h2></div>
           <p>Alle Befehle gehen als <b>Betreff</b> an deine Team-Adresse:</p>
           <div class="cmdlist">
-            <div class="cmdrow"><span class="cmd">ADD email Vor- Nachname</span><span class="desc">Mitglied anlegen &mdash; es bekommt sofort eine eigene Adresse (<span class="cmd">firma1@</span>, <span class="cmd">firma2@</span> &hellip;) und eine Willkommens-E-Mail. Optional gleich mit Abteilung: <span class="cmd">#Vertrieb</span>, und mit Sprache: <span class="cmd">de</span> oder <span class="cmd">en</span>.</span></div>
-            <div class="cmdrow"><span class="cmd">REMOVE email</span><span class="desc">Mitglied deaktivieren &mdash; die Belege bleiben archiviert (&sect;132 BAO)</span></div>
-            <div class="cmdrow"><span class="cmd">ABTEILUNG email Abteilung</span><span class="desc">Abteilung nachtr&auml;glich setzen oder &auml;ndern</span></div>
-            <div class="cmdrow"><span class="cmd">ROLLE email rolle</span><span class="desc"><span class="cmd">master</span>, <span class="cmd">secretary</span>, <span class="cmd">finance</span> oder <span class="cmd">user</span> &mdash; mehrere Master sind m&ouml;glich</span></div>
+            <div class="cmdrow"><span class="cmd">ADD max.mustermann@firma.at Max Mustermann</span><span class="desc">Mitglied anlegen &mdash; es bekommt sofort eine eigene Adresse (<span class="cmd">firma1@</span>, <span class="cmd">firma2@</span> &hellip;) und eine Willkommens-E-Mail. Optional gleich mit Abteilung: <span class="cmd">#Vertrieb</span>, und mit Sprache: <span class="cmd">de</span> oder <span class="cmd">en</span>.</span></div>
+            <div class="cmdrow"><span class="cmd">REMOVE max.mustermann@firma.at</span><span class="desc">Mitglied deaktivieren &mdash; die Belege bleiben archiviert (&sect;132 BAO)</span></div>
+            <div class="cmdrow"><span class="cmd">ABTEILUNG max.mustermann@firma.at Technik</span><span class="desc">Abteilung nachtr&auml;glich setzen oder &auml;ndern</span></div>
+            <div class="cmdrow"><span class="cmd">ROLLE max.mustermann@firma.at finance</span><span class="desc"><span class="cmd">master</span>, <span class="cmd">secretary</span>, <span class="cmd">finance</span> oder <span class="cmd">user</span> &mdash; mehrere Master sind m&ouml;glich</span></div>
             <div class="cmdrow"><span class="cmd">TEAM</span><span class="desc">aktuelle &Uuml;bersicht: alle Mitglieder, Abteilungen und Rollen</span></div>
           </div>
-          <p style="margin-top:16px">Willst du selbst Belege einreichen, leg dich einfach als Mitglied an &mdash; <span class="cmd">ADD deine@email Dein Name</span>. Dann hast du eine eigene Belegadresse und schickst Belege wie alle anderen.</p>
+          <p style="margin-top:16px">Willst du selbst Belege einreichen, leg dich einfach als Mitglied an &mdash; <span class="cmd">ADD deine.adresse@firma.at Dein Name</span>. Dann hast du eine eigene Belegadresse und schickst Belege wie alle anderen.</p>
         </section>
         <hr class="rule" data-tier="admin">
 
@@ -481,7 +481,7 @@
             <div class="cmdrow"><span class="cmd">ENGLISH</span><span class="desc">auf Englisch umstellen</span></div>
             <div class="cmdrow"><span class="cmd">DEUTSCH</span><span class="desc">zur&uuml;ck auf Deutsch</span></div>
           </div>
-          <p class="hint" style="margin-top:16px" data-tier="admin">Beim Anlegen kannst du die Sprache gleich mitgeben: <span class="cmd">ADD email Vor- Nachname en</span>. Jedes Mitglied kann sie danach selbst umstellen.</p>
+          <p class="hint" style="margin-top:16px" data-tier="admin">Beim Anlegen kannst du die Sprache gleich mitgeben: <span class="cmd">ADD max.mustermann@firma.at Max Mustermann en</span>. Jedes Mitglied kann sie danach selbst umstellen.</p>
         </section>
         <hr class="rule">
 
@@ -511,7 +511,7 @@
         <div class="eyebrow">Guide</div>
         <h1>Everything Bonvio can do.</h1>
         <p class="lede">This page is always current &mdash; every new feature shows up here the moment it ships. Bookmark it and you'll never have to dig out an email again.</p>
-        <p class="stamp">Updated: 1 August 2026</p>
+        <p class="stamp">Updated: 2 August 2026</p>
 
         <div class="tiers" role="group" aria-label="Which guide?">
           <button type="button" data-set="solo" class="active">Sole trader</button>
@@ -673,13 +673,13 @@
           <div class="sec-head"><span class="sec-num"></span><h2>Managing the team</h2></div>
           <p>Every command goes as the <b>subject</b> to your team address:</p>
           <div class="cmdlist">
-            <div class="cmdrow"><span class="cmd">ADD email First Last</span><span class="desc">create a member &mdash; they instantly get their own address (<span class="cmd">company1@</span>, <span class="cmd">company2@</span> &hellip;) and a welcome email. Optionally with a department: <span class="cmd">#Sales</span>, and a language: <span class="cmd">de</span> or <span class="cmd">en</span>.</span></div>
-            <div class="cmdrow"><span class="cmd">REMOVE email</span><span class="desc">deactivate a member &mdash; their receipts stay archived (&sect;132 BAO)</span></div>
-            <div class="cmdrow"><span class="cmd">DEPARTMENT email name</span><span class="desc">set or change a department afterwards</span></div>
-            <div class="cmdrow"><span class="cmd">ROLE email role</span><span class="desc"><span class="cmd">master</span>, <span class="cmd">secretary</span>, <span class="cmd">finance</span> or <span class="cmd">user</span> &mdash; several masters are allowed</span></div>
+            <div class="cmdrow"><span class="cmd">ADD tom.doe@company.com Tom Doe</span><span class="desc">create a member &mdash; they instantly get their own address (<span class="cmd">company1@</span>, <span class="cmd">company2@</span> &hellip;) and a welcome email. Optionally with a department: <span class="cmd">#Sales</span>, and a language: <span class="cmd">de</span> or <span class="cmd">en</span>.</span></div>
+            <div class="cmdrow"><span class="cmd">REMOVE tom.doe@company.com</span><span class="desc">deactivate a member &mdash; their receipts stay archived (&sect;132 BAO)</span></div>
+            <div class="cmdrow"><span class="cmd">DEPARTMENT tom.doe@company.com Engineering</span><span class="desc">set or change a department afterwards</span></div>
+            <div class="cmdrow"><span class="cmd">ROLE tom.doe@company.com finance</span><span class="desc"><span class="cmd">master</span>, <span class="cmd">secretary</span>, <span class="cmd">finance</span> or <span class="cmd">user</span> &mdash; several masters are allowed</span></div>
             <div class="cmdrow"><span class="cmd">TEAM</span><span class="desc">current overview: all members, departments and roles</span></div>
           </div>
-          <p style="margin-top:16px">If you want to submit receipts yourself, just add yourself as a member &mdash; <span class="cmd">ADD your@email Your Name</span>. You'll get your own receipt address and send receipts like everyone else.</p>
+          <p style="margin-top:16px">If you want to submit receipts yourself, just add yourself as a member &mdash; <span class="cmd">ADD your.address@company.com Your Name</span>. You'll get your own receipt address and send receipts like everyone else.</p>
         </section>
         <hr class="rule" data-tier="admin">
 
@@ -713,7 +713,7 @@
             <div class="cmdrow"><span class="cmd">DEUTSCH</span><span class="desc">switch to German</span></div>
             <div class="cmdrow"><span class="cmd">ENGLISH</span><span class="desc">back to English</span></div>
           </div>
-          <p class="hint" style="margin-top:16px" data-tier="admin">You can set it when creating the account: <span class="cmd">ADD email First Last en</span>. Members can change it themselves afterwards.</p>
+          <p class="hint" style="margin-top:16px" data-tier="admin">You can set it when creating the account: <span class="cmd">ADD tom.doe@company.com Tom Doe en</span>. Members can change it themselves afterwards.</p>
         </section>
         <hr class="rule">
 
