@@ -126,6 +126,7 @@
     .callout p:last-child { margin-bottom: 0; }
     .callout b { color: #fff; }
     .callout .cmd { background: rgba(255,255,255,0.11); border-color: rgba(255,255,255,0.22); color: #fff; }
+    .callout a:not(.cmd) { color: #fff; text-underline-offset: 3px; }
 
     /* ── sections ────────────────────────────────────────── */
     .sec { padding-top: 8px; margin-bottom: 52px; scroll-margin-top: 84px; }
@@ -192,6 +193,18 @@
     }
   </style>
   <script>
+    // The tab title and the description are the two strings CSS cannot switch — every other
+    // German/English pair is two elements toggled by .lang-en-active. Called from the head script
+    // below and again from setLang().
+    function applyLangMeta(lang) {
+      var en = lang === 'en';
+      document.title = en ? 'Guide – Bonvio' : 'Anleitung – Bonvio';
+      var d = document.querySelector('meta[name="description"]');
+      if (d) d.content = en
+        ? 'Everything Bonvio can do – always current. Send receipts, correct them, export, manage your team.'
+        : 'Alles, was Bonvio kann – immer aktuell. Belege senden, korrigieren, exportieren, Team verwalten.';
+    }
+
     // Language and tier are applied to <html> before the first paint, so an English reader never
     // sees a flash of German and nobody watches the page re-shuffle after load.
     (function () {
@@ -205,6 +218,7 @@
       h.lang = lang === 'en' ? 'en' : 'de';
       h.classList.toggle('lang-en-active', lang === 'en');
       h.dataset.tier = tier;
+      applyLangMeta(lang);
     })();
   </script>
 </head>
@@ -291,9 +305,10 @@
         <p class="tier-note" data-tier="admin">Du verwaltest das Team und holst den Gesamtexport &mdash; <b>Team-Admin</b>.</p>
 
         <div class="callout">
-          <div class="k">Merken musst du dir nichts</div>
-          <p>Schick <span class="cmd">?</span> an deine Bonvio-Adresse. Du bekommst sofort ein Men&uuml;, in dem <b>jede Aktion ein Tap ist</b> &mdash; antippen, Wert anpassen, senden.</p>
-          <p>Das gilt auch, wenn du dich vertippst: Kommt eine E-Mail ohne lesbares Foto an, schickt Bonvio dasselbe Men&uuml; zur&uuml;ck statt einer Fehlermeldung. Diese Seite ist zum Nachschlagen &mdash; brauchen musst du sie nicht.</p>
+          <div class="k">Du musst dir keinen Befehl merken</div>
+          <p>Schick <span class="cmd">?</span> an deine Bonvio-Adresse. Zur&uuml;ck kommt eine kurze E-Mail mit dem, was Bonvio kann &mdash; Export, Kilometergeld, Di&auml;ten. <b>Jede Zeile darin ist ein Link.</b> Antippen, und dein Mail-Programm &ouml;ffnet eine neue E-Mail mit fertigem Betreff, z.&nbsp;B. <span class="cmd">#km 25 Kundenbesuch</span>. Zahl anpassen, senden.</p>
+          <p>Jeder dieser Links legt einen <b>eigenen Eintrag</b> an &mdash; eine Fahrt, einen Reisetag, einen Export. Er h&auml;ngt sich an keinen Beleg an. Willst du einen Beleg &auml;ndern, den du schon geschickt hast, <b>antworte auf dessen Best&auml;tigung</b>. In deren Betreff steht die Belegnummer, etwa <span class="cmd">R4A9F2C1</span> &mdash; daran erkennt Bonvio, welchen Beleg du meinst. <a href="#korrigieren">Mehr dazu unter Korrigieren</a>.</p>
+          <p>Dieselbe &Uuml;bersicht kommt auch von selbst, wenn Bonvio ein Foto nicht lesen konnte &mdash; du bekommst also nie eine blo&szlig;e Fehlermeldung, sondern immer den n&auml;chsten Schritt.</p>
         </div>
 
         <!-- 01 Adresse -->
@@ -523,9 +538,10 @@
         <p class="tier-note" data-tier="admin">You manage the members and pull the full export &mdash; <b>team admin</b>.</p>
 
         <div class="callout">
-          <div class="k">Nothing to memorise</div>
-          <p>Send <span class="cmd">?</span> to your Bonvio address. You get a menu straight back where <b>every action is a tap</b> &mdash; tap it, adjust the value, send.</p>
-          <p>Same if you get something wrong: if an email arrives without a readable photo, Bonvio sends that menu instead of an error. This page is for looking things up &mdash; you shouldn't need it.</p>
+          <div class="k">You never have to remember a command</div>
+          <p>Send <span class="cmd">?</span> to your Bonvio address. Back comes a short email listing what Bonvio can do &mdash; export, mileage, per diems. <b>Every line in it is a link.</b> Tap one and your mail app opens a new email with the subject already written, e.g. <span class="cmd">#km 25 client visit</span>. Change the number, send.</p>
+          <p>Each of those links creates <b>its own entry</b> &mdash; a drive, a travel day, an export. It doesn't attach to a receipt. To change a receipt you already sent, <b>reply to that receipt's confirmation</b> instead. Its subject carries the receipt number, like <span class="cmd">R4A9F2C1</span> &mdash; that is how Bonvio knows which one you mean. <a href="#korrigieren-en">More under Corrections</a>.</p>
+          <p>The same overview also arrives on its own whenever Bonvio couldn't read a photo &mdash; so you never get a bare error message, you get the next step.</p>
         </div>
 
         <!-- 01 Address -->
@@ -762,6 +778,7 @@
     var h = document.documentElement;
     h.classList.toggle('lang-en-active', lang === 'en');
     h.lang = lang;
+    applyLangMeta(lang);
     document.getElementById('btn-de').classList.toggle('active', lang === 'de');
     document.getElementById('btn-en').classList.toggle('active', lang === 'en');
     try { localStorage.setItem('bonvio-lang', lang); sessionStorage.setItem('bonvio_lang', lang); } catch (e) {}
