@@ -126,7 +126,6 @@
     .callout p:last-child { margin-bottom: 0; }
     .callout b { color: #fff; }
     .callout .cmd { background: rgba(255,255,255,0.11); border-color: rgba(255,255,255,0.22); color: #fff; }
-    .callout a:not(.cmd) { color: #fff; text-underline-offset: 3px; }
 
     /* ── sections ────────────────────────────────────────── */
     .sec { padding-top: 8px; margin-bottom: 52px; scroll-margin-top: 84px; }
@@ -292,8 +291,8 @@
       <div class="lang-de">
         <div class="eyebrow">Anleitung</div>
         <h1>Alles, was Bonvio kann.</h1>
-        <p class="lede">Diese Seite ist immer aktuell &mdash; jede neue Funktion steht hier, sobald sie da ist. Setz ein Lesezeichen, dann musst du nie wieder eine E-Mail suchen.</p>
-        <p class="stamp">Stand: 2. August 2026</p>
+        <p class="lede">Immer aktuell. Setz ein Lesezeichen &mdash; dann musst du nie wieder eine E-Mail suchen.</p>
+        <p class="stamp">Stand: 3. August 2026</p>
 
         <div class="tiers" role="group" aria-label="Welche Anleitung?">
           <button type="button" data-set="solo" class="active">Einzelunternehmen</button>
@@ -306,18 +305,18 @@
 
         <div class="callout">
           <div class="k">Du musst dir keinen Befehl merken</div>
-          <p>Schick <span class="cmd">?</span> an deine Bonvio-Adresse. Zur&uuml;ck kommt eine kurze E-Mail mit dem, was Bonvio kann &mdash; Export, Kilometergeld, Di&auml;ten. <b>Jede Zeile darin ist ein Link.</b> Antippen, und dein Mail-Programm &ouml;ffnet eine neue E-Mail mit fertigem Betreff, z.&nbsp;B. <span class="cmd">#km 25 Kundenbesuch</span>. Zahl anpassen, senden.</p>
-          <p>Jeder dieser Links legt einen <b>eigenen Eintrag</b> an &mdash; eine Fahrt, einen Reisetag, einen Export. Er h&auml;ngt sich an keinen Beleg an. Willst du einen Beleg &auml;ndern, den du schon geschickt hast, <b>antworte auf dessen Best&auml;tigung</b>. In deren Betreff steht die Belegnummer, etwa <span class="cmd">R4A9F2C1</span> &mdash; daran erkennt Bonvio, welchen Beleg du meinst. <a href="#korrigieren">Mehr dazu unter Korrigieren</a>.</p>
-          <p>Dieselbe &Uuml;bersicht kommt auch von selbst, wenn Bonvio ein Foto nicht lesen konnte &mdash; du bekommst also nie eine blo&szlig;e Fehlermeldung, sondern immer den n&auml;chsten Schritt.</p>
+          <p>Schick <span class="cmd">?</span> an deine Bonvio-Adresse. Zur&uuml;ck kommt ein Men&uuml;, in dem jede Zeile ein Link ist. Antippen, und es &ouml;ffnet sich eine fertige E-Mail &mdash; etwa <span class="cmd">#km 25 Kundenbesuch</span>. Zahl anpassen, senden.</p>
+          <p>Willst du einen <b>Beleg</b> &auml;ndern? Antworte auf seine Best&auml;tigung. Dort stehen die Buttons: Korrigieren, L&ouml;schen, Bewirtung.</p>
+          <p>Kann Bonvio ein Foto nicht lesen, bekommst du dasselbe Men&uuml; statt einer Fehlermeldung.</p>
         </div>
 
         <!-- 01 Adresse -->
         <section class="sec" id="adresse">
           <div class="sec-head"><span class="sec-num"></span><h2>Deine Adresse</h2></div>
-          <p data-tier="solo">Du hast von Bonvio eine eigene E-Mail-Adresse bekommen &mdash; sie steht in deiner Willkommens-E-Mail. Speicher sie im Adressbuch deines Telefons. Alles, was du mit Bonvio machst, geht an diese eine Adresse.</p>
-          <p data-tier="team">Du hast von deiner Firma eine eigene Bonvio-Adresse bekommen &mdash; sie steht in deiner Willkommens-E-Mail und sieht aus wie <span class="cmd">firma3@bonvio.eu</span>. Speicher sie im Adressbuch. Alles, was du mit Bonvio machst, geht an diese eine Adresse.</p>
-          <p data-tier="admin">Als Team-Admin hast du <b>eine</b> Adresse f&uuml;r alles: <span class="cmd">firma@bonvio.eu</span>. Damit verwaltest du die Mitglieder <em>und</em> holst dir den Gesamtexport. Kein Dashboard, kein Login.</p>
-          <p class="hint">Wichtig: Bonvio erkennt dich an deiner Absenderadresse. Schick immer von der E-Mail-Adresse, die hinterlegt ist &mdash; sonst antwortet Bonvio nicht.</p>
+          <p data-tier="solo">Deine Bonvio-Adresse steht in der Willkommens-E-Mail. Speicher sie im Adressbuch deines Telefons &mdash; alles l&auml;uft &uuml;ber diese eine Adresse.</p>
+          <p data-tier="team">Deine Bonvio-Adresse steht in der Willkommens-E-Mail und sieht aus wie <span class="cmd">firma3@bonvio.eu</span>. Speicher sie im Adressbuch &mdash; alles l&auml;uft &uuml;ber diese eine Adresse.</p>
+          <p data-tier="admin">Als Team-Admin hast du <b>eine</b> Adresse f&uuml;r alles: <span class="cmd">firma@bonvio.eu</span>. Mitglieder verwalten <em>und</em> Gesamtexport. Kein Dashboard, kein Login.</p>
+          <p class="hint">Schick immer von deiner eigenen E-Mail-Adresse &mdash; von einer fremden antwortet Bonvio nicht.</p>
         </section>
         <hr class="rule">
 
@@ -328,7 +327,7 @@
           <ul class="plain">
             <li><b>Ein Beleg pro E-Mail.</b> Bei mehreren Belegen einfach mehrere E-Mails.</li>
             <li><b>Keine PDFs</b> &mdash; wenn du eine Rechnung am Bildschirm hast, fotografier den Bildschirm ab.</li>
-            <li>Optional: ein Hashtag im Betreff sortiert den Beleg gleich mit &mdash; siehe unten.</li>
+            <li>Optional: ein Hashtag im Betreff sortiert den Beleg gleich mit.</li>
           </ul>
         </section>
         <hr class="rule" data-tier="solo team">
@@ -336,29 +335,28 @@
         <!-- 03 Bestätigung -->
         <section class="sec" id="bestaetigung" data-tier="solo team">
           <div class="sec-head"><span class="sec-num"></span><h2>Die Best&auml;tigung</h2></div>
-          <p>Innerhalb von Sekunden bekommst du eine E-Mail zur&uuml;ck mit allem, was Bonvio gelesen hat: <b>H&auml;ndler, Datum, Betrag, MwSt</b> &mdash; und immer auch den Betrag in Euro, selbst wenn der Beleg in Franken, Pfund oder Kronen ausgestellt ist (Kurs der Europ&auml;ischen Zentralbank vom Belegdatum).</p>
-          <p>In jeder Best&auml;tigung stehen die n&auml;chsten Schritte als Tap: <b>Korrigieren</b>, <b>L&ouml;schen</b>, <b>Bewirtung</b>. Ein Klick auf L&ouml;schen entfernt den Beleg aus deinem Archiv.</p>
-          <p class="hint">Jeder Beleg hat eine Nummer wie <span class="cmd">R4A9F2C1</span>. Solange die im Betreff steht, wei&szlig; Bonvio, welchen Beleg du meinst &mdash; du kannst also einfach auf die Best&auml;tigung antworten.</p>
+          <p>Innerhalb von Sekunden kommt eine E-Mail zur&uuml;ck mit allem, was Bonvio gelesen hat: <b>H&auml;ndler, Datum, Betrag, MwSt</b> &mdash; und immer auch den Betrag in Euro, selbst wenn der Beleg in Franken, Pfund oder Kronen ausgestellt ist (Kurs der Europ&auml;ischen Zentralbank vom Belegdatum).</p>
+          <p>Darunter stehen die n&auml;chsten Schritte als Tap: <b>Korrigieren</b>, <b>L&ouml;schen</b>, <b>Bewirtung</b>.</p>
         </section>
         <hr class="rule" data-tier="solo team">
 
         <!-- 04 Korrigieren -->
         <section class="sec" id="korrigieren" data-tier="solo team">
           <div class="sec-head"><span class="sec-num"></span><h2>Korrigieren</h2></div>
-          <p>Stimmt etwas nicht, gibt es zwei Wege &mdash; beide sind eine Antwort auf die Best&auml;tigung:</p>
+          <p>Stimmt etwas nicht, antwortest du auf die Best&auml;tigung. Zwei Wege:</p>
           <ul class="plain">
-            <li><b>Tap auf &bdquo;Korrigieren&ldquo;.</b> Du bekommst ein vorausgef&uuml;lltes Formular mit dem, was Bonvio gelesen hat. &Uuml;berschreib nur den falschen Wert <em>nach dem Doppelpunkt</em> und schick die E-Mail zur&uuml;ck.</li>
-            <li><b>Frei antworten.</b> <span class="cmd">Betrag 12,90</span>, <span class="cmd">Datum 01.06.2026</span>, <span class="cmd">Name Lidl</span>, <span class="cmd">13% 3,80</span> &mdash; mehrere Zeilen in einer Mail sind kein Problem.</li>
+            <li><b>Tap auf &bdquo;Korrigieren&ldquo;.</b> Du bekommst ein vorausgef&uuml;lltes Formular. &Uuml;berschreib nur den falschen Wert <em>nach dem Doppelpunkt</em> und schick es zur&uuml;ck.</li>
+            <li><b>Oder frei antworten:</b> <span class="cmd">Betrag 12,90</span>, <span class="cmd">Datum 01.06.2026</span>, <span class="cmd">Name Lidl</span>, <span class="cmd">13% 3,80</span> &mdash; mehrere Zeilen in einer Mail sind kein Problem.</li>
           </ul>
-          <p>War das Foto zu unscharf oder die MwSt nicht sicher lesbar, sagt Bonvio das von sich aus in der Best&auml;tigung und fragt nach, statt zu raten.</p>
-          <p class="hint">Das Originalfoto bleibt dabei unver&auml;ndert gespeichert &mdash; korrigiert werden nur die ausgelesenen Werte. Genau das macht das Archiv pr&uuml;fungsfest.</p>
+          <p>War das Foto unscharf oder die MwSt nicht sicher lesbar, fragt Bonvio von sich aus nach, statt zu raten.</p>
+          <p class="hint">Das Originalfoto bleibt unver&auml;ndert &mdash; korrigiert werden nur die ausgelesenen Werte. Das macht das Archiv pr&uuml;fungsfest.</p>
         </section>
         <hr class="rule" data-tier="solo team">
 
         <!-- 05 Foto -->
         <section class="sec" id="foto" data-tier="solo team">
           <div class="sec-head"><span class="sec-num"></span><h2>Ein gutes Foto</h2></div>
-          <p><b>In Originalgr&ouml;&szlig;e senden.</b> Manche Mail-Apps (z.&thinsp;B. Apple Mail) fragen beim Senden nach der Bildgr&ouml;&szlig;e &mdash; w&auml;hl <b>&bdquo;Tats&auml;chliche Gr&ouml;&szlig;e&ldquo;</b>, nicht &bdquo;Klein&ldquo;. Ein verkleinertes Foto wird unscharf und l&auml;sst sich nicht zuverl&auml;ssig lesen. Das ist mit Abstand die h&auml;ufigste Ursache f&uuml;r einen schlechten Treffer.</p>
+          <p><b>In Originalgr&ouml;&szlig;e senden.</b> Manche Mail-Apps (z.&thinsp;B. Apple Mail) fragen beim Senden nach der Bildgr&ouml;&szlig;e &mdash; w&auml;hl <b>&bdquo;Tats&auml;chliche Gr&ouml;&szlig;e&ldquo;</b>, nicht &bdquo;Klein&ldquo;. Verkleinerte Fotos werden unscharf: der h&auml;ufigste Grund f&uuml;r einen schlechten Treffer.</p>
           <ul class="plain">
             <li>Beleg flach hinlegen &mdash; keine Falten, keine Knicke.</li>
             <li>Senkrecht von oben, ganzer Beleg im Bild.</li>
@@ -371,11 +369,10 @@
         <!-- 06 Hashtags -->
         <section class="sec" id="hashtags" data-tier="solo team">
           <div class="sec-head"><span class="sec-num"></span><h2>Hashtags</h2></div>
-          <p>Hashtags sind Etiketten f&uuml;r deine Belege. Schreib z.&thinsp;B. <span class="cmd">#brille</span> oder <span class="cmd">#auto</span> in den Betreff &mdash; am Jahresende holst du dir mit einem Befehl alle passenden Belege auf einen Schlag.</p>
+          <p>Hashtags sind Etiketten. Schreib <span class="cmd">#brille</span> oder <span class="cmd">#auto</span> in den Betreff &mdash; am Jahresende holst du dir mit einem Befehl alle passenden Belege auf einen Schlag.</p>
           <ul class="plain">
-            <li>Tag, was dir hilft: Kategorie <span class="cmd">#brille</span>, H&auml;ndler <span class="cmd">#mueller</span>, Projekt <span class="cmd">#renovierung</span>, Zahlungsart <span class="cmd">#bar</span> oder <span class="cmd">#firmenkarte</span>.</li>
-            <li>Bis zu 5 Tags pro Beleg.</li>
-            <li>Tags sind nicht Pflicht &mdash; am Jahresende aber Gold wert.</li>
+            <li>Tag, was dir hilft: Kategorie <span class="cmd">#brille</span>, H&auml;ndler <span class="cmd">#mueller</span>, Projekt <span class="cmd">#renovierung</span>, Zahlungsart <span class="cmd">#bar</span>.</li>
+            <li>Bis zu 5 pro Beleg. Nicht Pflicht &mdash; am Jahresende aber Gold wert.</li>
             <li>Vergessen? Beleg l&ouml;schen und mit Tag neu senden.</li>
           </ul>
         </section>
@@ -399,22 +396,22 @@
           <div class="cmdlist">
             <div class="cmdrow"><span class="cmd">#di&auml;t 8</span><span class="desc">8&nbsp;Stunden unterwegs</span></div>
             <div class="cmdrow"><span class="cmd">#di&auml;t 09:00-17:30</span><span class="desc">von&nbsp;&ndash;&nbsp;bis, Bonvio rechnet die Dauer</span></div>
-            <div class="cmdrow"><span class="cmd">Messe Wien #di&auml;t 8 -mittag</span><span class="desc">gestelltes Mittagessen &mdash; mindert die Pauschale um &euro;&thinsp;15</span></div>
+            <div class="cmdrow"><span class="cmd">Messe Wien #di&auml;t 8 -mittag</span><span class="desc">Anlass im Betreff, Mittagessen war gestellt</span></div>
           </div>
-          <p style="margin-top:16px">Gestelltes Mittag- oder Abendessen mindert die Pauschale um je &euro;&thinsp;15 (<span class="cmd">-mittag</span>, <span class="cmd">-abend</span>, <span class="cmd">-voll</span> = &euro;&thinsp;0). Vergessen oder falsch? Antworte einfach auf die Best&auml;tigung mit <span class="cmd">-mittag</span> oder <span class="cmd">kein Essen</span> zum Zur&uuml;cksetzen &mdash; Bonvio rechnet neu.</p>
+          <p style="margin-top:16px">Ein gestelltes Mittag- oder Abendessen mindert die Pauschale um je &euro;&thinsp;15 (<span class="cmd">-mittag</span>, <span class="cmd">-abend</span>, <span class="cmd">-voll</span> = &euro;&thinsp;0). Nachtr&auml;glich? Antworte auf die Best&auml;tigung &mdash; mit <span class="cmd">-mittag</span>, oder <span class="cmd">kein Essen</span> zum Zur&uuml;cksetzen.</p>
         </section>
         <hr class="rule" data-tier="solo">
 
         <!-- 09 Bewirtung -->
         <section class="sec" id="bewirtung" data-tier="solo team">
           <div class="sec-head"><span class="sec-num"></span><h2>Bewirtung &amp; teilweise absetzbare Belege</h2></div>
-          <p>Nicht jeder Beleg ist zu 100&thinsp;% absetzbar. Schick das Foto und schreib in den Betreff oder in den Text der E-Mail:</p>
+          <p>Nicht jeder Beleg ist zu 100&thinsp;% absetzbar. Schick das Foto und schreib in den Betreff oder in die E-Mail:</p>
           <div class="cmdlist">
             <div class="cmdrow"><span class="cmd">Abzug: 50%</span><span class="desc">absetzbarer Anteil &mdash; immer ausdr&uuml;cklich angeben, es gibt keinen Standardwert</span></div>
             <div class="cmdrow"><span class="cmd">Mit: Max Mustermann</span><span class="desc">Teilnehmer</span></div>
             <div class="cmdrow"><span class="cmd">Anlass: Projektbesprechung</span><span class="desc">Zweck der Bewirtung</span></div>
           </div>
-          <p style="margin-top:16px">Bonvio rechnet den absetzbaren Netto-Betrag, l&auml;sst die Vorsteuer unber&uuml;hrt und schreibt Teilnehmer und Anlass in den Export &mdash; genau die Angaben, die das Finanzamt f&uuml;r Gesch&auml;ftsessen verlangt (&sect;20 EStG).</p>
+          <p style="margin-top:16px">Bonvio rechnet den absetzbaren Netto-Betrag, l&auml;sst die Vorsteuer unber&uuml;hrt und schreibt Teilnehmer und Anlass in den Export &mdash; genau das verlangt das Finanzamt bei Gesch&auml;ftsessen (&sect;20 EStG).</p>
           <p class="hint">Geht auch nachtr&auml;glich: einfach auf die Best&auml;tigung antworten.</p>
         </section>
         <hr class="rule" data-tier="solo team">
@@ -422,7 +419,7 @@
         <!-- 10 Hotel -->
         <section class="sec" id="hotel" data-tier="solo team">
           <div class="sec-head"><span class="sec-num"></span><h2>Hotelrechnungen</h2></div>
-          <p>Die Rechnung muss auf die <b>Firma</b> lauten &mdash; Name und Adresse. Sonst gibt es weder Vorsteuer- noch Betriebsausgabenabzug (&sect;11 UStG). Am einfachsten ist es, die Firmendaten schon beim Check-in anzugeben.</p>
+          <p>Die Rechnung muss auf die <b>Firma</b> lauten &mdash; Name und Adresse. Sonst gibt es weder Vorsteuer- noch Betriebsausgabenabzug (&sect;11 UStG). Gib die Firmendaten am besten schon beim Check-in an.</p>
           <p class="hint">Bonvio erkennt Hotelbelege und erinnert dich in der Best&auml;tigung von selbst daran.</p>
         </section>
         <hr class="rule" data-tier="solo team">
@@ -430,8 +427,8 @@
         <!-- 11 Kartenzahlung -->
         <section class="sec" id="karte" data-tier="solo team">
           <div class="sec-head"><span class="sec-num"></span><h2>Kartenzahlung als Nachweis</h2></div>
-          <p>Wenn du zus&auml;tzlich belegen willst, <em>wie</em> bezahlt wurde: fotografier den Bankbeleg oder mach einen Screenshot aus der Banking-App und h&auml;ng ihn an dieselbe E-Mail wie den Beleg &mdash; <b>die Reihenfolge ist egal</b>. Oder antworte sp&auml;ter mit dem Foto auf die Best&auml;tigung.</p>
-          <p>Bonvio erkennt die Zahlung, ordnet sie dem richtigen Beleg zu &mdash; inklusive Trinkgeld und Wechselkurs, wenn der Kartenbetrag h&ouml;her ist als der Beleg &mdash; und legt sie als Nachweis in den Export.</p>
+          <p>Willst du auch belegen, <em>wie</em> bezahlt wurde: h&auml;ng den Bankbeleg oder einen Screenshot aus der Banking-App an dieselbe E-Mail wie den Beleg &mdash; <b>die Reihenfolge ist egal</b>. Oder antworte sp&auml;ter damit auf die Best&auml;tigung.</p>
+          <p>Bonvio ordnet die Zahlung dem richtigen Beleg zu &mdash; inklusive Trinkgeld und Wechselkurs, wenn der Kartenbetrag h&ouml;her ist &mdash; und legt sie als Nachweis in den Export.</p>
         </section>
         <hr class="rule" data-tier="solo team">
 
@@ -446,7 +443,7 @@
             <div class="cmdrow"><span class="cmd">EXPORT 2026-01 BIS 2026-06</span><span class="desc">eigener Zeitraum</span></div>
             <div class="cmdrow"><span class="cmd">EXPORT BRILLE</span><span class="desc">alle Belege mit <span class="cmd">#brille</span> &mdash; funktioniert mit jedem deiner Tags</span></div>
           </div>
-          <p style="margin-top:16px">Du bekommst sofort einen sicheren Download-Link: alle Belege als Foto plus eine fertige CSV-Liste, jede Zeile auch in Euro. Der Link l&auml;uft nach kurzer Zeit ab &mdash; einfach neu anfordern.</p>
+          <p style="margin-top:16px">Zur&uuml;ck kommt ein sicherer Download-Link: alle Belege als Foto plus eine fertige CSV, jede Zeile auch in Euro. Der Link l&auml;uft nach kurzer Zeit ab &mdash; einfach neu anfordern.</p>
           <p class="hint" data-tier="team">Dein Export zeigt <b>nur deine eigenen</b> Belege. Was das Team insgesamt ausgegeben hat, sieht nur die Administration.</p>
         </section>
         <hr class="rule" data-tier="solo team">
@@ -456,13 +453,13 @@
           <div class="sec-head"><span class="sec-num"></span><h2>Team verwalten</h2></div>
           <p>Alle Befehle gehen als <b>Betreff</b> an deine Team-Adresse:</p>
           <div class="cmdlist">
-            <div class="cmdrow"><span class="cmd">ADD max.mustermann@firma.at Max Mustermann</span><span class="desc">Mitglied anlegen &mdash; es bekommt sofort eine eigene Adresse (<span class="cmd">firma1@</span>, <span class="cmd">firma2@</span> &hellip;) und eine Willkommens-E-Mail. Optional gleich mit Abteilung: <span class="cmd">#Vertrieb</span>, und mit Sprache: <span class="cmd">de</span> oder <span class="cmd">en</span>.</span></div>
+            <div class="cmdrow"><span class="cmd">ADD max.mustermann@firma.at Max Mustermann</span><span class="desc">Mitglied anlegen &mdash; es bekommt sofort eine eigene Adresse (<span class="cmd">firma1@</span>, <span class="cmd">firma2@</span> &hellip;) und eine Willkommens-E-Mail. Optional mit Abteilung <span class="cmd">#Vertrieb</span> und Sprache <span class="cmd">en</span>.</span></div>
             <div class="cmdrow"><span class="cmd">REMOVE max.mustermann@firma.at</span><span class="desc">Mitglied deaktivieren &mdash; die Belege bleiben archiviert (&sect;132 BAO)</span></div>
             <div class="cmdrow"><span class="cmd">ABTEILUNG max.mustermann@firma.at Technik</span><span class="desc">Abteilung nachtr&auml;glich setzen oder &auml;ndern</span></div>
             <div class="cmdrow"><span class="cmd">ROLLE max.mustermann@firma.at finance</span><span class="desc"><span class="cmd">master</span>, <span class="cmd">secretary</span>, <span class="cmd">finance</span> oder <span class="cmd">user</span> &mdash; mehrere Master sind m&ouml;glich</span></div>
             <div class="cmdrow"><span class="cmd">TEAM</span><span class="desc">aktuelle &Uuml;bersicht: alle Mitglieder, Abteilungen und Rollen</span></div>
           </div>
-          <p style="margin-top:16px">Willst du selbst Belege einreichen, leg dich einfach als Mitglied an &mdash; <span class="cmd">ADD deine.adresse@firma.at Dein Name</span>. Dann hast du eine eigene Belegadresse und schickst Belege wie alle anderen.</p>
+          <p style="margin-top:16px">Willst du selbst Belege einreichen, leg dich als Mitglied an: <span class="cmd">ADD deine.adresse@firma.at Dein Name</span>. Dann schickst du Belege wie alle anderen.</p>
         </section>
         <hr class="rule" data-tier="admin">
 
@@ -506,8 +503,8 @@
           <ul class="plain">
             <li>Nur f&uuml;r dich. Kein Tracking. Keine Weitergabe zu Werbezwecken oder an Datenh&auml;ndler.</li>
             <li>Verschl&uuml;sselt gespeichert &mdash; Server in Deutschland.</li>
-            <li>10 Jahre Aufbewahrung (&sect;132 BAO / &sect;147 AO).</li>
-            <li>DSGVO-konform &mdash; Export jederzeit selbst per <span class="cmd">EXPORT</span>; L&ouml;schung auf Anfrage, soweit gesetzliche Aufbewahrungspflichten nicht entgegenstehen.</li>
+            <li>10 Jahre archiviert.</li>
+            <li>DSGVO-konform. Export jederzeit selbst per <span class="cmd">EXPORT</span>, L&ouml;schung auf Anfrage &mdash; soweit die gesetzliche Aufbewahrungspflicht nicht entgegensteht.</li>
           </ul>
           <p class="hint">Details: <a href="/datenschutz.html">Datenschutz</a> und <a href="/agb.html">AGB</a>.</p>
         </section>
@@ -525,8 +522,8 @@
       <div class="lang-en">
         <div class="eyebrow">Guide</div>
         <h1>Everything Bonvio can do.</h1>
-        <p class="lede">This page is always current &mdash; every new feature shows up here the moment it ships. Bookmark it and you'll never have to dig out an email again.</p>
-        <p class="stamp">Updated: 2 August 2026</p>
+        <p class="lede">Always current. Bookmark it &mdash; then you'll never have to dig out an email again.</p>
+        <p class="stamp">Updated: 3 August 2026</p>
 
         <div class="tiers" role="group" aria-label="Which guide?">
           <button type="button" data-set="solo" class="active">Sole trader</button>
@@ -539,18 +536,18 @@
 
         <div class="callout">
           <div class="k">You never have to remember a command</div>
-          <p>Send <span class="cmd">?</span> to your Bonvio address. Back comes a short email listing what Bonvio can do &mdash; export, mileage, per diems. <b>Every line in it is a link.</b> Tap one and your mail app opens a new email with the subject already written, e.g. <span class="cmd">#km 25 client visit</span>. Change the number, send.</p>
-          <p>Each of those links creates <b>its own entry</b> &mdash; a drive, a travel day, an export. It doesn't attach to a receipt. To change a receipt you already sent, <b>reply to that receipt's confirmation</b> instead. Its subject carries the receipt number, like <span class="cmd">R4A9F2C1</span> &mdash; that is how Bonvio knows which one you mean. <a href="#korrigieren-en">More under Corrections</a>.</p>
-          <p>The same overview also arrives on its own whenever Bonvio couldn't read a photo &mdash; so you never get a bare error message, you get the next step.</p>
+          <p>Send <span class="cmd">?</span> to your Bonvio address. Back comes a menu where every line is a link. Tap one and a ready-made email opens &mdash; like <span class="cmd">#km 25 client visit</span>. Change the number, send.</p>
+          <p>Want to change a <b>receipt</b>? Answer its confirmation email. The buttons are right there: Correct, Delete, Business meal.</p>
+          <p>If Bonvio can't read a photo, you get the same menu instead of an error.</p>
         </div>
 
         <!-- 01 Address -->
         <section class="sec" id="adresse-en">
           <div class="sec-head"><span class="sec-num"></span><h2>Your address</h2></div>
-          <p data-tier="solo">Bonvio gave you your own email address &mdash; it's in your welcome email. Save it to your phone's contacts. Everything you do with Bonvio goes to that one address.</p>
-          <p data-tier="team">Your company gave you your own Bonvio address &mdash; it's in your welcome email and looks like <span class="cmd">company3@bonvio.eu</span>. Save it to your contacts. Everything you do with Bonvio goes to that one address.</p>
-          <p data-tier="admin">As team admin you have <b>one</b> address for everything: <span class="cmd">company@bonvio.eu</span>. It manages members <em>and</em> pulls the full export. No dashboard, no login.</p>
-          <p class="hint">Important: Bonvio recognises you by your sender address. Always send from the email address on file &mdash; otherwise Bonvio won't reply.</p>
+          <p data-tier="solo">Your Bonvio address is in your welcome email. Save it to your phone's contacts &mdash; everything runs through that one address.</p>
+          <p data-tier="team">Your Bonvio address is in your welcome email and looks like <span class="cmd">company3@bonvio.eu</span>. Save it to your contacts &mdash; everything runs through that one address.</p>
+          <p data-tier="admin">As team admin you have <b>one</b> address for everything: <span class="cmd">company@bonvio.eu</span>. Manage members <em>and</em> pull the full export. No dashboard, no login.</p>
+          <p class="hint">Always send from your own email address &mdash; Bonvio won't reply to a different one.</p>
         </section>
         <hr class="rule">
 
@@ -561,7 +558,7 @@
           <ul class="plain">
             <li><b>One receipt per email.</b> For several receipts, send several emails.</li>
             <li><b>No PDFs</b> &mdash; if you have an invoice on screen, photograph the screen.</li>
-            <li>Optional: a hashtag in the subject files the receipt as it arrives &mdash; see below.</li>
+            <li>Optional: a hashtag in the subject files the receipt as it arrives.</li>
           </ul>
         </section>
         <hr class="rule" data-tier="solo team">
@@ -569,29 +566,28 @@
         <!-- 03 Confirmation -->
         <section class="sec" id="bestaetigung-en" data-tier="solo team">
           <div class="sec-head"><span class="sec-num"></span><h2>The confirmation</h2></div>
-          <p>Within seconds you get an email back with everything Bonvio read: <b>merchant, date, amount, VAT</b> &mdash; and always the amount in euros too, even when the receipt is in francs, pounds or krona (European Central Bank rate for the receipt date).</p>
-          <p>Every confirmation carries the next steps as taps: <b>Correct</b>, <b>Delete</b>, <b>Business meal</b>. One click on Delete removes the receipt from your archive.</p>
-          <p class="hint">Each receipt has a number like <span class="cmd">R4A9F2C1</span>. As long as that's in the subject, Bonvio knows which receipt you mean &mdash; so you can simply reply to the confirmation.</p>
+          <p>Within seconds an email comes back with everything Bonvio read: <b>merchant, date, amount, VAT</b> &mdash; and always the amount in euros too, even when the receipt is in francs, pounds or krona (European Central Bank rate for the receipt date).</p>
+          <p>Underneath, the next steps as taps: <b>Correct</b>, <b>Delete</b>, <b>Business meal</b>.</p>
         </section>
         <hr class="rule" data-tier="solo team">
 
         <!-- 04 Corrections -->
         <section class="sec" id="korrigieren-en" data-tier="solo team">
           <div class="sec-head"><span class="sec-num"></span><h2>Corrections</h2></div>
-          <p>If something is off there are two ways &mdash; both are a reply to the confirmation:</p>
+          <p>If something is off, you answer the confirmation. Two ways:</p>
           <ul class="plain">
-            <li><b>Tap &ldquo;Correct&rdquo;.</b> You get a pre-filled form with what Bonvio read. Overwrite just the wrong value <em>after the colon</em> and send the email back.</li>
-            <li><b>Reply in your own words.</b> <span class="cmd">Amount 12.90</span>, <span class="cmd">Date 01.06.2026</span>, <span class="cmd">Name Lidl</span>, <span class="cmd">13% 3.80</span> &mdash; several lines in one email are fine.</li>
+            <li><b>Tap &ldquo;Correct&rdquo;.</b> You get a pre-filled form. Overwrite just the wrong value <em>after the colon</em> and send it back.</li>
+            <li><b>Or reply in your own words:</b> <span class="cmd">Amount 12.90</span>, <span class="cmd">Date 01.06.2026</span>, <span class="cmd">Name Lidl</span>, <span class="cmd">13% 3.80</span> &mdash; several lines in one email are fine.</li>
           </ul>
-          <p>If the photo was too blurry or the VAT couldn't be read confidently, Bonvio says so in the confirmation and asks, rather than guessing.</p>
-          <p class="hint">The original photo stays stored unchanged &mdash; only the extracted values are corrected. That's exactly what keeps the archive audit-proof.</p>
+          <p>If the photo was blurry or the VAT couldn't be read confidently, Bonvio asks by itself rather than guessing.</p>
+          <p class="hint">The original photo stays unchanged &mdash; only the extracted values are corrected. That's what keeps the archive audit-proof.</p>
         </section>
         <hr class="rule" data-tier="solo team">
 
         <!-- 05 Photo -->
         <section class="sec" id="foto-en" data-tier="solo team">
           <div class="sec-head"><span class="sec-num"></span><h2>A good photo</h2></div>
-          <p><b>Send at original size.</b> Some mail apps (e.g. Apple Mail) ask for an image size when sending &mdash; choose <b>&ldquo;Actual Size&rdquo;</b>, not &ldquo;Small&rdquo;. A shrunk photo turns blurry and can't be read reliably. This is by far the most common cause of a bad read.</p>
+          <p><b>Send at original size.</b> Some mail apps (e.g. Apple Mail) ask for an image size when sending &mdash; choose <b>&ldquo;Actual Size&rdquo;</b>, not &ldquo;Small&rdquo;. Shrunk photos turn blurry: the most common cause of a bad read.</p>
           <ul class="plain">
             <li>Lay the receipt flat &mdash; no folds, no wrinkles.</li>
             <li>Straight from above, whole receipt in frame.</li>
@@ -604,11 +600,10 @@
         <!-- 06 Hashtags -->
         <section class="sec" id="hashtags-en" data-tier="solo team">
           <div class="sec-head"><span class="sec-num"></span><h2>Hashtags</h2></div>
-          <p>Hashtags are labels for your receipts. Add e.g. <span class="cmd">#glasses</span> or <span class="cmd">#car</span> to the subject &mdash; at year-end one command pulls every matching receipt in one go.</p>
+          <p>Hashtags are labels. Add <span class="cmd">#glasses</span> or <span class="cmd">#car</span> to the subject &mdash; at year-end one command pulls every matching receipt in one go.</p>
           <ul class="plain">
-            <li>Tag whatever helps: category <span class="cmd">#glasses</span>, vendor <span class="cmd">#mueller</span>, project <span class="cmd">#renovation</span>, payment method <span class="cmd">#cash</span> or <span class="cmd">#companycard</span>.</li>
-            <li>Up to 5 tags per receipt.</li>
-            <li>Tags are optional &mdash; but worth gold at year-end.</li>
+            <li>Tag whatever helps: category <span class="cmd">#glasses</span>, vendor <span class="cmd">#mueller</span>, project <span class="cmd">#renovation</span>, payment method <span class="cmd">#cash</span>.</li>
+            <li>Up to 5 per receipt. Never required &mdash; but worth gold at year-end.</li>
             <li>Forgot one? Delete the receipt and send it again with the tag.</li>
           </ul>
         </section>
@@ -632,22 +627,22 @@
           <div class="cmdlist">
             <div class="cmdrow"><span class="cmd">#di&auml;t 8</span><span class="desc">8&nbsp;hours away</span></div>
             <div class="cmdrow"><span class="cmd">#di&auml;t 09:00-17:30</span><span class="desc">from&nbsp;&ndash;&nbsp;to, Bonvio works out the duration</span></div>
-            <div class="cmdrow"><span class="cmd">Trade fair Vienna #di&auml;t 8 -lunch</span><span class="desc">lunch provided &mdash; cuts the allowance by &euro;&thinsp;15</span></div>
+            <div class="cmdrow"><span class="cmd">Trade fair Vienna #di&auml;t 8 -lunch</span><span class="desc">purpose in the subject, lunch was provided</span></div>
           </div>
-          <p style="margin-top:16px">A provided lunch or dinner reduces the allowance by &euro;&thinsp;15 each (<span class="cmd">-lunch</span>, <span class="cmd">-dinner</span>, <span class="cmd">-full</span> = &euro;&thinsp;0). Forgot, or got it wrong? Just reply to the confirmation with <span class="cmd">-lunch</span>, or <span class="cmd">no meal</span> to reset &mdash; Bonvio recalculates.</p>
+          <p style="margin-top:16px">A provided lunch or dinner reduces the allowance by &euro;&thinsp;15 each (<span class="cmd">-lunch</span>, <span class="cmd">-dinner</span>, <span class="cmd">-full</span> = &euro;&thinsp;0). Afterwards? Answer the confirmation &mdash; with <span class="cmd">-lunch</span>, or <span class="cmd">no meal</span> to reset.</p>
         </section>
         <hr class="rule" data-tier="solo">
 
         <!-- 09 Business meals -->
         <section class="sec" id="bewirtung-en" data-tier="solo team">
           <div class="sec-head"><span class="sec-num"></span><h2>Business meals &amp; partly deductible receipts</h2></div>
-          <p>Not every receipt is 100&thinsp;% deductible. Send the photo and add, in the subject or the body of the email:</p>
+          <p>Not every receipt is 100&thinsp;% deductible. Send the photo and add, in the subject or the email:</p>
           <div class="cmdlist">
             <div class="cmdrow"><span class="cmd">Deduction: 50%</span><span class="desc">the deductible share &mdash; always state it explicitly, there is no default</span></div>
             <div class="cmdrow"><span class="cmd">With: Max Mustermann</span><span class="desc">participants</span></div>
             <div class="cmdrow"><span class="cmd">Purpose: project meeting</span><span class="desc">why the meal took place</span></div>
           </div>
-          <p style="margin-top:16px">Bonvio works out the deductible net amount, leaves the input VAT untouched and writes participants and purpose into the export &mdash; exactly what the tax office requires for business meals (&sect;20 EStG).</p>
+          <p style="margin-top:16px">Bonvio works out the deductible net amount, leaves the input VAT untouched and writes participants and purpose into the export &mdash; exactly what the tax office asks for on business meals (&sect;20 EStG).</p>
           <p class="hint">Works after the fact too: just reply to the confirmation.</p>
         </section>
         <hr class="rule" data-tier="solo team">
@@ -655,7 +650,7 @@
         <!-- 10 Hotel -->
         <section class="sec" id="hotel-en" data-tier="solo team">
           <div class="sec-head"><span class="sec-num"></span><h2>Hotel invoices</h2></div>
-          <p>The invoice must be made out to the <b>company</b> &mdash; name and address. Otherwise there's no VAT and no expense deduction (&sect;11 UStG). Easiest is to give the company details at check-in.</p>
+          <p>The invoice must be made out to the <b>company</b> &mdash; name and address. Otherwise there's no VAT and no expense deduction (&sect;11 UStG). Best to give the company details at check-in.</p>
           <p class="hint">Bonvio recognises hotel receipts and reminds you in the confirmation.</p>
         </section>
         <hr class="rule" data-tier="solo team">
@@ -663,8 +658,8 @@
         <!-- 11 Card payment -->
         <section class="sec" id="karte-en" data-tier="solo team">
           <div class="sec-head"><span class="sec-num"></span><h2>Card payment as proof</h2></div>
-          <p>If you also want to document <em>how</em> it was paid: photograph the bank slip or screenshot your banking app and attach it to the same email as the receipt &mdash; <b>order doesn't matter</b>. Or reply to the confirmation later with the photo.</p>
-          <p>Bonvio recognises the payment, matches it to the right receipt &mdash; including tip and exchange rate when the card amount is higher than the receipt &mdash; and files it as proof in the export.</p>
+          <p>Want to document <em>how</em> it was paid too: attach the bank slip or a screenshot from your banking app to the same email as the receipt &mdash; <b>order doesn't matter</b>. Or answer the confirmation with it later.</p>
+          <p>Bonvio matches the payment to the right receipt &mdash; including tip and exchange rate when the card amount is higher &mdash; and files it as proof in the export.</p>
         </section>
         <hr class="rule" data-tier="solo team">
 
@@ -679,7 +674,7 @@
             <div class="cmdrow"><span class="cmd">EXPORT 2026-01 TO 2026-06</span><span class="desc">custom range</span></div>
             <div class="cmdrow"><span class="cmd">EXPORT GLASSES</span><span class="desc">every receipt tagged <span class="cmd">#glasses</span> &mdash; works with any of your tags</span></div>
           </div>
-          <p style="margin-top:16px">You get a secure download link straight back: every receipt as a photo plus a ready-to-use CSV, each line in euros as well. The link expires after a while &mdash; just ask again.</p>
+          <p style="margin-top:16px">Back comes a secure download link: every receipt as a photo plus a ready-to-use CSV, each line in euros as well. The link expires after a while &mdash; just ask again.</p>
           <p class="hint" data-tier="team">Your export shows <b>only your own</b> receipts. What the team spent in total is visible to administration only.</p>
         </section>
         <hr class="rule" data-tier="solo team">
@@ -689,13 +684,13 @@
           <div class="sec-head"><span class="sec-num"></span><h2>Managing the team</h2></div>
           <p>Every command goes as the <b>subject</b> to your team address:</p>
           <div class="cmdlist">
-            <div class="cmdrow"><span class="cmd">ADD tom.doe@company.com Tom Doe</span><span class="desc">create a member &mdash; they instantly get their own address (<span class="cmd">company1@</span>, <span class="cmd">company2@</span> &hellip;) and a welcome email. Optionally with a department: <span class="cmd">#Sales</span>, and a language: <span class="cmd">de</span> or <span class="cmd">en</span>.</span></div>
+            <div class="cmdrow"><span class="cmd">ADD tom.doe@company.com Tom Doe</span><span class="desc">create a member &mdash; they instantly get their own address (<span class="cmd">company1@</span>, <span class="cmd">company2@</span> &hellip;) and a welcome email. Optionally with a department <span class="cmd">#Sales</span> and a language <span class="cmd">de</span>.</span></div>
             <div class="cmdrow"><span class="cmd">REMOVE tom.doe@company.com</span><span class="desc">deactivate a member &mdash; their receipts stay archived (&sect;132 BAO)</span></div>
             <div class="cmdrow"><span class="cmd">DEPARTMENT tom.doe@company.com Engineering</span><span class="desc">set or change a department afterwards</span></div>
             <div class="cmdrow"><span class="cmd">ROLE tom.doe@company.com finance</span><span class="desc"><span class="cmd">master</span>, <span class="cmd">secretary</span>, <span class="cmd">finance</span> or <span class="cmd">user</span> &mdash; several masters are allowed</span></div>
             <div class="cmdrow"><span class="cmd">TEAM</span><span class="desc">current overview: all members, departments and roles</span></div>
           </div>
-          <p style="margin-top:16px">If you want to submit receipts yourself, just add yourself as a member &mdash; <span class="cmd">ADD your.address@company.com Your Name</span>. You'll get your own receipt address and send receipts like everyone else.</p>
+          <p style="margin-top:16px">If you want to submit receipts yourself, add yourself as a member: <span class="cmd">ADD your.address@company.com Your Name</span>. Then you send receipts like everyone else.</p>
         </section>
         <hr class="rule" data-tier="admin">
 
@@ -739,8 +734,8 @@
           <ul class="plain">
             <li>Yours only. No tracking. No sharing with advertisers or data brokers.</li>
             <li>Encrypted and stored on servers in Germany.</li>
-            <li>10-year retention (&sect;132 BAO / &sect;147 AO).</li>
-            <li>GDPR compliant &mdash; export your data any time with <span class="cmd">EXPORT</span>; deletion on request, subject to statutory retention.</li>
+            <li>Archived for 10 years.</li>
+            <li>GDPR compliant. Export your data any time with <span class="cmd">EXPORT</span>, deletion on request &mdash; subject to statutory retention.</li>
           </ul>
           <p class="hint">Details: <a href="/datenschutz-en.html">Privacy</a> and <a href="/agb-en.html">Terms</a>.</p>
         </section>
