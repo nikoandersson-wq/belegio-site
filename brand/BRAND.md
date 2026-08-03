@@ -18,7 +18,7 @@ address, and it is stored, sorted, and searchable forever.
 | Retrieval | email `EXPORT …` → get a secure download link with a ZIP + accountant-ready CSV |
 | Categorisation | hashtags in the subject line (e.g. `#steuer`, `#auto`) |
 | Storage | encrypted, EU servers in Frankfurt, GDPR-compliant |
-| Retention | 10 years — §132 BAO (Austria) / §147 AO (Germany) |
+| Retention | 10 years — longer than §132 BAO (AT, 7 yrs) / §147 AO (DE, 8 yrs) require |
 | Audience | private individuals · freelancers (Selbständige) · small businesses |
 | Manual | one hidden page — `bonvio.eu/anleitung.html`, DE/EN × solo/team/admin. **Every product email links to it.** Not in the nav, not indexed, no sign-in. (2026-08-02) |
 | Origin | Made in Vienna |
