@@ -20,6 +20,7 @@ address, and it is stored, sorted, and searchable forever.
 | Storage | encrypted, EU servers in Frankfurt, GDPR-compliant |
 | Retention | 10 years — §132 BAO (Austria) / §147 AO (Germany) |
 | Audience | private individuals · freelancers (Selbständige) · small businesses |
+| Manual | one hidden page — `bonvio.eu/anleitung.html`, DE/EN × solo/team/admin. **Every product email links to it.** Not in the nav, not indexed, no sign-in. (2026-08-02) |
 | Origin | Made in Vienna |
 | **Status** | **Live and selling.** CTA is "Try free for 30 days" → real Stripe checkout. There is no quota and no waitlist. |
 
@@ -51,6 +52,20 @@ says so — that restraint *is* the brand.
 - DE: *"Im März suchst du, was du im Januar weggeschmissen hast."*
 - DE: *"Schluss mit dem Schuhkarton."*
 - EN: *"Receipts disappear. Exactly when you need them."*
+
+**Commands are shown filled in, never as a grammar (2026-08-02).** Bonvio is operated by writing a
+subject line, so the copy that teaches a command is product surface, not documentation. Print a line
+the reader copies and edits in place — never placeholders, square brackets, or `a|b|c` lists.
+
+| | |
+|---|---|
+| Do | `ADD max.mustermann@firma.at Max Mustermann` · EN: `ADD tom.doe@company.com Tom Doe` |
+| Don't | `ADD email Vor- Nachname [#Abteilung]` |
+
+Optional parts and enumerations move out of the command into a plain sentence underneath ("Die
+Abteilung ist optional. Rollen: master, secretary, finance, user."). Errors say *Beispiel:* / *Example:*,
+never *Format:*. Reuse the two fixture identities above everywhere — a reader who meets Max Mustermann
+on the guide page and again in the welcome mail is reading one product, not three documents.
 
 ---
 
@@ -192,6 +207,21 @@ surgery), **Courier New**, Roboto, Arial-as-display, Open Sans, Fraunces.
   collage from earlier the same day — abstract floating fragments had no product to anchor to
   — which had itself replaced a static phone. If revisiting: start from the phone, and keep it
   *doing* something; a static mockup reads as a screenshot, the loop reads as the product.
+- **The email button (2026-08-02) — in product email a link is a button, never a printed URL.**
+  Niko: a naked `https://…` in an email "looks unpolished and old." Two weights, and never two
+  filled buttons in one email: **filled** `#1F4332` / white text where the link is the point of the
+  mail (the welcome's guide CTA, the "?" menu), **quiet** white fill + `rgba(20,23,26,0.16)`
+  hairline + green text where another button already leads (receipt confirmation, export link, and
+  every short reply's footer). Radius 9px, weight 600, 15.5px filled / 13.5px quiet.
+  Two build constraints, both load-bearing:
+  1. **One-cell `<table role="presentation">`, fill on the `<td>` (plus `bgcolor`), padding on the
+     `<a>`.** Outlook renders HTML through Word, which drops padding on a bare `inline-block <a>` —
+     the button silently degrades back into the naked link it exists to replace.
+  2. **Single quotes inside `style="…"`.** A double quote around a multi-word font family closes the
+     attribute; every declaration after it is dropped and the button renders as a default blue
+     underlined link. This shipped once and was caught by looking, not by a test.
+
+  The bare URL survives **only** in the plain-text alternative, where a button cannot exist.
 - **Receipt paper** — *only* where an actual receipt is being depicted (a product screenshot,
   a proof card). It is a picture of the thing, never the chrome around it.
 - **Numbered sections** `01`–`07` in a small green mono badge, with a **sentence-case** label —
