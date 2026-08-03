@@ -1709,8 +1709,22 @@
 
 
   <script>
+    // The tab title and the description are the only two strings CSS cannot switch — everything
+    // else is a .lang-de / .lang-en pair in the markup. Without this an English visitor reads
+    // "Belegverwaltung per E-Mail" in the tab and in every shared link preview.
+    function applyLangMeta(lang) {
+      var en = lang === 'en';
+      document.title = en ? 'Bonvio – Receipt filing by email'
+                          : 'Bonvio – Belegverwaltung per E-Mail';
+      var d = document.querySelector('meta[name="description"]');
+      if (d) d.content = en
+        ? 'Other software wants you to become an accountant. Bonvio wants you to get on with your work. Photograph the receipt, send it by email, done. No login, no app. €39.99/year.'
+        : 'Andere Software will, dass du Buchhalter wirst. Bonvio will, dass du deine Arbeit machst. Beleg fotografieren, per Mail schicken, fertig. Kein Login, keine App. €39,99/Jahr.';
+    }
+
     function setLang(lang) {
       document.body.classList.toggle('lang-en-active', lang === 'en');
+      applyLangMeta(lang);
       document.getElementById('btn-de').classList.toggle('active', lang === 'de');
       document.getElementById('btn-en').classList.toggle('active', lang === 'en');
       var mde = document.getElementById('mob-btn-de');
