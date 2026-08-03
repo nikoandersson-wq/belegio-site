@@ -421,6 +421,17 @@
           <div class="quote strike">100% akkurate OCR durch modernste KI-Modelle.</div>
           <div class="note">L&uuml;ge mit Anspruch. Erster Fehler &mdash; und der Screenshot landet auf Twitter.</div>
         </div>
+
+        <div class="voice-card">
+          <div class="badge yes"><b>So</b> &middot; Befehle</div>
+          <div class="quote" style="font-family: var(--mono); font-size: 19px; line-height: 1.4;">ADD max.mustermann@firma.at Max Mustermann</div>
+          <div class="note">Eine ausgef&uuml;llte Zeile. Kopieren, Werte &uuml;berschreiben, senden. Nichts zu entziffern.</div>
+        </div>
+        <div class="voice-card">
+          <div class="badge no"><b>Nicht</b></div>
+          <div class="quote strike" style="font-family: var(--mono); font-size: 19px; line-height: 1.4;">ADD email Vor- Nachname [#Abteilung]</div>
+          <div class="note">Eine Grammatik muss erst dekodiert werden &mdash; und die eckigen Klammern liest man als etwas, das man tippen soll.</div>
+        </div>
       </div>
 
       <ul class="deflist" style="margin-top: 64px;">
@@ -432,6 +443,7 @@
         <li><span class="k">Emojis</span><span class="v">Nein. Auch nicht in Social. Wir sind keine Caf&eacute;-Kette.</span></li>
         <li><span class="k">Zahlen</span><span class="v">Deutsche Konvention im DE-Markt: &euro;&nbsp;39,99. Englische im EN-Markt: &euro;&nbsp;39.99.</span></li>
         <li><span class="k">Anf&uuml;hrungszeichen</span><span class="v">DE: &bdquo;unten / oben&ldquo;. EN: &ldquo;left / right&rdquo;. Nie gerade Quotes (&quot;).</span></li>
+        <li><span class="k">Befehle (2026-08)</span><span class="v">Immer ausgef&uuml;llt zeigen, nie als Grammatik. Fixe Beispielpersonen: <span style="font-family:var(--mono);font-size:13px;">max.mustermann@firma.at &middot; Max Mustermann</span> (DE), <span style="font-family:var(--mono);font-size:13px;">tom.doe@company.com &middot; Tom Doe</span> (EN) &mdash; dieselben auf Seite, in Willkommens-Mail und Fehlerantwort. Optionales und Aufz&auml;hlungen wandern in einen Satz darunter. Fehler sagen &bdquo;Beispiel:&ldquo;, nie &bdquo;Format:&ldquo;.</span></li>
       </ul>
     </section>
 
@@ -510,9 +522,10 @@
       <div class="marg"><span class="num">06</span>&mdash; Visuelle Elemente</div>
       <h2>Der Mark, Marginalien, <em>Punktraster</em>.</h2>
       <p class="lede">
-        Vier Elemente tragen die Marke visuell &uuml;ber alle Touchpoints: der B-Mark,
-        Marginalien-Nummerierung, ein feines Punktraster &mdash; und, im Hero, ein
-        restyltes Phone-Mockup mit echten Produktdaten. Funktional, nicht nostalgisch.
+        F&uuml;nf Elemente tragen die Marke visuell &uuml;ber alle Touchpoints: der B-Mark,
+        Marginalien-Nummerierung, ein feines Punktraster, im Hero ein Phone-Mockup, das das
+        Produkt in Schleife spielt &mdash; und in jeder Produkt-Mail der Anleitungs-Button.
+        Funktional, nicht nostalgisch.
       </p>
 
       <div class="chapter-grid">
@@ -582,11 +595,41 @@
             </div>
           </div>
           <p style="margin-top: 24px; max-width: 38ch; font-size: 15px; line-height: 1.55; color: var(--muted-2);">
-            Ein restylter Phone-Rahmen (`var(--ink)`, kein iOS-Chrome) zeigt die echte
-            Compose-Ansicht: Feld, angeh&auml;ngter Beleg, Hinweistext unten, Sprechblase f&uuml;r
-            den Hashtag-Mechanismus. L&ouml;st eine flache "Beweis-Karten"-Collage ab (2026-08,
-            selber Tag) &mdash; die schwebenden Kartenfragmente hatten kein Produkt, an dem sie
-            h&auml;ngen konnten, und wirkten leerer als der Phone, den sie ersetzt hatten.
+            Ein restylter Phone-Rahmen (kein iOS-Chrome), der das Produkt <b>in Schleife
+            spielt</b>: Compose-Ansicht &rarr; Senden-Pill pulst, Papierflieger fliegt hoch
+            &rarr; Best&auml;tigung schiebt sich rein (&bdquo;Gespeichert.&ldquo;, H&auml;ndler,
+            Datum, MwSt, Betrag) &rarr; zur&uuml;ck. Rund 7 Sekunden, reines CSS &uuml;ber ein
+            <span style="font-family:var(--mono);font-size:13px;">data-phase</span>-Attribut,
+            l&auml;uft nur im Sichtbereich.
+            <b>Die Schleife l&auml;uft auch bei <span style="font-family:var(--mono);font-size:13px;">prefers-reduced-motion</span></b>
+            &mdash; nur sanfter (kein Flieger, Zeilen ohne Kaskade). Sie ist die Produktdemo,
+            keine Deko: am 1.&nbsp;August war sie auf Nikos eigenem Ger&auml;t weggeschaltet,
+            und die Seite wirkte tot. Alles andere &mdash; Entrance-Choreo, Punkt-Stempel,
+            Scroll-Staffelung &mdash; bleibt bei reduzierter Bewegung aus.
+            Vorg&auml;nger am selben Tag: eine flache &bdquo;Beweis-Karten&ldquo;-Collage &mdash;
+            schwebende Fragmente ohne Produkt, an dem sie h&auml;ngen konnten. Wer das je wieder
+            anfasst: beim Phone anfangen, und ihn etwas <i>tun</i> lassen. Ein statisches Mockup
+            liest sich als Screenshot, die Schleife als Produkt.
+          </p>
+        </div>
+
+        <div>
+          <div class="label-mono" style="font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; color: var(--muted-2); text-transform: uppercase; margin-bottom: 18px;">Produkt-Mail: Button statt Link</div>
+          <div style="background: var(--surface); border: 1px solid var(--hair-2); padding: 26px; display: flex; flex-wrap: wrap; align-items: center; gap: 16px;">
+            <span style="display: inline-block; padding: 13px 24px; background: #1F4332; color: #FFFFFF; border: 1px solid #1F4332; border-radius: 9px; font-size: 15px; font-weight: 600; letter-spacing: -0.005em;">Anleitung &ouml;ffnen</span>
+            <span style="display: inline-block; padding: 9px 17px; background: #FFFFFF; color: #1F4332; border: 1px solid rgba(20,23,26,0.16); border-radius: 9px; font-size: 13px; font-weight: 600; letter-spacing: -0.005em;">Anleitung &ouml;ffnen</span>
+          </div>
+          <p style="margin-top: 24px; max-width: 38ch; font-size: 15px; line-height: 1.55; color: var(--muted-2);">
+            In der Mail ist ein Link ein <b>Button</b>, nie eine abgedruckte URL &mdash; die liest
+            sich alt. Zwei Gewichte, nie zwei gef&uuml;llte Buttons in einer Mail: <b>gef&uuml;llt</b>,
+            wo der Link der Zweck der Mail ist (Willkommen, &bdquo;?&ldquo;-Men&uuml;);
+            <b>leise</b> mit Haarlinie, wo schon ein anderer Button f&uuml;hrt (Beleg-Best&auml;tigung,
+            Export, jede kurze Antwort). Gebaut als einzellige
+            <span style="font-family:var(--mono);font-size:13px;">&lt;table role="presentation"&gt;</span>:
+            Outlook rendert &uuml;ber Word und wirft das Padding eines
+            <span style="font-family:var(--mono);font-size:13px;">inline-block &lt;a&gt;</span> weg
+            &mdash; der Button f&auml;llt genau auf den nackten Link zur&uuml;ck, den er ersetzen
+            soll. Die reine URL bleibt nur in der Text-Alternative stehen, wo es keine Buttons gibt.
           </p>
         </div>
       </div>
@@ -677,6 +720,8 @@
             <li>Eine Akzentfarbe pro Bildschirm &mdash; und die ist standardm&auml;&szlig;ig aus</li>
             <li>Rot nur wenn ein Mensch hinschauen muss &mdash; nie dekorativ</li>
             <li>Marginalien-Nummerierung nur bei echten Sequenzen</li>
+            <li>Befehle ausgef&uuml;llt zeigen &mdash; Max Mustermann / Tom Doe, &uuml;berall dieselben</li>
+            <li>Eine Anleitung, eine Seite &mdash; jede Produkt-Mail verlinkt sie, keine Feature-Doku in Vorlagen</li>
           </ul>
         </div>
         <div class="dd-card dont">
@@ -689,7 +734,9 @@
             <li>Schriften neben Aptos / Consolas &mdash; nie Courier New, nie Inter</li>
             <li>Gold, Wachssiegel, perforierte R&auml;nder (2026-07 abgeschafft)</li>
             <li>Fl&auml;chige Gr&uuml;n-Panels als Section-Hintergrund (2026-08 abgeschafft)</li>
-            <li>Phone-/App-Chrome-Mockup als Hero-Visual (2026-08 abgeschafft)</li>
+            <li>iOS-Chrome im Phone-Mockup &mdash; Statusleiste, Uhrzeit, Akku. Der Rahmen ja, das Betriebssystem nein</li>
+            <li>Nackte URLs in Produkt-Mails &mdash; ein Link ist ein Button</li>
+            <li>Befehlsgrammatik mit Platzhaltern und eckigen Klammern</li>
             <li>SaaS-Buzzwords (revolution&auml;r, KI-gest&uuml;tzt, end-to-end)</li>
             <li>Layered Cards mit Rounded-Corner-Borders</li>
             <li>Rainbow-Icons, Multi-Color-Illustrationen</li>
