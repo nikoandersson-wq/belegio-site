@@ -135,10 +135,30 @@ radial glows (lime top-left, mint top-right, both under 0.14 alpha) and a 64px g
 fade out by 82%. The ground stays deep so the lime keeps its punch; the light sits on top of it.
 One glow per moment — hero, the pull-quote, the price, the closing line. Never a gradient mesh.
 
-### 4.3 On light grounds, lime and mint are surfaces — never ink
+### 4.3 Email is dark too — and what that costs
 
-Email, print and any document that gets forwarded or printed stay on a light ground (`#F6F5EF`).
-The accents do not survive there as text:
+**Decided 2026-08-27.** Client email runs the same dark palette as the site. Two mechanics are
+load-bearing and must not be removed:
+
+- **Outlook ignores `body { background }`** (it renders through Word). The ground is painted by a
+  full-width table carrying a `bgcolor` **attribute** as well as the CSS. Without it the mail
+  arrives white behind bone text.
+- **Clients auto-invert mail they judge to be light.** `<meta name="color-scheme" content="dark">`
+  plus `:root { color-scheme: dark }` tells Gmail and Apple Mail it is already dark.
+
+**Every colour in an email is a solid hex.** `rgba()` is dropped by several clients, and on a dark
+ground a dropped colour is invisible text, not a near miss. The email tokens are ground `#0D2119`,
+card `#163024`, card-2 `#1E3E2F`, hairline `#24412F`, ink `#F2F1E8`, muted `#9DB0A3` (7.4:1), dim
+`#7C8C81` (4.8:1), and red `#E8776C` — the light-ground red is unreadable here.
+
+**`box-shadow` does not render in Outlook**, so the site's elevation becomes a fill plus a
+hairline. Same intent, mechanics the medium allows.
+
+### 4.3a The rule for any light ground that remains
+
+Print, and anything that must survive a printer, still lands light — `anleitung.html` carries a
+print stylesheet that flips the whole document back. Where that happens the accents do not survive
+as text:
 
 | | as text on light | as a fill behind `#0D2119` text |
 |---|---|---|
@@ -146,9 +166,10 @@ The accents do not survive there as text:
 | Mint `#7FE0AE` | **1.46:1 — forbidden** | 10.55:1 ✓ |
 | Deep green `#0D2119` | 15.40:1 ✓ | — |
 
-So: **on dark, lime is a colour you write in. On light, lime is a colour you sit on.** A lime
-button with near-black text is correct in an email; a lime word in a sentence is never correct
-there. On light, the ink is the deep green.
+So: **on dark, lime is a colour you write in. On light, lime is a colour you sit on.** On a light
+ground the ink is the deep green and lime appears only as a fill under near-black text. This is
+what caught two real bugs in the welcome email when it went dark: the address pill and the CTA
+block became lime fills while their text was still `#FFFFFF` — 1.4:1.
 
 ### 4.4 History — kept because it is still true
 
