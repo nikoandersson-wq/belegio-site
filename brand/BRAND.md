@@ -171,6 +171,50 @@ ground the ink is the deep green and lime appears only as a fill under near-blac
 what caught two real bugs in the welcome email when it went dark: the address pill and the CTA
 block became lime fills while their text was still `#FFFFFF` — 1.4:1.
 
+### 4.3b Every text colour is measured — and none of them is an `opacity`
+
+The palette was right and the page still failed. Two mechanics did it, and both are easy to
+reintroduce, so they are rules now.
+
+**1. Never dim text with `opacity`, and never with a low alpha.** Dimming reads as a design
+choice; it is really a contrast cut, and it compounds — an `opacity:0.55` span inside a
+`rgba(bone,0.42)` parent lands at 2.6:1. On the deep-green ground the maths is blunt:
+
+| bone alpha | on `#0D2119` | on `#163024` | on `#1E3E2F` | |
+|---|---|---|---|---|
+| 0.32 – 0.50 | 2.70 – 4.65 | 2.61 – 4.26 | 2.45 – 3.87 | **all fail** |
+| 0.58 | 5.81 | 5.24 | 4.64 | the floor |
+| **0.62 — `--muted-2`** | 6.42 | 5.77 | 5.05 | labels, meta, quiet rows |
+| **0.72 — `--muted`** | 8.23 | 7.21 | 6.23 | secondary body copy |
+| **1.00 — `--bone`** | 14.83 | 12.50 | 10.38 | primary |
+
+Anything below 0.58 fails on some surface, so **there are three text values and no fourth.**
+A one-off alpha invented for a single span is the bug, not the fix. On the light ground the
+legal pages keep, the same rule gives ink `#14171A` at **0.68** (5.8–6.1:1).
+
+**2. Text on a lime or mint fill has exactly two values.** Both are dark:
+
+| on lime `#C7F04F` / mint `#7FE0AE` | | |
+|---|---|---|
+| `#0D2119` | 12.82:1 / 10.55:1 | primary — price, button legend, list |
+| `#364E25` | 7.04:1 | secondary — captions, fine print |
+| `#FFFFFF` | **1.31:1 — invisible** | never |
+
+White on lime is the one that actually shipped: `.btn span { color:#FFFFFF !important }` was
+correct when the button was bottle green, and survived the swap to a lime fill as an unreadable
+button legend in the receipt and export emails — the two most-sent mails in the product. When a
+fill changes, the `!important` that defends its text is the first thing to re-check.
+
+**Red on dark is `#E8776C`, not `#B3261E`.** The light-ground red reads 2.57:1 on the ground —
+and it is only ever used to say *check this receipt*, so it is the one colour that must not be
+missable.
+
+**How to re-check.** Contrast is not eyeballed here. Render the page or the email headless, walk
+every element with its own text, composite the real background up the ancestor chain, and assert
+4.5:1 (3:1 for ≥24px or ≥18.66px bold). The site's eight pages and all sixteen client email
+variants pass at both desktop and mobile widths, in German and English. Re-run it after any
+palette change — that is what caught all of this.
+
 ### 4.4 History — kept because it is still true
 
 The gold retirement (2026-07-21) and the proportion rule that came with it stand: Bonvio is not
@@ -179,7 +223,8 @@ on 2026-08-26 is the ground, not that principle — lime still touches only the 
 the confirmation.
 
 **Retired — do not reintroduce:** gold `#B8860B`, bronze `#7A5D1F`, wheat `#E0C896`,
-cream `#F4F3F0`, warm hairline `#E2E0DB`, warm ink `#1A1814`, and the previous light
+cream `#F4F3F0`, warm hairline `#E2E0DB`, warm ink `#1A1814`, the light-ground red
+`#B3261E` **as text on a dark ground**, and the previous light
 ground `#F4F5F4` **as a marketing-site background** (it remains correct for email and print).
 
 **No longer in force:** the "colour-off-by-default" rule and the "one green full stop" exception

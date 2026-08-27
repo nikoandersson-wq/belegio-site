@@ -37,8 +37,8 @@
       --elev-1:  #163024;
       --elev-2:  #1E3E2F;
       --bone:    #F2F1E8;
-      --muted:   rgba(242,241,232,0.58);
-      --muted-2: rgba(242,241,232,0.42);
+      --muted:   rgba(242,241,232,0.72);
+      --muted-2: rgba(242,241,232,0.62);
       --hair:    rgba(242,241,232,0.10);
       --hair-2:  rgba(242,241,232,0.14);
       --lime:    #C7F04F;   /* action */
@@ -194,9 +194,9 @@
     .ex-row .k { width: 58px; flex: none; font-size: 12.5px; color: var(--muted-2); }
     .ex-row .v { font-family: var(--mono); font-size: 13.5px; }
     .kv { display: flex; justify-content: space-between; gap: 16px; font-size: 14.5px; }
-    .kv .k { color: rgba(242,241,232,0.45); }
+    .kv .k { color: var(--muted-2); }
     .kv .v { font-weight: 600; }
-    .them-row { padding: 17px 0; font-size: 17.5px; color: rgba(242,241,232,0.4); }
+    .them-row { padding: 17px 0; font-size: 17.5px; color: var(--muted-2); }
     .csv { display: grid; grid-template-columns: minmax(0,1fr) 84px 92px 76px; gap: 12px; padding: 14px 24px; font-family: var(--mono); font-size: 13px; border-bottom: 1px solid rgba(242,241,232,0.06); }
     .csv .r { text-align: right; }
     .price-panel {
@@ -315,7 +315,7 @@
           </div>
           <div style="display:flex;align-items:center;gap:22px;margin-top:30px;flex-wrap:wrap;">
             <a class="btn" href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800">30 Tage gratis testen <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></a>
-            <span style="font-size:15px;color:rgba(242,241,232,0.45);">Kein Login &middot; keine App<br>Danach &euro;&thinsp;39,99 im Jahr</span>
+            <span style="font-size:15px;color:var(--muted);">Kein Login &middot; keine App<br>Danach &euro;&thinsp;39,99 im Jahr</span>
           </div>
         </div>
         <div class="float reveal" style="padding-top:34px;">
@@ -326,7 +326,7 @@
               <div class="rowline"></div>
               <div class="ex-row"><span class="k">Betreff</span><span class="v">#mittagessen</span></div>
               <div class="rowline"></div>
-              <div class="ex-row" style="align-items:center;padding-top:3px;"><span class="k">Anhang</span><span style="display:inline-flex;align-items:center;gap:11px;"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="rgba(242,241,232,0.42)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.6"/><path d="M21 15l-5-5L5 21"/></svg><span style="display:flex;flex-direction:column;gap:1px;"><span style="font-size:13.5px;font-weight:500;">beleg_12_05.jpg</span><span style="font-size:12px;color:rgba(242,241,232,0.36);">1,4 MB</span></span></span></div>
+              <div class="ex-row" style="align-items:center;padding-top:3px;"><span class="k">Anhang</span><span style="display:inline-flex;align-items:center;gap:11px;"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="rgba(242,241,232,0.42)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.6"/><path d="M21 15l-5-5L5 21"/></svg><span style="display:flex;flex-direction:column;gap:1px;"><span style="font-size:13.5px;font-weight:500;">beleg_12_05.jpg</span><span style="font-size:12px;color:var(--muted-2);">1,4 MB</span></span></span></div>
             </div>
           </div>
           <div style="display:flex;align-items:center;gap:12px;padding:20px 0 20px 40px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7FE0AE" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v14M5 12l7 7 7-7"/></svg><span class="label">3 SEKUNDEN SP&Auml;TER</span></div>
@@ -357,7 +357,7 @@
               <div class="them-row rowline" style="margin:0">Einrichtung &uuml;ber deinen Steuerberater. Schulung. Updates.</div>
               <div class="them-row rowline" style="margin:0;border-bottom:1px solid var(--hair)">Monatliche Geb&uuml;hr f&uuml;r Funktionen, die du nie &ouml;ffnest.</div>
             </div>
-            <div style="margin-top:18px;font-size:15px;color:rgba(242,241,232,0.32);">M&auml;chtig. Und genau deshalb schwer.</div>
+            <div style="margin-top:18px;font-size:15px;color:var(--muted-2);">M&auml;chtig. Und genau deshalb schwer.</div>
           </div>
           <div class="card" style="padding:38px 36px 40px;margin-top:14px;">
             <div class="label" style="color:var(--lime);margin-bottom:22px;">BONVIO</div>
@@ -378,7 +378,7 @@
           </div>
           <div class="split" style="margin-top:44px;padding-top:38px;border-top:1px solid var(--hair);display:grid;grid-template-columns:340px minmax(0,1fr);gap:44px;align-items:center;">
             <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start;"><span class="key">#km 47</span><span class="key">#di&auml;t 09:00&ndash;17:30</span></div>
-            <p style="margin:0;font-size:17.5px;line-height:1.6;color:rgba(242,241,232,0.64);"><b>Kilometergeld und Di&auml;ten</b> erfasst du genauso &mdash; per E-Mail, ganz ohne Anhang. Bonvio rechnet den Betrag nach &ouml;sterreichischen S&auml;tzen automatisch aus.<br><span style="font-size:14px;color:rgba(242,241,232,0.38);">Aktuell &Ouml;sterreich. Deutsche S&auml;tze kommen bald.</span></p>
+            <p style="margin:0;font-size:17.5px;line-height:1.6;color:rgba(242,241,232,0.64);"><b>Kilometergeld und Di&auml;ten</b> erfasst du genauso &mdash; per E-Mail, ganz ohne Anhang. Bonvio rechnet den Betrag nach &ouml;sterreichischen S&auml;tzen automatisch aus.<br><span style="font-size:14px;color:var(--muted-2);">Aktuell &Ouml;sterreich. Deutsche S&auml;tze kommen bald.</span></p>
           </div>
         </div>
       </section>
@@ -388,15 +388,15 @@
             <h2 style="font-size:clamp(28px,3.5vw,50px);">Monatsende, Steuer, oder jetzt &mdash; <span class="em">alles als saubere Datei.</span></h2>
             <p class="lede" style="font-size:18px;">Schreib EXPORT an deine Adresse &mdash; wir schicken dir einen sicheren Download-Link mit allen Belegen plus einer fertigen CSV.</p>
             <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:30px;"><span class="key">EXPORT Q1 2026</span><span class="key">EXPORT brille</span><span class="key">EXPORT BIPA</span></div>
-            <p style="margin:26px 0 0;font-size:16px;line-height:1.6;color:rgba(242,241,232,0.5);">Originalfotos in Standardformaten, die jede Beh&ouml;rde akzeptiert. <b>Du bist nie von Bonvio abh&auml;ngig.</b></p>
+            <p style="margin:26px 0 0;font-size:16px;line-height:1.6;color:var(--muted);">Originalfotos in Standardformaten, die jede Beh&ouml;rde akzeptiert. <b>Du bist nie von Bonvio abh&auml;ngig.</b></p>
           </div>
           <div class="card-hi float" style="overflow:hidden;transform:rotate(-0.8deg);" aria-hidden="true">
-            <div style="display:flex;align-items:center;gap:10px;padding:16px 24px;border-bottom:1px solid var(--hair);"><span style="width:9px;height:9px;border-radius:50%;background:rgba(242,241,232,0.2);"></span><span style="width:9px;height:9px;border-radius:50%;background:rgba(242,241,232,0.2);"></span><span style="width:9px;height:9px;border-radius:50%;background:rgba(242,241,232,0.2);"></span><span class="mo" style="font-size:12px;color:rgba(242,241,232,0.5);margin-left:10px;">bonvio_export_Q1-2026.csv</span></div>
-            <div class="csv" style="font-size:9.5px;letter-spacing:0.12em;color:rgba(242,241,232,0.35);"><span>H&Auml;NDLER / TYP</span><span>DATUM</span><span class="r">BETRAG</span><span class="r vat">USt</span></div>
-            <div class="csv" style="color:rgba(242,241,232,0.85);"><span>Gasthaus zur Post</span><span style="opacity:0.55;">12.05.</span><span class="r">42,80</span><span class="r vat" style="opacity:0.55;">7,13</span></div>
-            <div class="csv" style="color:rgba(242,241,232,0.85);"><span>OMV Tankstelle</span><span style="opacity:0.55;">28.04.</span><span class="r">65,40</span><span class="r vat" style="opacity:0.55;">10,90</span></div>
-            <div class="csv" style="color:#7FE0AE;"><span>#km 47</span><span style="opacity:0.55;">11.04.</span><span class="r">23,50</span><span class="r vat" style="opacity:0.55;">&mdash;</span></div>
-            <div class="csv" style="color:#7FE0AE;"><span>#di&auml;t 09:00&ndash;17:30</span><span style="opacity:0.55;">08.04.</span><span class="r">22,50</span><span class="r vat" style="opacity:0.55;">&mdash;</span></div>
+            <div style="display:flex;align-items:center;gap:10px;padding:16px 24px;border-bottom:1px solid var(--hair);"><span style="width:9px;height:9px;border-radius:50%;background:rgba(242,241,232,0.2);"></span><span style="width:9px;height:9px;border-radius:50%;background:rgba(242,241,232,0.2);"></span><span style="width:9px;height:9px;border-radius:50%;background:rgba(242,241,232,0.2);"></span><span class="mo" style="font-size:12px;color:var(--muted);margin-left:10px;">bonvio_export_Q1-2026.csv</span></div>
+            <div class="csv" style="font-size:10.5px;letter-spacing:0.12em;color:var(--muted-2);"><span>H&Auml;NDLER / TYP</span><span>DATUM</span><span class="r">BETRAG</span><span class="r vat">USt</span></div>
+            <div class="csv" style="color:rgba(242,241,232,0.85);"><span>Gasthaus zur Post</span><span style="color:var(--muted-2);">12.05.</span><span class="r">42,80</span><span class="r vat" style="color:var(--muted-2);">7,13</span></div>
+            <div class="csv" style="color:rgba(242,241,232,0.85);"><span>OMV Tankstelle</span><span style="color:var(--muted-2);">28.04.</span><span class="r">65,40</span><span class="r vat" style="color:var(--muted-2);">10,90</span></div>
+            <div class="csv" style="color:#7FE0AE;"><span>#km 47</span><span style="color:var(--muted-2);">11.04.</span><span class="r">23,50</span><span class="r vat" style="color:var(--muted-2);">&mdash;</span></div>
+            <div class="csv" style="color:#7FE0AE;"><span>#di&auml;t 09:00&ndash;17:30</span><span style="color:var(--muted-2);">08.04.</span><span class="r">22,50</span><span class="r vat" style="color:var(--muted-2);">&mdash;</span></div>
             <div class="csv" style="font-weight:600;background:rgba(199,240,79,0.08);border-bottom:0;"><span>4 Eintr&auml;ge &middot; 1 Download</span><span></span><span class="r">154,20</span><span class="r vat">18,03</span></div>
           </div>
         </div>
@@ -412,10 +412,10 @@
       <section class="sec reveal" id="kein">
         <div class="card" style="padding:40px 44px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;border-radius:22px;">
           <span class="disp" style="font-size:clamp(22px,2.4vw,30px);">Was du nicht brauchst:</span>
-          <span class="mo" style="font-size:14.5px;color:rgba(242,241,232,0.36);text-decoration:line-through;text-decoration-color:rgba(199,240,79,0.75);text-decoration-thickness:2px;">App &nbsp; Login &nbsp; Passwort &nbsp; Software &nbsp; Schulung &nbsp; Updates</span>
+          <span class="mo" style="font-size:14.5px;color:var(--muted-2);text-decoration:line-through;text-decoration-color:rgba(199,240,79,0.75);text-decoration-thickness:2px;">App &nbsp; Login &nbsp; Passwort &nbsp; Software &nbsp; Schulung &nbsp; Updates</span>
           <span style="font-size:16.5px;color:rgba(242,241,232,0.62);">Was du brauchst: <b>deine E-Mail.</b></span>
         </div>
-        <div class="mo" style="display:flex;flex-wrap:wrap;gap:16px 40px;padding:26px 44px 0;font-size:11.5px;letter-spacing:0.12em;color:rgba(242,241,232,0.34);"><span>SERVER IN DEUTSCHLAND</span><span>DSGVO-KONFORM</span><span>10 JAHRE ARCHIV</span><span>KEIN TRACKING</span><span>AUS WIEN GEBAUT</span></div>
+        <div class="mo" style="display:flex;flex-wrap:wrap;gap:16px 40px;padding:26px 44px 0;font-size:11.5px;letter-spacing:0.12em;color:var(--muted-2);"><span>SERVER IN DEUTSCHLAND</span><span>DSGVO-KONFORM</span><span>10 JAHRE ARCHIV</span><span>KEIN TRACKING</span><span>AUS WIEN GEBAUT</span></div>
       </section>
       <section class="sec reveal" id="gruender" style="display:grid;grid-template-columns:128px minmax(0,1fr);gap:38px;align-items:center;">
         <img src="founder.jpg" alt="Niko Andersson, Gr&uuml;nder von Bonvio" width="128" height="128" loading="lazy" style="width:128px;height:128px;border-radius:50%;object-fit:cover;filter:grayscale(1) contrast(1.06);border:1px solid rgba(242,241,232,0.16);box-shadow:0 18px 44px -14px rgba(0,0,0,0.8);">
@@ -430,9 +430,9 @@
           <div>
             <div class="disp" style="font-size:clamp(56px,8vw,116px);letter-spacing:-0.055em;line-height:0.86;">&euro;&thinsp;39,99</div>
             <div class="disp" style="font-size:clamp(22px,2.4vw,31px);margin-top:12px;font-weight:700;">im Jahr. Alles inklusive.</div>
-            <p style="margin:22px 0 0;font-size:17px;line-height:1.6;opacity:0.7;max-width:40ch;">Gr&uuml;nderpreis &mdash; wer jetzt startet, zahlt dauerhaft &euro;&thinsp;39,99. Ab J&auml;nner 2027 kostet Bonvio &euro;&thinsp;49,99.</p>
+            <p style="margin:22px 0 0;font-size:17px;line-height:1.6;color:rgba(13,33,25,0.78);max-width:40ch;">Gr&uuml;nderpreis &mdash; wer jetzt startet, zahlt dauerhaft &euro;&thinsp;39,99. Ab J&auml;nner 2027 kostet Bonvio &euro;&thinsp;49,99.</p>
             <a class="btn btn-dark" href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800" style="margin-top:32px;">30 Tage gratis testen <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></a>
-            <div style="margin-top:14px;font-size:14px;opacity:0.6;">Kein Setup &middot; Verl&auml;ngerung jederzeit abbestellbar</div>
+            <div style="margin-top:14px;font-size:14px;color:rgba(13,33,25,0.78);">Kein Setup &middot; Verl&auml;ngerung jederzeit abbestellbar</div>
           </div>
           <div style="display:flex;flex-direction:column;">
             <div class="inc" style="margin:0">Pers&ouml;nliche Bonvio-Adresse</div>
@@ -441,7 +441,7 @@
             <div class="inc" style="margin:0">Kilometergeld &amp; Di&auml;ten per E-Mail</div>
             <div class="inc" style="margin:0">Export f&uuml;r den Steuerberater</div>
             <div class="inc" style="margin:0">10 Jahre Aufbewahrung</div>
-            <div class="inc" style="margin:0;opacity:0.62">Fair Use: bis zu 3.000 Belege pro Jahr</div>
+            <div class="inc" style="margin:0;color:rgba(13,33,25,0.78)">Fair Use: bis zu 3.000 Belege pro Jahr</div>
           </div>
         </div>
       </section>
@@ -503,7 +503,7 @@
           <h2 style="font-size:clamp(30px,4.7vw,68px);margin:0 auto;max-width:20ch;">Andere Software will, dass du Buchhalter wirst. Bonvio will, dass du <span class="em">deine Arbeit machst.</span></h2>
           <div style="display:flex;align-items:center;justify-content:center;gap:24px;margin-top:42px;flex-wrap:wrap;">
             <a class="btn" href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800">30 Tage gratis testen <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></a>
-            <span style="font-size:15.5px;color:rgba(242,241,232,0.48);">Danach &euro;&thinsp;39,99 im Jahr. Keine App, kein Login.</span>
+            <span style="font-size:15.5px;color:var(--muted);">Danach &euro;&thinsp;39,99 im Jahr. Keine App, kein Login.</span>
           </div>
         </div>
       </section>
@@ -520,7 +520,7 @@
           </div>
           <div style="display:flex;align-items:center;gap:22px;margin-top:30px;flex-wrap:wrap;">
             <a class="btn" href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800">Try free for 30 days <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></a>
-            <span style="font-size:15px;color:rgba(242,241,232,0.45);">No login &middot; no app<br>Then &euro;&thinsp;39.99 a year</span>
+            <span style="font-size:15px;color:var(--muted);">No login &middot; no app<br>Then &euro;&thinsp;39.99 a year</span>
           </div>
         </div>
         <div class="float reveal" style="padding-top:34px;">
@@ -531,7 +531,7 @@
               <div class="rowline"></div>
               <div class="ex-row"><span class="k">Subject</span><span class="v">#mittagessen</span></div>
               <div class="rowline"></div>
-              <div class="ex-row" style="align-items:center;padding-top:3px;"><span class="k">Attachment</span><span style="display:inline-flex;align-items:center;gap:11px;"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="rgba(242,241,232,0.42)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.6"/><path d="M21 15l-5-5L5 21"/></svg><span style="display:flex;flex-direction:column;gap:1px;"><span style="font-size:13.5px;font-weight:500;">beleg_12_05.jpg</span><span style="font-size:12px;color:rgba(242,241,232,0.36);">1,4 MB</span></span></span></div>
+              <div class="ex-row" style="align-items:center;padding-top:3px;"><span class="k">Attachment</span><span style="display:inline-flex;align-items:center;gap:11px;"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="rgba(242,241,232,0.42)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.6"/><path d="M21 15l-5-5L5 21"/></svg><span style="display:flex;flex-direction:column;gap:1px;"><span style="font-size:13.5px;font-weight:500;">beleg_12_05.jpg</span><span style="font-size:12px;color:var(--muted-2);">1,4 MB</span></span></span></div>
             </div>
           </div>
           <div style="display:flex;align-items:center;gap:12px;padding:20px 0 20px 40px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7FE0AE" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v14M5 12l7 7 7-7"/></svg><span class="label">3 SECONDS LATER</span></div>
@@ -562,7 +562,7 @@
               <div class="them-row rowline" style="margin:0">Setup through your accountant. Training. Updates.</div>
               <div class="them-row rowline" style="margin:0;border-bottom:1px solid var(--hair)">Monthly fee for features you never open.</div>
             </div>
-            <div style="margin-top:18px;font-size:15px;color:rgba(242,241,232,0.32);">Powerful. And that&rsquo;s exactly why it&rsquo;s hard.</div>
+            <div style="margin-top:18px;font-size:15px;color:var(--muted-2);">Powerful. And that&rsquo;s exactly why it&rsquo;s hard.</div>
           </div>
           <div class="card" style="padding:38px 36px 40px;margin-top:14px;">
             <div class="label" style="color:var(--lime);margin-bottom:22px;">BONVIO</div>
@@ -583,7 +583,7 @@
           </div>
           <div class="split" style="margin-top:44px;padding-top:38px;border-top:1px solid var(--hair);display:grid;grid-template-columns:340px minmax(0,1fr);gap:44px;align-items:center;">
             <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start;"><span class="key">#km 47</span><span class="key">#di&auml;t 09:00&ndash;17:30</span></div>
-            <p style="margin:0;font-size:17.5px;line-height:1.6;color:rgba(242,241,232,0.64);"><b>Mileage and daily allowances</b> work the same way &mdash; by email, no attachment needed. Bonvio calculates the amount automatically at Austrian rates.<br><span style="font-size:14px;color:rgba(242,241,232,0.38);">Austria for now. German rates coming soon.</span></p>
+            <p style="margin:0;font-size:17.5px;line-height:1.6;color:rgba(242,241,232,0.64);"><b>Mileage and daily allowances</b> work the same way &mdash; by email, no attachment needed. Bonvio calculates the amount automatically at Austrian rates.<br><span style="font-size:14px;color:var(--muted-2);">Austria for now. German rates coming soon.</span></p>
           </div>
         </div>
       </section>
@@ -593,15 +593,15 @@
             <h2 style="font-size:clamp(28px,3.5vw,50px);">Month-end, tax time, or right now &mdash; <span class="em">everything as a clean file.</span></h2>
             <p class="lede" style="font-size:18px;">Write EXPORT to your address &mdash; we send you a secure download link with all your receipts plus a ready-to-use CSV.</p>
             <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:30px;"><span class="key">EXPORT Q1 2026</span><span class="key">EXPORT glasses</span><span class="key">EXPORT BIPA</span></div>
-            <p style="margin:26px 0 0;font-size:16px;line-height:1.6;color:rgba(242,241,232,0.5);">Original photos in standard formats accepted by any authority. <b>You are never locked in to Bonvio.</b></p>
+            <p style="margin:26px 0 0;font-size:16px;line-height:1.6;color:var(--muted);">Original photos in standard formats accepted by any authority. <b>You are never locked in to Bonvio.</b></p>
           </div>
           <div class="card-hi float" style="overflow:hidden;transform:rotate(-0.8deg);" aria-hidden="true">
-            <div style="display:flex;align-items:center;gap:10px;padding:16px 24px;border-bottom:1px solid var(--hair);"><span style="width:9px;height:9px;border-radius:50%;background:rgba(242,241,232,0.2);"></span><span style="width:9px;height:9px;border-radius:50%;background:rgba(242,241,232,0.2);"></span><span style="width:9px;height:9px;border-radius:50%;background:rgba(242,241,232,0.2);"></span><span class="mo" style="font-size:12px;color:rgba(242,241,232,0.5);margin-left:10px;">bonvio_export_Q1-2026.csv</span></div>
-            <div class="csv" style="font-size:9.5px;letter-spacing:0.12em;color:rgba(242,241,232,0.35);"><span>MERCHANT / TYPE</span><span>DATE</span><span class="r">AMOUNT</span><span class="r vat">VAT</span></div>
-            <div class="csv" style="color:rgba(242,241,232,0.85);"><span>Gasthaus zur Post</span><span style="opacity:0.55;">12.05.</span><span class="r">42,80</span><span class="r vat" style="opacity:0.55;">7,13</span></div>
-            <div class="csv" style="color:rgba(242,241,232,0.85);"><span>OMV Tankstelle</span><span style="opacity:0.55;">28.04.</span><span class="r">65,40</span><span class="r vat" style="opacity:0.55;">10,90</span></div>
-            <div class="csv" style="color:#7FE0AE;"><span>#km 47</span><span style="opacity:0.55;">11.04.</span><span class="r">23,50</span><span class="r vat" style="opacity:0.55;">&mdash;</span></div>
-            <div class="csv" style="color:#7FE0AE;"><span>#di&auml;t 09:00&ndash;17:30</span><span style="opacity:0.55;">08.04.</span><span class="r">22,50</span><span class="r vat" style="opacity:0.55;">&mdash;</span></div>
+            <div style="display:flex;align-items:center;gap:10px;padding:16px 24px;border-bottom:1px solid var(--hair);"><span style="width:9px;height:9px;border-radius:50%;background:rgba(242,241,232,0.2);"></span><span style="width:9px;height:9px;border-radius:50%;background:rgba(242,241,232,0.2);"></span><span style="width:9px;height:9px;border-radius:50%;background:rgba(242,241,232,0.2);"></span><span class="mo" style="font-size:12px;color:var(--muted);margin-left:10px;">bonvio_export_Q1-2026.csv</span></div>
+            <div class="csv" style="font-size:10.5px;letter-spacing:0.12em;color:var(--muted-2);"><span>MERCHANT / TYPE</span><span>DATE</span><span class="r">AMOUNT</span><span class="r vat">VAT</span></div>
+            <div class="csv" style="color:rgba(242,241,232,0.85);"><span>Gasthaus zur Post</span><span style="color:var(--muted-2);">12.05.</span><span class="r">42,80</span><span class="r vat" style="color:var(--muted-2);">7,13</span></div>
+            <div class="csv" style="color:rgba(242,241,232,0.85);"><span>OMV Tankstelle</span><span style="color:var(--muted-2);">28.04.</span><span class="r">65,40</span><span class="r vat" style="color:var(--muted-2);">10,90</span></div>
+            <div class="csv" style="color:#7FE0AE;"><span>#km 47</span><span style="color:var(--muted-2);">11.04.</span><span class="r">23,50</span><span class="r vat" style="color:var(--muted-2);">&mdash;</span></div>
+            <div class="csv" style="color:#7FE0AE;"><span>#di&auml;t 09:00&ndash;17:30</span><span style="color:var(--muted-2);">08.04.</span><span class="r">22,50</span><span class="r vat" style="color:var(--muted-2);">&mdash;</span></div>
             <div class="csv" style="font-weight:600;background:rgba(199,240,79,0.08);border-bottom:0;"><span>4 entries &middot; 1 download</span><span></span><span class="r">154,20</span><span class="r vat">18,03</span></div>
           </div>
         </div>
@@ -617,10 +617,10 @@
       <section class="sec reveal" id="kein-en">
         <div class="card" style="padding:40px 44px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;border-radius:22px;">
           <span class="disp" style="font-size:clamp(22px,2.4vw,30px);">What you don&rsquo;t need:</span>
-          <span class="mo" style="font-size:14.5px;color:rgba(242,241,232,0.36);text-decoration:line-through;text-decoration-color:rgba(199,240,79,0.75);text-decoration-thickness:2px;">App &nbsp; Login &nbsp; Password &nbsp; Software &nbsp; Training &nbsp; Updates</span>
+          <span class="mo" style="font-size:14.5px;color:var(--muted-2);text-decoration:line-through;text-decoration-color:rgba(199,240,79,0.75);text-decoration-thickness:2px;">App &nbsp; Login &nbsp; Password &nbsp; Software &nbsp; Training &nbsp; Updates</span>
           <span style="font-size:16.5px;color:rgba(242,241,232,0.62);">What you need: <b>your email.</b></span>
         </div>
-        <div class="mo" style="display:flex;flex-wrap:wrap;gap:16px 40px;padding:26px 44px 0;font-size:11.5px;letter-spacing:0.12em;color:rgba(242,241,232,0.34);"><span>SERVERS IN GERMANY</span><span>GDPR-COMPLIANT</span><span>10-YEAR ARCHIVE</span><span>NO TRACKING</span><span>BUILT IN VIENNA</span></div>
+        <div class="mo" style="display:flex;flex-wrap:wrap;gap:16px 40px;padding:26px 44px 0;font-size:11.5px;letter-spacing:0.12em;color:var(--muted-2);"><span>SERVERS IN GERMANY</span><span>GDPR-COMPLIANT</span><span>10-YEAR ARCHIVE</span><span>NO TRACKING</span><span>BUILT IN VIENNA</span></div>
       </section>
       <section class="sec reveal" id="gruender-en" style="display:grid;grid-template-columns:128px minmax(0,1fr);gap:38px;align-items:center;">
         <img src="founder.jpg" alt="Niko Andersson, founder of Bonvio" width="128" height="128" loading="lazy" style="width:128px;height:128px;border-radius:50%;object-fit:cover;filter:grayscale(1) contrast(1.06);border:1px solid rgba(242,241,232,0.16);box-shadow:0 18px 44px -14px rgba(0,0,0,0.8);">
@@ -635,9 +635,9 @@
           <div>
             <div class="disp" style="font-size:clamp(56px,8vw,116px);letter-spacing:-0.055em;line-height:0.86;">&euro;&thinsp;39,99</div>
             <div class="disp" style="font-size:clamp(22px,2.4vw,31px);margin-top:12px;font-weight:700;">a year. Everything included.</div>
-            <p style="margin:22px 0 0;font-size:17px;line-height:1.6;opacity:0.7;max-width:40ch;">Founding price &mdash; start now and you pay &euro;&thinsp;39.99 for as long as you stay. From January 2027 Bonvio costs &euro;&thinsp;49.99.</p>
+            <p style="margin:22px 0 0;font-size:17px;line-height:1.6;color:rgba(13,33,25,0.78);max-width:40ch;">Founding price &mdash; start now and you pay &euro;&thinsp;39.99 for as long as you stay. From January 2027 Bonvio costs &euro;&thinsp;49.99.</p>
             <a class="btn btn-dark" href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800" style="margin-top:32px;">Try free for 30 days <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></a>
-            <div style="margin-top:14px;font-size:14px;opacity:0.6;">No setup &middot; cancel the renewal any time</div>
+            <div style="margin-top:14px;font-size:14px;color:rgba(13,33,25,0.78);">No setup &middot; cancel the renewal any time</div>
           </div>
           <div style="display:flex;flex-direction:column;">
             <div class="inc" style="margin:0">Your personal Bonvio address</div>
@@ -646,7 +646,7 @@
             <div class="inc" style="margin:0">Mileage &amp; daily allowances by email</div>
             <div class="inc" style="margin:0">Export for your accountant</div>
             <div class="inc" style="margin:0">10-year retention</div>
-            <div class="inc" style="margin:0;opacity:0.62">Fair use: up to 3,000 receipts a year</div>
+            <div class="inc" style="margin:0;color:rgba(13,33,25,0.78)">Fair use: up to 3,000 receipts a year</div>
           </div>
         </div>
       </section>
@@ -708,7 +708,7 @@
           <h2 style="font-size:clamp(30px,4.7vw,68px);margin:0 auto;max-width:20ch;">Other software wants you to become an accountant. Bonvio wants you to <span class="em">do your work.</span></h2>
           <div style="display:flex;align-items:center;justify-content:center;gap:24px;margin-top:42px;flex-wrap:wrap;">
             <a class="btn" href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800">Try free for 30 days <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></a>
-            <span style="font-size:15.5px;color:rgba(242,241,232,0.48);">Then &euro;&thinsp;39.99 a year. No app, no login.</span>
+            <span style="font-size:15.5px;color:var(--muted);">Then &euro;&thinsp;39.99 a year. No app, no login.</span>
           </div>
         </div>
       </section>
@@ -721,14 +721,14 @@
           <div style="display:flex;flex-direction:column;gap:7px;"><span class="disp" style="font-size:20px;">Bonvio</span><span class="label">&copy; 2026 &middot; WIEN, &Ouml;STERREICH</span></div>
           <div style="display:flex;gap:28px;flex-wrap:wrap;font-size:15px;"><a href="/datenschutz.html">Datenschutz</a><a href="/impressum.html">Impressum</a><a href="/agb.html">AGB</a><a href="mailto:hello@bonvio.eu">hello@bonvio.eu</a></div>
         </div>
-        <p style="margin:34px 0 0;padding-top:22px;border-top:1px solid rgba(242,241,232,0.08);font-size:12.5px;line-height:1.65;color:rgba(242,241,232,0.34);max-width:92ch;"><b>Hinweis.</b> Bonvio bewahrt deine Belege sicher auf und macht den Export f&uuml;r deinen Steuerberater einfach. Bonvio ist <b>keine Buchhaltungssoftware</b> und ersetzt keine steuerliche oder rechtliche Beratung. F&uuml;r deine konkreten gesetzlichen Pflichten wende dich bitte an deinen Steuerberater.</p>
+        <p style="margin:34px 0 0;padding-top:22px;border-top:1px solid rgba(242,241,232,0.08);font-size:12.5px;line-height:1.65;color:var(--muted-2);max-width:92ch;"><b>Hinweis.</b> Bonvio bewahrt deine Belege sicher auf und macht den Export f&uuml;r deinen Steuerberater einfach. Bonvio ist <b>keine Buchhaltungssoftware</b> und ersetzt keine steuerliche oder rechtliche Beratung. F&uuml;r deine konkreten gesetzlichen Pflichten wende dich bitte an deinen Steuerberater.</p>
       </div>
       <div class="lang-en" lang="en">
         <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:40px;flex-wrap:wrap;">
           <div style="display:flex;flex-direction:column;gap:7px;"><span class="disp" style="font-size:20px;">Bonvio</span><span class="label">&copy; 2026 &middot; VIENNA, AUSTRIA</span></div>
           <div style="display:flex;gap:28px;flex-wrap:wrap;font-size:15px;"><a href="/datenschutz-en.html">Privacy</a><a href="/impressum-en.html">Imprint</a><a href="/agb-en.html">Terms</a><a href="mailto:hello@bonvio.eu">hello@bonvio.eu</a></div>
         </div>
-        <p style="margin:34px 0 0;padding-top:22px;border-top:1px solid rgba(242,241,232,0.08);font-size:12.5px;line-height:1.65;color:rgba(242,241,232,0.34);max-width:92ch;"><b>Note.</b> Bonvio safely archives your receipts and makes export for your accountant easy. Bonvio is <b>not accounting software</b> and is <b>not a substitute for professional tax or legal advice</b>. For your specific legal obligations, please consult your tax advisor.</p>
+        <p style="margin:34px 0 0;padding-top:22px;border-top:1px solid rgba(242,241,232,0.08);font-size:12.5px;line-height:1.65;color:var(--muted-2);max-width:92ch;"><b>Note.</b> Bonvio safely archives your receipts and makes export for your accountant easy. Bonvio is <b>not accounting software</b> and is <b>not a substitute for professional tax or legal advice</b>. For your specific legal obligations, please consult your tax advisor.</p>
       </div>
     </footer>
   </div>
