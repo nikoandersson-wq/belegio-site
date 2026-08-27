@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>document.documentElement.className += " js";</script>
   <title>Bonvio &ndash; Belegverwaltung per E-Mail</title>
   <meta name="description" content="Andere Software will, dass du Buchhalter wirst. Bonvio will, dass du deine Arbeit machst. Beleg fotografieren, per Mail schicken, fertig. Kein Login, keine App. &euro;39,99/Jahr.">
-  <meta name="theme-color" content="#F4F5F4">
-  <script>document.documentElement.className += " js";</script>
+  <meta name="theme-color" content="#0D2119">
   <link rel="canonical" href="https://bonvio.eu/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Bonvio">
@@ -22,1670 +22,732 @@
   <meta name="twitter:title" content="Bonvio &ndash; Belegverwaltung per E-Mail">
   <meta name="twitter:description" content="Beleg fotografieren, per Mail schicken, fertig. Kein Login, keine App. &euro;39,99/Jahr.">
   <meta name="twitter:image" content="https://bonvio.eu/og.png">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTYiIGZpbGw9IiMxRjQzMzIiLz48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGZpbGw9IiNGNEY1RjQiIGQ9Ik0yMSAxN0gzNEE1LjUgNS41IDAgMCAxIDM5LjUgMjIuNVYyNS41QTUuNSA1LjUgMCAwIDEgMzQgMzFIMzZBNyA3IDAgMCAxIDQzIDM4VjQwQTcgNyAwIDAgMSAzNiA0N0gyMVpNMjcgMjJIMzIuNUEyLjI1IDIuMjUgMCAwIDEgMzIuNSAyNi41SDI3Wk0yNyAzMS41SDMyQTUgNSAwIDAgMSAzNyAzNi41VjM3QTUgNSAwIDAgMSAzMiA0MkgyN1oiLz48L3N2Zz4=">
-  <link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAYAAABV7bNHAAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAASKADAAQAAAABAAAASAAAAACQMUbvAAAUgklEQVR4AZVbC6xmVXXe9zl3ZnSG11BgGJhhwNYGO4Ki+KQ0mKZpEyktTUNqa5qaNqYaE0wabHzFiImkiRJNTNTYYm18kyIMFIpt0qYtIm+C1rYwL9QBhmFgZu687r2ub631rb32Pufv6GHO2Wuv9X3fWnuf9/kvU1u2XbSyPLVcpuQ//CsrssoGjfrQxYKYLCsrK+aXvphiG1KDjlGbDoB0ARgk6UgDaEQcM+Vx89c8xvctScxFfXCxMN50AqzeKMB7rKlSTAT1zK6s+OQQjHbFp4a66jNATJpoaFiwZoBnmLp1hzZJTPoZOkUNd04RD0oGUrjxuS65mQJdLJE6jFa30UsEmfxZi/ne6oHoJ82m2IG/ByORLMBlrDplk+GI5z4wYxz4T7JAplmonZ1Ze0AQoPswK7M8MsPrQlGv7oWs4uoByJlhdwFSxwollRi2HECSauiM93z6qcNyiIuROxDNGCfhZ8NWA2hTJw991sm24VRKcpuGbd0tHdO0LVTtVCKNGQXIU47a0jZapKDVADYZ5H3ygw1HWjI3uXO2aV7jWL61IqSHVnMJVgkMzKYsK3pB4tKcHurKyQQZzkhUXe6nELq0G4Xs77RQe/B6Muunn9zeb8mmmdMGTZK0bpJeJzBZwJDiQjZwsGytfADanu4E3xFOH0DUD1qfq8sb/BGDUE7BCKQfRkCmu5I9kL2wcx+QkX7vClgOsNQRCeD7SYCvX/5fjOs3mNFjVVRRF4HOc09OOT0YK6Lg5nEpA9d0LAxUUXXnTYbQZpx91ka/tslJXBNHJ+edZPekMTFw4bcYrR4Zp1gNCBHcnDvlq3c9Oh3c45lR/FXbdbOj51G2bzMnistO2Kkfptfneh2qz9L2ZbAxQW2EoqyerWfVLFGBzyc5SclpaAwtW9LYJrgFPUA5toqzK2WIANrrsO+5QUumqlQfIyQNBdNtHkESQmfc18EoH6wJcbj11j4gBNMNRbZOud12sl25HlVqSiCPDHYvtrnMGgpts3iP/BUeQXSMopMzy8Ndi66RahnRMOaFLRY6AWs6RuFhEWUZGEM1Fzm1NYTTq7vVC767tcnMbEuJ0vUjCIGaGhahUSM1GRBEZZFNENsAuzrVTs50AoVO0nLiAIN2zTtWmVWRa8l4pjJfugaZox6QBNbWEFWMKSoCFr0V3RbEIbgO4UGFX1YPV0OAiiUBfdjepxs67uN9t2pAlBzPE30lyqb6gfQJyupVFl7CQdf9hKIQ0FYNhOp40IHbE8M0DTu97LhzCGB5AdDI5tU+Ad6htraES0zD2NRAnj/WQ7W+dfXktkp9grKwYWqamjKxU0E+ZJGIJEO5hgpgg81RToD7gDOsVxTEAak6AOUA1ItOT2wAlRt4O20Hp1iLHBHJebIdRD9S/CWvgaCDdSDLQB9v2O0Yu5ClHwgnTo6lfEqsZ412AVW4fO4w4eHW8oMIZKom53Gaa2WURng6DdXNM4x7HqZjy5wshX0KZz85jGnrTpxzo3GAJEad4MoHM3on8mKXZwRsqHEZKDeFnFg6oZ9qQ8ppU1M4gHsty7OyvFKWl5fLsnzxnJ6eLvNzc2V6ZsaYLCWXwFLQ9pKM6VFNElsEkw2T+mLKBFmPkKxNHPa0xcVDJ3RjMadh7D64JAM78/QN5dq3/27ZvOm8su7l68qx48eUAQQGf3jxsCnIno38IjUtr9Cr5ldJqpWyc/eu8tgPnigPP/5o+cnen5a52bkyMzOtZfSfage1aVnY4FHRauQANB82edIMajUBj7o2b9vqVwvzR6EOQ0Mf7EYDDkQ1kXZig4Km5QiZkz2/dfOW8jcf/Xh5xdaLyvETx2WQs+UHP/pR+csbrpeJksnHoc9FqsEEnH7q6eWySy4tf3D1NeW8jefKRO0ut99zV/ni399Snt33bJmfnxdG4pE/qJAVo+X01JLrrmE0acpj/8wpZ532kQxiGK2t1WJBhnE/GsuNDLpwb+EXEJxeT+3cUabkNPn1N72lHD16ROG7nn66fP6WL5XnX9hfXjjwQtmv6wG194lv55495d/v+89y213by8azzi6vffWlul7xxjeXhx57pPx07zM6kTWnV5cnW4NWLZ+ZvOoUGRlAmvi4zWcip4YTwiLAs8kEWhZvbIYwS5gany1vAMHe3iMTsnTiRPAxjhm5pszOzKZ1Rnyz6p+fnytr1qzRCfyrj324PPL4Y+X48ePlwi0XlJtvvKmcc9ZZMvlLqEKXppToSAg21tiJOWgVq0CzqePQCQpuA0IHkclRPX+bE5QTKDQWpga0fBF/WyL8OYfdOYnBKYoj7Iv/cIterI8eOyqTtLX86XXv0Akz1UiWtLx21McaKaqk2qnZs44p69WuQttSDZK2VWlslAI0JabRXhZPUnFaNyAkGBJwBH7voQfKM/ue00k6cvRoueqK3ygbTj9DL/ZB0dNL+LnOlNP8DFqLbFrL4NQ0YvqiaIXZliLWs4w87BiDgMnz/M6VAaVIh+upp3LMIAHKu0x1mDbDM9MzehTtfUauO2IvLy+VM884o2ySi/fS0nJNi1yjWtBD0IqxLXxpaZy2++Cy5yCINgAQe0fsc4vlMH/B1OriKgSRdszmie1oWs3LqXG6dJf8sYA/T+Na9bK1a+35amIeIWqSWhO6WLFgCLTVkcbM4dlzUAywwkgkUPvYiIM+Q2NrHnLq/HsRcvjW6a3sarkSk0SAinK7lbvgwip5NsL1RNxLcoE+ePCgHbya37HKDQEpgBq1Wp81n5wch21crVe6cRdjoMoAbAMLCc+bh0u8YYzj08JQbZ3P8kOXCAQ0SIQ5cPSsW7eu/NKGM/VIwmm299m9ZdfTe/SOR/rkts8E3eRTU3zaYiOr2jFBVZqlqcexga4wFeH06WxrjGxXV5Rs6FYM1VwcMcadxq7Dy7Fjx8olF28rZ27YoBflVXIk3f0v3y37nt+nz1fEaauyzM/WcqJn2u7nhVmd9Amo0ngEwWPeGhMWiKYoxoQlCGEYULtjvqzTifvt2CbcYrgIr1m9przzD69TIk6zJ/77h+ULX/k7fUqPDJ2Un3spmSD1VIcrgSEQIg7XRwPD+SnmAWlArfgklEUJr0D3JEemqlsc7rNGLpyBQaxeSAHEtQa3c7yo3vC+68sbXvt6fQ979InHy3s+8P7y7HPP1dOLRwKqgCZXr0ob1KD5YMiqNWWAxxVT/XKRzoupAGP8KmSD4eePxOkEU0RNDY9g8A52VE4d/YOsplj5LUoGvGb1anm1eE151zv+pLz18jeV/9vxZLl1++3ly1//ajnw0gF5Op+rqVhwJGsEBScBXKzpHqnHZ0+wwMkKjKx2m6+pJJzffGsA2sbhm71nY0Cj7gtarsRimGjcgTbKq8LHP/Ah/ZxRr2FGXL9ufbnoggvKK1/xy/oye9s/bS9fu/Wb5fuPPFQWFxfLrLzs2pLyRarki5qyL4rrDGBshDZJCOsHs1DuCIDLZMTMcxjESzt2C2UeTaapfGPy2Dk4bQ68+FL59h236UVXd5jIcRiIr5VnnI1nn1NeffGryhsvu7z81pVXlZ1P7y7fe/CBcvvdd8qT9YOSf7nMyquIpWJdohI10HBlQlAKbHdbZWmrp4sE5W1+1oBE1utA1goqYDopjLJFQIN6XclTSeXQEApOoUOLh8rDjz0qeHkSln7lCED+4UMZLtBf+cZXy9nyNn/dNdeWP/ujd5Y/vvai8vu/8/Zy77/9a7nps58uT+3aWXBXs0lCFuOzHssrvjQbuuNT3zDY2hgCKzR/1YAAFpZpvdhqWDZodcR52GKnrpmmRzeuM/qA54ImI4fvrLzNy+mC70Noac/NzcoHs3m5Di2UhYWF8py8g33yM58q773h/WXf/udlPqfKb7/tN8vf3vy58muvvLgck4s5NO06yaqthqY4DfklIopLRPhwOOtifPs0566+GU6XkDwvGjPp80DMliWC1/J6YubX1jpkWn74EkgKxmeRtfLp487v3lNu/vzn5LSaLYcPL5bzzt1UPvHBj5RTTzlVT1XQspbZ2WMZdIvZ1BA2zJfibg5u8wS3lJwEdu4TyZYxa9UbeyVTiU9FwcWVbsgof6qsljvbt7ffVp7csUOPNjwGXPwrv1p+T045PEz2VGawSrC1S4hZSGCRaCPgfhGYDp+CrWfC2ELQwdCbtCjh58CBL1jT78WEb+mlpRZbYO197Pn9+8v3H35QjyJ48cXyqiuulPe0hUrrMthITB4c5jd1FIQVES7omCP+wiyXQljb8m8kzFslpB8DahmhGUaOjznhw8pq2VYedthTu3YIwmInTiyVc8/ZWE5dv14v7MrV4mTjR15lt8qqYDIGUV5G4yLti+EyGgGWUf1jw6ppjYMtcdpWOkLdMinY+62Pig4eOiT6ULYVPwnpR3wm7TJwHL2i1k2ZAcfkY4LyIC0Ps4msK7cJ2Ms4Ym1iicA48qlKBmsyHLiwgsVwnW2PrV2zVizD4o6Gh8fFxSNG12Sa0Hgq12ekNPxc3ddB9TZvJbVAw8kWQXQUZEiTMoTacBOn7hojLf+0k1VMK3mS6XNgEN3KLVomZMv550sPOeRBTj6cPSm/mux/8YX0Zk8RwcTpLz7dAcY0Uce533zYYnfaLu2OIBC4bxzOsXoLBF2OqI3mS1FN7EUQJeGEoHfYkpbAyzLYU+Q15DXbLpEP9ieUg6fu7fferX1SYmIjv0RSMExVaHssBF6saYJSJTUD8daqlk1gEwAVe8oltAuA9xXLcKpHjypWoqC0CRH3CW7xyKI+IG49f4vevRYWVpf/euD+cof8oLhqFX5ITAtzMx/12FcoQYnXxDFBgiHXDirpAUQgW2pov3caE0rQYhQ9/U8mD0/NeMXQI142eHrWCfLkxKmA5rIA/HjtOHTocHn9pZeV9/35u+Wr4pI+E/3Pk/9b/vrGj8rEHdFfcSOzJhERSGCRd6pYwkSVrFRMcBDTuMekXn0tTrBKUiBIKQoRHLZwhR9DsIWtdwUjv6zKbRgPdJe8apv88YEcsMfxAV5uzWdvLJvk9vz4D5/QD1/g2LhMBZPH/vqXr5f3r6vL9e9+j352PSITcuc/31Nu/NRNZc+Pf2x3sChTDJXAxm3WrEmwET/wxOlYko8xKUB/mwfFyjIe+lUBaCw2EdZzMXNr1DZpskR8Qf4AYeuWC+Rj1+vKe9/1F/plkO9keO/C5HzrO/9YXjz4ktZbs0s1Mih8Sbxw85ZyufA3b9pUfiI/+9wvv4/desd3yn/cf5+8XizpE7VNRV8TR4TK+pi5YoKseN+2WJmgC2UoLmaZOrgQdAmU9sybxOBVGRPBUXKavCNd+ea3ys8zL9O/7MBfdARPwPhLDUwU/FBvrm6QxlEkH9bw+/1u+UC/c89ueXHdp9j5uXk7RaVnC5TzAOhn2DLbYQlx9yssYz3m/sFfd4BGrksMSqBfcTh8seQc5tFrB96ReNQAQu3edorGcwx+TBR+ycBLK+5athCVW0V7nA3iWCQzktt5qx4cpVa37XytrRmPXDvjQqlk49Vte9TAryIBQAIvkAH2BYM/f9F3JKmCYVJZthaYgjAZsyPK9UHMwVCkU1qYgyU5VRivTF4PEw047pDJkv9n1Tts0aWmXLzCTGXbEBhxfPDdz7D4q4rnAgVxJCcuDCs+5OgnTnlVxywGe/94v9aDLMYNhZpYYvGX9hRqosYNJjFoxQm/xmTT0TynERRj5mCLWdKZyiDY7LswuxQghC39fR30o9XYJACOKi5uaU6/zTN08lZYIEKjKjotO1Q9FeV9IJPpxKqpogbQUz8AJzFAyeknwA3ip1e/Y4IvYvoPGxxBEP+Fl1AbYbogIDC1ELd79KgMnLIy5i0m7KSlTgJQw/NrF6c3DF9NXQTsX9QgH+2BoDJbV0qNCiAMeOATQM3ET2aFW66TyrBKzWU5eCfsM8ZEDgLZYUKWfeiP8UhhLJup/VeNRCUCOkRRs+/Tn9vMz/7ETWZFgIcAjzhEJmkhhiXuMOgIWPmwZUkxnFT5KmOAvM3E1j8t9+LkESCwXKuhGLvpI2gL+vyPvqatUBusnyY5Y+BlQBke/jEj6kOQas6mCCZaJ5unJlpie1H3CzdLw+tPXTARYuum9I1gW5eRIBb46mI92bbuHuB61U1H0Gig7degMcCK2JIcQDM0XHdlRZEHmGtS2j3pGgQwopmUe8nv0OQZ8MSRydpt5LVK3TjU1bKo5zGyb5WSsCFhYEyDvbxTSADxYi0awEvIG+tUd7UUMPH/WXWcNKMLyDGRLAQ+BDSIji0jLoaoYZDEU1M2yVU5bjEt2ljlJPLTCuQ4aRVLgvGtxwT14dQ81c8Xm5Rfgo0WOyQBShsxKyOK4e4BhDBQ2o56bEN9U8K1NQ2tDr6RUNBkyaSupteBTDp/Oa7paw0W8r7w+GcSTqmBrNHNmISyoF366gSRCQ9wXp26cfiTK36v1nyGtygx1JI2SUFRESOwyuguySQgbdTUCrQ9U2qPICDG1pp1omXiTGGTUgvpaRZv68SA3J/hdLEVTDf0jDabZeSIHpohkiM+29nlx7Do+G/zIE4gB4/xSVhWRRz65sOAao/xEE4GNUZcIeCYDGVJWTrw0MqBEW11UdBa3QotHUHiyomyJrkCyG5LRQ/JAMuqtxLubcRCRExiTEFF3TVxMA5NM01P27Kcxptyqz+SNaimRo/Ib/Njg+54mtRE+1QVKZF8BZRrjdWaJydhshDsGFgOVPWTWy7Q09FXXxjWzzih2jywCA/KeLqLdFdGh7eokNWPTUpKakqsJxY1EE8xwqONGAnhCMjAIDQHWFb2wYZcj0/9/rqmMnLdkl9iUihqQpgr1NOiokpPTjNxHRwU4Zo/x3HqenbkKX5sUMwquWyvwzFBfayehu+dGLf1s5q8iUkUp4YWkxR1tCDYzVo1EI4Z0I71NQgJ86FLvLaysb7EnVb7cLjfZxgxi4shMe0LBJe1gR9c7uQAgCZ+JqNJYfRVVw2Hie3iKoOufDL+GVHeQRfRM/2+AAAAAElFTkSuQmCC">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%23C7F04F'/%3E%3Cpath fill-rule='evenodd' fill='%230D2119' d='M21 17H34A5.5 5.5 0 0 1 39.5 22.5V25.5A5.5 5.5 0 0 1 34 31H36A7 7 0 0 1 43 38V40A7 7 0 0 1 36 47H21ZM27 22H32.5A2.25 2.25 0 0 1 32.5 26.5H27ZM27 31.5H32A5 5 0 0 1 37 36.5V37A5 5 0 0 1 32 42H27Z'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600&family=Martian+Mono:wght@400;500;600&display=swap">
   <style>
+    /* ── Bonvio, dark rebrand 2026-08-26. See brand/BRAND.md §4–5b. ───────────
+       Surfaces are separated by LIGHT, not by a lighter fill: at this end of the
+       scale every value step available is under 1.3:1, so a lit top edge plus a
+       cast shadow is what reads as elevation. Do not "fix" a card by lightening
+       its background — it will not work. */
     :root {
-      --page: #F4F5F4;          /* cool near-white page ground */
-      --surface: #FFFFFF;       /* cards, receipt surfaces */
-      --ink: #14171A;
-      --green: #1F4332;         /* THE accent — structure, not decoration */
-      --green-deep: #0F2A1F;     /* large dark surfaces */
-      --green-hover: #15301F;
-      --on-dark: #FFFFFF;        /* text + CTA on green surfaces */
-      --tint: #CDE0D3;           /* pale green tint */
-      --sage: #6B6F6A;           /* muted secondary text */
-      --line: #E4E6E4;           /* warm hairlines */
-      --muted: rgba(20,23,26,0.56);
-      --muted-2: rgba(20,23,26,0.72);
-      --hair: rgba(20,23,26,0.09);
-      --hair-2: rgba(20,23,26,0.13);
-      --sans: Aptos, "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
-      /* One type system (brand book v3, 2026-07-21): display and body are the SAME sans.
-         The --serif var name is kept only so the many .serif/var(--serif) call sites keep
-         working — it now means "display face", and there is no serif face any more. */
-      --serif: Aptos, "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;  /* display = same sans; no serif face */
-      --mono: Consolas, "Aptos Mono", ui-monospace, "SF Mono", Menlo, monospace;
+      --ground:  #0D2119;
+      --elev-1:  #163024;
+      --elev-2:  #1E3E2F;
+      --bone:    #F2F1E8;
+      --muted:   rgba(242,241,232,0.58);
+      --muted-2: rgba(242,241,232,0.42);
+      --hair:    rgba(242,241,232,0.10);
+      --hair-2:  rgba(242,241,232,0.14);
+      --lime:    #C7F04F;   /* action */
+      --mint:    #7FE0AE;   /* confirmation */
+      --disp: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+      --body: "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+      --mono: "Martian Mono", ui-monospace, Consolas, monospace;
+      --pad: 110px;
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    html { margin: 0; padding: 0; overflow-x: clip; }
     body {
-      margin: 0; padding: 0; padding-top: 65px;
-      background: var(--page);
-      color: var(--ink);
-      font-family: var(--sans);
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-      overflow-x: hidden;
-      overflow-y: auto;
-      -webkit-overflow-scrolling: touch;
+      margin: 0; background: var(--ground); color: var(--bone);
+      font-family: var(--body); font-size: 17px; line-height: 1.6;
+      -webkit-font-smoothing: antialiased; overflow-x: hidden;
     }
-    /* paper grain — faint, warm, physical */
-    body::before {
-      content: "";
-      position: fixed; inset: 0;
-      background-image: radial-gradient(rgba(20,23,26,0.045) 1px, transparent 1px);
-      background-size: 4px 4px;
-      pointer-events: none;
-      z-index: 0;
-    }
-    .wrap { position: relative; z-index: 1; max-width: 1320px; margin: 0 auto; }
-    ::selection { background: var(--green); color: var(--page); }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    ::selection { background: var(--lime); color: var(--ground); }
+    a { color: var(--lime); text-decoration: none; }
+    a:hover { color: #DCF889; }
+    :focus-visible { outline: 2px solid var(--lime); outline-offset: 3px; border-radius: 4px; }
+    img { max-width: 100%; }
 
-    /* ─────────── TYPE PRIMITIVES ─────────── */
-    .eyebrow {
-      font-family: var(--mono);
-      font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--green); font-weight: 700;
-      display: inline-flex; align-items: center; gap: 12px;
-    }
-    .eyebrow::before {
-      content: ""; width: 24px; height: 2px; background: var(--green); opacity: 0.7;
-    }
-    .serif { font-family: var(--serif); font-weight: 600; font-optical-sizing: auto; letter-spacing: -0.022em; }
-    em.accent { font-style: normal; font-weight: 600; color: var(--green); }
+    .wrap { max-width: 1440px; margin: 0 auto; position: relative; }
+    .sec  { padding: 0 var(--pad) 110px; }
 
-    /* ─────────── NAV ─────────── */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 80;
-      display: flex; align-items: center; justify-content: space-between;
-      gap: 24px;
-      padding: 18px 48px;
-      background: rgba(244,245,244,0.86);
-      backdrop-filter: saturate(140%) blur(14px);
-      -webkit-backdrop-filter: saturate(140%) blur(14px);
-      border-bottom: 1px solid var(--hair);
-    }
-    .burger { display: flex; flex-direction: column; justify-content: center; gap: 5px; width: 36px; height: 36px; background: none; border: none; cursor: pointer; padding: 4px; z-index: 90; }
-    .burger span { display: block; width: 22px; height: 2px; background: var(--ink); border-radius: 2px; transition: transform .3s, opacity .3s; }
-    .burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .burger.open span:nth-child(2) { opacity: 0; }
-    .burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-    .mobile-menu { display: none; position: fixed; top: 65px; left: 0; right: 0; background: rgba(244,245,244,0.97); backdrop-filter: saturate(140%) blur(14px); border-bottom: 1px solid var(--hair); z-index: 79; padding: 16px 24px 24px; flex-direction: column; gap: 0; }
-    .mobile-menu.open { display: flex; }
-    .mobile-menu a { padding: 14px 0; font-size: 17px; font-weight: 500; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--hair-2); }
-    .mobile-menu a:last-of-type { border-bottom: none; }
-    .mobile-menu a:hover { color: var(--green); }
-    .mobile-menu .mob-cta { margin-top: 16px; display: block; text-align: center; background: var(--green); color: var(--page) !important; border-radius: 999px; padding: 14px 24px !important; font-weight: 700; border: none; }
-    .mobile-menu .mob-lang { display: flex; gap: 8px; margin-top: 16px; }
-    .mobile-menu .mob-lang button { flex: 1; padding: 10px; border: 1px solid var(--hair-2); background: none; border-radius: 8px; font-size: 15px; font-weight: 600; cursor: pointer; color: var(--ink); }
-    .mobile-menu .mob-lang button.active { background: var(--green); color: var(--page); border-color: var(--green); }
-    .logo {
-      display: inline-flex; align-items: center; gap: 11px;
-      font-weight: 700; font-size: 20px; letter-spacing: -0.03em;
-      color: var(--ink); text-decoration: none;
-    }
-    .logo svg { width: 28px; height: 28px; display: block; }
-    .nav-links { display: flex; align-items: center; gap: 30px; }
-    .nav-links a {
-      font-size: 15px; font-weight: 500; color: var(--ink);
-      text-decoration: none; opacity: 0.72; transition: opacity .15s;
-    }
-    .nav-links a:hover { opacity: 1; }
-    .nav-links a.nav-hide-mobile { display: none !important; }
-    .nav-cta {
-      font-size: 14px; font-weight: 600; color: var(--page) !important;
-      background: var(--green); padding: 9px 18px; border-radius: 999px;
-      opacity: 1 !important; transition: background .15s;
-    }
-    .nav-cta:hover { background: var(--green-hover); }
+    /* ── type ───────────────────────────────────────────────────────────── */
+    .disp { font-family: var(--disp); font-weight: 800; letter-spacing: -0.045em; line-height: 0.93; text-wrap: balance; margin: 0; }
+    .mo   { font-family: var(--mono); }
+    h1 { font-family: var(--disp); font-weight: 800; letter-spacing: -0.045em; line-height: 0.93; text-wrap: balance; margin: 0; font-size: clamp(40px, 6.1vw, 88px); }
+    h2 { font-family: var(--disp); font-weight: 700; letter-spacing: -0.04em; line-height: 0.98; text-wrap: balance; margin: 0; font-size: clamp(30px, 3.9vw, 56px); }
+    h3 { font-family: var(--disp); font-weight: 700; letter-spacing: -0.035em; margin: 0; }
+    .lede { margin: 24px 0 0; font-size: clamp(16.5px, 1.4vw, 19.5px); line-height: 1.58; color: var(--muted); max-width: 52ch; text-wrap: pretty; }
+    .em { color: var(--lime); }
 
-    main { padding: 0 48px; }
+    /* ── elevation: light from above, never a lighter fill ───────────────── */
+    .card, .card-hi {
+      border-radius: 18px;
+      border: 1px solid var(--hair);
+    }
+    .card {
+      background: var(--elev-1);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.07), 0 28px 60px -20px rgba(0,0,0,0.75);
+    }
+    .card-hi {
+      background: var(--elev-2); border-color: rgba(242,241,232,0.13);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.09), 0 34px 70px -22px rgba(0,0,0,0.8);
+    }
+    .rowline { border-top: 1px solid var(--hair); }
 
-    /* ─────────── BUTTONS ─────────── */
+    /* ── atmosphere ─────────────────────────────────────────────────────── */
+    .glow, .grid-field { position: absolute; inset: 0 0 auto 0; pointer-events: none; }
+    .glow {
+      height: 1500px;
+      background: radial-gradient(900px 520px at 18% -6%, rgba(199,240,79,0.13), transparent 62%),
+                  radial-gradient(720px 480px at 88% 6%, rgba(127,224,174,0.09), transparent 60%);
+    }
+    .grid-field {
+      height: 1100px; opacity: 0.5;
+      background-image: linear-gradient(rgba(242,241,232,0.05) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(242,241,232,0.05) 1px, transparent 1px);
+      background-size: 64px 64px;
+      -webkit-mask-image: linear-gradient(#000, transparent 82%);
+              mask-image: linear-gradient(#000, transparent 82%);
+    }
+    .spot { position: absolute; inset: 0; pointer-events: none; }
+
+    /* ── controls ───────────────────────────────────────────────────────── */
     .btn {
-      display: inline-flex; align-items: center; gap: 10px;
-      background: var(--green); color: var(--page);
-      border: 0; border-radius: 999px;
-      padding: 17px 34px; font-size: 17px; font-weight: 600;
-      font-family: var(--sans); text-decoration: none; cursor: pointer;
-      transition: background .15s, transform .18s cubic-bezier(.2,.7,.2,1), box-shadow .18s;
-      white-space: nowrap;
+      display: inline-flex; align-items: center; justify-content: center; gap: 11px;
+      min-height: 60px; padding: 0 34px; border-radius: 100px;
+      background: var(--lime); color: var(--ground);
+      font-size: 18px; font-weight: 600; font-family: var(--body);
+      box-shadow: 0 14px 34px -10px rgba(199,240,79,0.5), inset 0 1px 0 rgba(255,255,255,0.45);
+      transition: transform .18s ease, box-shadow .18s ease;
     }
-    .btn:hover { background: var(--green-hover); transform: translateY(-1px); box-shadow: 0 12px 26px -10px rgba(31,67,50,0.5); }
-    .btn:active { transform: translateY(0) scale(0.985); box-shadow: 0 4px 12px -6px rgba(31,67,50,0.4); }
-    .btn .arr { transition: transform .2s; }
-    .btn:hover .arr { transform: translateX(3px); }
-    .btn-light { background: var(--on-dark); color: var(--green-deep); }
-    .btn-light:hover { background: var(--tint); }
-    .trust-line {
-      margin-top: 20px;
-      font-family: var(--mono); font-size: 13.5px; font-weight: 600; letter-spacing: 0.08em;
-      text-transform: uppercase; color: var(--muted-2);
-      display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+    .btn:hover { color: var(--ground); transform: translateY(-2px); box-shadow: 0 20px 44px -10px rgba(199,240,79,0.6), inset 0 1px 0 rgba(255,255,255,0.45); }
+    .btn-dark { background: var(--ground); color: var(--lime); box-shadow: 0 16px 36px -12px rgba(13,33,25,0.6); }
+    .btn-dark:hover { color: var(--lime); }
+    .chip {
+      display: inline-flex; align-items: center; gap: 9px;
+      padding: 7px 14px 7px 11px; border-radius: 100px;
+      background: rgba(199,240,79,0.10); border: 1px solid rgba(199,240,79,0.26);
+      font-size: 13px; font-weight: 600; color: var(--lime);
     }
-    .trust-line .sep { width: 4px; height: 4px; border-radius: 50%; background: var(--green); opacity: 0.7; }
+    .key {
+      display: inline-block; padding: 7px 13px; border-radius: 9px;
+      background: var(--elev-2); border: 1px solid rgba(242,241,232,0.13);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.09), 0 2px 0 rgba(0,0,0,0.45);
+      color: var(--lime); font-family: var(--mono); font-size: 13.5px; letter-spacing: -0.03em;
+    }
+    .label { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.16em; color: var(--muted-2); }
 
-    /* ─────────── HERO ─────────── */
-    .hero {
-      display: grid;
-      grid-template-columns: 1.08fr 0.92fr;
-      gap: 72px; align-items: center;
-      padding: 32px 0 56px;
-      min-height: 680px;
-    }
-    .hero-copy .eyebrow { margin-bottom: 30px; }
-    h1 {
-      margin: 0;
-      font-family: var(--serif); font-weight: 600;
-      font-optical-sizing: auto; font-variation-settings: "opsz" 72;
-      font-size: clamp(44px, 5.0vw, 76px);
-      line-height: 1.04; letter-spacing: -0.028em;
-      text-wrap: balance;
-    }
-    h1 .lead-clause { color: var(--muted-2); }
-    h1 em { font-style: italic; font-weight: 400; color: var(--ink); }
-    .hero-sub {
-      margin: 30px 0 0;
-      font-size: 21px; line-height: 1.5; color: var(--muted-2);
-      max-width: 30ch; text-wrap: pretty;
-    }
-    .hero-sub b { color: var(--ink); font-weight: 600; }
-    .hero-cta { margin-top: 38px; }
-    .hero-cta .btn { font-size: 18px; padding: 18px 36px; }
+    /* ── motion: one idea, twice, opt-out ───────────────────────────────── */
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--mint); animation: pulse 2.4s ease-out infinite; }
+    @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(127,224,174,0.55); } 70% { box-shadow: 0 0 0 11px rgba(127,224,174,0); } 100% { box-shadow: 0 0 0 0 rgba(127,224,174,0); } }
+    .float { animation: float 7s ease-in-out infinite; }
+    @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
 
-        /* ─────────── HERO COLLAGE ─────────── */
-    .hero {
-      background-image: radial-gradient(rgba(20,23,26,0.07) 1.4px, transparent 1.4px);
-      background-size: 22px 22px;
-    }
-    .collage {
-      position: relative;
-      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 30px;
-      min-height: 500px;
-    }
-    .demo-glow {
-      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-      width: 420px; height: 420px;
-      background: radial-gradient(circle, rgba(31,67,50,0.10), transparent 68%);
-      border-radius: 50%; pointer-events: none;
-    }
-    .fc-phone {
-      position: relative; z-index: 2; width: 292px; height: 452px; flex: none;
-      background: var(--ink); border-radius: 44px; padding: 9px;
-      box-shadow: 0 40px 90px -20px rgba(15,42,31,0.4), 0 8px 24px rgba(20,23,26,0.12);
-    }
-    .fc-cam {
-      position: absolute; z-index: 2; top: 0; left: 50%; transform: translateX(-50%);
-      width: 108px; height: 24px; background: var(--ink);
-      border-bottom-left-radius: 13px; border-bottom-right-radius: 13px;
-    }
-    .fc-screen {
-      position: relative; width: 100%; height: 100%; background: var(--surface);
-      border-radius: 36px; overflow: hidden;
-      display: flex; flex-direction: column;
-    }
-    .fc-mailbar {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 20px 18px 12px; border-bottom: 1px solid var(--hair);
-      font-size: 13px;
-    }
-    .fc-mailbar .cancel { color: var(--muted); }
-    .fc-mailbar .title { font-weight: 600; }
-    .fc-mailbar .send {
-      font-weight: 700; color: var(--page); background: var(--green);
-      padding: 5px 13px; border-radius: 999px; font-size: 12px;
-    }
-    .fc-fields { padding: 4px 18px; font-size: 13px; }
-    .fc-fields .field { display: flex; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--hair); }
-    .fc-fields .k { color: var(--muted); width: 58px; flex: none; }
-    .fc-fields .v { font-weight: 500; }
-    .fc-fields .v.tag { color: var(--green); font-family: var(--mono); font-size: 12px; }
-    .fc-attach {
-      margin: 16px 18px 0; background: var(--page);
-      border: 1px solid var(--hair-2); border-radius: 12px;
-      padding: 12px; display: flex; gap: 12px; align-items: center;
-    }
-    .fc-attach .thumb {
-      width: 58px; height: 76px; flex: none; border-radius: 6px; overflow: hidden;
-      background: #fff; box-shadow: 0 3px 10px rgba(20,23,26,0.12);
-      font-family: var(--mono); padding: 7px 6px 0; transform: rotate(-2deg);
-    }
-    .fc-attach .thumb .t-h { font-size: 6px; letter-spacing: 0.12em; color: var(--ink); opacity: 0.65; }
-    .fc-attach .thumb .t-r { height: 1.5px; background: rgba(20,23,26,0.14); margin: 4px 0; }
-    .fc-attach .thumb .t-row { display: flex; justify-content: space-between; font-size: 5.5px; color: var(--muted); margin-bottom: 2px; }
-    .fc-attach .thumb .t-tot { display: flex; justify-content: space-between; font-size: 6.5px; font-weight: 700; color: var(--ink); margin-top: 3px; }
-    .fc-attach .a-meta { line-height: 1.35; }
-    .fc-attach .a-name { font-size: 12.5px; font-weight: 600; }
-    .fc-attach .a-size { font-size: 11px; color: var(--muted); }
-    .fc-hint {
-      margin-top: auto; padding: 16px 18px;
-      font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.1em;
-      text-transform: uppercase; color: var(--muted); text-align: center;
-    }
-
-    .demo-caption { text-align: center; }
-    .demo-caption .c-main { font-family: var(--serif); font-style: italic; font-size: 19px; color: var(--ink); }
-    .demo-caption .c-sub { font-size: 13px; color: var(--muted); margin-top: 2px; }
-
-    .addr-tag {
-      position: absolute; z-index: 4; top: 126px; right: -14px;
-      background: var(--surface); border: 1px solid var(--green); border-radius: 12px;
-      padding: 9px 13px; max-width: 190px;
-      font-family: var(--mono); font-size: 10.5px; line-height: 1.5; color: var(--ink);
-      box-shadow: 0 6px 20px rgba(31,67,50,0.14);
-    }
-    .addr-tag b { color: var(--green); }
-    .addr-tag::after {
-      content: ""; position: absolute; bottom: -6px; left: 28px;
-      width: 11px; height: 11px; background: var(--surface);
-      border-right: 1px solid var(--green); border-bottom: 1px solid var(--green);
-      transform: rotate(45deg);
-    }
-
-    /* ─────────── PHONE DEMO LOOP (compose → send → confirm) ─────────── */
-    .scr {
-      position: absolute; inset: 0;
-      display: flex; flex-direction: column;
-      transition: opacity .5s ease, transform .6s cubic-bezier(.4,0,.2,1);
-    }
-    .scr-compose { opacity: 1; }
-    .scr-confirm { opacity: 0; transform: translateY(14px); pointer-events: none; padding: 20px 18px 16px; background: var(--surface); }
-    .fc-phone[data-phase="confirm"] .scr-compose { opacity: 0; transform: translateY(-10px) scale(0.985); }
-    .fc-phone[data-phase="confirm"] .scr-confirm { opacity: 1; transform: none; }
-    .fc-phone[data-phase="confirm"] .addr-tag { opacity: 0; }
-    .addr-tag { transition: opacity .4s ease; }
-
-    .fc-mailbar .send { transition: transform .18s, box-shadow .18s; }
-    .fc-phone[data-phase="send"] .fc-mailbar .send {
-      transform: scale(0.9); box-shadow: 0 0 0 4px rgba(31,67,50,0.18);
-    }
-    .plane {
-      position: absolute; z-index: 6; left: 50%; bottom: 84px;
-      width: 30px; height: 30px; color: var(--green);
-      opacity: 0; transform: translate(-50%, 0); pointer-events: none;
-    }
-    .fc-phone[data-phase="send"] .plane { animation: fly .95s cubic-bezier(.5,0,.3,1) forwards; }
-    @keyframes fly {
-      0%   { opacity: 0; transform: translate(-50%, 10px) scale(0.7) rotate(8deg); }
-      25%  { opacity: 1; }
-      100% { opacity: 0; transform: translate(-50%, -300px) scale(1.05) rotate(8deg); }
-    }
-
-    .cf-brand {
-      display: flex; align-items: center; gap: 8px;
-      font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.14em;
-      text-transform: uppercase; color: var(--green); font-weight: 700;
-    }
-    .cf-brand .bm {
-      width: 18px; height: 18px; border-radius: 5px; background: var(--green);
-      color: var(--page); display: grid; place-items: center;
-      font-size: 11px; font-weight: 800; font-family: var(--sans); letter-spacing: 0;
-    }
-    .cf-check {
-      margin: 20px auto 12px; width: 54px; height: 54px; border-radius: 50%;
-      background: var(--green); color: var(--page);
-      display: grid; place-items: center; font-size: 26px;
-      box-shadow: 0 10px 26px rgba(31,67,50,0.32);
-      transform: scale(0);
-    }
-    .fc-phone[data-phase="confirm"] .cf-check { animation: pop .5s cubic-bezier(.3,1.5,.5,1) .25s forwards; }
-    @keyframes pop { to { transform: scale(1); } }
-    .cf-head { text-align: center; font-weight: 700; font-size: 20px; letter-spacing: -0.015em; color: var(--ink); }
-    .cf-sub { text-align: center; font-size: 12px; color: var(--muted); margin: 3px 0 16px; }
-    .cf-rows { background: var(--page); border: 1px solid var(--hair-2); border-radius: 12px; padding: 2px 14px; }
-    .cf-row {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 9px 0; border-bottom: 1px solid var(--hair); font-size: 12.5px;
-      opacity: 0; transform: translateY(6px);
-    }
-    .cf-row:last-child { border-bottom: 0; }
-    .cf-row .ck { color: var(--muted); font-family: var(--mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; }
-    .cf-row .cv { font-weight: 600; color: var(--ink); }
-    .cf-row.total .cv { color: var(--green); font-size: 14.5px; font-weight: 700; font-family: var(--mono); }
-    .fc-phone[data-phase="confirm"] .cf-row { animation: xin .5s ease forwards; }
-    .fc-phone[data-phase="confirm"] .cf-row:nth-child(1) { animation-delay: .45s; }
-    .fc-phone[data-phase="confirm"] .cf-row:nth-child(2) { animation-delay: .57s; }
-    .fc-phone[data-phase="confirm"] .cf-row:nth-child(3) { animation-delay: .69s; }
-    .fc-phone[data-phase="confirm"] .cf-row:nth-child(4) { animation-delay: .81s; }
-    @keyframes xin { to { opacity: 1; transform: none; } }
-    .cf-foot {
-      margin-top: auto; text-align: center;
-      font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--muted);
-    }
-
-    /* ─────────── THE GREEN FULL STOP ─────────── */
-    .fs { color: var(--green); }
-    .wm-dot { color: var(--green); font-style: normal; }
-
-    /* ─────────── HERO ENTRANCE ─────────── */
-    @media (prefers-reduced-motion: no-preference) {
-      @keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
-      .hero .eyebrow   { animation: rise .6s cubic-bezier(.2,.7,.2,1) both; }
-      .hero h1         { animation: rise .7s cubic-bezier(.2,.7,.2,1) .1s both; }
-      .hero .hero-sub  { animation: rise .7s cubic-bezier(.2,.7,.2,1) .2s both; }
-      .hero .hero-cta  { animation: rise .7s cubic-bezier(.2,.7,.2,1) .3s both; }
-      .hero .collage   { animation: rise .9s cubic-bezier(.2,.7,.2,1) .25s both; }
-      .hero h1 .fs     { display: inline-block; animation: stamp .55s cubic-bezier(.34,1.56,.44,1) 1.0s both; }
-      @keyframes stamp { from { opacity: 0; transform: scale(2.2); } 60% { opacity: 1; } to { opacity: 1; transform: scale(1); } }
-      .fc-attach .thumb { transition: transform .35s cubic-bezier(.3,1.3,.5,1); }
-      .fc-attach:hover .thumb { transform: rotate(0deg) translateY(-2px); }
-    }
-
-/* ─────────── SECTION SCAFFOLD ─────────── */
-    section { scroll-margin-top: 64px; }
-    .sec { padding: 72px 0; }
-    .sec-head { max-width: 760px; }
-    .sec-head .eyebrow { margin-bottom: 36px; }
-    .sec-title {
-      margin: 0;
-      font-family: var(--serif); font-weight: 600;
-      font-optical-sizing: auto; font-variation-settings: "opsz" 60;
-      font-size: clamp(34px, 4.0vw, 54px);
-      line-height: 1.07; letter-spacing: -0.024em;
-      text-wrap: balance;
-    }
-    .sec-title em { font-style: italic; font-weight: 400; color: var(--green); }
-    .sec-intro {
-      margin: 22px 0 0; font-size: 19px; line-height: 1.55; color: var(--ink);
-      color: var(--muted-2); max-width: 58ch; text-wrap: pretty;
-    }
-
-    /* ─────────── PAIN BEAT (pullquote) ─────────── */
-    .pain {
-      padding: 84px 0;
-      border-top: 1px dashed var(--hair-2);
-      border-bottom: 1px dashed var(--hair-2);
-      text-align: center;
-    }
-    .pain .marg {
-      font-family: var(--mono); font-size: 12px; letter-spacing: 0.2em;
-      text-transform: uppercase; color: var(--muted); margin-bottom: 26px;
-    }
-    .pain blockquote {
-      margin: 0 auto; max-width: 20ch;
-      font-family: var(--serif); font-style: italic; font-weight: 400;
-      font-size: clamp(30px, 4.4vw, 54px); line-height: 1.1; letter-spacing: -0.022em;
-      color: var(--ink); text-wrap: balance;
-    }
-    .pain blockquote .em-mark { color: var(--green); }
-    @media (prefers-reduced-motion: no-preference) {
-      /* the key phrase inks in green, left to right, when the quote scrolls in */
-      .pain blockquote .em-mark {
-        background-image: linear-gradient(to right, var(--green) 50%, var(--ink) 50%);
-        background-size: 205% 100%;
-        background-position: 100% 0;
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        color: var(--ink);
-        transition: background-position 1.1s cubic-bezier(.4,0,.2,1) .35s;
-      }
-      .pain.reveal.in blockquote .em-mark { background-position: 0% 0; }
-    }
-
-    /* ─────────── VILLAIN CONTRAST ─────────── */
-    .contrast-grid {
-      margin-top: 56px;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 0;
-      border: 1px solid var(--hair-2); border-radius: 20px; overflow: hidden;
-    }
-    .col {
-      padding: 44px 44px 48px;
-      display: flex; flex-direction: column;
-    }
-    .col-them {
-      background: var(--green-deep); color: rgba(244,245,244,0.92);
-    }
-    .col-them .col-tag { color: var(--on-dark); }
-    .col-them .col-h { color: var(--page); }
-    .col-us { background: var(--surface); }
-    .col-us .col-tag { color: var(--green); }
-    .col-tag {
-      font-family: var(--mono); font-size: 12px; letter-spacing: 0.18em;
-      text-transform: uppercase; font-weight: 700; margin-bottom: 18px;
-    }
-    .col-h {
-      font-family: var(--serif); font-weight: 600; font-size: 27px;
-      letter-spacing: -0.018em; line-height: 1.18; margin: 0 0 26px;
-    }
-    .them-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
-    .them-list li {
-      padding: 13px 0; font-size: 15px; line-height: 1.45;
-      border-bottom: 1px solid rgba(244,245,244,0.12);
-      display: flex; gap: 12px; align-items: flex-start;
-      color: rgba(244,245,244,0.82);
-    }
-    .them-list li:last-child { border-bottom: 0; }
-    .them-list .b {
-      font-family: var(--mono); font-size: 11px; color: rgba(244,245,244,0.55);
-      flex: none; margin-top: 3px; letter-spacing: 0.04em;
-    }
-    .them-foot {
-      margin-top: 26px; font-family: var(--mono); font-size: 12.5px;
-      letter-spacing: 0.1em; text-transform: uppercase; color: var(--on-dark);
-    }
-    .us-line {
-      font-family: var(--serif); font-style: italic; font-weight: 400;
-      font-size: clamp(30px, 3.4vw, 42px); line-height: 1.12; letter-spacing: -0.02em;
-      color: var(--ink); margin: 8px 0 0;
-    }
-    .us-mail {
-      margin: 22px 0 0; align-self: flex-start;
-      font-family: var(--mono); font-size: 14px; color: var(--green);
-      background: rgba(31,67,50,0.07); border: 1px solid rgba(31,67,50,0.2);
-      padding: 9px 15px; border-radius: 999px; font-weight: 700;
-    }
-    .us-foot {
-      margin-top: auto; padding-top: 30px;
-      font-size: 16px; line-height: 1.5; color: var(--muted-2);
-    }
-    .us-foot b { color: var(--ink); font-weight: 600; }
-
-    /* ─────────── HOW (3 steps) ─────────── */
-    .how { background: var(--surface); color: var(--ink); border: 1px solid var(--hair-2); border-radius: 28px; padding: 76px 56px; margin-top: 0; }
-    .how .eyebrow { margin-bottom: 28px; }
-    .steps {
-      margin-top: 56px;
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
-      border-top: 1px solid var(--hair-2);
-    }
-    .step {
-      padding: 36px 32px 8px; border-right: 1px solid var(--hair-2);
-    }
-    .step:last-child { border-right: 0; }
-    .step-label {
-      font-family: var(--mono); font-size: 13px; font-weight: 700;
-      letter-spacing: 0.16em; text-transform: uppercase; color: var(--green);
-      margin-bottom: 20px;
-    }
-    .step-word {
-      font-family: var(--serif); font-weight: 600; font-size: 34px;
-      letter-spacing: -0.02em; color: var(--ink); margin: 0 0 14px;
-    }
-    .step-body { margin: 0; font-size: 16px; line-height: 1.6; color: var(--muted-2); text-wrap: pretty; }
-    .travel {
-      margin-top: 44px; padding: 24px 28px;
-      background: rgba(31,67,50,0.05); border: 1px solid rgba(31,67,50,0.16);
-      border-radius: 16px;
-      display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
-    }
-    .travel .t-mono {
-      font-family: var(--mono); font-size: 14px; color: var(--green); font-weight: 700;
-      letter-spacing: 0.04em;
-      background: rgba(31,67,50,0.08); border: 1px solid rgba(31,67,50,0.24);
-      padding: 7px 13px; border-radius: 8px; white-space: nowrap;
-    }
-    .travel .t-text { font-size: 16px; line-height: 1.5; color: var(--muted-2); }
-    .travel .t-text b { color: var(--ink); font-weight: 600; }
-
-    /* ─────────── EXPORT / GIVE BACK ─────────── */
-    .export-grid {
-      margin-top: 56px;
-      display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: center;
-    }
-    .export-when { list-style: none; margin: 0 0 0; padding: 0; }
-    .export-when li {
-      display: flex; gap: 18px; align-items: baseline;
-      padding: 22px 0; border-bottom: 1px solid var(--hair-2);
-    }
-    .export-when li:first-child { border-top: 1px solid var(--hair-2); }
-    .export-when .ew-k {
-      font-family: var(--mono); font-size: 12px; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--green); font-weight: 700;
-      width: 130px; flex: none;
-    }
-    .export-when .ew-v { font-size: 18px; line-height: 1.4; color: var(--ink); }
-    .export-foot { margin-top: 30px; font-size: 17px; line-height: 1.55; color: var(--muted-2); max-width: 46ch; }
-    .export-foot b { color: var(--ink); font-weight: 600; }
-    /* the file artifact */
-    .file-card {
-      background: var(--surface); border: 1px solid var(--hair-2); border-radius: 18px;
-      box-shadow: 0 24px 60px -24px rgba(20,23,26,0.2);
-      overflow: hidden;
-    }
-    .file-top {
-      display: flex; align-items: center; gap: 10px;
-      padding: 16px 20px; border-bottom: 1px solid var(--hair);
-      font-family: var(--mono); font-size: 12px; color: var(--muted);
-    }
-    .file-top .dot { width: 10px; height: 10px; border-radius: 50%; }
-    .file-top .name { margin-left: 8px; color: var(--ink); font-weight: 700; letter-spacing: 0.02em; }
-    .file-rows { padding: 8px 0; }
-    .file-row {
-      display: grid; grid-template-columns: 1.4fr 0.6fr 0.6fr 0.6fr; gap: 6px;
-      padding: 11px 20px; font-family: var(--mono); font-size: 12px; color: var(--ink);
-      border-bottom: 1px solid rgba(20,23,26,0.05);
-    }
-    .file-row .vat { text-align: right; color: var(--muted); }
-    .file-row.km-row span:first-child { color: var(--green); }
-    .file-row.diat-row span:first-child { color: var(--green); }
-    .file-row.head { color: var(--muted); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 10.5px; }
-    .file-row:last-child { border-bottom: 0; }
-    .file-row .amt { text-align: right; font-weight: 700; }
-    .file-foot {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 14px 20px; background: rgba(31,67,50,0.05);
-      font-family: var(--mono); font-size: 12px; color: var(--green); font-weight: 700;
-      letter-spacing: 0.04em;
-    }
-
-    /* ─────────── TRUST STRIP ─────────── */
-    .trust-strip {
-      margin: 0; padding: 40px 48px;
-      display: flex; align-items: center; justify-content: center; gap: 0;
-      flex-wrap: wrap;
-      border-top: 1px solid var(--hair-2); border-bottom: 1px solid var(--hair-2);
-    }
-    .trust-item {
-      padding: 8px 32px; display: flex; flex-direction: column; gap: 4px;
-      text-align: center;
-      border-right: 1px solid var(--hair-2);
-    }
-    .trust-item:last-child { border-right: 0; }
-    .trust-item .ti-k { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
-    .trust-item .ti-v { font-size: 16px; font-weight: 600; color: var(--ink); letter-spacing: -0.01em; }
-
-    /* ─────────── FOUNDER ─────────── */
-    .founder {
-      display: grid; grid-template-columns: 160px 1fr; gap: 40px; align-items: center;
-      max-width: 880px;
-    }
-    .founder-photo {
-      width: 160px; height: 160px; flex: 0 0 160px; border-radius: 50%;
-      overflow: hidden; object-fit: cover;
-      display: block;
-    }
-    .founder-quote {
-      font-family: var(--serif); font-weight: 400; font-size: clamp(22px, 2.5vw, 30px);
-      line-height: 1.34; letter-spacing: -0.015em; color: var(--ink); margin: 0;
-      text-wrap: pretty;
-    }
-    .founder-quote em { font-style: italic; color: var(--green); }
-    .founder-name {
-      margin-top: 22px; font-family: var(--mono); font-size: 13px;
-      letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted-2);
-    }
-    .founder-name b { color: var(--ink); font-weight: 700; }
-
-    /* ─────────── PRICING ─────────── */
-    .price-wrap { display: flex; justify-content: center; margin-top: 56px; }
-    .price-card {
-      width: 100%; max-width: 540px; background: var(--surface);
-      border: 1px solid var(--hair-2); border-radius: 22px;
-      padding: 50px 48px 42px; text-align: center; position: relative;
-      box-shadow: 0 30px 70px -30px rgba(20,23,26,0.22);
-    }
-    .price-card .stamp {
-      position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
-      background: var(--green); color: var(--page);
-      font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em;
-      text-transform: uppercase; padding: 7px 16px; border-radius: 999px;
-      white-space: nowrap;
-    }
-    .price-period-top { font-family: var(--mono); font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
-    .price-amount { font-size: 76px; font-weight: 700; letter-spacing: -0.045em; line-height: 1; color: var(--green); margin: 12px 0 8px; }
-    .price-amount .yr { font-size: 22px; font-weight: 600; color: var(--muted); letter-spacing: 0; }
-    .price-monthly { font-family: var(--mono); font-size: 13px; letter-spacing: 0.04em; color: #2E7D4F; font-weight: 700; margin: 6px 0 18px; }
-    .price-note { font-size: 15px; line-height: 1.55; color: var(--muted-2); max-width: 38ch; margin: 0 auto; }
-    .price-note b { color: var(--green); font-weight: 700; }
-    .price-note .was { text-decoration: line-through; opacity: 0.6; }
-    .founder-price-hint { margin-top: 14px; font-family: var(--mono); font-size: 15px; letter-spacing: 0.04em; color: var(--ink); font-weight: 600; }
-    .founder-price-hint .was { text-decoration: line-through; opacity: 0.55; }
-    .price-includes {
-      list-style: none; margin: 32px auto 0; padding: 30px 0 0; max-width: 360px;
-      border-top: 1px solid var(--hair-2);
-      display: flex; flex-direction: column; gap: 15px; text-align: left;
-    }
-    .price-includes li { display: flex; gap: 13px; align-items: flex-start; font-size: 16px; line-height: 1.4; color: var(--ink); }
-    .price-includes li::before { content: "\2713"; color: var(--green); font-weight: 700; font-size: 18px; line-height: 1.3; flex: none; }
-    .price-card .btn { margin-top: 34px; width: 100%; justify-content: center; }
-    .price-sub { margin-top: 16px; font-size: 13px; color: var(--muted); }
-
-    /* ─────────── FAQ ─────────── */
-    .faq { margin-top: 48px; border-top: 1px solid var(--hair-2); }
-    .faq-item { border-bottom: 1px solid var(--hair-2); }
-    .faq-q {
-      width: 100%; background: transparent; border: 0; cursor: pointer;
-      padding: 26px 0; display: flex; align-items: center; justify-content: space-between; gap: 26px;
-      font-family: inherit; font-size: 20px; font-weight: 500; letter-spacing: -0.015em;
-      color: var(--ink); text-align: left; line-height: 1.35; transition: color .2s; text-wrap: pretty;
-    }
-    .faq-q:hover { color: var(--green); }
-    .faq-icon { flex: none; width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--hair-2); display: grid; place-items: center; position: relative; color: var(--ink); transition: transform .55s cubic-bezier(.32,.72,0,1), background .35s, color .35s, border-color .35s; }
-    .faq-icon::before, .faq-icon::after { content: ""; position: absolute; background: currentColor; border-radius: 1px; transition: transform .55s cubic-bezier(.32,.72,0,1); }
-    .faq-icon::before { width: 12px; height: 1.5px; }
-    .faq-icon::after { width: 1.5px; height: 12px; }
-    .faq-item.open .faq-icon { background: var(--green); border-color: var(--green); color: var(--page); transform: rotate(135deg); }
-    .faq-wrap { display: grid; grid-template-rows: 0fr; visibility: hidden;
-      transition: grid-template-rows .5s cubic-bezier(.32,.72,0,1), visibility 0s linear .5s; }
-    .faq-item.open .faq-wrap { grid-template-rows: 1fr; visibility: visible;
-      transition: grid-template-rows .5s cubic-bezier(.32,.72,0,1), visibility 0s; }
-    .faq-inner { overflow: hidden; min-height: 0; }
-    .faq-a { padding: 0 70px 30px 0; font-size: 16px; line-height: 1.65; color: var(--muted-2); max-width: 680px; text-wrap: pretty; }
-    .faq-a b { color: var(--ink); font-weight: 600; }
-    .faq-a code { font-family: var(--mono); font-size: 13.5px; background: rgba(31,67,50,0.08); color: var(--green); padding: 2px 7px; border-radius: 4px; }
-    .faq-a a { color: var(--green); text-decoration: none; border-bottom: 1px solid rgba(31,67,50,0.3); font-weight: 600; }
-
-    /* ─────────── FINAL CTA ─────────── */
-    .final-cta {
-      margin-top: 0; padding: 84px 56px; text-align: center;
-      background: var(--surface); color: var(--ink); border: 1px solid var(--hair-2); border-radius: 28px;
-    }
-    .final-cta h2 {
-      margin: 0; font-family: var(--serif); font-weight: 600;
-      font-size: clamp(32px, 4vw, 52px); line-height: 1.1; letter-spacing: -0.022em; color: var(--ink);
-    }
-    .final-cta h2 em { font-style: italic; font-weight: 400; color: var(--ink); }
-    .final-cta p { margin: 18px auto 34px; max-width: 44ch; font-size: 17px; line-height: 1.55; color: var(--muted-2); }
-    .final-cta .btn-light { background: var(--green); color: var(--page); }
-    .final-cta .btn-light:hover { background: var(--green-hover); }
-
-    /* ─────────── FOOTER ─────────── */
-    footer { padding: 56px 48px 64px; border-top: 1px solid var(--hair-2); margin-top: 92px; }
-    .footer-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 32px; flex-wrap: wrap; }
-    .footer-name { font-family: var(--serif); font-size: 19px; font-weight: 600; letter-spacing: -0.01em; color: var(--ink); }
-    .footer-meta { display: flex; flex-direction: column; gap: 6px; font-size: 13px; color: var(--muted); }
-    .footer-meta a { color: var(--green); text-decoration: none; }
-    .footer-links { display: flex; gap: 22px; align-items: center; flex-wrap: wrap; }
-    .footer-links a { font-size: 13px; color: var(--muted); text-decoration: none; transition: color .15s; }
-    .footer-links a:hover { color: var(--ink); }
-    .footer-bottom { margin-top: 40px; padding-top: 24px; border-top: 1px dashed var(--hair-2); display: flex; justify-content: space-between; gap: 32px; flex-wrap: wrap; align-items: flex-end; }
-    .footer-disclaimer { flex: 1 1 520px; max-width: 760px; font-size: 12.5px; line-height: 1.65; color: var(--muted); }
-    .footer-disclaimer b { color: var(--ink); font-weight: 600; }
-
-    /* ─────────── REVEAL MOTION ─────────── */
+    /* Content is visible unless scripting actually reaches the .js flag. A
+       <noscript> only covers "JS switched off" — not a blocked script and not an
+       earlier JS error, both of which used to blank the page below the hero. */
     .reveal { opacity: 1; transform: none; }
     html.js .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1); }
     html.js .reveal.in { opacity: 1; transform: none; }
-
-    @media (prefers-reduced-motion: no-preference) {
-      /* the three steps land in sequence — the stagger IS the 1-2-3 */
-      html.js .how.reveal .step { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s cubic-bezier(.2,.7,.2,1); }
-      .how.reveal.in .step { opacity: 1; transform: none; }
-      .how.reveal.in .step:nth-child(1) { transition-delay: .15s; }
-      .how.reveal.in .step:nth-child(2) { transition-delay: .3s; }
-      .how.reveal.in .step:nth-child(3) { transition-delay: .45s; }
-      /* the "others" burdens pile up one by one */
-      html.js .contrast-grid.reveal .them-list li { opacity: 0; transform: translateY(10px); transition: opacity .5s ease, transform .5s cubic-bezier(.2,.7,.2,1); }
-      .contrast-grid.reveal.in .them-list li { opacity: 1; transform: none; }
-      .contrast-grid.reveal.in .them-list li:nth-child(1) { transition-delay: .1s; }
-      .contrast-grid.reveal.in .them-list li:nth-child(2) { transition-delay: .2s; }
-      .contrast-grid.reveal.in .them-list li:nth-child(3) { transition-delay: .3s; }
-      .contrast-grid.reveal.in .them-list li:nth-child(4) { transition-delay: .4s; }
-      .contrast-grid.reveal.in .them-list li:nth-child(5) { transition-delay: .5s; }
-    }
-
-    /* back to top */
-    .back-to-top { position: fixed; bottom: 26px; right: 26px; width: 50px; height: 50px; border-radius: 50%; background: var(--green); color: var(--page); border: 0; cursor: pointer; display: grid; place-items: center; font-size: 20px; box-shadow: 0 6px 20px rgba(31,67,50,0.35); opacity: 0; visibility: hidden; transition: opacity .25s, visibility .25s, background .15s; z-index: 90; }
-    .back-to-top.visible { opacity: 1; visibility: visible; }
-    .back-to-top:hover { background: var(--green-hover); }
-
     @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      .reveal { opacity: 1 !important; transform: none !important; }
-      .hero .eyebrow, .hero h1, .hero .hero-sub, .hero .hero-cta, .hero .collage,
-      .hero h1 .fs, .plane, .cf-check, .cf-row { animation: none !important; }
-      .cf-check { transform: scale(1); }
-      .cf-row { opacity: 1; transform: none; }
+      .dot, .float { animation: none; }
+      html.js .reveal { opacity: 1 !important; transform: none !important; }
     }
 
-    /* ─────────── RESPONSIVE ─────────── */
-    @media (max-width: 940px) {
-      nav { padding: 14px 18px; }
-      .nav-links { gap: 8px; }
-      .logo span { display: none; }
-      .nav-links a:not(.nav-cta) { font-size: 13px; }
-      .nav-hide-mobile { display: none !important; }
-      .nav-cta { display: none !important; }
-      .lang-switch { display: none !important; }
-      .burger { display: flex; }
-      main { padding: 0 22px; }
-      .hero { grid-template-columns: 1fr; gap: 16px; padding: 40px 0 56px; min-height: 0; }
-      .collage { order: 2; min-height: 0; padding: 12px 0 40px; }
-      .addr-tag { display: none; }
-      h1 { font-size: clamp(36px, 9vw, 52px); }
-      .hero-sub { font-size: 19px; max-width: none; }
-      .sec { padding: 48px 0; }
-      .contrast-grid { grid-template-columns: 1fr; }
-      .col { padding: 34px 28px 38px; }
-      .how { padding: 52px 26px; border-radius: 22px; }
-      .steps { grid-template-columns: 1fr; }
-      .step { border-right: 0; border-bottom: 1px solid var(--hair-2); padding-bottom: 30px; }
-      .step:last-child { border-bottom: 0; }
-      .export-grid { grid-template-columns: 1fr; gap: 36px; }
-      .trust-strip { padding: 24px 16px; }
-      .trust-item { padding: 12px 18px; border-right: 0; flex: 1 0 44%; }
-      .founder { grid-template-columns: 1fr; gap: 26px; text-align: left; }
-      .price-card { padding: 40px 26px 34px; }
-      .price-amount { font-size: 60px; }
-      .final-cta { padding: 56px 26px; border-radius: 22px; }
-      footer { padding: 40px 22px 48px; }
+    /* ── nav ────────────────────────────────────────────────────────────── */
+    nav { padding: 22px var(--pad) 0; position: relative; z-index: 60; }
+    .nav-pill {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 20px; padding: 12px 14px 12px 22px; border-radius: 100px;
+      background: rgba(22,48,36,0.72); border: 1px solid var(--hair);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.07), 0 28px 60px -20px rgba(0,0,0,0.75);
+      -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
     }
-  
-    /* FÜR WEN */
-    .audience { margin: 52px 0 0; display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--hair-2); border: 1px solid var(--hair-2); }
-    .audience-card { background: var(--page); padding: 34px 30px; display: flex; flex-direction: column; gap: 12px; min-height: 200px; }
-    .audience-tag { font-family: var(--mono); font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--green); }
-    .audience-title { font-family: var(--serif); font-size: 26px; font-weight: 600; letter-spacing: -0.015em; color: var(--ink); line-height: 1.2; margin: 0; }
-    .audience-body { font-size: 16px; line-height: 1.55; color: var(--ink); margin: 0; }
-
-    /* WAS DU NICHT BRAUCHST */
-    .nope { margin: 52px 0 0; display: grid; grid-template-columns: repeat(2,1fr); gap: 12px 52px; }
-    .nope-item { display: flex; align-items: center; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--hair-2); }
-    .nope-item:nth-last-child(-n+2) { border-bottom: 0; }
-    .nope-cross { font-family: var(--serif); font-style: italic; font-size: 34px; font-weight: 500; color: var(--green); width: 30px; text-align: center; flex: none; line-height: 1; opacity: 0.75; }
-    .nope-text { font-size: 22px; letter-spacing: -0.015em; font-weight: 500; color: var(--ink); }
-    .nope-foot { margin: 36px 0 0; padding: 16px 20px; font-size: 16px; color: var(--ink); background: var(--page); border-left: 3px solid var(--green); max-width: 560px; }
-
-    /* SICHERHEIT */
-    .security-section { margin: 52px 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(2,1fr); gap: 0; border: 1px solid var(--hair-2); }
-    .security-section li { padding: 28px; display: grid; grid-template-columns: 48px 1fr; gap: 18px; align-items: center; border-right: 1px solid var(--hair-2); border-bottom: 1px solid var(--hair-2); background: rgba(255,255,255,0.4); }
-    .security-section li:nth-child(2n) { border-right: 0; }
-    .security-section li:nth-last-child(-n+2) { border-bottom: 0; }
-    .security-num { width: 44px; height: 44px; display: grid; place-items: center; background: var(--green); color: var(--page); border-radius: 8px; font-size: 18px; font-weight: 800; letter-spacing: -0.02em; line-height: 1; }
-    .security-text { font-size: 17px; line-height: 1.5; color: var(--ink); }
-    .security-text b { font-weight: 600; }
-
-    /* PULL-QUOTE */
-    .pullquote { margin: 80px -72px 0; padding: 80px 72px; position: relative; text-align: center; border-top: 1px dashed var(--hair-2); border-bottom: 1px dashed var(--hair-2); }
-    .pullquote blockquote { margin: 0 auto; max-width: 18ch; font-family: var(--serif); font-style: italic; font-weight: 400; font-size: clamp(44px,5.5vw,72px); line-height: 1.06; letter-spacing: -0.025em; color: var(--ink); text-wrap: balance; }
-    .pullquote blockquote em { font-style: italic; color: var(--green); font-weight: 500; }
-    .pullquote-label { font-family: var(--mono); font-size: 13px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 32px; display: block; }
-
-    /* INLINE CTA (inside Für wen) */
-    .inline-cta { margin-top: 40px; display: flex; align-items: center; gap: 32px; flex-wrap: wrap; padding: 28px 32px; background: var(--page); border: 1px solid var(--hair-2); }
-    .inline-cta-text { font-size: 18px; line-height: 1.45; color: var(--ink); }
-    .inline-cta-text b { color: var(--green); }
-
-    /* MOBILE for new sections */
-    @media (max-width: 700px) {
-      .audience { grid-template-columns: 1fr; }
-      .nope { grid-template-columns: 1fr; gap: 0; }
-      .nope-item:nth-last-child(-n+2) { border-bottom: 1px solid var(--hair-2); }
-      .nope-item:last-child { border-bottom: 0; }
-      .security-section { grid-template-columns: 1fr; }
-      .security-section li:nth-child(2n) { border-right: 0; }
-      .security-section li:nth-last-child(-n+2) { border-bottom: 1px solid var(--hair-2); }
-      .security-section li:last-child { border-bottom: 0; }
-      .pullquote { margin: 56px -24px 0; padding: 56px 24px; }
-      .inline-cta { flex-direction: column; align-items: flex-start; gap: 18px; }
+    .logo { display: flex; align-items: center; gap: 10px; color: var(--bone); }
+    .logo:hover { color: var(--bone); }
+    .logo span { font-family: var(--disp); font-weight: 800; font-size: 20px; letter-spacing: -0.035em; }
+    .nav-links { display: flex; align-items: center; gap: 30px; font-size: 15px; }
+    .nav-links > a { color: var(--muted); }
+    .nav-links > a:hover { color: var(--bone); }
+    .nav-cta { display: inline-flex; align-items: center; min-height: 42px; padding: 0 22px; border-radius: 100px; background: var(--lime); color: var(--ground) !important; font-weight: 600; }
+    .lang-switch { display: flex; gap: 4px; }
+    .lang-switch button {
+      background: transparent; border: 1px solid var(--hair-2); color: var(--muted);
+      font-family: var(--mono); font-size: 11px; font-weight: 600; letter-spacing: 0.1em;
+      padding: 6px 9px; cursor: pointer; border-radius: 6px;
     }
-  
-    /* LANGUAGE SWITCHER */
+    .lang-switch button.active { background: var(--lime); color: var(--ground); border-color: var(--lime); }
+    .burger { display: none; width: 46px; height: 46px; align-items: center; justify-content: center; background: transparent; border: 0; cursor: pointer; }
+    .burger span { display: block; width: 22px; height: 2px; background: var(--bone); border-radius: 2px; }
+    .burger span + span { margin-top: 5px; }
+    .mobile-menu { display: none; }
+
+    /* ── shared blocks ──────────────────────────────────────────────────── */
+    .addr-field {
+      display: flex; align-items: center; justify-content: space-between; gap: 18px;
+      padding: 13px 13px 13px 24px; border-radius: 100px;
+    }
+    .addr-field .addr { font-family: var(--mono); font-size: clamp(15px, 1.5vw, 21px); font-weight: 500; letter-spacing: -0.04em; color: var(--lime); white-space: nowrap; }
+    .copy-btn {
+      display: inline-flex; align-items: center; gap: 9px; min-height: 44px; padding: 0 20px;
+      border-radius: 100px; background: rgba(242,241,232,0.09); border: 1px solid var(--hair-2);
+      font-size: 14.5px; font-weight: 600; color: rgba(242,241,232,0.8) !important; flex: none;
+    }
+    .hero { padding: 78px var(--pad) 0; display: grid; grid-template-columns: minmax(0,640px) 1fr; gap: 60px; align-items: start; }
+    .ex-card { padding: 24px 26px; }
+    .ex-row { display: flex; gap: 16px; align-items: baseline; }
+    .ex-row .k { width: 58px; flex: none; font-size: 12.5px; color: var(--muted-2); }
+    .ex-row .v { font-family: var(--mono); font-size: 13.5px; }
+    .kv { display: flex; justify-content: space-between; gap: 16px; font-size: 14.5px; }
+    .kv .k { color: rgba(242,241,232,0.45); }
+    .kv .v { font-weight: 600; }
+    .them-row { padding: 17px 0; font-size: 17.5px; color: rgba(242,241,232,0.4); }
+    .csv { display: grid; grid-template-columns: minmax(0,1fr) 84px 92px 76px; gap: 12px; padding: 14px 24px; font-family: var(--mono); font-size: 13px; border-bottom: 1px solid rgba(242,241,232,0.06); }
+    .csv .r { text-align: right; }
+    .price-panel {
+      position: relative; border-radius: 30px; background: var(--lime); color: var(--ground);
+      padding: 66px 64px 70px;
+      box-shadow: 0 50px 110px -34px rgba(199,240,79,0.42), inset 0 1px 0 rgba(255,255,255,0.5);
+      display: grid; grid-template-columns: minmax(0,1fr) 420px; gap: 76px; align-items: start;
+    }
+    .price-panel .inc { padding: 14px 0; border-top: 1px solid rgba(13,33,25,0.2); font-size: 16px; }
+    .price-panel .inc:last-child { border-bottom: 1px solid rgba(13,33,25,0.2); }
+    .faq-q { width: 100%; display: flex; justify-content: space-between; align-items: baseline; gap: 26px; background: transparent; border: 0; padding: 0; cursor: pointer; text-align: left; color: inherit; font-family: var(--disp); font-weight: 700; font-size: 22px; letter-spacing: -0.035em; }
+    .faq-q .ic { color: var(--muted-2); font-size: 22px; flex: none; line-height: 1; }
+    .faq-item.open .faq-q .ic { color: var(--lime); }
+    .faq-item.open .faq-q .ic::before { content: "\2212"; }
+    .faq-q .ic::before { content: "\002B"; }
+    /* visibility:hidden keeps a closed answer out of the a11y tree AND out of the
+       tab order — grid-rows:0fr alone left both in place. */
+    .faq-wrap { display: grid; grid-template-rows: 0fr; visibility: hidden; transition: grid-template-rows .45s cubic-bezier(.32,.72,0,1), visibility 0s linear .45s; }
+    .faq-item.open .faq-wrap { grid-template-rows: 1fr; visibility: visible; transition: grid-template-rows .45s cubic-bezier(.32,.72,0,1), visibility 0s; }
+    .faq-inner { overflow: hidden; min-height: 0; }
+    .faq-a { margin: 15px 0 0; font-size: 16.5px; line-height: 1.65; color: var(--muted); max-width: 74ch; }
+    footer { padding: 48px var(--pad) 60px; border-top: 1px solid var(--hair); }
+
+    /* ── language switching ─────────────────────────────────────────────── */
     .lang-en, .lang-en-inline { display: none; }
-    body.lang-en-active .lang-de { display: none; }
-    body.lang-en-active .lang-de-inline { display: none; }
+    body.lang-en-active .lang-de, body.lang-en-active .lang-de-inline { display: none; }
     body.lang-en-active .lang-en { display: block; }
     body.lang-en-active .lang-en-inline { display: inline; }
-    .lang-switch { display: flex; gap: 4px; margin-left: 8px; }
-    .lang-switch button { background: transparent; border: 1px solid var(--hair-2); color: var(--muted); font-family: var(--mono); font-size: 12px; font-weight: 700; letter-spacing: 0.12em; padding: 4px 8px; cursor: pointer; border-radius: 3px; transition: all .15s; }
-    .lang-switch button.active { background: var(--green); color: var(--page); border-color: var(--green); }
+
+    /* ── responsive ─────────────────────────────────────────────────────── */
+    @media (max-width: 1180px) {
+      :root { --pad: 56px; }
+      .hero { grid-template-columns: 1fr; gap: 48px; }
+      .split, .split-r { grid-template-columns: 1fr !important; gap: 44px !important; }
+      .price-panel { grid-template-columns: 1fr; gap: 40px; padding: 48px 40px 52px; }
+      .trio { grid-template-columns: 1fr 1fr !important; }
+    }
+    @media (max-width: 780px) {
+      :root { --pad: 22px; }
+      body { font-size: 16px; }
+      .sec { padding-bottom: 72px; }
+      .hero { padding-top: 40px; }
+      .nav-links > a, .lang-switch { display: none; }
+      .nav-links .nav-cta { display: none; }
+      .burger { display: inline-flex; }
+      .mobile-menu { display: none; position: absolute; left: var(--pad); right: var(--pad); top: 88px; z-index: 70; padding: 18px; border-radius: 18px; background: var(--elev-1); border: 1px solid var(--hair); box-shadow: 0 34px 70px -22px rgba(0,0,0,0.85); }
+      .mobile-menu.open { display: flex; flex-direction: column; gap: 4px; }
+      .mobile-menu a { display: block; padding: 13px 12px; border-radius: 10px; color: var(--bone); font-size: 16px; }
+      .mobile-menu .mob-cta { background: var(--lime); color: var(--ground); text-align: center; font-weight: 600; margin-top: 6px; }
+      .mob-lang { display: flex; gap: 6px; margin-top: 10px; padding-top: 12px; border-top: 1px solid var(--hair); }
+      .mob-lang button { flex: 1; background: transparent; border: 1px solid var(--hair-2); color: var(--muted); font-family: var(--mono); font-size: 12px; padding: 10px; border-radius: 8px; cursor: pointer; }
+      .mob-lang button.active { background: var(--lime); color: var(--ground); border-color: var(--lime); }
+      .trio { grid-template-columns: 1fr !important; }
+      .quad { grid-template-columns: 1fr !important; }
+      .price-panel { padding: 36px 24px 42px; border-radius: 24px; }
+      .addr-field { flex-direction: column; align-items: stretch; gap: 12px; border-radius: 16px; padding: 16px 18px; }
+      .addr-field .addr { white-space: normal; word-break: break-all; }
+      .copy-btn { justify-content: center; }
+      .csv { grid-template-columns: minmax(0,1fr) 64px 74px; font-size: 11.5px; padding: 12px 16px; }
+      .csv .vat { display: none; }
+      .float { animation: none; }
+      .card, .card-hi { border-radius: 16px; }
+      .faq-q { font-size: 19px; }
+    }
   </style>
 </head>
 <body>
+  <div class="glow" aria-hidden="true"></div>
+  <div class="grid-field" aria-hidden="true"></div>
   <div class="wrap" id="top">
 
     <nav>
-      <a href="#top" class="logo"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#1F4332"/><path fill-rule="evenodd" fill="#F4F5F4" d="M21 17H34A5.5 5.5 0 0 1 39.5 22.5V25.5A5.5 5.5 0 0 1 34 31H36A7 7 0 0 1 43 38V40A7 7 0 0 1 36 47H21ZM27 22H32.5A2.25 2.25 0 0 1 32.5 26.5H27ZM27 31.5H32A5 5 0 0 1 37 36.5V37A5 5 0 0 1 32 42H27Z"/></svg><span>Bonvio<span class="wm-dot">.</span></span></a>
-      <div class="nav-links">
-        <a href="#top" class="lang-de-inline nav-hide-mobile">Home</a>
-        <a href="#top" class="lang-en-inline nav-hide-mobile">Home</a>
-        <a href="#funktioniert" class="lang-de-inline nav-hide-mobile">So funktioniert's</a>
-        <a href="#how" class="lang-en-inline nav-hide-mobile">How it works</a>
-        <a href="#wer" class="lang-de-inline nav-hide-mobile">Für wen</a>
-        <a href="#who" class="lang-en-inline nav-hide-mobile">Who it's for</a>
-        <a href="#sicherheit" class="lang-de-inline nav-hide-mobile">Datenschutz</a>
-        <a href="#security" class="lang-en-inline nav-hide-mobile">Privacy</a>
-        <a href="#preis" class="lang-de-inline nav-hide-mobile">Preis</a>
-        <a href="#price" class="lang-en-inline nav-hide-mobile">Price</a>
-        <a href="#fragen" class="lang-de-inline nav-hide-mobile">FAQ</a>
-        <a href="#faq" class="lang-en-inline nav-hide-mobile">FAQ</a>
-        <span class="lang-switch">
-          <button id="btn-de" class="active" onclick="setLang('de')">DE</button>
-          <button id="btn-en" onclick="setLang('en')">EN</button>
-        </span>
-        <a href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800" class="nav-cta lang-de-inline">Gratis testen</a>
-        <a href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800" class="nav-cta lang-en-inline">Try for free</a>
-        <button class="burger" id="burger-btn" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu" onclick="toggleBurger()">
-          <span></span><span></span><span></span>
-        </button>
+      <div class="nav-pill">
+        <a href="#top" class="logo"><svg width="25" height="25" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="15" fill="#C7F04F"/><path fill-rule="evenodd" fill="#0D2119" d="M21 17H34A5.5 5.5 0 0 1 39.5 22.5V25.5A5.5 5.5 0 0 1 34 31H36A7 7 0 0 1 43 38V40A7 7 0 0 1 36 47H21ZM27 22H32.5A2.25 2.25 0 0 1 32.5 26.5H27ZM27 31.5H32A5 5 0 0 1 37 36.5V37A5 5 0 0 1 32 42H27Z"/></svg><span>Bonvio</span></a>
+        <div class="nav-links">
+          <a href="#funktioniert" class="lang-de-inline">So funktioniert&#39;s</a><a href="#preis" class="lang-de-inline">Preis</a><a href="#sicherheit" class="lang-de-inline">Datenschutz</a><a href="#fragen" class="lang-de-inline">FAQ</a><a href="#how" class="lang-en-inline">How it works</a><a href="#price" class="lang-en-inline">Price</a><a href="#security" class="lang-en-inline">Privacy</a><a href="#faq" class="lang-en-inline">FAQ</a>
+          <span class="lang-switch">
+            <button id="btn-de" class="active" type="button" onclick="setLang('de')">DE</button>
+            <button id="btn-en" type="button" onclick="setLang('en')">EN</button>
+          </span>
+          <a href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800" class="nav-cta lang-de-inline">Gratis testen</a>
+          <a href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800" class="nav-cta lang-en-inline">Try for free</a>
+          <button class="burger" id="burger-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu" onclick="toggleBurger()">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+      <div class="mobile-menu" id="mobile-menu">
+        <a href="#funktioniert" class="lang-de-inline" onclick="closeBurger()">So funktioniert&#39;s</a>
+        <a href="#preis" class="lang-de-inline" onclick="closeBurger()">Preis</a>
+        <a href="#sicherheit" class="lang-de-inline" onclick="closeBurger()">Datenschutz</a>
+        <a href="#fragen" class="lang-de-inline" onclick="closeBurger()">FAQ</a>
+        <a href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800" class="mob-cta lang-de-inline" onclick="closeBurger()">Gratis testen</a>
+        <a href="#how" class="lang-en-inline" onclick="closeBurger()">How it works</a>
+        <a href="#price" class="lang-en-inline" onclick="closeBurger()">Price</a>
+        <a href="#security" class="lang-en-inline" onclick="closeBurger()">Privacy</a>
+        <a href="#faq" class="lang-en-inline" onclick="closeBurger()">FAQ</a>
+        <a href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800" class="mob-cta lang-en-inline" onclick="closeBurger()">Try for free</a>
+        <div class="mob-lang">
+          <button id="mob-btn-de" class="active" type="button" onclick="setLang('de');closeBurger()">DE</button>
+          <button id="mob-btn-en" type="button" onclick="setLang('en');closeBurger()">EN</button>
+        </div>
       </div>
     </nav>
-    <!-- Mobile menu -->
-    <div class="mobile-menu" id="mobile-menu">
-      <a href="#funktioniert" class="lang-de-inline" onclick="closeBurger()">So funktioniert's</a>
-      <a href="#how" class="lang-en-inline" onclick="closeBurger()">How it works</a>
-      <a href="#wer" class="lang-de-inline" onclick="closeBurger()">Für wen</a>
-      <a href="#who" class="lang-en-inline" onclick="closeBurger()">Who it's for</a>
-      <a href="#sicherheit" class="lang-de-inline" onclick="closeBurger()">Datenschutz</a>
-      <a href="#security" class="lang-en-inline" onclick="closeBurger()">Privacy</a>
-      <a href="#preis" class="lang-de-inline" onclick="closeBurger()">Preis</a>
-      <a href="#price" class="lang-en-inline" onclick="closeBurger()">Price</a>
-      <a href="#fragen" class="lang-de-inline" onclick="closeBurger()">FAQ</a>
-      <a href="#faq" class="lang-en-inline" onclick="closeBurger()">FAQ</a>
-      <a href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800" class="mob-cta lang-de-inline" onclick="closeBurger()">Gratis testen</a>
-      <a href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800" class="mob-cta lang-en-inline" onclick="closeBurger()">Try for free</a>
-      <div class="mob-lang">
-        <button id="mob-btn-de" class="active" onclick="setLang('de');closeBurger()">DE</button>
-        <button id="mob-btn-en" onclick="setLang('en');closeBurger()">EN</button>
-      </div>
-    </div>
 
     <main>
-
       <div class="lang-de" lang="de">
-
-      <!-- ═══════════ HERO ═══════════ -->
       <section class="hero">
-        <div class="hero-copy">
-          <div class="eyebrow">Belegverwaltung per E-Mail</div>
-          <h1>
-            Foto machen.<br>E&#8209;Mail senden. <em>Fertig<span class="fs">.</span></em>
-          </h1>
-          <p class="hero-sub">
-            Belege verschwinden &mdash; meistens dann, wenn man sie braucht. Bonvio hält sie fest.
-            <b>Kein Login. Keine App.</b>
-          </p>
-          <div class="hero-cta">
-            <a class="btn" href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800">
-              30 Tage gratis testen <span class="arr">&rarr;</span>
-            </a>
-            <div class="trust-line">
-              <span>Aus Wien gebaut</span><span class="sep"></span><span>Server in Deutschland</span><span class="sep"></span><span>DSGVO-konform</span><span class="sep"></span><span><b>10 Jahre</b> Aufbewahrung</span>
-            </div>
-            <div class="founder-price-hint">30 Tage gratis &mdash; danach Gründerpreis &euro;&thinsp;39,99&thinsp;/&thinsp;Jahr.<br>Ab Januar 2027: <span class="was">&euro;&thinsp;49,99</span>.</div>
+        <div class="reveal">
+          <span class="chip"><span class="dot"></span>Antwort in ~3 Sekunden</span>
+          <h1 style="margin-top:28px;">Deine Belege haben jetzt eine Adresse.</h1>
+          <p class="lede" style="margin-top:30px;max-width:44ch;font-size:20px;color:rgba(242,241,232,0.66);">Foto machen, hinschicken, vergessen. Bonvio liest H&auml;ndler, Datum, Betrag und USt aus dem Bild &mdash; und legt alles ab, bis dein Steuerberater es braucht.</p>
+          <div class="card-hi addr-field" style="margin-top:34px;">
+            <span class="addr">bonvio0123@bonvio.eu</span>
+            <button type="button" class="copy-btn" data-copy="bonvio0123@bonvio.eu" aria-label="Adresse kopieren"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2.5"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span class="copy-label">Kopieren</span></button>
+          </div>
+          <div style="display:flex;align-items:center;gap:22px;margin-top:30px;flex-wrap:wrap;">
+            <a class="btn" href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800">30 Tage gratis testen <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></a>
+            <span style="font-size:15px;color:rgba(242,241,232,0.45);">Kein Login &middot; keine App<br>Danach &euro;&thinsp;39,99 im Jahr</span>
           </div>
         </div>
-
-        <div class="collage" aria-label="Beleg wird per E-Mail gesendet und automatisch bestätigt">
-          <div class="demo-glow"></div>
-          <div class="fc-phone" data-phase="compose">
-            <div class="fc-cam"></div>
-            <div class="fc-screen">
-              <div class="scr scr-compose">
-                <div class="fc-mailbar">
-                  <span class="cancel">Abbrechen</span>
-                  <span class="title">Neue E-Mail</span>
-                  <span class="send">Senden</span>
-                </div>
-                <div class="fc-fields">
-                  <div class="field"><span class="k">An</span><span class="v">bonvio0123@bonvio.eu</span></div>
-                  <div class="field"><span class="k">Betreff</span><span class="v tag">#mittagessen</span></div>
-                </div>
-                <div class="fc-attach">
-                  <div class="thumb">
-                    <div class="t-h">GASTHAUS ZUR POST</div>
-                    <div class="t-r"></div>
-                    <div class="t-row"><span>Tagesteller</span><span>13,90</span></div>
-                    <div class="t-row"><span>Apfelsaft</span><span>3,80</span></div>
-                    <div class="t-row"><span>Espresso</span><span>2,60</span></div>
-                    <div class="t-tot"><span>SUMME</span><span>&euro; 42,80</span></div>
-                  </div>
-                  <div class="a-meta">
-                    <div class="a-name">beleg_12_05.jpg</div>
-                    <div class="a-size">1,4 MB</div>
-                  </div>
-                </div>
-                <div class="fc-hint">Tippe auf Senden &mdash; mehr nicht</div>
-              </div>
-              <svg class="plane" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/>
-              </svg>
-              <div class="scr scr-confirm" aria-hidden="true">
-                <div class="cf-brand"><span class="bm">B</span>Bonvio &middot; Bestätigung</div>
-                <div class="cf-check">&#10003;</div>
-                <div class="cf-head">Gespeichert.</div>
-                <div class="cf-sub">Erkannt und abgelegt &middot; Mai 2026</div>
-                <div class="cf-rows">
-                  <div class="cf-row"><span class="ck">Händler</span><span class="cv">Gasthaus zur Post</span></div>
-                  <div class="cf-row"><span class="ck">Datum</span><span class="cv">12.05.2026</span></div>
-                  <div class="cf-row"><span class="ck">MwSt</span><span class="cv">&euro; 7,13</span></div>
-                  <div class="cf-row total"><span class="ck">Betrag</span><span class="cv">&euro; 42,80</span></div>
-                </div>
-                <div class="cf-foot">Antwort kam automatisch zur&uuml;ck</div>
-              </div>
-            </div>
-            <div class="addr-tag">Automatische Kategorie:<br><b>#mittagessen</b> im Betreff</div>
-          </div>
-          <div class="demo-caption">
-            <div class="c-main">In Sekunden.</div>
-            <div class="c-sub">Ohne dass du etwas tust.</div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ═══════════ PAIN BEAT ═══════════ -->
-      <section class="pain reveal" aria-label="Bonvio · Das Problem">
-        <div class="marg">Das Problem</div>
-        <blockquote>
-          Im März suchst du, was du im Januar <span class="em-mark">weggeschmissen hast.</span>
-        </blockquote>
-      </section>
-
-      <!-- ═══════════ VILLAIN CONTRAST ═══════════ -->
-      <section class="sec" id="warum">
-        <div class="sec-head reveal">
-          <div class="eyebrow">Der Unterschied</div>
-          <h2 class="sec-title">Die anderen geben dir ein System. <em>Bonvio gibt dir eine Adresse.</em></h2>
-        </div>
-        <div class="contrast-grid reveal">
-          <div class="col col-them">
-            <div class="col-tag">Die anderen</div>
-            <h3 class="col-h">Ein Portal, in das du dich einloggst.</h3>
-            <ul class="them-list">
-              <li><span class="b">01</span><span>Ein Konto anlegen, ein Passwort merken, eine App installieren.</span></li>
-              <li><span class="b">02</span><span>Ein Dashboard, das du erst lernen musst, bevor es dir hilft.</span></li>
-              <li><span class="b">03</span><span>Deine Daten liegen in deren System &mdash; in deren Format.</span></li>
-              <li><span class="b">04</span><span>Einrichtung über deinen Steuerberater. Schulung. Updates.</span></li>
-              <li><span class="b">05</span><span>Monatliche Gebühr für Funktionen, die du nie öffnest.</span></li>
-            </ul>
-            <div class="them-foot">Mächtig. Und genau deshalb schwer.</div>
-          </div>
-          <div class="col col-us">
-            <div class="col-tag">Bonvio</div>
-            <p class="us-line">Eine E-Mail-Adresse.</p>
-            <div class="us-mail">bonvio0123@bonvio.eu</div>
-            <p class="us-foot">
-              Kein Portal, kein Dashboard, nichts zu lernen.
-              Du nutzt das Postfach, das du sowieso hast &mdash;
-              <b>deine Belege gehören dir, exportierbar in Sekunden.</b>
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- ═══════════ HOW IT WORKS ═══════════ -->
-      <section class="sec" id="funktioniert">
-        <div class="how reveal">
-          <div class="eyebrow">So funktioniert's</div>
-          <h2 class="sec-title">Drei Schritte. Mehr ist es nicht.</h2>
-          <p class="sec-intro">Du brauchst kein neues Programm. Bonvio läuft in dem E-Mail-Postfach, das du sowieso schon nutzt.</p>
-
-          <div class="steps">
-            <div class="step">
-              <div class="step-label">01 &middot; Foto</div>
-              <h3 class="step-word">Foto.</h3>
-              <p class="step-body">Beleg mit dem Handy abfotografieren &mdash; ganz normal, in jeder Sprache. PDFs? Einfach vom Bildschirm abfotografieren.</p>
-            </div>
-            <div class="step">
-              <div class="step-label">02 &middot; E-Mail</div>
-              <h3 class="step-word">E-Mail.</h3>
-              <p class="step-body">An deine Bonvio-Adresse schicken. Wir erkennen Datum, Händler, Betrag und MwSt automatisch und bestätigen zurück.</p>
-            </div>
-            <div class="step">
-              <div class="step-label">03 &middot; Erledigt</div>
-              <h3 class="step-word">Erledigt.</h3>
-              <p class="step-body">Sortiert und sicher abgelegt. Wann du willst, schreibst du EXPORT &mdash; und bekommst sofort einen sicheren Download-Link mit allen Belegen und einer fertigen CSV.</p>
+        <div class="float reveal" style="padding-top:34px;">
+          <div class="card ex-card" style="transform:rotate(-1.2deg);">
+            <div class="label" style="margin-bottom:18px;">DEINE E-MAIL</div>
+            <div style="display:flex;flex-direction:column;gap:12px;">
+              <div class="ex-row"><span class="k">An</span><span class="v" style="color:var(--lime);">bonvio0123@bonvio.eu</span></div>
+              <div class="rowline"></div>
+              <div class="ex-row"><span class="k">Betreff</span><span class="v">#mittagessen</span></div>
+              <div class="rowline"></div>
+              <div class="ex-row" style="align-items:center;padding-top:3px;"><span class="k">Anhang</span><span style="display:inline-flex;align-items:center;gap:11px;"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="rgba(242,241,232,0.42)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.6"/><path d="M21 15l-5-5L5 21"/></svg><span style="display:flex;flex-direction:column;gap:1px;"><span style="font-size:13.5px;font-weight:500;">beleg_12_05.jpg</span><span style="font-size:12px;color:rgba(242,241,232,0.36);">1,4 MB</span></span></span></div>
             </div>
           </div>
-
-          <div class="travel">
-            <span class="t-mono">#km 47</span>
-            <span class="t-mono">#diät 09:00-17:30</span>
-            <span class="t-text"><b>Kilometergeld und Diäten</b> erfasst du genauso &mdash; per E-Mail, ganz ohne Anhang. Bonvio rechnet den Betrag nach österreichischen Sätzen* automatisch aus.<br><small style="color:var(--muted);opacity:1;font-size:13px;line-height:1.5;display:block;margin-top:8px;">* Aktuell Österreich. Deutsche Sätze kommen bald.</small></span>
-          </div>
-        </div>
-      </section>
-
-      <!-- ═══════════ WHAT IT GIVES BACK ═══════════ -->
-      <section class="sec" id="export">
-        <div class="sec-head reveal">
-          <div class="eyebrow">Was du zurückbekommst</div>
-          <h2 class="sec-title">Monatsende, Steuer, oder jetzt &mdash; <em>alles als saubere Datei.</em></h2>
-          <p class="sec-intro">Schreib EXPORT an deine Adresse &mdash; wir bereiten alles vor und schicken dir einen sicheren Download-Link mit allen Belegen plus einer fertigen CSV. Für jeden Steuerberater, egal welche Software.</p>
-        </div>
-
-        <div class="export-grid">
-          <div class="reveal">
-            <ul class="export-when">
-              <li><span class="ew-k">EXPORT Q1 2026</span><span class="ew-v">Alles aus einem Zeitraum.</span></li>
-              <li><span class="ew-k">EXPORT brille</span><span class="ew-v">Alles aus einer Kategorie.</span></li>
-              <li><span class="ew-k">EXPORT [Händler]</span><span class="ew-v">Alles von einem Händler.</span></li>
-            </ul>
-            <p class="export-foot">Originalfotos in Standardformaten, die jede Behörde und jeder Steuerberater akzeptiert. <b>Du bist nie von Bonvio abhängig</b>, um deine Belege vorzeigen zu können.</p>
-          </div>
-
-          <div class="file-card reveal" aria-hidden="true">
-            <div class="file-top">
-              <span class="dot" style="background:#E5645A"></span>
-              <span class="dot" style="background:#E7B14C"></span>
-              <span class="dot" style="background:#5BAD6A"></span>
-              <span class="name">bonvio_export_Q1-2026.csv</span>
+          <div style="display:flex;align-items:center;gap:12px;padding:20px 0 20px 40px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7FE0AE" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v14M5 12l7 7 7-7"/></svg><span class="label">3 SEKUNDEN SP&Auml;TER</span></div>
+          <div class="card-hi ex-card" style="transform:rotate(0.9deg);margin-left:26px;border-color:rgba(127,224,174,0.3);box-shadow:inset 0 1px 0 rgba(255,255,255,0.09),0 40px 80px -24px rgba(0,0,0,0.85),0 0 60px -22px rgba(127,224,174,0.45);">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;"><span style="display:inline-flex;align-items:center;gap:10px;"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#7FE0AE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 7"/></svg><span class="disp" style="font-size:25px;color:#7FE0AE;">Gespeichert.</span></span><span class="label">BONVIO</span></div>
+            <div style="display:flex;flex-direction:column;gap:12px;">
+              <div class="kv"><span class="k">H&auml;ndler</span><span class="v">Gasthaus zur Post</span></div>
+              <div class="kv"><span class="k">Datum</span><span class="v">12.05.2026</span></div>
+              <div class="kv"><span class="k">USt 20&thinsp;%</span><span class="v">&euro;&thinsp;7,13</span></div>
+              <div class="rowline" style="margin:3px 0;"></div>
+              <div class="kv" style="align-items:baseline;"><span class="k">Betrag</span><span class="disp" style="font-size:30px;">&euro;&thinsp;42,80</span></div>
             </div>
-            <div class="file-rows">
-              <div class="file-row head"><span>Händler / Typ</span><span>Datum</span><span class="amt">Betrag</span><span class="vat">MwSt</span></div>
-              <div class="file-row"><span>Gasthaus zur Post</span><span>12.05.</span><span class="amt">42,80</span><span class="vat">7,13</span></div>
-              <div class="file-row"><span>OMV Tankstelle</span><span>28.04.</span><span class="amt">65,40</span><span class="vat">10,90</span></div>
-              <div class="file-row"><span>Pearle Optik</span><span>19.04.</span><span class="amt">189,00</span><span class="vat">31,50</span></div>
-              <div class="file-row km-row"><span>#km 47</span><span>11.04.</span><span class="amt">23,50</span><span class="vat">—</span></div>
-              <div class="file-row diat-row"><span>#diät 09:00–17:30</span><span>08.04.</span><span class="amt">22,50</span><span class="vat">—</span></div>
-              <div class="file-row"><span>BIPA Drogerie</span><span>03.04.</span><span class="amt">24,15</span><span class="vat">4,03</span></div>
-            </div>
-            <div class="file-foot"><span>6 Einträge &middot; 1 Download</span><span>SUMME &euro; 367,49</span></div>
           </div>
         </div>
       </section>
-
-      <!-- ═══════════ FÜR WEN ═══════════ -->
-      <section class="sec" id="wer">
-        <div class="sec-head reveal">
-          <div class="eyebrow">Für wen</div>
-          <h2 class="sec-title">Für Selbständige gebaut. Von allen geliebt, die genug vom Chaos haben.</h2>
-        </div>
-        <div class="audience reveal">
-          <div class="audience-card">
-            <span class="audience-tag">Selbständig</span>
-            <h3 class="audience-title">Freelancer &amp; Einzelunternehmer</h3>
-            <p class="audience-body">Kein Buchhaltungsprogramm. Keine neue App. Dein Steuerberater bekommt am Jahresende eine fertige CSV &mdash; du machst nichts weiter als ein Foto. Kilometergeld und Diäten erfasst du genauso per E-Mail: <code>#km 47</code>, <code>#diät 8</code> &mdash; Bonvio rechnet den Betrag nach österreichischen Sätzen automatisch aus.</p>
-          </div>
-          <div class="audience-card">
-            <span class="audience-tag">Verein</span>
-            <h3 class="audience-title">Vereine &amp; kleine Unternehmen</h3>
-            <p class="audience-body">Du denkst in Veranstaltungen und Projekten, nicht in Kassabons. Bonvio archiviert still im Hintergrund, während du dich ums Wesentliche kümmerst.</p>
-          </div>
-          <div class="audience-card">
-            <span class="audience-tag">Ordentlich</span>
-            <h3 class="audience-title">Alle, die Ordnung lieben</h3>
-            <p class="audience-body">Wenn der Schuhkarton nicht mehr reicht &mdash; und eine neue App zu viel ist. Einfach mailen, wir erledigen den Rest.</p>
-          </div>
-        </div>
-        <div class="inline-cta reveal">
-          <div class="inline-cta-text">Klingt nach dir? <b>30 Tage gratis testen.</b><br>Danach &euro;&thinsp;39,99&thinsp;/&thinsp;Jahr &mdash; alles inklusive.</div>
-          <a class="btn" href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800">Gratis testen &rarr;</a>
-        </div>
+      <section class="sec reveal" style="padding-top:130px;position:relative;">
+        <div class="spot" style="background:radial-gradient(700px 340px at 50% 50%, rgba(199,240,79,0.07), transparent 66%);"></div>
+        <p class="disp" style="font-size:clamp(30px,4.6vw,66px);font-weight:700;max-width:22ch;position:relative;">Im M&auml;rz suchst du, was du im Januar <span class="em">weggeschmissen hast.</span></p>
       </section>
-
-      <!-- ═══════════ KEIN ═══════════ -->
-      <section class="sec" id="kein">
-        <div class="sec-head reveal">
-          <div class="eyebrow">Was du nicht brauchst</div>
-          <h2 class="sec-title">Keine App. Kein Login. <em>Kein neuer Account.</em></h2>
-          <p class="sec-intro">Bonvio ist absichtlich klein gehalten. E-Mail reicht völlig &mdash; kein neues Tool, kein neuer Account, kein Mehraufwand.</p>
-        </div>
-        <div class="nope reveal">
-          <div class="nope-item"><span class="nope-cross">&times;</span><span class="nope-text">Keine App</span></div>
-          <div class="nope-item"><span class="nope-cross">&times;</span><span class="nope-text">Kein Login</span></div>
-          <div class="nope-item"><span class="nope-cross">&times;</span><span class="nope-text">Kein Passwort</span></div>
-          <div class="nope-item"><span class="nope-cross">&times;</span><span class="nope-text">Keine Software</span></div>
-          <div class="nope-item"><span class="nope-cross">&times;</span><span class="nope-text">Keine Schulung</span></div>
-          <div class="nope-item"><span class="nope-cross">&times;</span><span class="nope-text">Keine Updates</span></div>
-        </div>
-        <p class="nope-foot reveal"><b>Was du brauchst:</b> deine E-Mail. Mehr nicht. Bonvio kommt in dein Postfach geflattert &mdash; und tut dort genau das, was du erwartest.</p>
-      </section>
-
-      <section class="trust-strip reveal">
-        <div class="trust-item"><span class="ti-k">Speicherort</span><span class="ti-v">Server in Deutschland</span></div>
-        <div class="trust-item"><span class="ti-k">Datenschutz</span><span class="ti-v">DSGVO-konform</span></div>
-        <div class="trust-item"><span class="ti-k">Archiv</span><span class="ti-v">10 Jahre</span></div>
-        <div class="trust-item"><span class="ti-k">Werbung</span><span class="ti-v">Kein Tracking</span></div>
-      </section>
-
-      <!-- ═══════════ FOUNDER ═══════════ -->
-      <section class="sec" id="gruender">
-        <div class="founder reveal">
-          <img class="founder-photo" src="founder.jpg" alt="Niko Andersson, Gründer von Bonvio" width="160" height="160">
+      <section class="sec reveal" id="warum">
+        <div class="split" style="display:grid;grid-template-columns:minmax(0,1fr) 520px;gap:90px;align-items:start;">
           <div>
-            <p class="founder-quote">
-              &bdquo;Ich bin Niko. Ich habe Bonvio für Leute gebaut, die lieber <em>ihre Arbeit machen</em> als Buchhaltungssoftware lernen.&ldquo;
-            </p>
-            <div class="founder-name">Niko A. &middot; <b>Gründer</b> &middot; Wien, 2026</div>
+            <h2>Die anderen geben dir ein System. <span class="em">Bonvio gibt dir eine Adresse.</span></h2>
+            <div style="margin-top:40px;display:flex;flex-direction:column;">
+              <div class="them-row rowline" style="margin:0">Ein Konto anlegen, ein Passwort merken, eine App installieren.</div>
+              <div class="them-row rowline" style="margin:0">Ein Dashboard, das du erst lernen musst, bevor es dir hilft.</div>
+              <div class="them-row rowline" style="margin:0">Deine Daten liegen in deren System &mdash; in deren Format.</div>
+              <div class="them-row rowline" style="margin:0">Einrichtung &uuml;ber deinen Steuerberater. Schulung. Updates.</div>
+              <div class="them-row rowline" style="margin:0;border-bottom:1px solid var(--hair)">Monatliche Geb&uuml;hr f&uuml;r Funktionen, die du nie &ouml;ffnest.</div>
+            </div>
+            <div style="margin-top:18px;font-size:15px;color:rgba(242,241,232,0.32);">M&auml;chtig. Und genau deshalb schwer.</div>
+          </div>
+          <div class="card" style="padding:38px 36px 40px;margin-top:14px;">
+            <div class="label" style="color:var(--lime);margin-bottom:22px;">BONVIO</div>
+            <div class="disp" style="font-size:40px;margin-bottom:24px;">Eine E-Mail-Adresse.</div>
+            <div class="mo" style="font-size:17px;color:var(--lime);letter-spacing:-0.04em;padding:16px 18px;border-radius:12px;background:rgba(199,240,79,0.09);border:1px solid rgba(199,240,79,0.22);word-break:break-all;">bonvio0123@bonvio.eu</div>
+            <p style="margin:24px 0 0;font-size:17px;line-height:1.6;color:var(--muted);">Kein Portal, kein Dashboard, nichts zu lernen. Du nutzt das Postfach, das du sowieso hast &mdash; <b>deine Belege geh&ouml;ren dir, exportierbar in Sekunden.</b></p>
           </div>
         </div>
       </section>
-
-      <!-- ═══════════ PRICING ═══════════ -->
-      <section class="sec" id="preis">
-        <div class="sec-head reveal" style="text-align:center; max-width:none;">
-          <div class="eyebrow" style="justify-content:center;">Preis</div>
-          <h2 class="sec-title">Ein Preis. <em>Keine Überraschungen.</em></h2>
-        </div>
-        <div class="price-wrap reveal">
-          <div class="price-card">
-            <div class="stamp">Gründerpreis</div>
-            <div class="price-period-top">Jährlich &middot; Vorausbezahlung</div>
-            <div class="price-amount">&euro;&thinsp;39,99<span class="yr"> / Jahr</span></div>
-            <div class="price-monthly">= &euro;&thinsp;3,33&thinsp;/&thinsp;Monat &mdash; Preis eines Kaffees</div>
-            <p class="price-note">
-              <b>Gründerpreis &mdash; lebenslang gehalten.</b><br>
-              Ab Januar 2027: <span class="was">&euro;&thinsp;49,99</span>. Wer jetzt startet, zahlt für immer &euro;&thinsp;39,99.
-            </p>
-            <ul class="price-includes">
-              <li>Persönliche Bonvio-Adresse</li>
-              <li>Alle deine Belege, automatisch erkannt</li>
-              <li>Hashtag-Kategorisierung &amp; Händler-Suche</li>
-              <li>Kilometergeld &amp; Diäten per E-Mail</li>
-              <li>Export für den Steuerberater &mdash; jederzeit</li>
-              <li>10 Jahre Aufbewahrung &mdash; l&auml;nger, als das Gesetz verlangt</li>
-              <li>Fair Use: bis zu 3.000 Belege pro Jahr</li>
-            </ul>
-            <a class="btn" href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800">30 Tage gratis testen <span class="arr">&rarr;</span></a>
-            <div class="price-sub">Kein Setup &middot; Verl&auml;ngerung jederzeit abbestellbar</div>
+      <section class="sec reveal" id="funktioniert">
+        <div class="card" style="padding:66px 64px 68px;border-radius:28px;">
+          <h2 style="max-width:18ch;">Drei Schritte. Mehr ist es nicht.</h2>
+          <p class="lede">Du brauchst kein neues Programm. Bonvio l&auml;uft in dem E-Mail-Postfach, das du sowieso schon nutzt.</p>
+          <div class="trio" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:52px;">
+            <div class="card-hi" style="padding:30px 28px 32px;display:flex;flex-direction:column;gap:13px;"><span class="label" style="color:var(--lime);">SCHRITT 1</span><h3 style="font-size:34px;">Foto.</h3><p style="margin:0;font-size:16px;line-height:1.6;color:var(--muted);">Beleg mit dem Handy abfotografieren &mdash; ganz normal, in jeder Sprache. PDFs? Einfach vom Bildschirm abfotografieren.</p></div>
+            <div class="card-hi" style="padding:30px 28px 32px;display:flex;flex-direction:column;gap:13px;"><span class="label" style="color:var(--lime);">SCHRITT 2</span><h3 style="font-size:34px;">E-Mail.</h3><p style="margin:0;font-size:16px;line-height:1.6;color:var(--muted);">An deine Bonvio-Adresse schicken. Wir erkennen Datum, H&auml;ndler, Betrag und USt automatisch und best&auml;tigen zur&uuml;ck.</p></div>
+            <div class="card-hi" style="padding:30px 28px 32px;display:flex;flex-direction:column;gap:13px;"><span class="label" style="color:var(--lime);">SCHRITT 3</span><h3 style="font-size:34px;">Erledigt.</h3><p style="margin:0;font-size:16px;line-height:1.6;color:var(--muted);">Sortiert und sicher abgelegt. Wann du willst, schreibst du EXPORT &mdash; und bekommst einen sicheren Download-Link mit allem drin.</p></div>
+          </div>
+          <div class="split" style="margin-top:44px;padding-top:38px;border-top:1px solid var(--hair);display:grid;grid-template-columns:340px minmax(0,1fr);gap:44px;align-items:center;">
+            <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start;"><span class="key">#km 47</span><span class="key">#di&auml;t 09:00&ndash;17:30</span></div>
+            <p style="margin:0;font-size:17.5px;line-height:1.6;color:rgba(242,241,232,0.64);"><b>Kilometergeld und Di&auml;ten</b> erfasst du genauso &mdash; per E-Mail, ganz ohne Anhang. Bonvio rechnet den Betrag nach &ouml;sterreichischen S&auml;tzen automatisch aus.<br><span style="font-size:14px;color:rgba(242,241,232,0.38);">Aktuell &Ouml;sterreich. Deutsche S&auml;tze kommen bald.</span></p>
           </div>
         </div>
       </section>
-
-
-      <!-- ═══════════ PULL-QUOTE ═══════════ -->
-      <section class="pullquote reveal">
-        <span class="pullquote-label">Bonvio &middot; Das Versprechen</span>
-        <blockquote>Knipsen. Vergessen.<br><em>Bonvio merkt sich alles.</em></blockquote>
-      </section>
-
-      <!-- ═══════════ SICHERHEIT ═══════════ -->
-      <section class="sec" id="sicherheit">
-        <div class="sec-head reveal">
-          <div class="eyebrow">Sicherheit &amp; Datenschutz</div>
-          <h2 class="sec-title">Deine Belege gehören dir. <em>Punkt.</em></h2>
-        </div>
-        <ul class="security-section reveal">
-          <li><span class="security-num">01</span><span class="security-text"><b>Verschlüsselt gespeichert</b> in der EU &mdash; Server in Frankfurt, Deutschland.</span></li>
-          <li><span class="security-num">02</span><span class="security-text"><b>Keine Werbung. Kein Tracking. Keine Weitergabe</b> deiner Daten an Dritte &mdash; niemals.</span></li>
-          <li><span class="security-num">03</span><span class="security-text"><b>10 Jahre Aufbewahrung</b> &mdash; l&auml;nger, als &Ouml;sterreich und Deutschland verlangen.</span></li>
-          <li><span class="security-num">04</span><span class="security-text"><b>DSGVO-konform.</b> Datenexport oder Löschung deines Kontos jederzeit auf Anfrage, soweit keine gesetzlichen Aufbewahrungspflichten entgegenstehen.</span></li>
-        </ul>
-      </section>
-
-      <!-- ═══════════ FAQ ═══════════ -->
-      <section class="sec" id="fragen">
-        <div class="sec-head reveal">
-          <div class="eyebrow">Häufige Fragen</div>
-          <h2 class="sec-title">Alles, was du wissen willst.</h2>
-          <p class="sec-intro">Eine Frage offen? Schreib uns an <a href="mailto:hello@bonvio.eu" style="color:var(--green);text-decoration:none;border-bottom:1px solid rgba(31,67,50,0.3);">hello@bonvio.eu</a> &mdash; wir melden uns.</p>
-        </div>
-
-        <div class="faq reveal">
-          <div class="faq-item">
-            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-panel-1"><span>Brauche ich eine spezielle App oder Software?</span><span class="faq-icon" aria-hidden="true"></span></button>
-            <div class="faq-wrap" id="faq-panel-1" role="region"><div class="faq-inner"><div class="faq-a">Nein. Du nutzt deine ganz normale E-Mail-App &mdash; egal ob Apple Mail, Gmail, Outlook oder ein anderes Programm. Bonvio ist einfach eine Adresse, an die du Fotos sendest. <b>Kein Download, kein Login, kein Update.</b></div></div></div>
+      <section class="sec reveal" id="export">
+        <div class="split" style="display:grid;grid-template-columns:480px minmax(0,1fr);gap:80px;align-items:center;">
+          <div>
+            <h2 style="font-size:clamp(28px,3.5vw,50px);">Monatsende, Steuer, oder jetzt &mdash; <span class="em">alles als saubere Datei.</span></h2>
+            <p class="lede" style="font-size:18px;">Schreib EXPORT an deine Adresse &mdash; wir schicken dir einen sicheren Download-Link mit allen Belegen plus einer fertigen CSV.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:30px;"><span class="key">EXPORT Q1 2026</span><span class="key">EXPORT brille</span><span class="key">EXPORT BIPA</span></div>
+            <p style="margin:26px 0 0;font-size:16px;line-height:1.6;color:rgba(242,241,232,0.5);">Originalfotos in Standardformaten, die jede Beh&ouml;rde akzeptiert. <b>Du bist nie von Bonvio abh&auml;ngig.</b></p>
           </div>
-          <div class="faq-item">
-            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-panel-2"><span>Wie sende ich einen Beleg?</span><span class="faq-icon" aria-hidden="true"></span></button>
-            <div class="faq-wrap" id="faq-panel-2" role="region"><div class="faq-inner"><div class="faq-a">Ganz einfach: <b>normales Foto mit deinem Handy</b>, an deine Bonvio-Adresse mailen &mdash; fertig. Wir lesen Datum, Händler, Betrag und MwSt automatisch aus und schicken dir eine Bestätigung zurück. Optional: Hashtag im Betreff für alles, was dir wichtig ist &mdash; Kategorie (<code>#brille</code>), Projekt (<code>#renovierung</code>) oder Zahlungsart (<code>#bar</code>, <code>#firmenkarte</code>).</div></div></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-panel-3"><span>Wie finde ich später einen bestimmten Beleg wieder?</span><span class="faq-icon" aria-hidden="true"></span></button>
-            <div class="faq-wrap" id="faq-panel-3" role="region"><div class="faq-inner"><div class="faq-a">Schreib einfach <code>EXPORT brille</code> oder <code>EXPORT Q1 2026</code> an deine Bonvio-Adresse. Du bekommst einen sicheren Download-Link mit allen passenden Belegen und einer sauberen CSV-Übersicht &mdash; sortiert nach Zeitraum, Kategorie oder Händler.</div></div></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-panel-4"><span>Kann ich auch Kilometergeld und Diäten erfassen?</span><span class="faq-icon" aria-hidden="true"></span></button>
-            <div class="faq-wrap" id="faq-panel-4" role="region"><div class="faq-inner"><div class="faq-a">Ja &mdash; beides funktioniert direkt per E-Mail, ohne Anhang. <b>Kilometergeld:</b> Betreff <code>#km 47</code> &mdash; Bonvio berechnet 47&thinsp;&times;&thinsp;&euro;&thinsp;0,50&thinsp;=&thinsp;&euro;&thinsp;23,50 (amtliches Kilometergeld) und speichert den Eintrag automatisch. <b>Tagespauschale:</b> Betreff <code>#diät 8</code> oder <code>#diät 09:00-17:30</code> &mdash; Bonvio ermittelt die Pauschale nach &sect;26 Z&thinsp;4 EStG und bestätigt per E-Mail. Wird ein Mittag- oder Abendessen gestellt, mindert das die Pauschale um &euro;&thinsp;15 pro Mahlzeit (z.B. <code>#diät 8 -mittag</code>; <code>-voll</code> = &euro;&thinsp;0). Vergessen oder geändert? Antworte einfach auf die Bestätigungs-E-Mail mit <code>-mittag</code> oder <code>-voll</code> (oder <code>kein Essen</code> zum Zurücksetzen) &mdash; Bonvio rechnet die Pauschale neu, ganz ohne neuen Eintrag. Beide Einträge erscheinen automatisch im EXPORT für deinen Steuerberater. <b>Deutsches Tagegeld</b> (§&thinsp;4 Abs.&thinsp;5 EStG) ist in Vorbereitung.</div></div></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-panel-5"><span>Was ist mit Bewirtung oder nur teilweise absetzbaren Belegen?</span><span class="faq-icon" aria-hidden="true"></span></button>
-            <div class="faq-wrap" id="faq-panel-5" role="region"><div class="faq-inner"><div class="faq-a">Kein Problem &mdash; nicht jeder Beleg ist zu 100&thinsp;% absetzbar. Sende das Foto und ergänze im Betreff oder Text z.B. <code>Abzug: 50%</code>, <code>Mit: Max Mustermann</code>, <code>Anlass: Projektbesprechung</code>. Bonvio rechnet den absetzbaren Netto-Betrag, lässt die Vorsteuer unberührt und schreibt Teilnehmer und Anlass in den Export &mdash; genau die Angaben, die das Finanzamt für Geschäftsessen (&sect;20 EStG) verlangt.</div></div></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-panel-6"><span>Was ist, wenn ein Foto unscharf ist oder etwas falsch erkannt wird?</span><span class="faq-icon" aria-hidden="true"></span></button>
-            <div class="faq-wrap" id="faq-panel-6" role="region"><div class="faq-inner"><div class="faq-a">Jede Bestätigung zeigt dir, was Bonvio gelesen hat &mdash; Händler, Betrag, Datum, MwSt. Stimmt etwas nicht, tippst du auf <b>Korrigieren</b>: Du bekommst ein vorausgefülltes Formular, überschreibst nur den falschen Wert nach dem Doppelpunkt und schickst die E-Mail zurück. Oder du antwortest einfach frei &mdash; <code>Betrag 12,90</code>, <code>Datum 01.06.2026</code>, <code>13% 3,80</code>, mehrere Zeilen sind kein Problem. War das Foto zu unscharf, sagt Bonvio das von sich aus in der Bestätigung und fragt nach, statt einfach zu raten. Das Originalfoto bleibt dabei unverändert gespeichert &mdash; korrigiert werden nur die ausgelesenen Werte.</div></div></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-panel-7"><span>Wie sicher sind meine Daten?</span><span class="faq-icon" aria-hidden="true"></span></button>
-            <div class="faq-wrap" id="faq-panel-7" role="region"><div class="faq-inner"><div class="faq-a">Alle Belege werden <b>verschlüsselt auf Servern in Deutschland</b> gespeichert. Keine Werbung, kein Tracking, keine Weitergabe an Dritte. DSGVO-konform und 10 Jahre archiviert &mdash; l&auml;nger, als &Ouml;sterreich und Deutschland verlangen.</div></div></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-panel-8"><span>Wie kann ich sicher sein, dass meine Belege wirklich 10&nbsp;Jahre erreichbar sind?</span><span class="faq-icon" aria-hidden="true"></span></button>
-            <div class="faq-wrap" id="faq-panel-8" role="region"><div class="faq-inner"><div class="faq-a">Du bist jederzeit Herr über deine Daten. Schick <code>EXPORT</code> an deine Bonvio-Adresse und du bekommst einen frischen, sicheren Download-Link mit allen Belegen &mdash; Originalfotos in Standardformaten, die jede Behörde akzeptiert. Das kannst du so oft machen, wie du willst. Und sollten wir den Dienst je einstellen, verpflichten wir uns in unseren <a href="/agb.html">AGB</a> zu <b>mindestens 90&nbsp;Tagen Vorlaufzeit</b> &mdash; mit garantiertem Export-Fenster und anteiliger Rückerstattung.</div></div></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-panel-9"><span>Wie funktioniert die Kündigung?</span><span class="faq-icon" aria-hidden="true"></span></button>
-            <div class="faq-wrap" id="faq-panel-9" role="region"><div class="faq-inner"><div class="faq-a">Bonvio ist eine Jahresmitgliedschaft &mdash; &euro;&nbsp;39,99 für 12&nbsp;Monate. Das ist der <b>Gründerpreis</b>: Ab Januar 2027 kostet Bonvio &euro;&nbsp;49,99, aber wer jetzt startet, zahlt für immer &euro;&nbsp;39,99. Willst du später nicht weitermachen, kündigst du die automatische Verlängerung in Sekunden: <a href="https://billing.stripe.com/p/login/14AfZagnnfBHdLp3rHcs800" target="_blank" rel="noopener">E-Mail-Adresse eingeben</a> &mdash; du bekommst sofort einen Link und kündigst mit einem Klick. Deine Belege kannst du jederzeit selbst exportieren &mdash; einfach EXPORT an deine Bonvio-Adresse schicken.</div></div></div>
+          <div class="card-hi float" style="overflow:hidden;transform:rotate(-0.8deg);" aria-hidden="true">
+            <div style="display:flex;align-items:center;gap:10px;padding:16px 24px;border-bottom:1px solid var(--hair);"><span style="width:9px;height:9px;border-radius:50%;background:rgba(242,241,232,0.2);"></span><span style="width:9px;height:9px;border-radius:50%;background:rgba(242,241,232,0.2);"></span><span style="width:9px;height:9px;border-radius:50%;background:rgba(242,241,232,0.2);"></span><span class="mo" style="font-size:12px;color:rgba(242,241,232,0.5);margin-left:10px;">bonvio_export_Q1-2026.csv</span></div>
+            <div class="csv" style="font-size:9.5px;letter-spacing:0.12em;color:rgba(242,241,232,0.35);"><span>H&Auml;NDLER / TYP</span><span>DATUM</span><span class="r">BETRAG</span><span class="r vat">USt</span></div>
+            <div class="csv" style="color:rgba(242,241,232,0.85);"><span>Gasthaus zur Post</span><span style="opacity:0.55;">12.05.</span><span class="r">42,80</span><span class="r vat" style="opacity:0.55;">7,13</span></div>
+            <div class="csv" style="color:rgba(242,241,232,0.85);"><span>OMV Tankstelle</span><span style="opacity:0.55;">28.04.</span><span class="r">65,40</span><span class="r vat" style="opacity:0.55;">10,90</span></div>
+            <div class="csv" style="color:#7FE0AE;"><span>#km 47</span><span style="opacity:0.55;">11.04.</span><span class="r">23,50</span><span class="r vat" style="opacity:0.55;">&mdash;</span></div>
+            <div class="csv" style="color:#7FE0AE;"><span>#di&auml;t 09:00&ndash;17:30</span><span style="opacity:0.55;">08.04.</span><span class="r">22,50</span><span class="r vat" style="opacity:0.55;">&mdash;</span></div>
+            <div class="csv" style="font-weight:600;background:rgba(199,240,79,0.08);border-bottom:0;"><span>4 Eintr&auml;ge &middot; 1 Download</span><span></span><span class="r">154,20</span><span class="r vat">18,03</span></div>
           </div>
         </div>
       </section>
-
-      <!-- ═══════════ FINAL CTA ═══════════ -->
-      <section class="sec" style="padding-bottom: 0;">
-        <div class="final-cta reveal">
-          <h2>Andere Software will, dass du Buchhalter wirst.<br>Bonvio will, dass du <em>deine Arbeit machst<span class="fs">.</span></em></h2>
-          <p>30 Tage gratis testen. Danach Gründerpreis &euro;&thinsp;39,99&thinsp;/&thinsp;Jahr &mdash; lebenslang gehalten, ab Januar &euro;&thinsp;49,99. Keine App, kein Login.</p>
-          <a class="btn btn-light" href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800">Gratis testen <span class="arr">&rarr;</span></a>
+      <section class="sec reveal" id="wer">
+        <h2 style="max-width:24ch;">F&uuml;r Selbst&auml;ndige gebaut. Von allen geliebt, die genug vom Chaos haben.</h2>
+        <div class="trio" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:48px;">
+          <div class="card" style="padding:32px 30px 34px;display:flex;flex-direction:column;gap:13px;"><h3 style="font-size:25px;">Freelancer &amp; Einzelunternehmer</h3><p style="margin:0;font-size:16px;line-height:1.6;color:var(--muted);">Kein Buchhaltungsprogramm. Keine neue App. Dein Steuerberater bekommt am Jahresende eine fertige CSV &mdash; du machst nichts weiter als ein Foto.</p></div>
+          <div class="card" style="padding:32px 30px 34px;display:flex;flex-direction:column;gap:13px;"><h3 style="font-size:25px;">Vereine &amp; kleine Unternehmen</h3><p style="margin:0;font-size:16px;line-height:1.6;color:var(--muted);">Du denkst in Veranstaltungen und Projekten, nicht in Kassabons. Bonvio archiviert still im Hintergrund, w&auml;hrend du dich ums Wesentliche k&uuml;mmerst.</p></div>
+          <div class="card" style="padding:32px 30px 34px;display:flex;flex-direction:column;gap:13px;"><h3 style="font-size:25px;">Alle, die Ordnung lieben</h3><p style="margin:0;font-size:16px;line-height:1.6;color:var(--muted);">Wenn der Schuhkarton nicht mehr reicht &mdash; und eine neue App zu viel ist. Einfach mailen, wir erledigen den Rest.</p></div>
         </div>
       </section>
-
-      </div><!-- /lang-de -->
-
-
-      <!-- ============================================================
-           ENGLISH VERSION
-           ============================================================ -->
+      <section class="sec reveal" id="kein">
+        <div class="card" style="padding:40px 44px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;border-radius:22px;">
+          <span class="disp" style="font-size:clamp(22px,2.4vw,30px);">Was du nicht brauchst:</span>
+          <span class="mo" style="font-size:14.5px;color:rgba(242,241,232,0.36);text-decoration:line-through;text-decoration-color:rgba(199,240,79,0.75);text-decoration-thickness:2px;">App &nbsp; Login &nbsp; Passwort &nbsp; Software &nbsp; Schulung &nbsp; Updates</span>
+          <span style="font-size:16.5px;color:rgba(242,241,232,0.62);">Was du brauchst: <b>deine E-Mail.</b></span>
+        </div>
+        <div class="mo" style="display:flex;flex-wrap:wrap;gap:16px 40px;padding:26px 44px 0;font-size:11.5px;letter-spacing:0.12em;color:rgba(242,241,232,0.34);"><span>SERVER IN DEUTSCHLAND</span><span>DSGVO-KONFORM</span><span>10 JAHRE ARCHIV</span><span>KEIN TRACKING</span><span>AUS WIEN GEBAUT</span></div>
+      </section>
+      <section class="sec reveal" id="gruender" style="display:grid;grid-template-columns:128px minmax(0,1fr);gap:38px;align-items:center;">
+        <img src="founder.jpg" alt="Niko Andersson, Gr&uuml;nder von Bonvio" width="128" height="128" loading="lazy" style="width:128px;height:128px;border-radius:50%;object-fit:cover;filter:grayscale(1) contrast(1.06);border:1px solid rgba(242,241,232,0.16);box-shadow:0 18px 44px -14px rgba(0,0,0,0.8);">
+        <div>
+          <p class="disp" style="font-size:clamp(21px,2.5vw,31px);font-weight:700;max-width:32ch;">&bdquo;Ich habe Bonvio f&uuml;r Leute gebaut, die lieber <span class="em">ihre Arbeit machen</span> als Buchhaltungssoftware lernen.&ldquo;</p>
+          <div class="label" style="margin-top:18px;">NIKO A. &middot; GR&Uuml;NDER &middot; WIEN, 2026</div>
+        </div>
+      </section>
+      <section class="sec reveal" id="preis" style="position:relative;">
+        <div class="spot" style="inset:-60px 0;background:radial-gradient(760px 400px at 50% 50%, rgba(199,240,79,0.14), transparent 66%);"></div>
+        <div class="price-panel">
+          <div>
+            <div class="disp" style="font-size:clamp(56px,8vw,116px);letter-spacing:-0.055em;line-height:0.86;">&euro;&thinsp;39,99</div>
+            <div class="disp" style="font-size:clamp(22px,2.4vw,31px);margin-top:12px;font-weight:700;">im Jahr. Alles inklusive.</div>
+            <p style="margin:22px 0 0;font-size:17px;line-height:1.6;opacity:0.7;max-width:40ch;">Gr&uuml;nderpreis &mdash; wer jetzt startet, zahlt dauerhaft &euro;&thinsp;39,99. Ab J&auml;nner 2027 kostet Bonvio &euro;&thinsp;49,99.</p>
+            <a class="btn btn-dark" href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800" style="margin-top:32px;">30 Tage gratis testen <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></a>
+            <div style="margin-top:14px;font-size:14px;opacity:0.6;">Kein Setup &middot; Verl&auml;ngerung jederzeit abbestellbar</div>
+          </div>
+          <div style="display:flex;flex-direction:column;">
+            <div class="inc" style="margin:0">Pers&ouml;nliche Bonvio-Adresse</div>
+            <div class="inc" style="margin:0">Alle Belege, automatisch erkannt</div>
+            <div class="inc" style="margin:0">Hashtag-Kategorien &amp; H&auml;ndler-Suche</div>
+            <div class="inc" style="margin:0">Kilometergeld &amp; Di&auml;ten per E-Mail</div>
+            <div class="inc" style="margin:0">Export f&uuml;r den Steuerberater</div>
+            <div class="inc" style="margin:0">10 Jahre Aufbewahrung</div>
+            <div class="inc" style="margin:0;opacity:0.62">Fair Use: bis zu 3.000 Belege pro Jahr</div>
+          </div>
+        </div>
+      </section>
+      <section class="sec reveal" id="sicherheit">
+        <h2 style="max-width:18ch;">Deine Belege geh&ouml;ren dir. <span class="em">Punkt.</span></h2>
+        <div class="quad" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:44px;">
+          <div class="card" style="padding:28px 30px;font-size:17px;line-height:1.55;color:rgba(242,241,232,0.66);"><b>Verschl&uuml;sselt gespeichert</b> in der EU &mdash; Server in Frankfurt, Deutschland.</div>
+          <div class="card" style="padding:28px 30px;font-size:17px;line-height:1.55;color:rgba(242,241,232,0.66);"><b>Keine Werbung, kein Tracking, keine Weitergabe</b> deiner Daten an Dritte.</div>
+          <div class="card" style="padding:28px 30px;font-size:17px;line-height:1.55;color:rgba(242,241,232,0.66);"><b>10 Jahre Aufbewahrung</b> &mdash; l&auml;nger, als &Ouml;sterreich verlangt.</div>
+          <div class="card" style="padding:28px 30px;font-size:17px;line-height:1.55;color:rgba(242,241,232,0.66);"><b>DSGVO-konform.</b> Datenexport oder L&ouml;schung jederzeit auf Anfrage.</div>
+        </div>
+      </section>
+      <section class="sec reveal" id="fragen">
+        <div class="split" style="display:grid;grid-template-columns:380px minmax(0,1fr);gap:80px;align-items:start;">
+          <div><h2 style="font-size:clamp(28px,3.4vw,48px);">Alles, was du wissen willst.</h2><p class="lede" style="font-size:17px;">Eine Frage offen? Schreib uns an <a href="mailto:hello@bonvio.eu">hello@bonvio.eu</a> &mdash; wir melden uns.</p></div>
+          <div style="display:flex;flex-direction:column;">
+            <div class="faq-item rowline" style="padding:24px 0">
+              <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-panel-1"><span>Brauche ich eine spezielle App oder Software?</span><span class="ic" aria-hidden="true"></span></button>
+              <div class="faq-wrap" id="faq-panel-1" role="region"><div class="faq-inner"><p class="faq-a">Nein. Du nutzt deine ganz normale E-Mail-App &mdash; egal ob Apple Mail, Gmail, Outlook oder ein anderes Programm. Bonvio ist einfach eine Adresse, an die du Fotos sendest. <b>Kein Download, kein Login, kein Update.</b></p></div></div>
+            </div>
+            <div class="faq-item rowline" style="padding:24px 0">
+              <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-panel-2"><span>Wie sende ich einen Beleg?</span><span class="ic" aria-hidden="true"></span></button>
+              <div class="faq-wrap" id="faq-panel-2" role="region"><div class="faq-inner"><p class="faq-a">Ganz einfach: <b>normales Foto mit deinem Handy</b>, an deine Bonvio-Adresse mailen &mdash; fertig. Wir lesen Datum, H&auml;ndler, Betrag und USt automatisch aus und schicken dir eine Best&auml;tigung zur&uuml;ck. Optional: Hashtag im Betreff f&uuml;r Kategorie (<span class="key">#brille</span>), Projekt oder Zahlungsart.</p></div></div>
+            </div>
+            <div class="faq-item rowline" style="padding:24px 0">
+              <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-panel-3"><span>Wie finde ich sp&auml;ter einen bestimmten Beleg wieder?</span><span class="ic" aria-hidden="true"></span></button>
+              <div class="faq-wrap" id="faq-panel-3" role="region"><div class="faq-inner"><p class="faq-a">Schreib einfach <span class="key">EXPORT brille</span> oder <span class="key">EXPORT Q1 2026</span> an deine Bonvio-Adresse. Du bekommst einen sicheren Download-Link mit allen passenden Belegen und einer sauberen CSV-&Uuml;bersicht.</p></div></div>
+            </div>
+            <div class="faq-item rowline" style="padding:24px 0">
+              <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-panel-4"><span>Kann ich auch Kilometergeld und Di&auml;ten erfassen?</span><span class="ic" aria-hidden="true"></span></button>
+              <div class="faq-wrap" id="faq-panel-4" role="region"><div class="faq-inner"><p class="faq-a">Ja &mdash; beides funktioniert direkt per E-Mail, ohne Anhang. <span class="key">#km 47</span> ergibt 47&thinsp;&times;&thinsp;&euro;&thinsp;0,50&thinsp;=&thinsp;&euro;&thinsp;23,50 amtliches Kilometergeld. <span class="key">#di&auml;t 09:00-17:30</span> ergibt &euro;&thinsp;22,50 nach &sect;&thinsp;26 Z&thinsp;4 EStG. Wird ein Mittag- oder Abendessen gestellt, mindert das die Pauschale um &euro;&thinsp;15 pro Mahlzeit. Beide erscheinen automatisch im EXPORT.</p></div></div>
+            </div>
+            <div class="faq-item rowline" style="padding:24px 0">
+              <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-panel-5"><span>Was ist mit Bewirtung oder nur teilweise absetzbaren Belegen?</span><span class="ic" aria-hidden="true"></span></button>
+              <div class="faq-wrap" id="faq-panel-5" role="region"><div class="faq-inner"><p class="faq-a">Kein Problem. Sende das Foto und erg&auml;nze im Betreff oder Text z.&thinsp;B. <span class="key">Abzug: 50%</span>, <span class="key">Mit: Max Mustermann</span>, <span class="key">Anlass: Projektbesprechung</span>. Bonvio rechnet den absetzbaren Netto-Betrag, l&auml;sst die Vorsteuer unber&uuml;hrt und schreibt Teilnehmer und Anlass in den Export.</p></div></div>
+            </div>
+            <div class="faq-item rowline" style="padding:24px 0">
+              <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-panel-6"><span>Was ist, wenn ein Foto unscharf ist oder etwas falsch erkannt wird?</span><span class="ic" aria-hidden="true"></span></button>
+              <div class="faq-wrap" id="faq-panel-6" role="region"><div class="faq-inner"><p class="faq-a">Jede Best&auml;tigung zeigt dir, was Bonvio gelesen hat. Stimmt etwas nicht, tippst du auf <b>Korrigieren</b>: du bekommst ein vorausgef&uuml;lltes Formular und &uuml;berschreibst nur den falschen Wert. Oder du antwortest einfach frei. Das Originalfoto bleibt unver&auml;ndert gespeichert &mdash; korrigiert werden nur die ausgelesenen Werte.</p></div></div>
+            </div>
+            <div class="faq-item rowline" style="padding:24px 0">
+              <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-panel-7"><span>Wie sicher sind meine Daten?</span><span class="ic" aria-hidden="true"></span></button>
+              <div class="faq-wrap" id="faq-panel-7" role="region"><div class="faq-inner"><p class="faq-a">Alle Belege werden <b>verschl&uuml;sselt auf Servern in Deutschland</b> gespeichert. Keine Werbung, kein Tracking, keine Weitergabe an Dritte. DSGVO-konform und 10 Jahre archiviert.</p></div></div>
+            </div>
+            <div class="faq-item rowline" style="padding:24px 0">
+              <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-panel-8"><span>Wie kann ich sicher sein, dass meine Belege wirklich 10&nbsp;Jahre erreichbar sind?</span><span class="ic" aria-hidden="true"></span></button>
+              <div class="faq-wrap" id="faq-panel-8" role="region"><div class="faq-inner"><p class="faq-a">Du bist jederzeit Herr &uuml;ber deine Daten. Schick <span class="key">EXPORT</span> an deine Bonvio-Adresse und du bekommst einen frischen, sicheren Download-Link mit allen Belegen &mdash; so oft du willst. Und sollten wir den Dienst je einstellen, verpflichten wir uns in unseren <a href="/agb.html">AGB</a> zu <b>mindestens 90&nbsp;Tagen Vorlaufzeit</b> &mdash; mit garantiertem Export-Fenster und anteiliger R&uuml;ckerstattung.</p></div></div>
+            </div>
+            <div class="faq-item rowline" style="padding:24px 0;border-bottom:1px solid var(--hair)">
+              <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-panel-9"><span>Wie funktioniert die K&uuml;ndigung?</span><span class="ic" aria-hidden="true"></span></button>
+              <div class="faq-wrap" id="faq-panel-9" role="region"><div class="faq-inner"><p class="faq-a">Bonvio ist eine Jahresmitgliedschaft &mdash; &euro;&nbsp;39,99 f&uuml;r 12&nbsp;Monate. Willst du sp&auml;ter nicht weitermachen, bestellst du die automatische Verl&auml;ngerung ab &mdash; entweder im <a href="https://billing.stripe.com/p/login/14AfZagnnfBHdLp3rHcs800" target="_blank" rel="noopener">Kundenportal</a> oder mit einer kurzen E-Mail an <a href="mailto:hello@bonvio.eu">hello@bonvio.eu</a>. Beides gen&uuml;gt; eine Best&auml;tigung kommt innerhalb von 5&nbsp;Werktagen.</p></div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="sec reveal" style="position:relative;text-align:center;padding-bottom:120px;">
+        <div class="spot" style="inset:-40px 0 0;background:radial-gradient(820px 420px at 50% 60%, rgba(199,240,79,0.12), transparent 66%);"></div>
+        <div style="position:relative;">
+          <h2 style="font-size:clamp(30px,4.7vw,68px);margin:0 auto;max-width:20ch;">Andere Software will, dass du Buchhalter wirst. Bonvio will, dass du <span class="em">deine Arbeit machst.</span></h2>
+          <div style="display:flex;align-items:center;justify-content:center;gap:24px;margin-top:42px;flex-wrap:wrap;">
+            <a class="btn" href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800">30 Tage gratis testen <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></a>
+            <span style="font-size:15.5px;color:rgba(242,241,232,0.48);">Danach &euro;&thinsp;39,99 im Jahr. Keine App, kein Login.</span>
+          </div>
+        </div>
+      </section>
+      </div>
       <div class="lang-en" lang="en">
-
-      <!-- ═══════════ HERO ═══════════ -->
       <section class="hero">
-        <div class="hero-copy">
-          <div class="eyebrow">Receipt management by email</div>
-          <h1>
-            Take a photo. Send an email. <em>Done<span class="fs">.</span></em>
-          </h1>
-          <p class="hero-sub">
-            Receipts vanish &mdash; usually when you need them most. Bonvio keeps them safe.
-            <b>No login. No app.</b>
-          </p>
-          <div class="hero-cta">
-            <a class="btn" href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800">
-              Try free for 30 days <span class="arr">&rarr;</span>
-            </a>
-            <div class="trust-line">
-              <span>Built in Vienna</span><span class="sep"></span><span>Servers in Germany</span><span class="sep"></span><span>GDPR-compliant</span><span class="sep"></span><span><b>10-year</b> retention</span>
-            </div>
-            <div class="founder-price-hint">30 days free &mdash; then founding price &euro;&thinsp;39.99&thinsp;/&thinsp;year.<br>From January 2027: <span class="was">&euro;&thinsp;49.99</span>.</div>
+        <div class="reveal">
+          <span class="chip"><span class="dot"></span>Answer in ~3 seconds</span>
+          <h1 style="margin-top:28px;">Your receipts now have an address.</h1>
+          <p class="lede" style="margin-top:30px;max-width:44ch;font-size:20px;color:rgba(242,241,232,0.66);">Take a photo, send it, forget it. Bonvio reads merchant, date, amount and VAT from the image &mdash; and files everything until your accountant needs it.</p>
+          <div class="card-hi addr-field" style="margin-top:34px;">
+            <span class="addr">bonvio0123@bonvio.eu</span>
+            <button type="button" class="copy-btn" data-copy="bonvio0123@bonvio.eu" aria-label="Copy address"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2.5"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span class="copy-label">Copy</span></button>
+          </div>
+          <div style="display:flex;align-items:center;gap:22px;margin-top:30px;flex-wrap:wrap;">
+            <a class="btn" href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800">Try free for 30 days <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></a>
+            <span style="font-size:15px;color:rgba(242,241,232,0.45);">No login &middot; no app<br>Then &euro;&thinsp;39.99 a year</span>
           </div>
         </div>
-
-        <div class="collage" aria-label="Email with receipt being sent and confirmed automatically">
-          <div class="demo-glow"></div>
-          <div class="fc-phone" data-phase="compose">
-            <div class="fc-cam"></div>
-            <div class="fc-screen">
-              <div class="scr scr-compose">
-                <div class="fc-mailbar">
-                  <span class="cancel">Cancel</span>
-                  <span class="title">New Message</span>
-                  <span class="send">Send</span>
-                </div>
-                <div class="fc-fields">
-                  <div class="field"><span class="k">To</span><span class="v">bonvio0123@bonvio.eu</span></div>
-                  <div class="field"><span class="k">Subject</span><span class="v tag">#lunch</span></div>
-                </div>
-                <div class="fc-attach">
-                  <div class="thumb">
-                    <div class="t-h">GASTHAUS ZUR POST</div>
-                    <div class="t-r"></div>
-                    <div class="t-row"><span>Lunch special</span><span>13.90</span></div>
-                    <div class="t-row"><span>Apple juice</span><span>3.80</span></div>
-                    <div class="t-row"><span>Espresso</span><span>2.60</span></div>
-                    <div class="t-tot"><span>TOTAL</span><span>&euro; 42.80</span></div>
-                  </div>
-                  <div class="a-meta">
-                    <div class="a-name">receipt_12_05.jpg</div>
-                    <div class="a-size">1.4 MB</div>
-                  </div>
-                </div>
-                <div class="fc-hint">Tap Send &mdash; that's it</div>
-              </div>
-              <svg class="plane" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/>
-              </svg>
-              <div class="scr scr-confirm" aria-hidden="true">
-                <div class="cf-brand"><span class="bm">B</span>Bonvio &middot; Confirmation</div>
-                <div class="cf-check">&#10003;</div>
-                <div class="cf-head">Saved.</div>
-                <div class="cf-sub">Recognised and filed &middot; May 2026</div>
-                <div class="cf-rows">
-                  <div class="cf-row"><span class="ck">Merchant</span><span class="cv">Gasthaus zur Post</span></div>
-                  <div class="cf-row"><span class="ck">Date</span><span class="cv">12 May 2026</span></div>
-                  <div class="cf-row"><span class="ck">VAT</span><span class="cv">&euro; 7.13</span></div>
-                  <div class="cf-row total"><span class="ck">Amount</span><span class="cv">&euro; 42.80</span></div>
-                </div>
-                <div class="cf-foot">The reply came back automatically</div>
-              </div>
-            </div>
-            <div class="addr-tag">Automatic category:<br><b>#lunch</b> in the subject</div>
-          </div>
-          <div class="demo-caption">
-            <div class="c-main">In seconds.</div>
-            <div class="c-sub">Without doing anything else.</div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ═══════════ PAIN BEAT ═══════════ -->
-      <section class="pain reveal" aria-label="Bonvio · The Problem">
-        <div class="marg">The Problem</div>
-        <blockquote>
-          In March you search for what you <span class="em-mark">threw away in January.</span>
-        </blockquote>
-      </section>
-
-      <!-- ═══════════ VILLAIN CONTRAST ═══════════ -->
-      <section class="sec" id="why">
-        <div class="sec-head reveal">
-          <div class="eyebrow">The Difference</div>
-          <h2 class="sec-title">Others give you a system. <em>Bonvio gives you an address.</em></h2>
-        </div>
-        <div class="contrast-grid reveal">
-          <div class="col col-them">
-            <div class="col-tag">The others</div>
-            <h3 class="col-h">A portal you have to log into.</h3>
-            <ul class="them-list">
-              <li><span class="b">01</span><span>Create an account, remember a password, install an app.</span></li>
-              <li><span class="b">02</span><span>A dashboard you need to learn before it helps you.</span></li>
-              <li><span class="b">03</span><span>Your data sits in their system &mdash; in their format.</span></li>
-              <li><span class="b">04</span><span>Setup through your accountant. Training. Updates.</span></li>
-              <li><span class="b">05</span><span>Monthly fee for features you never open.</span></li>
-            </ul>
-            <div class="them-foot">Powerful. And that's exactly why it's hard.</div>
-          </div>
-          <div class="col col-us">
-            <div class="col-tag">Bonvio</div>
-            <p class="us-line">One email address.</p>
-            <div class="us-mail">bonvio0123@bonvio.eu</div>
-            <p class="us-foot">
-              No portal, no dashboard, nothing to learn.
-              You use the inbox you already have &mdash;
-              <b>your receipts belong to you, exportable in seconds.</b>
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- ═══════════ HOW IT WORKS ═══════════ -->
-      <section class="sec" id="how">
-        <div class="how reveal">
-          <div class="eyebrow">How it works</div>
-          <h2 class="sec-title">Three steps. That's all.</h2>
-          <p class="sec-intro">No new software. Bonvio runs in the email inbox you already use.</p>
-
-          <div class="steps">
-            <div class="step">
-              <div class="step-label">01 &middot; Photo</div>
-              <h3 class="step-word">Photo.</h3>
-              <p class="step-body">Snap the receipt with your phone &mdash; any language, any format. PDFs? Just photograph the screen.</p>
-            </div>
-            <div class="step">
-              <div class="step-label">02 &middot; Email</div>
-              <h3 class="step-word">Email.</h3>
-              <p class="step-body">Send it to your Bonvio address. We read date, merchant, amount and VAT automatically and confirm by return email.</p>
-            </div>
-            <div class="step">
-              <div class="step-label">03 &middot; Done</div>
-              <h3 class="step-word">Done.</h3>
-              <p class="step-body">Sorted and stored. Whenever you need it, write EXPORT &mdash; and instantly get a secure download link with all your receipts and a ready-to-use CSV.</p>
+        <div class="float reveal" style="padding-top:34px;">
+          <div class="card ex-card" style="transform:rotate(-1.2deg);">
+            <div class="label" style="margin-bottom:18px;">YOUR EMAIL</div>
+            <div style="display:flex;flex-direction:column;gap:12px;">
+              <div class="ex-row"><span class="k">To</span><span class="v" style="color:var(--lime);">bonvio0123@bonvio.eu</span></div>
+              <div class="rowline"></div>
+              <div class="ex-row"><span class="k">Subject</span><span class="v">#mittagessen</span></div>
+              <div class="rowline"></div>
+              <div class="ex-row" style="align-items:center;padding-top:3px;"><span class="k">Attachment</span><span style="display:inline-flex;align-items:center;gap:11px;"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="rgba(242,241,232,0.42)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.6"/><path d="M21 15l-5-5L5 21"/></svg><span style="display:flex;flex-direction:column;gap:1px;"><span style="font-size:13.5px;font-weight:500;">beleg_12_05.jpg</span><span style="font-size:12px;color:rgba(242,241,232,0.36);">1,4 MB</span></span></span></div>
             </div>
           </div>
-
-          <div class="travel">
-            <span class="t-mono">#km 47</span>
-            <span class="t-mono">#diät 09:00-17:30</span>
-            <span class="t-text"><b>Mileage and daily allowances</b> work the same way &mdash; by email, no attachment needed. Bonvio calculates the amount automatically based on Austrian rates.</span>
-          </div>
-        </div>
-      </section>
-
-      <!-- ═══════════ WHAT IT GIVES BACK ═══════════ -->
-      <section class="sec" id="export-en">
-        <div class="sec-head reveal">
-          <div class="eyebrow">What you get back</div>
-          <h2 class="sec-title">Month-end, tax time, or right now &mdash; <em>everything as a clean file.</em></h2>
-          <p class="sec-intro">Write EXPORT to your address &mdash; we prepare everything and send you a secure download link with all your receipts plus a ready-to-use CSV. Works with any accountant, any software.</p>
-        </div>
-
-        <div class="export-grid">
-          <div class="reveal">
-            <ul class="export-when">
-              <li><span class="ew-k">EXPORT Q1 2026</span><span class="ew-v">Everything from a time period.</span></li>
-              <li><span class="ew-k">EXPORT glasses</span><span class="ew-v">Everything from a category.</span></li>
-              <li><span class="ew-k">EXPORT [merchant]</span><span class="ew-v">Everything from one merchant.</span></li>
-            </ul>
-            <p class="export-foot">Original photos in standard formats accepted by any tax authority or accountant. <b>You are never locked in to Bonvio</b> to access your receipts.</p>
-          </div>
-
-          <div class="file-card reveal" aria-hidden="true">
-            <div class="file-top">
-              <span class="dot" style="background:#E5645A"></span>
-              <span class="dot" style="background:#E7B14C"></span>
-              <span class="dot" style="background:#5BAD6A"></span>
-              <span class="name">bonvio_export_Q1-2026.csv</span>
+          <div style="display:flex;align-items:center;gap:12px;padding:20px 0 20px 40px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7FE0AE" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v14M5 12l7 7 7-7"/></svg><span class="label">3 SECONDS LATER</span></div>
+          <div class="card-hi ex-card" style="transform:rotate(0.9deg);margin-left:26px;border-color:rgba(127,224,174,0.3);box-shadow:inset 0 1px 0 rgba(255,255,255,0.09),0 40px 80px -24px rgba(0,0,0,0.85),0 0 60px -22px rgba(127,224,174,0.45);">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;"><span style="display:inline-flex;align-items:center;gap:10px;"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#7FE0AE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 7"/></svg><span class="disp" style="font-size:25px;color:#7FE0AE;">Saved.</span></span><span class="label">BONVIO</span></div>
+            <div style="display:flex;flex-direction:column;gap:12px;">
+              <div class="kv"><span class="k">Merchant</span><span class="v">Gasthaus zur Post</span></div>
+              <div class="kv"><span class="k">Date</span><span class="v">12.05.2026</span></div>
+              <div class="kv"><span class="k">VAT 20&thinsp;%</span><span class="v">&euro;&thinsp;7,13</span></div>
+              <div class="rowline" style="margin:3px 0;"></div>
+              <div class="kv" style="align-items:baseline;"><span class="k">Amount</span><span class="disp" style="font-size:30px;">&euro;&thinsp;42,80</span></div>
             </div>
-            <div class="file-rows">
-              <div class="file-row head"><span>Merchant / Type</span><span>Date</span><span class="amt">Amount</span><span class="vat">VAT</span></div>
-              <div class="file-row"><span>Gasthaus zur Post</span><span>12.05.</span><span class="amt">42.80</span><span class="vat">7.13</span></div>
-              <div class="file-row"><span>OMV Petrol</span><span>28.04.</span><span class="amt">65.40</span><span class="vat">10.90</span></div>
-              <div class="file-row"><span>Pearle Optician</span><span>19.04.</span><span class="amt">189.00</span><span class="vat">31.50</span></div>
-              <div class="file-row km-row"><span>#km 47</span><span>11.04.</span><span class="amt">23.50</span><span class="vat">—</span></div>
-              <div class="file-row diat-row"><span>#diät 09:00–17:30</span><span>08.04.</span><span class="amt">22.50</span><span class="vat">—</span></div>
-              <div class="file-row"><span>BIPA Drugstore</span><span>03.04.</span><span class="amt">24.15</span><span class="vat">4.03</span></div>
-            </div>
-            <div class="file-foot"><span>6 entries &middot; 1 download</span><span>TOTAL &euro; 367.49</span></div>
           </div>
         </div>
       </section>
-
-      <!-- ═══════════ WHO IT'S FOR ═══════════ -->
-      <section class="sec" id="who">
-        <div class="sec-head reveal">
-          <div class="eyebrow">Who it's for</div>
-          <h2 class="sec-title">Built for freelancers. Loved by anyone tired of the chaos.</h2>
-        </div>
-        <div class="audience reveal">
-          <div class="audience-card">
-            <span class="audience-tag">Self-employed</span>
-            <h3 class="audience-title">Freelancers &amp; sole traders</h3>
-            <p class="audience-body">No accounting software. No new app. Your accountant gets a ready CSV at year end &mdash; all you do is take a photo. Mileage and daily allowances work the same way: <code>#km 47</code>, <code>#diät 8h</code> &mdash; Bonvio calculates the amount automatically.</p>
-          </div>
-          <div class="audience-card">
-            <span class="audience-tag">Organisation</span>
-            <h3 class="audience-title">Clubs &amp; small businesses</h3>
-            <p class="audience-body">You think in events and projects, not receipts. Bonvio archives quietly in the background while you focus on what matters.</p>
-          </div>
-          <div class="audience-card">
-            <span class="audience-tag">Tidy</span>
-            <h3 class="audience-title">Anyone who loves order</h3>
-            <p class="audience-body">When the shoebox isn't enough &mdash; and a new app is too much. Just email, we handle the rest.</p>
-          </div>
-        </div>
-        <div class="inline-cta reveal">
-          <div class="inline-cta-text">Sound like you? <b>Try it free for 30 days.</b><br>Then &euro;&thinsp;39.99&thinsp;/&thinsp;year &mdash; everything included.</div>
-          <a class="btn" href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800">Try for free &rarr;</a>
-        </div>
+      <section class="sec reveal" style="padding-top:130px;position:relative;">
+        <div class="spot" style="background:radial-gradient(700px 340px at 50% 50%, rgba(199,240,79,0.07), transparent 66%);"></div>
+        <p class="disp" style="font-size:clamp(30px,4.6vw,66px);font-weight:700;max-width:22ch;position:relative;">In March you search for what you <span class="em">threw away in January.</span></p>
       </section>
-
-      <!-- ═══════════ NO APP ═══════════ -->
-      <section class="sec" id="noapp">
-        <div class="sec-head reveal">
-          <div class="eyebrow">What you don't need</div>
-          <h2 class="sec-title">No app. No login. <em>No new account.</em></h2>
-          <p class="sec-intro">Bonvio is intentionally minimal. Email is enough &mdash; no new tool, no new account, no extra effort.</p>
-        </div>
-        <div class="nope reveal">
-          <div class="nope-item"><span class="nope-cross">&times;</span><span class="nope-text">No app</span></div>
-          <div class="nope-item"><span class="nope-cross">&times;</span><span class="nope-text">No login</span></div>
-          <div class="nope-item"><span class="nope-cross">&times;</span><span class="nope-text">No password</span></div>
-          <div class="nope-item"><span class="nope-cross">&times;</span><span class="nope-text">No software</span></div>
-          <div class="nope-item"><span class="nope-cross">&times;</span><span class="nope-text">No training</span></div>
-          <div class="nope-item"><span class="nope-cross">&times;</span><span class="nope-text">No updates</span></div>
-        </div>
-        <p class="nope-foot reveal"><b>What you need:</b> your email. That's it. Bonvio lands in your inbox &mdash; and does exactly what you'd expect.</p>
-      </section>
-
-      <section class="trust-strip reveal">
-        <div class="trust-item"><span class="ti-k">Storage</span><span class="ti-v">Servers in Germany</span></div>
-        <div class="trust-item"><span class="ti-k">Privacy</span><span class="ti-v">GDPR-compliant</span></div>
-        <div class="trust-item"><span class="ti-k">Retention</span><span class="ti-v">10 years</span></div>
-        <div class="trust-item"><span class="ti-k">Ads</span><span class="ti-v">No tracking</span></div>
-      </section>
-
-      <!-- ═══════════ FOUNDER ═══════════ -->
-      <section class="sec" id="founder">
-        <div class="founder reveal">
-          <img class="founder-photo" src="founder.jpg" alt="Niko Andersson, founder of Bonvio" width="160" height="160">
+      <section class="sec reveal" id="warum-en">
+        <div class="split" style="display:grid;grid-template-columns:minmax(0,1fr) 520px;gap:90px;align-items:start;">
           <div>
-            <p class="founder-quote">
-              &ldquo;I&rsquo;m Niko. I built Bonvio for people who&rsquo;d rather <em>do their work</em> than learn accounting software.&rdquo;
-            </p>
-            <div class="founder-name">Niko A. &middot; <b>Founder</b> &middot; Vienna, 2026</div>
+            <h2>Others give you a system. <span class="em">Bonvio gives you an address.</span></h2>
+            <div style="margin-top:40px;display:flex;flex-direction:column;">
+              <div class="them-row rowline" style="margin:0">Create an account, remember a password, install an app.</div>
+              <div class="them-row rowline" style="margin:0">A dashboard you need to learn before it helps you.</div>
+              <div class="them-row rowline" style="margin:0">Your data sits in their system &mdash; in their format.</div>
+              <div class="them-row rowline" style="margin:0">Setup through your accountant. Training. Updates.</div>
+              <div class="them-row rowline" style="margin:0;border-bottom:1px solid var(--hair)">Monthly fee for features you never open.</div>
+            </div>
+            <div style="margin-top:18px;font-size:15px;color:rgba(242,241,232,0.32);">Powerful. And that&rsquo;s exactly why it&rsquo;s hard.</div>
+          </div>
+          <div class="card" style="padding:38px 36px 40px;margin-top:14px;">
+            <div class="label" style="color:var(--lime);margin-bottom:22px;">BONVIO</div>
+            <div class="disp" style="font-size:40px;margin-bottom:24px;">One email address.</div>
+            <div class="mo" style="font-size:17px;color:var(--lime);letter-spacing:-0.04em;padding:16px 18px;border-radius:12px;background:rgba(199,240,79,0.09);border:1px solid rgba(199,240,79,0.22);word-break:break-all;">bonvio0123@bonvio.eu</div>
+            <p style="margin:24px 0 0;font-size:17px;line-height:1.6;color:var(--muted);">No portal, no dashboard, nothing to learn. You use the inbox you already have &mdash; <b>your receipts belong to you, exportable in seconds.</b></p>
           </div>
         </div>
       </section>
-
-      <!-- ═══════════ PRICING ═══════════ -->
-      <section class="sec" id="price">
-        <div class="sec-head reveal" style="text-align:center; max-width:none;">
-          <div class="eyebrow" style="justify-content:center;">Price</div>
-          <h2 class="sec-title">One price. <em>No surprises.</em></h2>
-        </div>
-        <div class="price-wrap reveal">
-          <div class="price-card">
-            <div class="stamp">Founding price</div>
-            <div class="price-period-top">Annual &middot; Paid upfront</div>
-            <div class="price-amount">&euro;&thinsp;39.99<span class="yr"> / year</span></div>
-            <div class="price-monthly">= &euro;&thinsp;3.33&thinsp;/&thinsp;month &mdash; price of a coffee</div>
-            <p class="price-note">
-              <b>Founding price &mdash; locked for life.</b><br>
-              From January 2027: <span class="was">&euro;&thinsp;49.99</span>. Start now and pay &euro;&thinsp;39.99 forever.
-            </p>
-            <ul class="price-includes">
-              <li>Your personal Bonvio address</li>
-              <li>All your receipts, automatically recognised</li>
-              <li>Hashtag categories &amp; merchant search</li>
-              <li>Mileage &amp; daily allowances by email</li>
-              <li>Export for your accountant &mdash; any time</li>
-              <li>10-year retention &mdash; longer than the law requires</li>
-              <li>Fair use: up to 3,000 receipts a year</li>
-            </ul>
-            <a class="btn" href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800">Try free for 30 days <span class="arr">&rarr;</span></a>
-            <div class="price-sub">No setup &middot; cancel the renewal any time</div>
+      <section class="sec reveal" id="funktioniert-en">
+        <div class="card" style="padding:66px 64px 68px;border-radius:28px;">
+          <h2 style="max-width:18ch;">Three steps. That&rsquo;s all.</h2>
+          <p class="lede">No new software. Bonvio runs in the email inbox you already use.</p>
+          <div class="trio" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:52px;">
+            <div class="card-hi" style="padding:30px 28px 32px;display:flex;flex-direction:column;gap:13px;"><span class="label" style="color:var(--lime);">STEP 1</span><h3 style="font-size:34px;">Photo.</h3><p style="margin:0;font-size:16px;line-height:1.6;color:var(--muted);">Snap the receipt with your phone &mdash; any language, any format. PDFs? Just photograph the screen.</p></div>
+            <div class="card-hi" style="padding:30px 28px 32px;display:flex;flex-direction:column;gap:13px;"><span class="label" style="color:var(--lime);">STEP 2</span><h3 style="font-size:34px;">Email.</h3><p style="margin:0;font-size:16px;line-height:1.6;color:var(--muted);">Send it to your Bonvio address. We read date, merchant, amount and VAT automatically and confirm by return email.</p></div>
+            <div class="card-hi" style="padding:30px 28px 32px;display:flex;flex-direction:column;gap:13px;"><span class="label" style="color:var(--lime);">STEP 3</span><h3 style="font-size:34px;">Done.</h3><p style="margin:0;font-size:16px;line-height:1.6;color:var(--muted);">Sorted and stored. Whenever you need it, write EXPORT &mdash; and get a secure download link with everything in it.</p></div>
+          </div>
+          <div class="split" style="margin-top:44px;padding-top:38px;border-top:1px solid var(--hair);display:grid;grid-template-columns:340px minmax(0,1fr);gap:44px;align-items:center;">
+            <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start;"><span class="key">#km 47</span><span class="key">#di&auml;t 09:00&ndash;17:30</span></div>
+            <p style="margin:0;font-size:17.5px;line-height:1.6;color:rgba(242,241,232,0.64);"><b>Mileage and daily allowances</b> work the same way &mdash; by email, no attachment needed. Bonvio calculates the amount automatically at Austrian rates.<br><span style="font-size:14px;color:rgba(242,241,232,0.38);">Austria for now. German rates coming soon.</span></p>
           </div>
         </div>
       </section>
-
-      <!-- ═══════════ PULL-QUOTE ═══════════ -->
-      <section class="pullquote reveal">
-        <span class="pullquote-label">Bonvio &middot; The promise</span>
-        <blockquote>Snap. Forget.<br><em>Bonvio remembers everything.</em></blockquote>
-      </section>
-
-      <!-- ═══════════ SECURITY ═══════════ -->
-      <section class="sec" id="security">
-        <div class="sec-head reveal">
-          <div class="eyebrow">Security &amp; Privacy</div>
-          <h2 class="sec-title">Your receipts belong to you. <em>Full stop.</em></h2>
-        </div>
-        <ul class="security-section reveal">
-          <li><span class="security-num">01</span><span class="security-text"><b>Encrypted storage</b> in the EU &mdash; servers in Frankfurt, Germany.</span></li>
-          <li><span class="security-num">02</span><span class="security-text"><b>No ads. No tracking. No sharing</b> of your data with third parties &mdash; ever.</span></li>
-          <li><span class="security-num">03</span><span class="security-text"><b>10-year retention</b> &mdash; longer than Austria or Germany require.</span></li>
-          <li><span class="security-num">04</span><span class="security-text"><b>GDPR-compliant.</b> Data export or account deletion available on request, subject to statutory retention obligations.</span></li>
-        </ul>
-      </section>
-
-      <!-- ═══════════ FAQ ═══════════ -->
-      <section class="sec" id="faq">
-        <div class="sec-head reveal">
-          <div class="eyebrow">Frequently asked questions</div>
-          <h2 class="sec-title">Everything you want to know.</h2>
-          <p class="sec-intro">Still a question? Write to <a href="mailto:hello@bonvio.eu" style="color:var(--green);text-decoration:none;border-bottom:1px solid rgba(31,67,50,0.3);">hello@bonvio.eu</a> &mdash; we'll get back to you.</p>
-        </div>
-        <div class="faq reveal">
-          <div class="faq-item">
-            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-panel-10"><span>Do I need a special app or software?</span><span class="faq-icon" aria-hidden="true"></span></button>
-            <div class="faq-wrap" id="faq-panel-10" role="region"><div class="faq-inner"><div class="faq-a">No. You use your normal email app &mdash; Apple Mail, Gmail, Outlook, anything. Bonvio is just an address you send photos to. <b>No download, no login, no update.</b></div></div></div>
+      <section class="sec reveal" id="export-en">
+        <div class="split" style="display:grid;grid-template-columns:480px minmax(0,1fr);gap:80px;align-items:center;">
+          <div>
+            <h2 style="font-size:clamp(28px,3.5vw,50px);">Month-end, tax time, or right now &mdash; <span class="em">everything as a clean file.</span></h2>
+            <p class="lede" style="font-size:18px;">Write EXPORT to your address &mdash; we send you a secure download link with all your receipts plus a ready-to-use CSV.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:30px;"><span class="key">EXPORT Q1 2026</span><span class="key">EXPORT glasses</span><span class="key">EXPORT BIPA</span></div>
+            <p style="margin:26px 0 0;font-size:16px;line-height:1.6;color:rgba(242,241,232,0.5);">Original photos in standard formats accepted by any authority. <b>You are never locked in to Bonvio.</b></p>
           </div>
-          <div class="faq-item">
-            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-panel-11"><span>How do I send a receipt?</span><span class="faq-icon" aria-hidden="true"></span></button>
-            <div class="faq-wrap" id="faq-panel-11" role="region"><div class="faq-inner"><div class="faq-a">Simple: <b>take a normal photo with your phone</b>, email it to your Bonvio address &mdash; done. We extract date, merchant, amount and VAT automatically and send a confirmation back. Optional: add a hashtag in the subject for anything important &mdash; category (<code>#glasses</code>), project (<code>#renovation</code>) or payment method (<code>#cash</code>, <code>#company-card</code>).</div></div></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-panel-12"><span>How do I find a specific receipt later?</span><span class="faq-icon" aria-hidden="true"></span></button>
-            <div class="faq-wrap" id="faq-panel-12" role="region"><div class="faq-inner"><div class="faq-a">Just write <code>EXPORT glasses</code> or <code>EXPORT Q1 2026</code> to your Bonvio address. You get a secure download link with all matching receipts and a clean CSV &mdash; sorted by period, category or merchant.</div></div></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-panel-13"><span>Can I track mileage and daily allowances too?</span><span class="faq-icon" aria-hidden="true"></span></button>
-            <div class="faq-wrap" id="faq-panel-13" role="region"><div class="faq-inner"><div class="faq-a">Yes &mdash; both work by email with no attachment. <b>Mileage:</b> subject <code>#km 47</code> &mdash; Bonvio calculates 47&thinsp;&times;&thinsp;&euro;&thinsp;0.50&thinsp;=&thinsp;&euro;&thinsp;23.50 (official Austrian rate) and stores it automatically. <b>Daily allowance:</b> subject <code>#diät 8h</code> or <code>#diät 09:00-17:30</code> &mdash; Bonvio works out the allowance under &sect;26 Z&thinsp;4 EStG and confirms by email. If a lunch or dinner is provided, that cuts the allowance by &euro;&thinsp;15 per meal (e.g. <code>#diät 8 -lunch</code>; <code>-full</code> = &euro;&thinsp;0). Forgot it or need to change it? Just reply to the confirmation email with <code>-lunch</code> or <code>-full</code> (or <code>no meal</code> to reset) &mdash; Bonvio recalculates the allowance, no new entry needed. Both appear automatically in your EXPORT. <b>German Tagegeld</b> (§&thinsp;4 para.&thinsp;5 EStG) is coming soon.</div></div></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-panel-14"><span>What about business meals or only partly deductible receipts?</span><span class="faq-icon" aria-hidden="true"></span></button>
-            <div class="faq-wrap" id="faq-panel-14" role="region"><div class="faq-inner"><div class="faq-a">No problem &mdash; not every receipt is 100&thinsp;% deductible. Send the photo and add in the subject or body e.g. <code>Deduction: 50%</code>, <code>With: Max Mustermann</code>, <code>Purpose: project meeting</code>. Bonvio works out the deductible net amount, leaves the input VAT untouched and writes the participants and purpose into your export &mdash; exactly the documentation the tax office requires for business meals (&sect;20 EStG).</div></div></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-panel-15"><span>What if a photo is blurry or something is read wrong?</span><span class="faq-icon" aria-hidden="true"></span></button>
-            <div class="faq-wrap" id="faq-panel-15" role="region"><div class="faq-inner"><div class="faq-a">Every confirmation shows you what Bonvio read &mdash; merchant, amount, date, VAT. If something's off, tap <b>Correct</b>: you get a pre-filled form, overwrite just the wrong value after the colon and send the email back. Or simply reply in your own words &mdash; <code>Amount 12.90</code>, <code>Date 01.06.2026</code>, <code>13% 3.80</code>, several lines are fine. If the photo was too blurry, Bonvio says so in the confirmation and asks, rather than guessing. The original photo stays stored unchanged &mdash; only the extracted values are corrected.</div></div></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-panel-16"><span>How secure is my data?</span><span class="faq-icon" aria-hidden="true"></span></button>
-            <div class="faq-wrap" id="faq-panel-16" role="region"><div class="faq-inner"><div class="faq-a">All receipts are <b>encrypted on servers in Germany</b>. No ads, no tracking, no sharing with third parties. GDPR-compliant and retained for 10 years &mdash; longer than Austria or Germany require.</div></div></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-panel-17"><span>How do I know my receipts will be accessible for 10&nbsp;years?</span><span class="faq-icon" aria-hidden="true"></span></button>
-            <div class="faq-wrap" id="faq-panel-17" role="region"><div class="faq-inner"><div class="faq-a">You are always in control. Send <code>EXPORT</code> to your Bonvio address and you get a fresh, secure download link with all your receipts &mdash; original photos in standard formats accepted by any authority. As often as you like. And should we ever discontinue the service, our <a href="/agb-en.html">Terms</a> commit us to <b>at least 90 days&rsquo; notice</b> &mdash; with a guaranteed export window and a pro-rata refund.</div></div></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-panel-18"><span>How do I cancel?</span><span class="faq-icon" aria-hidden="true"></span></button>
-            <div class="faq-wrap" id="faq-panel-18" role="region"><div class="faq-inner"><div class="faq-a">Bonvio is an annual membership &mdash; &euro;&nbsp;39.99 for 12&nbsp;months. That's the <b>founding price</b>: from January 2027 it's &euro;&nbsp;49.99, but if you start now you'll pay &euro;&nbsp;39.99 forever. If you don't want to continue, cancel the auto-renewal either in the <a href="https://billing.stripe.com/p/login/14AfZagnnfBHdLp3rHcs800" target="_blank" rel="noopener">customer portal</a> (enter your email and you get a link right away) or with a short email to <a href="mailto:hello@bonvio.eu">hello@bonvio.eu</a>. Either is enough; you get a confirmation within 5&nbsp;business days. You can export your receipts yourself any time &mdash; just send EXPORT to your Bonvio address.</div></div></div>
+          <div class="card-hi float" style="overflow:hidden;transform:rotate(-0.8deg);" aria-hidden="true">
+            <div style="display:flex;align-items:center;gap:10px;padding:16px 24px;border-bottom:1px solid var(--hair);"><span style="width:9px;height:9px;border-radius:50%;background:rgba(242,241,232,0.2);"></span><span style="width:9px;height:9px;border-radius:50%;background:rgba(242,241,232,0.2);"></span><span style="width:9px;height:9px;border-radius:50%;background:rgba(242,241,232,0.2);"></span><span class="mo" style="font-size:12px;color:rgba(242,241,232,0.5);margin-left:10px;">bonvio_export_Q1-2026.csv</span></div>
+            <div class="csv" style="font-size:9.5px;letter-spacing:0.12em;color:rgba(242,241,232,0.35);"><span>MERCHANT / TYPE</span><span>DATE</span><span class="r">AMOUNT</span><span class="r vat">VAT</span></div>
+            <div class="csv" style="color:rgba(242,241,232,0.85);"><span>Gasthaus zur Post</span><span style="opacity:0.55;">12.05.</span><span class="r">42,80</span><span class="r vat" style="opacity:0.55;">7,13</span></div>
+            <div class="csv" style="color:rgba(242,241,232,0.85);"><span>OMV Tankstelle</span><span style="opacity:0.55;">28.04.</span><span class="r">65,40</span><span class="r vat" style="opacity:0.55;">10,90</span></div>
+            <div class="csv" style="color:#7FE0AE;"><span>#km 47</span><span style="opacity:0.55;">11.04.</span><span class="r">23,50</span><span class="r vat" style="opacity:0.55;">&mdash;</span></div>
+            <div class="csv" style="color:#7FE0AE;"><span>#di&auml;t 09:00&ndash;17:30</span><span style="opacity:0.55;">08.04.</span><span class="r">22,50</span><span class="r vat" style="opacity:0.55;">&mdash;</span></div>
+            <div class="csv" style="font-weight:600;background:rgba(199,240,79,0.08);border-bottom:0;"><span>4 entries &middot; 1 download</span><span></span><span class="r">154,20</span><span class="r vat">18,03</span></div>
           </div>
         </div>
       </section>
-
-      <!-- ═══════════ FINAL CTA ═══════════ -->
-      <section class="sec" style="padding-bottom: 0;">
-        <div class="final-cta reveal">
-          <h2>Other software wants you to become an accountant.<br>Bonvio wants you to <em>do your work<span class="fs">.</span></em></h2>
-          <p>30 days free. Then founding price &euro;&thinsp;39.99&thinsp;/&thinsp;year &mdash; locked for life, &euro;&thinsp;49.99 from January. No app, no login.</p>
-          <a class="btn btn-light" href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800">Try free for 30 days <span class="arr">&rarr;</span></a>
+      <section class="sec reveal" id="wer-en">
+        <h2 style="max-width:24ch;">Built for freelancers. Loved by anyone tired of the chaos.</h2>
+        <div class="trio" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:48px;">
+          <div class="card" style="padding:32px 30px 34px;display:flex;flex-direction:column;gap:13px;"><h3 style="font-size:25px;">Freelancers &amp; sole traders</h3><p style="margin:0;font-size:16px;line-height:1.6;color:var(--muted);">No accounting software. No new app. Your accountant gets a ready CSV at year end &mdash; all you do is take a photo.</p></div>
+          <div class="card" style="padding:32px 30px 34px;display:flex;flex-direction:column;gap:13px;"><h3 style="font-size:25px;">Clubs &amp; small businesses</h3><p style="margin:0;font-size:16px;line-height:1.6;color:var(--muted);">You think in events and projects, not receipts. Bonvio archives quietly in the background while you focus on what matters.</p></div>
+          <div class="card" style="padding:32px 30px 34px;display:flex;flex-direction:column;gap:13px;"><h3 style="font-size:25px;">Anyone who loves order</h3><p style="margin:0;font-size:16px;line-height:1.6;color:var(--muted);">When the shoebox isn&rsquo;t enough &mdash; and a new app is too much. Just email, we handle the rest.</p></div>
         </div>
       </section>
-
-      </div><!-- /lang-en -->
-
-
+      <section class="sec reveal" id="kein-en">
+        <div class="card" style="padding:40px 44px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;border-radius:22px;">
+          <span class="disp" style="font-size:clamp(22px,2.4vw,30px);">What you don&rsquo;t need:</span>
+          <span class="mo" style="font-size:14.5px;color:rgba(242,241,232,0.36);text-decoration:line-through;text-decoration-color:rgba(199,240,79,0.75);text-decoration-thickness:2px;">App &nbsp; Login &nbsp; Password &nbsp; Software &nbsp; Training &nbsp; Updates</span>
+          <span style="font-size:16.5px;color:rgba(242,241,232,0.62);">What you need: <b>your email.</b></span>
+        </div>
+        <div class="mo" style="display:flex;flex-wrap:wrap;gap:16px 40px;padding:26px 44px 0;font-size:11.5px;letter-spacing:0.12em;color:rgba(242,241,232,0.34);"><span>SERVERS IN GERMANY</span><span>GDPR-COMPLIANT</span><span>10-YEAR ARCHIVE</span><span>NO TRACKING</span><span>BUILT IN VIENNA</span></div>
+      </section>
+      <section class="sec reveal" id="gruender-en" style="display:grid;grid-template-columns:128px minmax(0,1fr);gap:38px;align-items:center;">
+        <img src="founder.jpg" alt="Niko Andersson, founder of Bonvio" width="128" height="128" loading="lazy" style="width:128px;height:128px;border-radius:50%;object-fit:cover;filter:grayscale(1) contrast(1.06);border:1px solid rgba(242,241,232,0.16);box-shadow:0 18px 44px -14px rgba(0,0,0,0.8);">
+        <div>
+          <p class="disp" style="font-size:clamp(21px,2.5vw,31px);font-weight:700;max-width:32ch;">&ldquo;I built Bonvio for people who&rsquo;d rather <span class="em">do their work</span> than learn accounting software.&rdquo;</p>
+          <div class="label" style="margin-top:18px;">NIKO A. &middot; FOUNDER &middot; VIENNA, 2026</div>
+        </div>
+      </section>
+      <section class="sec reveal" id="preis-en" style="position:relative;">
+        <div class="spot" style="inset:-60px 0;background:radial-gradient(760px 400px at 50% 50%, rgba(199,240,79,0.14), transparent 66%);"></div>
+        <div class="price-panel">
+          <div>
+            <div class="disp" style="font-size:clamp(56px,8vw,116px);letter-spacing:-0.055em;line-height:0.86;">&euro;&thinsp;39,99</div>
+            <div class="disp" style="font-size:clamp(22px,2.4vw,31px);margin-top:12px;font-weight:700;">a year. Everything included.</div>
+            <p style="margin:22px 0 0;font-size:17px;line-height:1.6;opacity:0.7;max-width:40ch;">Founding price &mdash; start now and you pay &euro;&thinsp;39.99 for as long as you stay. From January 2027 Bonvio costs &euro;&thinsp;49.99.</p>
+            <a class="btn btn-dark" href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800" style="margin-top:32px;">Try free for 30 days <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></a>
+            <div style="margin-top:14px;font-size:14px;opacity:0.6;">No setup &middot; cancel the renewal any time</div>
+          </div>
+          <div style="display:flex;flex-direction:column;">
+            <div class="inc" style="margin:0">Your personal Bonvio address</div>
+            <div class="inc" style="margin:0">All receipts, automatically recognised</div>
+            <div class="inc" style="margin:0">Hashtag categories &amp; merchant search</div>
+            <div class="inc" style="margin:0">Mileage &amp; daily allowances by email</div>
+            <div class="inc" style="margin:0">Export for your accountant</div>
+            <div class="inc" style="margin:0">10-year retention</div>
+            <div class="inc" style="margin:0;opacity:0.62">Fair use: up to 3,000 receipts a year</div>
+          </div>
+        </div>
+      </section>
+      <section class="sec reveal" id="sicherheit-en">
+        <h2 style="max-width:18ch;">Your receipts belong to you. <span class="em">Full stop.</span></h2>
+        <div class="quad" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:44px;">
+          <div class="card" style="padding:28px 30px;font-size:17px;line-height:1.55;color:rgba(242,241,232,0.66);"><b>Encrypted storage</b> in the EU &mdash; servers in Frankfurt, Germany.</div>
+          <div class="card" style="padding:28px 30px;font-size:17px;line-height:1.55;color:rgba(242,241,232,0.66);"><b>No ads, no tracking, no sharing</b> of your data with third parties.</div>
+          <div class="card" style="padding:28px 30px;font-size:17px;line-height:1.55;color:rgba(242,241,232,0.66);"><b>10-year retention</b> &mdash; longer than Austria requires.</div>
+          <div class="card" style="padding:28px 30px;font-size:17px;line-height:1.55;color:rgba(242,241,232,0.66);"><b>GDPR-compliant.</b> Data export or deletion available on request.</div>
+        </div>
+      </section>
+      <section class="sec reveal" id="fragen-en">
+        <div class="split" style="display:grid;grid-template-columns:380px minmax(0,1fr);gap:80px;align-items:start;">
+          <div><h2 style="font-size:clamp(28px,3.4vw,48px);">Everything you want to know.</h2><p class="lede" style="font-size:17px;">Still a question? Write to <a href="mailto:hello@bonvio.eu">hello@bonvio.eu</a> &mdash; we&rsquo;ll get back to you.</p></div>
+          <div style="display:flex;flex-direction:column;">
+            <div class="faq-item rowline" style="padding:24px 0">
+              <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-panel-10"><span>Do I need a special app or software?</span><span class="ic" aria-hidden="true"></span></button>
+              <div class="faq-wrap" id="faq-panel-10" role="region"><div class="faq-inner"><p class="faq-a">No. You use your normal email app &mdash; Apple Mail, Gmail, Outlook, anything. Bonvio is just an address you send photos to. <b>No download, no login, no update.</b></p></div></div>
+            </div>
+            <div class="faq-item rowline" style="padding:24px 0">
+              <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-panel-11"><span>How do I send a receipt?</span><span class="ic" aria-hidden="true"></span></button>
+              <div class="faq-wrap" id="faq-panel-11" role="region"><div class="faq-inner"><p class="faq-a">Simple: <b>take a normal photo with your phone</b>, email it to your Bonvio address &mdash; done. We extract date, merchant, amount and VAT automatically and send a confirmation back. Optional: add a hashtag in the subject for category (<span class="key">#glasses</span>), project or payment method.</p></div></div>
+            </div>
+            <div class="faq-item rowline" style="padding:24px 0">
+              <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-panel-12"><span>How do I find a specific receipt later?</span><span class="ic" aria-hidden="true"></span></button>
+              <div class="faq-wrap" id="faq-panel-12" role="region"><div class="faq-inner"><p class="faq-a">Just write <span class="key">EXPORT glasses</span> or <span class="key">EXPORT Q1 2026</span> to your Bonvio address. You get a secure download link with all matching receipts and a clean CSV.</p></div></div>
+            </div>
+            <div class="faq-item rowline" style="padding:24px 0">
+              <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-panel-13"><span>Can I track mileage and daily allowances too?</span><span class="ic" aria-hidden="true"></span></button>
+              <div class="faq-wrap" id="faq-panel-13" role="region"><div class="faq-inner"><p class="faq-a">Yes &mdash; both work by email with no attachment. <span class="key">#km 47</span> gives 47&thinsp;&times;&thinsp;&euro;&thinsp;0.50&thinsp;=&thinsp;&euro;&thinsp;23.50 at the official Austrian rate. <span class="key">#di&auml;t 09:00-17:30</span> gives &euro;&thinsp;22.50 under &sect;&thinsp;26 Z&thinsp;4 EStG. If a lunch or dinner is provided, that cuts the allowance by &euro;&thinsp;15 per meal. Both appear automatically in your EXPORT.</p></div></div>
+            </div>
+            <div class="faq-item rowline" style="padding:24px 0">
+              <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-panel-14"><span>What about business meals or only partly deductible receipts?</span><span class="ic" aria-hidden="true"></span></button>
+              <div class="faq-wrap" id="faq-panel-14" role="region"><div class="faq-inner"><p class="faq-a">No problem. Send the photo and add in the subject or body e.g. <span class="key">Deduction: 50%</span>, <span class="key">With: Max Mustermann</span>, <span class="key">Purpose: project meeting</span>. Bonvio works out the deductible net amount, leaves the input VAT untouched and writes participants and purpose into your export.</p></div></div>
+            </div>
+            <div class="faq-item rowline" style="padding:24px 0">
+              <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-panel-15"><span>What if a photo is blurry or something is read wrong?</span><span class="ic" aria-hidden="true"></span></button>
+              <div class="faq-wrap" id="faq-panel-15" role="region"><div class="faq-inner"><p class="faq-a">Every confirmation shows you what Bonvio read. If something&rsquo;s off, tap <b>Correct</b>: you get a pre-filled form and overwrite just the wrong value. Or simply reply in your own words. The original photo stays stored unchanged &mdash; only the extracted values are corrected.</p></div></div>
+            </div>
+            <div class="faq-item rowline" style="padding:24px 0">
+              <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-panel-16"><span>How secure is my data?</span><span class="ic" aria-hidden="true"></span></button>
+              <div class="faq-wrap" id="faq-panel-16" role="region"><div class="faq-inner"><p class="faq-a">All receipts are <b>encrypted on servers in Germany</b>. No ads, no tracking, no sharing with third parties. GDPR-compliant and retained for 10 years.</p></div></div>
+            </div>
+            <div class="faq-item rowline" style="padding:24px 0">
+              <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-panel-17"><span>How do I know my receipts will be accessible for 10&nbsp;years?</span><span class="ic" aria-hidden="true"></span></button>
+              <div class="faq-wrap" id="faq-panel-17" role="region"><div class="faq-inner"><p class="faq-a">You are always in control. Send <span class="key">EXPORT</span> to your Bonvio address and you get a fresh, secure download link with all your receipts &mdash; as often as you like. And should we ever discontinue the service, our <a href="/agb-en.html">Terms</a> commit us to <b>at least 90 days&rsquo; notice</b> &mdash; with a guaranteed export window and a pro-rata refund.</p></div></div>
+            </div>
+            <div class="faq-item rowline" style="padding:24px 0;border-bottom:1px solid var(--hair)">
+              <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-panel-18"><span>How do I cancel?</span><span class="ic" aria-hidden="true"></span></button>
+              <div class="faq-wrap" id="faq-panel-18" role="region"><div class="faq-inner"><p class="faq-a">Bonvio is an annual membership &mdash; &euro;&nbsp;39.99 for 12&nbsp;months. If you don&rsquo;t want to continue, cancel the auto-renewal either in the <a href="https://billing.stripe.com/p/login/14AfZagnnfBHdLp3rHcs800" target="_blank" rel="noopener">customer portal</a> or with a short email to <a href="mailto:hello@bonvio.eu">hello@bonvio.eu</a>. Either is enough; you get a confirmation within 5&nbsp;business days.</p></div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="sec reveal" style="position:relative;text-align:center;padding-bottom:120px;">
+        <div class="spot" style="inset:-40px 0 0;background:radial-gradient(820px 420px at 50% 60%, rgba(199,240,79,0.12), transparent 66%);"></div>
+        <div style="position:relative;">
+          <h2 style="font-size:clamp(30px,4.7vw,68px);margin:0 auto;max-width:20ch;">Other software wants you to become an accountant. Bonvio wants you to <span class="em">do your work.</span></h2>
+          <div style="display:flex;align-items:center;justify-content:center;gap:24px;margin-top:42px;flex-wrap:wrap;">
+            <a class="btn" href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800">Try free for 30 days <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></a>
+            <span style="font-size:15.5px;color:rgba(242,241,232,0.48);">Then &euro;&thinsp;39.99 a year. No app, no login.</span>
+          </div>
+        </div>
+      </section>
+      </div>
     </main>
 
     <footer>
-      <div class="footer-row">
-        <div class="footer-meta">
-          <span class="footer-name">Bonvio<span class="wm-dot">.</span></span>
-          <span>&copy; 2026 &middot; Wien, &Ouml;sterreich</span>
-          <span class="footer-founder lang-de">Gegr&uuml;ndet 2026 in Wien von <b>Niko A.</b></span>
-          <span class="footer-founder lang-en">Founded 2026 in Vienna by <b>Niko A.</b></span>
+      <div class="lang-de" lang="de">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:40px;flex-wrap:wrap;">
+          <div style="display:flex;flex-direction:column;gap:7px;"><span class="disp" style="font-size:20px;">Bonvio</span><span class="label">&copy; 2026 &middot; WIEN, &Ouml;STERREICH</span></div>
+          <div style="display:flex;gap:28px;flex-wrap:wrap;font-size:15px;"><a href="/datenschutz.html">Datenschutz</a><a href="/impressum.html">Impressum</a><a href="/agb.html">AGB</a><a href="mailto:hello@bonvio.eu">hello@bonvio.eu</a></div>
         </div>
-        <div class="footer-links">
-          <a href="/datenschutz.html" class="lang-de-inline">Datenschutz</a>
-          <a href="/datenschutz-en.html" class="lang-en-inline">Privacy</a>
-          <a href="/impressum.html" class="lang-de-inline">Impressum</a>
-          <a href="/impressum-en.html" class="lang-en-inline">Imprint</a>
-          <a href="/agb.html" class="lang-de-inline">AGB</a>
-          <a href="/agb-en.html" class="lang-en-inline">Terms</a>
-          <a href="mailto:hello@bonvio.eu" class="lang-de-inline">Kontakt</a>
-          <a href="mailto:hello@bonvio.eu" class="lang-en-inline">Contact</a>
-        </div>
+        <p style="margin:34px 0 0;padding-top:22px;border-top:1px solid rgba(242,241,232,0.08);font-size:12.5px;line-height:1.65;color:rgba(242,241,232,0.34);max-width:92ch;"><b>Hinweis.</b> Bonvio bewahrt deine Belege sicher auf und macht den Export f&uuml;r deinen Steuerberater einfach. Bonvio ist <b>keine Buchhaltungssoftware</b> und ersetzt keine steuerliche oder rechtliche Beratung. F&uuml;r deine konkreten gesetzlichen Pflichten wende dich bitte an deinen Steuerberater.</p>
       </div>
-
-      <div class="footer-bottom">
-        <div class="footer-disclaimer lang-de">
-          <b>Hinweis.</b> Bonvio bewahrt deine Belege sicher auf und macht den Export f&uuml;r deinen Steuerberater einfach. Bonvio ist <b>keine Buchhaltungssoftware</b> und <b>ersetzt keine steuerliche oder rechtliche Beratung</b>. Die 10-j&auml;hrige Aufbewahrung geht &uuml;ber &sect;132 BAO (AT) und &sect;147 AO (DE) hinaus. F&uuml;r deine konkreten gesetzlichen Pflichten wende dich bitte an deinen Steuerberater.
+      <div class="lang-en" lang="en">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:40px;flex-wrap:wrap;">
+          <div style="display:flex;flex-direction:column;gap:7px;"><span class="disp" style="font-size:20px;">Bonvio</span><span class="label">&copy; 2026 &middot; VIENNA, AUSTRIA</span></div>
+          <div style="display:flex;gap:28px;flex-wrap:wrap;font-size:15px;"><a href="/datenschutz-en.html">Privacy</a><a href="/impressum-en.html">Imprint</a><a href="/agb-en.html">Terms</a><a href="mailto:hello@bonvio.eu">hello@bonvio.eu</a></div>
         </div>
-        <div class="footer-disclaimer lang-en">
-          <b>Note.</b> Bonvio safely archives your receipts and makes export for your accountant easy. Bonvio is <b>not accounting software</b> and is <b>not a substitute for professional tax or legal advice</b>. The 10-year retention exceeds what &sect;132 BAO (AT) and &sect;147 AO (DE) require. For your specific legal obligations, please consult your tax advisor.
-        </div>
-
+        <p style="margin:34px 0 0;padding-top:22px;border-top:1px solid rgba(242,241,232,0.08);font-size:12.5px;line-height:1.65;color:rgba(242,241,232,0.34);max-width:92ch;"><b>Note.</b> Bonvio safely archives your receipts and makes export for your accountant easy. Bonvio is <b>not accounting software</b> and is <b>not a substitute for professional tax or legal advice</b>. For your specific legal obligations, please consult your tax advisor.</p>
       </div>
     </footer>
   </div>
 
   <script>
+    // Reveal on scroll. The CSS default is visible; this only arms the animation.
     (function () {
-      // Reveal all .reveal elements as they scroll into view
-      var revealEls = document.querySelectorAll('.reveal');
-
-      function showAll() {
-        revealEls.forEach(function (el) { el.classList.add('in'); });
-      }
-
+      var els = document.querySelectorAll('.reveal');
+      function showAll() { els.forEach(function (el) { el.classList.add('in'); }); }
       if (!('IntersectionObserver' in window)) { showAll(); return; }
-
-      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (reduce) { showAll(); return; }
-
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) { showAll(); return; }
       var io = new IntersectionObserver(function (entries) {
         entries.forEach(function (e) {
-          if (e.isIntersecting) {
-            e.target.classList.add('in');
-            io.unobserve(e.target);
-          }
+          if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
         });
-      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
-      revealEls.forEach(function (el) { io.observe(el); });
-    })();
-  </script>
-
-  <button class="back-to-top" id="back-to-top" aria-label="Zur&uuml;ck nach oben">&uarr;</button>
-<script>
-    // Back-to-top
-    (function () {
-      var btn = document.getElementById('back-to-top');
-      window.addEventListener('scroll', function () {
-        btn.classList.toggle('visible', window.scrollY > 400);
-      });
-      btn.addEventListener('click', function () {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
+      }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+      els.forEach(function (el) { io.observe(el); });
     })();
 
-    // Burger menu
     function toggleBurger() {
       var btn = document.getElementById('burger-btn');
       var menu = document.getElementById('mobile-menu');
@@ -1699,53 +761,54 @@
       document.getElementById('mobile-menu').classList.remove('open');
       btn.setAttribute('aria-expanded', 'false');
     }
-    // Escape closes the overlay and hands focus back to the control that opened it,
-    // so keyboard users are not left inside a menu they cannot dismiss.
+    // Escape closes the overlay and hands focus back to the control that opened it.
     document.addEventListener('keydown', function (e) {
       if (e.key !== 'Escape') return;
       var btn = document.getElementById('burger-btn');
-      if (!btn.classList.contains('open')) return;
+      if (!btn || !btn.classList.contains('open')) return;
       closeBurger();
       btn.focus();
     });
 
-    // FAQ accordion — multi-open, smooth grid-row height
-    (function () {
-      document.querySelectorAll('.faq-q').forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          var item = btn.closest('.faq-item');
-          var open = item.classList.toggle('open');
-          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-        });
+    // FAQ accordion. The panel also takes visibility:hidden when closed, so a
+    // closed answer is neither read aloud nor reachable by Tab.
+    document.querySelectorAll('.faq-q').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var open = btn.closest('.faq-item').classList.toggle('open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
       });
+    });
 
-      // If user lands on a deep link to FAQ, open the first item for visual cue
-      function openFirstOnHash() {
-        var h = window.location.hash;
-        if (h === '#faq' || h === '#fragen') {
-          var section = document.querySelector(h);
-          if (!section) return;
-          var first = section.querySelector('.faq-item');
-          if (first && !first.classList.contains('open')) {
-            first.classList.add('open');
-            var qbtn = first.querySelector('.faq-q');
-            if (qbtn) qbtn.setAttribute('aria-expanded', 'true');
-          }
+    // Copy the address.
+    document.querySelectorAll('[data-copy]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var label = btn.querySelector('.copy-label');
+        var done = document.body.classList.contains('lang-en-active') ? 'Copied' : 'Kopiert';
+        function ok() {
+          if (!label) return;
+          var was = label.textContent;
+          label.textContent = done;
+          setTimeout(function () { label.textContent = was; }, 1600);
         }
-      }
-      window.addEventListener('hashchange', openFirstOnHash);
-      openFirstOnHash();
-    })();
-  </script>
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(btn.getAttribute('data-copy')).then(ok, function () {});
+          return;
+        }
+        var ta = document.createElement('textarea');
+        ta.value = btn.getAttribute('data-copy');
+        ta.setAttribute('readonly', '');
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); ok(); } catch (e) {}
+        document.body.removeChild(ta);
+      });
+    });
 
-
-
-  <script>
-    // The tab title and the description are the only two strings CSS cannot switch — everything
-    // else is a .lang-de / .lang-en pair in the markup. Without this an English visitor reads
-    // "Belegverwaltung per E-Mail" in the tab and in every shared link preview.
-    function applyLangMeta(lang) {
-      var en = lang === 'en';
+    // The tab title and the description are the only two strings CSS cannot
+    // switch — everything else is a .lang-de / .lang-en pair in the markup.
+    function applyLangMeta(en) {
       document.title = en ? 'Bonvio – Receipt filing by email'
                           : 'Bonvio – Belegverwaltung per E-Mail';
       var d = document.querySelector('meta[name="description"]');
@@ -1757,55 +820,21 @@
     function setLang(lang) {
       var en = lang === 'en';
       document.body.classList.toggle('lang-en-active', en);
-      applyLangMeta(lang);
-      document.getElementById('btn-de').classList.toggle('active', lang === 'de');
-      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-      var mde = document.getElementById('mob-btn-de');
-      var men = document.getElementById('mob-btn-en');
-      if (mde) mde.classList.toggle('active', lang === 'de');
-      if (men) men.classList.toggle('active', lang === 'en');
+      applyLangMeta(en);
+      ['btn-de', 'mob-btn-de'].forEach(function (id) {
+        var b = document.getElementById(id); if (b) b.classList.toggle('active', !en);
+      });
+      ['btn-en', 'mob-btn-en'].forEach(function (id) {
+        var b = document.getElementById(id); if (b) b.classList.toggle('active', en);
+      });
       document.documentElement.lang = lang;
-      var top = document.getElementById('back-to-top');
-      if (top) top.setAttribute('aria-label', en ? 'Back to top' : 'Zur\u00fcck nach oben');
       try { localStorage.setItem('bonvio-lang', lang); sessionStorage.setItem('bonvio_lang', lang); } catch (e) {}
     }
     (function () {
       var saved = null;
-      try { saved = localStorage.getItem('bonvio-lang'); } catch (e) {}
-      var lang = saved || (navigator.language && navigator.language.toLowerCase().startsWith('de') ? 'de' : 'en');
-      setLang(lang);
-    })();
-  </script>
-
-  <script>
-    // Phone demo loop: compose → send (plane flies) → confirmation → repeat.
-    // Runs only while the phone is on screen. Under prefers-reduced-motion the
-    // loop still plays, but CSS softens it: no flying plane, rows appear
-    // instantly, only gentle crossfades remain.
-    (function () {
-      var phones = document.querySelectorAll('.fc-phone[data-phase]');
-      Array.prototype.forEach.call(phones, function (ph) {
-        var timer = null;
-        function go(phase, next, ms) {
-          ph.setAttribute('data-phase', phase);
-          timer = setTimeout(next, ms);
-        }
-        function compose() { go('compose', send, 2600); }
-        function send() { go('send', confirmScr, 950); }
-        function confirmScr() { go('confirm', compose, 3600); }
-        function start() { if (timer === null) compose(); }
-        function stop() {
-          if (timer !== null) { clearTimeout(timer); timer = null; }
-          ph.setAttribute('data-phase', 'compose');
-        }
-        if ('IntersectionObserver' in window) {
-          new IntersectionObserver(function (entries) {
-            entries.forEach(function (e) { if (e.isIntersecting) { start(); } else { stop(); } });
-          }, { threshold: 0.3 }).observe(ph);
-        } else {
-          start();
-        }
-      });
+      try { saved = localStorage.getItem('bonvio-lang') || sessionStorage.getItem('bonvio_lang'); } catch (e) {}
+      var nav = (navigator.language || 'de').toLowerCase();
+      setLang(saved || (nav.indexOf('de') === 0 ? 'de' : 'en'));
     })();
   </script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Bonvio","url":"https://bonvio.eu/","logo":"https://bonvio.eu/og.png","email":"hello@bonvio.eu","founder":{"@type":"Person","name":"Niko Andersson"},"foundingDate":"2026","address":{"@type":"PostalAddress","streetAddress":"Schnirchgasse 11","postalCode":"1030","addressLocality":"Wien","addressCountry":"AT"}}</script>

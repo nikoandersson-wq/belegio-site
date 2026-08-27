@@ -6,24 +6,33 @@
   <title>Anleitung &ndash; Bonvio</title>
   <meta name="description" content="Alles, was Bonvio kann &ndash; immer aktuell. Belege senden, korrigieren, exportieren, Team verwalten.">
   <meta name="robots" content="noindex, nofollow">
-  <meta name="theme-color" content="#F4F5F4">
+  <meta name="theme-color" content="#0D2119">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&amp;family=Hanken+Grotesk:wght@400;500;600&amp;family=Martian+Mono:wght@400;500;600&amp;display=swap">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTYiIGZpbGw9IiMxRjQzMzIiLz48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGZpbGw9IiNGNEY1RjQiIGQ9Ik0yMSAxN0gzNEE1LjUgNS41IDAgMCAxIDM5LjUgMjIuNVYyNS41QTUuNSA1LjUgMCAwIDEgMzQgMzFIMzZBNyA3IDAgMCAxIDQzIDM4VjQwQTcgNyAwIDAgMSAzNiA0N0gyMVpNMjcgMjJIMzIuNUEyLjI1IDIuMjUgMCAwIDEgMzIuNSAyNi41SDI3Wk0yNyAzMS41SDMyQTUgNSAwIDAgMSAzNyAzNi41VjM3QTUgNSAwIDAgMSAzMiA0MkgyN1oiLz48L3N2Zz4=">
   <style>
     :root {
-      --page: #F4F5F4;
-      --surface: #FFFFFF;
-      --ink: #14171A;
-      --green: #1F4332;
-      --green-deep: #0F2A1F;
-      --on-dark: #FFFFFF;
-      --tint: #CDE0D3;
-      --red: #B3261E;
-      --muted: rgba(20,23,26,0.56);
-      --muted-2: rgba(20,23,26,0.72);
-      --hair: rgba(20,23,26,0.09);
-      --hair-2: rgba(20,23,26,0.13);
-      --sans: Aptos, "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
-      --mono: Consolas, "Aptos Mono", ui-monospace, "SF Mono", Menlo, monospace;
+      /* Dark rebrand 2026-08-26 — see brand/BRAND.md §4. Surfaces separate by
+         light (lit top edge + cast shadow), never by a lighter fill. */
+      --page: #0D2119;
+      --surface: #163024;
+      --surface-2: #1E3E2F;
+      --ink: #F2F1E8;
+      --green: #C7F04F;          /* action */
+      --green-deep: #163024;
+      --mint: #7FE0AE;           /* confirmation */
+      --on-dark: #0D2119;
+      --tint: rgba(199,240,79,0.10);
+      --red: #E8776C;
+      --muted: rgba(242,241,232,0.56);
+      --muted-2: rgba(242,241,232,0.74);
+      --hair: rgba(242,241,232,0.10);
+      --hair-2: rgba(242,241,232,0.14);
+      --lift: inset 0 1px 0 rgba(255,255,255,0.07), 0 24px 52px -20px rgba(0,0,0,0.75);
+      --sans: "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+      --disp: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+      --mono: "Martian Mono", ui-monospace, Consolas, monospace;
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -40,8 +49,6 @@
     body::before {
       content: "";
       position: fixed; inset: 0;
-      background-image: radial-gradient(rgba(20,23,26,0.04) 1px, transparent 1px);
-      background-size: 4px 4px;
       pointer-events: none;
       z-index: 0;
     }
@@ -52,7 +59,7 @@
       display: flex; align-items: center; justify-content: space-between;
       gap: 20px; padding: 16px 40px;
       position: sticky; top: 0; z-index: 80;
-      background: rgba(244,245,244,0.93);
+      background: rgba(22,48,36,0.86);
       backdrop-filter: saturate(140%) blur(12px);
       -webkit-backdrop-filter: saturate(140%) blur(12px);
       border-bottom: 1px solid var(--hair);
@@ -72,7 +79,7 @@
       font-family: var(--mono); font-size: 12px; font-weight: 700; letter-spacing: 0.12em;
       padding: 4px 8px; cursor: pointer; border-radius: 3px; transition: all .15s;
     }
-    .lang-switch button.active { background: var(--green); color: var(--page); border-color: var(--green); }
+    .lang-switch button.active { background: var(--green); color: var(--on-dark); border-color: var(--green); }
 
     /* ── layout ──────────────────────────────────────────── */
     .shell { display: grid; grid-template-columns: 216px minmax(0,1fr); gap: 56px; padding: 56px 40px 120px; align-items: start; }
@@ -95,8 +102,9 @@
       text-transform: uppercase; color: var(--green); margin-bottom: 14px;
     }
     h1 {
-      margin: 0 0 18px; font-size: clamp(34px, 4.4vw, 50px); font-weight: 600;
-      letter-spacing: -0.028em; line-height: 1.08; text-wrap: balance;
+      font-family: var(--disp);
+      margin: 0 0 18px; font-size: clamp(34px, 4.4vw, 50px); font-weight: 800;
+      letter-spacing: -0.045em; line-height: 1.08; text-wrap: balance;
     }
     .lede { margin: 0 0 10px; font-size: 19px; color: var(--muted-2); max-width: 60ch; }
     .stamp { font-family: var(--mono); font-size: 12px; color: var(--muted); letter-spacing: 0.04em; }
@@ -106,26 +114,27 @@
     .tiers button {
       font-family: var(--sans); font-size: 14px; font-weight: 600;
       background: var(--surface); color: var(--muted-2);
-      border: 1px solid var(--hair-2); border-radius: 999px;
+      border: 1px solid var(--hair-2); border-radius: 999px; box-shadow: var(--lift);
       padding: 8px 16px; cursor: pointer; transition: all .15s;
     }
     .tiers button:hover { color: var(--ink); border-color: var(--muted); }
-    .tiers button.active { background: var(--green); border-color: var(--green); color: var(--on-dark); }
+    .tiers button.active { background: var(--green); border-color: var(--green); color: var(--on-dark); font-weight: 600; }
     .tier-note { font-size: 14px; color: var(--muted); margin: 0 0 40px; }
 
     /* ── the "?" callout ─────────────────────────────────── */
     .callout {
-      background: var(--green-deep); color: var(--on-dark);
-      border-radius: 4px; padding: 30px 32px; margin: 0 0 56px;
+      background: var(--surface); color: var(--ink);
+      border: 1px solid var(--hair); box-shadow: var(--lift);
+      border-radius: 18px; padding: 30px 32px; margin: 0 0 56px;
     }
     .callout .k {
       font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em;
-      text-transform: uppercase; color: var(--tint); margin-bottom: 12px;
+      text-transform: uppercase; color: var(--green); margin-bottom: 14px;
     }
-    .callout p { margin: 0 0 12px; color: rgba(255,255,255,0.92); }
+    .callout p { margin: 0 0 12px; color: var(--muted-2); }
     .callout p:last-child { margin-bottom: 0; }
-    .callout b { color: #fff; }
-    .callout .cmd { background: rgba(255,255,255,0.11); border-color: rgba(255,255,255,0.22); color: #fff; }
+    .callout b { color: var(--ink); font-weight: 600; }
+    .callout .cmd { background: var(--surface-2); border-color: var(--hair-2); color: var(--green); }
 
     /* ── sections ────────────────────────────────────────── */
     .sec { padding-top: 8px; margin-bottom: 52px; scroll-margin-top: 84px; }
@@ -135,7 +144,7 @@
       letter-spacing: 0.08em; flex: none;
     }
     .sec-num::before { counter-increment: sec; content: counter(sec, decimal-leading-zero); }
-    .sec h2 { margin: 0; font-size: 25px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.2; }
+    .sec h2 { margin: 0; font-family: var(--disp); font-size: 27px; font-weight: 700; letter-spacing: -0.035em; line-height: 1.1; }
     .sec p { margin: 0 0 12px; }
     .sec p:last-child { margin-bottom: 0; }
     .sec .hint { font-size: 15px; color: var(--muted-2); }
@@ -144,7 +153,8 @@
     /* ── command chips + rows ────────────────────────────── */
     .cmd {
       display: inline-block; font-family: var(--mono); font-size: 14px;
-      background: var(--surface); border: 1px solid var(--hair-2); border-radius: 3px;
+      background: var(--surface-2); border: 1px solid var(--hair-2); border-radius: 9px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.09), 0 2px 0 rgba(0,0,0,0.45);
       padding: 2px 8px; white-space: nowrap; color: var(--ink); text-decoration: none;
     }
     .cmdlist { border-top: 1px solid var(--hair); margin: 16px 0 0; }
@@ -190,6 +200,22 @@
       .cmdrow { grid-template-columns: 1fr; gap: 4px; }
       .callout { padding: 24px; }
     }
+
+    @media print {
+      :root {
+        --page: #FFFFFF; --surface: #FFFFFF; --surface-2: #FFFFFF;
+        --ink: #14171A; --green: #1F4332; --on-dark: #FFFFFF;
+        --muted: rgba(20,23,26,0.56); --muted-2: rgba(20,23,26,0.74);
+        --hair: rgba(20,23,26,0.11); --hair-2: rgba(20,23,26,0.16);
+        --lift: none;
+      }
+      body { background: #fff; color: #14171A; }
+      nav, .lang-switch, .tiers, .toc { display: none !important; }
+      .callout, .cmd, .tiers button { box-shadow: none !important; }
+      .cmd { background: #F2F2F0 !important; color: #1F4332 !important; }
+      a { color: #1F4332 !important; }
+      .sec { break-inside: avoid; }
+    }
   </style>
   <script>
     // The tab title and the description are the two strings CSS cannot switch — every other
@@ -225,7 +251,7 @@
 <div class="wrap">
   <nav>
     <a href="/" class="logo">
-      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#1F4332"/><path fill-rule="evenodd" fill="#F4F5F4" d="M21 17H34A5.5 5.5 0 0 1 39.5 22.5V25.5A5.5 5.5 0 0 1 34 31H36A7 7 0 0 1 43 38V40A7 7 0 0 1 36 47H21ZM27 22H32.5A2.25 2.25 0 0 1 32.5 26.5H27ZM27 31.5H32A5 5 0 0 1 37 36.5V37A5 5 0 0 1 32 42H27Z"/></svg>
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#C7F04F"/><path fill-rule="evenodd" fill="#0D2119" d="M21 17H34A5.5 5.5 0 0 1 39.5 22.5V25.5A5.5 5.5 0 0 1 34 31H36A7 7 0 0 1 43 38V40A7 7 0 0 1 36 47H21ZM27 22H32.5A2.25 2.25 0 0 1 32.5 26.5H27ZM27 31.5H32A5 5 0 0 1 37 36.5V37A5 5 0 0 1 32 42H27Z"/></svg>
       <span>Bonvio</span>
     </a>
     <div class="nav-right">
