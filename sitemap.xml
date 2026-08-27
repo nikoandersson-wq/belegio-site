@@ -2,6 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://bonvio.eu/</loc>
-    <lastmod>2026-05-26</lastmod>
+    <lastmod>2026-08-26</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://bonvio.eu/agb.html</loc>
+    <lastmod>2026-08-26</lastmod>
+  </url>
+  <url>
+    <loc>https://bonvio.eu/agb-en.html</loc>
+    <lastmod>2026-08-26</lastmod>
+  </url>
+  <url>
+    <loc>https://bonvio.eu/datenschutz.html</loc>
+    <lastmod>2026-08-26</lastmod>
+  </url>
+  <url>
+    <loc>https://bonvio.eu/datenschutz-en.html</loc>
+    <lastmod>2026-08-26</lastmod>
+  </url>
+  <url>
+    <loc>https://bonvio.eu/impressum.html</loc>
+    <lastmod>2026-08-26</lastmod>
+  </url>
+  <url>
+    <loc>https://bonvio.eu/impressum-en.html</loc>
+    <lastmod>2026-08-26</lastmod>
   </url>
 </urlset>

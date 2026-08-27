@@ -9,7 +9,8 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231F4332'/%3E%3Ctext x='16' y='23' font-family='Helvetica Neue,Helvetica,Arial,sans-serif' font-size='22' font-weight='700' fill='%23F4EFE2' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E">
   <script>
   (function(){
-    var ov=sessionStorage.getItem('bonvio_lang');
+    var ov=null;
+    try{ov=localStorage.getItem('bonvio-lang')||sessionStorage.getItem('bonvio_lang');}catch(e){}
     var en=ov?ov==='en':!(((navigator.languages&&navigator.languages[0])||navigator.language||'de').toLowerCase().startsWith('de'));
     var p=window.location.pathname,isEn=/-en\.html$/.test(p);
     if(en&&!isEn)window.location.replace(p.replace(/\.html$/,'-en.html'));
@@ -22,7 +23,7 @@
       --ink: #14171A;
       --ink-soft: #0F2A1F;
       --green: #1F4332;
-      --muted: rgba(20,23,26,0.55);
+      --muted: rgba(20,23,26,0.68);
       --hair: rgba(20,23,26,0.08);
       --hair-2: rgba(20,23,26,0.12);
       --sans: Aptos, "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
@@ -54,7 +55,7 @@
       padding: 20px 56px;
       gap: 24px;
       position: sticky; top: 0;
-      background: rgba(244,243,240,0.92);
+      background: rgba(244,245,244,0.92);
       backdrop-filter: saturate(140%) blur(12px);
       -webkit-backdrop-filter: saturate(140%) blur(12px);
       border-bottom: 1px solid var(--hair);
@@ -195,7 +196,8 @@
     <div class="block">
       <div class="block-label">Rechtsgrundlagen</div>
       <p><strong>Art. 6 Abs. 1 lit. b DSGVO</strong> &mdash; Vertragserfüllung: Erbringung des Dienstes.</p>
-      <p><strong>Art. 6 Abs. 1 lit. c DSGVO</strong> &mdash; Speicherdauer orientiert sich an &sect;132 BAO. Gesetzliche Verantwortung f&uuml;r Aufbewahrungspflichten verbleibt beim Nutzer.</p>
+      <p><strong>Art. 6 Abs. 1 lit. c DSGVO</strong> &mdash; Erf&uuml;llung gesetzlicher Aufbewahrungspflichten, soweit solche bestehen (&sect;&thinsp;132 BAO: sieben Jahre).</p>
+      <p><strong>Art. 6 Abs. 1 lit. b DSGVO</strong> &mdash; die vertraglich zugesagte Archivierung von bis zu zehn Jahren, soweit sie &uuml;ber die gesetzliche Aufbewahrungsfrist hinausgeht. Die gesetzliche Verantwortung f&uuml;r Aufbewahrungspflichten verbleibt beim Nutzer.</p>
       <p><strong>Art. 6 Abs. 1 lit. f DSGVO</strong> &mdash; Berechtigte Interessen: Missbrauchserkennung, Systemsicherheit und Verbesserung der Erkennungsgenauigkeit.</p>
       <p>Werbung, Newsletter und Profiling finden nicht statt.</p>
     </div>
@@ -203,10 +205,10 @@
     <div class="block">
       <div class="block-label">Speicherdauer</div>
       <ul>
-        <li>Belegdaten: Bonvio speichert Belegdaten entsprechend dem gew&auml;hlten Aufbewahrungszeitraum. Standardm&auml;&szlig;ig bis zu 10 Jahre, orientiert an &sect;132 BAO / &sect;147 AO &mdash; danach automatische L&ouml;schung. Die gesetzliche Verantwortung f&uuml;r Aufbewahrungspflichten verbleibt beim Nutzer.</li>
+        <li>Belegdaten: standardm&auml;&szlig;ig bis zu 10 Jahre, danach automatische L&ouml;schung. Das geht &uuml;ber die gesetzlichen Aufbewahrungsfristen (&sect;&thinsp;132 BAO: sieben Jahre) hinaus und beruht insoweit auf der vertraglichen Zusage, nicht auf einer gesetzlichen Pflicht. Die gesetzliche Verantwortung f&uuml;r Aufbewahrungspflichten verbleibt beim Nutzer.</li>
         <li>Eingehende E-Mails (technisch): 90 Tage</li>
         <li>Kundenkonfiguration: bis zur K&uuml;ndigung, danach 30 Tage</li>
-        <li>Systemprotokolle: 7 Tage</li>
+        <li>Systemprotokolle: 30 Tage</li>
       </ul>
     </div>
 
@@ -216,12 +218,16 @@
         <li><strong>EU-Cloud-Anbieter:</strong> Datenspeicherung und -verarbeitung. Auftragsverarbeitungsvertrag geschlossen.</li>
         <li><strong>E-Mail-Dienstleister (EU):</strong> Transaktionale Mitteilungen. Verarbeitung innerhalb der EU/des EWR &mdash; kein Drittlandtransfer.</li>
         <li><strong>Zahlungsdienstleister (USA):</strong> Zahlungsabwicklung. Karten- und Bankdaten nicht durch Bonvio verarbeitet. Standardvertragsklauseln.</li>
+        <li><strong>KI-Dienstleister (EU):</strong> automatisierte Texterkennung der Belegfotos. Verarbeitung ausschlie&szlig;lich innerhalb der EU &mdash; kein Drittlandtransfer. Auftragsverarbeitungsvertrag geschlossen.</li>
+        <li><strong>Hosting- und CDN-Dienstleister:</strong> Auslieferung der Website bonvio.eu. Verarbeitet zur Auslieferung der Seite technisch notwendige Verbindungsdaten einschlie&szlig;lich der IP-Adresse. Rechtsgrundlage: Art.&thinsp;6 Abs.&thinsp;1 lit.&thinsp;f DSGVO (sichere und funktionsf&auml;hige Bereitstellung der Website).</li>
       </ul>
+      <p>Eine namentliche Liste der eingesetzten Auftragsverarbeiter stellen wir auf Anfrage unter <a href="mailto:hello@bonvio.eu">hello@bonvio.eu</a> zur Verf&uuml;gung; sie ist Bestandteil des Auftragsverarbeitungsvertrags nach Art.&thinsp;28 DSGVO.</p>
     </div>
 
     <div class="block">
-      <div class="block-label">Automatisierte Entscheidungen</div>
-      <p>Keine automatisierte Entscheidungsfindung mit rechtlicher Wirkung (Art. 22 DSGVO).</p>
+      <div class="block-label">Automatisierte Verarbeitung der Belegfotos</div>
+      <p>Zur Auslesung von H&auml;ndler, Datum, Betrag und Umsatzsteuer wird das Belegfoto an ein automatisiertes Erkennungssystem auf Basis eines KI-Modells &uuml;bergeben. Diese Verarbeitung findet ausschlie&szlig;lich auf Servern innerhalb der EU statt; ein Transfer in ein Drittland findet dabei nicht statt. Die Belegdaten werden nicht zum Training von KI-Modellen verwendet.</p>
+      <p>Es findet keine automatisierte Entscheidungsfindung mit rechtlicher Wirkung statt (Art. 22 DSGVO). Die ausgelesenen Werte sind Vorschl&auml;ge, die der Nutzer jederzeit korrigieren kann; ma&szlig;geblich bleibt stets der Originalbeleg.</p>
     </div>
 
     <div class="block">
@@ -249,9 +255,10 @@
     <div class="block">
       <div class="block-label">Cookies &amp; Tracking</div>
       <p>Die Website bonvio.eu verwendet keine Cookies, kein Tracking und keine Analysetools. Es werden keine Nutzungsprofile erstellt und keine Daten zu Werbezwecken erhoben oder an Dritte weitergegeben.</p>
+      <p>Beim Aufruf der Website verarbeitet der Hosting- und CDN-Dienstleister jedoch technisch notwendige Verbindungsdaten (u.&thinsp;a. IP-Adresse, Zeitpunkt, aufgerufene Seite), um die Seite ausliefern und den Betrieb absichern zu k&ouml;nnen. Diese Daten werden von Bonvio nicht zusammengef&uuml;hrt und nicht zur Identifikation einzelner Besucher genutzt.</p>
     </div>
 
-    <p class="stand">Stand: Juni 2026</p>
+    <p class="stand">Stand: August 2026</p>
   </main>
 
   <footer>

@@ -9,7 +9,8 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231F4332'/%3E%3Ctext x='16' y='23' font-family='Helvetica Neue,Helvetica,Arial,sans-serif' font-size='22' font-weight='700' fill='%23F4EFE2' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E">
   <script>
   (function(){
-    var ov=sessionStorage.getItem('bonvio_lang');
+    var ov=null;
+    try{ov=localStorage.getItem('bonvio-lang')||sessionStorage.getItem('bonvio_lang');}catch(e){}
     var en=ov?ov==='en':!(((navigator.languages&&navigator.languages[0])||navigator.language||'de').toLowerCase().startsWith('de'));
     var p=window.location.pathname,isEn=/-en\.html$/.test(p);
     if(en&&!isEn)window.location.replace(p.replace(/\.html$/,'-en.html'));
@@ -21,7 +22,7 @@
       --page: #F4F5F4;          /* cool near-white page ground */
       --ink: #14171A;
       --green: #1F4332;
-      --muted: rgba(20,23,26,0.55);
+      --muted: rgba(20,23,26,0.68);
       --hair: rgba(20,23,26,0.08);
       --hair-2: rgba(20,23,26,0.12);
       --sans: Aptos, "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
@@ -52,7 +53,7 @@
       display: flex; align-items: center; justify-content: space-between;
       padding: 20px 56px; gap: 24px;
       position: sticky; top: 0;
-      background: rgba(244,243,240,0.92);
+      background: rgba(244,245,244,0.92);
       backdrop-filter: saturate(140%) blur(12px);
       -webkit-backdrop-filter: saturate(140%) blur(12px);
       border-bottom: 1px solid var(--hair);
@@ -189,7 +190,7 @@
   <main>
     <div class="page-eyebrow">Legal</div>
     <h1>Terms &amp; Conditions</h1>
-    <div class="version">Edition May 2026 &mdash; Bonvio, Niko Andersson, 1030 Vienna</div>
+    <div class="version">Edition August 2026 &mdash; Bonvio, Niko Andersson, 1030 Vienna</div>
 
     <div class="disclaimer">
       <strong>Translation notice.</strong> This is an English translation of the German-language
@@ -232,9 +233,10 @@
     <!-- §2 -->
     <div class="clause" id="s2">
       <h2><span class="num">&sect; 2</span>Formation of Contract</h2>
-      <p>2.1. The contract is formed upon completion of the order process via the payment service provider Stripe. By completing payment the User submits a binding offer to conclude a usage agreement; the contract is concluded upon Bonvio sending a confirmation email.</p>
+      <p>2.1. The contract is formed upon completion of the order process via the payment service provider. By completing the order process the User submits a binding offer to conclude a usage agreement; the contract is concluded upon Bonvio sending a confirmation email. Where the User begins with a trial period under &sect;&#x202F;2.4, the contract is formed when the trial period begins; the obligation to pay arises only after it ends.</p>
       <p>2.2. The provision of a user account, a personal receipt address and the dispatch of the welcome email constitute receipt of the acceptance declaration.</p>
       <p>2.3. All agreements require written form to be effective (email suffices). No oral collateral agreements exist.</p>
+      <p>2.4. <strong>Trial period.</strong> Bonvio may offer the service with a free trial period of 30&#x202F;days from provision of the personal receipt address. The full scope of services is available during the trial period and no fee is charged. Unless the User terminates the contract no later than the end of the final day of the trial period, the contract converts into a paid annual subscription under &sect;&#x202F;4 and the annual fee becomes due. Termination during the trial period is possible at any time, without giving reasons and free of charge (by email to <a href="mailto:hello@bonvio.eu">hello@bonvio.eu</a> or via the payment service provider&rsquo;s customer portal). Bonvio will notify the User by email before the trial period ends.</p>
     </div>
 
     <!-- §3 -->
@@ -243,7 +245,8 @@
       <p>3.1. Bonvio provides a digital receipt management service comprising:</p>
       <ul>
         <li>Provision of a personal email address (e.g. <code>bonvio1234@bonvio.eu</code>) for submitting receipt photos</li>
-        <li>Automatic text recognition (OCR) of submitted receipt photos (vendor, date, amount, VAT)</li>
+        <li>Automatic text recognition of submitted receipt photos (vendor, date, amount, VAT) using an automated recognition process</li>
+        <li>Capture and calculation of mileage allowance and daily allowances at the rates applicable in Austria, by email subject line</li>
         <li>Encrypted storage of receipts and extracted data on servers within the EU (Germany)</li>
         <li>Return of a confirmation email with recognised data to the User</li>
         <li>Export functions via email command (<code>EXPORT</code>) as a ZIP archive containing original photos and a CSV file</li>
@@ -263,10 +266,11 @@
     <!-- §4 -->
     <div class="clause" id="s4">
       <h2><span class="num">&sect; 4</span>Fees and Payment</h2>
-      <p>4.1. Use of Bonvio is subject to a fee. The current charge is <strong>&euro;&#x202F;39.99 per year</strong> (prices exclusive of VAT; no VAT is charged).</p>
-      <p>4.2. Payment is made annually in advance via the payment service provider Stripe. The subscription renews automatically for a further year unless the User cancels in accordance with &sect;&#x202F;5 in good time.</p>
+      <p>4.1. Use of Bonvio is subject to a fee. The current charge is <strong>&euro;&#x202F;39.99 per year</strong>. The stated amount is the total the User pays; no VAT is shown or charged in addition.</p>
+      <p>4.2. Payment is made annually in advance via the payment service provider. The subscription renews automatically for a further year unless the User cancels in accordance with &sect;&#x202F;5 in good time.</p>
       <p>4.3. In the event of payment default, Bonvio is entitled to suspend access to the service without prior notice and, after 14&#x202F;days without further reminder, to delete the customer configuration. Receipt data already stored will be retained for up to ten years by default but will not be accessible during a suspension. Legal responsibility for retention obligations remains with the User.</p>
       <p>4.4. Bonvio reserves the right to adjust prices with 6&#x202F;weeks&rsquo; notice. If the User does not accept the new prices, they may terminate extraordinarily pursuant to &sect;&#x202F;5. Continued use after expiry of the notice period constitutes acceptance of the new prices.</p>
+      <p>4.6. <strong>Founding price.</strong> Users whose contract is formed before 1&#x202F;January&#x202F;2027 pay &euro;&#x202F;39.99 per year permanently, for as long as the contractual relationship continues without interruption. A price adjustment under &sect;&#x202F;4.4 does not apply to those Users while the contractual relationship subsists without interruption; where the contract is terminated and later concluded anew, the price then in force applies. This paragraph takes precedence over &sect;&#x202F;4.4.</p>
       <p>4.5. Bonvio is a sole proprietorship; refunds of annual fees already paid are generally not made, except where Bonvio permanently and completely discontinues the service.</p>
     </div>
 
@@ -274,7 +278,7 @@
     <div class="clause" id="s5">
       <h2><span class="num">&sect; 5</span>Term and Termination</h2>
       <p>5.1. The contract is concluded for one year and renews automatically for a further year unless terminated no later than 30&#x202F;days before the end of the respective contract year.</p>
-      <p>5.2. Cancellation is effected by cancelling the subscription via the Stripe customer portal or by email to <a href="mailto:hello@bonvio.eu">hello@bonvio.eu</a>. Bonvio will confirm cancellation by email within 5&#x202F;business days.</p>
+      <p>5.2. Cancellation is effected by cancelling the subscription via the payment service provider&rsquo;s customer portal or by email to <a href="mailto:hello@bonvio.eu">hello@bonvio.eu</a>. Bonvio will confirm cancellation by email within 5&#x202F;business days.</p>
       <p>5.3. Bonvio is entitled to terminate the contract for cause with immediate effect, in particular where:</p>
       <ul>
         <li>the User breaches these GTC, in particular &sect;&#x202F;7;</li>
@@ -292,7 +296,8 @@
       <div class="highlight-box">
         <strong>Important notice on the right of withdrawal:</strong> Pursuant to &sect;&#x202F;18(1)(11) of the Austrian Distance and Off-Premises Contracts Act (FAGG), the right of withdrawal lapses for digital services where performance has begun before the withdrawal period has expired, provided the User has expressly consented to early performance and acknowledged that they thereby lose their right of withdrawal.
       </div>
-      <p>6.1. During the checkout process the User expressly confirms the immediate provision of the digital service. Performance commences upon completion of the purchase process and dispatch of the welcome email. The right of withdrawal therefore lapses at the time the contract is concluded.</p>
+      <p>6.1. Where the User begins with a trial period under &sect;&#x202F;2.4, the User may terminate the contract at any time throughout the trial period, without giving reasons and free of charge; no obligation to pay arises in that case.</p>
+      <p>6.1a. Otherwise, during the order process the User expressly confirms the immediate provision of the digital service and acknowledges that the right of withdrawal lapses upon full performance of the service pursuant to &sect;&#x202F;18(1)(11) FAGG.</p>
       <p>6.2. To the extent the User as a consumer (within the meaning of KSchG) has a statutory right of withdrawal that has not lapsed pursuant to clause&#x202F;1, the withdrawal period is 14&#x202F;days from conclusion of the contract. Withdrawal must be declared by email to <a href="mailto:hello@bonvio.eu">hello@bonvio.eu</a>.</p>
     </div>
 
@@ -350,7 +355,7 @@
         <li>costs arising in connection with a service outage;</li>
         <li>third-party claims against the User.</li>
       </ul>
-      <p>11.3. To the extent liability cannot be fully excluded, it is limited in amount to the fee actually paid by the User in the relevant contract year (&euro;&#x202F;39.99).</p>
+      <p>11.3. To the extent liability cannot be fully excluded, it is limited in amount to the annual fee actually paid by the User in the relevant contract year.</p>
       <p>11.4. Bonvio&rsquo;s liability for personal injury is unlimited. These limitations do not apply to the extent that mandatory applicable consumer law prescribes greater liability.</p>
       <p>11.5. Bonvio is not responsible for the contents of receipts submitted by the User. The User indemnifies Bonvio against third-party claims arising from unlawful use of the service by the User.</p>
     </div>
@@ -385,11 +390,11 @@
       <p>15.1. <strong>Governing law:</strong> Austrian law applies exclusively, to the exclusion of the UN Convention on Contracts for the International Sale of Goods (CISG) and the conflict-of-law rules of private international law. Mandatory consumer protection provisions of the User&rsquo;s country of residence that are more favourable remain unaffected.</p>
       <p>15.2. <strong>Jurisdiction:</strong> For disputes arising out of or in connection with this contract, the exclusive jurisdiction of the competent court at Bonvio&rsquo;s place of business (Vienna) is agreed to the extent permitted by law. Against consumers this applies only where no mandatory statutory venue takes precedence.</p>
       <p>15.3. <strong>Severability:</strong> Should individual provisions of these GTC be or become wholly or partly invalid, this does not affect the validity of the remaining provisions. The invalid provision shall be replaced by a valid one that comes as close as possible to the economic purpose of the invalid provision.</p>
-      <p>15.4. <strong>Dispute resolution:</strong> Bonvio does not participate in alternative dispute resolution proceedings. The European Commission provides an online dispute resolution platform at <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a>.</p>
+      <p>15.4. <strong>Dispute resolution:</strong> Bonvio does not participate in dispute resolution proceedings before a consumer arbitration body and is not obliged to do so.</p>
       <p>15.5. <strong>Language:</strong> The language of contract is German. Translations of these GTC serve for information purposes only; the German version is always authoritative.</p>
     </div>
 
-    <p class="stand">Edition May 2026 &mdash; Bonvio, Niko Andersson, Vienna</p>
+    <p class="stand">Edition August 2026 &mdash; Bonvio, Niko Andersson, Vienna</p>
   </main>
 
   <footer>

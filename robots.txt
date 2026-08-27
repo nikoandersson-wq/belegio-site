@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
+# Customer-facing manual and the blog post scaffold — reachable by URL, not for indexing.
+Disallow: /anleitung.html
+Disallow: /blog/_template.html
+
 Sitemap: https://bonvio.eu/sitemap.xml

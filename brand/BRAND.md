@@ -79,83 +79,252 @@ on the guide page and again in the welcome mail is reading one product, not thre
 
 ## 4. Colour palette
 
+**Superseded 2026-08-26 — the dark rebrand.** The light, green-on-near-white system below §4.3
+was correct for what Bonvio was: a quiet archive tool. It is not correct for what Bonvio is
+selling now. It read, in the founder's words, "outdated / AI-made blur." The diagnosis was
+specific and measurable, not a matter of taste:
+
+- The page separated its sections with **flat bands one step apart in value**. Measured, that
+  step was **1.12:1** — below the threshold of perception. Sixteen sections stacked to one flat
+  slab.
+- Everything began at the same left margin, every section was the same full-width shape, and the
+  same eyebrow-plus-rule and `01 / 02 / 03` markers repeated down the page whether or not the
+  content was a sequence. That combination is the house style of generated landing pages.
+
+### 4.1 The ground and the elevation ramp
+
 | Role | Hex | Use |
 |---|---|---|
-| Page (background) | `#F4F5F4` | default light background (cool, not cream) |
-| Surface | `#FFFFFF` | cards, receipt surfaces |
-| Ink (text) | `#14171A` | body + headlines on light |
-| Deep bottle green (**the** accent) | `#1F4332` | buttons, totals, accent words, dark surfaces |
-| Bottle green (darker) | `#0F2A1F` | large dark backgrounds, hover |
-| Green tint | `rgba(31,67,50,0.08)` | pills, quiet emphasis, the total row |
-| **Alert red (semantic only)** | `#B3261E` | needs-review, payment mismatch — **never decorative** |
-| Muted text | `rgba(20,23,26,0.52)` | secondary text, labels |
-| Hairline | `rgba(20,23,26,0.11)` | card borders, dividers |
-| White on dark | `#FFFFFF` | text + CTA on green surfaces |
+| Ground | `#0D2119` | the page. Deep on purpose — see 4.2. |
+| Elevation 1 | `#163024` | cards, panels, the nav pill |
+| Elevation 2 | `#1E3E2F` | cards that sit on top of Elevation 1; keycaps |
+| Bone (ink on dark) | `#F2F1E8` | body and headlines on the ground |
+| Muted | `rgba(242,241,232,0.58)` | secondary text |
+| Hairline | `rgba(242,241,232,0.10)` | rules, card borders |
+| **Lime (action)** | `#C7F04F` | the CTA, the address, one accent word per headline |
+| **Mint (confirmation)** | `#7FE0AE` | saved / recognised / success — **only** these |
+| **Alert red (semantic only)** | `#B3261E` | needs-review, payment mismatch — never decorative |
 
-**The 2026-07-21 rebrand — why gold went.** The product read "luxury hotel / heritage bank"
-rather than software. Three things caused it: **gold as a type colour** (`#E0C896` on green is a
-heraldic pairing), **Courier New everywhere**, and decorative **wax seals + perforated borders**.
-All three are retired.
+**Two accents, two jobs, and they never swap.** Lime means *do this*. Mint means *this worked*.
+Before the split, lime carried both, and an accent doing two jobs stops meaning either. It is
+also what made the page shout: lime measured **13.63:1** against the old ground, roughly double
+what any text needs.
 
-**The rule is proportion, not hue.** Bottle green + gold + red is literally a coat of arms. The
-escape: roughly **90 % white and near-black**, green as the single *structural* colour (it marks
-what matters — the total, the action, the status), and red measured in pixels per screen.
+### 4.2 Depth comes from light, never from a lighter fill
+
+This is the rule the old system got wrong, and it is not negotiable.
+
+**At the dark end of the scale, value steps cannot separate surfaces.** Ground to Elevation 1 is
+1.19:1; Elevation 1 to Elevation 2 is 1.20:1. Every step available to us is under 1.3:1. Painting
+a slightly lighter rectangle will never read as a distinct surface, no matter how many times you
+try. So a surface is not defined by its fill. **A surface is defined by light falling on it:**
+
+```css
+/* every raised surface, without exception */
+border: 1px solid rgba(242,241,232,0.10);
+border-radius: 18px;
+box-shadow: inset 0 1px 0 rgba(255,255,255,0.07),   /* the lit top edge */
+            0 28px 60px -20px rgba(0,0,0,0.75);      /* the shadow it casts */
+```
+
+The inset top highlight is the load-bearing part: it is what the eye reads as "this is in front."
+Delete it and the card disappears into the ground again.
+
+**The page's brightness comes from atmosphere, not from raising the ground.** Two wide, soft
+radial glows (lime top-left, mint top-right, both under 0.14 alpha) and a 64px grid masked to
+fade out by 82%. The ground stays deep so the lime keeps its punch; the light sits on top of it.
+One glow per moment — hero, the pull-quote, the price, the closing line. Never a gradient mesh.
+
+### 4.3 Email is dark too — and what that costs
+
+**Decided 2026-08-27.** Client email runs the same dark palette as the site. Two mechanics are
+load-bearing and must not be removed:
+
+- **Outlook ignores `body { background }`** (it renders through Word). The ground is painted by a
+  full-width table carrying a `bgcolor` **attribute** as well as the CSS. Without it the mail
+  arrives white behind bone text.
+- **Clients auto-invert mail they judge to be light.** `<meta name="color-scheme" content="dark">`
+  plus `:root { color-scheme: dark }` tells Gmail and Apple Mail it is already dark.
+
+**Every colour in an email is a solid hex.** `rgba()` is dropped by several clients, and on a dark
+ground a dropped colour is invisible text, not a near miss. The email tokens are ground `#0D2119`,
+card `#163024`, card-2 `#1E3E2F`, hairline `#24412F`, ink `#F2F1E8`, muted `#9DB0A3` (7.4:1), dim
+`#7C8C81` (4.8:1), and red `#E8776C` — the light-ground red is unreadable here.
+
+**`box-shadow` does not render in Outlook**, so the site's elevation becomes a fill plus a
+hairline. Same intent, mechanics the medium allows.
+
+### 4.3a The rule for any light ground that remains
+
+Print, and anything that must survive a printer, still lands light — `anleitung.html` carries a
+print stylesheet that flips the whole document back. Where that happens the accents do not survive
+as text:
+
+| | as text on light | as a fill behind `#0D2119` text |
+|---|---|---|
+| Lime `#C7F04F` | **1.20:1 — forbidden** | 12.82:1 ✓ |
+| Mint `#7FE0AE` | **1.46:1 — forbidden** | 10.55:1 ✓ |
+| Deep green `#0D2119` | 15.40:1 ✓ | — |
+
+So: **on dark, lime is a colour you write in. On light, lime is a colour you sit on.** On a light
+ground the ink is the deep green and lime appears only as a fill under near-black text. This is
+what caught two real bugs in the welcome email when it went dark: the address pill and the CTA
+block became lime fills while their text was still `#FFFFFF` — 1.4:1.
+
+### 4.3b Every text colour is measured — and none of them is an `opacity`
+
+The palette was right and the page still failed. Two mechanics did it, and both are easy to
+reintroduce, so they are rules now.
+
+**1. Never dim text with `opacity`, and never with a low alpha.** Dimming reads as a design
+choice; it is really a contrast cut, and it compounds — an `opacity:0.55` span inside a
+`rgba(bone,0.42)` parent lands at 2.6:1. On the deep-green ground the maths is blunt:
+
+| bone alpha | on `#0D2119` | on `#163024` | on `#1E3E2F` | |
+|---|---|---|---|---|
+| 0.32 – 0.50 | 2.70 – 4.65 | 2.61 – 4.26 | 2.45 – 3.87 | **all fail** |
+| 0.58 | 5.81 | 5.24 | 4.64 | the floor |
+| **0.62 — `--muted-2`** | 6.42 | 5.77 | 5.05 | labels, meta, quiet rows |
+| **0.72 — `--muted`** | 8.23 | 7.21 | 6.23 | secondary body copy |
+| **1.00 — `--bone`** | 14.83 | 12.50 | 10.38 | primary |
+
+Anything below 0.58 fails on some surface, so **there are three text values and no fourth.**
+A one-off alpha invented for a single span is the bug, not the fix. On the light ground the
+legal pages keep, the same rule gives ink `#14171A` at **0.68** (5.8–6.1:1).
+
+**2. Text on a lime or mint fill has exactly two values.** Both are dark:
+
+| on lime `#C7F04F` / mint `#7FE0AE` | | |
+|---|---|---|
+| `#0D2119` | 12.82:1 / 10.55:1 | primary — price, button legend, list |
+| `#364E25` | 7.04:1 | secondary — captions, fine print |
+| `#FFFFFF` | **1.31:1 — invisible** | never |
+
+White on lime is the one that actually shipped: `.btn span { color:#FFFFFF !important }` was
+correct when the button was bottle green, and survived the swap to a lime fill as an unreadable
+button legend in the receipt and export emails — the two most-sent mails in the product. When a
+fill changes, the `!important` that defends its text is the first thing to re-check.
+
+**Red on dark is `#E8776C`, not `#B3261E`.** The light-ground red reads 2.57:1 on the ground —
+and it is only ever used to say *check this receipt*, so it is the one colour that must not be
+missable.
+
+**How to re-check.** Contrast is not eyeballed here. Render the page or the email headless, walk
+every element with its own text, composite the real background up the ancestor chain, and assert
+4.5:1 (3:1 for ≥24px or ≥18.66px bold). The site's eight pages and all sixteen client email
+variants pass at both desktop and mobile widths, in German and English. Re-run it after any
+palette change — that is what caught all of this.
+
+### 4.4 History — kept because it is still true
+
+The gold retirement (2026-07-21) and the proportion rule that came with it stand: Bonvio is not
+a heraldic brand, and a colour that touches everything stops reading as an accent. What changed
+on 2026-08-26 is the ground, not that principle — lime still touches only the action, mint only
+the confirmation.
+
+**Lime is never a large field.** The price panel was a full lime slab — the loudest colour
+moment on a 7,000px page, spent on a number rather than on the product, and the only large lime
+area anywhere, so it read as an outlier rather than as part of a system. It is now `--elev-2` like
+any other raised surface, with lime left on exactly two things: the price numeral and the button.
+That is the rule the palette was always claiming — **lime marks the action** — applied to the one
+place that broke it.
 
 **Retired — do not reintroduce:** gold `#B8860B`, bronze `#7A5D1F`, wheat `#E0C896`,
-cream `#F4F3F0`, warm hairline `#E2E0DB`, warm ink `#1A1814`.
+cream `#F4F3F0`, warm hairline `#E2E0DB`, warm ink `#1A1814`, the light-ground red
+`#B3261E` **as text on a dark ground**, and the previous light
+ground `#F4F5F4` **as a marketing-site background** (it remains correct for email and print).
 
-**Resolved 2026-08-01 — favicon/logo mismatch.** The rust-orange favicon (`#B4451F`) noted
-below as an open inconsistency is gone. Nav mark and favicon are now the same asset (see
-§6, "The B mark") in the one accent colour, `#1F4332`.
-
-**The colour-off-by-default rule (2026-08-01).** Green had crept into places that aren't
-structural: the hero headline's accent word, and two full-bleed `--green-deep` section
-panels ("How it works," the closing CTA). Both read as "heavy," not premium. Fixed by
-extending the proportion rule literally: **headline accent words are ink, not green** (weight
-and italics carry the emphasis, not colour); and **no section background is a solid colour
-fill any more** — those two panels are now `--surface` + hairline border, with green pulled
-back to only the mono step-labels, the mark, and the button. A colour that touches
-everything stops reading as an accent.
-
-**One sanctioned exception (2026-08-01, evening): the green full stop.** Green may appear
-in a headline on exactly one glyph — the full stop, and only where the sentence is a
-*completion* ("Fertig." / "Done." / the closing CTA's last word). The full stop is the product
-promise, so it's structural, not decorative. Words stay ink. See §6.
+**No longer in force:** the "colour-off-by-default" rule and the "one green full stop" exception
+(both 2026-08-01). They existed to stop green overwhelming a light page. On a dark ground the
+problem inverts — the accent is what makes the page legible, so headline accent words are back.
 
 ---
 
 ## 5. Typography
 
-**Two roles, two stacks — and both ship with Microsoft 365** (2026-07-21):
+**Two tiers, because a webfont cannot travel into an inbox or a PowerPoint.** This is the honest
+version of the old "no webfonts anywhere" rule, which was written when the site and the email
+looked the same. They no longer do.
+
+### 5.1 Web tier — the marketing site only
+
+```css
+--display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;  /* 700 / 800 */
+--body:    "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;       /* 400 / 500 / 600 */
+--mono:    "Martian Mono", ui-monospace, Consolas, monospace;           /* 400 / 500 / 600 */
+```
+
+- **Display** carries the page. Weight 700–800, tracking **-0.038 to -0.045em**, line-height
+  0.93–0.98. It is set large and tight; at small sizes it loses its character and you should be
+  using the body face instead.
+- **Body** is the neutral partner. 15–21px, line-height 1.55–1.6.
+- **Mono is for what the user literally types** — the Bonvio address, `#km 47`, `EXPORT Q1 2026`
+  — plus small uppercase labels at 9.5–11px with 0.14–0.16em tracking. Never body text.
+
+Loaded from Google Fonts, which is the one font host permitted. Every stack carries a real
+fallback.
+
+### 5.2 Document tier — email, decks, anything that leaves the browser
 
 ```css
 --sans: Aptos, "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
 --mono: Consolas, "Aptos Mono", ui-monospace, "SF Mono", Menlo, monospace;
 ```
 
-- **Sans — everything.** Display: weight **600**, tracking **-0.021 to -0.025em**, line-height
-  1.12–1.2. Body: 400/500, 15–18px, line-height 1.5–1.6. Labels/eyebrows: **sentence case,
-  weight 600, no letterspacing** — the old UPPERCASE + wide-tracking treatment is what read as
-  editorial/typewriter.
-- **Mono — data only.** Email addresses, amounts, receipt IDs, and literal commands the user
-  types. Amounts in mono also buy **tabular alignment** — the decimals line up in a column.
-  Never body text; never section headings in product email. (A mono *eyebrow* is fine on the
-  marketing site — with Consolas it reads technical, which Courier never did.)
+Unchanged, and for the original reason: **Aptos has been the Microsoft 365 default since 2024 and
+Consolas ships with Office on Windows and Mac.** A deck matches the product with no embedding, no
+subsetting, no font remapping. Email clients strip `@font-face` regardless, so an email that
+asked for Bricolage would silently land somewhere unpredictable — the document tier lands on
+Segoe UI or SF, which are the same neutral grotesque and degrade invisibly.
 
-**Why these two, specifically:** **Aptos** has been the Microsoft 365 default since 2024 and
-**Consolas** ships with Office on Windows *and* Mac. So a PowerPoint or Gamma deck matches the
-product with **no embedding, no subsetting, and no font remapping** — which is exactly the
-breakage documented in the Gamma→PPTX export fix. Pick Aptos in PowerPoint and you're done.
+**The rule in one line:** if it renders in a browser we control, use the web tier; if it renders
+in someone else's mail client, slide deck or printer, use the document tier.
 
-**No webfonts anywhere.** Site and email load **zero** font files. Email clients strip
-`@font-face` regardless, and the fallbacks (Segoe UI on Windows, SF on Mac) are the same
-neutral grotesque, so it degrades invisibly. On perpetual Office (2019/2021) there's no Aptos —
-it lands on Segoe UI, which is the point of the stack.
-
-**Forbidden:** Cormorant, Newsreader, **Inter** (not in Office — this is what forced the font
-surgery), **Courier New**, Roboto, Arial-as-display, Open Sans, Fraunces.
+**Forbidden everywhere:** Cormorant, **Inter**, **Courier New**, Roboto, Arial-as-display,
+Open Sans, Fraunces.
 
 ---
+
+## 5a. Motion
+
+One idea, used twice, both opt-out:
+
+- A **pulsing dot** on the "Antwort in ~3 Sekunden" badge — the product's promise is speed, so
+  the one live element is the one that says so.
+- A **slow 7s float** on the confirmation card and the export window, ~9px of travel.
+
+Both sit behind `@media (prefers-reduced-motion: reduce)`. Nothing else moves. Scattered
+micro-interactions are what make a page feel generated; one orchestrated idea does not.
+
+---
+
+## 5b. Composition — how to not look generated
+
+The failure was structural, not chromatic. Hold to these:
+
+- **Vary the section shape.** Hero is 2-up asymmetric, the three steps live inside one panel,
+  export is 40/60, the FAQ is 30/70. If every section is a full-width band with a left-aligned
+  heading, the page reads as generated no matter what colour it is.
+- **Let things overlap and tilt.** Cards break their column, rotate a degree, and float above the
+  section boundary. A perfect grid is the tell.
+- **No eyebrow-plus-rule above every heading.** The headline is the section label.
+- **Numbers only where there is a sequence.** `Schritt 1 / 2 / 3` is a sequence. A list of five
+  grievances is not — that gets hairline rows.
+- **Make the product a thing you can touch.** The address is a copy-field with a button, not a
+  line of text. Commands are keycaps with a lit top edge and a 2px bottom shadow.
+- **The persona section is the page's one diagonal.** It is a two-column grid whose card stack
+  starts *above* the heading's top edge and steps down and to the right (`0 / 72 / 144px`), so the
+  eye travels diagonally instead of straight across. Nothing is ever drawn over type — the
+  asymmetry lives in the stagger, never in an overlap; an earlier version pulled the stack left
+  over the heading and truncated it. The steps halve below 1180px and collapse below 780px, where
+  a diagonal has no room to read. Spend this shape **once**: a second diagonal makes it a pattern,
+  and a pattern is the thing this section exists to break.
+- **A card is a surface; the text inside it still has a measure.** Capping the stack (640px) is
+  what keeps a card from becoming an 800px slab holding 46 characters. Copy stays at 60ch or under,
+  as `.lede` (52ch) and `.note` (44ch) already do.
+
+---
+
 
 ## 6. Visual motifs (reuse these, don't invent new ones)
 
