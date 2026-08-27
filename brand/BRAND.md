@@ -222,6 +222,13 @@ a heraldic brand, and a colour that touches everything stops reading as an accen
 on 2026-08-26 is the ground, not that principle — lime still touches only the action, mint only
 the confirmation.
 
+**Lime is never a large field.** The price panel was a full lime slab — the loudest colour
+moment on a 7,000px page, spent on a number rather than on the product, and the only large lime
+area anywhere, so it read as an outlier rather than as part of a system. It is now `--elev-2` like
+any other raised surface, with lime left on exactly two things: the price numeral and the button.
+That is the rule the palette was always claiming — **lime marks the action** — applied to the one
+place that broke it.
+
 **Retired — do not reintroduce:** gold `#B8860B`, bronze `#7A5D1F`, wheat `#E0C896`,
 cream `#F4F3F0`, warm hairline `#E2E0DB`, warm ink `#1A1814`, the light-ground red
 `#B3261E` **as text on a dark ground**, and the previous light
@@ -305,6 +312,16 @@ The failure was structural, not chromatic. Hold to these:
   grievances is not — that gets hairline rows.
 - **Make the product a thing you can touch.** The address is a copy-field with a button, not a
   line of text. Commands are keycaps with a lit top edge and a 2px bottom shadow.
+- **The persona section is the page's one diagonal.** It is a two-column grid whose card stack
+  starts *above* the heading's top edge and steps down and to the right (`0 / 72 / 144px`), so the
+  eye travels diagonally instead of straight across. Nothing is ever drawn over type — the
+  asymmetry lives in the stagger, never in an overlap; an earlier version pulled the stack left
+  over the heading and truncated it. The steps halve below 1180px and collapse below 780px, where
+  a diagonal has no room to read. Spend this shape **once**: a second diagonal makes it a pattern,
+  and a pattern is the thing this section exists to break.
+- **A card is a surface; the text inside it still has a measure.** Capping the stack (640px) is
+  what keeps a card from becoming an 800px slab holding 46 characters. Copy stays at 60ch or under,
+  as `.lede` (52ch) and `.note` (44ch) already do.
 
 ---
 

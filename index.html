@@ -200,13 +200,14 @@
     .csv { display: grid; grid-template-columns: minmax(0,1fr) 84px 92px 76px; gap: 12px; padding: 14px 24px; font-family: var(--mono); font-size: 13px; border-bottom: 1px solid rgba(242,241,232,0.06); }
     .csv .r { text-align: right; }
     .price-panel {
-      position: relative; border-radius: 30px; background: var(--lime); color: var(--ground);
+      position: relative; border-radius: 30px; background: var(--elev-2); color: var(--bone);
+      border: 1px solid rgba(242,241,232,0.13);
       padding: 66px 64px 70px;
-      box-shadow: 0 50px 110px -34px rgba(199,240,79,0.42), inset 0 1px 0 rgba(255,255,255,0.5);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.09), 0 34px 70px -22px rgba(0,0,0,0.8);
       display: grid; grid-template-columns: minmax(0,1fr) 420px; gap: 76px; align-items: start;
     }
-    .price-panel .inc { padding: 14px 0; border-top: 1px solid rgba(13,33,25,0.2); font-size: 16px; }
-    .price-panel .inc:last-child { border-bottom: 1px solid rgba(13,33,25,0.2); }
+    .price-panel .inc { padding: 14px 0; border-top: 1px solid var(--hair); font-size: 16px; }
+    .price-panel .inc:last-child { border-bottom: 1px solid var(--hair); }
     .faq-q { width: 100%; display: flex; justify-content: space-between; align-items: baseline; gap: 26px; background: transparent; border: 0; padding: 0; cursor: pointer; text-align: left; color: inherit; font-family: var(--disp); font-weight: 700; font-size: 22px; letter-spacing: -0.035em; }
     .faq-q .ic { color: var(--muted-2); font-size: 22px; flex: none; line-height: 1; }
     .faq-item.open .faq-q .ic { color: var(--lime); }
@@ -227,6 +228,30 @@
     body.lang-en-active .lang-en-inline { display: inline; }
 
     /* ── responsive ─────────────────────────────────────────────────────── */
+    /* ── offset stack: the one section that breaks the grid ───────────────
+       The stack starts above the heading's top edge and steps down and to the
+       right, so the eye travels diagonally instead of straight across. Nothing
+       is drawn over type — the asymmetry is in the stagger, never in an overlap.
+       Below 1180px the heading goes full width and the steps halve; below 780px
+       they collapse, because a diagonal has no room to read at that width. */
+    .offset-sec { display: grid; grid-template-columns: minmax(0,400px) minmax(0,1fr); gap: 56px; align-items: start; }
+    .offset-head { padding-top: 46px; }
+    .offset-stack { display: flex; flex-direction: column; gap: 18px; margin-top: -34px; }
+    @media (min-width: 1181px) { .offset-stack { max-width: 640px; } }
+    .ofs-2 { margin-left: 72px; }
+    .ofs-3 { margin-left: 144px; }
+    @media (max-width: 1180px) {
+      .offset-sec { grid-template-columns: 1fr; gap: 34px; }
+      .offset-head { padding-top: 0; }
+      .offset-stack { margin-top: 0; }
+      .ofs-2 { margin-left: 40px; }
+      .ofs-3 { margin-left: 80px; }
+    }
+    @media (max-width: 780px) {
+      .ofs-2, .ofs-3 { margin-left: 0; }
+      .offset-stack { gap: 16px; }
+    }
+
     @media (max-width: 1180px) {
       :root { --pad: 56px; }
       .hero { grid-template-columns: 1fr; gap: 48px; }
@@ -402,11 +427,16 @@
         </div>
       </section>
       <section class="sec reveal" id="wer">
-        <h2 style="max-width:24ch;">F&uuml;r Selbst&auml;ndige gebaut. Von allen geliebt, die genug vom Chaos haben.</h2>
-        <div class="trio" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:48px;">
-          <div class="card" style="padding:32px 30px 34px;display:flex;flex-direction:column;gap:13px;"><h3 style="font-size:25px;">Freelancer &amp; Einzelunternehmer</h3><p style="margin:0;font-size:16px;line-height:1.6;color:var(--muted);">Kein Buchhaltungsprogramm. Keine neue App. Dein Steuerberater bekommt am Jahresende eine fertige CSV &mdash; du machst nichts weiter als ein Foto.</p></div>
-          <div class="card" style="padding:32px 30px 34px;display:flex;flex-direction:column;gap:13px;"><h3 style="font-size:25px;">Vereine &amp; kleine Unternehmen</h3><p style="margin:0;font-size:16px;line-height:1.6;color:var(--muted);">Du denkst in Veranstaltungen und Projekten, nicht in Kassabons. Bonvio archiviert still im Hintergrund, w&auml;hrend du dich ums Wesentliche k&uuml;mmerst.</p></div>
-          <div class="card" style="padding:32px 30px 34px;display:flex;flex-direction:column;gap:13px;"><h3 style="font-size:25px;">Alle, die Ordnung lieben</h3><p style="margin:0;font-size:16px;line-height:1.6;color:var(--muted);">Wenn der Schuhkarton nicht mehr reicht &mdash; und eine neue App zu viel ist. Einfach mailen, wir erledigen den Rest.</p></div>
+        <div class="offset-sec">
+          <div class="offset-head">
+            <div class="label" style="margin-bottom:18px;">F&Uuml;R WEN</div>
+            <h2 style="font-size:clamp(30px,3.2vw,44px);">F&uuml;r Selbst&auml;ndige gebaut. Von allen geliebt, die genug vom Chaos haben.</h2>
+          </div>
+          <div class="offset-stack">
+            <div class="card ofs-1" style="padding:30px 32px 32px;display:flex;flex-direction:column;gap:11px;"><h3 style="font-size:24px;">Freelancer &amp; Einzelunternehmer</h3><p style="margin:0;font-size:16px;line-height:1.6;color:var(--muted);max-width:60ch;">Kein Buchhaltungsprogramm. Keine neue App. Dein Steuerberater bekommt am Jahresende eine fertige CSV &mdash; du machst nichts weiter als ein Foto.</p></div>
+            <div class="card ofs-2" style="padding:30px 32px 32px;display:flex;flex-direction:column;gap:11px;"><h3 style="font-size:24px;">Vereine &amp; kleine Unternehmen</h3><p style="margin:0;font-size:16px;line-height:1.6;color:var(--muted);max-width:60ch;">Du denkst in Veranstaltungen und Projekten, nicht in Kassabons. Bonvio archiviert still im Hintergrund, w&auml;hrend du dich ums Wesentliche k&uuml;mmerst.</p></div>
+            <div class="card ofs-3" style="padding:30px 32px 32px;display:flex;flex-direction:column;gap:11px;"><h3 style="font-size:24px;">Alle, die Ordnung lieben</h3><p style="margin:0;font-size:16px;line-height:1.6;color:var(--muted);max-width:60ch;">Wenn der Schuhkarton nicht mehr reicht &mdash; und eine neue App zu viel ist. Einfach mailen, wir erledigen den Rest.</p></div>
+          </div>
         </div>
       </section>
       <section class="sec reveal" id="kein">
@@ -428,11 +458,11 @@
         <div class="spot" style="inset:-60px 0;background:radial-gradient(760px 400px at 50% 50%, rgba(199,240,79,0.14), transparent 66%);"></div>
         <div class="price-panel">
           <div>
-            <div class="disp" style="font-size:clamp(56px,8vw,116px);letter-spacing:-0.055em;line-height:0.86;">&euro;&thinsp;39,99</div>
+            <div class="disp" style="font-size:clamp(56px,8vw,116px);letter-spacing:-0.055em;line-height:0.86;color:var(--lime);">&euro;&thinsp;39,99</div>
             <div class="disp" style="font-size:clamp(22px,2.4vw,31px);margin-top:12px;font-weight:700;">im Jahr. Alles inklusive.</div>
-            <p style="margin:22px 0 0;font-size:17px;line-height:1.6;color:rgba(13,33,25,0.78);max-width:40ch;">Gr&uuml;nderpreis &mdash; wer jetzt startet, zahlt dauerhaft &euro;&thinsp;39,99. Ab J&auml;nner 2027 kostet Bonvio &euro;&thinsp;49,99.</p>
-            <a class="btn btn-dark" href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800" style="margin-top:32px;">30 Tage gratis testen <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></a>
-            <div style="margin-top:14px;font-size:14px;color:rgba(13,33,25,0.78);">Kein Setup &middot; Verl&auml;ngerung jederzeit abbestellbar</div>
+            <p style="margin:22px 0 0;font-size:17px;line-height:1.6;color:var(--muted);max-width:40ch;">Gr&uuml;nderpreis &mdash; wer jetzt startet, zahlt dauerhaft &euro;&thinsp;39,99. Ab J&auml;nner 2027 kostet Bonvio &euro;&thinsp;49,99.</p>
+            <a class="btn" href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800" style="margin-top:32px;">30 Tage gratis testen <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></a>
+            <div style="margin-top:14px;font-size:14px;color:var(--muted);">Kein Setup &middot; Verl&auml;ngerung jederzeit abbestellbar</div>
           </div>
           <div style="display:flex;flex-direction:column;">
             <div class="inc" style="margin:0">Pers&ouml;nliche Bonvio-Adresse</div>
@@ -441,7 +471,7 @@
             <div class="inc" style="margin:0">Kilometergeld &amp; Di&auml;ten per E-Mail</div>
             <div class="inc" style="margin:0">Export f&uuml;r den Steuerberater</div>
             <div class="inc" style="margin:0">10 Jahre Aufbewahrung</div>
-            <div class="inc" style="margin:0;color:rgba(13,33,25,0.78)">Fair Use: bis zu 3.000 Belege pro Jahr</div>
+            <div class="inc" style="margin:0;color:var(--muted)">Fair Use: bis zu 3.000 Belege pro Jahr</div>
           </div>
         </div>
       </section>
@@ -607,11 +637,16 @@
         </div>
       </section>
       <section class="sec reveal" id="wer-en">
-        <h2 style="max-width:24ch;">Built for freelancers. Loved by anyone tired of the chaos.</h2>
-        <div class="trio" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:48px;">
-          <div class="card" style="padding:32px 30px 34px;display:flex;flex-direction:column;gap:13px;"><h3 style="font-size:25px;">Freelancers &amp; sole traders</h3><p style="margin:0;font-size:16px;line-height:1.6;color:var(--muted);">No accounting software. No new app. Your accountant gets a ready CSV at year end &mdash; all you do is take a photo.</p></div>
-          <div class="card" style="padding:32px 30px 34px;display:flex;flex-direction:column;gap:13px;"><h3 style="font-size:25px;">Clubs &amp; small businesses</h3><p style="margin:0;font-size:16px;line-height:1.6;color:var(--muted);">You think in events and projects, not receipts. Bonvio archives quietly in the background while you focus on what matters.</p></div>
-          <div class="card" style="padding:32px 30px 34px;display:flex;flex-direction:column;gap:13px;"><h3 style="font-size:25px;">Anyone who loves order</h3><p style="margin:0;font-size:16px;line-height:1.6;color:var(--muted);">When the shoebox isn&rsquo;t enough &mdash; and a new app is too much. Just email, we handle the rest.</p></div>
+        <div class="offset-sec">
+          <div class="offset-head">
+            <div class="label" style="margin-bottom:18px;">WHO IT IS FOR</div>
+            <h2 style="font-size:clamp(30px,3.2vw,44px);">Built for freelancers. Loved by anyone tired of the chaos.</h2>
+          </div>
+          <div class="offset-stack">
+            <div class="card ofs-1" style="padding:30px 32px 32px;display:flex;flex-direction:column;gap:11px;"><h3 style="font-size:24px;">Freelancers &amp; sole traders</h3><p style="margin:0;font-size:16px;line-height:1.6;color:var(--muted);max-width:60ch;">No accounting software. No new app. Your accountant gets a ready CSV at year end &mdash; all you do is take a photo.</p></div>
+            <div class="card ofs-2" style="padding:30px 32px 32px;display:flex;flex-direction:column;gap:11px;"><h3 style="font-size:24px;">Clubs &amp; small businesses</h3><p style="margin:0;font-size:16px;line-height:1.6;color:var(--muted);max-width:60ch;">You think in events and projects, not receipts. Bonvio archives quietly in the background while you focus on what matters.</p></div>
+            <div class="card ofs-3" style="padding:30px 32px 32px;display:flex;flex-direction:column;gap:11px;"><h3 style="font-size:24px;">Anyone who loves order</h3><p style="margin:0;font-size:16px;line-height:1.6;color:var(--muted);max-width:60ch;">When the shoebox isn&rsquo;t enough &mdash; and a new app is too much. Just email, we handle the rest.</p></div>
+          </div>
         </div>
       </section>
       <section class="sec reveal" id="kein-en">
@@ -633,11 +668,11 @@
         <div class="spot" style="inset:-60px 0;background:radial-gradient(760px 400px at 50% 50%, rgba(199,240,79,0.14), transparent 66%);"></div>
         <div class="price-panel">
           <div>
-            <div class="disp" style="font-size:clamp(56px,8vw,116px);letter-spacing:-0.055em;line-height:0.86;">&euro;&thinsp;39,99</div>
+            <div class="disp" style="font-size:clamp(56px,8vw,116px);letter-spacing:-0.055em;line-height:0.86;color:var(--lime);">&euro;&thinsp;39,99</div>
             <div class="disp" style="font-size:clamp(22px,2.4vw,31px);margin-top:12px;font-weight:700;">a year. Everything included.</div>
-            <p style="margin:22px 0 0;font-size:17px;line-height:1.6;color:rgba(13,33,25,0.78);max-width:40ch;">Founding price &mdash; start now and you pay &euro;&thinsp;39.99 for as long as you stay. From January 2027 Bonvio costs &euro;&thinsp;49.99.</p>
-            <a class="btn btn-dark" href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800" style="margin-top:32px;">Try free for 30 days <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></a>
-            <div style="margin-top:14px;font-size:14px;color:rgba(13,33,25,0.78);">No setup &middot; cancel the renewal any time</div>
+            <p style="margin:22px 0 0;font-size:17px;line-height:1.6;color:var(--muted);max-width:40ch;">Founding price &mdash; start now and you pay &euro;&thinsp;39.99 for as long as you stay. From January 2027 Bonvio costs &euro;&thinsp;49.99.</p>
+            <a class="btn" href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800" style="margin-top:32px;">Try free for 30 days <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></a>
+            <div style="margin-top:14px;font-size:14px;color:var(--muted);">No setup &middot; cancel the renewal any time</div>
           </div>
           <div style="display:flex;flex-direction:column;">
             <div class="inc" style="margin:0">Your personal Bonvio address</div>
@@ -646,7 +681,7 @@
             <div class="inc" style="margin:0">Mileage &amp; daily allowances by email</div>
             <div class="inc" style="margin:0">Export for your accountant</div>
             <div class="inc" style="margin:0">10-year retention</div>
-            <div class="inc" style="margin:0;color:rgba(13,33,25,0.78)">Fair use: up to 3,000 receipts a year</div>
+            <div class="inc" style="margin:0;color:var(--muted)">Fair use: up to 3,000 receipts a year</div>
           </div>
         </div>
       </section>
