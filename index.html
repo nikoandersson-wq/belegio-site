@@ -264,8 +264,17 @@
       body { font-size: 16px; }
       .sec { padding-bottom: 72px; }
       .hero { padding-top: 40px; }
-      .nav-links > a, .lang-switch { display: none; }
-      .nav-links .nav-cta { display: none; }
+      /* Viewport must win over language state. Both drive `display` on these
+         elements, and the language rule (body.lang-en-active .lang-en-inline,
+         0-2-1) outranks a plain mobile hide (0-1-1 / 0-2-0) — so in ENGLISH the
+         desktop nav came back on phones alongside the burger and pushed the page
+         84px past the viewport, while German was correctly hidden. !important is
+         the override here rather than a shortcut: no selector outranks a
+         body-state rule without depending on source order, which would break
+         silently the next time this block moves. Scoped to the desktop nav; the
+         mobile menu uses .mob-lang and is untouched. */
+      .nav-links > a, .lang-switch { display: none !important; }
+      .nav-links .nav-cta { display: none !important; }
       .burger { display: inline-flex; }
       .mobile-menu { display: none; position: absolute; left: var(--pad); right: var(--pad); top: 88px; z-index: 70; padding: 18px; border-radius: 18px; background: var(--elev-1); border: 1px solid var(--hair); box-shadow: 0 34px 70px -22px rgba(0,0,0,0.85); }
       .mobile-menu.open { display: flex; flex-direction: column; gap: 4px; }
