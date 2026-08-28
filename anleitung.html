@@ -164,7 +164,11 @@
     }
     .cmdlist { border-top: 1px solid var(--hair); margin: 16px 0 0; }
     .cmdrow {
-      display: grid; grid-template-columns: minmax(150px, 230px) 1fr; gap: 18px;
+      /* 280px, not 230: the admin tier's sample address is ~212px of Martian Mono
+         plus padding, so a 230px cap forced it to break mid-token
+         ("max.mustermann@firma." / "at"). The description column keeps ~400px at
+         desktop, which is still a comfortable measure. */
+      display: grid; grid-template-columns: minmax(150px, 280px) 1fr; gap: 18px;
       padding: 11px 0; border-bottom: 1px solid var(--hair); align-items: baseline;
     }
     .cmdrow .desc { font-size: 15px; color: var(--muted-2); }
@@ -174,7 +178,10 @@
        ("ADD tom.doe@company.com Tom Doe" is ~276px); solo and team commands are
        short enough to fit. Let the row's OWN command wrap; the short chips inside
        .desc are inline in running text and stay on one line. */
-    .cmdrow > .cmd { white-space: normal; overflow-wrap: anywhere; }
+    .cmdrow > .cmd { white-space: normal; overflow-wrap: break-word; }
+    /* break-word, not anywhere: `anywhere` split the sample address mid-token
+       ("max.mustermann@firma." / "at"). break-word breaks at the spaces first and
+       only splits a word that cannot fit on its own line. */
     ul.plain { margin: 12px 0; padding-left: 20px; }
     ul.plain li { margin-bottom: 7px; }
     .sec a:not(.cmd) { color: var(--ink); text-underline-offset: 3px; }
