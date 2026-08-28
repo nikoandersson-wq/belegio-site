@@ -172,7 +172,12 @@
       padding: 6px 9px; cursor: pointer; border-radius: 6px;
     }
     .lang-switch button.active { background: var(--lime); color: var(--ground); border-color: var(--lime); }
-    .burger { display: none; width: 46px; height: 46px; align-items: center; justify-content: center; background: transparent; border: 0; cursor: pointer; }
+    /* flex-direction MUST be column. The bars are flex items, so in the default
+       `row` they sat side by side and flex-shrink squeezed each 22px bar to 11px,
+       while `margin-top` on the 2nd and 3rd stepped them down — the icon read as a
+       stray strikethrough, not a menu. The 46px box is the touch target; the bars
+       are 22px, so it stays a comfortable tap while looking like a 22px icon. */
+    .burger { display: none; flex-direction: column; width: 46px; height: 46px; align-items: center; justify-content: center; background: transparent; border: 0; cursor: pointer; }
     .burger span { display: block; width: 22px; height: 2px; background: var(--bone); border-radius: 2px; }
     .burger span + span { margin-top: 5px; }
     .mobile-menu { display: none; }
@@ -290,9 +295,22 @@
       .nav-links > a, .lang-switch { display: none !important; }
       .nav-links .nav-cta { display: none !important; }
       .burger { display: inline-flex; }
+      /* 10px, not 14: the burger box is 12px wider than its bars on each side, so
+         the pill's CTA-sized right padding pushed the icon 4px off the 23px inset
+         the logo sits at on the left. */
+      .nav-pill { padding-right: 10px; }
       .mobile-menu { display: none; position: absolute; left: var(--pad); right: var(--pad); top: 88px; z-index: 70; padding: 18px; border-radius: 18px; background: var(--elev-1); border: 1px solid var(--hair); box-shadow: 0 34px 70px -22px rgba(0,0,0,0.85); }
       .mobile-menu.open { display: flex; flex-direction: column; gap: 4px; }
       .mobile-menu a { display: block; padding: 13px 12px; border-radius: 10px; color: var(--bone); font-size: 16px; }
+      /* Layout must not outrank language state — the same collision as the desktop
+         nav above, in the other direction. `.mobile-menu a` (0-1-1) beat the plain
+         hide `.lang-en-inline` (0-1-0), so the GERMAN menu listed all ten links:
+         the four German ones and their CTA, then the English set underneath.
+         English was unaffected, because its hide is a body-state rule that already
+         outranks the layout one. Re-stating the hide at 0-2-1 and the show at 0-3-1
+         puts both languages back under the same precedence. */
+      .mobile-menu a.lang-en-inline { display: none; }
+      body.lang-en-active .mobile-menu a.lang-en-inline { display: block; }
       .mobile-menu .mob-cta { background: var(--lime); color: var(--ground); text-align: center; font-weight: 600; margin-top: 6px; }
       .mob-lang { display: flex; gap: 6px; margin-top: 10px; padding-top: 12px; border-top: 1px solid var(--hair); }
       .mob-lang button { flex: 1; background: transparent; border: 1px solid var(--hair-2); color: var(--muted); font-family: var(--mono); font-size: 12px; padding: 10px; border-radius: 8px; cursor: pointer; }
