@@ -178,11 +178,20 @@
     .mobile-menu { display: none; }
 
     /* ── shared blocks ──────────────────────────────────────────────────── */
-    .addr-field {
-      display: flex; align-items: center; gap: 18px; width: fit-content;
-      padding: 15px 24px; border-radius: 100px;
+    /* The founder price is the strongest thing this page can say in the slot
+       under the lede, and unlike a sample address it expires: the AGB fixes the
+       cutoff at a contract formed before 1 January 2027. */
+    .offer {
+      display: flex; flex-direction: column; gap: 9px; width: fit-content; max-width: 100%;
+      padding: 16px 24px 18px; border-radius: 20px;
+      background: var(--elev-1); border: 1px solid rgba(199,240,79,0.30);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), 0 24px 50px -26px rgba(0,0,0,0.8);
     }
-    .addr-field .addr { font-family: var(--mono); font-size: clamp(15px, 1.5vw, 21px); font-weight: 500; letter-spacing: -0.04em; color: var(--lime); white-space: nowrap; }
+    .offer-label { font-family: var(--mono); font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--lime); }
+    .offer-row { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+    .offer-now { font-family: var(--disp); font-weight: 800; font-size: clamp(30px, 3.4vw, 40px); letter-spacing: -0.05em; line-height: 1; }
+    .offer-old { font-size: 16px; color: var(--muted-2); }
+    .offer-note { font-size: 14.5px; color: var(--muted); }
     .hero { padding: 78px var(--pad) 0; display: grid; grid-template-columns: minmax(0,640px) 1fr; gap: 60px; align-items: start; }
     .ex-card { padding: 24px 26px; }
     .ex-row { display: flex; gap: 16px; align-items: baseline; }
@@ -291,15 +300,15 @@
       .trio { grid-template-columns: 1fr !important; }
       .quad { grid-template-columns: 1fr !important; }
       .price-panel { padding: 36px 24px 42px; border-radius: 24px; }
-      .addr-field { width: auto; border-radius: 16px; padding: 16px 18px; }
-      .addr-field .addr { white-space: normal; word-break: break-all; }
+      .offer { padding: 14px 18px 16px; border-radius: 16px; }
       .csv { grid-template-columns: minmax(0,1fr) 64px 74px; font-size: 11.5px; padding: 12px 16px; }
       .csv .vat { display: none; }
-      /* The demo email card was missed when .addr-field and .csv were adapted above:
-         an unbreakable address next to a fixed 58px label column gives .ex-row 263px
-         of min-content, and with 26px card padding that pushed the hero — and the
-         whole page with it — 21px past a 320px viewport. Same treatment as the
-         address field: tighten the gutters and let the value break. */
+      /* The demo email card was missed when .csv was adapted above: an unbreakable
+         address next to a fixed 58px label column gives .ex-row 263px of min-content,
+         and with 26px card padding that pushed the hero — and the whole page with it
+         — 21px past a 320px viewport. Tighten the gutters and let the value break.
+         (The hero address pill this once matched is gone; the card still shows a
+         real address, so the rule stays.) */
       .ex-card { padding: 18px; }
       .ex-row { gap: 12px; }
       .ex-row .k { width: 66px; }   /* must still clear "Attachment" (64px) */
@@ -364,13 +373,17 @@
           <span class="chip"><span class="dot"></span>Antwort in ~3 Sekunden</span>
           <h1 style="margin-top:28px;">Deine Belege haben jetzt eine Adresse.</h1>
           <p class="lede" style="margin-top:30px;max-width:44ch;font-size:20px;color:rgba(242,241,232,0.66);">Foto machen, hinschicken, vergessen. Bonvio liest H&auml;ndler, Datum, Betrag und USt aus dem Bild &mdash; und legt alles ab, bis dein Steuerberater es braucht.</p>
-          <div class="card-hi addr-field" style="margin-top:34px;">
-            <span class="addr">bonvio0123@bonvio.eu</span>
-            
+          <div class="offer" style="margin-top:34px;">
+            <span class="offer-label">Gr&uuml;nderpreis &middot; bis 31.12.2026</span>
+            <span class="offer-row">
+              <span class="offer-now">&euro;&#x202F;39,99</span>
+              <span class="offer-old">statt <s>&euro;&#x202F;49,99</s></span>
+            </span>
+            <span class="offer-note">im Jahr &mdash; dauerhaft, solange du bleibst</span>
           </div>
           <div style="display:flex;align-items:center;gap:22px;margin-top:30px;flex-wrap:wrap;">
             <a class="btn" href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800">30 Tage gratis testen <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></a>
-            <span style="font-size:15px;color:var(--muted);">Kein Login &middot; keine App<br>Danach &euro;&thinsp;39,99 im Jahr</span>
+            <span style="font-size:15px;color:var(--muted);">Kein Login &middot; keine App</span>
           </div>
         </div>
         <div class="float reveal" style="padding-top:34px;">
@@ -574,13 +587,17 @@
           <span class="chip"><span class="dot"></span>Answer in ~3 seconds</span>
           <h1 style="margin-top:28px;">Your receipts now have an address.</h1>
           <p class="lede" style="margin-top:30px;max-width:44ch;font-size:20px;color:rgba(242,241,232,0.66);">Take a photo, send it, forget it. Bonvio reads merchant, date, amount and VAT from the image &mdash; and files everything until your accountant needs it.</p>
-          <div class="card-hi addr-field" style="margin-top:34px;">
-            <span class="addr">bonvio0123@bonvio.eu</span>
-            
+          <div class="offer" style="margin-top:34px;">
+            <span class="offer-label">Founding price &middot; until 31&#x202F;Dec&#x202F;2026</span>
+            <span class="offer-row">
+              <span class="offer-now">&euro;&#x202F;39.99</span>
+              <span class="offer-old">instead of <s>&euro;&#x202F;49.99</s></span>
+            </span>
+            <span class="offer-note">a year &mdash; for as long as you stay</span>
           </div>
           <div style="display:flex;align-items:center;gap:22px;margin-top:30px;flex-wrap:wrap;">
             <a class="btn" href="https://buy.stripe.com/14AfZagnnfBHdLp3rHcs800">Try free for 30 days <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></a>
-            <span style="font-size:15px;color:var(--muted);">No login &middot; no app<br>Then &euro;&thinsp;39.99 a year</span>
+            <span style="font-size:15px;color:var(--muted);">No login &middot; no app</span>
           </div>
         </div>
         <div class="float reveal" style="padding-top:34px;">
