@@ -323,6 +323,20 @@ The failure was structural, not chromatic. Hold to these:
   what keeps a card from becoming an 800px slab holding 46 characters. Copy stays at 60ch or under,
   as `.lede` (52ch) and `.note` (44ch) already do.
 
+**Two traps that broke real pages, both invisible above 360px:**
+
+- **A grid column is `minmax(0,1fr)`, never `1fr`.** A grid item's automatic minimum is its
+  *min-content*, so one unbreakable child — a nowrap command chip, an email address next to a
+  fixed-width label — silently stretches the whole track and drags every element on the page past
+  the viewport. `1fr` in a single-column mobile query is the usual culprit.
+- **A layout set in an inline `style` attribute has no breakpoints.** The founder section kept a
+  fixed `128px` photo column at every width because its grid lived inline, leaving 110px for the
+  quote — narrower than one German compound. Nothing looked wrong, because `body` has
+  `overflow-x: hidden` and simply cut the text off. Overriding it later costs an `!important`.
+
+German fails first on both, every time: the compounds are longer, so English can look perfect while
+German is clipped. **Test the narrowest phone (320px) in German before calling a layout done.**
+
 ---
 
 

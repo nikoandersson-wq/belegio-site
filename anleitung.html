@@ -120,6 +120,11 @@
     .tiers button:hover { color: var(--ink); border-color: var(--muted); }
     .tiers button.active { background: var(--green); border-color: var(--green); color: var(--on-dark); font-weight: 600; }
     .tier-note { font-size: 14px; color: var(--muted); margin: 0 0 40px; }
+    /* Print shows only the selected tier — the tabs are hidden on paper, so without
+       this line a printed guide is silently missing two thirds of its sections. It
+       sits INSIDE the language wrapper, so the wrapper decides which one prints;
+       nothing here fights the .lang-*-inline rules. */
+    .print-only { display: none; }
 
     /* ── the "?" callout ─────────────────────────────────── */
     .callout {
@@ -192,9 +197,32 @@
     html[data-tier="admin"] [data-tier]:not([data-tier~="admin"]) { display: none; }
 
     @media (max-width: 940px) {
-      .shell { grid-template-columns: 1fr; gap: 0; padding: 40px 24px 90px; }
+      /* minmax(0,1fr), not 1fr: a grid item's automatic minimum is its MIN-CONTENT,
+         so one unbreakable child stretches the whole track. `.cmd` is nowrap, and the
+         longest example command ("Trade fair Vienna #diät 8 -lunch") measures 332px —
+         which dragged every element on the page 12px past a 320px viewport and cut the
+         right edge off. German never showed it because its commands are shorter. */
+      .shell { grid-template-columns: minmax(0,1fr); gap: 0; padding: 40px 24px 90px; }
+      /* Let a command wrap when it genuinely cannot fit. `normal` only breaks when
+         needed, so nothing changes at widths where it already fits on one line. */
+      .cmd { white-space: normal; overflow-wrap: anywhere; }
       .toc { display: none; }
       nav { padding: 14px 24px; }
+      /* 44px minimum touch target (WCAG 2.5.5). These read fine at desktop but were
+         17-36px tall on a phone — the tier tabs and the DE/EN switch especially. */
+      .tiers button { min-height: 44px; }
+      .lang-switch button { min-height: 44px; padding: 0 14px; }
+      nav .logo, .nav-back { min-height: 44px; display: inline-flex; align-items: center; }
+      .footer-links { gap: 8px 18px; }
+      .footer-links a, footer a { display: inline-flex; align-items: center; min-height: 44px; }
+    }
+    @media (max-width: 400px) {
+      /* Below ~400px the logo, the back-link and a 44px-tall language switch cannot
+         share one row — German loses first, because "← Startseite" is wider than
+         "← Home". Let the bar wrap rather than shrink the touch targets back below
+         44px or truncate the label. */
+      nav { flex-wrap: wrap; row-gap: 6px; }
+      .nav-right { width: 100%; justify-content: flex-end; }
       footer { padding: 24px; }
       body { font-size: 16px; }
       .cmdrow { grid-template-columns: 1fr; gap: 4px; }
@@ -211,6 +239,9 @@
       }
       body { background: #fff; color: #14171A; }
       nav, .lang-switch, .tiers, .toc { display: none !important; }
+      .print-only { display: block; font-size: 12px; margin: -24px 0 34px;
+                    padding: 10px 12px; border: 1px solid rgba(20,23,26,0.16);
+                    border-radius: 6px; color: #14171A; }
       .callout, .cmd, .tiers button { box-shadow: none !important; }
       .cmd { background: #F2F2F0 !important; color: #1F4332 !important; }
       a { color: #1F4332 !important; }
@@ -328,6 +359,7 @@
         <p class="tier-note" data-tier="solo">Du zahlst selbst, exportierst selbst, gibst selbst ab &mdash; <b>Einzelunternehmen</b>.</p>
         <p class="tier-note" data-tier="team">Du geh&ouml;rst zu einem Firmen-Team &mdash; <b>Team-Mitglied</b>. Du siehst nur deine eigenen Belege.</p>
         <p class="tier-note" data-tier="admin">Du verwaltest das Team und holst den Gesamtexport &mdash; <b>Team-Admin</b>.</p>
+        <p class="print-only">Gedruckt wird immer nur die oben genannte Fassung. Die anderen beiden &mdash; Team-Mitglied und Team-Admin &mdash; stehen unter <b>bonvio.eu/anleitung.html</b>, dort oben umschalten und neu drucken.</p>
 
         <div class="callout">
           <div class="k">Du musst dir keinen Befehl merken</div>
@@ -559,6 +591,7 @@
         <p class="tier-note" data-tier="solo">You pay, export and file for yourself &mdash; <b>sole trader</b>.</p>
         <p class="tier-note" data-tier="team">You belong to a company team &mdash; <b>team member</b>. You only ever see your own receipts.</p>
         <p class="tier-note" data-tier="admin">You manage the members and pull the full export &mdash; <b>team admin</b>.</p>
+        <p class="print-only">Only the version named above is printed. The other two &mdash; team member and team admin &mdash; are at <b>bonvio.eu/anleitung.html</b>: switch at the top of the page and print again.</p>
 
         <div class="callout">
           <div class="k">You never have to remember a command</div>
