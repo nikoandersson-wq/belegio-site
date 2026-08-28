@@ -14,22 +14,51 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Deploy to gh-pages
+      - name: Publish the website — and only the website
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-          cp -r . /tmp/deploy
-          rm -rf /tmp/deploy/.git /tmp/deploy/.github
+
+          # An ALLOWLIST, not "copy everything and delete a few". The repo holds
+          # material that must never be served — the brand book, build scripts,
+          # contributor notes — and a denylist publishes each new internal file
+          # by accident until someone notices. Anything not named here stays private.
+          # Add a line when the site genuinely gains a page or an asset.
+          PUBLISH="
+            index.html
+            anleitung.html
+            agb.html agb-en.html
+            datenschutz.html datenschutz-en.html
+            impressum.html impressum-en.html
+            blog/index.html
+            founder.jpg og.png
+            CNAME .nojekyll robots.txt sitemap.xml
+          "
+          rm -rf /tmp/deploy && mkdir -p /tmp/deploy
+          for f in $PUBLISH; do
+            if [ ! -e "$f" ]; then echo "::error::allowlisted file is missing: $f"; exit 1; fi
+            mkdir -p "/tmp/deploy/$(dirname "$f")"
+            cp "$f" "/tmp/deploy/$f"
+          done
+          echo "publishing:"; (cd /tmp/deploy && find . -type f | sort | sed 's/^/  /')
+
           git fetch origin gh-pages 2>/dev/null || true
-          if git ls-remote --exit-code origin gh-pages; then
+          if git ls-remote --exit-code origin gh-pages >/dev/null 2>&1; then
             git checkout gh-pages
           else
             git checkout --orphan gh-pages
-            git rm -rf . --quiet
           fi
+
+          # Empty the branch before copying. A merge-copy leaves anything an
+          # earlier, broader deploy published sitting there for good — which is
+          # exactly how the brand book stayed reachable.
+          git rm -rf . --quiet 2>/dev/null || true
+          find . -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} + 2>/dev/null || true
+
           cp -r /tmp/deploy/. .
           git add -A
           git diff --cached --quiet || git commit -m "Deploy $(date -u '+%Y-%m-%dT%H:%M:%SZ')"
