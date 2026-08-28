@@ -212,7 +212,13 @@
          17-36px tall on a phone — the tier tabs and the DE/EN switch especially. */
       .tiers button { min-height: 44px; }
       .lang-switch button { min-height: 44px; padding: 0 14px; }
-      nav .logo, .nav-back { min-height: 44px; display: inline-flex; align-items: center; }
+      /* Do NOT set `display` on .nav-back: it carries .lang-de/.lang-en, and a
+         display of equal specificity declared later un-hides the inactive language
+         (this rule briefly showed "← Startseite" and "← Home" side by side).
+         Padding grows the touch target without touching visibility. */
+      nav { min-height: 44px; }
+      nav .logo { min-height: 44px; display: inline-flex; align-items: center; }
+      .nav-back { padding: 12px 0; }
       .footer-links { gap: 8px 18px; }
       .footer-links a, footer a { display: inline-flex; align-items: center; min-height: 44px; }
     }
