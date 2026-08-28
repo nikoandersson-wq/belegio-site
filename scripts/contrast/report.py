@@ -16,3 +16,6 @@ print(f"=== {lbl} [{env['lang']}]: {len(data)} failing pairs ===")
 for d in data:
     print(f"  {d['ratio']:>5.2f}:1 (need {d['need']}) {d['fg']} on {d['bg']}  {d['size']:.0f}px/{d['weight']}")
     print(f"          {d['sel']}   \"{d['text']}\"")
+# Falling off the end here exited 0, so check-contrast.sh's `|| rc=1` never fired
+# and it printed "all pages pass WCAG AA" underneath a list of failures.
+sys.exit(1)

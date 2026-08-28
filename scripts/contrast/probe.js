@@ -68,6 +68,12 @@
     // ancestor opacity too
     var an=el.parentElement, guard=0;
     while(an && an.nodeType===1 && guard<12){ var ao=parseFloat(getComputedStyle(an).opacity); if(!isNaN(ao)) eff*=ao; an=an.parentElement; guard++; }
+    // Composited to zero alpha there is no text on screen and so no ratio to
+    // measure: .back-to-top sits at opacity:0 until you scroll, and folding that
+    // into the alpha made it composite to exactly its own background and report a
+    // false 1.00:1. display:none and visibility:hidden are already skipped above;
+    // this is the third way to be invisible. Anything faint but > 0 still counts.
+    if(!(eff>0)) continue;
     var comp=over({r:fg.r,g:fg.g,b:fg.b,a:eff}, bg);
     var r=ratio(comp,bg);
     var fs=parseFloat(cs.fontSize), fw=parseInt(cs.fontWeight)||400;

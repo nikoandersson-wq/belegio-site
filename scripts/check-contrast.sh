@@ -29,9 +29,26 @@ PAGES="${*:-$(cd "$ROOT" && ls *.html)}"
 rc=0
 for f in $PAGES; do
   base=$(basename "$f" .html)
-  case "$base" in *-en) lang=en-US ;; *) lang=de-DE ;; esac
-  probe "$ROOT/$f" "$base"   1280 "$lang" || rc=1
-  probe "$ROOT/$f" "m-$base"  390 "$lang" || rc=1
+  # index.html, anleitung.html and the blog carry BOTH languages in one file and
+  # switch them with a body class, so the filename says nothing about what renders.
+  # Probing by filename alone measured only their German half and left every
+  # English one unchecked — the pages are picked by what they contain, not by name.
+  case "$base" in
+    *-en) langs="en-US"; dual=0 ;;
+    *)
+      if grep -q 'lang-en-active' "$ROOT/$f"; then
+        langs="de-DE en-US"; dual=1
+      else
+        langs="de-DE"; dual=0
+      fi
+      ;;
+  esac
+  for lang in $langs; do
+    tag="$base"
+    if [ "$dual" = "1" ] && [ "$lang" = "en-US" ]; then tag="$base-en"; fi
+    probe "$ROOT/$f" "$tag"   1280 "$lang" || rc=1
+    probe "$ROOT/$f" "m-$tag"  390 "$lang" || rc=1
+  done
 done
 [ $rc -eq 0 ] && echo "contrast: all pages pass WCAG AA"
 exit $rc
