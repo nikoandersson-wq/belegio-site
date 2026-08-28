@@ -168,6 +168,13 @@
       padding: 11px 0; border-bottom: 1px solid var(--hair); align-items: baseline;
     }
     .cmdrow .desc { font-size: 15px; color: var(--muted-2); }
+    /* The command column is capped at 230px while .cmd is nowrap, so any command
+       longer than that overflowed its cell and printed ON TOP of the description.
+       Only the admin tier hits it — its commands carry a full email address
+       ("ADD tom.doe@company.com Tom Doe" is ~276px); solo and team commands are
+       short enough to fit. Let the row's OWN command wrap; the short chips inside
+       .desc are inline in running text and stay on one line. */
+    .cmdrow > .cmd { white-space: normal; overflow-wrap: anywhere; }
     ul.plain { margin: 12px 0; padding-left: 20px; }
     ul.plain li { margin-bottom: 7px; }
     .sec a:not(.cmd) { color: var(--ink); text-underline-offset: 3px; }

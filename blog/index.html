@@ -116,8 +116,12 @@
     }
     .page-title {
       margin: 0 0 16px;
-      font-family: var(--serif); font-size: clamp(40px, 5vw, 64px);
+      font-family: var(--serif); font-size: clamp(36px, 5vw, 64px);
       line-height: 1.0; letter-spacing: -0.04em; font-weight: 600;
+      /* The 40px floor put "Buchhaltung." at 281px against 272px of space on a
+         320px phone, so it was painted outside the page. 36px keeps the word whole;
+         break-word is only a last resort if a longer title ever appears. */
+      overflow-wrap: break-word;
     }
     .page-intro {
       font-size: 20px; line-height: 1.55; color: var(--muted-2);
