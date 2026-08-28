@@ -84,6 +84,11 @@
       font-family: var(--serif);
       font-size: clamp(36px, 4vw, 52px);
       font-weight: 600; letter-spacing: -0.025em; line-height: 1.1;
+      /* A German legal heading is one long compound ("Datenschutzerklaerung" is a
+         single 433px word). With nothing to break on it was painted outside the
+         page, which then scrolled sideways to 457px on a phone. hyphens:auto works
+         because <html lang> is set; break-word is the fallback. */
+      overflow-wrap: break-word; hyphens: auto;
     }
     .version {
       font-family: var(--mono); font-size: 12px;
